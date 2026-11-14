@@ -1,0 +1,10 @@
+{
+  "kind": "R47_document_authority_candidate",
+  "status": "pending_independent_exact_review_and_Root_adoption",
+  "parent_baseline_sha256": "974f47af8acfaa5517be371082dc22814e8f2f6ed434ada8edb4cf8bc424b0ff",
+  "document_review_sha256": "f3c9f1bcc52e5b3fe44ed6eac77d7a6234db06d57c4330113ef9a9aeb0fc47ed",
+  "scope": "SR0 documents and exact active entry only",
+  "approvals_unchanged": true,
+  "product_acceptance_promoted": false,
+  "exact_delta_sha256": "bcb8716ae6f7a248ee909cb570b048d3e12cdc89a2c09889702dbb55e68be0bd"
+}

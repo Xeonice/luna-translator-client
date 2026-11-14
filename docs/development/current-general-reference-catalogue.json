@@ -1,0 +1,1628 @@
+{
+  "schema_version": 1,
+  "kind": "general-independent-reference-catalogue/v1",
+  "scope": "settings:general/controlled_visual_only",
+  "source_authority": {
+    "kind": "general-visual-source-authority/v1",
+    "scope": "settings:general/controlled_visual_only",
+    "approval": {
+      "path": "docs/development/design-approval-general-states-20261108.json",
+      "sha256": "6e1694583d1c12a7597c9b00cf91dd21154a04f6f463fc4a9aa48a5042a6cb8a"
+    },
+    "promotion": {
+      "path": "docs/design/first-product-v1/candidates/general-state-evidence-20261108/promotion.json",
+      "sha256": "345205c37d1b77df870b429efbd84c6811c34f1416bbd0b1cc8cac1e81547b84"
+    },
+    "source_inputs": {
+      "docs/development/design-approval-general-states-20261108.json": {
+        "sha256": "6e1694583d1c12a7597c9b00cf91dd21154a04f6f463fc4a9aa48a5042a6cb8a",
+        "bytes": 2033
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/promotion.json": {
+        "sha256": "345205c37d1b77df870b429efbd84c6811c34f1416bbd0b1cc8cac1e81547b84",
+        "bytes": 43453
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/settings.html": {
+        "sha256": "f94db4440019bc8d1bc84857de4092cb13ce4929eb8562a382e564597f63d489",
+        "bytes": 6999
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/state-gap.css": {
+        "sha256": "e22566310cc5f2e2a0d13d5c00fab15ccf3f7d9671ea19bef317207c85cec07e",
+        "bytes": 1174
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/state-gap.js": {
+        "sha256": "152b52adc0645392be0c687c8d74e2ef40392ef3774d346a8f14d07b5c22fee0",
+        "bytes": 4620
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/assets/icons.js": {
+        "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+        "bytes": 3501
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/assets/material-tokens.css": {
+        "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+        "bytes": 2770
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/settings.css": {
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/settings.js": {
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      }
+    },
+    "source_closure_sha256": "012da7ca2fa26321358b42e9c462b6598baea2165adb785eadf042083f80d5fe",
+    "state_ids": [
+      "all-page-settings-general-normal",
+      "all-page-settings-general-empty",
+      "all-page-settings-general-loading",
+      "all-page-settings-general-error",
+      "all-page-settings-general-disabled",
+      "all-page-settings-general-long-text",
+      "all-page-settings-general-light",
+      "all-page-settings-general-narrow",
+      "all-page-settings-general-zoom-200",
+      "all-page-settings-general-keyboard-focus-escape",
+      "all-page-settings-general-scope-global",
+      "all-page-settings-general-scope-game",
+      "all-page-settings-general-restore-inheritance",
+      "all-page-settings-general-save-failed"
+    ],
+    "cases": [
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z2",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "content-end",
+        "canvas_id": "1000x720-dark-z2",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "1000x720-light-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "light",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "1000x720-light-z2",
+        "width": 1000,
+        "height": 720,
+        "theme": "light",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "content-end",
+        "canvas_id": "1000x720-light-z2",
+        "width": 1000,
+        "height": 720,
+        "theme": "light",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "760x560-dark-z1",
+        "width": 760,
+        "height": 560,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "760x560-dark-z2",
+        "width": 760,
+        "height": 560,
+        "theme": "dark",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "content-end",
+        "canvas_id": "760x560-dark-z2",
+        "width": 760,
+        "height": 560,
+        "theme": "dark",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "760x560-light-z1",
+        "width": 760,
+        "height": 560,
+        "theme": "light",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "primary",
+        "canvas_id": "760x560-light-z2",
+        "width": 760,
+        "height": 560,
+        "theme": "light",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-normal",
+        "subcase": "content-end",
+        "canvas_id": "760x560-light-z2",
+        "width": 760,
+        "height": 560,
+        "theme": "light",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-empty",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-loading",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-loading",
+        "subcase": "initial",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-error",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-disabled",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-long-text",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-light",
+        "subcase": "primary",
+        "canvas_id": "1000x720-light-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "light",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-narrow",
+        "subcase": "primary",
+        "canvas_id": "760x560-dark-z1",
+        "width": 760,
+        "height": 560,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-zoom-200",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z2",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 2
+      },
+      {
+        "state_id": "all-page-settings-general-keyboard-focus-escape",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-keyboard-focus-escape",
+        "subcase": "menu-open",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-scope-global",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-scope-game",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-restore-inheritance",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      },
+      {
+        "state_id": "all-page-settings-general-save-failed",
+        "subcase": "primary",
+        "canvas_id": "1000x720-dark-z1",
+        "width": 1000,
+        "height": 720,
+        "theme": "dark",
+        "zoom": 1
+      }
+    ],
+    "context": "user-approved-native-content-transparent-body-system-chrome",
+    "capture_scope": "whole_client",
+    "rgba_threshold": 0,
+    "mask": false,
+    "crop": false,
+    "resample": false,
+    "product_accepted": false
+  },
+  "layers": {
+    "real_react": {
+      "generation": {
+        "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/generation.json",
+        "sha256": "c7df2a271cd47ead2b9a089b759fd4a2a45efa5c9f91b0722f427694a689beee"
+      },
+      "entries": [
+        {
+          "case_key": "normal--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-dark-z1--primary/649dec0aed5195d08a3e6e7c18e5eb2d/document-1-frame-1.png",
+            "sha256": "99949a797d3795e238cbf170fba2d1f5e49a29aebb84f44705f23a6be3bf3dee"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-dark-z1--primary/649dec0aed5195d08a3e6e7c18e5eb2d/native-result.json",
+            "sha256": "082915a11325a6f6f5214bff0416f96d0ae9afd5347dc6cf1ce4818fc057fd29"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-dark-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-dark-z2--primary/b5cd3efdf269679da411c98132a4ce03/document-1-frame-1.png",
+            "sha256": "1c51f977ea3cd6971cc8e3b95fb76e7f98ad7f88c53e016b7e04f4e6f40f1c1f"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-dark-z2--primary/b5cd3efdf269679da411c98132a4ce03/native-result.json",
+            "sha256": "8c87e17002b5b933b48dea3e41cb4d9cb553854b4d5323160cd2e78066c6dded"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-dark-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-dark-z2--content-end/6a2b7d259a5a98ac170de603e2ec911d/document-1-frame-1.png",
+            "sha256": "831ed00d45ae98bda8d07d86d693dbf3a7050304823137777d5b6137fc1747ee"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-dark-z2--content-end/6a2b7d259a5a98ac170de603e2ec911d/native-result.json",
+            "sha256": "dcdc5c1e877640e0853a78908888069c2344ee32898d7e1eee939d220e078695"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-light-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-light-z1--primary/c4a746a4d9fc5370da6ea4542c393e3c/document-1-frame-1.png",
+            "sha256": "00a536f80f8312a40d9f1103c5c15746c20e7f274bc94ac4f366d06804d04ee9"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-light-z1--primary/c4a746a4d9fc5370da6ea4542c393e3c/native-result.json",
+            "sha256": "100d31e65424dcc692fac6db929394baf07f257704715eede73fb4afa9c33ad2"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-light-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-light-z2--primary/d1d0e5f29805d34c5fcc9bdb75a8aae8/document-1-frame-1.png",
+            "sha256": "4a9310bcea62b87a5d6cf7593bd92ad7aae16224a9f1fca27d3b7e4b6103a44b"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-light-z2--primary/d1d0e5f29805d34c5fcc9bdb75a8aae8/native-result.json",
+            "sha256": "f5fff9038b2eaf56a3925d6172db0763e1660779fddb96e47b961da57cca3372"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-light-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-light-z2--content-end/9d6b2831629fb092f2754723747dc86d/document-1-frame-1.png",
+            "sha256": "22229ece28a0584ded70964bb783d34daba0d9b759e5348090ebb7c572b49148"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--1000x720-light-z2--content-end/9d6b2831629fb092f2754723747dc86d/native-result.json",
+            "sha256": "cfb175d0d913719096ece6a7fdf559c8fa6e82b95b0fb35c6a69ca7cc5faf8fb"
+          }
+        },
+        {
+          "case_key": "normal--760x560-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-dark-z1--primary/ff97c996ca701a9b9d846f90bd552abf/document-1-frame-1.png",
+            "sha256": "6ea34cc12b72de26468f45730d0ba1444c0e51bbedc1f132a7d7de4387dc4b23"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-dark-z1--primary/ff97c996ca701a9b9d846f90bd552abf/native-result.json",
+            "sha256": "f849364a0e7e827faada25bbd9fb67c68dc3050317b92b930679108d3fc46d44"
+          }
+        },
+        {
+          "case_key": "normal--760x560-dark-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-dark-z2--primary/3ce4b48860de3aefa2bf65f0a263e748/document-1-frame-1.png",
+            "sha256": "8408f808c0d50dabf64fbcfec76fec44f5cd324eb05b0d94ba2f360478a04ccd"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-dark-z2--primary/3ce4b48860de3aefa2bf65f0a263e748/native-result.json",
+            "sha256": "183ce3175593d41c203420360053ca98bd5072a7c9c468ef8b58801f68cb7c61"
+          }
+        },
+        {
+          "case_key": "normal--760x560-dark-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-dark-z2--content-end/02fb19b2c6e25d479ca2492a9b7fc79c/document-1-frame-1.png",
+            "sha256": "70578b4024a5badc27d3e98f97e88853e72244a0e27c38e6b8614e698ee7ea20"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-dark-z2--content-end/02fb19b2c6e25d479ca2492a9b7fc79c/native-result.json",
+            "sha256": "d5e2ec448b63b3a4816e7f6215f29653384af514094f6b83a31c18a2c0f3b7ba"
+          }
+        },
+        {
+          "case_key": "normal--760x560-light-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-light-z1--primary/056a6f6d5df3a9f1b33166eba3ce6dcb/document-1-frame-1.png",
+            "sha256": "5a72288ec17630af33b64d521cb7363ef70f321109f7d7497a8643b7c6c7915a"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-light-z1--primary/056a6f6d5df3a9f1b33166eba3ce6dcb/native-result.json",
+            "sha256": "e4ded17259aaf52b4aa69d0ca48d2005738c851bbe4d8976eeed0cba75c29b26"
+          }
+        },
+        {
+          "case_key": "normal--760x560-light-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-light-z2--primary/3ab4f66acbe2d1ff70ec7c4482625e61/document-1-frame-1.png",
+            "sha256": "90c8209e18acb03c46576be92e16d536732460a9af682aa023dc0d4cef1b376a"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-light-z2--primary/3ab4f66acbe2d1ff70ec7c4482625e61/native-result.json",
+            "sha256": "d848c0365219f82dcac11d6813dc4252c2c9bbc6a712af2340e25e53511440f8"
+          }
+        },
+        {
+          "case_key": "normal--760x560-light-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-light-z2--content-end/11ec201ef1fb4be7b29ec67ef23abc0b/document-1-frame-1.png",
+            "sha256": "9e119d458ddf61a5da9d4eeed8aeaa1afb5895adabc63fc9d16cdd7553819404"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/normal--760x560-light-z2--content-end/11ec201ef1fb4be7b29ec67ef23abc0b/native-result.json",
+            "sha256": "bf9221d0e4d90e4795d8bd8a12d4481f6bd2d2de3dfb3b0f544f7b1cb0db8302"
+          }
+        },
+        {
+          "case_key": "empty--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-empty",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/empty--1000x720-dark-z1--primary/8e8b5973a08f637b6ffc64e3b208ee2c/document-1-frame-1.png",
+            "sha256": "99949a797d3795e238cbf170fba2d1f5e49a29aebb84f44705f23a6be3bf3dee"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/empty--1000x720-dark-z1--primary/8e8b5973a08f637b6ffc64e3b208ee2c/native-result.json",
+            "sha256": "0e095c454a30128a5bc7365bc9ab31960ee84a761970b19a374304cfed8a58fe"
+          }
+        },
+        {
+          "case_key": "loading--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/loading--1000x720-dark-z1--primary/17204f8e6a87375a6a8aeed116e47ba9/document-1-frame-1.png",
+            "sha256": "c493653ef70fa03c914c431ceeec9c86e837282e7da0d4a848dec871b0e1d86a"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/loading--1000x720-dark-z1--primary/17204f8e6a87375a6a8aeed116e47ba9/native-result.json",
+            "sha256": "5c9ffdb1d3737c3cd19d53e001b386edec2854c0cb593dcb924277e29f8142d3"
+          }
+        },
+        {
+          "case_key": "loading--1000x720-dark-z1--initial",
+          "case": {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "initial",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/loading--1000x720-dark-z1--initial/9447fb38a775a2142300a45f6fc8c6e6/document-1-frame-1.png",
+            "sha256": "5a5219d65e238ad7ec5baf46d8fd71b7f2225a0473eca049d8d079b28a9e034b"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/loading--1000x720-dark-z1--initial/9447fb38a775a2142300a45f6fc8c6e6/native-result.json",
+            "sha256": "9cfaabad73ce7fe0d08061bce49c9abd8745b83edeaeded6ce36d6fcc8723bf0"
+          }
+        },
+        {
+          "case_key": "error--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-error",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/error--1000x720-dark-z1--primary/2de3d8d2ffb826f512ec50c4fe91a0c4/document-1-frame-1.png",
+            "sha256": "eb0f800aa4ffc4f8a0fd6c999d9787239165b4d8d25bfd5830fdce59bff32345"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/error--1000x720-dark-z1--primary/2de3d8d2ffb826f512ec50c4fe91a0c4/native-result.json",
+            "sha256": "8790f33c05e984ab33b4b1ef779c2436c7bf20b4c182c0514805ef8a159c3390"
+          }
+        },
+        {
+          "case_key": "disabled--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-disabled",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/disabled--1000x720-dark-z1--primary/d699920c4f19ac451e03329e5f9be8f5/document-1-frame-1.png",
+            "sha256": "ae3dca327761e92ed86f7ccf9a43a2c8ef8842545d58e8ef9e23025f67cba5db"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/disabled--1000x720-dark-z1--primary/d699920c4f19ac451e03329e5f9be8f5/native-result.json",
+            "sha256": "9c2bba583e2a55ee8d4139f0c385b415089f2e5ded6b7c58ff98f0f88cc48e6e"
+          }
+        },
+        {
+          "case_key": "long-text--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-long-text",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/long-text--1000x720-dark-z1--primary/ea1d42226b2c31b79af634823e907716/document-1-frame-1.png",
+            "sha256": "180301a0323d48be3525384e8934a468839dd21817e5768ccd1265a4f77d73e3"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/long-text--1000x720-dark-z1--primary/ea1d42226b2c31b79af634823e907716/native-result.json",
+            "sha256": "8b31921c5b1394b03d290fe33ab42df20224e0d93715ae722ae9dc6ae54556e8"
+          }
+        },
+        {
+          "case_key": "light--1000x720-light-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-light",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/light--1000x720-light-z1--primary/26b10e4f7d77909cceccc08a668f26dc/document-1-frame-1.png",
+            "sha256": "00a536f80f8312a40d9f1103c5c15746c20e7f274bc94ac4f366d06804d04ee9"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/light--1000x720-light-z1--primary/26b10e4f7d77909cceccc08a668f26dc/native-result.json",
+            "sha256": "8313cad5943404383ef45574a8b90506fb1ffd40845cdb558ab5d25de0eec968"
+          }
+        },
+        {
+          "case_key": "narrow--760x560-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-narrow",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/narrow--760x560-dark-z1--primary/c576392d94edbea3dd5a7c5bfa317edc/document-1-frame-1.png",
+            "sha256": "6ea34cc12b72de26468f45730d0ba1444c0e51bbedc1f132a7d7de4387dc4b23"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/narrow--760x560-dark-z1--primary/c576392d94edbea3dd5a7c5bfa317edc/native-result.json",
+            "sha256": "95173a8ecf517f6cf2ca5bfedce49eedbf6fd2c4d62157f8f0a0663366e9674f"
+          }
+        },
+        {
+          "case_key": "zoom-200--1000x720-dark-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-zoom-200",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/zoom-200--1000x720-dark-z2--primary/8ecdb392a48754af45e4307d344e0a9a/document-1-frame-1.png",
+            "sha256": "1c51f977ea3cd6971cc8e3b95fb76e7f98ad7f88c53e016b7e04f4e6f40f1c1f"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/zoom-200--1000x720-dark-z2--primary/8ecdb392a48754af45e4307d344e0a9a/native-result.json",
+            "sha256": "a59da53dfbfbb39277295b98c010227d06000518dbb0615fa6392ee4951cb2ea"
+          }
+        },
+        {
+          "case_key": "keyboard-focus-escape--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/keyboard-focus-escape--1000x720-dark-z1--primary/07f35848b8819673aced95e27bd660e4/document-1-frame-1.png",
+            "sha256": "99949a797d3795e238cbf170fba2d1f5e49a29aebb84f44705f23a6be3bf3dee"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/keyboard-focus-escape--1000x720-dark-z1--primary/07f35848b8819673aced95e27bd660e4/native-result.json",
+            "sha256": "447263352618540ce33affa34096e91bee72e6deb8e6d146833a8e4b8442b95b"
+          }
+        },
+        {
+          "case_key": "keyboard-focus-escape--1000x720-dark-z1--menu-open",
+          "case": {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "menu-open",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/keyboard-focus-escape--1000x720-dark-z1--menu-open/c8fe859c80785ba88936cfd8835a7f55/document-1-frame-1.png",
+            "sha256": "54d46a90702a05441173812d30c90573d824dd9501151349fe570ed9e058306d"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/keyboard-focus-escape--1000x720-dark-z1--menu-open/c8fe859c80785ba88936cfd8835a7f55/native-result.json",
+            "sha256": "7a671a23f4d146a3f2598eb07a97a76313b4c79ce17dc63b467c4b45db832a67"
+          }
+        },
+        {
+          "case_key": "scope-global--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-scope-global",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/scope-global--1000x720-dark-z1--primary/dd398a113f49082208f7413e1eb13a9a/document-1-frame-1.png",
+            "sha256": "99949a797d3795e238cbf170fba2d1f5e49a29aebb84f44705f23a6be3bf3dee"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/scope-global--1000x720-dark-z1--primary/dd398a113f49082208f7413e1eb13a9a/native-result.json",
+            "sha256": "92b9cf2cfe778cbf021ae9d6f3754b649ca29e1dd52c5bae51acb9939a71c7a5"
+          }
+        },
+        {
+          "case_key": "scope-game--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-scope-game",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/scope-game--1000x720-dark-z1--primary/17b268270c55758ffeb906aefe81d42b/document-1-frame-1.png",
+            "sha256": "c41b3b1e3fb36b197fb1bc1a2ebdd588b487fe3d23272b3936554abfdbdb24c2"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/scope-game--1000x720-dark-z1--primary/17b268270c55758ffeb906aefe81d42b/native-result.json",
+            "sha256": "acefff18559eed99c878033c30509718b0a630cccbd11841299bcc38b0adbb4e"
+          }
+        },
+        {
+          "case_key": "restore-inheritance--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-restore-inheritance",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/restore-inheritance--1000x720-dark-z1--primary/c57b12d177c79c2db6f2837a5bd440d4/document-1-frame-1.png",
+            "sha256": "a4868d5db18b42fa32b4b10e5e851205e616a0f00dacf0fedc41bad387003224"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/restore-inheritance--1000x720-dark-z1--primary/c57b12d177c79c2db6f2837a5bd440d4/native-result.json",
+            "sha256": "f9b8a06fbb25d11ee135403d2c13c64af9d536eb56e091bc233d6526fe5fd0d8"
+          }
+        },
+        {
+          "case_key": "save-failed--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-save-failed",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "real_react",
+          "capture_scope": "whole_client",
+          "renderer": "public-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/save-failed--1000x720-dark-z1--primary/94a9e63265bce43558baadfd2a3b74a6/document-1-frame-1.png",
+            "sha256": "eb76a8380ee65bd1774e1d1fb8d298266319b20dbd2605d3f51dfd43cc226871"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/real-react-source-v2/save-failed--1000x720-dark-z1--primary/94a9e63265bce43558baadfd2a3b74a6/native-result.json",
+            "sha256": "39a3b91365ab784adf1676ce6f82a27bd45b757b5d778f0fadd6830d68b606b2"
+          }
+        }
+      ]
+    },
+    "packaged_native": {
+      "generation": {
+        "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/generation.json",
+        "sha256": "33455a8ddd8dd534cd108108bfec090684681f28cf081d0c3563a12e1d636c78"
+      },
+      "entries": [
+        {
+          "case_key": "normal--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "d14f96254959e186be92aa169bdc90bcc53bc0eb4d823265ac695eee10517b46"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-dark-z1--primary/observation.json",
+            "sha256": "6b63fea7b3a625e2493815fd0cdb35993b2b984b707421b5bc5700d5f94f6562"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-dark-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-dark-z2--primary/frame-1.png",
+            "sha256": "5fbdeb528117c00840404386d9548b5b3b1fe92c681f795e12f36672ebd7d911"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-dark-z2--primary/observation.json",
+            "sha256": "5f76a3d6c2de299f6920ccf0e9d1b921d7575f4b236125d7aac3d41e04017c4f"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-dark-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-dark-z2--content-end/frame-1.png",
+            "sha256": "0f2ffb9c5f7e4c95cddf9919095ab9c9cc9f4ea4058444d020183d4ab566f44b"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-dark-z2--content-end/observation.json",
+            "sha256": "7ac4c9e8da4a2d8e80f98fd0dafbdde9ff29901120785f44561ff1a038a4788d"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-light-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-light-z1--primary/frame-1.png",
+            "sha256": "6ad80b5a2ed1970f8eb323240048d05df3d11c5adda993f4f28cd5748d74b046"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-light-z1--primary/observation.json",
+            "sha256": "31ea6773b3748aa6ee96bc6774d5f52a2308dfb9c96bd50caeae39e2c78210be"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-light-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-light-z2--primary/frame-1.png",
+            "sha256": "d57fff2b98f4ab6ae704031e24181422e14858ef099f541357a3506c18722812"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-light-z2--primary/observation.json",
+            "sha256": "ec59bc3d8d7873b339c81ac071727709fb66e1ce28169d4c1a3351f90e80cda8"
+          }
+        },
+        {
+          "case_key": "normal--1000x720-light-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-light-z2--content-end/frame-1.png",
+            "sha256": "f7c433b6bc75fe0b2c285983d240ed7e64a939a774d04dbc02476aa0b36f7e5c"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--1000x720-light-z2--content-end/observation.json",
+            "sha256": "ad813368727177d7fa7820c92ecb15f6ebdf5d1aedf2145782efa868a8dc6da3"
+          }
+        },
+        {
+          "case_key": "normal--760x560-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-dark-z1--primary/frame-1.png",
+            "sha256": "8480b60f642a0b1e2c520b2698a8fd19fac11d6476e9f5237171e4348dc19702"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-dark-z1--primary/observation.json",
+            "sha256": "89c5d52a19a15c0227a7b417aecdef16938ff828a167b22fde3023bd965c8e02"
+          }
+        },
+        {
+          "case_key": "normal--760x560-dark-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-dark-z2--primary/frame-1.png",
+            "sha256": "2c662f301dd7f674bf271707e0cd672243e49901cf55aec6a7db000c2543fdc0"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-dark-z2--primary/observation.json",
+            "sha256": "55aa3fee6915059db8ec2d9e0ab61748be07b356686df601f112aea73a2f6f6a"
+          }
+        },
+        {
+          "case_key": "normal--760x560-dark-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-dark-z2--content-end/frame-1.png",
+            "sha256": "ba23c91002e219dc513c6ce1b40287fb012d88b1ff0667a95bad471ff3c01e90"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-dark-z2--content-end/observation.json",
+            "sha256": "3627a2633e305cc094ec12d3120fda4b9ba2e4088b9b38945fd8e9501055a6ed"
+          }
+        },
+        {
+          "case_key": "normal--760x560-light-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-light-z1--primary/frame-1.png",
+            "sha256": "66758ad8cfbf32229b8437ccb0818946c5b2b94026c6d33d29a4e4ebd1dcd92a"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-light-z1--primary/observation.json",
+            "sha256": "7df646bb1239f10246def6042d381a7cd41c5607ff3daa68890b3d703c34a415"
+          }
+        },
+        {
+          "case_key": "normal--760x560-light-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-light-z2--primary/frame-1.png",
+            "sha256": "d451f7330adde38f16857c6f98e79ef7e08fd352b28e242f5c6fc2fc48fc16d0"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-light-z2--primary/observation.json",
+            "sha256": "2cb6e88d55970d117524efe72a6e44a71817b5b7b33ed544258f182a625ee217"
+          }
+        },
+        {
+          "case_key": "normal--760x560-light-z2--content-end",
+          "case": {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-light-z2--content-end/frame-1.png",
+            "sha256": "0f5b302d068b6a7f1a344d33f85a979be2d33a33e0ddb424dfb9328e84137c45"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/normal--760x560-light-z2--content-end/observation.json",
+            "sha256": "3de8be985fc909e79b9c48350ebcc5ba62e393a8464affda5dcf0d8377a50986"
+          }
+        },
+        {
+          "case_key": "empty--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-empty",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/empty--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "d14f96254959e186be92aa169bdc90bcc53bc0eb4d823265ac695eee10517b46"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/empty--1000x720-dark-z1--primary/observation.json",
+            "sha256": "d42c39bb080cb8679e5674e830082f1910985df92152bed5ababb19caff9bc06"
+          }
+        },
+        {
+          "case_key": "loading--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/loading--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "eb8982e8f5217de6bec90d885931933ffe280856acbf707734fb09e86261e3d8"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/loading--1000x720-dark-z1--primary/observation.json",
+            "sha256": "ab61b4890af600a2590f9b015d0f45290a8082b47ff19054af2d97eda7fa07dc"
+          }
+        },
+        {
+          "case_key": "loading--1000x720-dark-z1--initial",
+          "case": {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "initial",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/loading--1000x720-dark-z1--initial/frame-1.png",
+            "sha256": "fc03284ce5730c07a79f8012694a1abf5d3d9af428eca8fafd94f1072a25ea62"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/loading--1000x720-dark-z1--initial/observation.json",
+            "sha256": "6198ffe9ab1aafe380c34a1077436ab78a91459d9f7e4b148a52484bb4421eef"
+          }
+        },
+        {
+          "case_key": "error--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-error",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/error--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "33d6e2101408daa6be787b65fcdeed7b360f5a7b30b142f5f3fb355ed291dc75"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/error--1000x720-dark-z1--primary/observation.json",
+            "sha256": "21e173e8ca9a8638664b5419a6d9be1e3b72be484273bbbacc983b3238690ae7"
+          }
+        },
+        {
+          "case_key": "disabled--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-disabled",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/disabled--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "219e42a7447a45fe15427594653505193b6a7ebd89bc9eb80326194eeb6d4164"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/disabled--1000x720-dark-z1--primary/observation.json",
+            "sha256": "365a4267e38c88e9b79f0561c1018a0e90b40f9c1818f43b52fb9b769a69d550"
+          }
+        },
+        {
+          "case_key": "long-text--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-long-text",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/long-text--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "68a2b73447644f0ece0ff25c7a0fc584f8e3ca1b6b90283c308fa9385edbba59"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/long-text--1000x720-dark-z1--primary/observation.json",
+            "sha256": "4ae2a5c4d7d096c5aea88ea7b4f4656a3ef56e7a4e40e5da1666e0eda421deed"
+          }
+        },
+        {
+          "case_key": "light--1000x720-light-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-light",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/light--1000x720-light-z1--primary/frame-1.png",
+            "sha256": "6ad80b5a2ed1970f8eb323240048d05df3d11c5adda993f4f28cd5748d74b046"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/light--1000x720-light-z1--primary/observation.json",
+            "sha256": "561ff974b2e846b388abbd2a2f12ef40da68e55c6ef1b66f25002927da2915ab"
+          }
+        },
+        {
+          "case_key": "narrow--760x560-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-narrow",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/narrow--760x560-dark-z1--primary/frame-1.png",
+            "sha256": "8480b60f642a0b1e2c520b2698a8fd19fac11d6476e9f5237171e4348dc19702"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/narrow--760x560-dark-z1--primary/observation.json",
+            "sha256": "81fa557c189b3bc56a0c31b93f2172beab51064918a9914bc999648774ba45d3"
+          }
+        },
+        {
+          "case_key": "zoom-200--1000x720-dark-z2--primary",
+          "case": {
+            "state_id": "all-page-settings-general-zoom-200",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/zoom-200--1000x720-dark-z2--primary/frame-1.png",
+            "sha256": "5fbdeb528117c00840404386d9548b5b3b1fe92c681f795e12f36672ebd7d911"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/zoom-200--1000x720-dark-z2--primary/observation.json",
+            "sha256": "1edba8c15d940a422083057837f619a8c005c1fe86e330002d627af79b881343"
+          }
+        },
+        {
+          "case_key": "keyboard-focus-escape--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/keyboard-focus-escape--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "d14f96254959e186be92aa169bdc90bcc53bc0eb4d823265ac695eee10517b46"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/keyboard-focus-escape--1000x720-dark-z1--primary/observation.json",
+            "sha256": "9ff1447824ecd73b9d313709ff8532287ac0e6af81312f8effafb736b6f248ef"
+          }
+        },
+        {
+          "case_key": "keyboard-focus-escape--1000x720-dark-z1--menu-open",
+          "case": {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "menu-open",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/keyboard-focus-escape--1000x720-dark-z1--menu-open/frame-1.png",
+            "sha256": "120c2adb8404e6458d3c52626bef5e03690e66e26729d8004ed6a9527fb09692"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/keyboard-focus-escape--1000x720-dark-z1--menu-open/observation.json",
+            "sha256": "ed5fd2b46e575116a8b5d1c71e2580d84fab89e599db4fc84f223a6413bba5bd"
+          }
+        },
+        {
+          "case_key": "scope-global--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-scope-global",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/scope-global--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "d14f96254959e186be92aa169bdc90bcc53bc0eb4d823265ac695eee10517b46"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/scope-global--1000x720-dark-z1--primary/observation.json",
+            "sha256": "5a4848e2d736218a5ddefa6f3de977884fcdc84c053c85d1ec562ca8531b6446"
+          }
+        },
+        {
+          "case_key": "scope-game--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-scope-game",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/scope-game--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "b71aa3751aae7ca345d556d4281e301dae8ac56b995902d325eacb1812179177"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/scope-game--1000x720-dark-z1--primary/observation.json",
+            "sha256": "397ad3a4e3c62c48bde57c5106daa8f94268a234f61490070851ff0dc8c9dff9"
+          }
+        },
+        {
+          "case_key": "restore-inheritance--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-restore-inheritance",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/restore-inheritance--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "d9b99f4f0f246fd9b8e2f3bfc46a4108890c9c3899fdc8bc1c74312ba3ea0460"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/restore-inheritance--1000x720-dark-z1--primary/observation.json",
+            "sha256": "94343257dd7aa46aea4683f018be97f26b86e9ff8d2afb1e932f1503dd3c5dcd"
+          }
+        },
+        {
+          "case_key": "save-failed--1000x720-dark-z1--primary",
+          "case": {
+            "state_id": "all-page-settings-general-save-failed",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          "layer": "packaged_native",
+          "capture_scope": "whole_client",
+          "renderer": "signed-package-isolated-WKWebView",
+          "png": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/save-failed--1000x720-dark-z1--primary/frame-1.png",
+            "sha256": "cfafdf5bc5b9bfb209b7e3fe54e5b42a0da2d30edd326a0d3820534f8ae18e5e"
+          },
+          "facts": {
+            "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/save-failed--1000x720-dark-z1--primary/observation.json",
+            "sha256": "a346d0a84473baae8699f134248df20cfc524627e9c55b02f2e32addc9300435"
+          }
+        }
+      ],
+      "environment": {
+        "kind": "general-native-capture-environment/v1",
+        "primary": {
+          "backing_scale": {
+            "x": 2.0,
+            "y": 2.0
+          },
+          "bounds": {
+            "height": 956,
+            "width": 1470,
+            "x": 0,
+            "y": 0
+          },
+          "color_space": {
+            "components": 3,
+            "icc": {
+              "bytes": 4076,
+              "sha256": "04ea950ea0522e9a484fdf9e6c670316c14729c1710ae1988fc6f5f6097f30d7"
+            },
+            "model": 1,
+            "name": ""
+          },
+          "display_id": 1,
+          "is_builtin": true,
+          "mode": {
+            "height": 956,
+            "io_flags": 7,
+            "pixel_height": 1912,
+            "pixel_width": 2940,
+            "refresh_rate": 60,
+            "width": 1470
+          },
+          "model": 41059,
+          "rotation_degrees": 0,
+          "serial": 4251086178,
+          "uuid": "37D8832A-2D66-02CA-B9F7-8F30A301B230",
+          "vendor": 1552
+        }
+      },
+      "environment_sha256": "8f618de5eb437b0215a9f5c9df0fe0ceac0d7b7256b18eebf1a39d651a3b5f83",
+      "environment_lock": {
+        "path": ".build/general-visual-closure-20261108/phase-2/references/packaged-native-source-v4/.native-display-environment-lock.json",
+        "sha256": "dcace57d06117a07886c1d6e4731f8af4d6c3dcbed526a961efc8ffd40db6a37"
+      }
+    }
+  }
+}

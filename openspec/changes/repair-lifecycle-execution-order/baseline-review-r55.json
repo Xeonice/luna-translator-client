@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-lifecycle-execution-order",
+  "parent_baseline_sha256": "dfb34a92cf2e1ad58eb13a6365ef88177a8f99701f596b96825a8ff38190751f",
+  "exact_delta_sha256": "ea6e1dcdd0eca641a7ce0c6303624d8fb5959a3f9cdfd94ecc73fe0553b3a928",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/execution-order-fix/independent-code-review.json",
+    "sha256": "07876637391bca4de1eee9469293c807036469cd648fe0423339dbc3a2ce7aa6",
+    "bytes": 8530
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

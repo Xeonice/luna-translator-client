@@ -1,0 +1,54 @@
+{
+  "kind": "R31_explicit_product_override_authority_reconciliation",
+  "status": "candidate_waiting_independent_review",
+  "at": "2026-10-20T18:48:06.072333+00:00",
+  "parent_baseline": {
+    "id": "FP1-20261021-R30",
+    "sha256": "a6cd5a0f387ec9a9e2e235c5e145375e2b60317425742b2709b2012c3ca2ff4d",
+    "entries": 737
+  },
+  "root_source_freeze": {
+    "path": ".build/hook-lexical-retest-20261021-010406/source-freeze/pre-governance-source-map-v4.json",
+    "source_tree_sha256": "eb82da602b727411a4289a096d9565afc98cc0f375f41d177481faf1732327b5"
+  },
+  "explicit_user_choices": [
+    "自动读取本机封面，无图时自动保存首张游戏画面",
+    "客户端只连接已经运行的游戏"
+  ],
+  "source_snapshot_preserved": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/source-snapshot.json",
+    "sha256": "2c5b56d02503879bc31c81c2a77164fafc2eb70c21bb32cf381cb3aceeafe33b"
+  },
+  "evidence_mapping_count": 206,
+  "semantic_record_ids": [
+    "M01",
+    "M02",
+    "M10",
+    "M12",
+    "M13",
+    "M15",
+    "C11",
+    "C13",
+    "C14",
+    "C15",
+    "C35",
+    "C36",
+    "FP-02",
+    "FP-03",
+    "FP-05",
+    "FP-09",
+    "FP-12",
+    "CAP-PREVIEW",
+    "CAP-SESSION-UI",
+    "CAP-HOOK-LOG"
+  ],
+  "only_changed_source_evidence_refreshed": true,
+  "history_runtime_approvals_and_thresholds_preserved": true,
+  "guard_checks_frameworks_dependencies_or_DDL_weakened": false,
+  "product_acceptance_promoted": false,
+  "root_exact_candidate_authorization": {
+    "path": ".build/hook-lexical-retest-20261021-010406/governance-reconciliation/root-candidate-scope-authorization.json",
+    "sha256": "d7cf72435fda16838d10b9b9182e865cb5c08e1812dad409d44ca8bf233c591d"
+  },
+  "review_state": "waiting_independent_repair_independent_review"
+}

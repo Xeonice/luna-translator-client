@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261021-R30",
+  "parent": "FP1-20261020-R29",
+  "parent_sha256": "032ece60b1e04ee27026c2d44a91abd80e06b3bf53f3b3b096fb86a8ed6ca012",
+  "at": "2026-10-20T16:27:24.018937+00:00",
+  "status": "independently_reviewed_root_authorized_authority_only",
+  "reason": "R30仅把已审生产language-worker的实际hash同步到冻结status的单一间接闭包pin；不改guard/产品/其他447或状态，不继承中断08通过。",
+  "review_state": {
+    "governance_review": {
+      "status": "accepted",
+      "reference": {
+        "path": ".build/next-batch-20261020/generated-worker-closure-r30/independent-review/review.json",
+        "sha256": "d49072e53749b0151d7ee93f7e3c81e8b07c94adaa0148b9485135bc1363e60e"
+      }
+    },
+    "root_adoption": {
+      "status": "authorized_authority_only",
+      "reference": {
+        "path": ".build/next-batch-20261020/generated-worker-closure-r30/root-authority-only-authorization.json",
+        "sha256": "9b622ed73df6a31953886853530702d41295689410eafad974b91788c7a79d73"
+      }
+    }
+  },
+  "exact_delta_review": {
+    "path": "openspec/changes/implement-reviewed-reading-session-batch/exact-delta-review-r30.json",
+    "sha256": "1620660503d038f1096a0df159a0e579c2c1701280955d1146e030e81a1f8a88",
+    "bytes": 3450
+  },
+  "R29_archive_byte_exact": true,
+  "no_product_acceptance_promoted": true,
+  "finalized_at": "2026-10-20T16:33:37.915133+00:00"
+}

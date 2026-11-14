@@ -1,0 +1,2333 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-translation-current-status",
+  "parent_baseline_sha256": "4f058649e28a97230ad7732fd2a53858b32f81c8f8463502bde3ad90a82ef29a",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/queries.rs",
+      "before": "c498112f400acd3d8159ee3cff5b6eac39c8a93bbf0d76be54df985f9391d3f2",
+      "after": "514585a76da117fd3ddde42677b06b885956d488b7da9b40ed520d61196d2314"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "before": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a",
+      "after": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+    },
+    {
+      "path": "apps/desktop/src/bridge/application-port.ts",
+      "before": "5cd4eea8585dce1c2c33a6a84f046127312a602961f92872fb434f04f5b4b8e6",
+      "after": "24aa6d9a61118562729f69c3e60fc6bcf4604a84dec7fc8bff2a8d5a1780dd83"
+    },
+    {
+      "path": "apps/desktop/src/bridge/contracts.generated.ts",
+      "before": "a753ee80c07b5c210189b8159d9674ab7e8e4ca2371faf6371c782c28f373e16",
+      "after": "b5231e614749315075ddadcc6bc2f7039f6e6a430e78684be40c50bcffed8656"
+    },
+    {
+      "path": "apps/desktop/src/bridge/tauri-port.ts",
+      "before": "69950f8d16a3c4322e3acf248b6855446d5f9071ff74d84594a2eb6f3fdcbf5e",
+      "after": "e982c312f9b99a054b83f02acf0dde5eedc0a6a6f06f116f90c2b120903bd035"
+    },
+    {
+      "path": "apps/desktop/src/features/history/HistoryScreen.tsx",
+      "before": "1a50663b525ed57be046ea560f9018b63bbf31f4265fe49f48ed5696e78ac25a",
+      "after": "f8b86d73dfd2ccf487142614b960eb05f7770629c4c62c95e08bd122ce118b39"
+    },
+    {
+      "path": "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+      "before": "ac075d88f8a545d83b7775ce6b20b0c9b0434fe65ee484076059056a67f561c6",
+      "after": "0f0ffc67fa09319dda0e6efc248d2f33de7944cb72a7c70b6c78d109dd24d2d7"
+    },
+    {
+      "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+      "before": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051",
+      "after": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+    },
+    {
+      "path": "apps/desktop/src/features/reading/useReadingUnitProjection.ts",
+      "before": null,
+      "after": "ed0570421404f4e79d7deb0ece091d29ba7c9c2f9ac306153bddd9230cc9883b"
+    },
+    {
+      "path": "apps/desktop/src/windows/main/MainWindow.tsx",
+      "before": "589b80674d82eda69a0adca1df9bd541c6a390a4f54d1df77eff8f1250d725c5",
+      "after": "e469cdc235dae148956d15e6fbd8383f155446b3a2b3d7dca298eb676d46898b"
+    },
+    {
+      "path": "apps/desktop/tests/support/design-port.ts",
+      "before": "0171aa929e9909ab795ed7cf8b4179f8e7a3d946f2acb079dcbf15fe8bb31cb3",
+      "after": "19f01f701b3859c08876fde9cb4c85bdf93065cff8a8237b94aea3ff3213508b"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "before": "ba6440448913d47e8f4479dd9dbc1f714605b3f2f77298176653f07c18630be0",
+      "after": "bff8789d8a8414158afb007060bec517b46b3bf8815ab638a2d601d7f6ea12c0"
+    },
+    {
+      "path": "crates/app-core/src/application/runtime.rs",
+      "before": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030",
+      "after": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+    },
+    {
+      "path": "crates/app-core/src/contracts/desktop.rs",
+      "before": "949830f8db428e4b192c2d4a6d0bb1194b66c4658b9ed8b34a161a682374a4a2",
+      "after": "64486b48785ca3b34d2eeedd13e80d092be666a5e8deb805b7531cda97fb523d"
+    },
+    {
+      "path": "crates/app-core/src/domain/mod.rs",
+      "before": "62e53b12b89021d77c81333faff3e2ce6ad41b2d00aa75250b95d9cd5a0604d8",
+      "after": "20c0936b1dabcf4ee1db29f6099f801c1ea9add14b164149b0c5b9c3a2d70495"
+    },
+    {
+      "path": "crates/app-core/src/domain/translation_status.rs",
+      "before": null,
+      "after": "2c10029d4eb29c9fc6f6c4f613cebdb8bcfbff5a4fc6a15a51c2e9366c595659"
+    },
+    {
+      "path": "crates/app-core/src/ports/mod.rs",
+      "before": "bc38709bb6a7df0a8affa0e5a437accc66766bf0b9743b3b3d9c0e49c5761740",
+      "after": "394b6e84bf3a41b59aa23af5f241bdee0ec167f9ceef8239805a5ce110634500"
+    },
+    {
+      "path": "crates/app-infra/src/storage/database.rs",
+      "before": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069",
+      "after": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/mod.rs",
+      "before": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970",
+      "after": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/tasks.rs",
+      "before": "11c1711f3eb700a3836b7ec547ac3d46b611737d47d36b0f994499a1e26278e6",
+      "after": "d1d74ff392401e1e06254f8c929beb860ca91bc03e699ef2158b076f61a7b349"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/translation_status.rs",
+      "before": null,
+      "after": "6c11c8c6fcaeae54129895e758aec92e52510ac29977aa30116ae8c7cf92c1fe"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "before": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113",
+      "after": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+    },
+    {
+      "path": "crates/app-infra/tests/configuration_lifecycle.rs",
+      "before": "ec9b889b5b66a87cfac381e16f8038c2d574b8de4bbaf4eeeeb7a469df144136",
+      "after": "8f5fc1176a79927607dd13be3f35863e18cf01c4d8e171aaecb875eaa7692e47"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+      "before": "bd3113d2f74f8a9a8417b246441ceae36840246a58b360ba7cc85d0c6bb03947",
+      "after": "6b0d9a2e7304b5b34d5eee2ebd6174230ac894285a294ae4c1b83faa9aac1ef6"
+    },
+    {
+      "path": "crates/app-infra/tests/translation_current_status.rs",
+      "before": null,
+      "after": "79f53e95def0ba29cd55373d33c2f08a7fe042ad49b0233e228bc532ca5d2134"
+    },
+    {
+      "path": "docs/architecture/database/v2/storage-acceptance.json",
+      "before": "0ec5c81740d61b0ccc4825c8010ae75f055f75f0be9fae29d5589c04b74b6881",
+      "after": "1ca95fec54ecb1af2f4f2a0791010605604bc5662a354e9ad1f2036bacc7de70"
+    },
+    {
+      "path": "docs/architecture/database/v2/storage-review.json",
+      "before": "6e320379ce25fb3c77e7aef61f8e42cd9750474490330178b2c3e2c2f44a298f",
+      "after": "e0b37a166e9f74e5d493fc4f3c45f8c28f5da55f0fec6cccacce251a95335484"
+    },
+    {
+      "path": "docs/development/lifecycle-impact-contract.json",
+      "before": "c20a262c069d4faa0f46fdf54147cb415ecc97af620d8bce2cc3e5875c337117",
+      "after": "937b68559b89c5560af4220cb50b828d122d04f7f7f116b91209434824cf61cf"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/design.md",
+      "before": null,
+      "after": "16cb2970e1e27e5313b2b64e97c239e3a9de15ef7e521f7a47de2c0a69859c20"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/iteration-card.md",
+      "before": null,
+      "after": "b12f436d1d61e11145ebde8c7131c68d20f74c1853e4aa66e01813b27bbccefb"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/proposal.md",
+      "before": null,
+      "after": "1d7a0010034efe7315f1346817533b75a9ad091f86bd63c01684ebad7254b841"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/source-snapshot.json",
+      "before": null,
+      "after": "65e807d88319e7979df7c54bfaf4b4e382be95d99599d2756a60a6df84d21dc0"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/specs/final-cohort-registration/spec.md",
+      "before": null,
+      "after": "0f19222bcf5ca1bf6c85e0f6872f410bf0fb1db0d42e968646da1c118bf7fc01"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/specs/translation-current-status/spec.md",
+      "before": null,
+      "after": "1832d9c0455adebfa9559b32c30c04454653500bd32bfdd941727bb5770ea1c7"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/tasks.md",
+      "before": null,
+      "after": "f268c1b51648788009a8e02fa8558514c07acab74ab6fc066077a10fa520f2ef"
+    },
+    {
+      "path": "openspec/changes/repair-translation-current-status/verification.json",
+      "before": null,
+      "after": "2d7c7516abc721878ce04369a63a92d420c313062c2ded408ea8a787c49f72d8"
+    },
+    {
+      "path": "scripts/quality/reading_components.py",
+      "before": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683",
+      "after": "d6ba6e9b043fbac11ff6e56a80725bf61f09c18a9e3d2e52da2d198e5f8cef73"
+    },
+    {
+      "path": "scripts/quality/test_lifecycle_impact.py",
+      "before": "d22d6ecd4e2a2786d20de3ae71ecb1ad74aa23680b968d74d1cd2e90119ff452",
+      "after": "caf723721705bbb72dbcc70074963a2859ac8790b874c69c5d34af2a8e4415b2"
+    },
+    {
+      "path": "scripts/quality/test_reading_components.py",
+      "before": "67c9e7b7a893db6ec4406b62764b3d0030b1bcb45d70dbebd5d057dbca1493bb",
+      "after": "094fb3c465fa7dc2341bbc65fb74e67d854a09b5cb6af1e2eab5217b2a521b67"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/ipc/queries.rs",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/contracts.generated.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/src/features/history/HistoryScreen.tsx",
+    "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/features/reading/useReadingUnitProjection.ts",
+    "apps/desktop/src/windows/main/MainWindow.tsx",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "crates/app-core/src/application/runtime.rs",
+    "crates/app-core/src/contracts/desktop.rs",
+    "crates/app-core/src/domain/mod.rs",
+    "crates/app-core/src/domain/translation_status.rs",
+    "crates/app-core/src/ports/mod.rs",
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/src/storage/queries/mod.rs",
+    "crates/app-infra/src/storage/queries/tasks.rs",
+    "crates/app-infra/src/storage/queries/translation_status.rs",
+    "crates/app-infra/tests/application_runtime.rs",
+    "crates/app-infra/tests/configuration_lifecycle.rs",
+    "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+    "crates/app-infra/tests/translation_current_status.rs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/translation-current-status-r63/code-review04/review.json",
+    "sha256": "8b59c3ccab505f308bbf2753d79ec1320340e374201b02402d108ef038937b7d",
+    "bytes": 21071
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M01",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 189,
+        "quote": "fn save_game(",
+        "symbol": "save_game / dispatch SaveGame / SaveGames / ArchiveGame",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 191,
+        "quote": "fn save_game(",
+        "symbol": "save_game / dispatch SaveGame / SaveGames / ArchiveGame",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M01",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 569,
+        "quote": "pub fn launch_game(&self, game_id: &str, row_revision: u32) -> AppResult<()> {",
+        "symbol": "ApplicationRuntime::launch_game",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 602,
+        "quote": "pub fn launch_game(&self, game_id: &str, row_revision: u32) -> AppResult<()> {",
+        "symbol": "ApplicationRuntime::launch_game",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 495,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 522,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 380,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 388,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1030,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1032,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M05",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/tasks.rs",
+        "line": 126,
+        "quote": "fn prepare_tasks_with_selection(",
+        "symbol": "prepare_tasks_with_selection / complete_task / validate_task_authority",
+        "sha256": "11c1711f3eb700a3836b7ec547ac3d46b611737d47d36b0f994499a1e26278e6"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/tasks.rs",
+        "line": 132,
+        "quote": "fn prepare_tasks_with_selection(",
+        "symbol": "prepare_tasks_with_selection / complete_task / validate_task_authority",
+        "sha256": "d1d74ff392401e1e06254f8c929beb860ca91bc03e699ef2158b076f61a7b349"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M07",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1046,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1135,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M08",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1463,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1586,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M09",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1463,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1586,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M09",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/tasks.rs",
+        "line": 126,
+        "quote": "fn prepare_tasks_with_selection(",
+        "symbol": "prepare_tasks_with_selection / complete_task / validate_task_authority",
+        "sha256": "11c1711f3eb700a3836b7ec547ac3d46b611737d47d36b0f994499a1e26278e6"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/tasks.rs",
+        "line": 132,
+        "quote": "fn prepare_tasks_with_selection(",
+        "symbol": "prepare_tasks_with_selection / complete_task / validate_task_authority",
+        "sha256": "d1d74ff392401e1e06254f8c929beb860ca91bc03e699ef2158b076f61a7b349"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 815,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 817,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 290,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 292,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 461,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 463,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 153,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1030,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1032,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M11",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 815,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 817,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M11",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 290,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 292,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M11",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 461,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 463,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 263,
+        "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+        "symbol": "single asynchronous quit lifecycle gate",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 264,
+        "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+        "symbol": "single asynchronous quit lifecycle gate",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 153,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1046,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1135,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1030,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1032,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 16,
+        "quote": "CHECK_ID = 'product-reading-component-tests'",
+        "symbol": "CHECK_ID =",
+        "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+      },
+      "after": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 16,
+        "quote": "CHECK_ID = 'product-reading-component-tests'",
+        "symbol": "CHECK_ID =",
+        "sha256": "d6ba6e9b043fbac11ff6e56a80725bf61f09c18a9e3d2e52da2d198e5f8cef73"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 149,
+        "quote": "FIXTURE_COMMAND = ['cargo', 'test', '--locked', '--offline', '-p', 'app-infra',",
+        "symbol": "fixed actual Rust/SQLite producer before Node",
+        "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+      },
+      "after": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 159,
+        "quote": "FIXTURE_COMMAND = ['cargo', 'test', '--locked', '--offline', '-p', 'app-infra',",
+        "symbol": "fixed actual Rust/SQLite producer before Node",
+        "sha256": "d6ba6e9b043fbac11ff6e56a80725bf61f09c18a9e3d2e52da2d198e5f8cef73"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 124,
+        "quote": "'RBC-38-body-retranslation-and-correction-refresh-only-matching-history-object',",
+        "symbol": "six new independently required row-content obligations; no receipt-derived inventory",
+        "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+      },
+      "after": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 124,
+        "quote": "'RBC-38-body-retranslation-and-correction-refresh-only-matching-history-object',",
+        "symbol": "six new independently required row-content obligations; no receipt-derived inventory",
+        "sha256": "d6ba6e9b043fbac11ff6e56a80725bf61f09c18a9e3d2e52da2d198e5f8cef73"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1547,
+        "quote": "async fn frozen_capture_timer_barrier(clock: &Clock) {",
+        "symbol": "Real runtime timer barrier without logical clock advance",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1611,
+        "quote": "async fn frozen_capture_timer_barrier(clock: &Clock) {",
+        "symbol": "Real runtime timer barrier without logical clock advance",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1560,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1624,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+        "line": 1624,
+        "quote": "\"processing_snapshot_json\",",
+        "symbol": "Independent field producer literal expectation follows V3; no DDL change",
+        "sha256": "bd3113d2f74f8a9a8417b246441ceae36840246a58b360ba7cc85d0c6bb03947"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+        "line": 1633,
+        "quote": "\"processing_snapshot_json\",",
+        "symbol": "Independent field producer literal expectation follows V3; no DDL change",
+        "sha256": "6b0d9a2e7304b5b34d5eee2ebd6174230ac894285a294ae4c1b83faa9aac1ef6"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1649,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1713,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1740,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1804,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M16",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1645,
+        "quote": "pub fn store_credential(&self, mut input: CredentialInput) -> AppResult<CredentialReference> {",
+        "symbol": "store_credential / revoke_credential / recover_credentials",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1769,
+        "quote": "pub fn store_credential(&self, mut input: CredentialInput) -> AppResult<CredentialReference> {",
+        "symbol": "store_credential / revoke_credential / recover_credentials",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C09",
+      "before": {
+        "path": "apps/desktop/src/windows/main/MainWindow.tsx",
+        "line": 44,
+        "quote": "return <WindowFrame title=\"Luna\" tools={<div className={styles.windowTools}><Button icon=\"settings\" intent=\"quiet\" label=\"打开设置\" onPress={() => void action.run(() => store.port.openWindow('settings'))}/></div>}>{snapshot ? <div className={styles.layout}><aside className={styles.sidebar}><nav aria-label=\"主导航\">{['游戏', '文本', '工具'].map(group => <section key={group}><h2>{group}</h2>{group === '工具' ? <button onClick={() => void action.run(() => store.port.openWindow('settings'))}><Icon name=\"settings\"/><span>设置</span></button> : null}{mainNavigation.filter(item => item.group === group).map(item => <button key={item.id} className={page === item.id ? styles.selected : ''} onClick={() => setPage(item.id)} aria-current={page === item.id ? 'page' : undefined}><Icon name={item.icon}/><span>{item.label}</span>{item.id === 'session' && captureState.live ? <i className={styles.sessionDot}/> : null}</button>)}</section>)}</nav><div className={styles.sidebarFooter}>{snapshot.session ? <><strong>{sessionTitle}</strong><small>{captureState.label}</small></> : <span>原文 · 翻译 · 理解</span>}</div></aside><main className={styles.content}>{error || action.error || navigationError ? <div className={styles.syncError}><Notice error>{navigationError ?? action.error ?? error}</Notice></div> : null}<div className={styles.featurePanel} hidden={page !== 'library'}><LibraryScreen active={page === 'library'} snapshot={snapshot} store={store} onConnect={connect} onActivate={() => setPage('library')}/></div><div className={styles.featurePanel} hidden={page !== 'session'}><ReadingPanel active={page === 'session'} snapshot={snapshot} store={store} onConnect={() => connect(null)} onStreams={() => setCapture({ game: snapshot.games.find(game => game.gameId === snapshot.session?.gameId) ?? null, mode: 'streams', instance: crypto.randomUUID() })}/></div><div className={styles.featurePanel} hidden={page !== 'history'}><HistoryScreen snapshot={snapshot} store={store} active={page === 'history'}/></div><div className={styles.featurePanel} hidden={page !== 'manual'}><ManualInputScreen snapshot={snapshot} store={store}/></div><div className={styles.featurePanel} hidden={page !== 'diagnostics'}><DiagnosticsScreen snapshot={snapshot} store={store}/></div></main><CaptureSheet key={capture?.instance ?? 'closed'} game={capture?.game ?? null} mode={capture?.mode ?? 'target'} onRead={() => setPage('session')} snapshot={snapshot} store={store} open={capture !== null} onClose={() => setCapture(null)}/></div> : <WindowLoading error={error} onRetry={() => void store.refresh()}/>}</WindowFrame>;",
+        "symbol": "captureState.live",
+        "sha256": "589b80674d82eda69a0adca1df9bd541c6a390a4f54d1df77eff8f1250d725c5"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/main/MainWindow.tsx",
+        "line": 44,
+        "quote": "return <WindowFrame title=\"Luna\" tools={<div className={styles.windowTools}><Button icon=\"settings\" intent=\"quiet\" label=\"打开设置\" onPress={() => void action.run(() => store.port.openWindow('settings'))}/></div>}>{snapshot ? <div className={styles.layout}><aside className={styles.sidebar}><nav aria-label=\"主导航\">{['游戏', '文本', '工具'].map(group => <section key={group}><h2>{group}</h2>{group === '工具' ? <button onClick={() => void action.run(() => store.port.openWindow('settings'))}><Icon name=\"settings\"/><span>设置</span></button> : null}{mainNavigation.filter(item => item.group === group).map(item => <button key={item.id} className={page === item.id ? styles.selected : ''} onClick={() => setPage(item.id)} aria-current={page === item.id ? 'page' : undefined}><Icon name={item.icon}/><span>{item.label}</span>{item.id === 'session' && captureState.live ? <i className={styles.sessionDot}/> : null}</button>)}</section>)}</nav><div className={styles.sidebarFooter}>{snapshot.session ? <><strong>{sessionTitle}</strong><small>{captureState.label}</small></> : <span>原文 · 翻译 · 理解</span>}</div></aside><main className={styles.content}>{error || action.error || navigationError ? <div className={styles.syncError}><Notice error>{navigationError ?? action.error ?? error}</Notice></div> : null}<div className={styles.featurePanel} hidden={page !== 'library'}><LibraryScreen active={page === 'library'} snapshot={snapshot} store={store} onConnect={connect} onActivate={() => setPage('library')}/></div><div className={styles.featurePanel} hidden={page !== 'session'}><ReadingPanel active={page === 'session'} snapshot={snapshot} store={store} onConnect={() => connect(null)} onStreams={() => setCapture({ game: snapshot.games.find(game => game.gameId === snapshot.session?.gameId) ?? null, mode: 'streams', instance: crypto.randomUUID() })}/></div><div className={styles.featurePanel} hidden={page !== 'history'}><HistoryScreen snapshot={snapshot} store={store} active={page === 'history'}/></div><div className={styles.featurePanel} hidden={page !== 'manual'}><ManualInputScreen snapshot={snapshot} store={store} active={page === 'manual'}/></div><div className={styles.featurePanel} hidden={page !== 'diagnostics'}><DiagnosticsScreen snapshot={snapshot} store={store}/></div></main><CaptureSheet key={capture?.instance ?? 'closed'} game={capture?.game ?? null} mode={capture?.mode ?? 'target'} onRead={() => setPage('session')} snapshot={snapshot} store={store} open={capture !== null} onClose={() => setCapture(null)}/></div> : <WindowLoading error={error} onRetry={() => void store.refresh()}/>}</WindowFrame>;",
+        "symbol": "captureState.live",
+        "sha256": "e469cdc235dae148956d15e6fbd8383f155446b3a2b3d7dca298eb676d46898b"
+      },
+      "explicit_reason": "同一MainWindow return行；唯一变更为ManualInputScreen增加active={page === manual}。导航/设置/live圆点原语义不变；validator要求完整行quote，因此保留该行而不任意换引用。"
+    },
+    {
+      "group": "components",
+      "id": "C10",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 176,
+        "quote": "if let tauri::WindowEvent::CloseRequested { api, .. } = event {",
+        "symbol": "CloseRequested -> prevent_close + hide",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 176,
+        "quote": "if let tauri::WindowEvent::CloseRequested { api, .. } = event {",
+        "symbol": "CloseRequested -> prevent_close + hide",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C16",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1046,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1135,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C17",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 16,
+        "quote": "export function TranslationStack({ unit, fontPt, compact = false }: { unit: ReadingUnit; fontPt: number; compact?: boolean }) {",
+        "symbol": "TranslationStack",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 18,
+        "quote": "export function TranslationStack({ unit, fontPt, compact = false }: { unit: ReadingUnit; fontPt: number; compact?: boolean }) {",
+        "symbol": "TranslationStack",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C17",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 180,
+        "quote": "export function TranslationTaskStates({ snapshot, unit, store }: { snapshot: AppSnapshot; unit: ReadingUnit; store: ApplicationStore }) {",
+        "symbol": "TranslationTaskStates",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 191,
+        "quote": "export function TranslationTaskStates({ snapshot, unit, store, active = true }: { snapshot: AppSnapshot; unit: ReadingUnit; store: ApplicationStore; active?: boolean }) {",
+        "symbol": "TranslationTaskStates",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      },
+      "explicit_reason": "原TranslationTaskStates具名组件仍在；签名增加active可见性参数，并以独立对象projection代替全局tasks决定当前状态。窄映射到同名组件新签名。"
+    },
+    {
+      "group": "components",
+      "id": "C23",
+      "before": {
+        "path": "apps/desktop/src/features/history/HistoryScreen.tsx",
+        "line": 21,
+        "quote": "export function HistoryScreen({ snapshot, store, active = true }: { snapshot: AppSnapshot; store: ApplicationStore; active?: boolean }) {",
+        "symbol": "export function HistoryScreen",
+        "sha256": "1a50663b525ed57be046ea560f9018b63bbf31f4265fe49f48ed5696e78ac25a"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/history/HistoryScreen.tsx",
+        "line": 21,
+        "quote": "export function HistoryScreen({ snapshot, store, active = true }: { snapshot: AppSnapshot; store: ApplicationStore; active?: boolean }) {",
+        "symbol": "export function HistoryScreen",
+        "sha256": "f8b86d73dfd2ccf487142614b960eb05f7770629c4c62c95e08bd122ce118b39"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C24",
+      "before": {
+        "path": "apps/desktop/src/features/history/HistoryScreen.tsx",
+        "line": 12,
+        "quote": "function CorrectionEditor({ translation, store, onClose }: { translation: Translation; store: ApplicationStore; onClose: () => void }) {",
+        "symbol": "CorrectionEditor",
+        "sha256": "1a50663b525ed57be046ea560f9018b63bbf31f4265fe49f48ed5696e78ac25a"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/history/HistoryScreen.tsx",
+        "line": 12,
+        "quote": "function CorrectionEditor({ translation, store, onClose }: { translation: Translation; store: ApplicationStore; onClose: () => void }) {",
+        "symbol": "CorrectionEditor",
+        "sha256": "f8b86d73dfd2ccf487142614b960eb05f7770629c4c62c95e08bd122ce118b39"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C25",
+      "before": {
+        "path": "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+        "line": 10,
+        "quote": "export function ManualInputScreen({ snapshot, store }: { snapshot: AppSnapshot; store: ApplicationStore }) {",
+        "symbol": "ManualInputScreen",
+        "sha256": "ac075d88f8a545d83b7775ce6b20b0c9b0434fe65ee484076059056a67f561c6"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+        "line": 10,
+        "quote": "export function ManualInputScreen({ snapshot, store, active = true }: { snapshot: AppSnapshot; store: ApplicationStore; active?: boolean }) {",
+        "symbol": "ManualInputScreen",
+        "sha256": "0f0ffc67fa09319dda0e6efc248d2f33de7944cb72a7c70b6c78d109dd24d2d7"
+      },
+      "explicit_reason": "原ManualInputScreen具名入口仍在；签名增加默认true的active可选参数，传给共享ReadingContent。窄映射到同名同位置签名。"
+    },
+    {
+      "group": "components",
+      "id": "C31",
+      "before": {
+        "path": "apps/desktop/src/bridge/application-port.ts",
+        "line": 4,
+        "quote": "export interface ApplicationPort {",
+        "symbol": "ApplicationPort no config import/export",
+        "sha256": "5cd4eea8585dce1c2c33a6a84f046127312a602961f92872fb434f04f5b4b8e6"
+      },
+      "after": {
+        "path": "apps/desktop/src/bridge/application-port.ts",
+        "line": 4,
+        "quote": "export interface ApplicationPort {",
+        "symbol": "ApplicationPort no config import/export",
+        "sha256": "24aa6d9a61118562729f69c3e60fc6bcf4604a84dec7fc8bff2a8d5a1780dd83"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C32",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 815,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 817,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C32",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 290,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 292,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C32",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 461,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 463,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 263,
+        "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+        "symbol": "single asynchronous quit lifecycle gate",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 264,
+        "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+        "symbol": "single asynchronous quit lifecycle gate",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C36",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 153,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 263,
+        "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+        "symbol": "single asynchronous quit lifecycle gate",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 264,
+        "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+        "symbol": "single asynchronous quit lifecycle gate",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 495,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 522,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1046,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1135,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1030,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 1032,
+        "quote": "let current = if let Some(s) = session",
+        "symbol": "snapshot current exact running Hook session query",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1560,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1624,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1649,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1713,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1740,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1804,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "46ef32db6a9780519dda58c6587f668bb39012e4b531eb9dc5a608bc78f78c8f"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 97,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-06",
+      "before": {
+        "path": "apps/desktop/src/bridge/application-port.ts",
+        "line": 4,
+        "quote": "export interface ApplicationPort {",
+        "symbol": "ApplicationPort no config import/export",
+        "sha256": "5cd4eea8585dce1c2c33a6a84f046127312a602961f92872fb434f04f5b4b8e6"
+      },
+      "after": {
+        "path": "apps/desktop/src/bridge/application-port.ts",
+        "line": 4,
+        "quote": "export interface ApplicationPort {",
+        "symbol": "ApplicationPort no config import/export",
+        "sha256": "24aa6d9a61118562729f69c3e60fc6bcf4604a84dec7fc8bff2a8d5a1780dd83"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-07",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1046,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1135,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-08",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1463,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1586,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-08",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/tasks.rs",
+        "line": 126,
+        "quote": "fn prepare_tasks_with_selection(",
+        "symbol": "prepare_tasks_with_selection / complete_task / validate_task_authority",
+        "sha256": "11c1711f3eb700a3836b7ec547ac3d46b611737d47d36b0f994499a1e26278e6"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/tasks.rs",
+        "line": 132,
+        "quote": "fn prepare_tasks_with_selection(",
+        "symbol": "prepare_tasks_with_selection / complete_task / validate_task_authority",
+        "sha256": "d1d74ff392401e1e06254f8c929beb860ca91bc03e699ef2158b076f61a7b349"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-09",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 153,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-09",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 495,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 522,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-09",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 380,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 388,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-09",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-10",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 347,
+        "quote": "Command::ManualInput {",
+        "symbol": "Command::ManualInput",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 349,
+        "quote": "Command::ManualInput {",
+        "symbol": "Command::ManualInput",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-10",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1171,
+        "quote": "async fn process_unit(",
+        "symbol": "ApplicationRuntime::process_unit",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1260,
+        "quote": "async fn process_unit(",
+        "symbol": "ApplicationRuntime::process_unit",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-10",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1463,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1586,
+        "quote": "pub fn freeze_learning(",
+        "symbol": "freeze_learning / study / lookup",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-10",
+      "before": {
+        "path": "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+        "line": 10,
+        "quote": "export function ManualInputScreen({ snapshot, store }: { snapshot: AppSnapshot; store: ApplicationStore }) {",
+        "symbol": "ManualInputScreen",
+        "sha256": "ac075d88f8a545d83b7775ce6b20b0c9b0434fe65ee484076059056a67f561c6"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+        "line": 10,
+        "quote": "export function ManualInputScreen({ snapshot, store, active = true }: { snapshot: AppSnapshot; store: ApplicationStore; active?: boolean }) {",
+        "symbol": "ManualInputScreen",
+        "sha256": "0f0ffc67fa09319dda0e6efc248d2f33de7944cb72a7c70b6c78d109dd24d2d7"
+      },
+      "explicit_reason": "与C25同一来源入口；只补active订阅可见性参数，不改变手动输入创建ReadingUnit、不依赖Hook的既有行为。"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-11",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 815,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 817,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-11",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 290,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 292,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-11",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 461,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 463,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 242,
+        "quote": "async fn stop_capture_pipeline(self: &Arc<Self>) -> AppResult<()> {",
+        "symbol": "async fn stop_capture_pipeline(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 248,
+        "quote": "async fn stop_capture_pipeline(self: &Arc<Self>) -> AppResult<()> {",
+        "symbol": "async fn stop_capture_pipeline(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 380,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 388,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 647,
+        "quote": "fn ingest_hook_text_with_policy(",
+        "symbol": "fn ingest_hook_text_with_policy(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 647,
+        "quote": "fn ingest_hook_text_with_policy(",
+        "symbol": "fn ingest_hook_text_with_policy(",
+        "sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 54,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 103,
+        "quote": "\"show_game\" => {",
+        "symbol": "\"show_game\" =>",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "188675fa4f0ce9708658a16b9b0c7d5337e46d7b5b7600a9dce3ba5adbaa408a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/main.rs",
+        "line": 107,
+        "quote": "let request = match runtime.game_window_activation_request() {",
+        "symbol": "let request = match runtime.game_window_activation_request()",
+        "sha256": "4ceefd48f5c74d3271f6a5b05a0c591832fd86f5463da04e221fb2bd10bab9b8"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 815,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 817,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-RAW",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 495,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 522,
+        "quote": "runtime.repository.ingest_hook_text_with_policy(",
+        "symbol": "runtime.repository.ingest_hook_text_with_policy(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-RAW",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 380,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 388,
+        "quote": "HookUpdate::DrainBarrier { acknowledged } => {",
+        "symbol": "HookUpdate::DrainBarrier { acknowledged }",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-RAW",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SESSION-UI",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 153,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-RUBY",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1046,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 1135,
+        "quote": "pub async fn retry_lexical(",
+        "symbol": "pub async fn retry_lexical(",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-STORAGE",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 815,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 817,
+        "quote": "pub(super) fn preferences_scope(conn: &Connection, scope: &str) -> AppResult<ScopedPreferences> {",
+        "symbol": "pub(super) fn preferences_scope(",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-STORAGE",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 290,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 292,
+        "quote": "Command::SaveScopedPreferences { .. } | Command::UnbindWindow(_)",
+        "symbol": "Command::SaveScopedPreferences {",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-STORAGE",
+      "before": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 461,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "7d68e22dae20ba02f424e700a16fd06d9e44e02962a890fdea8bf62507b3e970"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/queries/mod.rs",
+        "line": 463,
+        "quote": "if actual != *expected_head_revision {",
+        "symbol": "if actual != *expected_head_revision",
+        "sha256": "980c771812696f8e892974f249862fb2c17dac6970429c0f0373142e73e1e67c"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-STORAGE",
+      "before": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 845,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "063d29f4783140a0663f891890c160dc4a8513023a59887d14fe4159f3657030"
+      },
+      "after": {
+        "path": "crates/app-core/src/application/runtime.rs",
+        "line": 926,
+        "quote": "if let Command::UnbindWindow(request) = &command {",
+        "symbol": "if let Command::UnbindWindow(request)",
+        "sha256": "bb1c059ae711342dc6ee42ab36ab312c68f8c86ca1eed30d4a958bcdecccf6ba"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-STORAGE",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 153,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "b00c7c9c255871322d993507436f5b92fcc334549cbe3d50c45e182d5c995051"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21"
+      }
+    }
+  ],
+  "public_contracts_unchanged": false,
+  "contract_delta": [
+    {
+      "surface": "readonly application_reading_unit_projection RPC and ProductRepository/ApplicationPort methods",
+      "change": "Exact positive unit revision query; role-checked main/hud/learning, no model dispatch or mutable ReadingUnit facts",
+      "review_path": ".build/stability-refactor-20261027/translation-current-status-r63/code-review04/review.json"
+    },
+    {
+      "surface": "ReadingUnitProjection / ReadingTranslationState / TranslationEngineStatus DTOs",
+      "change": "New fixed-object composition typed states with exact profile/server/generation/commit ownership; legacy raw/frozen ReadingUnit unchanged",
+      "review_path": ".build/stability-refactor-20261027/translation-current-status-r63/code-review04/review.json"
+    },
+    {
+      "surface": "TaskView.attempt_id / generated attemptId",
+      "change": "Optional actual latest attempt identity, serde default retains older serialized views; authoritative partial isolation",
+      "review_path": ".build/stability-refactor-20261027/translation-current-status-r63/code-review04/review.json"
+    }
+  ],
+  "source_evidence_additions": [
+    {
+      "group": "modules",
+      "id": "M05",
+      "evidence": {
+        "path": "crates/app-core/src/domain/translation_status.rs",
+        "line": 89,
+        "quote": "pub fn translation_status_heads(nodes: &[TranslationStatusNode]) -> AppResult<BTreeSet<String>> {",
+        "sha256": "2c10029d4eb29c9fc6f6c4f613cebdb8bcfbff5a4fc6a15a51c2e9366c595659"
+      },
+      "reason": "R63 current-status causal graph pure rule; exact reviewed helper rather than a prose-only next step"
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "evidence": {
+        "path": "crates/app-infra/src/storage/queries/translation_status.rs",
+        "line": 94,
+        "quote": "pub(in crate::storage) fn reading_unit_projection(",
+        "sha256": "6c11c8c6fcaeae54129895e758aec92e52510ac29977aa30116ae8c7cf92c1fe"
+      },
+      "reason": "R63 current fixed-object SQLite projection implementation, positive revision and effective stable engine lane"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "evidence": {
+        "path": "apps/desktop/src-tauri/src/ipc/queries.rs",
+        "line": 91,
+        "quote": "pub async fn application_reading_unit_projection(",
+        "sha256": "514585a76da117fd3ddde42677b06b885956d488b7da9b40ed520d61196d2314"
+      },
+      "reason": "R63 new role-checked readonly application query; public contract increment"
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "evidence": {
+        "path": "apps/desktop/src/features/reading/useReadingUnitProjection.ts",
+        "line": 41,
+        "quote": "export function useReadingUnitProjection(snapshot: AppSnapshot, store: ApplicationStore, unit: ReadingUnit, active = true): ReadingProjectionView {",
+        "sha256": "ed0570421404f4e79d7deb0ece091d29ba7c9c2f9ac306153bddd9230cc9883b"
+      },
+      "reason": "R63 active-owner/revision-floor subscriber hook; UI consumes Rust state"
+    },
+    {
+      "group": "components",
+      "id": "C17",
+      "evidence": {
+        "path": "apps/desktop/src/features/reading/useReadingUnitProjection.ts",
+        "line": 41,
+        "quote": "export function useReadingUnitProjection(snapshot: AppSnapshot, store: ApplicationStore, unit: ReadingUnit, active = true): ReadingProjectionView {",
+        "sha256": "ed0570421404f4e79d7deb0ece091d29ba7c9c2f9ac306153bddd9230cc9883b"
+      },
+      "reason": "Shared C17 object projection hook used by HUD/session/history/manual without global task winner logic"
+    }
+  ],
+  "runtime_visual_release_promoted": false
+}

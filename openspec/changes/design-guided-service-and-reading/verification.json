@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "id": "design-guided-service-and-reading",
+  "kind": "tooling",
+  "allowed_paths": [
+    "docs/product/model-configuration-prd.md",
+    "docs/product/reading-window-session-prd.md",
+    "docs/product/first-product-scope.md",
+    "docs/product/README.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/architecture/model-service-registry-design.json",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/development/guided-service-reading-tests.md",
+    "docs/architecture/service-configuration-presentation.json",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/**",
+    "scripts/quality/guided_service_reading.py",
+    "scripts/quality/test_guided_service_reading.py",
+    "scripts/quality/verify.py",
+    "scripts/report/verify_guided_service_reading.cjs",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261030-R73.json",
+    "openspec/changes/design-guided-service-and-reading/**",
+    "openspec/specs/first-product/spec.md"
+  ],
+  "source_snapshot": "openspec/changes/design-guided-service-and-reading/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "GSR-001",
+      "spec": "specs/guided-service-reading/spec.md",
+      "scenario": "current-reading-is-the-primary-content",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests",
+        "guided-service-reading-design",
+        "guided-service-reading-tests"
+      ]
+    },
+    {
+      "id": "GSR-002",
+      "spec": "specs/guided-service-reading/spec.md",
+      "scenario": "supporting-history-and-diagnostics-are-collapsed-after-reading",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests",
+        "guided-service-reading-design",
+        "guided-service-reading-tests"
+      ]
+    },
+    {
+      "id": "GSR-003",
+      "spec": "specs/guided-service-reading/spec.md",
+      "scenario": "a-concrete-service-and-route-drive-configuration",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests",
+        "guided-service-reading-design",
+        "guided-service-reading-tests"
+      ]
+    },
+    {
+      "id": "GSR-004",
+      "spec": "specs/guided-service-reading/spec.md",
+      "scenario": "required-fields-guide-users-without-dropping-capabilities",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests",
+        "guided-service-reading-design",
+        "guided-service-reading-tests"
+      ]
+    },
+    {
+      "id": "GSR-005",
+      "spec": "specs/guided-service-reading/spec.md",
+      "scenario": "guided-configuration-preserves-selection-and-version-semantics",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests",
+        "guided-service-reading-design",
+        "guided-service-reading-tests"
+      ]
+    },
+    {
+      "id": "GSR-006",
+      "spec": "specs/guided-service-reading/spec.md",
+      "scenario": "fresh-guided-design-evidence-remains-design-only",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests",
+        "guided-service-reading-design",
+        "guided-service-reading-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261030-R73",
+  "parent_baseline_sha256": "4bac316bd1da9da25e2e3657856b142ed6fddd9e96dc9cf3f34dadcfc8e5dc92",
+  "product_acceptance_status": "not_run"
+}

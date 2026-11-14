@@ -1,0 +1,32 @@
+[
+  {
+    "file": "assets/reference-approved-material.png",
+    "source": "docs/design/macos-material-case-v1/previews/case-window.png",
+    "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+    "approval_scope": "user-approved first-product visual style; no runtime acceptance"
+  },
+  {
+    "file": "assets/reference-full-product-before-restyle.png",
+    "source": "first-product-v1 draft before approved case style application",
+    "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60",
+    "approval_scope": "historical unapproved draft"
+  },
+  {
+    "file": "assets/reference-SCR-01-light.jpg",
+    "source": "docs/product/original/design/previews/SCR-01-light.jpg",
+    "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6",
+    "approval_scope": "inherited aligned-v1 visual baseline; no new runtime acceptance"
+  },
+  {
+    "file": "assets/reference-SCR-15-light.jpg",
+    "source": "docs/product/original/design/previews/SCR-15-light.jpg",
+    "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b",
+    "approval_scope": "inherited aligned-v1 visual baseline; no new runtime acceptance"
+  },
+  {
+    "file": "assets/reference-SCR-08-light.jpg",
+    "source": "docs/product/original/design/previews/SCR-08-light.jpg",
+    "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea",
+    "approval_scope": "inherited aligned-v1 visual baseline; no new runtime acceptance"
+  }
+]

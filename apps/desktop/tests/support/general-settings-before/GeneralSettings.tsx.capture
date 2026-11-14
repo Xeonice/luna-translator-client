@@ -1,0 +1,112 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
+import type { AppSnapshot, LoginStartupState } from '../../bridge/contracts.generated';
+import type { ApplicationStore } from '../../bridge/projections';
+import { errorMessage } from '../../bridge/application-port';
+import { Button, Switch } from '../../ui/primitives/Controls';
+import { FormRow, Group } from '../../ui/patterns/Patterns';
+import styles from './styles.module.css';
+
+const startupLabels = {
+  not_registered: '未启用', enabled: '已启用', requires_approval: '等待系统批准',
+  not_found: '系统未找到应用服务', unsupported: '当前不可用',
+} as const;
+
+/** Session controls and OS registration are independent from saved preference drafts. */
+export function GeneralSettings({ snapshot, store }: { snapshot: AppSnapshot; store: ApplicationStore }) {
+  const [startup, setStartup] = useState<LoginStartupState | null>(null);
+  const [startupPending, setStartupPending] = useState(true);
+  const [startupError, setStartupError] = useState<string | null>(null);
+  const startupGeneration = useRef(0);
+  const startupWrite = useRef(false);
+  const alive = useRef(false);
+  const captureFlight = useRef(false);
+  const [capturePending, setCapturePending] = useState<string | null>(null);
+  const [captureError, setCaptureError] = useState<{ key: string; message: string } | null>(null);
+  const [historyPending, setHistoryPending] = useState(false);
+  const historyFlight = useRef(false);
+  const [historyError, setHistoryError] = useState<string | null>(null);
+  const session = snapshot.session;
+  const sessionKey = JSON.stringify([snapshot.serverInstanceId, snapshot.profileId, snapshot.profileGeneration, session?.sessionId, session?.state]);
+  const latestSessionKey = useRef(sessionKey);
+  latestSessionKey.current = sessionKey;
+  const active = session?.state === 'active';
+  const loadStartup = useCallback(async () => {
+    const generation = ++startupGeneration.current;
+    setStartupPending(true); setStartupError(null);
+    try {
+      const result = await store.port.loginStartup();
+      if (alive.current && generation === startupGeneration.current) setStartup(result);
+    } catch (cause) {
+      if (alive.current && generation === startupGeneration.current) setStartupError(errorMessage(cause));
+    } finally {
+      if (alive.current && generation === startupGeneration.current) setStartupPending(false);
+    }
+  }, [store]);
+  useEffect(() => {
+    alive.current = true; void loadStartup();
+    return () => { alive.current = false; startupGeneration.current += 1; };
+  }, [loadStartup]);
+  const changeStartup = async (enabled: boolean) => {
+    if (startupPending || startupWrite.current || !startup?.canChange) return;
+    const generation = ++startupGeneration.current;
+    startupWrite.current = true;
+    setStartupPending(true); setStartupError(null);
+    try {
+      const receipt = await store.port.setLoginStartup(enabled);
+      if (!alive.current || generation !== startupGeneration.current) return;
+      setStartup(receipt);
+      // A write intention is never rendered as success. Confirm system authority.
+      const confirmed = await store.port.loginStartup();
+      if (!alive.current || generation !== startupGeneration.current) return;
+      setStartup(confirmed);
+      if (receipt.errorCode) setStartupError(receipt.detail);
+    } catch (cause) {
+      if (alive.current && generation === startupGeneration.current) setStartupError(errorMessage(cause));
+    } finally {
+      startupWrite.current = false;
+      if (alive.current && generation === startupGeneration.current) setStartupPending(false);
+    }
+  };
+  const changeCapture = async (enabled: boolean) => {
+    if (!active || captureFlight.current) return;
+    // The rendered session must still be the store's authoritative projection
+    // when the command envelope freezes its expected commit revision.
+    const latest = store.getSnapshot().snapshot;
+    if (!latest || JSON.stringify([latest.serverInstanceId, latest.profileId, latest.profileGeneration, latest.session?.sessionId, latest.session?.state]) !== sessionKey) return;
+    const key = sessionKey;
+    captureFlight.current = true; setCapturePending(key); setCaptureError(null);
+    try {
+      await store.command({ kind: 'set_capture_paused', payload: { paused: !enabled } });
+    } catch (cause) {
+      if (alive.current && latestSessionKey.current === key) setCaptureError({ key, message: errorMessage(cause) });
+    } finally {
+      captureFlight.current = false;
+      if (alive.current) setCapturePending(null);
+    }
+  };
+  const openHistory = async () => {
+    if (historyFlight.current) return;
+    historyFlight.current = true; setHistoryPending(true); setHistoryError(null);
+    try { await store.port.openMainPage('history'); }
+    catch (cause) { if (alive.current) setHistoryError(errorMessage(cause)); }
+    finally { historyFlight.current = false; if (alive.current) setHistoryPending(false); }
+  };
+  return <Group title="阅读行为">
+    <FormRow label="实时输入">
+      <Switch label="新台词自动加入当前会话" selected={Boolean(active && !session?.paused)} disabled={!active || capturePending !== null} onChange={enabled => void changeCapture(enabled)} description={active ? '仅控制当前会话的台词接收；翻译启用状态由翻译服务单独控制。' : '接入游戏并建立当前会话后可设置。'}/>
+      {capturePending === sessionKey ? <p className={styles.help} role="status">正在核对当前会话的接收状态…</p> : null}
+      {captureError?.key === sessionKey ? <p className={styles.boundary} role="alert">接收状态修改失败：{captureError.message}。当前状态以会话回执为准，请重试。</p> : null}
+    </FormRow>
+    <FormRow label="历史记录">
+      <div className={styles.generalStatus} data-history-policy="always"><span>始终保存原文、译文及来源</span><Button pending={historyPending} onPress={() => void openHistory()}>查看阅读历史</Button></div>
+      <p className={styles.help}>阅读记录按游戏与会话保存，可在主窗口查看。</p>
+      {historyError ? <p className={styles.boundary} role="alert">阅读历史打开失败：{historyError}</p> : null}
+    </FormRow>
+    <FormRow label="启动">
+      {startup ? <Switch label="登录后打开客户端" selected={startup.status === 'enabled' || startup.status === 'requires_approval'} disabled={startupPending || !startup.canChange} onChange={enabled => void changeStartup(enabled)} description={startup.detail}/> : <p className={styles.help}>{startupPending ? '正在读取登录启动状态…' : '登录启动状态尚未取得。'}</p>}
+      <p className={styles.help} role="status" aria-live="polite" data-login-startup-status={startup?.status ?? 'unknown'}>{startupPending ? startup ? `正在核对系统状态，上次确认：${startupLabels[startup.status]}` : '正在核对系统状态' : startupError ? startup ? `当前待确认，上次确认：${startupLabels[startup.status]}` : '当前状态待确认' : startup ? startupLabels[startup.status] : '当前状态未知'}</p>
+      {startupError || startup?.errorCode ? <p className={styles.boundary} role="alert">登录启动状态未完成核对：{startupError ?? startup?.detail}</p> : null}
+      <Button disabled={startupPending} onPress={() => void loadStartup()}>重新读取登录启动状态</Button>
+    </FormRow>
+  </Group>;
+}

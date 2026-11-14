@@ -1,0 +1,1078 @@
+{
+  "schema_version": 1,
+  "status": "planned_not_executed",
+  "created_at": "2026-10-26T15:39:16.975070+00:00",
+  "scope": "stability_refactor_test_migration_and_exit_contract_proposal",
+  "authorization_basis": "用户要求先稳定性重构与相关文档，再补剩余功能；本子任务仅规划",
+  "source_basis": {
+    "baseline": "FP1-20261026-R46",
+    "source_tree_sha256": "a9342444bb7e28c9bef375bb7e798b9b7b6063f76dfa8a071b93f22b54327fd0",
+    "latest_gate_status": "58_of_59_passed; visual_source_identity_failure_before_PNG",
+    "actual_architecture_findings": 0,
+    "historical_ledger_entries_not_current_violations": 19,
+    "latest_built_candidate": "candidate24; not installed or GUI verified in saved receipts",
+    "plans_not_runs": "128 definitions / 153 case@variant; RW91 required real-layer combinations; 153 native Rust unit tests are a different dimension"
+  },
+  "existing_check_registry": {
+    "product-core-tests": {
+      "registered": true,
+      "kind": "product_source_tests",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "app-core",
+        "--lib",
+        "--",
+        "--nocapture"
+      ]
+    },
+    "product-infra-tests": {
+      "registered": true,
+      "kind": "product_source_tests",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "app-infra",
+        "--lib",
+        "--tests",
+        "--",
+        "--nocapture"
+      ]
+    },
+    "product-native-ipc-tests": {
+      "registered": true,
+      "kind": "product_source_tests",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "luna-reader",
+        "--bin",
+        "luna-reader",
+        "--",
+        "--nocapture"
+      ]
+    },
+    "product-hook-client-tests": {
+      "registered": true,
+      "kind": "product_source_tests",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "hook-client",
+        "--lib",
+        "--",
+        "--nocapture"
+      ]
+    },
+    "product-target-probe-tests": {
+      "registered": true,
+      "kind": "product_source_tests",
+      "command": [
+        "cargo",
+        "test",
+        "--locked",
+        "--offline",
+        "-p",
+        "lunahook-host",
+        "--example",
+        "target_probe",
+        "--",
+        "--nocapture"
+      ]
+    },
+    "product-window-title-proof-api-tests": {
+      "registered": true,
+      "kind": "product_source_tests",
+      "command": [
+        "python3",
+        "scripts/quality/window_title_proof_api.py"
+      ]
+    },
+    "product-ui-capture": {
+      "registered": true,
+      "kind": "product_visual",
+      "command": [
+        "node",
+        "apps/desktop/tests/visual/verify-ui.mjs",
+        "--reference-catalogue",
+        "docs/design/first-product-v1/acceptance-v3/catalogue.json"
+      ]
+    },
+    "product-ui-capture-v4": {
+      "registered": true,
+      "kind": "product_visual",
+      "command": [
+        "node",
+        "apps/desktop/tests/visual/verify-ui.mjs",
+        "--reference-catalogue",
+        "docs/design/first-product-v1/acceptance-v4/catalogue.json"
+      ]
+    },
+    "source-scope": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "baseline-integrity": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "generated-contract-drift": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "typescript-compile": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "rust-compile": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "spec-contract-tests": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "rust-boundary-tests": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "frontend-boundary-tests": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "technology-contract-tests": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "generated-contract-tests": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "reading-component-guard-tests": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "interaction-coverage-contract": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "implementation-status-contract": {
+      "registered": true,
+      "kind": "existing_governance_or_compiler",
+      "authority": "scripts/quality/verify.py"
+    },
+    "product-reading-component-tests": {
+      "registered": true,
+      "kind": "real_component_controlled_transport",
+      "entry": "scripts/quality/reading_components.py:388 run_reading_components",
+      "command_is_dynamic": true,
+      "required_inputs": "Fresh SQLite fixture manifest and matching nonce generated by registered adapter; do not invoke verify-reviewed-reading.mjs without it",
+      "maintains_current_required_obligations": 100,
+      "does_not_prove_native_or_game": true
+    }
+  },
+  "storage_adapter_registry": {
+    "rust-storage-complete-v2": {
+      "registered": true,
+      "metadata_key": "product_storage_checks",
+      "authority": "scripts/quality/storage_acceptance.py:86",
+      "not_in_requirements_checks": "This is a storage adapter ID, not a general verify CHECK_ID"
+    }
+  },
+  "proposed_unregistered_facilities": [
+    {
+      "name": "state-contract transition and trace-replay cases",
+      "status": "planned_not_registered",
+      "rule": "Must execute production common transition code, stable scenario IDs and independent required set; cannot just copy a model into tests"
+    },
+    {
+      "name": "real Windows window-discovery/DPI fixture adapter",
+      "status": "planned_not_registered",
+      "rule": "Do not call existing product-window-title-proof-api-tests a DPI coverage proof"
+    },
+    {
+      "name": "actual packaged stability journey adapter",
+      "status": "planned_not_registered",
+      "rule": "PRODUCT_RUNTIME_CHECKS must receive reviewed real command+receipt inspection and actual execution; empty registry remains release blocking"
+    },
+    {
+      "name": "M/C-to-event-to-required-regression impact contract",
+      "status": "planned_not_registered",
+      "rule": "Need executable positive/negative tests: touched lifecycle path without required scenarios must be rejected; no self-declared command names only"
+    }
+  ],
+  "phase_contract": {
+    "selection": "Implementation phases may be independently parallelized only where their code ownership and state contracts do not conflict; Root owns actual ordering and exact allowed paths",
+    "focused_vs_gate": "Focused Rust commands are quick developer feedback, not receipts for a registered full check. Required registered check IDs must run their actual commands at frozen slice acceptance. Current component adapter runs its full 100 obligations and fresh SQLite fixtures; no unsupported --focus option is proposed as if already present.",
+    "rc_policy": "Keep source snapshot and full preimage stable before implementation; freeze package/source/resources for each integrated RC, put actual runs outside planned CSV/OpenSpec input hashes. Native/game passes are not inherited across changed packages.",
+    "visual_policy": "Any desktop-path product change triggers current visual capture gate; prior design source mismatch remains failed until separately reviewed authority correction. No auto baseline hash refresh/approved PNG replacement/threshold reduction.",
+    "quality_policy": "Freeze device/load/sample/measurement and thresholds before performance acceptance. Do not invent p95 targets or copy previous optional probes into passed tests.",
+    "five_negative_scenarios": "每个集成切片的实际 npm run verify 必须出现 five-scenario-execution passed 回执。它由 verify.py self_tests 自动运行，不是当前 CHECK_IDS 中可直接写进 requirements.checks 的ID；不能为映射方便伪造注册。PRD越界、设计不一致、模块越界、目录越界、未批准框架均保持。",
+    "resource_budget": "原有队列/帧/进程/临时文件预算、许可和身份拒绝不放宽。全局内存/SLO缺实际测量时保持未验收，不能通过增加容量消除压力反例。",
+    "first_slice_not_ui": "SR-1仅WindowPreviewService私有purestate，不提前修改TS/Native/worker。完整100组件义务在SR-2/集成保持；原RBC目的不能被减少。apps/desktop全树visual规则仍适用SR-1纯Rust源。",
+    "test_addition_timing": "每个切片迁移时同步补/迁移对应生产共用测试，不等所有文件抽离完才补测试。发现既存行为与合同冲突先单列bugfix，不改断言迁就当前实现。"
+  },
+  "obligations": [
+    {
+      "id": "SRF-PV-IDENTITY",
+      "affected_axes": [
+        "bindingTrust",
+        "captureTruth",
+        "lastFrame"
+      ],
+      "incidents": [
+        "INC-FIRST-FRAME",
+        "INC-DPI"
+      ],
+      "behavior": "已建立且起始hash未知的consumer pull在异步帧更新中首次接纳hash时，必须同lease/generation/consumer/source，且新frame与projection完整一致、许可/编码/尺寸/payload有效；已知hash不得由metadata重绑。Rust权威完成窗口选择及完整proof后，可在首帧前形成合法身份投影或以明确控制结果初始化known context；这不证明Live、capturedAt或首帧。",
+      "programmatic": "真实TauriApplicationPort+真实C35/ReadingPanel，仅控制窄IPC响应；单独共享状态转换算法测试，不能由fixture预先填好targetIdentityHash。",
+      "existing_checks": [
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "existing_case_ids": [
+        "RBC-98-real-adapter-unresolved-target-first-frame-binds-once",
+        "RBC-99-real-component-unresolved-candidate-and-session-decode-first-frame",
+        "RBC-100-no-successful-frame-timeout-never-claims-an-expired-image"
+      ],
+      "source_tests": [
+        "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+      ],
+      "new_obligations_planned": [
+        "完整同代次合法null→verified→late-null序列",
+        "合法解析前后都检查source/epoch/owner及payload预算，不允许为收首帧放松已知身份变化拒绝",
+        "Rust已完成完整proof、首帧前已有身份投影/控制结果是合法状态；测试必须区分身份已知与已有图像/实时，不把consumer异步首帧特例扩大成全局禁令。"
+      ],
+      "packaged_proof": "从无WindowRef/无Native选择的合法起点建立关联，系统共享后收到真实首帧和不同后续帧；不从预构造已绑定对象开始。"
+    },
+    {
+      "id": "SRF-PV-CONTEXT",
+      "affected_axes": [
+        "bindingTrust",
+        "consumerTransport"
+      ],
+      "incidents": [
+        "INC-SUBSCRIPTION"
+      ],
+      "behavior": "A的绑定读取永不settle时，B必须独立获得绑定/预览；旧A结果、错误、finally和取消不能清B资源。",
+      "programmatic": "以deferred/barrier控制A保持pending，真实ApplicationStore.publish切B，先验证实际B DOM与IPC调用，再允许A迟到；不能先放开A再断言B成功。",
+      "existing_checks": [
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "existing_case_ids": [
+        "RBC-87-late-old-session-binding-errors-and-frames-cannot-enter-new-session",
+        "RBC-91-single-flight-pull-and-late-finally-do-not-delete-new-context",
+        "RBC-97-natural-binding-metadata-and-frame-poll-overlap-preserves-context"
+      ],
+      "source_tests": [
+        "apps/desktop/tests/support/ReviewedReadingProbe.tsx",
+        "apps/desktop/tests/support/design-port.ts",
+        "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+      ],
+      "new_obligations_planned": [
+        "harness自检：publish真的触发组件重渲染，state mutation不publish不能冒称切换",
+        "生产adapter必须执行窄IPC，受控响应与可见状态一一对应"
+      ],
+      "packaged_proof": "同一Luna进程切换会话/页签，旧会话关闭或读取缓慢不阻断当前有效游戏；不重启App清状态冒充恢复。"
+    },
+    {
+      "id": "SRF-PV-FRAME-TRUTH",
+      "affected_axes": [
+        "lastFrame",
+        "captureTruth",
+        "consumerTransport"
+      ],
+      "incidents": [
+        "INC-SUBSCRIPTION",
+        "INC-WAKE"
+      ],
+      "behavior": "metadata无新图不能推进capturedAt或将stale升级Live；同blob也不等于新捕获。新有效frame才可恢复，权限拒绝后迟到高序号帧仍拒绝。",
+      "programmatic": "两真实组件共享真实adapter；缓存旧stale帧，后续read保持pending，metadata先到；断言图像时刻/健康不变，再发真实新帧才恢复。",
+      "existing_checks": [
+        "product-native-ipc-tests",
+        "product-reading-component-tests"
+      ],
+      "existing_case_ids": [
+        "RBC-92-subscription-transport-failure-is-not-authoritative-target-loss-or-live",
+        "RBC-93-paused-retained-frame-survives-metadata-errors-and-own-remount",
+        "RBC-94-permission-revocation-selection-expiry-and-target-loss-never-stay-live",
+        "RBC-96-real-component-navigation-and-old-cleanup-preserve-another-subscriber",
+        "RBC-97-natural-binding-metadata-and-frame-poll-overlap-preserves-context"
+      ],
+      "source_tests": [
+        "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+      ],
+      "new_obligations_planned": [
+        "lastFrame图像事实与captureTruth/consumerTransport错误各轴组合表",
+        "同generation撤销后的迟到Live与高序号图像都不能复活旧授权",
+        "区分图像观测与投递封套：payload/contentHash/真实capturedAt及原始捕获归属不变；delivery envelope的lease/generation仅可在明确Pause或同目标移交的完整CAS/fence下合法迁移，不能由普通metadata或缓存重挂任意重标，也不产生新图或Live。Paused是停止接纳/发布新帧的受控意图投影，不等于Native资源已释放；释放仍要真实ack。",
+        "合法Pause推进投递generation但保留原图/原capturedAt；真实Native尚未释放时也不能伪造释放成功，恢复或换目标保持原有fence语义。"
+      ],
+      "packaged_proof": "实际画面推进后至少取得两张不同真实画面；观察截图时间与游戏对应。真实睡眠唤醒单列，不以刷新/重选/重启取得的新帧替代自然恢复。"
+    },
+    {
+      "id": "SRF-PV-ISOLATION",
+      "affected_axes": [
+        "producerLifetime",
+        "consumerTransport",
+        "captureTruth"
+      ],
+      "incidents": [
+        "INC-SUBSCRIPTION",
+        "INC-WAKE"
+      ],
+      "behavior": "挂卸载/切页、慢消费者、listener抛错和一个订阅取消不拥有producer；真正退出/目标失效才触发有界排空与资源释放。",
+      "programmatic": "生产controller/frame sockets与有界队列；填满status/frame/control通道后验证关键Ack顺序、停止无读端、latest-frame覆盖、精确unsubscribe幂等；不能扩容来过压测。",
+      "existing_checks": [
+        "product-native-ipc-tests",
+        "product-reading-component-tests"
+      ],
+      "existing_case_ids": [
+        "RBC-89-real-adapter-same-context-two-subscribers-both-receive-later-frames",
+        "RBC-90-unique-unsubscribe-is-idempotent-and-never-cancels-new-subscriber",
+        "RBC-95-listener-exception-and-unresolved-consumer-do-not-own-producer",
+        "RBC-96-real-component-navigation-and-old-cleanup-preserve-another-subscriber"
+      ],
+      "source_tests": [
+        "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+      ],
+      "new_obligations_planned": [
+        "采集进程instance/source/capture保持与UI消费者数无关",
+        "停止/取消必须等实际release receipt，不能仅排队或drop receiver就宣称释放"
+      ],
+      "packaged_proof": "同一采集instance下切页、关闭/重开主窗、两个快慢消费者与Hook高频更新，另一个消费者仍收新帧；App正常退出后确认自有worker已退出。"
+    },
+    {
+      "id": "SRF-DISCOVERY",
+      "affected_axes": [
+        "bindingTrust",
+        "candidateLifecycle"
+      ],
+      "incidents": [
+        "INC-DPI"
+      ],
+      "behavior": "查询/DPI、Windows引用、Native选择和Hook接入分别表达；非法矩形/不完整身份继续拒绝，但合法负坐标可发现；process-only不得猜测WindowRef。",
+      "programmatic": "保留现有同文件scope成功/操作失败/设置失败/恢复失败/panic测试，双架构编译；新真实WinAPI发现fixture维护检查需实现后注册，现有标题API检查不等于DPI检查。",
+      "existing_checks": [
+        "product-target-probe-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-window-title-proof-api-tests"
+      ],
+      "source_tests": [
+        "crates/lunahook-host/examples/target_probe.rs",
+        "crates/hook-client/src/window_binding.rs",
+        "crates/app-infra/src/hook_backend.rs",
+        "scripts/quality/window_title_proof_api.py"
+      ],
+      "new_obligations_planned": [
+        "API失败/正常空列表/几何过滤返回不同有界typed诊断，不记录标题正文或敏感路径",
+        "真实x86/x64 Window discovery fixture，负坐标/缩放/句柄复用/重启后的首次发现；新检查尚未注册"
+      ],
+      "packaged_proof": "从真实窗口列表而非预置candidate进入同面板关联，窗口/进程视图一致且完整身份正确；无窗口时Hook可继续，恢复必须获得合法引用。"
+    },
+    {
+      "id": "SRF-WORDCARD-GEOMETRY",
+      "affected_axes": [
+        "ownerGeometry",
+        "readingUnit",
+        "wordCardLifetime"
+      ],
+      "incidents": [
+        "INC-WORDCARD"
+      ],
+      "behavior": "新句/ruby/流式译文/内容适高不替换或关闭冻结词卡；真实用户geometry/Esc/owner scroll/外点按设计关闭精确当前代次，单纯blur不关闭。",
+      "programmatic": "复用Rust content_fit_policy真实算法，覆盖reentrant、乱序/重复native事件、set_size后readback失败、同label新实例、live resize命中旧fit尺寸；真实组件保留RBC61-66。",
+      "existing_checks": [
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "existing_case_ids": [
+        "RBC-61-wordcard-content-updates-and-owner-resize-preserve-frozen-object",
+        "RBC-62-exact-native-closed-event-isolates-new-card",
+        "RBC-63-escape-and-owner-outside-pointer-close-without-blur-close",
+        "RBC-64-owner-scroll-closes-but-surface-and-unrelated-scroll-do-not",
+        "RBC-65-owner-unmount-and-late-open-close-exact-card",
+        "RBC-66-native-close-before-open-reply-and-frozen-new-card-isolation"
+      ],
+      "source_tests": [
+        "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "apps/desktop/src/features/language/WordCard.tsx",
+        "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+      ],
+      "new_obligations_planned": [
+        "实际AppKit set_size→native Resized/geometry edge→classified reason的维护adapter，非只有fake geometry返回值",
+        "owner关闭/替换和迟到旧fit completion不得关闭新词卡"
+      ],
+      "packaged_proof": "日文游戏开旧句词卡后推进不同长度正文，并等待ruby/译文改变HUD高度；保持原卡释义。真实鼠标拖动/resize另测，不能用工具模拟失败当通过。"
+    },
+    {
+      "id": "SRF-SESSION-DRAIN",
+      "affected_axes": [
+        "hookSession",
+        "captureJournal",
+        "producerLifetime"
+      ],
+      "incidents": [
+        "INC-EXIT"
+      ],
+      "behavior": "自然退出按expected SID+完整target完成barrier与FIFO尾事件；旧A不能stop/seal新B。真实Host/relay/lease释放确认之前不能宣称资源已释放。",
+      "programmatic": "控制EOF/relay/FIFO/barrier先后；真实repository失败时终态不可错误Ack；迟到文本继续保留raw但不得新增active正文。保留既有natural exit/lease/replay测试。",
+      "existing_checks": [
+        "product-infra-tests",
+        "product-hook-client-tests"
+      ],
+      "source_tests": [
+        "crates/app-infra/tests/application_runtime.rs",
+        "crates/app-infra/src/hook_backend.rs",
+        "crates/hook-client/src/lib.rs"
+      ],
+      "existing_test_names": [
+        "natural_exit_consumer_keeps_tail_facts_and_acks_without_waiting_on_itself",
+        "late_old_lifecycle_and_session_barrier_never_stop_or_seal_the_new_session",
+        "closing_still_persists_late_text_and_control_before_fifo_ack_without_new_body",
+        "natural_exit_shuts_down_owned_child_and_keeps_lease_until_fifo_ack"
+      ],
+      "new_obligations_planned": [
+        "每个coordinator提取前后重放相同control/text trace，比较journal次序、SID归属、release receipt",
+        "失败不清除较新的active会话；真实完成才能允许新目标占用同资源"
+      ],
+      "packaged_proof": "同一Luna进程，游戏A正常退出、Host自然排空，然后B接入；四游戏最终回归中必须包含至少一个x86→x64及相反方向的有效过渡，不靠重启App清残留。"
+    },
+    {
+      "id": "SRF-READING-VERSION",
+      "affected_axes": [
+        "readingUnit",
+        "lexicalTask",
+        "translationTask",
+        "history"
+      ],
+      "incidents": [
+        "INC-AGGREGATION"
+      ],
+      "behavior": "重构不改变当前V1/V2/V3处理revision、聚合时序边界和UTF8引用上限；一个原文版本的token/译文/历史只能归属对应readingUnit revision，旧结果不得覆盖最新对象。",
+      "programmatic": "保留capture domain黄金事件序列，带原始时间戳/来源/序号；比较重构前后正文版本与source refs，并测试延迟旧词法/译文结果；不调大idle/age阈值去伪装全页识别。",
+      "existing_checks": [
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests"
+      ],
+      "source_tests": [
+        "crates/app-core/src/domain/capture.rs",
+        "crates/app-infra/tests/application_runtime.rs",
+        "crates/app-infra/tests/storage_product.rs",
+        "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+      ],
+      "new_obligations_planned": [
+        "同一raw trace确定地产出相同readingUnit/revision/ref归属，业务schema/算法政策不因抽文件改变",
+        "没有可靠页信号的歧义保持显式限制，不能将已知未支持案例预期改为成功"
+      ],
+      "packaged_proof": "实际连续对白与游戏完整画面核对，不仅比较主窗与HUD互相一致；SR中文不能冒充日文词法证据。"
+    },
+    {
+      "id": "SRF-WRITER-BOUNDARY",
+      "affected_axes": [
+        "repository",
+        "queueLatency",
+        "shutdownIntegrity"
+      ],
+      "incidents": [],
+      "behavior": "窄端口/内部coordinator拆分不破坏单writer事务、128队列政策、queue_full和失败恢复；尚无证据把队列延迟认定为近期卡死根因。",
+      "programmatic": "真实临时SQLite actor用barrier占用writer，确认第129个待接收job被拒、已接收job不丢失、恢复后继续；并发raw/历史/模型完成/cover与shutdown/export不得假报完整。先收集排队/执行耗时，再冻结性能阈值。",
+      "existing_checks": [
+        "product-infra-tests"
+      ],
+      "conditional_storage_checks": [
+        "rust-storage-complete-v2"
+      ],
+      "source_tests": [
+        "crates/app-infra/src/storage/database_fault_tests.rs",
+        "crates/app-infra/src/storage/closure_integrity_tests.rs",
+        "crates/app-infra/tests/storage_product_acceptance_v2.rs"
+      ],
+      "existing_test_names": [
+        "writer_queue_rejects_the_129th_pending_job_and_recovers_without_losing_accepted_jobs",
+        "real_writer_saturation_blocks_clean_export_and_quit_then_persists_unknown_across_reopen"
+      ],
+      "new_obligations_planned": [
+        "按operation/stage记录有界queue wait/execute样本，不记原文/密钥；确定测试设备、负载、样本数和计时边界",
+        "性能阈值未冻结前只报告分布/失败事实，不输出性能passed；触及存储生产路径或被现有storage_requirement_gaps判为必需时，执行真实v2 adapter。"
+      ],
+      "packaged_proof": "同包并发阅读/翻页/模型结果/封面保存的响应与退出完整性；不凭源码结构断言存在死锁，不擅自拆库或取消持久化。"
+    }
+  ],
+  "phases": [
+    {
+      "id": "SR-0",
+      "title": "合同与迁移基线（本轮只规划）",
+      "depends_on": [],
+      "production_changes": false,
+      "architecture_phase": "SR-0",
+      "obligation_ids": [],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "work": [
+        "以报告R46为来源核对当前代码真实版本；保留完整前后源码字节而不只是hash",
+        "冻结四轴状态语义与geometry/card/session权威，建立M/C→事件→必跑场景清单",
+        "记录原视觉source identity失败并独立对账批准来源；禁止重拍批准图或刷新预期hash",
+        "测试harness自检与计划/运行证据schema先行，原100组件IDs与153计划定义身份保持"
+      ],
+      "exit": [
+        "新OpenSpec/精确路径/Owner/状态合同/影响矩阵独立审阅通过",
+        "拟新增测试明确planned_not_registered，已有check IDs与真实命令一致",
+        "现有失败/外部阻塞可定位，不把“先重构”当清除既有义务的理由"
+      ],
+      "not_required_yet": [
+        "不要求第一个纯合同切片执行全部153发布组合或四游戏",
+        "纯规划文档通过不表示任意业务稳定性已通过"
+      ]
+    },
+    {
+      "id": "SR-1",
+      "title": "首切片：WindowPreviewService纯状态政策",
+      "depends_on": [
+        "SR-0"
+      ],
+      "architecture_phase": "SR-1",
+      "scope_rule": "只修改原window_preview.rs及新增私有window_preview/state.rs和对应同scope测试；不改TS/UI/Native桥/worker/HookBackend/DTO或预算",
+      "obligation_ids": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "focused_development_commands": [
+        [
+          "cargo",
+          "test",
+          "--locked",
+          "--offline",
+          "-p",
+          "luna-reader",
+          "--bin",
+          "luna-reader",
+          "diagnostic_cache_reads_share_the_same_detail_without_capturing_or_changing_frame_time",
+          "--",
+          "--nocapture"
+        ]
+      ],
+      "test_migration": [
+        "在现实现上先运行表征向量，再把同一生产纯规则与测试移入私有state模块",
+        "保持原WindowPreviewService全部原断言，新增同代次首次解析/已知变化拒绝/paused/stop/revoked/metadata-only/错误代次及预算向量",
+        "不得复制一套测试模型或把合法初始身份预先填满；Rust共用规则应是唯一被测实现",
+        "RBC98–100和RBC92/96/97目的不变；当前不改UI，也不宣称本切片已执行Native真实帧",
+        "先表征现有Pause/CAS/fence导致generation合法推进且保留图像的行为；不得把DTO投递封套误当不可变像素观测。"
+      ],
+      "exit": [
+        "精确diff仅原服务纯规则与私有state文件及同scope测试，公开JSON/IPC语义保持",
+        "Native维护检查与编译/边界实际通过，独审确认无资源/锁/慢effect迁入纯状态",
+        "该路径处于apps/desktop，现有视觉gate仍要求product-ui-capture-v4；原设计源身份冲突不解除，不能关闭完整切片/重构验收"
+      ],
+      "not_required_yet": [
+        "不要求SR-1单独重跑153发布组合",
+        "纯政策提取并无新的Native采集或UI接线行为，因此不把它当已完成正式包预览验证"
+      ],
+      "closure_rule": "可以做源码开发和聚焦验证，但相关check失败/blocked时不能声明完整切片通过；尤其不删视觉capture或改批准hash来让重构变绿。"
+    },
+    {
+      "id": "SR-2",
+      "title": "消费端transport/cache/listener分离",
+      "depends_on": [
+        "SR-1"
+      ],
+      "architecture_phase": "SR-2",
+      "obligation_ids": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "scope_rule": "生产TauriApplicationPort委托私有PreviewSubscriptionClient，C35渲染和用户意图保持；不让mount/unmount拥有producer",
+      "test_migration": [
+        "注册product-reading-component-tests完整100义务真实运行，使用fresh SQLite fixture与同nonce；不能只跑RBC98–100冒充完整check",
+        "A永不settle时先证明B真正DOM/IPC/绑定/帧成功，再释放A；harness publish接线自检必须真实",
+        "双消费者、精确幂等unsubscribe、late finally/old cancel、metadata-only/stale remount/permission revoke覆盖生产adapter与真实组件"
+      ],
+      "exit": [
+        "消费者本地transport状态不再改写producer事实，所有原100目的保持且适用新增向量执行",
+        "TS/生成DTO/AST边界和原生维护检查通过；视觉引用合法后实际进入PNG比较",
+        "集成到真实包时需一款日文游戏首帧+变化帧/切页/两个消费者隔离，不把浏览器证据当Native帧"
+      ],
+      "slice_runtime_scope": [
+        "不是每次编辑全四游戏；SR-6仍全四游戏同RC",
+        "未具备桌面或真实授权时只记blocked，源码迁移可独立前进，但不能声称真实包通过"
+      ],
+      "closure_rule": "可以做源码开发和聚焦验证，但相关check失败/blocked时不能声明完整切片通过；尤其不删视觉capture或改批准hash来让重构变绿。"
+    },
+    {
+      "id": "SR-3",
+      "title": "会话预览coordinator与首帧封面consumer分离",
+      "depends_on": [
+        "SR-1",
+        "SR-2"
+      ],
+      "architecture_phase": "SR-3",
+      "obligation_ids": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "scope_rule": "IPC只保留角色/参数/调用，ownership epoch/lease effect由明确coordinator持有，封面只消费有效fresh frame；不修改SQL/HTTP/应用层资产政策",
+      "test_migration": [
+        "candidate→session同filter transfer与CAS保持；旧候选stop/cancel不影响新session",
+        "封面慢/失败/存储queue_full不能停止采集/Hook；首张封面只能由当代有效fresh帧保存一次，不覆盖已有封面",
+        "真实控制/帧socket压力、critical Ack、cleanup_pending、actual release完成与App退出drain保持",
+        "主窗开关/切页/消费者改变不改变producer source/capture ID；session关联epoch与迟到解除隔离"
+      ],
+      "exit": [
+        "同scope原生/infra/组件测试与完整型别检查实际通过，IPC薄化没有改变公开命令",
+        "同源签名包能关联→持续预览→切页/封面consumer失败→继续收帧，正常App退出owned worker有真实释放",
+        "修改storage生产路径或现有storage_requirement_gaps触发时，追加真实rust-storage-complete-v2；不能绕过原程序要求，legacy模块映射独立说明。"
+      ],
+      "conditional_storage_checks": [
+        {
+          "adapter_id": "rust-storage-complete-v2",
+          "when": "实际修改storage生产路径或现有storage_requirement_gaps返回必需；保留原guard行为，legacy模块映射另审。"
+        }
+      ],
+      "closure_rule": "可以做源码开发和聚焦验证，但相关check失败/blocked时不能声明完整切片通过；尤其不删视觉capture或改批准hash来让重构变绿。"
+    },
+    {
+      "id": "SR-4",
+      "title": "Hook facade窗口关联/preview proof/journal提取",
+      "depends_on": [
+        "SR-3"
+      ],
+      "architecture_phase": "SR-4",
+      "obligation_ids": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "test_migration": [
+        "完整Windows候选/关联/lease保持，API错误/真实空/几何过滤不混为同一空态；双架构真实WinAPI新设施必须先实现注册",
+        "A自然退出尾text/control→journal持久化→barrier/FIFO Ack→真实child释放完整链；expected SID+target不得错清B",
+        "相同raw trace重放readingUnit/revision/source refs完全保持，迟到lexical/translation只归属对应旧对象",
+        "不修改Core ABI1/JSONL2、聚合时间阈值或DB字段来完成重构；源码异常必须单列缺陷、原失败保留"
+      ],
+      "exit": [
+        "HookBackend公开端口/会话原子提交/取消与完整性语义未变，原受控反例全保留",
+        "同包真实从窗口发现到关联取文、A自然退出→B接入；至少两ABI环境有适用证据，最终全部四游戏仍由SR-6完成",
+        "原文与游戏画面核对，而非仅Main/HUD互相比对；发现无WindowRef不得猜窗口"
+      ],
+      "conditional_existing_checks": [
+        {
+          "check_id": "product-window-title-proof-api-tests",
+          "when": "标题证明、probe动态调用或目标身份边界被修改"
+        }
+      ],
+      "conditional_storage_checks": [
+        {
+          "adapter_id": "rust-storage-complete-v2",
+          "when": "实际修改storage生产路径或现有storage_requirement_gaps返回必需；保留原guard行为，legacy模块映射另审。"
+        }
+      ],
+      "closure_rule": "可以做源码开发和聚焦验证，但相关check失败/blocked时不能声明完整切片通过；尤其不删视觉capture或改批准hash来让重构变绿。",
+      "visual_policy": "即便只改infra facade，关联/预览/封面是受影响展示契约，本计划仍要求该视觉检查；不利用当前仅apps目录触发规则的缺口缩减影响回归。"
+    },
+    {
+      "id": "SR-5",
+      "title": "几何意图与词卡所有权私有提取",
+      "depends_on": [
+        "SR-0"
+      ],
+      "integration_after": [
+        "SR-3"
+      ],
+      "architecture_phase": "SR-5",
+      "obligation_ids": [
+        "SRF-WORDCARD-GEOMETRY"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "scope_rule": "仅按架构计划提取现有owner_geometry纯政策，原生apply/readback和geometry持久化职责保持，不能用尺寸白名单/定时屏蔽替代真实因果",
+      "test_migration": [
+        "RBC61–66和实际content_fit_policy生产算法边界全部保持",
+        "真实AppKit事件链/最终包鼠标事件分别有证据，不能拿fake fit尺寸返回值冒充Resized触发",
+        "一款日文游戏旧句开卡跨新句/ruby/流译文保持；真实拖动/resize等关闭精确代次"
+      ],
+      "exit": [
+        "RBC61–66和Rust content_fit_policy实际原断言保持；新私有模块直接复用生产分类而非复制模型",
+        "真实AppKit set_size/Resized因果与最终真实鼠标事件分别验证，不靠browser fake fit",
+        "日文旧句开卡跨新句/ruby/流式译文自动适高仍保留；用户drag/resize/Esc/外点/owner scroll精确关闭且旧代次不影响新卡"
+      ],
+      "parallel_rule": "若精确文件Owner不冲突，可与SR-2独立实施；在SR-3集成后必须做订阅+适高+词卡联合回归",
+      "closure_rule": "可以做源码开发和聚焦验证，但相关check失败/blocked时不能声明完整切片通过；尤其不删视觉capture或改批准hash来让重构变绿。"
+    },
+    {
+      "id": "SR-6",
+      "title": "单一最终RC稳定性关口",
+      "depends_on": [
+        "SR-2",
+        "SR-3",
+        "SR-4",
+        "SR-5"
+      ],
+      "architecture_phase": "SR-6",
+      "production_changes": false,
+      "obligation_ids": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "runtime_adapter_status_now": "not_implemented; PRODUCT_RUNTIME_CHECKS is currently empty",
+      "planned_runtime_adapter_requirement": "最小稳定性正式包runner必须真实安装/运行对象核验、可读人工step barrier、原生/游戏证据与源码/包/资源/nonce绑定，实施后独立注册；不能以新名字或手填JSON代替执行。",
+      "exit": [
+        "所有受影响源码/编译/边界/组件/视觉检查真实执行且通过；原视觉来源失败未解决时不能称本阶段整体passed",
+        "同一最终RC四游戏SR/MO/Never7/Sakura 10th（排除Ever17），覆盖真实连续原文、预览变化帧、语言/词卡、退出换游戏、窗口事件与真实sleep/wake；SR中文版不充当日文学习证据",
+        "正式包稳定性runner已实现与注册、负例/失败状态可拒绝；真实权限/桌面/Steam阻塞保留blocked，不继承旧包通过",
+        "剩余完整首版发布仍需原153 case@variant及RW91适用真实层闭合；稳定性通过不是剩余功能已完成或正式发布批准"
+      ],
+      "release_scope_limit": "可以在此后恢复剩余产品功能开发；正式发布仍要完整范围与153/RW闭包，不把这些全量要求提前压到SR-0第一个小切片。"
+    }
+  ],
+  "failure_rules": [
+    {
+      "condition": "new unit/contract/negative-case failure",
+      "action": "Stop affected slice; fix production problem or truthful harness wiring, preserve old failure; never delete assertions, widen wait/budget, or tune expected outputs to implementation"
+    },
+    {
+      "condition": "old approved-design identity mismatch",
+      "action": "Keep visual failed and preserve original references; independent authority review is a separate prerequisite, not a blanket waiver for refactoring"
+    },
+    {
+      "condition": "desktop/permission/Steam/model unavailable",
+      "action": "Record blocked/not_run; continue independent source work but do not close packaged stability acceptance"
+    },
+    {
+      "condition": "source/package/fixture nonce changes mid-run",
+      "action": "Reject evidence freshness; rerun only affected execution after new frozen source/package, do not rewrite JSON to attach old results"
+    },
+    {
+      "condition": "missing runtime/impact adapter",
+      "action": "Mark proposed/not_implemented; implementation and actual registered execution required before claiming machine enforcement"
+    }
+  ],
+  "evidence_contract": {
+    "fields": [
+      "run_id",
+      "phase_id",
+      "obligation_id",
+      "requirement_ids",
+      "source_tree_sha256",
+      "changed_paths",
+      "check_id_or_manual_step_id",
+      "exact_command",
+      "exit_code",
+      "test_count",
+      "assertion_count",
+      "nonce",
+      "fixture_manifest_sha256",
+      "package_archive_sha256",
+      "signed_source_seal_sha256",
+      "installed_app_inventory_sha256",
+      "core_commit_abi_arch",
+      "language_manifest_sha256",
+      "target_identity",
+      "collector_instance_source_epoch_generation",
+      "steps_actual_observations",
+      "frame_sequence_capturedAt_and_image_hash",
+      "limitations",
+      "evidence_paths_and_sha256"
+    ],
+    "states": [
+      "not_run",
+      "blocked",
+      "failed",
+      "passed"
+    ],
+    "scope_labels_required": [
+      "source_unit",
+      "real_component_controlled_transport",
+      "actual_WinAPI_fixture",
+      "packaged_native",
+      "actual_game",
+      "real_model",
+      "report_or_guard_only"
+    ],
+    "cardinality_rule": "Every required obligation exactly once in the claimed scope; zero tests/skips/stale source/wrong RC/empty adapter cannot pass",
+    "privacy_rule": "No credential values, raw diagnostic dumps, or unrelated window capture; safe stage/reason/code counts sufficient"
+  },
+  "evidence": [
+    {
+      "path": "scripts/quality/product_execution.py",
+      "line": 24,
+      "sha256": "47e3257db5169080f1ceaafb69f0423bad1be0f350118b7c61c939a1b5896ccc",
+      "note": "registered source checks and empty runtime registry"
+    },
+    {
+      "path": "scripts/quality/reading_components.py",
+      "line": 16,
+      "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683",
+      "note": "real component adapter and independently required case IDs"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "line": 76,
+      "sha256": "0ce09ccedc78063b13eb9fc5c391cb7dad7f6038510045054ff1b089ec60129b",
+      "note": "current visual/runtime execution gates"
+    },
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "line": 662,
+      "sha256": "12c5cd828b883aecb105f1b96b4aee825caaa2ac563d9231f4478b3b16948f29",
+      "note": "actual storage adapter requirements"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "line": 1363,
+      "sha256": "53d243f02152d654125d6591943b71e6583d8070aa6fc6b4cb6b60c98408403a",
+      "note": "current actual worker lifecycle tests"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "line": 1282,
+      "sha256": "f7557475cc81d83951fbb30e575ccd0f1205316f7136997af8d29bceecdc2cb1",
+      "note": "current supervisor frame and lifecycle tests"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+      "line": 536,
+      "sha256": "98687ae0acadfef7bb57936b474483ef9193445dc827f7e460dc282c2069596c",
+      "note": "production geometry policy tests"
+    },
+    {
+      "path": "crates/app-infra/src/storage/database_fault_tests.rs",
+      "line": 124,
+      "sha256": "d0c04f2c4d9e2f8e269a6b164ba46025a413a9d1b30a06cccd1edd1b20d107fb",
+      "note": "real writer queue saturation test"
+    },
+    {
+      "path": "crates/app-infra/src/storage/closure_integrity_tests.rs",
+      "line": 165,
+      "sha256": "0f9af43c783c2c639c6352f27db2da3e609bef3a585f6caf410b82b9cb607125",
+      "note": "real saturation and integrity test"
+    },
+    {
+      "path": "crates/app-core/src/domain/capture.rs",
+      "line": 287,
+      "sha256": "9227b3e484f8aca38101efee4c817889928ab078f14d95ce8404326148ccb0a9",
+      "note": "current aggregation policy tests"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "line": 2305,
+      "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98",
+      "note": "session natural exit tests"
+    },
+    {
+      "path": ".build/stage-review-20261026/tests-review/incident-map.json",
+      "line": null,
+      "sha256": "1bd1093aed34970f51a7f5403d0532e2a299218ff7c6010131ad4df25b59614f",
+      "note": "seven independently scoped historical/current incidents"
+    }
+  ],
+  "limitations": [
+    "本子任务未执行任何新产品、fixture、GUI、Wine、安装或长测试",
+    "建议文件/adapter仍须Root纳入OpenSpec精确scope及独立审阅后实现，不能视为已存在",
+    "计划阶段的pass只可表示文档/引用校验通过，不能表示产品测试通过",
+    "本计划不补参数、回退、OCR或新UI功能，不改原PRD与批准视觉"
+  ],
+  "aligned_architecture_plan": {
+    "path": ".build/stability-refactor-20261026/architecture/plan.json",
+    "sha256": "f2c0d4710b0dfcbd9cd436eec0156e23ba1911c6503a7e2ab52b8bd469d7c4eb",
+    "phase_ids": [
+      "SR-0",
+      "SR-1",
+      "SR-2",
+      "SR-3",
+      "SR-4",
+      "SR-5",
+      "SR-6"
+    ]
+  },
+  "cross_cutting_storage_policy": {
+    "not_a_new_database_refactor_phase": true,
+    "applies_to": [
+      "SR-3",
+      "SR-4",
+      "SR-6"
+    ],
+    "keep": [
+      "single writer transaction",
+      "128 queue policy",
+      "queue_full and recovery",
+      "accepted jobs preserved",
+      "shutdown/export integrity"
+    ],
+    "work": "先观察有界排队/执行耗时；修改storage生产路径或现有storage_requirement_gaps触发时纳入完整v2 adapter。M14在当前架构是native-broker，不能当作数据库模块；legacy guard映射另行核对，不绕过现有检查。无性能trace不推断已有死锁，阈值未冻结不报性能passed。"
+  },
+  "canonical_role": "planned_refactor_obligations_and_real_existing_check_mapping; not a run receipt",
+  "canonical_scope_note": "SR0 planning documents only; the source scope field is descriptive text",
+  "legacy_module_mapping_note": "M14当前架构=native-broker；存储条件以实际guard输出和生产路径为准，现有映射若需校正须另有程序/负例审阅，不在本次文档里静默改检查器。"
+}

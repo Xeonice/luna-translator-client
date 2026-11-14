@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261019-R16",
+  "parent_baseline": "FP1-20261019-R15",
+  "parent_manifest_sha256": "3762b0aee50341cfc0a73673730f02637e338f9630811d7dbe2dd3ac09afcbc2",
+  "authorization": "User requested both engineering acceptances to pass; repair actual execution and validation faults within that scope. No commit or push.",
+  "scope": "Independent exact-delta review of actual marker framing and frozen negative-relationship snapshot interpretation; no production behavior, approved matrix, DDL, reference or tolerance changes.",
+  "failed_actual_gate": {
+    "path": ".build/quality/20261019T113926.131496Z.json",
+    "sha256": "10226aa8a41bc79f77a3dc4913a1dad5697d707949d6dda5949ed71c601f37ab",
+    "steps": 51,
+    "failed_steps": [
+      "product-storage-execution"
+    ],
+    "actual_rust_tests": {
+      "library_passed": 28,
+      "aggregate_passed": 118
+    },
+    "actual_errors": [
+      "First real marker shared libtest title line and was correctly refused by the strict line-anchored parser.",
+      "Both relationship-corrupt rejected source snapshots were incorrectly inspected as healthy databases; the real product correctly rejected and preserved them."
+    ]
+  },
+  "changed_authority": [
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "old_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891",
+      "new_sha256": "938e3dd08a4eee4d44c391be99897c5e005504f19e44c6d37aa3027c9df18f48"
+    },
+    {
+      "path": "scripts/quality/test_storage_acceptance.py",
+      "old_sha256": "fcfe3a3155c1bad6c0b129cabfc34efecfbe0ef8938e088d3ca3a4af0747b6d7",
+      "new_sha256": "c5819b6f383e640b8590e0fa85ae304dc3d89698bf45da3a361cd308a1ce84af"
+    }
+  ],
+  "added_authority": [
+    {
+      "path": "docs/development/baselines/FP1-20261019-R15.json",
+      "bytes": 74763,
+      "sha256": "3762b0aee50341cfc0a73673730f02637e338f9630811d7dbe2dd3ac09afcbc2"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/exact-delta-review-r16.json",
+      "bytes": 49360,
+      "sha256": "e649a361542feaa69664bbd88d8e15cbecc57718309999d89e61b77a2e16ca4d"
+    },
+    {
+      "path": "scripts/quality/storage_schema.py",
+      "bytes": 12626,
+      "sha256": "aba76adf898f071def88e2ff758b3aad3c1f192138a14430a61e78a1afc1edcd"
+    },
+    {
+      "path": "scripts/quality/test_storage_schema.py",
+      "bytes": 18688,
+      "sha256": "626247fc9a5cde3bd8ea5de9610c32da8be88ed29908e38684e3034d27f9b39a"
+    }
+  ],
+  "review": {
+    "path": "openspec/changes/implement-first-product/exact-delta-review-r16.json",
+    "sha256": "e649a361542feaa69664bbd88d8e15cbecc57718309999d89e61b77a2e16ca4d"
+  },
+  "actual_repair_sources": [
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "before_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891",
+      "after_sha256": "938e3dd08a4eee4d44c391be99897c5e005504f19e44c6d37aa3027c9df18f48"
+    },
+    {
+      "path": "scripts/quality/test_storage_acceptance.py",
+      "before_sha256": "fcfe3a3155c1bad6c0b129cabfc34efecfbe0ef8938e088d3ca3a4af0747b6d7",
+      "after_sha256": "c5819b6f383e640b8590e0fa85ae304dc3d89698bf45da3a361cd308a1ce84af"
+    },
+    {
+      "path": "scripts/quality/storage_schema.py",
+      "before_sha256": "4d4a91163031ab0ef8a32fff46b5731a6a39616ccd3d1ceb6e7c088c2d577183",
+      "after_sha256": "aba76adf898f071def88e2ff758b3aad3c1f192138a14430a61e78a1afc1edcd"
+    },
+    {
+      "path": "scripts/quality/test_storage_schema.py",
+      "before_sha256": "cd5c5965228669f156d37be43903010f9bcc1163a4210ffd1f5e40b668213d17",
+      "after_sha256": "626247fc9a5cde3bd8ea5de9610c32da8be88ed29908e38684e3034d27f9b39a"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/receipt.rs",
+      "before_sha256": "09c636693efdb3005df9ff0b72e55f4eb6b2f6fcace5dac5f70df05140194747",
+      "after_sha256": "6bb2c5aadcc888dfb941fa37e02f0c64defb60bb0654897258a37208aec83079"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/verification.json",
+      "before_sha256": "2c8ea4ceab622c6a9ec821f02afe227de214a3a2fb65c77ada3e76d3cbc76123",
+      "after_sha256": "a264ddc3ec4b61c7b7a79ec24a3e0ce9ec76361457896e864dd01c52194cb38a"
+    }
+  ],
+  "focused_checks": {
+    "guard_tests": 153,
+    "guard_breakdown": {
+      "product_execution": 53,
+      "storage_acceptance": 66,
+      "storage_schema": 34
+    },
+    "log": ".build/acceptance-closure-20261019/review/r16-all-focused-guards.log",
+    "log_sha256": "47115f8f8ce31b899f2ebf10227e6d95fd57e773b7679d784db65a8be47d1287",
+    "marker_rust_exact_passed": 1,
+    "marker_log_sha256": "5570fda77d811c7b875ef6c70cacb29f6214f5cdf282b3767300668483a03f83",
+    "scope": "Comparator/receipt guard proof only; unrelated to the 153 planned product execution combinations."
+  },
+  "unchanged": [
+    "All 353 other R15 protected contents",
+    "Original design, all frozen reference images, tokens and zero-difference threshold",
+    "Migration DDL/schema/ledger/field inventories, approved PRE-14 route matrix and production rejection expectations",
+    "Healthy candidates require zero actual FK violations; rejection proof requires the actual defect plus exact schema, valid ledger, correct error and unchanged before/after bytes",
+    "Strict marker parser, assertion uniqueness, nonzero counts and full inventory",
+    "Legacy-debt ledger, frozen violation sources, approvals and License"
+  ],
+  "proof_limits": [
+    "R15 failed stdout/receipt/database artifacts stay unmodified and rejected; read-only diagnosis is not acceptance.",
+    "New-source/new-package full storage and unified gate still required; old native/game observations cannot be inherited."
+  ],
+  "product_acceptance_promoted": false
+}

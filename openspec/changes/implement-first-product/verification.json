@@ -1,0 +1,534 @@
+{
+  "schema_version": 1,
+  "id": "implement-first-product",
+  "kind": "product",
+  "allowed_paths": [
+    "openspec/changes/implement-first-product/**",
+    "openspec/active-change.json",
+    "openspec/technology-lock.json",
+    "docs/development/iterations/FP1-IMPLEMENT-20261019/**",
+    "Cargo.toml",
+    "Cargo.lock",
+    "rust-toolchain.toml",
+    "apps/desktop/src/**",
+    "apps/desktop/tests/**",
+    "apps/desktop/src-tauri/src/**",
+    "apps/desktop/src-tauri/Cargo.toml",
+    "apps/desktop/src-tauri/build.rs",
+    "apps/desktop/src-tauri/tauri.conf.json",
+    "apps/desktop/src-tauri/capabilities/**",
+    "apps/desktop/src-tauri/permissions/**",
+    "apps/desktop/package.json",
+    "apps/desktop/package-lock.json",
+    "apps/desktop/tsconfig.json",
+    "apps/desktop/vite.config.ts",
+    "apps/desktop/index.html",
+    "native/core-runtime.lock.json",
+    "resources/language/**",
+    "resources/licenses/**",
+    "schemas/application/**",
+    "tests/contracts/**",
+    "tests/integration/**",
+    "tests/fixtures/**",
+    "scripts/contracts/**",
+    "scripts/resources/**",
+    "scripts/build_desktop.py",
+    "scripts/quality/product_execution.py",
+    "scripts/quality/test_product_execution.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/storage_acceptance.py",
+    "scripts/quality/test_storage_acceptance.py",
+    "docs/development/storage-acceptance.json",
+    "docs/development/storage-acceptance.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261019-R6.json",
+    "scripts/report/build_product_verification_report.py",
+    "crates/app-core/Cargo.toml",
+    "crates/app-core/src/**",
+    "crates/app-core/tests/**",
+    "crates/app-core/examples/**",
+    "crates/app-infra/Cargo.toml",
+    "crates/app-infra/src/**",
+    "crates/app-infra/tests/**",
+    "crates/app-infra/examples/**",
+    "crates/hook-contracts/Cargo.toml",
+    "crates/hook-contracts/src/**",
+    "crates/hook-contracts/tests/**",
+    "crates/hook-contracts/examples/**",
+    "crates/hook-client/Cargo.toml",
+    "crates/hook-client/src/**",
+    "crates/hook-client/tests/**",
+    "crates/hook-client/examples/**",
+    "crates/lunahook-host/Cargo.toml",
+    "crates/lunahook-host/src/**",
+    "crates/lunahook-host/tests/**",
+    "crates/lunahook-host/examples/**",
+    "crates/language-worker/Cargo.toml",
+    "crates/language-worker/src/**",
+    "crates/language-worker/tests/**",
+    "crates/language-worker/examples/**",
+    "openspec/config.yaml",
+    "apps/desktop/src-tauri/resources/**",
+    "apps/desktop/src-tauri/gen/schemas/**",
+    "scripts/contracts/compare_product_capture.mjs",
+    "scripts/contracts/verify_contracts.py",
+    "tests/contracts/test_generated_contracts.py",
+    "AGENTS.md",
+    "docs/development/baselines/FP1-20261019-R7.json",
+    "scripts/quality/storage_schema.py",
+    "scripts/quality/test_storage_schema.py",
+    "docs/development/baselines/FP1-20261019-R8.json",
+    "docs/development/baselines/FP1-20261019-R9.json",
+    "docs/development/baselines/FP1-20261019-R10.json",
+    "docs/development/baselines/FP1-20261019-R11.json",
+    "scripts/quality/storage_product_adapter.py",
+    "scripts/quality/storage_product_process.py",
+    "scripts/quality/package_identity.py",
+    "scripts/quality/test_package_identity.py",
+    "docs/development/baselines/FP1-20261019-R13.json",
+    "docs/development/baselines/FP1-20261019-R14.json",
+    "docs/development/baselines/FP1-20261019-R15.json",
+    "docs/design/first-product-v1/acceptance-v3/**"
+  ],
+  "source_snapshot": "openspec/changes/implement-first-product/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-01",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-01",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M01",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C09",
+        "C34"
+      ]
+    },
+    {
+      "id": "FP-02",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-02",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M01",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-03",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet"
+      ],
+      "module_ids": [
+        "M02",
+        "M14",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-04",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C34"
+      ]
+    },
+    {
+      "id": "FP-05",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-05",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-more"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C14"
+      ]
+    },
+    {
+      "id": "FP-06",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-06",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-ui-capture"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06",
+        "M16",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ]
+    },
+    {
+      "id": "FP-07",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-07",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-source"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M13"
+      ],
+      "component_ids": [
+        "C16",
+        "C19"
+      ]
+    },
+    {
+      "id": "FP-08",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-08",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#learning-window"
+      ],
+      "module_ids": [
+        "M09",
+        "M04",
+        "M13"
+      ],
+      "component_ids": [
+        "C20",
+        "C21",
+        "C22"
+      ]
+    },
+    {
+      "id": "FP-09",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-09",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C23",
+        "C24"
+      ]
+    },
+    {
+      "id": "FP-10",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-10",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C25",
+        "C16",
+        "C17"
+      ]
+    },
+    {
+      "id": "FP-11",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-11",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#settings-content"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C32",
+        "C10"
+      ]
+    },
+    {
+      "id": "FP-12",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "product-flow-12",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-ui-capture",
+        "package-identity-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet"
+      ],
+      "module_ids": [
+        "M15",
+        "M02",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C33",
+        "C08"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "acceptance-visual-comparability",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "product-ui-capture",
+        "typescript-compile"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C17",
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "FP-12",
+      "spec": "specs/first-product/spec.md",
+      "scenario": "acceptance-storage-production",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "storage-acceptance-contract",
+        "product-infra-tests",
+        "rust-compile",
+        "package-identity-tests"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M08",
+        "M10",
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture"
+  ],
+  "product_storage_checks": [
+    "rust-storage-complete-v1"
+  ],
+  "product_runtime_checks": [],
+  "status": "in_progress"
+}

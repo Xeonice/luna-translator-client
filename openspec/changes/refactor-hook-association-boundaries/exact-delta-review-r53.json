@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-hook-association-boundaries",
+  "parent_baseline_sha256": "c7f25df115dff8391985ccc462ece335e681a8a07322bfb1b045293fbc1fd188",
+  "source_delta": [
+    {
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "before": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+      "after": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/journal.rs",
+      "before": null,
+      "after": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a"
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/preview_identity.rs",
+      "before": null,
+      "after": "b1f10037cdebee7136c9eb3e9db2911a1787769223ba3b1b54f4d8a8d3f06a83"
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/window_association.rs",
+      "before": null,
+      "after": "807f2e3d6963b4197514ed5597b9ed98e97ba8e17aa74285a7c329ec674e3daa"
+    },
+    {
+      "path": "native/README.md",
+      "before": "ef7642073679d36562186e40556224b78c939ff507ed1ae49cdeea89a88f1be9",
+      "after": "726e13396353bb25ac060453f989210233e33a1d7dfba7cc58886b07ff15deb5"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/design.md",
+      "before": null,
+      "after": "e470bf37c1af019bf18df7f3d0cb239d1620b6b85658c40254b8a3117244b094"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/iteration-card.md",
+      "before": null,
+      "after": "7390e3588a4cf01a9a85c4fcfd728866af7451641df7d4c472e620b501472a6a"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/proposal.md",
+      "before": null,
+      "after": "0d9c68ca5213f1963fc59310fc27a8667638c4008845c8de78fbd813ff833f96"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/source-snapshot.json",
+      "before": null,
+      "after": "21119e3be6849d850d1714f689550a2f12ea5db387e9d43826965f0ef2cda0f7"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/specs/hook-association-boundaries/spec.md",
+      "before": null,
+      "after": "1ee3b1ec117f8380c6528c0e2051ed58bba3ae2a02052db5a2d9ecba3508c423"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/tasks.md",
+      "before": null,
+      "after": "5a747264010c6deb5eb229be8b9c19dd68e1bea0ca4f3ebb4ca84a5895af072f"
+    },
+    {
+      "path": "openspec/changes/refactor-hook-association-boundaries/verification.json",
+      "before": null,
+      "after": "a8a7ccb90bc5bbda059022718e3c96dbe5e2ed43a57d98edfec4c20b9ced370a"
+    }
+  ],
+  "product_delta": [
+    "crates/app-infra/src/hook_backend.rs",
+    "crates/app-infra/src/hook_backend/journal.rs",
+    "crates/app-infra/src/hook_backend/preview_identity.rs",
+    "crates/app-infra/src/hook_backend/window_association.rs",
+    "native/README.md"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr4-sandbox/independent-code-review.json",
+    "sha256": "8618a6cd34cedede06e1aee7d21344b30b573772d9f5413db30f24f109a96736",
+    "bytes": 13518
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1102,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1117,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1102,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1117,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1102,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1117,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1792,
+        "quote": "fn subscribe(&self) -> AppResult<mpsc::Receiver<HookUpdate>> {",
+        "symbol": "fn subscribe(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 903,
+        "quote": "fn subscribe(&self) -> AppResult<mpsc::Receiver<HookUpdate>> {",
+        "symbol": "fn subscribe(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1102,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1117,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C36",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+        "line": 2264,
+        "quote": "Some(NativeEvent::Log { kind, message }) => {"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a",
+        "line": 302,
+        "quote": "Some(NativeEvent::Log { kind, message }) => {"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1102,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1117,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1102,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1117,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1739,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 2264,
+        "quote": "Some(NativeEvent::Log { kind, message }) => {",
+        "symbol": "Some(NativeEvent::Log",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "line": 302,
+        "quote": "Some(NativeEvent::Log { kind, message }) => {",
+        "symbol": "Some(NativeEvent::Log",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 1735,
+        "quote": "fn stop_and_drain(&self, acknowledged: mpsc::SyncSender<AppResult<()>>) -> AppResult<()> {",
+        "symbol": "fn stop_and_drain(",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 846,
+        "quote": "fn stop_and_drain(&self, acknowledged: mpsc::SyncSender<AppResult<()>>) -> AppResult<()> {",
+        "symbol": "fn stop_and_drain(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+        "line": 2274,
+        "quote": "if matches!(kind, 1 | 2) {"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a",
+        "line": 312,
+        "quote": "if matches!(kind, 1 | 2) {"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+        "line": 2026,
+        "quote": "fn diagnostic_text(input: &str, limit: usize) -> String {"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a",
+        "line": 61,
+        "quote": "pub(super) fn diagnostic_text(input: &str, limit: usize) -> String {"
+      },
+      "explicit_reason": "同一脱敏函数按39项独审迁入私有journal模块，仅模块私有调用可见性改为pub(super)，原函数体token与原测试保持；不是更换日志语义或放宽脱敏。"
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HOOK-LOG",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 2264,
+        "quote": "Some(NativeEvent::Log { kind, message }) => {",
+        "symbol": "Some(NativeEvent::Log",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "line": 302,
+        "quote": "Some(NativeEvent::Log { kind, message }) => {",
+        "symbol": "Some(NativeEvent::Log",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HOOK-LOG",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+        "line": 2274,
+        "quote": "if matches!(kind, 1 | 2) {"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a",
+        "line": 312,
+        "quote": "if matches!(kind, 1 | 2) {"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HOOK-LOG",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+        "line": 2026,
+        "quote": "fn diagnostic_text(input: &str, limit: usize) -> String {"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend/journal.rs",
+        "sha256": "f0b9b68fe6a67fd4dd7e4bac91cb317bb6a5f00f978e48135284fa56c081d88a",
+        "line": 61,
+        "quote": "pub(super) fn diagnostic_text(input: &str, limit: usize) -> String {"
+      },
+      "explicit_reason": "同一脱敏函数按39项独审迁入私有journal模块，仅模块私有调用可见性改为pub(super)，原函数体token与原测试保持；不是更换日志语义或放宽脱敏。"
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+gate_root=$(git rev-parse --show-toplevel)
+exec python3 "$gate_root/scripts/quality/development_gates.py" --root "$gate_root" --stage quick

@@ -1,0 +1,17 @@
+# 资源同步设计
+
+本片没有语言业务或协议变更。拟资源来自Root保存的实际build-rc01新2f，逐字核对target/release及build-source-map；原old18b与完整1950 before另存。先创建自有卡/规范/快照再stage候选new2f。所有资源与源码复制使用独立文件/COW，禁止以可变硬链接连到Main。
+
+语义影响仍须真实检查：注册product-infra-tests全入口包含真实MeCab cold parse、STOP本测试owned PID、15秒deadline后kill/wait与distinct PID重启；完整UI capture与core/native/reading组件检查另记。可选worker JSONL/Unicode probe不称registered通过。
+
+当前binary路径不在lifecycle critical roots，因此nonfinal selector零义务只是规则覆盖事实，不是减少语言生命周期检查的许可。现有final63仍全9/14/50及四游戏；不改其当前七WI/旧snapshot/freeze，不把它们加入R65新pin，待实际R65采用后Root另安排独审rebase。
+
+source verification仅exact资源+自有WI；governance-after提供同一verification的精确authority路径增量供独审，非默认授权。catalog仅1资源closure更新，无源引用需要重定位，状态/语义/旧包/history/false保持；新增pin该资源只由Root采用实现。原SQL/carrier/设计PNG/token/lifecycle/caps及R64视觉/lifecycle红完整保留。
+
+## 本次可避免的时序问题与以后顺序
+
+build-rc01在最后打包准备阶段才首次将当前app-core依赖对应的language-worker重编并stage到源资源，导致已冻结source与catalog仍是old18b而实际当前构建产物变成new2f。门禁正确拒绝这一个资源漂移，没有生成包/app。派生资源同步遗漏应在final freeze之前处理；Root精确恢复old18b只为保存失败并建立真实新change前像，不表示旧worker可作为current发布。
+
+后续依次执行：业务或依赖变更 → 先编译并stage所有受影响派生资源 → 审阅实际构建provenance、精确hash及资源闭包 → 采用source authority后冻结最终cohort → 最后打包并继续严格拒绝任何源/资源漂移。不得把freeze移到prepare之后掩盖变化，不排除资源、不刷新旧hash迁就构建，不改guard或使用旧worker冒充current。
+
+本片只在自有WI记录原因和顺序；共享治理文档与build工具不改。source候选的实际检查回执绑定该候选自己的完整source tree；Root按独审governance-after覆盖自有WI后形成的新Main/cohort必须fresh检查，不能把隔离候选回执改写为Root或最终包通过。当前R64实际Main1943工程64/66、旧final1950无package的事实及失败日志保持。

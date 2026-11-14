@@ -1,0 +1,24 @@
+dictionary-charset = utf8
+config-charset = utf8
+cost-factor = 700
+max-grouping-size = 10
+bos-feature = BOS/EOS,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
+eval-size = 10
+unk-eval-size = 4
+
+node-format-unidic = %m\t%f[9]\t%f[6]\t%f[7]\t%F-[0,1,2,3]\t%f[4]\t%f[5]\t%f[13]\n
+unk-format-unidic  = %m\t%m\t%m\t%m\tUNK\t%f[4]\t%f[5]\t\n
+;unk-format-unidic  = %m\t%m\t%m\t%m\t%F-[0,1,2,3]\t%f[4]\t%f[5]\t\n
+eos-format-unidic  = EOS\n
+
+node-format-chamame = \t%m\t%f[9]\t%f[6]\t%f[7]\t%F-[0,1,2,3]\t%f[4]\t%f[5]\t%f[15]\t%f[11]\n
+unk-format-chamame  = \t%m\t\t\t%m\t未知語\t\t\t\t\n
+;unk-format-chamame  = \t%m\t\t\t%m\t%F-[0,1,2,3]\t\t\t\t\n
+eos-format-chamame  = 
+bos-format-chamame  = B
+
+;語彙素\t語彙素読み\t語形\t品詞\t活用型\t活用形\t書字形\t発音形\t語種\t語彙素ID
+node-format-chamame2 = \t%m\t%f[7]\t%f[6]\t%f[23]\t%F-[0,1,2,3]\t%f[4]\t%f[5]\t%f[8]\t%f[9]\t%f[12]\t%f[28]\n
+unk-format-chamame2 = \t%m\t\t\t%m\t未知語\t\t\t\t\t\t\n
+bos-format-chamame2 = B
+eos-format-chamame2 = 

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-hud-refresh-height-jitter",
+  "parent_baseline_sha256": "693da6d19024252692da9b920d28c9460d17afbf72c60b6052ab9236adb5b520",
+  "exact_delta_sha256": "de9730ec5b4d74a42d9a7c12a4ff836103b7c4c9b5d9715f8914c13f89d4600d",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/hud-refresh-height-r66/reviews/source-governance-review.json",
+    "sha256": "02229477e70110c79aab43ecb6281a0d39c36ef6ffce12d55d9cb63edaea6bcd",
+    "bytes": 3692
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

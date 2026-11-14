@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "kind": "pre14_schema_one_candidate",
+  "status": "pending_independent_review",
+  "authority_registry_modified": false,
+  "product_storage_acceptance": "blocked",
+  "scope": "new schema1/index1 only; no PoC migration or historical v2 upgrade claim",
+  "proposed_matrix": {
+    "status": "frozen",
+    "approval_ref": null,
+    "fresh_versions": {
+      "profile": 1,
+      "dictionary": 1
+    },
+    "migration_chain": [
+      {
+        "version": 1,
+        "previous_version": 0,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "source_sha256": "b6475f29b634d813b832f8617d68576dcac1818ad3c63b207cfb4911c8aee09d",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_profile.sql",
+            "sha256": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5"
+          },
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_config.sql",
+            "sha256": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293"
+          }
+        ],
+        "migration_sha256": "1f26620f1b22307ae07851c1e09c7ed44f888f6b9f88e9d9c34b6f7f1f3302c7"
+      }
+    ],
+    "dictionary_versions": {
+      "1": {
+        "resource_version": "wiktionary-zh-ja-20261018+jmdict-20261012-v1",
+        "manifest_path": "resources/language/dictionary-provenance.json",
+        "manifest_sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b"
+      }
+    },
+    "routes": [
+      {
+        "id": "reopen_profile_v1",
+        "kind": "reopen",
+        "database": "profile",
+        "source_state": "supported",
+        "from_version": 1,
+        "to_version": 1,
+        "source_schema": "docs/architecture/database/schema-contract.json",
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "accepted",
+        "expected_error": null
+      },
+      {
+        "id": "same_version_backup_recovery",
+        "kind": "paired_recovery",
+        "database": "profile",
+        "source_state": "supported",
+        "from_version": 1,
+        "to_version": 1,
+        "source_schema": "docs/architecture/database/schema-contract.json",
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "accepted",
+        "expected_error": null
+      },
+      {
+        "id": "reject_unknown_version",
+        "kind": "compatibility_rejection",
+        "database": "profile",
+        "source_state": "unknown_version",
+        "from_version": 99,
+        "to_version": 1,
+        "source_schema": null,
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema"
+      },
+      {
+        "id": "reject_unversioned",
+        "kind": "compatibility_rejection",
+        "database": "profile",
+        "source_state": "unversioned",
+        "from_version": null,
+        "to_version": 1,
+        "source_schema": null,
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema"
+      },
+      {
+        "id": "reject_corrupt",
+        "kind": "compatibility_rejection",
+        "database": "profile",
+        "source_state": "corrupt",
+        "from_version": null,
+        "to_version": 1,
+        "source_schema": null,
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema"
+      },
+      {
+        "id": "reject_migration_hash",
+        "kind": "compatibility_rejection",
+        "database": "profile",
+        "source_state": "migration_mismatch",
+        "from_version": 1,
+        "to_version": 1,
+        "source_schema": "docs/architecture/database/schema-contract.json",
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "rejected",
+        "expected_error": "migration_mismatch"
+      },
+      {
+        "id": "reject_schema_drift",
+        "kind": "compatibility_rejection",
+        "database": "profile",
+        "source_state": "schema_mismatch",
+        "from_version": 1,
+        "to_version": 1,
+        "source_schema": null,
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "rejected",
+        "expected_error": "schema_contract_mismatch"
+      },
+      {
+        "id": "reject_relationship_corrupt",
+        "kind": "compatibility_rejection",
+        "database": "profile",
+        "source_state": "relationship_corrupt",
+        "from_version": 1,
+        "to_version": 1,
+        "source_schema": "docs/architecture/database/schema-contract.json",
+        "target_schema": "docs/architecture/database/schema-contract.json",
+        "expected": "rejected",
+        "expected_error": "database_relationship_corrupt"
+      }
+    ]
+  },
+  "notes": [
+    "proposed status frozen is a proposal payload, not approval; approval_ref must be populated by explicit review before authority adoption",
+    "fresh dictionary schema constructor is not the populated bundled dictionary resource acceptance",
+    "partial route tests do not satisfy all STORAGE-01..22, all field boundaries, or 431 production Rust mappings"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "purpose": "private local material design comparison",
+  "reference": {
+    "file": "assets/reference-desktop.png",
+    "origin": "user supplied screenshot; original bytes preserved",
+    "sha256": "5e55a763e78e22efb8e6b83fbfb262fbc1f5b51d3d1e7090b07c8d791006af3c",
+    "window_source_pixels": [
+      746,
+      262,
+      1460,
+      962
+    ]
+  },
+  "wallpaper": {
+    "file": "assets/wallpaper-frame.png",
+    "origin": "clean source Wallper video A2FCA324-B849-434D-9CE4-E36C1FCDE210.mp4 at 0 seconds",
+    "title": "Neon Genesis",
+    "author": "Eveeque",
+    "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+    "original_dimensions": [
+      3840,
+      2160
+    ],
+    "note": "original still frame; not reconstructed from the obscured reference screenshot"
+  },
+  "acceptance": {
+    "user_visual_confirmation": "style_approved",
+    "native_material_verified": false,
+    "full_product_design_modified": true
+  },
+  "remaining_differences": [
+    "Browser material tone and diffusion are approximate; reference native rendering has not been reproduced pixel for pixel.",
+    "Toolbar icon paths are approximations for geometry, not exact original assets."
+  ]
+}

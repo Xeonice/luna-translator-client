@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "align-client-plan-and-release-coverage",
+  "parent_baseline_sha256": "f9e561d0f1b78f4414f519d098693172fd69d3a940f5d2dfeb8c4dc377d45331",
+  "exact_delta_sha256": "01fe114cb8cfcfdd6f3316e0a7147ec5a2a2752592feba0d66fc822e31cd5097",
+  "documentation_review": {
+    "path": ".build/current-alignment-20261031/review/docs-review.json",
+    "bytes": 7241,
+    "sha256": "bbf0ec6ea9f46dc06ab46c1f1749bd2f88367fbe9a1226504e289bee54be169e"
+  },
+  "code_review": {
+    "path": ".build/current-alignment-20261031/review/tooling-review.json",
+    "bytes": 9477,
+    "sha256": "001cb0aaf1168855a65927bb42ab9e9d395ddfa410c1001f71c54073a37180e2"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

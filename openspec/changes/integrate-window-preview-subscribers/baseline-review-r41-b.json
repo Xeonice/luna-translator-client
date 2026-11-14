@@ -1,0 +1,11 @@
+{
+  "kind": "R41_B_candidate_baseline_review",
+  "status": "independent_exact_byte_review_and_Root_adoption_pending",
+  "parent_baseline_sha256": "59056cdcdc377423fa26cb9c3ac2ae8a6bc3a3ae165e13b5b6b1e743e7f8b373",
+  "exact_delta": {
+    "path": "openspec/changes/integrate-window-preview-subscribers/exact-delta-review-r41-b.json",
+    "sha256": "47641152ee2f249a7fc5e8fd2e7ddd39863a31a0f7dc2769953b5c26b93faa7d"
+  },
+  "prior_failures_retained": true,
+  "runtime_visual_release_promoted": false
+}

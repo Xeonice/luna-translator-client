@@ -1,0 +1,1060 @@
+{
+  "schema_version": 1,
+  "id": "register-binding-impact-surface-mappings",
+  "kind": "tooling",
+  "status": "canonical_plan_amendment_r2_published_pending_independent_plan_review",
+  "verified": false,
+  "allowed_paths": [
+    "scripts/quality/test_lifecycle_impact.py",
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "scripts/quality/storage_schema_v5.py",
+    "scripts/quality/test_storage_schema_v5.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/binding_phase_guard.py",
+    "scripts/quality/test_binding_phase_guard.py",
+    "scripts/quality/binding_readiness_assessment.py",
+    "scripts/quality/test_binding_readiness_assessment.py",
+    "docs/development/lifecycle-impact-contract.json",
+    "docs/development/engineering-gates.md",
+    "docs/development/current-product-test-coverage.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/README.md",
+    "docs/development/current-phase.json",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "docs/development/current-design-alignment.json",
+    "openspec/changes/register-binding-impact-surface-mappings/proposal.md",
+    "openspec/changes/register-binding-impact-surface-mappings/design.md",
+    "openspec/changes/register-binding-impact-surface-mappings/tasks.md",
+    "openspec/changes/register-binding-impact-surface-mappings/iteration-card.md",
+    "openspec/changes/register-binding-impact-surface-mappings/verification.json",
+    "openspec/changes/register-binding-impact-surface-mappings/source-snapshot.json",
+    "openspec/changes/register-binding-impact-surface-mappings/specs/binding-engineering-integration/spec.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261109-R94.json",
+    "docs/development/binding-engineering-integration-adoption-20261110.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv"
+  ],
+  "source_snapshot": "openspec/changes/register-binding-impact-surface-mappings/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "handoff-requires-actual-adoption-and-reviewed-parent",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H01"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "projected-or-rolled-back-source-cannot-be-base",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H02"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "parent-oldguard-is-actual-and-same-tree",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H03"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "parent-authority-and-failures-remain-immutable",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H04"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "different-change-id-cannot-skip-handoff",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H05"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "snapshot-equals-parent-and-products-stay-zero-diff",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H06"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "independent-scope-and-safe-paths-are-required",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H07"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "ci-requires-real-git-base",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-tests",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H08"
+    },
+    {
+      "id": "BIM-002",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "lifecycle-registers-twelve-real-literal-paths",
+      "checks": [
+        "lifecycle-impact-guard-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-execution",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "M01"
+    },
+    {
+      "id": "BIM-003",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "surface-lineage-preserves-old-state-identities",
+      "checks": [
+        "all-page-design-coverage-tests",
+        "all-page-design-coverage-contract",
+        "all-page-design-readiness-assessment",
+        "all-page-design-readiness-contract",
+        "current-design-alignment-tests",
+        "current-design-alignment-contract",
+        "current-design-readiness-assessment",
+        "current-design-readiness-contract",
+        "documentation-contract-tests",
+        "documentation-contract"
+      ],
+      "plan_control_id": "M02"
+    },
+    {
+      "id": "BIM-003",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "missing-design-reference-or-executor-remains-blocked",
+      "checks": [
+        "all-page-design-coverage-tests",
+        "all-page-design-coverage-contract",
+        "all-page-design-readiness-assessment",
+        "all-page-design-readiness-contract",
+        "current-design-alignment-tests",
+        "current-design-alignment-contract",
+        "current-design-readiness-assessment",
+        "current-design-readiness-contract",
+        "documentation-contract-tests",
+        "documentation-contract"
+      ],
+      "plan_control_id": "M03"
+    },
+    {
+      "id": "BIM-004",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "historical-mutable-target-may-change-with-sealed-copy-intact",
+      "checks": [
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection",
+        "binding-readiness-assessment-tests"
+      ],
+      "plan_control_id": "S01"
+    },
+    {
+      "id": "BIM-004",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "old-suite-source-compile-copy-list-and-assertions-are-exact",
+      "checks": [
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection",
+        "binding-readiness-assessment-tests"
+      ],
+      "plan_control_id": "S02"
+    },
+    {
+      "id": "BIM-004",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "all-nine-original-suites-and-original-raws-are-required",
+      "checks": [
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection",
+        "binding-readiness-assessment-tests"
+      ],
+      "plan_control_id": "S03"
+    },
+    {
+      "id": "BIM-004",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "historical-rule-does-not-relax-current-v5-child-identity",
+      "checks": [
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection",
+        "binding-readiness-assessment-tests"
+      ],
+      "plan_control_id": "S04"
+    },
+    {
+      "id": "BIM-005",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "explicit-qa-full-and-v5-checks-are-dispatched",
+      "checks": [
+        "binding-phase-guard-tests",
+        "binding-readiness-assessment-tests",
+        "product-completion-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "D01"
+    },
+    {
+      "id": "BIM-005",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "assessment-and-v5-use-one-fresh-full-execution",
+      "checks": [
+        "binding-phase-guard-tests",
+        "binding-readiness-assessment-tests",
+        "product-completion-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "D02"
+    },
+    {
+      "id": "BIM-005",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "actual-product-impact-keeps-original-full-check",
+      "checks": [
+        "binding-phase-guard-tests",
+        "binding-readiness-assessment-tests",
+        "product-completion-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "D03"
+    },
+    {
+      "id": "BIM-005",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "unknown-check-and-requested-phase-do-not-authorize",
+      "checks": [
+        "binding-phase-guard-tests",
+        "binding-readiness-assessment-tests",
+        "product-completion-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "D04"
+    },
+    {
+      "id": "BIM-005",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "declared-checks-require-actual-receipts",
+      "checks": [
+        "binding-phase-guard-tests",
+        "binding-readiness-assessment-tests",
+        "product-completion-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "D05"
+    },
+    {
+      "id": "BIM-005",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "release-and-product-completion-remain-blocked",
+      "checks": [
+        "binding-phase-guard-tests",
+        "binding-readiness-assessment-tests",
+        "product-completion-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "D06"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "semantic-layer-or-observer-errors-fail-assessment",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A01"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "strict-v5-must-actually-pass",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A02"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "local-layer-or-producer-gaps-are-not-external-blocking",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A03"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "only-absent-native-service-inputs-remain-blocked",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A04"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "fresh-source-process-and-artifact-lineage-is-exact",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A05"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "all-original-journeys-and-obligations-remain",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A06"
+    },
+    {
+      "id": "BIM-006",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "assessment-never-forges-full-or-product-passed",
+      "checks": [
+        "binding-readiness-assessment-tests",
+        "binding-journey-readiness-assessment",
+        "binding-journey-readiness-contract",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-runtime-inspection",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "A07"
+    },
+    {
+      "id": "BIM-007",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "next-baseline-is-adopted-only-from-reviewed-pin-delta",
+      "checks": [
+        "baseline-integrity",
+        "source-scope",
+        "implementation-status-tests",
+        "implementation-status-contract",
+        "change-review-tests",
+        "documentation-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "rust-tests-compile"
+      ],
+      "plan_control_id": "P01"
+    },
+    {
+      "id": "BIM-008",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "five-cli-negative-categories-actually-execute",
+      "checks": [
+        "spec-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "storage-schema-v5-tests",
+        "lifecycle-impact-guard-tests",
+        "all-page-design-coverage-tests",
+        "product-completion-tests"
+      ],
+      "plan_control_id": "P02"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "implemented-parent-and-amendment-review-chain",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-contract",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H09"
+    },
+    {
+      "id": "BIM-001",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "active-r2-no-downgrade-and-phase-order",
+      "checks": [
+        "binding-successor-handoff",
+        "binding-phase-guard-tests",
+        "source-scope",
+        "change-review-contract",
+        "spec-contract-tests"
+      ],
+      "plan_control_id": "H10"
+    },
+    {
+      "id": "BIM-007",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "qa-only-catalogue-proof-and-protected-product-fields",
+      "checks": [
+        "implementation-status-tests",
+        "implementation-status-contract",
+        "generated-contract-drift",
+        "binding-phase-guard-tests",
+        "source-scope"
+      ],
+      "plan_control_id": "P03"
+    },
+    {
+      "id": "BIM-007",
+      "spec": "specs/binding-engineering-integration/spec.md",
+      "scenario": "atomic-six-output-and-unchanged-components-export",
+      "checks": [
+        "implementation-status-tests",
+        "implementation-status-contract",
+        "generated-contract-drift",
+        "binding-phase-guard-tests",
+        "baseline-integrity",
+        "source-scope"
+      ],
+      "plan_control_id": "P04"
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/binding-engineering-integration-20261110/final-source-review-r2.json",
+    "authors": [
+      "/root",
+      "/root/binding_resumption_gate_implementation",
+      "/root/binding_source_audit",
+      "/root/storage_integration_fix"
+    ]
+  },
+  "successor_handoff": {
+    "schema_version": 2,
+    "kind": "binding-successor-amended-handoff-request/v2",
+    "parent_change_id": "align-approved-binding-journey",
+    "parent_source_tree_sha256": "c6554836b1cba73ac8f1474d85ee25a5eddf7518daa1912adc91b8d781ac677b",
+    "parent_source_entries": 2812,
+    "parent_product_entries": 739,
+    "parent_product_map_compact_sha256": "242b7654895cfe4c27b770ea1a88ce0828e10e65ad3c001ee1921f13d8d2c5d5",
+    "parent_baseline": {
+      "id": "FP1-20261109-R93",
+      "record": {
+        "path": "docs/development/baselines/FP1-20261109-R93.json",
+        "sha256": "e74521a539d215422ce67f36c2032ee9c82833541c11aad190248791612e04f1"
+      }
+    },
+    "parent_seal": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-parent-seal-01/parent-seal.json",
+      "sha256": "94983be89972398ae8dcd1c95a483ec7aff1fef55173c5db8f5bb7cd752dc36d",
+      "bytes": 7837
+    },
+    "parent_seal_independent_review": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-parent-seal-review-01/review.json",
+      "sha256": "36f7605734b91ede8c98fba33f63fef30e3da20e49f85eac12304144beea3441",
+      "bytes": 56214
+    },
+    "canonical_plan_review_path": ".build/binding-engineering-integration-20261110/canonical-plan-review-r2.json",
+    "approved_plan_basis": {
+      "plan_review": {
+        "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-plan-review-01/review.json",
+        "sha256": "b4c8e4659fb6880e511526244dcfec761ee7c20155721a5b367178afa67e6939"
+      },
+      "approved_plan": {
+        "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-plan-02/plan.json",
+        "sha256": "c18338763666fe3010d94478e34c8cce924cbdd8966547a974ce6e05b39c97f1"
+      },
+      "approved_plan_markdown": {
+        "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-plan-02/plan.md",
+        "sha256": "5a01ae3c6ac06c8dd3221037ff91290bc3bcbe972a9ffdc1dad64b7af5f04488"
+      },
+      "adoption_receipt": {
+        "path": ".build/binding-journey-alignment-20261109/phase-3-r3/adoption-r93-actual-01/transaction/receipt.json",
+        "sha256": "069828574bd041477f72e9deb40a8bd497f07272975fc2a27f3194e9b85d8ab9"
+      },
+      "post_adoption_review": {
+        "path": ".build/binding-journey-alignment-20261109/phase-3-r3/post-adoption-independent-review-01/review.json",
+        "sha256": "69a9a096d184dd1195e46a86b0525e1e9473d596eddd17d0448758d6f32637df"
+      },
+      "old_guard_execution": {
+        "path": ".build/binding-journey-alignment-20261109/phase-3-r3/parent-final-phase-check-01/execution.json",
+        "sha256": "d37722576a1effc74ef1e882f0f4af4edbc9b141af7f144ef2e661a0ae48f2fd"
+      },
+      "parent_phase_policy": {
+        "path": "openspec/changes/align-approved-binding-journey/phase-policy.json",
+        "sha256": "8076fceb146fdd178c18f5710a4908f15b7747a9615b17b1a084083bd9fb5b2e"
+      }
+    },
+    "reviewed_scope_paths_compact_sha256": "cabc30b96db942c22a7f462c88047e4c572d62a4cfcc6311ca7aee4860dd8b3a",
+    "product_source_delta_required": "empty",
+    "runtime_package_modified": false,
+    "product_write_allowed": false,
+    "product_completion": "incomplete",
+    "next_stage_allowed": false,
+    "ordinary_ref_dispositions": [
+      {
+        "original_ref": {
+          "path": ".build/binding-journey-alignment-20261109/phase-3-r3/context-handoff-current.md",
+          "sha256": "ec8cc06f52173bbaaa4e51a4794ed11f3624f8188658dbd3afff4734f2b68423",
+          "bytes": 4116
+        },
+        "snapshot": {
+          "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-parent-seal-review-01/ordinary-context-snapshots/context-handoff-current.md",
+          "sha256": "ec8cc06f52173bbaaa4e51a4794ed11f3624f8188658dbd3afff4734f2b68423",
+          "bytes": 4116
+        },
+        "classification": "ordinary_context_summary_historical_only",
+        "future_original_path_hash_required": false,
+        "current_authority_granted": false,
+        "reason": "Mutable context summary is not a plan/review/admission, command raw, failed product evidence, approved design or source identity; immutable seal-time snapshot retains its original bytes."
+      },
+      {
+        "original_ref": {
+          "path": ".build/binding-journey-alignment-20261109/phase-3-r3/context-handoff-current.json",
+          "sha256": "efbe925bdf06e534651a72afc3bd9e3887faec9e94b882bef9a3c803698ec3db",
+          "bytes": 12496
+        },
+        "snapshot": {
+          "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-parent-seal-review-01/ordinary-context-snapshots/context-handoff-current.json",
+          "sha256": "efbe925bdf06e534651a72afc3bd9e3887faec9e94b882bef9a3c803698ec3db",
+          "bytes": 12496
+        },
+        "classification": "ordinary_context_summary_historical_only",
+        "future_original_path_hash_required": false,
+        "current_authority_granted": false,
+        "reason": "Mutable context summary is not a plan/review/admission, command raw, failed product evidence, approved design or source identity; immutable seal-time snapshot retains its original bytes."
+      }
+    ],
+    "ordinary_disposition_scope": "Only the exact two named ordinary summaries may change at their original paths. The seal/index blobs and snapshot bytes remain exact; this never exempts current authority, actual command/raw or failed evidence. The successor checker must consume this non-author disposition rather than silently promoting the whole observational index into immutable current authority.",
+    "active_epoch": "engineering-qa-r2",
+    "Root_QA_authorization_path": ".build/binding-engineering-integration-20261110/qa-authorization-r2.json",
+    "predecessor_QA_authority": {
+      "canonical_plan_review": {
+        "path": ".build/binding-engineering-integration-20261110/canonical-plan-review.json",
+        "sha256": "a0bc4d9d146ae32056f062c81b8cb7e65b35fcbbfe6962482d75ea05de36d1ba",
+        "bytes": 32763
+      },
+      "Root_QA_authorization": {
+        "path": ".build/binding-engineering-integration-20261110/qa-authorization.json",
+        "sha256": "b11c32d7c032667c61d7faf3d0c774c14623861a6a133b51cee5d72b89d03113",
+        "bytes": 10091
+      },
+      "implemented_source_review": {
+        "path": ".build/binding-engineering-integration-20261110/input-source-review.json",
+        "sha256": "d71d358d9686353f87b07b2acbede12d05b959d9d02b87d28953cdec06563f0a",
+        "bytes": 26245
+      }
+    },
+    "implemented_QA_parent": {
+      "path": ".build/binding-engineering-integration-20261110/amendment-r2-design-01/checkpoint/manifest.json",
+      "sha256": "71c5f16ae0347f90c704a802f2403d1ca222ddee24fda979ae6ef20d5a63b502",
+      "bytes": 6945
+    },
+    "implemented_QA_parent_source_tree_sha256": "4515c79a670da96f473fb0c4ed89aa6ea5b117a3c983782592cfdaeb1fec6c13",
+    "implemented_QA_parent_source_entries": 2821,
+    "old_failed_R94_execution": {
+      "path": ".build/binding-engineering-integration-20261110/adoption-r94/actual-adopt-01/execution.json",
+      "sha256": "1e30f62618af1d86ba894645c5feca5d2703f475f9736af54046d77a037141c2",
+      "bytes": 905
+    },
+    "old_failed_R94_packet_review": {
+      "path": ".build/binding-engineering-integration-20261110/adoption-r94/packet-review.json",
+      "sha256": "c98c128e4c8bb031953b54135965003f476012e8b96d538b321abf16a07683ea",
+      "bytes": 8255
+    }
+  },
+  "authorization": "Root真实366804…只授原canonical7发布，snapshot保持905794…所以仅6actual diff；r2候选方案已获2733…独审。原19QA/docs由a0bc/b11合法实施并获d71独审，4515/2821予以保留。本次不授gate3/Root5docs/catalog3/metadata3写入；实际7源再独审后Root另给精确r2阶段授权。",
+  "planned_author_roles": [
+    {
+      "role": "Root_current_docs_and_atomic6_executor",
+      "actor": "/root"
+    },
+    {
+      "role": "current_verify_handoff_and_r2_gate3_canonical_author",
+      "actor": "/root/binding_resumption_gate_implementation"
+    },
+    {
+      "role": "retained_lifecycle_surface_and_new_QA_catalogue_candidate",
+      "actor": "/root/binding_source_audit"
+    },
+    {
+      "role": "retained_strict_storage_QA",
+      "actor": "/root/storage_integration_fix",
+      "assignment_status": "R1_implemented_and_independently_reviewed_retain_bytes_unless_separately_authorized"
+    }
+  ],
+  "path_responsibilities": [
+    {
+      "path": "scripts/quality/test_lifecycle_impact.py",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_contract_and_guards_after_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/all_page_design_coverage.py",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_contract_and_guards_after_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/test_all_page_design_coverage.py",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_contract_and_guards_after_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/storage_schema_v5.py",
+      "owner_actor": "/root/storage_integration_fix",
+      "stage": "strict_storage_QA_after_actual_owner_assignment",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/test_storage_schema_v5.py",
+      "owner_actor": "/root/storage_integration_fix",
+      "stage": "strict_storage_QA_after_actual_owner_assignment",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "QA_gate_code_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/binding_phase_guard.py",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "QA_gate_code_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/test_binding_phase_guard.py",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "QA_gate_code_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/binding_readiness_assessment.py",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "QA_gate_code_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "scripts/quality/test_binding_readiness_assessment.py",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "QA_gate_code_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/lifecycle-impact-contract.json",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_contract_and_guards_after_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "owner_actor": "/root",
+      "stage": "current_doc_update_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/current-product-test-coverage.md",
+      "owner_actor": "/root",
+      "stage": "current_doc_update_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "owner_actor": "/root",
+      "stage": "current_doc_update_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/README.md",
+      "owner_actor": "/root",
+      "stage": "current_doc_update_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/current-phase.json",
+      "owner_actor": "/root",
+      "stage": "current_doc_update_after_canonical_plan_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/all-page-design-coverage.json",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_code_then_reviewed_generator_outputs",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/all-page-design-coverage.md",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_code_then_reviewed_generator_outputs",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/current-design-alignment.json",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_code_then_reviewed_generator_outputs",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/proposal.md",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/design.md",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/tasks.md",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/iteration-card.md",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/verification.json",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/source-snapshot.json",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/specs/binding-engineering-integration/spec.md",
+      "owner_actor": "/root/binding_resumption_gate_implementation",
+      "stage": "canonical_plan_publication_only_after_Root_authorization",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/iteration-baseline.json",
+      "owner_actor": "/root",
+      "stage": "final_reviewed_next_baseline_transaction",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261109-R94.json",
+      "owner_actor": "/root",
+      "stage": "final_reviewed_next_baseline_transaction",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/development/binding-engineering-integration-adoption-20261110.json",
+      "owner_actor": "/root",
+      "stage": "final_reviewed_next_baseline_transaction",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_catalogue_candidate_then_Root_atomic6_only_after_r2_gate_and_packet_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_catalogue_candidate_then_Root_atomic6_only_after_r2_gate_and_packet_review",
+      "product_writes_allowed": false
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "owner_actor": "/root/binding_source_audit",
+      "stage": "QA_catalogue_candidate_then_Root_atomic6_only_after_r2_gate_and_packet_review",
+      "product_writes_allowed": false
+    }
+  ],
+  "plan_amendment": {
+    "schema_version": 1,
+    "kind": "binding-engineering-plan-amendment/v1",
+    "epoch_id": "engineering-qa-r2",
+    "predecessor_epoch_id": "engineering-qa-r1",
+    "reviewed_ignored_protocol": {
+      "markdown": {
+        "path": ".build/binding-engineering-integration-20261110/amendment-r2-design-01/plan.md",
+        "sha256": "01a23cdb1ef56fcf2b172b4aa3c1c708631984a5be34068af582b9f47613dd94",
+        "bytes": 14093
+      },
+      "machine": {
+        "path": ".build/binding-engineering-integration-20261110/amendment-r2-design-01/plan.json",
+        "sha256": "5035611039c146f11fdbfe859d471e50684adc93778bb9a241c6a283ea60712a",
+        "bytes": 5886
+      },
+      "independent_review": {
+        "path": ".build/binding-engineering-integration-20261110/amendment-r2-design-review-01/review.json",
+        "sha256": "2733f4d66be4e5a306c25b8e9488b34188a753341cdb07de64b1950e60cf350f",
+        "bytes": 7904
+      }
+    },
+    "Root_plan_publication_authorization": {
+      "path": ".build/binding-engineering-integration-20261110/plan-publication-authorization-r2.json",
+      "sha256": "366804958b18597d124d6cd8952db087a5e75f4c0c16da502da2e26f19517a56",
+      "bytes": 1808
+    },
+    "implemented_parent": {
+      "path": ".build/binding-engineering-integration-20261110/amendment-r2-design-01/checkpoint/manifest.json",
+      "sha256": "71c5f16ae0347f90c704a802f2403d1ca222ddee24fda979ae6ef20d5a63b502",
+      "bytes": 6945
+    },
+    "implemented_parent_source_tree_sha256": "4515c79a670da96f473fb0c4ed89aa6ea5b117a3c983782592cfdaeb1fec6c13",
+    "implemented_parent_source_entries": 2821,
+    "R1_authority": {
+      "canonical_plan_review": {
+        "path": ".build/binding-engineering-integration-20261110/canonical-plan-review.json",
+        "sha256": "a0bc4d9d146ae32056f062c81b8cb7e65b35fcbbfe6962482d75ea05de36d1ba",
+        "bytes": 32763
+      },
+      "Root_QA_authorization": {
+        "path": ".build/binding-engineering-integration-20261110/qa-authorization.json",
+        "sha256": "b11c32d7c032667c61d7faf3d0c774c14623861a6a133b51cee5d72b89d03113",
+        "bytes": 10091
+      },
+      "implemented_source_review": {
+        "path": ".build/binding-engineering-integration-20261110/input-source-review.json",
+        "sha256": "d71d358d9686353f87b07b2acbede12d05b959d9d02b87d28953cdec06563f0a",
+        "bytes": 26245
+      }
+    },
+    "R93_parent_seal": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-parent-seal-01/parent-seal.json",
+      "sha256": "94983be89972398ae8dcd1c95a483ec7aff1fef55173c5db8f5bb7cd752dc36d",
+      "bytes": 7837
+    },
+    "R93_parent_seal_independent_review": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/engineering-integration-parent-seal-review-01/review.json",
+      "sha256": "36f7605734b91ede8c98fba33f63fef30e3da20e49f85eac12304144beea3441",
+      "bytes": 56214
+    },
+    "R1_canonical_archive_index": {
+      "path": ".build/binding-engineering-integration-20261110/amendment-r2-design-01/checkpoint/source-archive-index.json",
+      "sha256": "4b9b2d535651434e145e884395a25695c432e5fff478dd814386f5960a365bf9",
+      "bytes": 19434
+    },
+    "frozen_managed_source_snapshot": {
+      "path": "openspec/changes/register-binding-impact-surface-mappings/source-snapshot.json",
+      "sha256": "90579412298d918ded4a47d852b37c5509ad1ae5d6389c883596f521eb2826de"
+    },
+    "scope_paths": [
+      "scripts/quality/test_lifecycle_impact.py",
+      "scripts/quality/all_page_design_coverage.py",
+      "scripts/quality/test_all_page_design_coverage.py",
+      "scripts/quality/storage_schema_v5.py",
+      "scripts/quality/test_storage_schema_v5.py",
+      "scripts/quality/verify.py",
+      "scripts/quality/binding_phase_guard.py",
+      "scripts/quality/test_binding_phase_guard.py",
+      "scripts/quality/binding_readiness_assessment.py",
+      "scripts/quality/test_binding_readiness_assessment.py",
+      "docs/development/lifecycle-impact-contract.json",
+      "docs/development/engineering-gates.md",
+      "docs/development/current-product-test-coverage.md",
+      "docs/development/current-client-alignment-plan.md",
+      "docs/README.md",
+      "docs/development/current-phase.json",
+      "docs/development/all-page-design-coverage.json",
+      "docs/development/all-page-design-coverage.md",
+      "docs/development/current-design-alignment.json",
+      "openspec/changes/register-binding-impact-surface-mappings/proposal.md",
+      "openspec/changes/register-binding-impact-surface-mappings/design.md",
+      "openspec/changes/register-binding-impact-surface-mappings/tasks.md",
+      "openspec/changes/register-binding-impact-surface-mappings/iteration-card.md",
+      "openspec/changes/register-binding-impact-surface-mappings/verification.json",
+      "openspec/changes/register-binding-impact-surface-mappings/source-snapshot.json",
+      "openspec/changes/register-binding-impact-surface-mappings/specs/binding-engineering-integration/spec.md",
+      "docs/development/iteration-baseline.json",
+      "docs/development/baselines/FP1-20261109-R94.json",
+      "docs/development/binding-engineering-integration-adoption-20261110.json",
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/engineering-modules.csv"
+    ],
+    "new_catalogue_paths": [
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/engineering-modules.csv"
+    ],
+    "retained_implemented_QA19_paths": [
+      "scripts/quality/test_lifecycle_impact.py",
+      "scripts/quality/all_page_design_coverage.py",
+      "scripts/quality/test_all_page_design_coverage.py",
+      "scripts/quality/storage_schema_v5.py",
+      "scripts/quality/test_storage_schema_v5.py",
+      "scripts/quality/verify.py",
+      "scripts/quality/binding_phase_guard.py",
+      "scripts/quality/test_binding_phase_guard.py",
+      "scripts/quality/binding_readiness_assessment.py",
+      "scripts/quality/test_binding_readiness_assessment.py",
+      "docs/development/lifecycle-impact-contract.json",
+      "docs/development/engineering-gates.md",
+      "docs/development/current-product-test-coverage.md",
+      "docs/development/current-client-alignment-plan.md",
+      "docs/README.md",
+      "docs/development/current-phase.json",
+      "docs/development/all-page-design-coverage.json",
+      "docs/development/all-page-design-coverage.md",
+      "docs/development/current-design-alignment.json"
+    ],
+    "gate_only_paths": [
+      "scripts/quality/binding_phase_guard.py",
+      "scripts/quality/test_binding_phase_guard.py",
+      "scripts/quality/verify.py"
+    ],
+    "Root_current_doc_eligible_paths": [
+      "docs/development/engineering-gates.md",
+      "docs/development/current-product-test-coverage.md",
+      "docs/development/current-client-alignment-plan.md",
+      "docs/README.md",
+      "docs/development/current-phase.json"
+    ],
+    "Root_current_doc_update_policy": "Future Root r2 authorization must explicitly enumerate a subset of these five and permit updates only after gate-source review; empty or omitted means none, never blanket rewrite19.",
+    "atomic_output_paths": [
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/engineering-modules.csv",
+      "docs/development/iteration-baseline.json",
+      "docs/development/baselines/FP1-20261109-R94.json",
+      "docs/development/binding-engineering-integration-adoption-20261110.json"
+    ],
+    "unchanged_component_export": {
+      "path": "docs/architecture/engineering-components.csv",
+      "sha256": "624624f779aac2775f63dbe46b12ec1b0c7aedc755940e5666175c49fc383b6a"
+    },
+    "catalogue_changes": {
+      "M15": "Re-audit actual frozen active r2 current handoff, requested/automatic dispatch, typed readiness and v2 exact six-output semantics; four stale hashes are a trigger, not refresh permission.",
+      "M13": "Only next_step cumulative obligation wording901→944; no status/behavior/owner/target/history/visual change.",
+      "protected": "739 product source identities and product facts in all78 records retain R93; new proof is QA-only; original901 plus43 blocked states retained.",
+      "r1_anchor_observation": {
+        "path": ".build/binding-engineering-integration-20261110/R94-blocker-diagnosis-01/anchor-drift-and-semantics.json",
+        "sha256": "1990b9c7a6413af54cf0cd5803d1483aacc945ca2db35dc9e60088b1afebd724",
+        "bytes": 11281
+      },
+      "anchor_policy": "Ten r1 observations are not a fixed inventory ceiling or authority for new bytes; current active r2 entry and v2 consumer anchors must be selected and independently reviewed after final gate/doc freeze."
+    },
+    "future_authority_paths": {
+      "canonical_review": ".build/binding-engineering-integration-20261110/canonical-plan-review-r2.json",
+      "Root_gate_authorization": ".build/binding-engineering-integration-20261110/qa-authorization-r2.json",
+      "input_source_review": ".build/binding-engineering-integration-20261110/input-source-review-r2.json",
+      "final_source_review": ".build/binding-engineering-integration-20261110/final-source-review-r2.json"
+    },
+    "new_adoption_namespace": ".build/binding-engineering-integration-20261110/adoption-r94-r2",
+    "packet_kind": "binding-engineering-exact-adoption-packet/v2",
+    "packet_review_kind": "independent-binding-engineering-adoption-packet-review/v2",
+    "phase_order": [
+      "ignored_r2_protocol_review",
+      "Root_canonical7_only_publication",
+      "actual_canonical7_non_author_review",
+      "Root_exact_r2_gate3_authorization",
+      "gate3_implementation_and_non_author_source_review",
+      "Root_explicit_current_doc_subset_if_any_then_fresh_freeze",
+      "QA_only_catalogue_candidate_and_independent_body_proof",
+      "fresh_v2_tool_packet_exact6_independent_review",
+      "Root_actual_atomic6_adoption_and_independent_post_adoption_validation",
+      "fresh_full_BIND_strict_v5_full_verify_real_compile"
+    ],
+    "active_authority_policy": "Production CLI and verify select code-owned actual r2 review/auth pins. No metadata-only authority, latest-file scan, missing-pin fallback, renamed-ID/noop or return-to-r1 downgrade.",
+    "historical_authority_policy": "Original r1 approvals, old tool/packet/reviews/actual failed transaction remain byte-exact; archived managed snapshot origins may change only under approved new stages. Original ParentSeal ordinary2 dispositions remain exact and do not expand.",
+    "current_publication_only": true,
+    "gate_write_allowed_now": false,
+    "Root_current_doc_write_allowed_now": false,
+    "catalogue_or_metadata_write_allowed_now": false,
+    "product_write_allowed": false,
+    "product_completion": "incomplete",
+    "next_stage_allowed": false
+  }
+}

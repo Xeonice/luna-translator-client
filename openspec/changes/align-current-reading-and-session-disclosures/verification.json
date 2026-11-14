@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "id": "align-current-reading-and-session-disclosures",
+  "kind": "product",
+  "allowed_paths": [
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+    "apps/desktop/src/features/reading/styles.module.css",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "apps/desktop/tests/visual/verify-ui.mjs",
+    "scripts/report/verify_cp01_reading.mjs",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/current-phase.json",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/implementation-status.md",
+    "openspec/changes/align-current-reading-and-session-disclosures/proposal.md",
+    "openspec/changes/align-current-reading-and-session-disclosures/design.md",
+    "openspec/changes/align-current-reading-and-session-disclosures/tasks.md",
+    "openspec/changes/align-current-reading-and-session-disclosures/iteration-card.md",
+    "openspec/changes/align-current-reading-and-session-disclosures/source-snapshot.json",
+    "openspec/changes/align-current-reading-and-session-disclosures/specs/current-reading-disclosures/spec.md",
+    "openspec/changes/align-current-reading-and-session-disclosures/verification.json",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "docs/development/desktop-client.md",
+    "scripts/quality/product_execution.py",
+    "scripts/quality/cp01_component_evidence.py",
+    "scripts/quality/test_cp01_component_evidence.py",
+    "scripts/quality/verify.py",
+    "docs/development/baselines/FP1-20261103-R81.json",
+    "docs/development/iteration-baseline.json",
+    "apps/desktop/src-tauri/resources/language-worker",
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "crates/app-infra/src/platform/game_launch.rs",
+    "crates/app-infra/src/hook_backend.rs"
+  ],
+  "source_snapshot": "openspec/changes/align-current-reading-and-session-disclosures/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "CPR-001",
+      "spec": "specs/current-reading-disclosures/spec.md",
+      "scenario": "current-text-and-fixed-learning-survive-new-dialogue",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "product-reading-component-tests",
+        "product-ui-capture-v4",
+        "current-design-product-alignment",
+        "current-design-alignment-contract",
+        "current-design-readiness-assessment",
+        "product-cp01-reading-tests",
+        "cp01-component-evidence-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-11",
+        "RW-26",
+        "RW-27",
+        "RW-28",
+        "RW-29",
+        "RW-30"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/reading-window-session-acceptance.csv"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading",
+      "current_design_states": [
+        "reading-current-card",
+        "records-three-default-collapsed",
+        "records-body-expanded",
+        "records-extraction-expanded",
+        "records-hook-diagnostics-expanded"
+      ]
+    },
+    {
+      "id": "CPR-002",
+      "spec": "specs/current-reading-disclosures/spec.md",
+      "scenario": "closing-and-reopening-retains-independent-dataset-state",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "product-reading-component-tests",
+        "product-ui-capture-v4",
+        "current-design-product-alignment",
+        "current-design-alignment-contract",
+        "current-design-readiness-assessment",
+        "product-cp01-reading-tests",
+        "cp01-component-evidence-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-11",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/reading-window-session-acceptance.csv"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading",
+      "current_design_states": [
+        "reading-current-card",
+        "records-three-default-collapsed",
+        "records-body-expanded",
+        "records-extraction-expanded",
+        "records-hook-diagnostics-expanded"
+      ]
+    },
+    {
+      "id": "CPR-003",
+      "spec": "specs/current-reading-disclosures/spec.md",
+      "scenario": "product-code-is-built-and-gate-gaps-remain-visible",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "product-reading-component-tests",
+        "product-ui-capture-v4",
+        "current-design-product-alignment",
+        "current-design-alignment-contract",
+        "current-design-readiness-assessment",
+        "product-cp01-reading-tests",
+        "cp01-component-evidence-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "rust-boundary-tests",
+        "all-page-design-coverage-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-11",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/reading-window-session-acceptance.csv"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M15",
+        "M07"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading",
+      "current_design_states": [
+        "reading-current-card",
+        "records-three-default-collapsed",
+        "records-body-expanded",
+        "records-extraction-expanded",
+        "records-hook-diagnostics-expanded"
+      ]
+    },
+    {
+      "id": "CPR-004",
+      "spec": "specs/current-reading-disclosures/spec.md",
+      "scenario": "pending-lease-owner-release-survives-inherited-descriptors",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-reading-component-tests",
+        "product-cp01-reading-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "implementation_scope_note": "Internal lifecycle repair discovered by mandatory regression; no game-launch UI, no new business capability/DTO/DDL or lease path/timing policy."
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "review_evidence": {
+    "path": ".build/cp01-reading-20261104/review/final-change-review.json",
+    "authors": [
+      "/root/cp01_reading_implementation",
+      "/root/cp01_reading_tests",
+      "/root"
+    ]
+  },
+  "authorization": "Explicit 2026-11-04 user directive to start product implementation overrides previous start-order deferral only; no acceptance waiver.",
+  "design_reference_note": "spec_contract literal HTML anchors bind the shared current shell only; current behavior/style authority is the approved61 guided composition entry and full current alignment contract, not historical PNG approval."
+}

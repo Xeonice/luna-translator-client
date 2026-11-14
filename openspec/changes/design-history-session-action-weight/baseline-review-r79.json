@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "design-history-session-action-weight",
+  "parent_baseline_sha256": "3b51ca08efecd960d57c2d3a38c6fc23d8a71f21782406b39eebe72ce36cac10",
+  "exact_delta_sha256": "b1bbd38637aa8beeff56b958f0737a76b0c27503176964a06a9d796737ce506b",
+  "design_review": {
+    "path": ".build/history-session-action-20261031/review/design-review.json",
+    "bytes": 16000,
+    "sha256": "173987b216c0916f410a81daa518d291c3c0e622dde357485821545ad6d64ab1"
+  },
+  "governance_review": {
+    "path": ".build/history-session-action-20261031/work/review/governance-review.json",
+    "bytes": 2989,
+    "sha256": "ab216e10137ef8e5e8a8536cc9a36d481774a81a64d026567413828d1412e3e3"
+  },
+  "candidate_id": "history-session-paging-20261031",
+  "candidate_status": "pending_review",
+  "style_only": true,
+  "approval_metadata_modified": false,
+  "historical_approval_records_preserved": true,
+  "product_implementation_modified": false,
+  "product_tests_executed": false,
+  "independent_reference_acceptance_promoted": false,
+  "product_acceptance_promoted": false
+}

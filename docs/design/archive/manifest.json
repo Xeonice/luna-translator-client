@@ -1,0 +1,423 @@
+{
+  "date": "2026-10-18",
+  "reason": "Superseded by first-product-v1; source bytes archived, active entries removed.",
+  "archive": "legacy-design-topics-20261018.zip",
+  "archive_sha256": "6906e4f1abc95aaddff8d4a3d3343c9bdb9865e548c43c74ae354c292b1be403",
+  "files": [
+    {
+      "path": "docs/design/japanese-study-v1/README.md",
+      "bytes": 4318,
+      "sha256": "1bba38f8d63b30af834e22cd9ad95d466d2119377a6ceac5c2ac8fc78bcacb2a"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/gallery.html",
+      "bytes": 2766,
+      "sha256": "d303bf3a3839144a4ca8ad69b495e230b5c2f3496a4a062961613c5f10d20a3a"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/index.html",
+      "bytes": 60728,
+      "sha256": "be86adb9eb53ae3a56655e4018d5951b1a4df9ead5ec600894000211d030afc3"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/manifest.json",
+      "bytes": 3227,
+      "sha256": "cc7c7aa0a181f07c2ef6c1f12b86ab7d72859c5d7fe3ff9a08b6fb2cdbbfbd69"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/01-reading-light.png",
+      "bytes": 313574,
+      "sha256": "946bdcd255f128130cb9f254bdd599547324304ec09f141fd29bcf95edd52b2f"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/02-word-card.png",
+      "bytes": 18061,
+      "sha256": "af448089281f6d87229b310b62847c5dcd913f0518ceac6f2d7cd27c5267f4f5"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/03-reading-dark.png",
+      "bytes": 291416,
+      "sha256": "2f13d7fc4e3f6554a63649314dc89f5950528487fa09a3e1a39e3cb5073fdf22"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/04-grammar-explanation.png",
+      "bytes": 154330,
+      "sha256": "8e4e3a1ae4d689b5bdd4b14ffc89b5aded1cb6ecfd20f9bad7b365eb3e123aa2"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/05-grammar-failure.png",
+      "bytes": 119028,
+      "sha256": "f25f8dca99b632084db78441371b95a43e0b9f706e7ac9cdc5c42d9ab747433d"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/06-grammar-frozen-sentence.png",
+      "bytes": 171695,
+      "sha256": "224e5c55776c1260cfb9d4793a371d362554c5b3564fb2f870347c58bc7cce88"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/07-learning-settings.png",
+      "bytes": 189791,
+      "sha256": "e1614f0ca69ecca26de15e98d90cee0f71756232386c26ac7f07927fa935c36a"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/08-model-services.png",
+      "bytes": 160017,
+      "sha256": "f465432bb76ccbbb5ca7f4873629a58e22225b4994e19bda77edd57cd44cd8a5"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/09-long-text-200-percent.png",
+      "bytes": 399162,
+      "sha256": "5ac7838cd9b68bd3ff09ae40f4bd5e763fb2d5acf354d7ecb6e88f1c61fdf294"
+    },
+    {
+      "path": "docs/design/japanese-study-v1/previews/verification.json",
+      "bytes": 1133,
+      "sha256": "c88faa96558784deba18ab7e9df276262a3d311e91e658ab7d19626d56f7897c"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/README.md",
+      "bytes": 7175,
+      "sha256": "a5b45d0d5ed1a724beab3ab8561bb9a7bb7cfee62096127088813fec663e331d"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/design-notes.md",
+      "bytes": 3345,
+      "sha256": "9f5a0560df2d8146a51506da05739d35eeb80d21d8ff2e644a198cc885c26f6a"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/entry-flow.html",
+      "bytes": 3458,
+      "sha256": "26f6aed496fee610aba7519a625f3a8af7326b24cfe42cd3b1dc7f7dec25eb16"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/gallery.html",
+      "bytes": 5061,
+      "sha256": "39ee62b225bdf442a32e76800b6e875c6ffdb0fc96ec55f3be049a6de37acd2e"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/index.html",
+      "bytes": 98288,
+      "sha256": "7f900ac9b8d237eff45f144c67246c4ef3c0fd643b44abac74fa1befcf80dd4d"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/manifest.json",
+      "bytes": 5236,
+      "sha256": "946d05c3f1e0c670eb847f42dbd0dc518a7ba412789ed8c0eddc6023bbc60f69"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/01-reading-light.png",
+      "bytes": 655936,
+      "sha256": "fe0251505371cdf642c2f97d462cfb3a47c6d1a43b4736655de9fdd79e244bb8"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/01b-reading-stage.png",
+      "bytes": 554698,
+      "sha256": "b6030afb1b736fbb79fea6423d7f110bfe4d96dd325c51829dbfafbc33a898c8"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/01c-hud-detail.png",
+      "bytes": 25803,
+      "sha256": "4bf3a5d67b4c6f86382d4dd326c63cfc52a4172ed13ae89c1d582b21d855a38d"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/02-word-card.png",
+      "bytes": 12871,
+      "sha256": "135ddb6315348a42f09f01169f6717a60072cd600aa2e9a8dc086b53b2e0ef58"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/02b-anchored-word-card.png",
+      "bytes": 524969,
+      "sha256": "5dabaafced1d250cfb4fd2105d34d1236e090b656b4b85a6f8befdac1ece6da8"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/03-reading-dark.png",
+      "bytes": 645519,
+      "sha256": "3e88f86154a397771891b3861bc91dbc3beec5a8ab0ca4c3c803402227cad1cd"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/04-grammar-explanation.png",
+      "bytes": 246332,
+      "sha256": "db8c36e4b0e7a3d273a641beaabcab4c5d24bf1d3dcfedff2ec8e0cec750e839"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/05-grammar-failure.png",
+      "bytes": 145968,
+      "sha256": "8408f9c646c9a9a0014869fb61a48850982d11ac6cf784590f2c586ec5024717"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/06-grammar-frozen-sentence.png",
+      "bytes": 246085,
+      "sha256": "1c39257bef8e85730d30d5c1cb7f7e9c74a058ca5a09b096772a4623908f73b0"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/07-learning-settings.png",
+      "bytes": 204931,
+      "sha256": "19c3b258ebf3e73fb65c56c475b797195ed39c35ae6cccb0fd77daf65907c8d1"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/08-model-services.png",
+      "bytes": 177205,
+      "sha256": "b3ab20a7c72825faae7b132f47030aef19f4d068cd82b8f771faac4f90bf87e8"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/09-long-text-200-percent.png",
+      "bytes": 677447,
+      "sha256": "0d9441ab68a9486a40a78b75feb209a6d8ccdbb65037b7fbb021b026afff5ad9"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/09b-long-text-scrolled.png",
+      "bytes": 553123,
+      "sha256": "72ca66d0c8159d5764589464fddca51e4d4507d289213dcb5820ef22cf4b721c"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/10-compact-reading.png",
+      "bytes": 665149,
+      "sha256": "83f0fd28344181d7668e4af26083b250d44a510fc8a5d19800f1db6026388bbf"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/11-reduced-transparency.png",
+      "bytes": 651942,
+      "sha256": "e3ab9174d490be8670878fe008496b417a31b384abe8efd7fa799d056c4e957b"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/12-increased-contrast.png",
+      "bytes": 650962,
+      "sha256": "76acf2456b9210e558613300b3a221ff69649d3b358db7060300ee4f72aa51fc"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/entry-01-more-menu.png",
+      "bytes": 555136,
+      "sha256": "ee64c5905e6193afb1a9e3711681a392a8f98e1df69071fed860c47f80d284d6"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/entry-02-word-card.png",
+      "bytes": 524969,
+      "sha256": "5dabaafced1d250cfb4fd2105d34d1236e090b656b4b85a6f8befdac1ece6da8"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/entry-03-analysis.png",
+      "bytes": 244093,
+      "sha256": "d698e2637e59138b76067781524e9d04fad8c0ed4eea808a58aa5182867c09f2"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/entry-flow-verification.json",
+      "bytes": 523,
+      "sha256": "5baf28f702ab6e3c87292b16bcdf106320903e27916590c2a02b1b3b363acb19"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/reference-v1-light.png",
+      "bytes": 313574,
+      "sha256": "946bdcd255f128130cb9f254bdd599547324304ec09f141fd29bcf95edd52b2f"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/supplemental-captures.json",
+      "bytes": 267,
+      "sha256": "3182d5b023407b14ba2a9fd1c440aa6b68aa146680175059531adea8046bed5f"
+    },
+    {
+      "path": "docs/design/japanese-study-v2/previews/verification.json",
+      "bytes": 1481,
+      "sha256": "099fcf2ba8c4caeea507eba3cf6a9a5cbb521cc69c34eec7584bb773bb8e03dc"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/README.md",
+      "bytes": 5078,
+      "sha256": "0cc72ad68dba10d40bdcab984cbb2c81b50e5c3d3edee2819c1b432cd878cd8d"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/coverage.csv",
+      "bytes": 2015,
+      "sha256": "e54e9fb18e17168544401f570415923795dd1bea75dd7b4815994c613cd9b640"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/design-notes.md",
+      "bytes": 2638,
+      "sha256": "3efecedc3962f17de3d3b90291db9fba54ee0cf97517426ef621b5eea0405ce7"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/entry-flow.html",
+      "bytes": 3682,
+      "sha256": "e4aba153a89ca2c45bee2d25f2dd923b9a1517bd34148c7277fa7b3d74e927f9"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/gallery.html",
+      "bytes": 9584,
+      "sha256": "cfaf7c6c7b2bdc7b35e68684c165fd5e07a0a9100861dba02669dd85a58eb241"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/index.html",
+      "bytes": 5359,
+      "sha256": "2122679ed5116b42310f5459abdd20aa72a94e05947cdc1f452122311387484c"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/manifest.json",
+      "bytes": 6309,
+      "sha256": "304ca3a6e558fd497da332df3b1462e7f6a3f1defd8567b4f7d22cf2eb09f1ac"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/01-purpose-bindings.png",
+      "bytes": 104052,
+      "sha256": "1577b9b2d765114af4ad16bcdac28f7afee7bd4dc7d92896287e8d28919c904a"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/02-service-connection.png",
+      "bytes": 86151,
+      "sha256": "fa3a6a37af71892481fcb906a54bf3c93746ff29a06238ef894a20024f87a6a4"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/03-model-profiles.png",
+      "bytes": 94165,
+      "sha256": "5c551fa94d510ee1091bec725384a52867c76dda777073e15600fed1e77f510b"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/04-parameters-template.png",
+      "bytes": 91342,
+      "sha256": "330505e8be46f4973aae540f9f1b7d1f8525384ae22c6ef002e4166e202207ab"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/05-runtime-data.png",
+      "bytes": 95392,
+      "sha256": "d45b8a65e017fcaf3a54066d06b110cf1cdb9405970154305d95379d27523907"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/06-unapplied-draft.png",
+      "bytes": 86176,
+      "sha256": "75cf54645825aab4df70606e06ee2b8e5661df49cf536605769b6821ae73f17a"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/07-stale-test.png",
+      "bytes": 94991,
+      "sha256": "ed7e23617c2644a0208a8c82a28d76af346e0534b0af7a7cb0ae06dccf18d7ee"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/08-shared-connection-disabled.png",
+      "bytes": 102728,
+      "sha256": "d14cc449dd92049697cacb6f8102f31a2cdd2e535829de9d5d5c2ac77086c9f9"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/09-game-scope.png",
+      "bytes": 90387,
+      "sha256": "0a6ed63131abe5a623f1b409db2792c79b772bdcc6744e8238a403ca4a77f2c9"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/10-dark-appearance.png",
+      "bytes": 104067,
+      "sha256": "58402db3ea4668170d0af439b21096abc2a9dfb339de6aeeeedf7f348fea9877"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/11-saved-draft.png",
+      "bytes": 87505,
+      "sha256": "2703cb59a1497eeb78fee44118dad91b0b478fe16b2f7587446ab8bdcb8cdbbb"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/12-apply-impact.png",
+      "bytes": 32642,
+      "sha256": "712775263c3fcc03017f287bb028329f18a465ae68bdef5d6ce49e6e3d1939f9"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/13-layered-test-failure.png",
+      "bytes": 62463,
+      "sha256": "a65e2cd129c3e87edb0b7b055b4c2ba29eb4fd20f7ab0313e700c20857b01548"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/14-manual-model.png",
+      "bytes": 98316,
+      "sha256": "3169e186c7b27007ac0a371d53f96f8590f275ccf0d24cf1a63189364e93dd56"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/15-effective-request.png",
+      "bytes": 44694,
+      "sha256": "36b65b1edb1cb89bfccc0988832e5f05dcb21c5b8934c96b72ba53928b98911d"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/16-disable-impact.png",
+      "bytes": 20806,
+      "sha256": "1c57a69eefd030ee5cef559c1abda35272674fa93a64acb3205a3aa8d97660ad"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/17-key-versions.png",
+      "bytes": 44108,
+      "sha256": "70e895b059a58b32b76f274d11f8eba00105c6d68f40064a4873bb6ae503d2fe"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/18-import-preflight.png",
+      "bytes": 38319,
+      "sha256": "b3429745bbc43b8447753918ecdc683ec963034325cf98beb48d1426659e3879"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/19-explicit-fallback.png",
+      "bytes": 32048,
+      "sha256": "57df0f6c8203ab487bfb2a5a70e6dc7f8f90be3caa7f8dda47ba0c97f080c360"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/20-narrow-settings.png",
+      "bytes": 55153,
+      "sha256": "b451a6fa699197017cdc39e67cd839a17ec77f264787f989b4b42bbc65fa97e2"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/21-narrow-reading.png",
+      "bytes": 96511,
+      "sha256": "c9b6d92969a9e4e2ec1404a91fb7d2fadb8369f17291bf95c83bf89cd5fb99e4"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/22-reading-entry.png",
+      "bytes": 159097,
+      "sha256": "1961a1468e2773cde83d2295e35088bd9369d381d6c0ce70082f3f4b7f5f105f"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/23-unconfigured-sentence.png",
+      "bytes": 167365,
+      "sha256": "09fefab491bd601b2d80d6a0f2b5bd59639f0059af5ab58efbe4608fee7ca0d3"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/24-configure-retained-sentence.png",
+      "bytes": 99929,
+      "sha256": "1e4ef923918e75eacff7be194829c00c3a5d49e916270844787d5044eea555ce"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/25-return-before-analysis.png",
+      "bytes": 163232,
+      "sha256": "a84af71b4baec810332ca578d7ddf051f948deeccf0fb4e8b09ad48c321bb491"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/26-analysis-result.png",
+      "bytes": 189920,
+      "sha256": "443fac27cb7310a96168c5cec4c7468e47c8724e3ae0de276a0dd092b1935072"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/27-word-card-entry.png",
+      "bytes": 169823,
+      "sha256": "48afb3a8c0ce03aa339e8ed1035f12ffbd45b8411af732e18dd67becdc406eee"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/28-reading-disabled.png",
+      "bytes": 166485,
+      "sha256": "7e21fd2e1f3f33a7450b8d4fc2c578ec059757c5b3adff84a92b55ef6a18b7c4"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/previews/verification.json",
+      "bytes": 6841,
+      "sha256": "b2b37fd3e4e73ecf2a87ec771492ef9a601ac8b6095b8471c80e518901ae270c"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/prototype.js",
+      "bytes": 55478,
+      "sha256": "339eb50e6b35eb2942710704f9a45acb73841972ed60d96f51055490f022e8e4"
+    },
+    {
+      "path": "docs/design/model-configuration-v1/styles.css",
+      "bytes": 20970,
+      "sha256": "9ebbf8abdb8a8da5c574f48759c427b4d23085b617c1db0d722329ebcb566779"
+    },
+    {
+      "path": "scripts/report/build_model_configuration_gallery.py",
+      "bytes": 7093,
+      "sha256": "850be839b160313a7d89130f9d56e312779d6b8fe61b8749e617832d88b6edb0"
+    },
+    {
+      "path": "scripts/report/verify_model_configuration_design.cjs",
+      "bytes": 19267,
+      "sha256": "7601d8541228f3c6640c68050fd83d0168bcaf43ef473add2ac4d90cae4251ef"
+    }
+  ]
+}

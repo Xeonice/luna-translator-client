@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-native-preview-evidence",
+  "parent_baseline_sha256": "267df69126b263000382b58066e0d398d03e33cfc7d7d6d3db500c724454608c",
+  "source_delta": [
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/design.md",
+      "before": null,
+      "after": "3dea9068e621d62fe0ea75aab206af4db52be2380f035eaf4521fbe13bd77be4"
+    },
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/iteration-card.md",
+      "before": null,
+      "after": "678108456f8622614e26e3d172ed2b5d7fb736ffcf39c7fb34f67a03c93185fb"
+    },
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/proposal.md",
+      "before": null,
+      "after": "fe24760bc0805135ccf50938a9043823486b3935d1ad38bb46fdd2b814542a3b"
+    },
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/source-snapshot.json",
+      "before": null,
+      "after": "59a1f3c2de49000781f3ea7b19f4a3bf1614aec864f95120770043e5de3e26e4"
+    },
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/specs/native-preview-evidence/spec.md",
+      "before": null,
+      "after": "12b3e2a7c79a4d611b79d2f741a88b96c5ac5fd61c1078858d855797e3079d70"
+    },
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/tasks.md",
+      "before": null,
+      "after": "e638d507608be2b28505af30da914f800651bcfe5d1170ec87b5ea15cdc6fe76"
+    },
+    {
+      "path": "openspec/changes/repair-native-preview-evidence/verification.json",
+      "before": null,
+      "after": "5b138035c12279ca04e6d4f40e6a9600f2749c7ecdce0fdc79b9ea29c7398f47"
+    },
+    {
+      "path": "scripts/quality/runtime_observer.swift",
+      "before": "36e73cfb68de2de2f26062dc40cd1688a0089ccf535cc92c8e63e4966456cfab",
+      "after": "992ed41b55c430f973aa5767864497849d9e1b641d36f848d16b8067ac6cd9d5"
+    },
+    {
+      "path": "scripts/quality/test_runtime_stability.py",
+      "before": "d4e5d80da048975d56ac5b9f711f4a285015152ab65134fc24c5eebdb3c5294d",
+      "after": "682117ad33d556a06bc0e9bf693736b04239987c4ea8ba2e9e279816951e71f0"
+    }
+  ],
+  "product_delta": [],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/runtime-observer-repair-review/code-review-02.json",
+    "sha256": "e60ff50f7318db8bf10862725d0a71bfab884c77431f2aaf53ca99d97d51d3be",
+    "bytes": 10465
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

@@ -1,0 +1,14 @@
+{
+  "previous_baseline": "FP1-20261019-R10",
+  "previous_sha256": "34cb46591f06c72ee5c6839deb611142aa87708154c66578498af39c43555274",
+  "current_baseline": "FP1-20261019-R11",
+  "independent_review": ".build/model-default-templates-independent-review.json",
+  "reviewed_fingerprints": {
+    "scripts/quality/product_execution.py": "633eac4213aa6e1b7fbcae218602fcdb53034380c0b273bd39c849a426de3bd3"
+  },
+  "guard_tests": ".build/wave2-ui42-gate-guards.log",
+  "mandatory_ui_behavior_count": 42,
+  "approvals_unchanged": true,
+  "product_acceptance_promoted": false,
+  "reference_region_proposal_adopted": false
+}

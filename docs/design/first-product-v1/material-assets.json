@@ -1,0 +1,37 @@
+{
+  "material_baseline": "user-approved macos-material-case-v1",
+  "default_theme": "dark",
+  "full_layout_review": "pending",
+  "files": [
+    {
+      "file": "assets/wallpaper-frame.png",
+      "source": "docs/design/macos-material-case-v1/assets/wallpaper-frame.png",
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+      "scope": "same clean wallpaper frame from approved case"
+    },
+    {
+      "file": "assets/reference-approved-material.png",
+      "source": "docs/design/macos-material-case-v1/previews/case-window.png",
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+      "scope": "user-approved first product visual style"
+    },
+    {
+      "file": "assets/reference-full-product-before-restyle.png",
+      "source": "first-product-v1/previews/35-library-material-dark.png before approved style application",
+      "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60",
+      "scope": "historical unapproved full product draft"
+    },
+    {
+      "file": "assets/reference-icons-color-before-settings.png",
+      "source": "previous first-product archive; previews/23-connection-entities.png before neutral icon correction",
+      "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce",
+      "scope": "historical pre-correction draft"
+    },
+    {
+      "file": "assets/reference-icons-color-before-library.png",
+      "source": "previous first-product archive; previews/35-library-material-dark.png before neutral palette correction",
+      "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82",
+      "scope": "historical pre-correction draft"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "kind": "R40_A_mapping_correction_baseline_review",
+  "phase_scope": "A_PoC_not_B_product_integration",
+  "parent_baseline_sha256": "fa327237ece1f2c8e9186b0d0f64f841bb2152069ab841583468058a6cdbef19",
+  "exact_delta_record": {
+    "path": "openspec/changes/isolate-window-preview-collector/exact-delta-review-r40-a.json",
+    "sha256": "a7bc91d76f9a2769bb585c46689df7e49c92b03d43e26b7f5efa4d1b18c38015"
+  },
+  "root_adoption": "not_performed",
+  "product_runtime_visual_release_promoted": false
+}

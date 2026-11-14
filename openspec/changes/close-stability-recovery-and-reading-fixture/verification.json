@@ -1,0 +1,911 @@
+{
+  "schema_version": 1,
+  "id": "close-stability-recovery-and-reading-fixture",
+  "kind": "product",
+  "status": "ignored_candidate_preparation_pending_Root_integration_and_independent_governance_review",
+  "allowed_paths": [
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+    "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+    "openspec/changes/close-stability-recovery-and-reading-fixture/**",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/stability-refactor-progress.md",
+    "openspec/active-change.json",
+    "docs/development/baselines/FP1-20261028-R63.json",
+    "docs/development/iteration-baseline.json"
+  ],
+  "source_snapshot": "openspec/changes/close-stability-recovery-and-reading-fixture/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "SRB-001",
+      "spec": "specs/recovery-fixture-batch/spec.md",
+      "scenario": "only-exact-reviewed-source-preimages-enter-the-batch",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33",
+        "C17"
+      ],
+      "checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ]
+    },
+    {
+      "id": "SRB-002",
+      "spec": "specs/recovery-fixture-batch/spec.md",
+      "scenario": "bounded-native-recovery-keeps-identity-and-budget-authority",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33",
+        "C17"
+      ],
+      "checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ]
+    },
+    {
+      "id": "SRB-003",
+      "spec": "specs/recovery-fixture-batch/spec.md",
+      "scenario": "reading-capture-consumes-independent-projection-without-replacing-oracles",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33",
+        "C17"
+      ],
+      "checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ]
+    },
+    {
+      "id": "SRB-004",
+      "spec": "specs/recovery-fixture-batch/spec.md",
+      "scenario": "lifecycle-checks-and-final-r63-remain-complete-and-separate",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33",
+        "C17"
+      ],
+      "checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261028-R63",
+  "parent_baseline_sha256": "aae00b78b178b70cf0d43ef7da5f7ac2307325d3786410488ba160899f76fac8",
+  "final_cohort_change_id": "verify-refactor-stability-r63",
+  "product_acceptance_status": "not_run",
+  "scope_note": "Seven exact reviewed sources plus own batch WI only. Fifteen frozen leaf WI stay external because current cross-change scope guard forbids them. No lifecycle registration/carrier/SQL/schema/oracle/cap changes; full current checks and later finalR63 are separate, all old failures retained.",
+  "frozen_leaf_inputs": [
+    {
+      "leaf": "native",
+      "identity": {
+        "manifest": {
+          "path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/review-packet-r2/manifest.json",
+          "sha256": "e9445d5bca74c7e24e4fba971aa39efc640901c2ad347b37474cc16eab23ae3b",
+          "bytes": 30867
+        },
+        "independent_source_review": {
+          "path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/code-review/r2/review.json",
+          "sha256": "39956a9548dff30b91538fb81704d21d20f740753b0d1c133f2a273270038831",
+          "bytes": 12341
+        },
+        "original_source_snapshot": {
+          "path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/source-snapshot.json",
+          "sha256": "d4d76e41b51a3374428187c1c7d9940191b950069857c4ff1f206a7ec14b0620",
+          "bytes": 275992
+        }
+      },
+      "work_item_paths": [
+        "openspec/changes/repair-preview-geometry-recovery/design.md",
+        "openspec/changes/repair-preview-geometry-recovery/iteration-card.md",
+        "openspec/changes/repair-preview-geometry-recovery/proposal.md",
+        "openspec/changes/repair-preview-geometry-recovery/source-snapshot.json",
+        "openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+        "openspec/changes/repair-preview-geometry-recovery/tasks.md",
+        "openspec/changes/repair-preview-geometry-recovery/verification.json"
+      ],
+      "work_items_installed_in_Main": false,
+      "source_bytes_reused_unchanged": true
+    },
+    {
+      "leaf": "fixture",
+      "identity": {
+        "manifest": {
+          "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/manifest.json",
+          "sha256": "9aed709c4eeab0403636f400d1965050e6500f12dbdbbc87dd633672187abd80",
+          "bytes": 47930
+        },
+        "independent_source_review": {
+          "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/independent-source-review01.json",
+          "sha256": "ac53b65a438214d7bf83c57dbcabc62f74de0f5808ff0fac18a7b6cc86952110",
+          "bytes": 1024
+        },
+        "original_source_snapshot": {
+          "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/files/openspec/changes/repair-reviewed-reading-projection-fixture/source-snapshot.json",
+          "sha256": "405080457db057f6ed14e1d503a6a025e20a5285296fc4689e1b170224cd6fd3",
+          "bytes": 275989
+        }
+      },
+      "work_item_paths": [
+        "openspec/changes/repair-reviewed-reading-projection-fixture/checkpoint.md",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/design.md",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/iteration-card.md",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/proposal.md",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/source-snapshot.json",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/specs/reviewed-reading-projection-fixture/spec.md",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/tasks.md",
+        "openspec/changes/repair-reviewed-reading-projection-fixture/verification.json"
+      ],
+      "work_items_installed_in_Main": false,
+      "source_bytes_reused_unchanged": true
+    }
+  ],
+  "upstream_scenario_traceability": [
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-001",
+      "upstream_scenario": "bounded-filter-output-keeps-source-and-output-units-distinct",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-002",
+      "upstream_scenario": "typed-refusal-does-not-itself-authorize-filter-retention",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-003",
+      "upstream_scenario": "failed-capture-runs-complete-same-attempt-post-proof-before-retain",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-004",
+      "upstream_scenario": "continuous-metadata-and-time-budget-enable-bounded-automatic-recovery",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-005",
+      "upstream_scenario": "late-proof-and-geometry-never-cross-authority-epochs",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-006",
+      "upstream_scenario": "private-worker-v4-rejects-old-or-incomplete-geometry-diagnostics",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "native",
+      "upstream_change_id": "repair-preview-geometry-recovery",
+      "upstream_requirement_id": "PGR-007",
+      "upstream_scenario": "fresh-package-runtime-evidence-does-not-inherit-r62-results",
+      "upstream_spec_path": ".build/stability-refactor-20261027/preview-geometry-recovery-r64/candidate/openspec/changes/repair-preview-geometry-recovery/specs/preview-geometry-recovery/spec.md",
+      "upstream_spec_sha256": "78abaa3b0894764726794e69eb6c735974efb4e4de9153dc04109702f6ae0678",
+      "batch_requirement_id": "SRB-002",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C33"
+      ]
+    },
+    {
+      "leaf": "fixture",
+      "upstream_change_id": "repair-reviewed-reading-projection-fixture",
+      "upstream_requirement_id": "RPF-001",
+      "upstream_scenario": "independent-complete-input-supplies-explicit-projection",
+      "upstream_spec_path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/files/openspec/changes/repair-reviewed-reading-projection-fixture/specs/reviewed-reading-projection-fixture/spec.md",
+      "upstream_spec_sha256": "cc8c6814433e8967b5210ac0861aee4355581a3e8ab83dbb4bf24ce7c8379dd2",
+      "batch_requirement_id": "SRB-003",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17"
+      ]
+    },
+    {
+      "leaf": "fixture",
+      "upstream_change_id": "repair-reviewed-reading-projection-fixture",
+      "upstream_requirement_id": "RPF-002",
+      "upstream_scenario": "body-capture-waits-for-real-query-and-visible-state",
+      "upstream_spec_path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/files/openspec/changes/repair-reviewed-reading-projection-fixture/specs/reviewed-reading-projection-fixture/spec.md",
+      "upstream_spec_sha256": "cc8c6814433e8967b5210ac0861aee4355581a3e8ab83dbb4bf24ce7c8379dd2",
+      "batch_requirement_id": "SRB-003",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17"
+      ]
+    },
+    {
+      "leaf": "fixture",
+      "upstream_change_id": "repair-reviewed-reading-projection-fixture",
+      "upstream_requirement_id": "RPF-003",
+      "upstream_scenario": "preserve-isolation-and-historical-failures",
+      "upstream_spec_path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/files/openspec/changes/repair-reviewed-reading-projection-fixture/specs/reviewed-reading-projection-fixture/spec.md",
+      "upstream_spec_sha256": "cc8c6814433e8967b5210ac0861aee4355581a3e8ab83dbb4bf24ce7c8379dd2",
+      "batch_requirement_id": "SRB-003",
+      "batch_checks": [
+        "baseline-integrity",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "lifecycle-impact-guard-tests",
+        "product-core-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "product-target-probe-tests",
+        "product-ui-capture-v4",
+        "reading-component-guard-tests",
+        "runtime-stability-guard-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "typescript-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17"
+      ]
+    }
+  ],
+  "cross_change_work_item_disposition": {
+    "decision": "Root_confirmed_only_seven_reviewed_sources_plus_own_batch_WI_enter_Main",
+    "reason": "spec_contract._allowed_paths rejects even exact paths for another change; no guard modification or false before snapshot",
+    "guard_path": "scripts/quality/spec_contract.py",
+    "guard_sha256": "3d1b13503a6036d378c282fd7210dd735aa9b935e7ebecbfb4b08a60dc96a2b3",
+    "original_leaf_work_items": "All fifteen remain at original ignored source/freeze paths, with exact identities also copied into frozen-leaves; not installed into Main"
+  },
+  "independent_combination_review_prerequisites": {
+    "native_review_decision": "approved_for_candidate_integration_review",
+    "native_scope": "candidate integration code review only; no package/native-SCK/product approval",
+    "Q1_review_status": "approved_for_unchanged_registered_browser_v4_diagnostic_only",
+    "Q1_scope": "unchanged registered browser-v4 diagnostic only; NOT approval to integrate Main",
+    "Q1_supply_checks": {
+      "passed": 18,
+      "total": 18,
+      "positive_checks": [
+        "RPF-positive-original-complete-input-before-publish",
+        "RPF-positive-distinct-independent-unit-provider-revision-not-hardcoded"
+      ],
+      "other_rejection_or_wait_checks": [
+        "RPF-negative-missing-state",
+        "RPF-negative-unknown-state",
+        "RPF-negative-running-is-not-completed",
+        "RPF-negative-null-state",
+        "RPF-negative-missing-provider",
+        "RPF-negative-blank-provider",
+        "RPF-negative-missing-translation",
+        "RPF-negative-blank-translation",
+        "RPF-negative-contradictory-translation",
+        "RPF-negative-missing-revision",
+        "RPF-negative-zero-revision",
+        "RPF-negative-foreign-session-reference",
+        "RPF-negative-foreign-game-reference",
+        "RPF-negative-missing-unit-reference",
+        "RPF-wait-rejects-preexisting-wrong-object-old-commit-and-active-query",
+        "RPF-wait-rejects-owner-drift-before-capture"
+      ]
+    },
+    "Q1_registered_v4": "exit1; original body/top225 to0 is isolated diagnostic only; 14 main states/20pixel variants/10scroll/2obsolete-off failures remain",
+    "Q1_analysis_failures": "analysis01 wrongly expected all body images zero; analysis02 wrongly expected all other PNG raw bytes equal; both failed scripts/logs/receipts retained in original frozen packet; analysis03 corrected analysis scope without changing formal oracle or thresholds",
+    "evidence": [
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/supply-integrity.json",
+        "sha256": "ee5309706808b1b5acd3b518033fb6d8f63825676296d9a0caf69b8a7bbda4f4",
+        "bytes": 2195
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/test-fixture-supply.mjs",
+        "sha256": "e035ef99b9b64e903ca19fa03996b6cc87f15260a3800096b25dcf77f1a4113c",
+        "bytes": 9827
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/registered-v4-full-01-receipt.json",
+        "sha256": "7b8527a6605c16c48cb3cd9209a0505d05ca5ad5cadd37fb2f9a3373ffceaf32",
+        "bytes": 1110
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/registered-v4-full-01/verification.json",
+        "sha256": "6d4bae59d700df923e1614dee84c1895b08349bed5a09f0c7c537cfb7e854bb2",
+        "bytes": 628110
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/visual-recomputation.json",
+        "sha256": "92503245824c45a2dba7c01e3fe8c164e5286030963241ae6262332ca26658f3",
+        "bytes": 104181
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/recompute-visual01-receipt.json",
+        "sha256": "aa7ce509b05817fd877a2628dace08e77d5d48f537f49d18c8bb3be0411a7fef",
+        "bytes": 461
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/recompute-visual02-receipt.json",
+        "sha256": "6b0a021d850d6d476201b61cafb7f3139108c6ad5dd765f1b3c949ee924c4d6c",
+        "bytes": 490
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/recompute-visual03-receipt.json",
+        "sha256": "f97bc840c0f61daf33df734f49ebd7060da44eef76548c749a03719525f31677",
+        "bytes": 440
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/before-run.json",
+        "sha256": "9bcdd95d65218fbeb0103d88ae61b85d5d30532681cec38a2130dc2d3d3a4351",
+        "bytes": 783
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/static-checks.json",
+        "sha256": "6ed83185734c8554b20d020429588afa8ee381de129f7dca7b47e1e7562e80d6",
+        "bytes": 3375
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/static-checks02.json",
+        "sha256": "bac333de1838a250e9603162e78b7e4691d3ce67bca7d5fe382a7a73edb5ea41",
+        "bytes": 1011
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/original-r63-failure/verification.json",
+        "sha256": "fa8efd4298c855c77fb52531541f6386bef528cb6835b15a8af0eebc9daf8349",
+        "bytes": 628133
+      },
+      {
+        "path": ".build/stability-refactor-20261027/r63-projection-fixture-repair/review-packet/evidence/original-r63-failure/selected-capture.json",
+        "sha256": "f4adc5dbe8a0ce319bab54dc3014005b9af55c7e5abf62a4422740c90e7647b1",
+        "bytes": 13280
+      }
+    ],
+    "required_final_review": "Independent combination reviewer must inspect exact Q1 source, all18 meaningful positive/negative/wait supply checks, full registered-v4 execution/raw source identities, original225 and unrelated failures plus both failed analysis attempts, then explicitly decide whether seven exact sources may enter Main. Existing leaf reviews do not provide that approval.",
+    "Main_integration_approved_by_this_preparation": false,
+    "product_acceptance_promoted": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "kind": "user-requested-hud-spacing-delta/v1",
+  "target_id": "guided-service-reading-20261030",
+  "composition_id": "complete-guided-history-20261031",
+  "delta_id": "hud-header-spacing-20261107",
+  "status": "implemented_pending_visual_review",
+  "decision_basis": "explicit_user_change_request",
+  "user_request": "浮窗的【翻译服务选择】少了点边距，这是设计稿和时机产品都要改",
+  "request_scope": "Both design and actual product must gain spacing around the HUD translation-service selector. The user did not review the final6px pixels yet.",
+  "parent_approval": {
+    "path": "docs/development/design-approval-complete-20261031.json",
+    "sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc"
+  },
+  "inherited_entry": {
+    "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+    "sha256": "1a8269771e23e2ecfb577e7666409947dd32ce50e135940d90b7d6e11d23ecaa"
+  },
+  "entry": "docs/design/first-product-v1/candidates/hud-header-spacing-20261107/index.html?scenario=reading",
+  "composition_rule": "Exact parent entry bytes with one final stylesheet link before </head>; all original61 sources, C1, tokens and approved images retained unchanged.",
+  "delta_sources": {
+    "docs/design/first-product-v1/candidates/hud-header-spacing-20261107/index.html": {
+      "sha256": "56487581cfa50849d8e3993b953d99ced29f10647f575d1c2b44c219317ec341",
+      "bytes": 11714
+    },
+    "docs/design/first-product-v1/candidates/hud-header-spacing-20261107/hud-header.css": {
+      "sha256": "436d66b75e02d864193fd6cc3c1e211629afb2808a4dcc49ff72b7bd08cc0474",
+      "bytes": 189
+    }
+  },
+  "geometry": {
+    "header_height_px": 38,
+    "padding_block_px": 6,
+    "padding_inline_px": 7,
+    "selector_min_height_px": 26,
+    "window_tool_px": 24
+  },
+  "not_granted": [
+    "approval of final pixels or reference PNGs",
+    "replacement of complete61-source approval",
+    "whole-page/current authority machine adapter readiness",
+    "Native or game acceptance",
+    "product release"
+  ],
+  "product_completion": "incomplete",
+  "next_stage_allowed": false
+}

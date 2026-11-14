@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "purpose": "First product implementation technology decision FP1-IMPLEMENT-20261019; exact manifests and resources, with prior PoC technology lock archived. This does not approve visual layout or product release.",
+  "approved_stack": {
+    "packages": {
+      "react": "19",
+      "typescript": "5.9",
+      "@tauri-apps/api": "2",
+      "@tauri-apps/cli": "2",
+      "react-dom": "19",
+      "vite": "8",
+      "react-aria-components": "1.22.1"
+    },
+    "cargo": {
+      "tauri": "2",
+      "tokio": "1.53.3",
+      "rusqlite": "0.40.2",
+      "ts-rs": "12.0.1",
+      "reqwest": "0.13.5",
+      "eventsource-stream": "0.2.3",
+      "security-framework": "3.7.0",
+      "md5": "0.8.1",
+      "ring": "0.17.14",
+      "base64": "0.22.1",
+      "libc": "0.2.191"
+    },
+    "rust": {
+      "edition": "2024",
+      "rust-version": "1.89"
+    }
+  },
+  "manifests": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "b61d4ff8c74778fffa6492b92390c053915eb50803a81b611ca5a31e2f1bead4"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "945583e9341351a933c2d94ce5fb2d90ad6ddc98726051147b275b90a3690e2b"
+    },
+    {
+      "path": "apps/desktop/package-lock.json",
+      "sha256": "b85c1c7cbb9a4c6249920022220646cda99fe76fa7ba2237ff5b8e7e3da06a81"
+    },
+    {
+      "path": "apps/desktop/package.json",
+      "sha256": "cac29206c7a906039be6e5dcc82d5507d4f6cb5015607a7f956d00bd58fa74a4"
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "sha256": "4f6380d81216162b6a97c50b24d28fb3cc002edfeb69d50ff9e4b99d1a31f549"
+    },
+    {
+      "path": "apps/desktop/src-tauri/tauri.conf.json",
+      "sha256": "c11104fd46c77dabf03c99172a58baf259b984dcdefc113044dc9b85314ec9d5"
+    },
+    {
+      "path": "apps/desktop/tests/tsconfig.json",
+      "sha256": "ced538c71472495bea273e3010f0c017531e21ecdae9cf2bd05d8a1de0177f98"
+    },
+    {
+      "path": "apps/desktop/tests/visual/vite.config.ts",
+      "sha256": "f174491c629e12ee31ee7526325966ab2f253da29b88844eacd11d6871138962"
+    },
+    {
+      "path": "apps/desktop/tsconfig.json",
+      "sha256": "954da1b2bd90ef309404729e44d790d863f42be585e3a28cdb4159e06421d6d9"
+    },
+    {
+      "path": "apps/desktop/vite.config.ts",
+      "sha256": "ce5584db82cc0c0fee7d7507f2e018f4f3109b973d41d2af0f09b9b8ed942380"
+    },
+    {
+      "path": "crates/app-core/Cargo.toml",
+      "sha256": "47b4c1d2149c8d93eb19bcbee1c8c36c372e86f375ac32ced445a391d8e46ef1"
+    },
+    {
+      "path": "crates/app-infra/Cargo.toml",
+      "sha256": "fb480df3f10d8003f757c7b8b1fba87134581dae8f2f208980004d291756bc9a"
+    },
+    {
+      "path": "crates/hook-client/Cargo.toml",
+      "sha256": "acd835ab56449ccba0907090447f6eeabe4526b89a5cc1e1bbea7ec3f2ed2cdb"
+    },
+    {
+      "path": "crates/hook-contracts/Cargo.toml",
+      "sha256": "5ec8a675247c6c5d97040a840d4abf916fc9de8037ae3bc2c28cf6a78a5f318b"
+    },
+    {
+      "path": "crates/language-worker/Cargo.toml",
+      "sha256": "7a222fc17c72adaab5d548af9c720c5c7eaf7fd681d2abc09a5dc29ac2eda94c"
+    },
+    {
+      "path": "crates/lunahook-host/Cargo.toml",
+      "sha256": "8ca8bdf8bc2e4b09a8cb0835d3c273056538e830e4e268e774d3ace7a91d121f"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "fd2ea4d7178e704b3452a556ee60cd224ffc69e8053fcdd9b1c039741346e4ae"
+    },
+    {
+      "path": "crates/offline-translation-worker/Cargo.toml",
+      "sha256": "cadd6568cbb8e4cb4e7ec5ce989179c95246c7a2ed25a84bcf0e637dc3912d60"
+    },
+    {
+      "path": "apps/desktop/tests/live-preview/tsconfig.json",
+      "sha256": "a026bfd2601e1f00f2e64cf8e0724a3195830bdf8832670ed2a1ebf6e1f2c612"
+    },
+    {
+      "path": "apps/desktop/tests/live-preview/vite.config.ts",
+      "sha256": "b34c310ce92c76dd414f4f1738d33313b0945559101080abfe0004646e1000fb"
+    }
+  ],
+  "design_sources": [
+    {
+      "path": "docs/design/first-product-v1/app.js",
+      "sha256": "bc1112ca97c308f4dd4c89833c1b78a689079ab77534d2b34ad894389b435e6e"
+    },
+    {
+      "path": "docs/design/first-product-v1/controls.css",
+      "sha256": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480"
+    },
+    {
+      "path": "docs/design/first-product-v1/controls.js",
+      "sha256": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17"
+    },
+    {
+      "path": "docs/design/first-product-v1/data.js",
+      "sha256": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9"
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.css",
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d"
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.js",
+      "sha256": "ec58d3d4e365b07bd9324525163374275c9966fbd8cf558fa14a5459b5ac8c42"
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/index.html",
+      "sha256": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957"
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.css",
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74"
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.js",
+      "sha256": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.css",
+      "sha256": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd"
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.js",
+      "sha256": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e"
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.css",
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.js",
+      "sha256": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd"
+    },
+    {
+      "path": "docs/design/first-product-v1/style-guide.md",
+      "sha256": "128ae54ed8f8f87f091dfec4b2e7047320bc68fe803911e90219433656fa0b6d"
+    },
+    {
+      "path": "docs/design/first-product-v1/styles.css",
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.css",
+      "sha256": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.js",
+      "sha256": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/index.html",
+      "sha256": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32"
+    }
+  ],
+  "design_review_adoption": {
+    "record": "docs/development/design-approval-20261019.json",
+    "scope": "Explicit latest design approval; 16 UI sources and existing style guide. Framework versions, manifests, tokens and references unchanged. 2026-10-21五项明确用户覆盖由repair-library-binding-preview-diagnostics记录；仅同步四当前设计源字节，不覆盖原批准图/token，不提升新视觉/产品/发布状态；R31独立review另绑定。",
+    "technical_increment_approval": "separate_pending_implementation_review"
+  },
+  "native_increment_review": {
+    "change": "implement-reviewed-reading-session-batch",
+    "review": "openspec/changes/implement-reviewed-reading-session-batch/platform-review.md",
+    "scope": "Only macOS build-time direct cc=1.8.0 edge already present in Cargo.lock. No package version/source/checksum changes; AppKit/Carbon/ScreenCaptureKit use reviewed native boundary with macOS14 availability and opaque/unsupported fallback. Original design, tokens and dependency frameworks unchanged.",
+    "independent_review_evidence": ".build/next-batch-20261020/reviews/final-recheck.json",
+    "manifest_changes": [
+      "Cargo.lock",
+      "apps/desktop/src-tauri/Cargo.toml"
+    ],
+    "user_product_authorization": "2026-10-20 next batch implementation and four-game regression; no new framework adopted"
+  },
+  "provider_signing_increment_review": {
+    "change": "implement-approved-client-plan",
+    "reviewer": "/root/implementation_review",
+    "review": ".build/current-client-execution-20261105/review/incremental-implementation-review-r1.json",
+    "scope": "Exact md5=0.8.1 solely Baidu mandated wire signing; same reqwest=0.13.5 form feature enables official form payloads. No framework/API/resource identity hash change. New lock packages retain exact source/checksum; final full source review required.",
+    "manifest_changes": [
+      "Cargo.lock",
+      "crates/app-infra/Cargo.toml"
+    ],
+    "license": "apps/desktop/src-tauri/resources/licenses/md5/LICENSE.md",
+    "internal_hashing_unchanged": true
+  },
+  "google_signing_increment_review": {
+    "change": "implement-approved-client-plan",
+    "reviewer": "/root/storage_gateway_independent_review",
+    "review": ".build/current-client-execution-20261105/review/google-auth-1793888078099255000/review.json",
+    "scope": "Exact direct ring=0.17.14 and base64=0.22.1 only for fixed Google RS256 service-account assertions. Existing lock versions/source/checksums unchanged; only two app-infra direct edges added. Bounded import, fixed audience/scope, secret-only buffers; no live token exchange or authorization acceptance.",
+    "manifest_changes": [
+      "Cargo.lock",
+      "crates/app-infra/Cargo.toml"
+    ],
+    "licenses": [
+      "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/LICENSE",
+      "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/LICENSE-other-bits",
+      "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/LICENSE-BoringSSL",
+      "apps/desktop/src-tauri/resources/licenses/base64-0.22.1/LICENSE-MIT",
+      "apps/desktop/src-tauri/resources/licenses/base64-0.22.1/LICENSE-APACHE",
+      "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/once_cell/LICENSE-APACHE",
+      "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/once_cell/LICENSE-MIT"
+    ]
+  },
+  "transitive_cargo_compatibility": [
+    {
+      "name": "base64",
+      "version": "0.21.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "9d297deb1925b89f2ccc13d7635fa0714f12c87adce1c75356b39ca9b7178567",
+      "reason": "R90 existing transitive resolution, source/checksum unchanged; direct Google signing leaf remains exact base64=0.22.1. See google_signing_increment_review and CP04 lock-delta.json."
+    },
+    {
+      "name": "base64",
+      "version": "0.23.1",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "ac07cdecf99051d9a5238b80f35af32cdeba5b336e55d957b318b50137e18da5",
+      "reason": "R90 existing transitive resolution, source/checksum unchanged; direct Google signing leaf remains exact base64=0.22.1. See google_signing_increment_review and CP04 lock-delta.json."
+    }
+  ],
+  "offline_worker_increment_review": {
+    "change": "implement-approved-client-plan",
+    "reviewer": "/root/offline_architecture_independent_review",
+    "review": ".build/current-client-execution-20261105/review/offline-corrections-independent-1793913966340222000/technology-admission.json",
+    "review_sha256": "4f8d28c641cbccc5f9fb4a1d5a153c523268233cd84fcb625970851f57a14726",
+    "scope": "Exact standalone private offline worker crate with existing serde_json/sha2; cfg(unix) libc=0.2.191 existing registry node for nofollow/nonblock regular-file checks; existing windows=0.61.3 Storage feature. No framework change; all 491 registry package payloads unchanged. OFF05 and full runtime/Repo/Native/product remain blocked.",
+    "manifest_changes": [
+      "Cargo.lock",
+      "Cargo.toml",
+      "crates/app-infra/Cargo.toml",
+      "crates/offline-translation-worker/Cargo.toml"
+    ],
+    "product_accepted": false
+  },
+  "general_native_qa_manifest_increment_review": {
+    "change": "close-general-page-visual-contract",
+    "reviewer": "/root/general_final_architecture_review",
+    "review": ".build/native-display-contract/technology-manifest-review.json",
+    "scope": "Only exact four existing React/Vite/TypeScript QA manifests for approved General isolated render/build and existing localhost memory preview. No dependency/framework/version/resource/design-source change; no visual/product/release approval.",
+    "manifest_changes": [
+      "apps/desktop/tests/tsconfig.json",
+      "apps/desktop/vite.config.ts",
+      "apps/desktop/tests/live-preview/tsconfig.json",
+      "apps/desktop/tests/live-preview/vite.config.ts"
+    ],
+    "approved_stack_unchanged": true,
+    "design_sources_unchanged": true,
+    "transitive_cargo_compatibility_unchanged": true,
+    "other_manifests_unchanged": true,
+    "product_accepted": false,
+    "review_sha256": "c3b1a015584971a8d8abfdbfe825462737d368b21c1ae73a31df2d3773c03537"
+  }
+}

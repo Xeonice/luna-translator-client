@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "id": "repair-natural-exit-operation-terminal",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "source_snapshot": "openspec/changes/repair-natural-exit-operation-terminal/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "allowed_paths": [
+    "openspec/changes/repair-natural-exit-operation-terminal/**",
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/tests/application_runtime.rs",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R60.json",
+    "openspec/active-change.json",
+    "scripts/quality/storage_acceptance.py",
+    "docs/architecture/database/v2/storage-acceptance.json",
+    "docs/architecture/database/v2/storage-review.json"
+  ],
+  "requirements": [
+    {
+      "id": "NOP-001",
+      "spec": "specs/natural-operation-terminal/spec.md",
+      "scenario": "natural-terminal-transition-closes-all-same-session-active-operations",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state",
+        "docs/design/first-product-v1/interaction-review.html#06-preview-exited",
+        "docs/design/first-product-v1/interaction-review.html#15-hook-warning-events"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C15",
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "NOP-002",
+      "spec": "specs/natural-operation-terminal/spec.md",
+      "scenario": "operation-write-failure-rolls-back-and-rejects-drain-ack",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state",
+        "docs/design/first-product-v1/interaction-review.html#06-preview-exited",
+        "docs/design/first-product-v1/interaction-review.html#15-hook-warning-events"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C15",
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "NOP-003",
+      "spec": "specs/natural-operation-terminal/spec.md",
+      "scenario": "late-or-repeated-terminal-events-preserve-other-sessions-and-revisions",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state",
+        "docs/design/first-product-v1/interaction-review.html#06-preview-exited",
+        "docs/design/first-product-v1/interaction-review.html#15-hook-warning-events"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C15",
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "NOP-004",
+      "spec": "specs/natural-operation-terminal/spec.md",
+      "scenario": "terminal-policy-preserves-existing-terminal-and-legacy-identities",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state",
+        "docs/design/first-product-v1/interaction-review.html#06-preview-exited",
+        "docs/design/first-product-v1/interaction-review.html#15-hook-warning-events"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C15",
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "NOP-005",
+      "spec": "specs/natural-operation-terminal/spec.md",
+      "scenario": "existing-schema-contracts-and-old-runtime-failures-remain-unchanged",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state",
+        "docs/design/first-product-v1/interaction-review.html#06-preview-exited",
+        "docs/design/first-product-v1/interaction-review.html#15-hook-warning-events"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C15",
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "NOP-006",
+      "spec": "specs/natural-operation-terminal/spec.md",
+      "scenario": "complete-storage-adapters-review-the-existing-preview-identity-test-input",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state",
+        "docs/design/first-product-v1/interaction-review.html#06-preview-exited",
+        "docs/design/first-product-v1/interaction-review.html#15-hook-warning-events"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "storage-acceptance-tests",
+        "storage-acceptance-v2-tests"
+      ]
+    }
+  ],
+  "scope_note": "Narrow same-SID durable natural-exit correction in the existing Immediate transaction; original runtime test prefix preserved. No DDL/public contract/Core/collector protocol/UI/design change. Existing visual failures and R59 failed runtime/validation workitem remain unchanged. Actual complete storage adapter required. Fresh signed same-source package/four-game acceptance remains a separate final validation. One tooling source path additionally registers the existing transitive preview_identity.rs test input in the unchanged v1 base test_sources list inherited by v2. Original v1/v2 required commands and all tests/oracles remain. R60 62/66 failed gate and old registrations/receipts are preserved. Additional frozen full-file migration-source hash mismatches after the R61 SQL patch remain blocked pending precise independent review and a separate explicit authority-scope amendment; no silent source hash refresh. Explicit source-carrier scope amendment: independently review unchanged v1/v2 migration SQL and the narrow non-DDL R61 code, then update only migration_chain[0/1].source_sha256 in the current schema2 registry and production_migration_source_sha256 in its source-review record. Preserve the historical v1 registry and all SQL/schema/route identities. Independent carrier review and exact Root adoption remain required; source hash checks stay active."
+}

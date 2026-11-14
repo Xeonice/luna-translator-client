@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "program": "runtime-lifecycle-stability-refactor",
+  "user_order": "先重构和与重构有关的文档，验证交叉影响已消除，再补剩余产品内容",
+  "current_phase": "SR-0",
+  "active_change": "refactor-runtime-lifecycle-boundaries",
+  "phase_status": "documented_definition; implementation_not_started",
+  "product_scope_changed": false,
+  "framework_core_database_unchanged": true,
+  "remaining_features_deferred": true,
+  "phases": [
+    {
+      "id": "SR-0",
+      "name": "合同与迁移基线",
+      "state": "planned_not_implemented",
+      "depends_on": [],
+      "objective": "把四轴、所有权与转换表固定为本轮唯一技术合同，建立M/C→事件→必跑场景映射，先保存完整源码/运行事实。",
+      "production_changes": false,
+      "proposed_new_files": [],
+      "existing_entrypoints": [
+        "docs/architecture/runtime-lifecycle-refactor.md",
+        "docs/architecture/runtime-lifecycle-contracts.json",
+        "docs/development/engineering-gates.md",
+        "openspec/changes/refactor-runtime-lifecycle-boundaries/"
+      ],
+      "exit_criteria": [
+        "每轴有唯一事实写入者/只读消费方/失效条件，现行公开DTO字段不变",
+        "从7个已证事件中提取永久回归目的，不把历史失败改成当前仍失败",
+        "本轮新功能冻结清单与文档当前/历史事实分离",
+        "每后续切片另有精确允许路径与独立review，不因本计划就授权全部目录同时改"
+      ],
+      "owner": "Root / AP + PL + QA",
+      "proposed_child_change": "refactor-runtime-lifecycle-boundaries",
+      "child_change_created": true,
+      "product_implementation_status": "not_applicable_documents_only",
+      "acceptance_status": "not_run",
+      "obligation_ids": [],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "required_visual_checks": []
+    },
+    {
+      "id": "SR-1",
+      "name": "首切片：预览纯状态政策提取",
+      "state": "proposed_first_implementation_slice",
+      "depends_on": [
+        "SR-0"
+      ],
+      "objective": "将WindowPreviewService中已存在的身份/帧接纳及投影归约纯规则移入私有模块，先减少同一模块内重复判断，保持已有行为。",
+      "proposed_new_files": [
+        "apps/desktop/src-tauri/src/platform/window_preview/state.rs"
+      ],
+      "existing_entrypoints": [
+        "apps/desktop/src-tauri/src/platform/window_preview.rs::collector_frame",
+        "apps/desktop/src-tauri/src/platform/window_preview.rs::finish_capture",
+        "apps/desktop/src-tauri/src/platform/window_preview.rs::public_projection/consumer_update"
+      ],
+      "proposed_operations": [
+        "新增私有mod state并保留WindowPreviewService外部API；只迁移无I/O/无Tauri/AppKit句柄的规则及其测试",
+        "使用私有context/decision值描述owner一致性、首次解析、frame/metadata接纳与状态投影；不是全局万能state struct",
+        "Native对象、Lease资源和锁仍留service；确保锁内纯决策，慢effect与Native调用不被迁入锁",
+        "在现有实现上先运行表征向量，再移动实现；若发现预期行为冲突，作为单独缺陷记录，不改预期迁就实现"
+      ],
+      "not_allowed": [
+        "worker协议/公有PreviewProjection或generated DTO变化",
+        "UI/TauriPort/Native桥/HookBackend/数据库/Core改动",
+        "新增重试、改变许可终态或首次配对流程"
+      ],
+      "validation": [
+        "原WindowPreviewService全部原断言保持，新增纯转换表覆盖未知→解析、已知变化拒绝、暂停/stop/撤销、metadata-only、溢出/错误代次",
+        "原RBC98–100首帧目的和RBC92/96/97缓存/多订阅目的不可减少",
+        "Rust编译/边界/原Native维护检查；本阶段不能宣称正式包帧或游戏已通过",
+        "区分Rust合法首帧前身份投影与consumer未知hash的异步首帧接纳；身份已知不代表Live或已收到图像。",
+        "合法Pause/同目标移交的投递封套迁移不等于新图或资源已释放；保留实际像素/捕获时间与CAS/fence，逐项表征后再抽取。"
+      ],
+      "exit_criteria": [
+        "精确diff只有原服务纯规则与私有state文件及同scope测试",
+        "原public JSON与IPC契约字节语义未变",
+        "独立review确认没有删边界核验、改变预算或引入新的副作用所有者"
+      ],
+      "owner": "PL；AP独审；QA验证",
+      "proposed_child_change": "refactor-preview-state-policy",
+      "child_change_created": false,
+      "product_implementation_status": "not_started",
+      "acceptance_status": "not_run",
+      "obligation_ids": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH"
+      ],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ]
+    },
+    {
+      "id": "SR-2",
+      "name": "消费端传输与展示分离",
+      "state": "planned_not_implemented",
+      "depends_on": [
+        "SR-1"
+      ],
+      "objective": "TauriApplicationPort收敛为适配入口，私有client独占pull/listener/cache/transport代次；C35只负责用户意图和渲染事实。",
+      "proposed_new_files": [
+        "apps/desktop/src/bridge/preview-subscriptions.ts"
+      ],
+      "existing_entrypoints": [
+        "apps/desktop/src/bridge/tauri-port.ts",
+        "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "apps/desktop/src/features/reading/ReadingPanel.tsx"
+      ],
+      "proposed_operations": [
+        "机械迁移previewPulls/previewPending/deliver/pull/attach到私有PreviewSubscriptionClient，由TauriApplicationPort注入invoke闭包并委托",
+        "把消费者transport错误与Rust projection分开存储；禁止修改Rust producer的事实来表达本地失败",
+        "保留绑定pending按context隔离、独有unsubscribe与首帧单向身份解析规则，错误码到恢复动作映射集中在一个内部policy"
+      ],
+      "not_allowed": [
+        "把UI mount/unmount重新接到start/stop producer",
+        "已知目标hash变化自动接受",
+        "以删重复安全验证实现去耦",
+        "顺便修改Select、材质或产品菜单"
+      ],
+      "validation": [
+        "真实React+生产Tauri adapter：A永不结束/B成功、两个消费者快慢、迟到finally/取消、metadata-only、缓存stale重挂、许可拒绝后迟到高序号帧",
+        "harness publish确实触发真实store/组件更新，不仅fixture内部字段变化",
+        "TS编译/AST边界/原100组件目的与必要新增向量；最终Native帧另验"
+      ],
+      "exit_criteria": [
+        "TauriApplicationPort只装配/委托，消费者状态不再混同captureTruth",
+        "无新的公开ApplicationPort或IPC契约，或确需改变已另列评审",
+        "每个listener最大资源/取消语义保持且无共享pending饥饿"
+      ],
+      "owner": "UI；PL/AP独审；QA验证",
+      "proposed_child_change": "refactor-preview-subscriptions",
+      "child_change_created": false,
+      "product_implementation_status": "not_started",
+      "acceptance_status": "not_run",
+      "obligation_ids": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ]
+    },
+    {
+      "id": "SR-3",
+      "name": "主进程会话预览与封面职责拆分",
+      "state": "planned_not_implemented",
+      "depends_on": [
+        "SR-1",
+        "SR-2"
+      ],
+      "objective": "把reading IPC里的长生命周期控制移到明确平台coordinator，封面仅消费事实，IPC回到角色核验/参数映射/调用。",
+      "proposed_new_files": [
+        "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs",
+        "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs"
+      ],
+      "existing_entrypoints": [
+        "apps/desktop/src-tauri/src/bootstrap.rs::PreviewOwnership/PreviewLease/DesktopState",
+        "apps/desktop/src-tauri/src/ipc/reading.rs::begin_association_preview/transfer_candidate_window_preview/stop_*",
+        "apps/desktop/src-tauri/src/ipc/reading.rs::prepare_preview_attempt/ensure_associated_preview",
+        "apps/desktop/src-tauri/src/ipc/reading.rs::spawn_session_preview_coordinator"
+      ],
+      "proposed_operations": [
+        "PreviewOwnership与epoch事务由SessionPreviewCoordinator单独持有，组合根只注入依赖；保留旧入口薄委托，逐调用点迁移",
+        "把现有名为spawn_session_preview_coordinator、实质做首帧封面的loop提取并正名为SessionCoverCoordinator",
+        "保持app-core game_assets业务/存储策略在原层，平台coordinator只做Native身份/租约effect协调；不得搬入SQL/HTTP",
+        "资源转移、取消、解除和shutdown逐一迁移，保留Weak proof关系，避免service/collector/hook新的Arc强循环"
+      ],
+      "not_allowed": [
+        "合并HookConnected/WindowBound/FrameLive为一个ready布尔值",
+        "持跨层锁等待Native/mainqueue/网络/数据库",
+        "因封面错误停止producer或Hook",
+        "改变candidate→session转移CAS或清理确认"
+      ],
+      "validation": [
+        "同Windows目标candidate→session同filter移交；旧候选cancel晚到不stop新session",
+        "仅进程接入无WindowRef仍可Hook，但不虚构preview；无图封面不保存",
+        "主窗关闭/重开/切页/封面慢失败不改变source capture ID；真正退出可有界drain",
+        "关联epoch并发、旧解除/旧stop不能取消新关联；正常/cleanup_pending/shutdown路径均有原生模拟和最终包验证"
+      ],
+      "exit_criteria": [
+        "reading.rs的长循环/ownership政策迁入coordinator，命令仍同名/同DTO",
+        "封面consumer不拥有producer生命周期",
+        "锁/effect顺序与旧失败证据有独立对照"
+      ],
+      "owner": "PL；AP/HK独审；QA验证",
+      "proposed_child_change": "refactor-session-preview-coordination",
+      "child_change_created": false,
+      "product_implementation_status": "not_started",
+      "acceptance_status": "not_run",
+      "obligation_ids": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ]
+    },
+    {
+      "id": "SR-4",
+      "name": "Hook facade 内部窗口关联与 journal 接口提取",
+      "state": "planned_not_implemented",
+      "depends_on": [
+        "SR-3"
+      ],
+      "objective": "按职责缩小hook_backend变更半径，不替换HookBackend公开端口或原子会话事务。",
+      "proposed_new_files": [
+        "crates/app-infra/src/hook_backend/window_association.rs",
+        "crates/app-infra/src/hook_backend/preview_identity.rs",
+        "crates/app-infra/src/hook_backend/journal.rs"
+      ],
+      "existing_entrypoints": [
+        "crates/app-infra/src/hook_backend.rs::Candidate/CoreHookBackend",
+        "crates/app-infra/src/hook_backend.rs::preview_candidate/freeze_preview_target/verify_preview_context",
+        "crates/app-infra/src/hook_backend.rs::associate_traced/finish_disconnected_session/subscribe",
+        "crates/app-core/src/ports/runtime.rs::HookBackend"
+      ],
+      "proposed_operations": [
+        "先提取Candidate/发现/完整Windows关联状态，再独立提取preview freeze/proof，最后journal记录适配；每步保留hook_backend现有public re-export",
+        "active Hook SID与window association分开建模；窗口解除不结束取文，Native不可用不抹掉可信Windows关联",
+        "journal只负责原始事件/阶段事实向应用存储合同投递，不决定UI状态或producer生命周期",
+        "保留短期WinAPI查询与独立worker proof前后核验，不因为窄化facade而缓存永久信任"
+      ],
+      "not_allowed": [
+        "大批公开trait或DB schema同步重写",
+        "移除target lease/expected SID+target compare-clear",
+        "按标题/最大窗口猜Native对象",
+        "把stage诊断记录台词/secret/任意原始路径内容"
+      ],
+      "validation": [
+        "旧A自然退出完整ack后B接入，A晚到原文/EOF不污染B",
+        "同PID/HWND复用、相同exe不同Bottle、未知架构/资源缺失、负坐标DPI、发现为空与失败区别",
+        "完整Hook/文字聚合/全量history/journal连续性维护用例保留",
+        "最终SR/MO/Never7/Sakura同包连续原文和自然退出换游戏，Ever17仍排除"
+      ],
+      "exit_criteria": [
+        "HookBackend外部行为与JSONL2/Core ABI不变",
+        "隔离职责但会话原子提交与数据完整性不拆散",
+        "明确无WindowRef是未绑定事实，不通过减少校验补预览"
+      ],
+      "owner": "HK；AP/PL独审；QA验证",
+      "proposed_child_change": "refactor-hook-association-boundaries",
+      "child_change_created": false,
+      "product_implementation_status": "not_started",
+      "acceptance_status": "not_run",
+      "obligation_ids": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ],
+      "documentation_sync": [
+        "当前Core锁/构建入口与native说明对账，旧工具标历史profile；作为该product切片精确登记，不在SR0修改native源。"
+      ]
+    },
+    {
+      "id": "SR-5",
+      "name": "几何意图与词卡所有权结构化",
+      "state": "planned_not_implemented",
+      "depends_on": [
+        "SR-0"
+      ],
+      "integration_after": [
+        "SR-3"
+      ],
+      "objective": "把已修的content-fit因果分类从window_manager中私有提取，避免后续UI效果重建第二个关闭权威。",
+      "proposed_new_files": [
+        "apps/desktop/src-tauri/src/platform/owner_geometry.rs"
+      ],
+      "existing_entrypoints": [
+        "apps/desktop/src-tauri/src/platform/window_manager.rs::content_fit_policy",
+        "apps/desktop/src-tauri/src/platform/window_geometry.rs",
+        "apps/desktop/src-tauri/src/platform/word_card.rs",
+        "apps/desktop/src/features/language/WordCard.tsx",
+        "apps/desktop/src/windows/hud/HudWindow.tsx"
+      ],
+      "proposed_operations": [
+        "只提取现有纯分类器/owner实例与epoch/CAS；原生apply/readback仍在window_manager，geometry文件持久化仍在window_geometry",
+        "词卡仅按精确card_id/generation和owner stamp处理失效；UI保留Esc/外点/owner滚动等已定义显式动作",
+        "可与SR-2在目录不重叠且合同先冻结时并行；最终联合适高/订阅/窗口回归在SR-3集成后完成"
+      ],
+      "not_allowed": [
+        "重新监听浏览器resize关闭词卡",
+        "以定时忽略窗口事件或硬编码尺寸替代真实原因分类",
+        "为测试改游戏窗口宽度/位置/DPI",
+        "把每个新句/词法回包视为词卡重新打开"
+      ],
+      "validation": [
+        "旧句开卡→正文长短变化/ruby迟到/流式译文fit，冻结card ID/原句不变",
+        "真实用户拖动/resize、Esc、外点、owner滚动按设计关闭精确当前卡",
+        "旧window实例/旧epoch/旧close晚到不能关闭新卡；未知几何失败保持保守typed状态"
+      ],
+      "exit_criteria": [
+        "geometry cause单权威与现有R35因果断言保留",
+        "纯重构保持公开FrozenWordCard与WindowRole模型",
+        "最终真实鼠标与OS Resized链，不用browser fixture代替"
+      ],
+      "owner": "PL；UI/AP独审；QA验证",
+      "proposed_child_change": "refactor-owner-geometry-policy",
+      "child_change_created": false,
+      "product_implementation_status": "not_started",
+      "acceptance_status": "not_run",
+      "obligation_ids": [
+        "SRF-WORDCARD-GEOMETRY"
+      ],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ]
+    },
+    {
+      "id": "SR-6",
+      "name": "同源签名RC的稳定性关口",
+      "state": "planned_not_run",
+      "depends_on": [
+        "SR-2",
+        "SR-3",
+        "SR-4",
+        "SR-5"
+      ],
+      "objective": "在补齐剩余产品功能前关闭当前重构承诺的跨功能稳定性范围。",
+      "production_changes": false,
+      "proposed_new_files": [],
+      "existing_entrypoints": [
+        "scripts/quality/verify.py",
+        "docs/development/reading-window-test-coverage.json",
+        "docs/development/first-product-test-plan.json",
+        "scripts/build_desktop.py"
+      ],
+      "exit_criteria": [
+        "适用编译/边界/五类负例/全部永久维护断言通过，任何失败保留并修实际代码，不删断言",
+        "一个最终同源同证书同资源RC，从冷发现→关联Hook→选流→连续文字/词法/预览真实变化帧→旧词卡保留→退出换游戏→睡醒，逐场景记录",
+        "SR中文只作中文原文证据，日文/注音/词典从MO/Never7/Sakura适用样本证明；不跨包继承旧pass",
+        "视觉参照身份问题以独立评审闭合，不刷新hash/PNG/阈值蒙混；若仍受阻必须明确不能宣称整体验收",
+        "当前RC与源码/安装/运行/证据身份单一可查；重构退出后才逐项补产品剩余功能"
+      ],
+      "owner": "QA主责；AP/HK/PL/UI/JA协作",
+      "proposed_child_change": "verify-refactor-stability-rc",
+      "child_change_created": false,
+      "product_implementation_status": "not_started",
+      "acceptance_status": "not_run",
+      "obligation_ids": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ],
+      "registered_checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "required_visual_checks": [
+        "product-ui-capture-v4"
+      ]
+    }
+  ],
+  "deferred_product_items": [
+    {
+      "id": "PD-03",
+      "name": "精读设置purpose/game-scope导航闭环",
+      "status": "deferred_after_stability",
+      "prd_requirement_kept": true
+    },
+    {
+      "id": "PD-04",
+      "name": "参数广度/自定义键支持矩阵",
+      "status": "deferred_after_stability_and_support_matrix_review",
+      "prd_requirement_kept": true
+    },
+    {
+      "id": "PD-05",
+      "name": "显式跨模型/服务回退",
+      "status": "deferred_after_stability_and_product_review",
+      "prd_requirement_kept": true
+    },
+    {
+      "id": "PD-01/02",
+      "name": "仅进程接入的补全窗口旅程及整稿新增配对状态",
+      "status": "product_flow_change_deferred; existing safety and reachable recovery regression retained",
+      "prd_requirement_kept": true
+    },
+    {
+      "id": "UI-CONTENT",
+      "name": "与本次生命周期职责无关的UI/文案/内容补齐",
+      "status": "deferred_after_stability",
+      "prd_requirement_kept": true
+    }
+  ],
+  "must_not_delay": [
+    "恢复既有行为所必需的缺陷修复与安全/数据完整性处理；必须单列有影响回归的子工作项"
+  ],
+  "exit_gate": "SR-6按同一最终签名RC关闭本次稳定性场景后才能启动deferred_product_items；不等于首版发布",
+  "machine_enforcement_limit": "本JSON是计划登记；母change现有scope可禁止产品写入，但业务合同/影响矩阵选择与真实运行adapter仍须后续接入真实程序，不因本JSON存在而已实现。",
+  "source_basis": {
+    "baseline_id": "FP1-20261026-R46",
+    "review_report": "reports/stage-review-20261026/review.html",
+    "directory_report": "reports/stage-review-20261026/module-analysis.html",
+    "architecture_analysis_sha256": "f2c0d4710b0dfcbd9cd436eec0156e23ba1911c6503a7e2ab52b8bd469d7c4eb"
+  },
+  "planned_status_semantics": "acceptance_status=not_run为新阶段计划定义，不回填通过；本轮SR0工具执行另记独立回执，不能当产品运行。",
+  "impact_registry": "docs/development/refactor-impact-matrix.json",
+  "planning_review_refinements": [
+    "consumer异步首帧接纳与Rust权威首帧前合法身份投影分开，身份已知不等于Live。",
+    "不可变图像观测与可经明确Pause/移交CAS/fence迁移的投递封套分开，Paused不等于真实释放ack。",
+    "M14当前是native-broker，不以旧storage guard映射改变架构角色；保持现行检查并另行审阅映射。",
+    "SR0计划10项检查与verification注册ID逐项对齐，未知check不伪造注册。"
+  ]
+}

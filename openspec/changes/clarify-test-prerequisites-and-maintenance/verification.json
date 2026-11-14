@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "id": "clarify-test-prerequisites-and-maintenance",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/clarify-test-prerequisites-and-maintenance/**",
+    "openspec/active-change.json",
+    "package.json",
+    "scripts/quality/verify.py",
+    "scripts/quality/test_operations_contract.py",
+    "scripts/quality/test_test_operations_contract.py",
+    "scripts/quality/render_test_operations.py",
+    "scripts/report/build_test_case_report.py",
+    "scripts/report/verify_test_case_report.cjs",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/first-product-test-operations.json",
+    "docs/development/first-product-test-operations.md",
+    "docs/development/first-product-test-prerequisites.csv",
+    "docs/development/first-product-test-maintenance.csv",
+    "docs/development/first-product-test-execution-dependencies.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261018-R3.json"
+  ],
+  "source_snapshot": "openspec/changes/clarify-test-prerequisites-and-maintenance/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "TOP-001",
+      "spec": "specs/test-prerequisites-maintenance/spec.md",
+      "scenario": "wrong-or-broad-prerequisite",
+      "checks": [
+        "test-operations-contract",
+        "test-operations-contract-tests"
+      ]
+    },
+    {
+      "id": "TOP-002",
+      "spec": "specs/test-prerequisites-maintenance/spec.md",
+      "scenario": "report-substitutes-test-source",
+      "checks": [
+        "test-operations-contract-tests"
+      ]
+    },
+    {
+      "id": "TOP-003",
+      "spec": "specs/test-prerequisites-maintenance/spec.md",
+      "scenario": "premature-ready-or-secret",
+      "checks": [
+        "test-operations-contract-tests"
+      ]
+    },
+    {
+      "id": "TOP-004",
+      "spec": "specs/test-prerequisites-maintenance/spec.md",
+      "scenario": "operations-export-drift",
+      "checks": [
+        "test-operations-export-identity"
+      ]
+    },
+    {
+      "id": "TOP-005",
+      "spec": "specs/test-prerequisites-maintenance/spec.md",
+      "scenario": "unauthorized-product-implementation",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    }
+  ]
+}

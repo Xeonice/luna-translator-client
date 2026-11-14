@@ -1,0 +1,12 @@
+@import './tokens/generated.css';
+*{box-sizing:border-box}html,body,#root{margin:0;width:100%;height:100%;min-width:320px}html{color-scheme:dark}body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Yu Gothic",sans-serif;color:var(--material-text);font-size:13px;line-height:1.5;background:transparent}button,input,textarea,select{font:inherit}button{color:inherit}button:not(:disabled),select{cursor:default}a{color:var(--material-accent)}h1,h2,h3,p{overflow-wrap:anywhere}button:disabled{cursor:default}input[type=password]::-ms-reveal{display:none}*:not([data-platform-scrollbar])::-webkit-scrollbar{width:8px;height:8px}*:not([data-platform-scrollbar])::-webkit-scrollbar-thumb{background:#9999a940;border-radius:5px;border:2px solid transparent;background-clip:padding-box}::selection{background:#a5a9bd44}code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}pre{white-space:pre-wrap;overflow-wrap:anywhere}select{color-scheme:dark}option{background:var(--material-solid-shell)}@media(prefers-reduced-transparency:reduce){:root{--material-shell-fill:var(--material-solid-shell);--material-menu-fill:var(--material-solid-shell);--material-inset-fill:var(--material-solid-inset);--material-blur:0px;--material-inset-blur:0px}}@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+html[data-transparency="reduced"]{--material-shell-fill:var(--material-solid-shell);--material-menu-fill:var(--material-solid-shell);--material-inset-fill:var(--material-solid-inset);--material-blur:0px;--material-inset-blur:0px}
+
+[hidden]{display:none!important}
+@supports not (backdrop-filter:blur(1px)){:root{--material-shell-fill:var(--material-solid-shell);--material-inset-fill:var(--material-solid-inset)}}
+html[data-theme="light"]{color-scheme:light}select{color-scheme:inherit}
+/* A native HUD is a viewport, not a document. Its reading pane and overlays own scrolling. */
+html[data-window-role="hud"],html[data-window-role="hud"] body,html[data-window-role="hud"] #root{overflow:hidden;overscroll-behavior:none}
+html[data-window-role="hud"] body{position:fixed;inset:0}
+
+html[data-window-role="word-card"],html[data-window-role="word-card"] body,html[data-window-role="word-card"] #root{min-width:0;overflow:hidden;overscroll-behavior:none}

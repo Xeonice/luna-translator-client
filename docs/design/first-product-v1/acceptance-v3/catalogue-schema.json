@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 3,
+  "status": "proposal_pending_independent_review",
+  "pixelmatch": {"threshold": 0.1, "includeAA": true, "maxRatio": 0},
+  "stateShape": {
+    "id": "add-game",
+    "legacyReference": "docs/design/first-product-v1/previews/40-add-game-review.png",
+    "designSourceHashes": {"docs/design/first-product-v1/game-library.js": "source SHA256"},
+    "designAdapterHash": "SHA256 of render.mjs + native-content.css manifest",
+    "dataState": "Declared independent source input and required preconditions",
+    "clientBoundary": "Continuous modal with border + header + footer; no mask/crop/resize",
+    "nativeExclusions": ["OS traffic lights are not painted in design source; client title/tools retained"],
+    "underlay": {"file": "underlay-reading.png", "sha256": "SHA256", "size": [1600, 925], "sampleOrigin": [280, 86], "scale": 1},
+    "variants": [
+      {"variantId": "top", "reference": "add-game.top.png", "referenceSha256": "SHA256", "viewport": {"width": 1040, "height": 720}, "deviceScaleFactor": 1, "selector": "[data-ui-surface=\"sheet\"]", "expectedSize": [760, 648], "scroll": {"selector": "dialog-body", "top": 0}, "fonts": {"family": "-apple-system,BlinkMacSystemFont,PingFang SC,Hiragino Sans,Yu Gothic,sans-serif", "sourceSize": 18, "translationSize": 24}, "requiredConditions": {"windowRole": "main", "gameCount": 0}}
+    ]
+  },
+  "executionShape": {
+    "id": "add-game",
+    "variantId": "top",
+    "status": "failed until exact real PNG comparison passes",
+    "reference": "path",
+    "referenceSha256": "SHA256",
+    "candidate": "actual React PNG",
+    "candidateSha256": "SHA256",
+    "diff": "independently recomputable diff PNG",
+    "expectedSize": [760, 648],
+    "actualSize": [760, 648],
+    "differentPixels": "integer",
+    "captureConditions": {"viewport": {"width": 1040, "height": 720}, "selector": "[data-ui-surface=\"sheet\"]", "verifiedConditions": "actual DOM/projection guard receipt", "scrollTop": "actual"},
+    "variants": "additional rows use same PNG verification shape; parent passes only if every declared variant passes"
+  }
+}

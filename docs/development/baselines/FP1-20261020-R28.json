@@ -1,0 +1,3696 @@
+{
+  "baseline_id": "FP1-20261020-R28",
+  "captured_date": "2026-10-20",
+  "purpose": "Content fingerprints and explicit review scope; not an implementation or test result.",
+  "phase": "reviewed_reading_batch_implementation_and_development_candidate",
+  "product_implementation_authorized_by_this_turn": true,
+  "approvals": {
+    "first_product_scope": "confirmed_in_prior_conversation",
+    "material_style": "confirmed_in_prior_conversation",
+    "architecture": "prior_overall_architecture_confirmed; new technical increment documented, implementation contracts still planned",
+    "architecture_confirmation": "目前看，架构方案没有问题了",
+    "complete_design_layout": "approved_by_user_20261019; exact 16 UI sources and37 reviewed PNGs in docs/development/design-approval-20261019.json",
+    "detailed_requirements": "working_specifications; task-dependent review remains explicit",
+    "product_runtime_regression": "new RW scope NOT_RUN; historical product receipts preserved, not inherited",
+    "database_field_design": "new_candidate_design_pending_review; overall architecture confirmation does not approve these added field details",
+    "implementation_authorization": "2026-10-19 user: 开始动工，按照事先规定的架构和设计进行开发，完成后进行对应的测试",
+    "technical_increment": "planned; latest design approval does not approve new fields/policies or runtime acceptance"
+  },
+  "enforcement": {
+    "repository_agents_rules": "documented_with_executable_entry",
+    "iteration_template": "documented",
+    "baseline_fingerprints": "executable",
+    "spec_traceability": "executable_change_and_product_source_identity; full implementation task coverage still pending",
+    "code_dependency_checks": "TypeScript AST and Cargo declarations/local graph; exact legacy debt frozen",
+    "visual_diff_gate": "Registered actual production-component Playwright capture/diff runner; native rendering and full layout review remain separate; actual differences fail.",
+    "evidence_identity_checks": "executable; actual product runtime adapter missing => release blocked",
+    "ci_and_branch_protection": "workflow_file_created; no Git/remote run or branch protection configured",
+    "layered_test_plan": "Executable RW34 identity/6-layer applicability, actual design34checks/nonce/source/assertions/captures, release153 case@variant closure; 91 required real-layer combinations still not_run until real adapters exist.",
+    "test_prerequisites_and_maintenance": "static scoped prerequisite and source-ownership checks; readiness is not runtime success; real product adapters remain unimplemented",
+    "database_field_design": "Production profile/dictionary schema1 migrations and bounded writer implemented; exact acceptance status remains separate from frozen design checks.",
+    "storage_module_acceptance": "Existing 0.2.0 real storage adapter and prior results preserved; new session retention/Hook lifecycle policies require separate implementation and actual acceptance.",
+    "reviewed_design_coverage": "scripts/quality/interaction_coverage.py; design evidence never promotes product/native/game/real-language execution",
+    "implementation_status": "Source-audited 16 modules,36 components and26 capabilities; machine source/package/history identity and deterministic exports. Human semantic alignment, all visual not_assessed and current runtime not_run; not product acceptance."
+  },
+  "update_policy": "Create a new revision and reviewed change record when authority content changes. Hash equality proves identity only; it never grants approval or proves runtime behavior.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 4007,
+      "sha256": "7b37c55a4139d044c79ab66c77b1820869e7f95762543561e221515d80896474"
+    },
+    {
+      "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+      "sha256": "fd02e0d2b7672e423b3f4383be62488dd19b292445d124f0d46d2465d4159774",
+      "bytes": 25308
+    },
+    {
+      "path": "apps/desktop/tests/visual/build-reviewed-catalogue.mjs",
+      "sha256": "4dea510186485acb6c8370c22eb560e303eaa457fe831a46ec4be1ff66ae7f1d",
+      "bytes": 23250
+    },
+    {
+      "path": "apps/desktop/tests/visual/capture-conditions.mjs",
+      "sha256": "82ba306d2f3faee69d9a016f4be59c47e73e56b355bcda4dd1c1b81c2e244be7",
+      "bytes": 8048
+    },
+    {
+      "path": "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+      "sha256": "d5ab88c6be90cfea33f9b5385a3ac969d2107169abbfa7ca89966542439025e9",
+      "bytes": 12624
+    },
+    {
+      "path": "apps/desktop/tests/visual/prepare-reviewed-full-references.mjs",
+      "sha256": "df38d384acf1f4071b9c08db1e604e2d014a197c70d28998829048d0b17f65b1",
+      "bytes": 16985
+    },
+    {
+      "path": "apps/desktop/tests/visual/prepare-reviewed-gap-references.mjs",
+      "sha256": "bdcefe60b1b9761de5e1d4e6946262b5142a6b4282877af7657fc5b4576b74f4",
+      "bytes": 12708
+    },
+    {
+      "path": "apps/desktop/tests/visual/prepare-reviewed-references.mjs",
+      "sha256": "118dfa5c725b3a1ce7547aa5f49ccc0a3a3ffe4fe98737c573e095da2e323ac7",
+      "bytes": 20241
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/provenance.json",
+      "sha256": "79b8e1be77e618509cd26d3a2a9203d0a44b5900aafd509ef961ed3ae256ceb9",
+      "bytes": 5291
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/session-current-body.input.json",
+      "sha256": "e93dbcf8b4e9e03a9a3356c5e9028bbfc18077d488ef5c673f9d89caacd0b9d3",
+      "bytes": 2906
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/session-current-extraction.input.json",
+      "sha256": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+      "bytes": 2480
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/session-current-hook-events.input.json",
+      "sha256": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+      "bytes": 5830
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/settings-shortcuts-active.input.json",
+      "sha256": "441d9bd76a415379bec56d2a9393190c1eba847cfd605f94d10ade67fd69c042",
+      "bytes": 2479
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/settings-shortcuts-conflict.input.json",
+      "sha256": "a7413e8648ae5a58e3b95bb3d372bed4d3f5748d80906a5e97a7cbb3f0c9e8fb",
+      "bytes": 2811
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/supplement.css",
+      "sha256": "be07e5e310bb433f23848d18ba95f88d121ab5a55aa77da5384a080cec27b4cf",
+      "bytes": 1651
+    },
+    {
+      "path": "apps/desktop/tests/visual/reviewed-reference-supplement/supplement.js",
+      "sha256": "64b31fd16c5f28ed2a7929e6b4bf495bdcc6d8b2cc2f0a7e0efc6709abca6f00",
+      "bytes": 20644
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "sha256": "0a78274119f11fbb0f3771d9f4b8bf8fa25954fb6b942847f7a95944dee5fc31",
+      "bytes": 88159
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-ui.mjs",
+      "sha256": "1b0c661350a26f046fec53e1b30d0d1fdb1ae0a026a8ebeaa2839c14c1aa0c76",
+      "bytes": 174306
+    },
+    {
+      "path": "crates/app-infra/tests/session_records_batch.rs",
+      "sha256": "d324ffaf6e72bedcb2e19fa4619f6b97585b988a793aeea56dd7b53dabec7fbd",
+      "bytes": 46375
+    },
+    {
+      "path": "docs/architecture/ADR-004-first-product-engineering.md",
+      "bytes": 3294,
+      "sha256": "c650bf47762980f5d07a71e32e48964293254e78655a3720244cb568a89a9c09"
+    },
+    {
+      "path": "docs/architecture/database-design.md",
+      "bytes": 37151,
+      "sha256": "07aab596d67deb64b408391d76089a9b5218a2e43d7f6bcb99f38104a0f3d33e"
+    },
+    {
+      "path": "docs/architecture/database/boundary-fixtures.json",
+      "bytes": 26913,
+      "sha256": "a93d3cc7ac5ed6a8fdad71a1bdc427a851a76877991df12311e3cb81a8d3d9da"
+    },
+    {
+      "path": "docs/architecture/database/config.sql",
+      "bytes": 48679,
+      "sha256": "a75ec4c30a21939da02f80028ffa62c2d86e997a8bff415e2fcf97b3b78a3363"
+    },
+    {
+      "path": "docs/architecture/database/dictionary.sql",
+      "bytes": 4816,
+      "sha256": "8b02b054752fb35661d5c5990ae2c02abf512167f43c3bf1c174a773a4933624"
+    },
+    {
+      "path": "docs/architecture/database/field-boundaries.json",
+      "bytes": 8190045,
+      "sha256": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504"
+    },
+    {
+      "path": "docs/architecture/database/field-dictionary.csv",
+      "bytes": 125931,
+      "sha256": "d96623a36645448694b4f6879b36bc4ebb01db0deb0dc0deab59635afb7538f8"
+    },
+    {
+      "path": "docs/architecture/database/field-dictionary.md",
+      "bytes": 143695,
+      "sha256": "c475cb696fc61a2e6d81a40192104f3c8d6aa95199bb1bdf912a15706104a2ff"
+    },
+    {
+      "path": "docs/architecture/database/profile.sql",
+      "bytes": 48602,
+      "sha256": "7b349fcf0e0f93a61f91b23f6585dde8cd2684dd70255f84f889240263c75141"
+    },
+    {
+      "path": "docs/architecture/database/relationships.svg",
+      "bytes": 29168,
+      "sha256": "cfc72fdc779a75826f85699ea78e396c5735d2685b9fcdfd8535d951424fba06"
+    },
+    {
+      "path": "docs/architecture/database/schema-contract.json",
+      "bytes": 551104,
+      "sha256": "aee35d350ff080da4f595c69b8cc47f076a84dc0bea3cf811f5cb0c7a3ccdcd2"
+    },
+    {
+      "path": "docs/architecture/database/schema-metadata.json",
+      "bytes": 540560,
+      "sha256": "9e3c9f918f7ce7ad0f902f976e64cc115d9b1a8037227369acdc2c65465788e4"
+    },
+    {
+      "path": "docs/architecture/database/table-catalog.csv",
+      "bytes": 9602,
+      "sha256": "17e27dd8b699b27ea95b6a29ba209524576f7dbf03050f3357753ce789c474b6"
+    },
+    {
+      "path": "docs/architecture/database/v2/002_session_records.design.sql",
+      "sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+      "bytes": 7930
+    },
+    {
+      "path": "docs/architecture/database/v2/README.md",
+      "sha256": "c30af06e65b73ca4b0de522ceb1f9c572a0a74cd4e8a88cfe4daf2e2239750bc",
+      "bytes": 7134
+    },
+    {
+      "path": "docs/architecture/database/v2/field-dictionary.csv",
+      "sha256": "ee483a95f0f6535c9c52b7f3ce885ab64520839b49a8b08f54449e2c05de69f4",
+      "bytes": 3193
+    },
+    {
+      "path": "docs/architecture/database/v2/field-dictionary.json",
+      "sha256": "fae0561b8cd9113dfeaf9b34a4d9557ed523737b1217d9998a8ce68c5a143f20",
+      "bytes": 13067
+    },
+    {
+      "path": "docs/architecture/database/v2/schema-contract.json",
+      "sha256": "eb3b0e78869119f98eac6d08954f5b91f1131a3edf2af85fcd16af85d6154713",
+      "bytes": 597687
+    },
+    {
+      "path": "docs/architecture/database/v2/storage-acceptance.json",
+      "sha256": "dfd2b0577ed5523f0e7ee618adddad2060886f3bd7cc9362b8a39f60017fa8ad",
+      "bytes": 14807
+    },
+    {
+      "path": "docs/architecture/database/v2/storage-review.json",
+      "sha256": "42ea144744ddfccf67eb50805fa2e977cb308081ef8efc5e9342eaa609b8aad9",
+      "bytes": 8731
+    },
+    {
+      "path": "docs/architecture/engineering-components.csv",
+      "bytes": 37847,
+      "sha256": "9ed6c598de7682e228496b7738d1e3c9d6eaa2d7e1e0c6327d2ba0ee4b1915f4"
+    },
+    {
+      "path": "docs/architecture/engineering-directory-map.svg",
+      "bytes": 9184,
+      "sha256": "9b3fbb67d3f2060bbde9a4c8f7d9f80ea4665fb789416be905cd0a72782c8250"
+    },
+    {
+      "path": "docs/architecture/engineering-layout.md",
+      "bytes": 17715,
+      "sha256": "823efc8f2967a6a1164914ef21a520a702aa333de8266711b79fa8db3a489325"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "bytes": 39897,
+      "sha256": "88617fd5b62a2ac254732a365cd92c3161f357e97da07084be78d9fdf0654d85"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "bytes": 40808,
+      "sha256": "95d1ea0b8613a3d068bc055f8b2a764d665bca8b33790424d99cc983fba7fc36"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "sha256": "1eb2702d612208222dbd6f4b91523bf8fa9b59997a023d566e21f59bbd680203",
+      "bytes": 581027
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "sha256": "4a55e385bb8f6ec76a84eab5dd578c6ebdd60a718ecea8ce6709964c3010cb79",
+      "bytes": 144056
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "bytes": 19039,
+      "sha256": "3478f5a20b7d3c4b80253cdc901d9c6f490a316288ec470e93e3230cfc1c30f6"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "bytes": 64399,
+      "sha256": "d3f95c1632c4d0f8dc47de00458be57ebd0261f695f8ca988e4a4c86eb960a57"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "bytes": 10283,
+      "sha256": "bf6d155483c3b357ab49295dc0b596712e5340ecf85e48bd6b48a9982e8e9ff7"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/add-game.bottom.png",
+      "bytes": 138197,
+      "sha256": "0a54cab25a62856b121cb04bc95aef20fc13b3b2cfb5e86d539989f9c4d4d24b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/add-game.design-source.html",
+      "bytes": 10066,
+      "sha256": "81edf8a31018c87d04874a6e3a5cf9cfcf51498ee6ccad48cc434126f8bed800"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/add-game.top.png",
+      "bytes": 136524,
+      "sha256": "3a06378147ea029b0d5a5e55af9f6ea0d6e1a732ddbdda595313f42318182c6a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/build-catalogue.mjs",
+      "bytes": 10096,
+      "sha256": "7eb6a36406d6cf688c62bca964831a78d19d511b1b024f2ba4794bcbdbc679b7"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/catalogue-schema.json",
+      "bytes": 2099,
+      "sha256": "5e95eeea96a3ec619069c4749370183c5d05326eead96f1dccd706a414a1e528"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/catalogue.json",
+      "bytes": 293159,
+      "sha256": "2d119672b5f43349f4ba4b2739736bf1d708b6c1f5b3370dac30047eddc93c19"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.bottom.png",
+      "bytes": 226472,
+      "sha256": "ddab334648dae0fe710ef1759df9a73476e51058f64fe3e290085e0c2089630c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.design-source.html",
+      "bytes": 11244,
+      "sha256": "319dab11abf3710af82dacfe2e76b5f69f0f99e0982f3e1eac9d87b82811022f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.top.png",
+      "bytes": 226616,
+      "sha256": "0b56bdfe72cc743f8c8236563a924e9cee4a6d8ad7f58c4775d47f7d404739ef"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/declared-inputs.json",
+      "bytes": 10774,
+      "sha256": "8c9f74293c7a00d53e7a48b3eadc85d00fe3e3826935d429657e017e1c2358fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-adapter-manifest.json",
+      "bytes": 1122,
+      "sha256": "8133ad6bc3f59e6aac7c46de168d802a9bcec9df13681577a2909339a86a7095"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/README.md",
+      "bytes": 7550,
+      "sha256": "461d3d01204f6cd780d1d528c701790a4b15fb866d2cbb959b194285de6357ff"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/app.js",
+      "bytes": 64893,
+      "sha256": "6193d5d70ed9dd6034da3ec348419b95bf58a24d2575471b27a27953ae78aa67"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/manifest.json",
+      "bytes": 8500,
+      "sha256": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-01.png",
+      "bytes": 245974,
+      "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-02.png",
+      "bytes": 789017,
+      "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-03.png",
+      "bytes": 793847,
+      "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-04.png",
+      "bytes": 786010,
+      "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-01.png",
+      "bytes": 677528,
+      "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-02.png",
+      "bytes": 692451,
+      "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-03.png",
+      "bytes": 691210,
+      "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-04.png",
+      "bytes": 673031,
+      "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-05.png",
+      "bytes": 687454,
+      "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-SCR-01-light.jpg",
+      "bytes": 425061,
+      "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-SCR-08-light.jpg",
+      "bytes": 212757,
+      "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-SCR-15-light.jpg",
+      "bytes": 194918,
+      "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-approved-material.png",
+      "bytes": 157449,
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-full-product-before-restyle.png",
+      "bytes": 277742,
+      "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-icons-color-before-library.png",
+      "bytes": 375812,
+      "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-icons-color-before-settings.png",
+      "bytes": 187630,
+      "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-material-before.png",
+      "bytes": 263734,
+      "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-01.png",
+      "bytes": 839932,
+      "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-02.png",
+      "bytes": 840360,
+      "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-03.png",
+      "bytes": 847137,
+      "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-04.png",
+      "bytes": 848248,
+      "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-05.png",
+      "bytes": 845316,
+      "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-01.png",
+      "bytes": 674561,
+      "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-02.png",
+      "bytes": 894420,
+      "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-03.png",
+      "bytes": 674292,
+      "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-04.png",
+      "bytes": 898673,
+      "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-05.png",
+      "bytes": 673439,
+      "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/wallpaper-frame.png",
+      "bytes": 1616086,
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/comparison.html",
+      "bytes": 7280,
+      "sha256": "26a9d01377d810228d3d488867d70dfbd3050dfa8bdc1f6944bbfe5baf827914"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/coverage.csv",
+      "bytes": 2066,
+      "sha256": "b52663d2c8c603e43fdd1b45dd4278bb65240032f1b63de1ecd346460460e641"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/data.js",
+      "bytes": 67294,
+      "sha256": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/entry-flow.html",
+      "bytes": 8530,
+      "sha256": "dac93fd2150b22e3a8418994c5977ea5b7fa21003f77bcac4e445c0c9a03d7b1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/gallery.html",
+      "bytes": 16672,
+      "sha256": "3e7a1b35ed0219d13260feb9d7e9b18ecca2c69f103258d86e734172011815cb"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/game-library.css",
+      "bytes": 11214,
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/game-library.js",
+      "bytes": 24064,
+      "sha256": "278b2995d1fff49e9998a416d8d447976e4b4cd19254fed83ea462443e81b958"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/icons.js",
+      "bytes": 3501,
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/index.html",
+      "bytes": 7718,
+      "sha256": "e03a20e2167fefc1e4599c50b687d83efd0a1054fda9565a4e8a95bdff7285b1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/integration.md",
+      "bytes": 5821,
+      "sha256": "948166a1bd642cb0daa33db832ad3b4e53b834d65e38fb7f9edf52e5a6a09b58"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/learning.css",
+      "bytes": 12086,
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/learning.js",
+      "bytes": 25027,
+      "sha256": "c1551dda2e791049b3d341d5db8a2a70acce62ca9d5701355cb4133f9f777cfe"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/manifest.json",
+      "bytes": 16915,
+      "sha256": "ca09693afe422797374ca195705655f2fb052e1ba37e46392d7f4357e377007b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/material-assets.json",
+      "bytes": 1713,
+      "sha256": "f85b93e9c7f1f7f0b37528f8a0ca5f8cdffe09412057400483a8848dc3374d79"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/material-tokens.css",
+      "bytes": 2770,
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/reference-manifest.json",
+      "bytes": 1499,
+      "sha256": "5dabca238bdb6c9821d1e2e26791034b80a5f92c7e9d03e9b8c985cf0d468e51"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/settings.css",
+      "bytes": 11331,
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/settings.js",
+      "bytes": 55921,
+      "sha256": "eac93d4a24989924c43c1b5bf9ae8baff4872a529744c941d08266c66cedcca4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/style-guide.md",
+      "bytes": 3382,
+      "sha256": "fd143b5ca2bc79fcaa31c026ca6602daf357de49a2f4a89b7b8ec2b1125ee492"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/styles.css",
+      "bytes": 44786,
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.bottom.png",
+      "bytes": 47694,
+      "sha256": "8ef816b3e35f0893892f83380426622110adc9876ddb7ccc6250fe3270266de2"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.design-source.html",
+      "bytes": 6368,
+      "sha256": "89e14361ad6c7948af456449d3a68ff2ed6d68f7a254d3daf458d1922dcfec1c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.region-1-bottom.png",
+      "bytes": 48525,
+      "sha256": "e4e7d1037d87ad808f96b9766908ec5d3f474b98e2d31789a3b43b3d75e33d92"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.top.png",
+      "bytes": 46938,
+      "sha256": "36f88fb3fbb55859901dba267047ece4db7dbba32dbb90d7a3f9552227ca78cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/empty-library.design-source.html",
+      "bytes": 5813,
+      "sha256": "4d4c236a4096b20424a10fad7cd49d7125938e4cf8b52a1df8bc968b573c9eb4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/empty-library.top.png",
+      "bytes": 294074,
+      "sha256": "4cf158a2259e987659cfe41956da6fb20a1c855c1d31257a9990c48183251b94"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/geometry-inventory.json",
+      "bytes": 32801,
+      "sha256": "54e5f6504dafd6a36af999c718944877cb58843d4a58c0f049717bc209132054"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/geometry-inventory.proposal.json",
+      "bytes": 13197,
+      "sha256": "54760a113e7ad9b82c0d43d7fc47e5e5a277ce80a620f96cd07f8da530b3d8f3"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/capture.mjs",
+      "bytes": 16730,
+      "sha256": "db9bbf4fa647056b1d3891e8bc430d87866c4c1b4da28071eb50fd423e8da8f8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.closed-license-bottom.design.html",
+      "bytes": 4461,
+      "sha256": "ac5ad1141c66711080c42b2c0e6bc83012317461166a29d41b84e1d8aef2b086"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.closed-license-bottom.png",
+      "bytes": 39193,
+      "sha256": "e1a73f421e8436f03227b2a4442c11a86e73c10ef580dc5bc06f6d112b34e916"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-0.design.html",
+      "bytes": 4459,
+      "sha256": "cd04185f496135c4299afc031c94c1024e4b2aa6c51fbb2d39c1debc2023fa24"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-0.png",
+      "bytes": 35546,
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-1.design.html",
+      "bytes": 4461,
+      "sha256": "6086728e9d467f95d654a9e0d983dc15364af9ef461fca31a48e0dcf999e2b32"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-1.png",
+      "bytes": 36740,
+      "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-2.design.html",
+      "bytes": 4461,
+      "sha256": "b217c7649a1b0b8308e401acc45024916150b0dda70eb7c42dcb2ed23d037230"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-2.png",
+      "bytes": 39846,
+      "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-3.design.html",
+      "bytes": 4461,
+      "sha256": "59d559fd547e21033bccd02d810d0d5538a3a34dadc6cb5161568bc24e50fdfd"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-3.png",
+      "bytes": 35535,
+      "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-4.design.html",
+      "bytes": 4461,
+      "sha256": "47b3fcd627f1d936e2a5c9206a3a975a96eaff7975419bffafae2455bbd15b20"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-4.png",
+      "bytes": 37048,
+      "sha256": "b5c4b6ecf3cdb2c759796cc980cc937055b2e97ed2e62b4fa1d882109fe4d83a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.design.html",
+      "bytes": 4467,
+      "sha256": "d068fe5aa8ffac67dff583bf799b9d11c814238e455fcdf175ec77d0531fd6ce"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.png",
+      "bytes": 35546,
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.design.html",
+      "bytes": 4469,
+      "sha256": "e6b2adeb838501616597bd98f1722aa0610b922f9725b12df0b2c97b6d8f6ae0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.png",
+      "bytes": 36740,
+      "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.design.html",
+      "bytes": 4469,
+      "sha256": "08c2c22980025130f94ea3862a52aa3f4d778a49c0eb6aac504e7dc81377b2b2"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.png",
+      "bytes": 39846,
+      "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.design.html",
+      "bytes": 4469,
+      "sha256": "8f2d1deff0cf1d7fdf98b795e771a839fc9a8c8639b373eab4d49fe31612262c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.png",
+      "bytes": 35535,
+      "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.design.html",
+      "bytes": 4469,
+      "sha256": "82aeef3409a9c1ed746e27ea2f9cc71dbe6a111151cfbc3fd80ac28b13678857"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.png",
+      "bytes": 38737,
+      "sha256": "0e39b588f012adf302b612d875f2129a625f5d103f66ab535ad56f5fcc2e1ba1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.design.html",
+      "bytes": 4469,
+      "sha256": "1fe912d7a5551d8a7879c7b08bfe0a273e1b1aee87c646908999c295aedbba00"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.png",
+      "bytes": 40497,
+      "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.second-headword-source.design.html",
+      "bytes": 4461,
+      "sha256": "1387194ac881c3483438eeb33b996bcfd60dc5ac36fa2cda3a702558c30a6478"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.second-headword-source.png",
+      "bytes": 35555,
+      "sha256": "7edd827c1446bfa491886290a245914598a28294470de24c24e47a2d2b2ab8e3"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-a-attribution.design.html",
+      "bytes": 4461,
+      "sha256": "1089f0cfc27427571b1e3ff650db005783e9becf4f9ca5b9df881d4439d96d4f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-a-attribution.png",
+      "bytes": 37306,
+      "sha256": "507bc2eb825aa35dc20d6cf6605497a386d6b2f2e504285a2e1e81a5f624ed37"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.design.html",
+      "bytes": 4469,
+      "sha256": "1fe912d7a5551d8a7879c7b08bfe0a273e1b1aee87c646908999c295aedbba00"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.png",
+      "bytes": 40497,
+      "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.top.design.html",
+      "bytes": 4459,
+      "sha256": "cd04185f496135c4299afc031c94c1024e4b2aa6c51fbb2d39c1debc2023fa24"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.top.png",
+      "bytes": 35546,
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained-bottom.design.html",
+      "bytes": 10014,
+      "sha256": "dffadd19de059d3e405957f7f0cebc5dd93dd1a3eb924245be508efd26b11cf0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained-bottom.png",
+      "bytes": 267162,
+      "sha256": "c73090b7e50e517b62d997593f2bd07d02c1acdcf463d2d1e03d3d8d3cd68713"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained.design.html",
+      "bytes": 10012,
+      "sha256": "203f3e676dff8b8376dbd5b604b1ee85cc26fd23f5bba29930733b8f6a9f9000"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained.png",
+      "bytes": 273700,
+      "sha256": "c7587c41e04665ac467b9a3286afe957cb24b803e3b4b8973a9e5d3ef8221b1c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.saved-global.design.html",
+      "bytes": 9944,
+      "sha256": "f313edb16d9079edad91a0b866f2524dd7c385e019070425695dd32720365174"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.saved-global.png",
+      "bytes": 270305,
+      "sha256": "4ec7556b2de201750dad809dc2cc68cddc940603cb258203fe1a33134a233575"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.terms-and-footer.design.html",
+      "bytes": 9946,
+      "sha256": "434e6bf8cbb51852a9b5a03eb0d73b901bea29bede2526ae12662ba9b527fb5d"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.terms-and-footer.png",
+      "bytes": 263450,
+      "sha256": "7619896312440e5dbf086755798647d90b3ceb1d7baadda5dfb6280f00abffb0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/index.html",
+      "bytes": 688,
+      "sha256": "d565316d9c87770e274f9578c9b343a27c4268b355d57b0b7cd8ac9b4a978f22"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.design.html",
+      "bytes": 4202,
+      "sha256": "38dcbd36cfb3a2d55bc707f657f9ba3c87ab2e8469245a70675fea4a1f6c368e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.png",
+      "bytes": 173031,
+      "sha256": "2d8add95da072fed0d2b19b98e9786574035c21f4eca6648e23a3f34db7c1635"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent.design.html",
+      "bytes": 4201,
+      "sha256": "33abb617359f07bfd24526962415b4e8839ffddeea2dd990c48e02e616a211e9"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent.png",
+      "bytes": 175325,
+      "sha256": "d522e43c478a980d04fb647992099eed0c8899035dbf95e54ded2c835fb0b4da"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.wide18.design.html",
+      "bytes": 4201,
+      "sha256": "8b2262b36ac7bdddfd9c744ec2beb3cb62db8fc2b31fc9d12eb4b649f1c04b21"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.wide18.png",
+      "bytes": 241672,
+      "sha256": "360ca8f08b06826cabca2c890fb17c830a215b2844ce1d863add4cd218d380da"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/metadata.json",
+      "bytes": 67469,
+      "sha256": "a57556c4086f443e36f772aefd533cf59d24f7e9ef959abc7e2c44acd4a1e8d6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.css",
+      "bytes": 7903,
+      "sha256": "3bb0b325a6dad5834c9ad73fa2d0a9c6394eb69796f355592bcec9d4155f592b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.js",
+      "bytes": 13754,
+      "sha256": "b333b709777c5515a8e2bdab7667bf26ffcdabe2a24e1dafe78561a4ac85a5b7"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.constrained-workarea.design.html",
+      "bytes": 3776,
+      "sha256": "49c8f4748d13e3c0b51cc1f5483686b8bd62341d0a8d82bf152e99c8e0a5cd88"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.constrained-workarea.png",
+      "bytes": 42433,
+      "sha256": "401bb5b38772aa2190a0a6d18ed976c4de3fcbd80fafbd84bfffd5c677eef09e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.native-window-context.design.html",
+      "bytes": 3772,
+      "sha256": "2e41aec0b9a1678728c6d9c375c0e880f741475a483e84332cf4684fb7613109"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.native-window-context.png",
+      "bytes": 601421,
+      "sha256": "53a274a4e87141106ce433cfe50630807ecb7b47c07953e31be720a6907e9373"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.resource-footer.design.html",
+      "bytes": 3777,
+      "sha256": "3d42e834096d2ad302e8195cc7ce84429ad45a9c57a3b8f9edb171e6b7ba92a5"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.resource-footer.png",
+      "bytes": 41623,
+      "sha256": "d17780d4a3d7d1192a5203aed2bc215439d1256957a2f1760ec484af8de84692"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.bottom.png",
+      "bytes": 293413,
+      "sha256": "38eca27d95d8665915ffeaba014b2b766a0642f28ebbc39dbafdb056b8a67244"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.design-source.html",
+      "bytes": 6155,
+      "sha256": "0171e0c2b6ecb5896685cc27313919bccae8b335775a223fb1c0b074698c6f8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.top.png",
+      "bytes": 289271,
+      "sha256": "6b3141c78c12c37b97e164da571e1def3b893d2d1098299165a828c1892ca47f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/index.html",
+      "bytes": 12381,
+      "sha256": "bd1bacb7a363b2df22f27b510fe9aab9c13d3357b61df89f0409467890b9d5e6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.bottom.png",
+      "bytes": 159601,
+      "sha256": "5ed4ac0aa1efda82ae9f9dfe58b1784691a213048122db59db73d1c3ecb8cc68"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.design-source.html",
+      "bytes": 4714,
+      "sha256": "835216699dc9001b175fe060acaeb573fd6a47aa6227f7fd6693acf5ba34f37a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.top.png",
+      "bytes": 160094,
+      "sha256": "566a044599dbceb68903cae69334f770636f48673328cb34250c0c2000cb74b4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/library-batch.bottom.png",
+      "bytes": 132265,
+      "sha256": "d11447de001dcc13da4007c507218ee3f1da3162c609a469f3aea714385a58d9"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/library-batch.design-source.html",
+      "bytes": 10943,
+      "sha256": "50332cfec23b1d2e87bdc3947c0c7342e4f5156e6e6364ec451084868550af5f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/library-batch.top.png",
+      "bytes": 140794,
+      "sha256": "40c3a0f03aaf1d3f10b8cc7c9d60ad8236230ad82a0e74970faf36c91aae257b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/metadata.json",
+      "bytes": 594141,
+      "sha256": "f775dd807beb55862f1c9d30b4016ba284e47c306991edf277989c7a7ed68a93"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.bottom.png",
+      "bytes": 215300,
+      "sha256": "359cfd28a8a06e2ac7152d59d9bc12f9873a1ff12fc8479e19f3b931819bfb61"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.design-source.html",
+      "bytes": 10550,
+      "sha256": "5ba695b4a1f549f4b14b67804b6d975d46740b3eca389e5bf961be62c5051dcf"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.top.png",
+      "bytes": 229876,
+      "sha256": "94284c82837493cc27821a9201c4c550dbe0a4d3a546a2ce95282091a548fc75"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/native-content.css",
+      "bytes": 4610,
+      "sha256": "a8768daccfef7ef10816e32c780960003ab210e88617cec8ec649b511cbf7df1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/reading-hud.design-source.html",
+      "bytes": 6363,
+      "sha256": "25f6d3f057e6484ffe35355681705297ca95340fb0430844301c7fd6fdc9ffc8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/reading-hud.top.png",
+      "bytes": 60221,
+      "sha256": "c7220acb3f698fbf53e937b424e3167b462b53f1d31684588859f7e46aa0ff95"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/render.mjs",
+      "bytes": 40320,
+      "sha256": "3701598979c1f27aa6878bf087ffb780eab669ac812a808fcae0ddce6a2fa5d0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.bottom.png",
+      "bytes": 245254,
+      "sha256": "2ce3d1b94548d336ccd03af9dc7cbc09b2b8cc854874327eb191295b97189a75"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.design-source.html",
+      "bytes": 12474,
+      "sha256": "ddf3347621fe0444f11bcb23a78d731293ebe4a5e93dcf4d5fef2415da9fa32e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.top.png",
+      "bytes": 255662,
+      "sha256": "92bd2ff759103e2cf4695c94c16338eb9b0f93676361496a264b7084b8072817"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/target-review.bottom.png",
+      "bytes": 185725,
+      "sha256": "4ed6e23c70ddcf4465e0692aecf22d8e440ceb0098935a88fad59337f9ae478e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/target-review.design-source.html",
+      "bytes": 10858,
+      "sha256": "29c903ce5c9c9a207263897fb934c1b8a6225b4603cd9617d9fe2434307629e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/target-review.top.png",
+      "bytes": 142679,
+      "sha256": "33f87c46d71980c46b8905d9c9d586588811555e707628611d8f45c9cd05d858"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/underlay-reading.png",
+      "bytes": 968640,
+      "sha256": "d72d04d3e6ba61a37f71ea57392a6fa9977a8b8451037134ec5719032c379cf3"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/add-game.bottom.png",
+      "sha256": "5330c46f035aab6b7712a81a08db26f287eee36d2101e7671d8f1d4f1cd5a2f1",
+      "bytes": 134000
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/add-game.design-source.html",
+      "sha256": "40a0c15f029943821ba1348252eb1648b5bf1fcdc2c25d285513d1596e6ec832",
+      "bytes": 12444
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/add-game.top.png",
+      "sha256": "87f14c3eef3e3e54edcd6a00d2f1d8544fdd9e4cba49b57c64b667bd0bcf6fa5",
+      "bytes": 133784
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/catalogue.json",
+      "sha256": "13d457e2451511b2fa60cb5e849272ce3daed721b2c5e7ac2505b42ef9dfa963",
+      "bytes": 550963
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/component-common-underlay.png",
+      "sha256": "45a41ec01e9fc0de0e6f4f66843c0466e9e85b23680121d9f08c1f98acd5fc08",
+      "bytes": 980959
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/component-underlay-provenance.json",
+      "sha256": "d18ccb1d274ef9f7f68771b963212270cf65480f1e2a9b3792dd20503a9b3726",
+      "bytes": 4160
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/connection-proxy.bottom.png",
+      "sha256": "b226bf69c30e6b7ccc9f8e5e339555928db98f23dfcc75fa8035ba92ab0dd8e0",
+      "bytes": 223168
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/connection-proxy.design-source.html",
+      "sha256": "3cb3a61c3c848db7a0ea8c3a8cca4efce94444ba30164d6ed960d10e04af0773",
+      "bytes": 15552
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/connection-proxy.top.png",
+      "sha256": "6fc0a9e002e265ec20df04024fa189c8311f89b38253d84ef5d1cadbcbcc3b09",
+      "bytes": 222380
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/declared-inputs.json",
+      "sha256": "4d305c4cd5d447ebbb285a90f0a6a775997e1f4cc5d03c088aceb65b399ae13e",
+      "bytes": 13357
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-adapter-manifest.json",
+      "sha256": "35a366345aaea65f8c7187eeecf5341dda5076d6164abd8a996cd2a8b4726982",
+      "bytes": 4058
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/README.md",
+      "sha256": "bf6d155483c3b357ab49295dc0b596712e5340ecf85e48bd6b48a9982e8e9ff7",
+      "bytes": 10283
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/app.js",
+      "sha256": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+      "bytes": 66010
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/manifest.json",
+      "sha256": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9",
+      "bytes": 8500
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/mo-01.png",
+      "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a",
+      "bytes": 245974
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/mo-02.png",
+      "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e",
+      "bytes": 789017
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/mo-03.png",
+      "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053",
+      "bytes": 793847
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/mo-04.png",
+      "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810",
+      "bytes": 786010
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/never7-01.png",
+      "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8",
+      "bytes": 677528
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/never7-02.png",
+      "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1",
+      "bytes": 692451
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/never7-03.png",
+      "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d",
+      "bytes": 691210
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/never7-04.png",
+      "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236",
+      "bytes": 673031
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/never7-05.png",
+      "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64",
+      "bytes": 687454
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-SCR-01-light.jpg",
+      "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6",
+      "bytes": 425061
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-SCR-08-light.jpg",
+      "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea",
+      "bytes": 212757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-SCR-15-light.jpg",
+      "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b",
+      "bytes": 194918
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-approved-material.png",
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+      "bytes": 157449
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-full-product-before-restyle.png",
+      "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60",
+      "bytes": 277742
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-icons-color-before-library.png",
+      "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82",
+      "bytes": 375812
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-icons-color-before-settings.png",
+      "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce",
+      "bytes": 187630
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/reference-material-before.png",
+      "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921",
+      "bytes": 263734
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sakura-01.png",
+      "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+      "bytes": 839932
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sakura-02.png",
+      "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e",
+      "bytes": 840360
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sakura-03.png",
+      "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274",
+      "bytes": 847137
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sakura-04.png",
+      "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66",
+      "bytes": 848248
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sakura-05.png",
+      "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc",
+      "bytes": 845316
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sr-01.png",
+      "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697",
+      "bytes": 674561
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sr-02.png",
+      "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688",
+      "bytes": 894420
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sr-03.png",
+      "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a",
+      "bytes": 674292
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sr-04.png",
+      "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151",
+      "bytes": 898673
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/sr-05.png",
+      "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246",
+      "bytes": 673439
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/assets/wallpaper-frame.png",
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+      "bytes": 1616086
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/comparison.html",
+      "sha256": "ccfd57e6fd9d6c201f97f69bf0687a8b93233c6bfce129ad2d69b2299aad9c10",
+      "bytes": 7588
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/controls.css",
+      "sha256": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+      "bytes": 3766
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/controls.js",
+      "sha256": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17",
+      "bytes": 8451
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/coverage.csv",
+      "sha256": "fd0343ad5230c879a36628df0d17ba5b64ef66276d55491b9807344b3a1af16c",
+      "bytes": 3851
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/data.js",
+      "sha256": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+      "bytes": 67294
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/entry-flow.html",
+      "sha256": "43427ce499739b844ae7a2687689573034ecb5090912110bf29b1b126b82b636",
+      "bytes": 8838
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/gallery.html",
+      "sha256": "7af89e459cdbe82794fe7fecc515266d51da780d387e8dd4e35d96f3af39737e",
+      "bytes": 16980
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/game-library.css",
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+      "bytes": 11214
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/game-library.js",
+      "sha256": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+      "bytes": 24196
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+      "bytes": 3501
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/index.html",
+      "sha256": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+      "bytes": 9863
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/integration.md",
+      "sha256": "505a509d97ad56cf5ea16036771c8f8f137172143f6e14dfd00bae97caec987a",
+      "bytes": 10093
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/interaction-review.html",
+      "sha256": "512172c4aae94036935e75bb6a82d6bb67d47711774ddafbdaac192729fc2f0e",
+      "bytes": 20894
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/learning.css",
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+      "bytes": 12086
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/learning.js",
+      "sha256": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+      "bytes": 25430
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/manifest.json",
+      "sha256": "6e34932317f0ba35016d0d26708a95466f5da24a3ee66f27a6ba7f254ce095fc",
+      "bytes": 85586
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/material-assets.json",
+      "sha256": "f85b93e9c7f1f7f0b37528f8a0ca5f8cdffe09412057400483a8848dc3374d79",
+      "bytes": 1713
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+      "bytes": 2770
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/reference-manifest.json",
+      "sha256": "5dabca238bdb6c9821d1e2e26791034b80a5f92c7e9d03e9b8c985cf0d468e51",
+      "bytes": 1499
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/review-gaps.css",
+      "sha256": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f",
+      "bytes": 12302
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/review-gaps.js",
+      "sha256": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+      "bytes": 36851
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/settings.css",
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+      "bytes": 11331
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/settings.js",
+      "sha256": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+      "bytes": 56703
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/style-guide.md",
+      "sha256": "72a3531c59b8318eb9ac5477e05e41d97de48f23342f8c7635c458222c4428cc",
+      "bytes": 5830
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-origin/styles.css",
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+      "bytes": 44786
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/design-source-render.log",
+      "sha256": "c3a3aa55fa5aa83693b423b34a0bb2ef6334e604f67c35a9698dd5bd67a67edc",
+      "bytes": 105
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/display-preferences.bottom.png",
+      "sha256": "cbda53818ed84f1bd202f2a0d97141c5a5cde580874ebeb9aa4ddde0cf74c4c5",
+      "bytes": 51120
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/display-preferences.design-source.html",
+      "sha256": "0002585ef7d8b354104806215d0652d5f21f822ac09e4615e03bec8f0d3293b6",
+      "bytes": 8172
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/display-preferences.top.png",
+      "sha256": "508c9b9706fb55a562a60fd431542cb1739d66d5f852fab468dd6a14765c1204",
+      "bytes": 51662
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/empty-library.design-source.html",
+      "sha256": "07416de5727d9ec52d48097df2ff05b2b6f64faf005e6d422c6bc71ab3902182",
+      "bytes": 5902
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/empty-library.top.png",
+      "sha256": "4cf158a2259e987659cfe41956da6fb20a1c855c1d31257a9990c48183251b94",
+      "bytes": 294074
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/geometry-inventory.json",
+      "sha256": "b8c6a4929c6e4514b8eda4428579880a8f26631ba6893e0a561ffaf4266d1d53",
+      "bytes": 97496
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/capture.mjs",
+      "sha256": "b0755379f8135c0633f2e8b6af7a931bcd68f2a80406756b14b30568e0459fda",
+      "bytes": 16897
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.closed-license-bottom.design.html",
+      "sha256": "b7e7b0aaf29a793667c1aa3eb1f8ca63a61f8e183a8a6a1d47e4d68527a91be2",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.closed-license-bottom.png",
+      "sha256": "b81f979b44356bc6a6cb49d2d919eeb7ed89bf2d4f23fa95981518f085dc39b8",
+      "bytes": 55486
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-0.design.html",
+      "sha256": "a8361c19236c7ecedba938cf0ba2a877a7a8ab0e0170dc06e9538cdbf19fefd9",
+      "bytes": 9755
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-0.png",
+      "sha256": "8c4de9940ac3beb21f7ab6b006974b23136565620b714cb67ff00a18eb6b0bf0",
+      "bytes": 51722
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-1.design.html",
+      "sha256": "06630870f39d0f7e4dbade537e05c477a0db4e1e958e23c58f2a62f904bd08ee",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-1.png",
+      "sha256": "c1ce3c3aed601626807c21f5d27039faa96a15320db270188c40f90060b8d99b",
+      "bytes": 52777
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-2.design.html",
+      "sha256": "67adb5c0c46a88d6f62b64e3092f605f3511c1dec88dc4747f7a5642462ba0ad",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-2.png",
+      "sha256": "8703cccd82a9b316a9dc77350b300a1008a2cf4d6ded064c28552ee7e6824455",
+      "bytes": 56113
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-3.design.html",
+      "sha256": "f113c94ca220a8597d4a02bea88d91ac69b36caa46fc35ca82bec429e0f3217b",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-3.png",
+      "sha256": "59f3433e90651ea2dab79bce02e6650175d5008abcb9f4738ec0d743b1680f63",
+      "bytes": 51913
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-4.design.html",
+      "sha256": "3eab92e8856812dd15f804bb96ac38e881b0a7d8435fadad23d46b99ace69bf3",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.coverage-4.png",
+      "sha256": "5a25e4a7745b7073c5b071a58988e1a9d4ecf8c7f58fe5fea16af44445268805",
+      "bytes": 53292
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.design.html",
+      "sha256": "1313cc93e3d2a1f582d6b1ba653fe8dbb91f832203b5ee8ce5813268adc7678e",
+      "bytes": 9763
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.png",
+      "sha256": "8c4de9940ac3beb21f7ab6b006974b23136565620b714cb67ff00a18eb6b0bf0",
+      "bytes": 51722
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.design.html",
+      "sha256": "8822cdd1f2b49d932b74f211a87611f6b1b9842030fa67820a8fc9b46d05c303",
+      "bytes": 9765
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.png",
+      "sha256": "c1ce3c3aed601626807c21f5d27039faa96a15320db270188c40f90060b8d99b",
+      "bytes": 52777
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.design.html",
+      "sha256": "bd9079d1a005828f0575890b2a97864352b57572ab35e0be5c484345d750eeb1",
+      "bytes": 9765
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.png",
+      "sha256": "8703cccd82a9b316a9dc77350b300a1008a2cf4d6ded064c28552ee7e6824455",
+      "bytes": 56113
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.design.html",
+      "sha256": "66d6d4d557596b6b72743f96bac1549654a06d1602a70d33cf5eb37b25f15c22",
+      "bytes": 9765
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.png",
+      "sha256": "59f3433e90651ea2dab79bce02e6650175d5008abcb9f4738ec0d743b1680f63",
+      "bytes": 51913
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.design.html",
+      "sha256": "cff0357a84eaa0054d2be82a1322aab6a30ae51939bc848991c60abc50847ad9",
+      "bytes": 9765
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.png",
+      "sha256": "a1feaa7b63db95f597a517721a8a4b423981a4bb1d5e390ee39e9cf885d214a5",
+      "bytes": 55079
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.design.html",
+      "sha256": "0512e08092f61343e91a1c3ca6f34fb55f7de8ced7c002aab81d0886c59241e7",
+      "bytes": 9765
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.png",
+      "sha256": "69105a2c24d4a55a16976466cf88da61328dc6f9daf9d786b97109bd43068a2d",
+      "bytes": 56904
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.second-headword-source.design.html",
+      "sha256": "1d0d86b9d34f4c00c4a8c14764314b69af67472d91de9ff4238c6747c211d3d2",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.second-headword-source.png",
+      "sha256": "3c7f853cc40ffd5dd766e9811eee1351acca7ffc38dfd6b412f6cb1bd58172b1",
+      "bytes": 51732
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.source-a-attribution.design.html",
+      "sha256": "de920c9e1782beb419fa19c798479c93285248d2a5cf0bac375fbe8da2c9dbce",
+      "bytes": 9757
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.source-a-attribution.png",
+      "sha256": "f2b854921f579daa38e9cc0d68a3583eb872a18f6f6591161727da93fa74781c",
+      "bytes": 53309
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.design.html",
+      "sha256": "0512e08092f61343e91a1c3ca6f34fb55f7de8ced7c002aab81d0886c59241e7",
+      "bytes": 9765
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.png",
+      "sha256": "69105a2c24d4a55a16976466cf88da61328dc6f9daf9d786b97109bd43068a2d",
+      "bytes": 56904
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.top.design.html",
+      "sha256": "a8361c19236c7ecedba938cf0ba2a877a7a8ab0e0170dc06e9538cdbf19fefd9",
+      "bytes": 9755
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/dictionary-distinct-headwords.top.png",
+      "sha256": "8c4de9940ac3beb21f7ab6b006974b23136565620b714cb67ff00a18eb6b0bf0",
+      "bytes": 51722
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.save-failure-draft-retained-bottom.design.html",
+      "sha256": "05de0e574ff3b0f46e62bca8217ea0d00af5f7e12041b3deb85870bc6f1cc04c",
+      "bytes": 11635
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.save-failure-draft-retained-bottom.png",
+      "sha256": "fd0a5d404bc49f1cbd763a9e839cc01108561888f303cadd39eab0a5f45a984a",
+      "bytes": 266066
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.save-failure-draft-retained.design.html",
+      "sha256": "f1ac06fddfa5db6bb3f3668486a9e9c48a0c505ecbce5df976fef52174ca10ca",
+      "bytes": 11633
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.save-failure-draft-retained.png",
+      "sha256": "f73eb37173318908927a34fa6333c17378e038743bbbde3db069cc091324e484",
+      "bytes": 274047
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.saved-global.design.html",
+      "sha256": "fc45df4c043b03b31d0d42c7c8e01e3c83795e960479249ad0f48baf0523de9e",
+      "bytes": 11565
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.saved-global.png",
+      "sha256": "a773577eca15c6ebf4cf218345452667ab2216469a67a0540968679363efc1df",
+      "bytes": 270631
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.terms-and-footer.design.html",
+      "sha256": "5329a386cb3f278a71e8ae820c53d70b8171e9f32070812eaa97d802f0f53e4d",
+      "bytes": 11567
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/glossary-editing.terms-and-footer.png",
+      "sha256": "23e4ff3fd0dd51122e0aaec822edb877496072a7a9d2d4afe13296fa1cd7872f",
+      "bytes": 262108
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/index.html",
+      "sha256": "3c298a9398800a20cff19f76d97842254629fe9a9b95c11fe841bc249e08fb10",
+      "bytes": 863
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.design.html",
+      "sha256": "ef5db6e81b42a08862bc377302c7331c21de94540d781fd75a951b6059c2f0d1",
+      "bytes": 4325
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.png",
+      "sha256": "9421e4492d99a98449aad3d8a09cfd85a9b8e8871de91c5f46258ede4adc13c6",
+      "bytes": 174229
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/learning-japanese-linebreak.narrow200percent.design.html",
+      "sha256": "15558a2f741c91dddda1a92fc71d8923a3c711c4c768ad9f4d599fd82c065a58",
+      "bytes": 4324
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/learning-japanese-linebreak.narrow200percent.png",
+      "sha256": "073c2920c72e6ce39a5c4a9ac131e19b439ef4f3d8854c9bd016f9114ad67ba7",
+      "bytes": 176198
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/learning-japanese-linebreak.wide18.design.html",
+      "sha256": "510bc9bb71ababa0096f4224e9dda7ac3ce11969c24696eebfa48b28f5342532",
+      "bytes": 4324
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/learning-japanese-linebreak.wide18.png",
+      "sha256": "e20ce3bd5930615e41d40ac26fdca53940a028423a3b84fc0370415fe9636a3d",
+      "bytes": 242036
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/metadata.json",
+      "sha256": "6d9e67385f5943c3648f5c0dc845ac129543a0096994993fff98acb290a72cfd",
+      "bytes": 67704
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/supplement.css",
+      "sha256": "d0675956ff67b922f503b3dfd0dec25f4e905613f27a294254264739418f8b0a",
+      "bytes": 8383
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/supplement.js",
+      "sha256": "d37a8e54103882e22c449713630b1a51509e13a687685b60ffb467c440cf0354",
+      "bytes": 20766
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/wordcard-native-size.constrained-workarea.design.html",
+      "sha256": "d7911456d16c1086ce251aad62591b4feae7c8a2df2e70a6888e07367107a487",
+      "bytes": 8819
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/wordcard-native-size.constrained-workarea.png",
+      "sha256": "5f8782cecf9ca761014dd8f9b3720a89a4c44fc2b23f217928e425f5d43bac21",
+      "bytes": 54395
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/wordcard-native-size.native-window-context.design.html",
+      "sha256": "bf5e429e4b26574e61d2aab8bc62f8c21765cc176bad6f8fa29ab397898676f6",
+      "bytes": 8815
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/wordcard-native-size.native-window-context.png",
+      "sha256": "5232077ec859c1de431b9c518e9974ed4ac5a29744fc9c21f069b767681b3996",
+      "bytes": 611776
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/wordcard-native-size.resource-footer.design.html",
+      "sha256": "80b9686411f45f543f045b1d3f6e3e040904b0dec4573dadbc747cb21259dc85",
+      "bytes": 8820
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/hand-authored/wordcard-native-size.resource-footer.png",
+      "sha256": "9d03e1dd28d30d888605a772eb595f4a4fe8e2cbda40361e074b85f99e1c9d71",
+      "bytes": 54051
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/history-earlier.design-source.html",
+      "sha256": "489de60ad46b2898cee3b76f2eec19d17153cfa8d656e959d0c0e02d385d7bf1",
+      "bytes": 7933
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/history-earlier.top.png",
+      "sha256": "73ba632593fccb67aec8134acc6483f9d8d073ca22663bf018e2298dbf156519",
+      "bytes": 293282
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/index.html",
+      "sha256": "3f8e1280aa255a55f5844c294f55e5735f9d2f4d3cb9ea2870ebafe212c2c2f0",
+      "bytes": 43153
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/learning-fixed.bottom.png",
+      "sha256": "207d56e5a1dca9d8c8623a4c50a3571c852179aee729f0e27c33b21ce3cfaac0",
+      "bytes": 159786
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/learning-fixed.design-source.html",
+      "sha256": "139c7a7226c84f83aa76c6e07f793fb151acb9ab63e453bdac9c77e401b23da0",
+      "bytes": 4811
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/learning-fixed.top.png",
+      "sha256": "a93819e052e52d2eb9c7dedaab3550359cce860f57c9fbf276646525606ecfd2",
+      "bytes": 160132
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/library-batch.bottom.png",
+      "sha256": "4236286642011afac53e2ad5ee79ef2159cdf7d4d4441800a75c183a8bf9d777",
+      "bytes": 128194
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/library-batch.design-source.html",
+      "sha256": "4539c2bb99347a6952509206b5bf191a57e8032899735810a415b13df5897f22",
+      "bytes": 13341
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/library-batch.top.png",
+      "sha256": "f4c67a4fb38b41c999dce42acd29b184a555527282226a181926ede44244d53e",
+      "bytes": 134993
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/metadata.json",
+      "sha256": "99e3eda1ef51028c16bae3502d099e859ac479118fdd587d7e342064d629891d",
+      "bytes": 595178
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/model-scheduling.bottom.png",
+      "sha256": "44cf906525b3d0c49880d0962166dc797004a56136e6c08e2aa293e10fa10cb6",
+      "bytes": 213315
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/model-scheduling.design-source.html",
+      "sha256": "e881c64217c5025e825eee7bc681f229140f3ee1c3f31531d3b93c93c3017ab0",
+      "bytes": 13088
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/model-scheduling.top.png",
+      "sha256": "3a3485fa038b770998833421d38100a1e7fc78209efc9513ab5ee3d1346927a9",
+      "bytes": 228142
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/native-content.css",
+      "sha256": "c235205e5f3600038814e66c131f42976ff82cf60731eae2eaa9c5d7311057e7",
+      "bytes": 5351
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/preview-frame-input.json",
+      "sha256": "602489486a7b91060a41f73201fa25271206bcaec1f6c42a26b500c56a2036dd",
+      "bytes": 441
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/preview-frame.jpg",
+      "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+      "bytes": 137866
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reading-hud.design-source.html",
+      "sha256": "6b539253367bcb56fa26b11d34e2cf1806c4e97fe410b12225c0665543f83a9c",
+      "bytes": 8167
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reading-hud.top.png",
+      "sha256": "9a80e0b9b8fc4273a0f00e2f58b85411cfbed02caa1d478f2e38739609d19367",
+      "bytes": 64278
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/render.mjs",
+      "sha256": "407bb8d67a895211d3f8378d9b55bbd85c0bda046d7ba41a0c67c404d96b70fb",
+      "bytes": 41106
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full-render.log",
+      "sha256": "21294ea860ab745de0e913e5440a59753bae8f8109512ca1acffd45c83252e94",
+      "bytes": 165
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/library-populated.design.html",
+      "sha256": "67101f25b18b12e901088e224dc1701c6c1ba79437023f64246ef9ba16fe9f9b",
+      "bytes": 7549
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/library-populated.input.json",
+      "sha256": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+      "bytes": 21568
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/library-populated.region0-bottom.png",
+      "sha256": "f272ddd9cf733a2c695d045221378bbd9a130917b35a3a598be7c51dbd7bba93",
+      "bytes": 243456
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/library-populated.top.png",
+      "sha256": "af3104951b996c6f2a932662fcc28e41482214aada044817fa17f729a64cff59",
+      "bytes": 265246
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/metadata.json",
+      "sha256": "3ee82e8fb75dba116b91e085bbb5b05dcb6b42287519dbb5bad5d5cb6491ba3f",
+      "bytes": 84187
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/native-full-client.css",
+      "sha256": "ca088aeb1ff28398871afce2c415e8b972e9279b97352bb796ddd2ce18f73763",
+      "bytes": 7620
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-body.design.html",
+      "sha256": "2f03038b2da297a71f0c515c10449e7b341b3c4b9a2d22a37c3c7c06fa9ab86c",
+      "bytes": 12840
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-body.input.json",
+      "sha256": "24cd52b2dc01a533d011c6c7fbb8f1e4500d2e05deb722bf0d768f384b9c4143",
+      "bytes": 57474
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-body.region0-bottom.png",
+      "sha256": "7802ea1fde00fd13046132f7ccfb28225f64df5c326d2c7cd91e681c58a43e9f",
+      "bytes": 198859
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-body.region0-page1.png",
+      "sha256": "fdea5f54e2dffd9eed347c1150484a47faefa422ab329be561f400f5b4f7e3fd",
+      "bytes": 222852
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-body.top.png",
+      "sha256": "5be5c2d8cb1d8dbb74af4b726a2c9e02fa914da5fb3554a9a38ea2c1901de685",
+      "bytes": 248816
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-extraction.design.html",
+      "sha256": "9a01e18f53fcf6f74b60236bdbb9c32c959c8eabda4531177959ababee6589cc",
+      "bytes": 10561
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-extraction.input.json",
+      "sha256": "8da27abc582bf73cb34f0cfa0569800703059e7f317c46922069cc59038c8386",
+      "bytes": 57026
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-extraction.top.png",
+      "sha256": "1db13066af49ccc9a2459f2a792ac4ea4a6567bc98d64d62fd5c7d7f51669882",
+      "bytes": 268213
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-hook-events.design.html",
+      "sha256": "41deeeb014aa42e225aa17de18939fb7c05399e78f61ec7191c9089952b674d8",
+      "bytes": 15130
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-hook-events.input.json",
+      "sha256": "695938b3b3ace2fdd3d83e3ec57a3336c02a67e3a61aca0e101837c8567ce069",
+      "bytes": 60574
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-hook-events.region0-bottom.png",
+      "sha256": "1af93af4c2f91226a3ab9b8ae9e6d54720bbb9d46a85522c16cf434214d444ae",
+      "bytes": 203026
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-hook-events.region1-bottom.png",
+      "sha256": "bbfa6d920607eda320bb92e33b8bf45bae93e13822537f08624a802d5c2e1ce7",
+      "bytes": 251101
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/session-current-hook-events.top.png",
+      "sha256": "c5a3b1d15f155005cb666482bfc149b971c20399e4db1376cf45b0f50c4d3717",
+      "bytes": 251818
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-active.design.html",
+      "sha256": "1a20a4a79ebfa92d6c6b9bbb1448cf61c91fb0e5a21dedc8e6176af1b3dfb4fd",
+      "bytes": 16345
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-active.input.json",
+      "sha256": "da0def711f673a6b8345acab713f747a8e02cd4401fdd7b86e03656c59bea6f1",
+      "bytes": 57021
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-active.region0-bottom.png",
+      "sha256": "4647b09e1a73ed38ba861fd9ed53cabed7be04e6c8716a17a040e6a51419dc33",
+      "bytes": 233395
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-active.region0-page1.png",
+      "sha256": "f5e7ffa5a0f2f917d8d01c2eb7f215e0609af6bf4f49713cc79b4c7d75a38e76",
+      "bytes": 212046
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-active.top.png",
+      "sha256": "5f74e0ed463ab72d3ef0a5449419c423405e436de3e36a521477f13a505a97c7",
+      "bytes": 254204
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-conflict.design.html",
+      "sha256": "bbb4be70572a74f5358a857cce2cef8db4fbea6e663af91d03b90a20e557992d",
+      "bytes": 16704
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-conflict.input.json",
+      "sha256": "dfe985acbae90fd073eef13683a88def7eacf67bb44c2115083293a72f476880",
+      "bytes": 57357
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-conflict.region0-bottom.png",
+      "sha256": "a0b22528011f7abd87145f746f139b25dba9c623cf5309581e4473d03253d89b",
+      "bytes": 260366
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-conflict.region0-page1.png",
+      "sha256": "082cbaab79d8613a3812182fe37e2f669d29d2793a8b4cb6848a2fab95aa0223",
+      "bytes": 216323
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/settings-shortcuts-conflict.top.png",
+      "sha256": "c789779c1bea7c53f97447e537dc8f8a846a51ca0785adb4499365173d62f7e6",
+      "bytes": 253703
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-live.design.html",
+      "sha256": "8d60721869ae7a6567312ca9d1af19786b586f2a7909d5641a538adc901a1caf",
+      "bytes": 12500
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-live.input.json",
+      "sha256": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+      "bytes": 21568
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-live.region0-bottom.png",
+      "sha256": "ed28a6cec616e9053a434dc0e9d072581c1e285ff52572359371565bef48b1d0",
+      "bytes": 265099
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-live.top.png",
+      "sha256": "d790891a78c74701dbd996b200d87a13cdd1dde086121b33316f4577fac110c1",
+      "bytes": 309618
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-off.design.html",
+      "sha256": "c1f9800ebba60c2553d1d664c05cc00bbca6946c3a9aec83e0c30541c9261958",
+      "bytes": 12927
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-off.input.json",
+      "sha256": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+      "bytes": 21568
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-off.region0-bottom.png",
+      "sha256": "c43e4cf97f30b34631c1f6468ab3a7b2a292ce0e96ee984dc7f5a8d6fc669412",
+      "bytes": 207106
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-full/target-review-preview-off.top.png",
+      "sha256": "641e031924947e017cdfcc00f28e42d062acbf062e8d307f4b16b6e2db12feec",
+      "bytes": 183516
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps-render.log",
+      "sha256": "53e8596a07a896d8ca27c061d55ce56b1a33b003289467e9b5e667895c0f6864",
+      "bytes": 199
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-lexical-error.design.html",
+      "sha256": "b666b0b8cec129b05b5c26c450b939601f4f62755f422359d16ebd15db46bb4e",
+      "bytes": 7113
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-lexical-error.png",
+      "sha256": "8c8bcac24844dae9a3827c6030d577dd233b13e4255e06c7408f7c31a5ccc95d",
+      "bytes": 69997
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-ruby-only.design.html",
+      "sha256": "1f7860ce0d961d56531258310032c00f1e0e73f5d9d2e1b97e0caf4b13c8aefd",
+      "bytes": 7133
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-ruby-only.png",
+      "sha256": "5e7f14fb476a89d48ce582b203d225215ff0bd4e916afc51309a5653137046d7",
+      "bytes": 63917
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-toolbar-500.design.html",
+      "sha256": "79f0e82380ec55d4633b341023eda1e70742dbfaa26d30efaad6d5513cdbc260",
+      "bytes": 8226
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-toolbar-500.png",
+      "sha256": "4edc846022dc247c27f1d19d13066a4e06c9ef3e7603b2739d8a51f20dc4a333",
+      "bytes": 57335
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-toolbar-560.design.html",
+      "sha256": "50ee610df9de68814532c97619a3cd635f94311646e905237750aa8fe7df6c1c",
+      "bytes": 8218
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-toolbar-560.png",
+      "sha256": "6d06848e47c4012a5cdaabc66b3688e0f59c6d94fd717b2d99e46ebcdb7a3125",
+      "bytes": 64289
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/metadata.json",
+      "sha256": "908db87ad7b80da92f154ba16c7aef7f33eb187c0f7961c666f5388993a3840b",
+      "bytes": 45210
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/native-component.css",
+      "sha256": "27d1f28141f2233895fb2de802408bfc39c7208b7f62fe258d1d24fd76c51e59",
+      "bytes": 2791
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-exited.design.html",
+      "sha256": "a1e38388ca90897a43c8ac06cfde289b3287351aa57a9b40dd14d2f6b644a8d9",
+      "bytes": 2773
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-exited.png",
+      "sha256": "bbe19c539c358671ec9d42bb4b982aa4ea5be44f9d56657dc680225a81fc568c",
+      "bytes": 90302
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-live.design.html",
+      "sha256": "22767a88b21fab7a75fd8de74d2966d1fb8e1561871c9cf2663ac2ac884f80e5",
+      "bytes": 2263
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-live.png",
+      "sha256": "0eb72d801f2c056c87cd2b0e67183a723f0abdb2b615dcf59f1e38f4826031d5",
+      "bytes": 125361
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-off.design.html",
+      "sha256": "2f478c5a9811c0a93e2ef741e68bc4bc62e93aa31606c717de9d45654d6a0fd4",
+      "bytes": 2690
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-off.png",
+      "sha256": "ef52f7b3d869cb4d0c8ee776c9c5effee115457f14891607077e57cb6f232a16",
+      "bytes": 93721
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-paused.design.html",
+      "sha256": "155e4b099990ca024444aee4668b5bee3430773c2d8055abdfefd1f8ecd1374a",
+      "bytes": 2314
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-paused.png",
+      "sha256": "009416feca6a5c00a0982aadc2048adc118825a4f23d9036531e21659459075a",
+      "bytes": 125181
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-permission.design.html",
+      "sha256": "8cc7b1d4a29e2ef12dda5a165e8e08439958b1e15a8b1eecf9ced8b92fa026cd",
+      "bytes": 2844
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-permission.png",
+      "sha256": "b4b3b7ab24ad414625df758320a6793a1f6eead0e324bade46a436b3a92d837c",
+      "bytes": 92778
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-unavailable.design.html",
+      "sha256": "070efddf9425aa2c6d7e113ebd1ce18a5aa42c32611fb7391c9fbc21957b7c08",
+      "bytes": 2755
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-unavailable.png",
+      "sha256": "d63ca99aa7d2ed355f5faa11485daa6c54d595d6b680f7472feb565d7ee5e1ab",
+      "bytes": 90587
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/select-long-list.design.html",
+      "sha256": "c3d841030bb40e2f92e71454357352c7b2e0d930ce9e098a2db5221ce6f539fd",
+      "bytes": 12420
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/select-long-list.png",
+      "sha256": "8064599679becdf89d6c17ec0d947926e2b2eb1666cd516eee1c419516f8c5ab",
+      "bytes": 38481
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/select-normal.design.html",
+      "sha256": "76941fcfd97299d5ae832cf4e0f4a32a94e58cbc204309b4e81825491d3656df",
+      "bytes": 2285
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/select-normal.png",
+      "sha256": "7595ee68f8a22dcdae667446029b44fcc736a04a7e15e36559af559c9df24492",
+      "bytes": 24652
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/session-extraction.design.html",
+      "sha256": "05e2d6a8ff525098700633517f3e2fbd81adbbbcf1cbc0240b405668ee6d4082",
+      "bytes": 5435
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/session-extraction.png",
+      "sha256": "ef60fd693f8bbaec2dfe315e2f5586f75f7fdf1bd2d3652d1ba0c4be7f0adcbd",
+      "bytes": 443719
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/session-hook-events.design.html",
+      "sha256": "f6e703ae5850994f7180f8f3da2f4d300d3075d4d65080f6c4d8ff69251c0eb4",
+      "bytes": 10006
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/session-hook-events.png",
+      "sha256": "8e62fe5e33f7396cd08f6507adbd7e65e87e4a3da3171dbd7dd1702f67497100",
+      "bytes": 468891
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-hud-chrome.json",
+      "sha256": "6cb89152219098c80eafad9ac06a8bc82379700c545b0d95cadb99780472b146",
+      "bytes": 34782
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement-hud-sources.json",
+      "sha256": "4d1c8c01a1e9b6b5fee131d9a2c1c0d8ae683fd71f382ff51dc5a79a698ede7c",
+      "bytes": 1882
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/provenance.json",
+      "sha256": "79b8e1be77e618509cd26d3a2a9203d0a44b5900aafd509ef961ed3ae256ceb9",
+      "bytes": 5291
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/session-current-body.input.json",
+      "sha256": "e93dbcf8b4e9e03a9a3356c5e9028bbfc18077d488ef5c673f9d89caacd0b9d3",
+      "bytes": 2906
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/session-current-extraction.input.json",
+      "sha256": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+      "bytes": 2480
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/session-current-hook-events.input.json",
+      "sha256": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+      "bytes": 5830
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/settings-shortcuts-active.input.json",
+      "sha256": "441d9bd76a415379bec56d2a9393190c1eba847cfd605f94d10ade67fd69c042",
+      "bytes": 2479
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/settings-shortcuts-conflict.input.json",
+      "sha256": "a7413e8648ae5a58e3b95bb3d372bed4d3f5748d80906a5e97a7cbb3f0c9e8fb",
+      "bytes": 2811
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/supplement.css",
+      "sha256": "be07e5e310bb433f23848d18ba95f88d121ab5a55aa77da5384a080cec27b4cf",
+      "bytes": 1651
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-supplement/supplement.js",
+      "sha256": "64b31fd16c5f28ed2a7929e6b4bf495bdcc6d8b2cc2f0a7e0efc6709abca6f00",
+      "bytes": 20644
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/reviewed-word-card-anchor.json",
+      "sha256": "fe622fb1d0077c65a0251ab8e9753f1fd9d7bb1b5c1dd876f45a06aa2c73b317",
+      "bytes": 402
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/settings-connections.bottom.png",
+      "sha256": "0556a6c15f845f010dbd1a767781c842f9d4af87d0d33f68febaa5c8d054aa84",
+      "bytes": 245383
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/settings-connections.design-source.html",
+      "sha256": "186b71f3a0e70f2990d38f8efbf0519f3ecbbc2302d9a8ea5c17afd2ae435ede",
+      "bytes": 16620
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/settings-connections.top.png",
+      "sha256": "8c864868924b63dc12288643400ed0f06925a7f4035b6cec8ab5d0233393bd91",
+      "bytes": 253784
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/supplement-render.log",
+      "sha256": "a9476f8507af8a1fac7828b58d9428cf87035b509f33e331e9df8d1bf309311d",
+      "bytes": 89
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/target-review.bottom.png",
+      "sha256": "4b11dee650ce75e623b4778949f9188165ea3e9f3dafa6ea9b0ca45865346f1b",
+      "bytes": 146101
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/target-review.design-source.html",
+      "sha256": "c8abde8e279e059bbc0a28cda4f327ed53d29227f99184cc6631bcd9248572bc",
+      "bytes": 12781
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/target-review.top.png",
+      "sha256": "3ce02eb871afb15ed18b90ee9154ff01a46d9d09221a1d2f31f7738c13e6e6c2",
+      "bytes": 123120
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/underlay-reading.png",
+      "sha256": "d72d04d3e6ba61a37f71ea57392a6fa9977a8b8451037134ec5719032c379cf3",
+      "bytes": 968640
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v4/v4-proposal.json",
+      "sha256": "151822224e4a345482d9e501d698b1571295bdb6f4fe211e21ce2ac3e2f0f4d2",
+      "bytes": 160496
+    },
+    {
+      "path": "docs/design/first-product-v1/app.js",
+      "bytes": 66010,
+      "sha256": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/manifest.json",
+      "bytes": 8500,
+      "sha256": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-01.png",
+      "bytes": 245974,
+      "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-02.png",
+      "bytes": 789017,
+      "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-03.png",
+      "bytes": 793847,
+      "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-04.png",
+      "bytes": 786010,
+      "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-01.png",
+      "bytes": 677528,
+      "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-02.png",
+      "bytes": 692451,
+      "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-03.png",
+      "bytes": 691210,
+      "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-04.png",
+      "bytes": 673031,
+      "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-05.png",
+      "bytes": 687454,
+      "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-SCR-01-light.jpg",
+      "bytes": 425061,
+      "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-SCR-08-light.jpg",
+      "bytes": 212757,
+      "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-SCR-15-light.jpg",
+      "bytes": 194918,
+      "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-approved-material.png",
+      "bytes": 157449,
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-full-product-before-restyle.png",
+      "bytes": 277742,
+      "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-icons-color-before-library.png",
+      "bytes": 375812,
+      "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-icons-color-before-settings.png",
+      "bytes": 187630,
+      "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-material-before.png",
+      "bytes": 263734,
+      "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-01.png",
+      "bytes": 839932,
+      "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-02.png",
+      "bytes": 840360,
+      "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-03.png",
+      "bytes": 847137,
+      "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-04.png",
+      "bytes": 848248,
+      "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-05.png",
+      "bytes": 845316,
+      "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-01.png",
+      "bytes": 674561,
+      "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-02.png",
+      "bytes": 894420,
+      "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-03.png",
+      "bytes": 674292,
+      "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-04.png",
+      "bytes": 898673,
+      "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-05.png",
+      "bytes": 673439,
+      "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/wallpaper-frame.png",
+      "bytes": 1616086,
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/01-window-preview.png",
+      "bytes": 301271,
+      "sha256": "1d413a24c51237d5d4d3b8f1f29b42f60a858ee7a1246027143eb68f50edb3e6"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/02-preview-enabled.png",
+      "bytes": 301334,
+      "sha256": "0ac6e2be092e0ce7add518b76c8d59819237c6f151e8f0b48f6149f6794295ba"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/03-preview-paused.png",
+      "bytes": 296859,
+      "sha256": "e484d1cd644bfc79a8f7c06eded291e84f39151785b15bf1f0a969c2f2e283fd"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/04-preview-permission.png",
+      "bytes": 271488,
+      "sha256": "af53de0d218a74e0f23f9ab1ef13257bf4a855ef02ab739a496ade4e38946baa"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/05-preview-unavailable.png",
+      "bytes": 269284,
+      "sha256": "07b401146862a6dd1fb47d03df901f1163ade768ecd391424596ac92432a8bf3"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/06-preview-exited.png",
+      "bytes": 269261,
+      "sha256": "d709993281160d2a925cb47c27f1c1fe8cf1de694936ea3ec79650c778e714fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/07-hud-dragged.png",
+      "bytes": 875893,
+      "sha256": "0a82dc8fdb1d5e8153c6306eeceee1ed8275fa67d9d07f52b04506cc9d72f3b0"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/07b-hud-position-reset.png",
+      "bytes": 875921,
+      "sha256": "a8b1031fbf89a653105827289fd04c91d4b7e66f9ee7db2834596f47dba54d8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/08-hud-shortcuts.png",
+      "bytes": 47667,
+      "sha256": "5c188cc5a879b1e214cc2c623b8a9fb3aa520e4bdf5be4fe8a33e0a1538b544e"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/09-shortcut-settings.png",
+      "bytes": 147973,
+      "sha256": "ab7c54865ebe0ab68110119a13678a38938e977e0e85ce570b9008644fc0bac0"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/09b-shortcut-conflict.png",
+      "bytes": 146478,
+      "sha256": "9cb761b8301ff62bf7ef106ea1b5d747a24b7de090b0a6866d06af59618f9849"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/10-hud-more-menu.png",
+      "bytes": 875962,
+      "sha256": "2409a23dd35a1a171ff45217a6132a22437c93f959e52228c044e65545394677"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/10b-hud-internal-scroll.png",
+      "bytes": 81593,
+      "sha256": "4a54ef4faca3b822f1e2e4f94c4d25a8cfa7caec87505fe4099ed30a0bcf1297"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/11-custom-select-expanded.png",
+      "bytes": 424920,
+      "sha256": "1c474742e4f0ff9e3f3310dcc2e39d41e3ae6967c63b73a3a8ddf8512e8682f6"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/11b-select-option-spacing.png",
+      "bytes": 14147,
+      "sha256": "854210f06a476054e6a234c671e2ce7da9bad765ab8450542b8352ba308953ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/12-select-long-selected.png",
+      "bytes": 199231,
+      "sha256": "60540cff94512670a6501882ca9b144cb74505bbce77358eb5312e9c08d39dab"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/12b-select-empty.png",
+      "bytes": 417690,
+      "sha256": "a6be56ddfd75459cd5ad109b6f94f0606635a22dce13116c25af7cc6ea12ad4f"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/12c-select-scrolling-spacing.png",
+      "bytes": 29824,
+      "sha256": "4e53ca99ce66db48e1fb9c17e546504883313fdbf3429b7f27ed13cbc3d0c553"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/13-session-unselected-source.png",
+      "bytes": 222662,
+      "sha256": "899d1c0aacbb0e23341d655b53d69ea10ce74b083e2c921a6fc7945293ae1afd"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/14-session-paginated.png",
+      "bytes": 163121,
+      "sha256": "5737e5c673af127e8892594f059c33b058e22a6067ca17f496e7d1364b12d915"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/14b-session-new-content.png",
+      "bytes": 162718,
+      "sha256": "d23fa7b2e3d8b11547546f14c5e9160fd36bcbb942a64479e95e8ec02c8ac80f"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/14c-session-export.png",
+      "bytes": 59443,
+      "sha256": "50db8e45680deb61f355367d7d65311c5e9ffb8a7947cc2e7a7a9b99cb2d01ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/15-hook-warning-events.png",
+      "bytes": 225807,
+      "sha256": "bd2e5c91b56d548bea13c7d23bd3376caec3f5d4e33c0b6f1a0a28e7bb8bf213"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/15b-hook-only-new-count.png",
+      "bytes": 157131,
+      "sha256": "20d3afd6b95ea43086d98474789f2f07af915dd156d27bd051b600ce71f6b37d"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/16-session-isolation.png",
+      "bytes": 150966,
+      "sha256": "910cb4e3e01345cfc5f61b38051cab8dcdaa28e9211ea61165cd471972e00df3"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/17-hud-ruby-only.png",
+      "bytes": 50096,
+      "sha256": "72541f64017a206b8467c82e490fe6cb98f362cbbdb310a5305e4739b3c597ff"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/18-hud-ruby-segmentation-pos.png",
+      "bytes": 50592,
+      "sha256": "d6e020052876cade7c705ab7f3ca1fc922bee5ece34b12f927a4d27dc1ae790e"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/19-hud-unknown-reading.png",
+      "bytes": 57261,
+      "sha256": "d610b8b8b9ee68c11fbc555c87f359dadb2230526041114998ae6ac32f14aeff"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/20-hud-lexical-failure.png",
+      "bytes": 57016,
+      "sha256": "effcf4b4ce87e7e3f38a89476e37aa598410ebe339f9b1cae1248c2fb5c62403"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/21-hud-translucent.png",
+      "bytes": 880304,
+      "sha256": "d100aba618a629bff2c67444e5e9ddcd3dc5f59dd2889e26d3f27789192a3351"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/22-hud-reduced.png",
+      "bytes": 23183,
+      "sha256": "5b593f0bfde76d85306de0f63e372cd31fbfffade87f2bf0f86afc0cafaf15b8"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/23-system-reduced.png",
+      "bytes": 23455,
+      "sha256": "92c32d44bfacfc5a49230964b11324891ff4e079a7349386220febd540e82694"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/24-components.png",
+      "bytes": 185299,
+      "sha256": "1070ca0e245908be43d42f71c41ea4cc645c6a70718a9523af83f4a69f857bb2"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/25-toolbar-560.png",
+      "bytes": 50836,
+      "sha256": "9662b4cde3e002eee28932fbf29cfa0e758e7fdba670d19beac6b9c536793fe6"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/26-toolbar-500.png",
+      "bytes": 45529,
+      "sha256": "9a4dd49b9122c317bfea4680631bb15ef51afd7d73a979b1d550fa151d8b911c"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/27-toolbar-low-frequency-menu.png",
+      "bytes": 888524,
+      "sha256": "5b1680abdaf96d0f0d0aad2e168a2065f2f0ae589022ffa90d8df6662308df85"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/28-toolbar-direct-actions.png",
+      "bytes": 47864,
+      "sha256": "92c7957c60d500634e125668e52bed833ad839130bc39ce9970fa5eaed57ea85"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/interaction-gaps-20261019-attempt-02/six-gaps/verification.json",
+      "bytes": 25931,
+      "sha256": "dbc0ccd1bcf9c5af6bf2b5de1a32013712a400e45243fdcf07b31dfdcdac18ce"
+    },
+    {
+      "path": "docs/design/first-product-v1/comparison.html",
+      "bytes": 7588,
+      "sha256": "ccfd57e6fd9d6c201f97f69bf0687a8b93233c6bfce129ad2d69b2299aad9c10"
+    },
+    {
+      "path": "docs/design/first-product-v1/controls.css",
+      "bytes": 3766,
+      "sha256": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480"
+    },
+    {
+      "path": "docs/design/first-product-v1/controls.js",
+      "bytes": 8451,
+      "sha256": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17"
+    },
+    {
+      "path": "docs/design/first-product-v1/coverage.csv",
+      "bytes": 3851,
+      "sha256": "fd0343ad5230c879a36628df0d17ba5b64ef66276d55491b9807344b3a1af16c"
+    },
+    {
+      "path": "docs/design/first-product-v1/data.js",
+      "bytes": 67294,
+      "sha256": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e"
+    },
+    {
+      "path": "docs/design/first-product-v1/entry-flow.html",
+      "bytes": 8838,
+      "sha256": "43427ce499739b844ae7a2687689573034ecb5090912110bf29b1b126b82b636"
+    },
+    {
+      "path": "docs/design/first-product-v1/gallery.html",
+      "bytes": 16980,
+      "sha256": "7af89e459cdbe82794fe7fecc515266d51da780d387e8dd4e35d96f3af39737e"
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.css",
+      "bytes": 11214,
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d"
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.js",
+      "bytes": 24196,
+      "sha256": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690"
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "bytes": 3501,
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/index.html",
+      "bytes": 9863,
+      "sha256": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70"
+    },
+    {
+      "path": "docs/design/first-product-v1/integration.md",
+      "bytes": 10093,
+      "sha256": "505a509d97ad56cf5ea16036771c8f8f137172143f6e14dfd00bae97caec987a"
+    },
+    {
+      "path": "docs/design/first-product-v1/interaction-review.html",
+      "bytes": 20894,
+      "sha256": "512172c4aae94036935e75bb6a82d6bb67d47711774ddafbdaac192729fc2f0e"
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.css",
+      "bytes": 12086,
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74"
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.js",
+      "bytes": 25430,
+      "sha256": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304"
+    },
+    {
+      "path": "docs/design/first-product-v1/manifest.json",
+      "bytes": 85586,
+      "sha256": "6e34932317f0ba35016d0d26708a95466f5da24a3ee66f27a6ba7f254ce095fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-assets.json",
+      "bytes": 1713,
+      "sha256": "f85b93e9c7f1f7f0b37528f8a0ca5f8cdffe09412057400483a8848dc3374d79"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "bytes": 2770,
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/01-first-open.png",
+      "bytes": 556763,
+      "sha256": "67e32f128ad621d7f067219159d2c1e8d08c4ee1fe108f2b2f315a29260b0bbc"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/02-configure-translation.png",
+      "bytes": 198576,
+      "sha256": "06f55765a1bc653a981843a2906ce0027fd9309d7f9edb8fd4f926e57562b0cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/03-connect-target.png",
+      "bytes": 214010,
+      "sha256": "5d144716a639155922f694abb8a1e490abde57f0a2aeb9f3092b1f566cea5173"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/04-connect-failure.png",
+      "bytes": 276640,
+      "sha256": "81c28639de533c536dafeb0d12de84910dc0872492b73cb6fa18f5a82e4db9f9"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/05-connect-check.png",
+      "bytes": 290533,
+      "sha256": "620f06c53c3e33413770f76d378670010d4e747095493488a9b504323f7ed2ef"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/06-stream-selection.png",
+      "bytes": 275408,
+      "sha256": "1a1935fefbb46ac70ebb56b5d8017b8eb9cbb18658adc30e4db1d1b6c5eee65b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/07-source-before-translation.png",
+      "bytes": 903491,
+      "sha256": "c72b5f8b2245ce75ea519fe577bf135fc7628f83a46aeb49da6ca00a860599f5"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/08-live-reading.png",
+      "bytes": 897301,
+      "sha256": "4050662a69a3239a331d36b6c5e9abc56dc7ec3142559f4e9dd8e5f07ef2e1cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/09-hud-detail.png",
+      "bytes": 48753,
+      "sha256": "f872f2107e2cde9541db5a9e3dc4592f8fe35c0bf6910b6f292d48e5467b959d"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/10-local-word-card.png",
+      "bytes": 846995,
+      "sha256": "2937ff324d579410e3f9aac10a02514764dea71f09e959ccfa3957f0d3041dd7"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/11-learning-unconfigured.png",
+      "bytes": 731156,
+      "sha256": "ec9d8e7eb95b304f5d4ae41e76c5fd49b0b51246cd34a27eeece293b7a6f5546"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/12-settings-over-reading.png",
+      "bytes": 402411,
+      "sha256": "2b1e33a7c59b172977c3d4c5ef4c94f196471ba73cf1b1d6d5f9a5f7f0f8e724"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/13-return-fixed-sentence.png",
+      "bytes": 734931,
+      "sha256": "9b5b4c502b76c2dd66090a7e9d8429af0fc7d5121401eb5ef9bc41692f1a8dcb"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/14-learning-loading.png",
+      "bytes": 726627,
+      "sha256": "d771630e927583410da301b0c8228cb243b9e2696bd7f52fb59dabdc82f1f328"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/15-learning-result.png",
+      "bytes": 745500,
+      "sha256": "22cbbaee13a834866d7804e8cc7529d9dc291d00e37f39d9ab29f9ec62f089c1"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/16-learning-reference.png",
+      "bytes": 168886,
+      "sha256": "a23e6cc722759ad6eae3d5a7a429df7dd9d7a659c8469bd958f34f96e368bbfb"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/17-learning-failure.png",
+      "bytes": 140475,
+      "sha256": "de9c32058c4644854e6237841e4244082119a09cb96fd3f04a5ed54e5bddd196"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/18-paused-input.png",
+      "bytes": 80297,
+      "sha256": "466e068e3680c77911961fa8b7b368b77c3953913c045cf1509c117cb1a564af"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/19-hud-menu.png",
+      "bytes": 80365,
+      "sha256": "db33cd011bc954b96d0f34c9f2b297d7c450c8b3de62f0da78e24d89c203e882"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/20-history.png",
+      "bytes": 290169,
+      "sha256": "f9b64d02c80746b6556ee2ea0b54fce73973b8436632064e6b93e889d3248537"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/21-history-save-failure.png",
+      "bytes": 280983,
+      "sha256": "d0147efe5fea224ab9390979b70298c874f64192ee54aeaf581f6b5d20c23d51"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/22-model-entities.png",
+      "bytes": 198456,
+      "sha256": "b18078345df87ef953faabed1fed99b178ffa3ef92264f9a885955670278283b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/23-connection-entities.png",
+      "bytes": 187233,
+      "sha256": "3910a607be04307b85e3c8527a9a54e5fed9700b52d266ef772c595abd3c27d5"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/24-scoped-test-results.png",
+      "bytes": 205341,
+      "sha256": "480abe589ee497eb175cedc6e575187c16fe61b6229366881edb7e4516477d18"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/25-manual-translation.png",
+      "bytes": 186916,
+      "sha256": "fa338c4447088ba979f706231fe756a12f896336f3676c9f9eba051cb8de3504"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/26-game-mo.png",
+      "bytes": 209394,
+      "sha256": "7e6c5414400bc6771ebe5ddd0da5be50ecde9a2cda7142a30f2680046d66cbad"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/26-game-never7.png",
+      "bytes": 541908,
+      "sha256": "ef937f85f866267fc4a83c46b2db20da9e6615c5f97413b681e76360903fa9f2"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/26-game-sr.png",
+      "bytes": 1006126,
+      "sha256": "2b9728aab90a9aaf393bd6616a19ec4b935012d66ede02a4df75d8237b64c184"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/27-never7-increment.png",
+      "bytes": 524512,
+      "sha256": "018e1925925e0ba58533c75d39f5f23b47e2d3ec7c8bee7ce138647f3b56043c"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/28-integrity-recovery.png",
+      "bytes": 215952,
+      "sha256": "af6c5bda403645ad85b55c87ef0e75e7666e303e471f7877e5e63a58adf038cf"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/29-game-exit.png",
+      "bytes": 216721,
+      "sha256": "3911cddc07ea39e4bcc73bc5befc84d213eace213d8e4418edfb2fe5132926d4"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/30-dark-reading.png",
+      "bytes": 897301,
+      "sha256": "4050662a69a3239a331d36b6c5e9abc56dc7ec3142559f4e9dd8e5f07ef2e1cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/31-dark-settings.png",
+      "bytes": 214245,
+      "sha256": "95461cc01da3da5f78aedbefd100fe75dd6c56f4b0d0dbdc25c5664e892d2558"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/32-large-opaque-hud.png",
+      "bytes": 50496,
+      "sha256": "feb07f7c030e0793c349f114ba0f8b857ac494e46a7d3e2cadc8bccf7af75327"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/33-small-desktop.png",
+      "bytes": 330701,
+      "sha256": "047fbd0c13df6e974255fc16251c1034b35e2d776ed586809327b5bd524938ce"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/34-library-material-light.png",
+      "bytes": 394150,
+      "sha256": "85fcc795add79e0c8079586babe38870f4c8f446450a4b419d799a34a299dafb"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/35-library-material-dark.png",
+      "bytes": 376046,
+      "sha256": "abf8e9dd4941e3b54f964049b69c1e78cee12e8d51ad1b30dc9e3ed7c2b3bf93"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/36-library-material-reduced.png",
+      "bytes": 267446,
+      "sha256": "7a67f63be9b51aa23f90206b75a9be4daea48f34a4da89c5c4dcadb41c29d64a"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/37-settings-return-main.png",
+      "bytes": 194261,
+      "sha256": "c34a770368ad1bfdf738256c041a4623f4bafeb85758d727232a9ba8e2ee4820"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/38-library-empty.png",
+      "bytes": 409521,
+      "sha256": "3d7cf25d60565096a0dc9afbd5c7eab88f92f106d09f6eb9c3ebaddcc8fe1f09"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/39-add-game-entry.png",
+      "bytes": 129503,
+      "sha256": "cf4e8ea39293c64146d8b2006c12cde9787095e11c76ec59dc433e96ade0b4b7"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/40-add-game-review.png",
+      "bytes": 185653,
+      "sha256": "283f6b23debcebe88d177e87f6ef6be606e96773edccc8feec56f9cb7f093c32"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/41-window-picker.png",
+      "bytes": 289471,
+      "sha256": "536c162cf7ced711a11be4dbaf07a1c0c118e3a4f8facb4767479be1d06e974b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/42-window-mapping.png",
+      "bytes": 187708,
+      "sha256": "dbc192efa78f7fc7b78d05061b5b43a9fbcc332e45ea264e6c37aac74e2e8db0"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/43-window-connected-reading.png",
+      "bytes": 900388,
+      "sha256": "7d8fd92a24c175e0a73ce4b0672be7e0b41b97cd111cc5b2ba8045b333ee0c82"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/44-window-binding.png",
+      "bytes": 205304,
+      "sha256": "5b72e329c0fe5e007fdb46ca24da57744aa91b14fb749f5655eb038d884311a6"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/45-window-unbound.png",
+      "bytes": 206442,
+      "sha256": "7790991e943e86f9f0d7191fdeb0046e489f0c52b768e14e0de268c30dc303a0"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/46-custom-batch-review.png",
+      "bytes": 194174,
+      "sha256": "a557123ebb5acb8336e79d5f90d5b1fe92907715e88ebfe774322576392cd58b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/47-unknown-target-check.png",
+      "bytes": 121703,
+      "sha256": "663b7952461795c78c6d135bc37babd05af295e5dabe0f0202ec492b19e4f0d8"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/48-window-switch-confirm.png",
+      "bytes": 224211,
+      "sha256": "92e91223ef4144eac96ac7f6b521c1645eed8cf740e295175b83e15bc43dd0d1"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/verification.json",
+      "bytes": 13844,
+      "sha256": "7d7b2d8cfe7d527da45bea30ea3862f0a88dad11963fe996029e63e9958f82ad"
+    },
+    {
+      "path": "docs/design/first-product-v1/reference-manifest.json",
+      "bytes": 1499,
+      "sha256": "5dabca238bdb6c9821d1e2e26791034b80a5f92c7e9d03e9b8c985cf0d468e51"
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.css",
+      "bytes": 12302,
+      "sha256": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f"
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.js",
+      "bytes": 36851,
+      "sha256": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25"
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.css",
+      "bytes": 11331,
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.js",
+      "bytes": 56703,
+      "sha256": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd"
+    },
+    {
+      "path": "docs/design/first-product-v1/style-guide.md",
+      "bytes": 5830,
+      "sha256": "72a3531c59b8318eb9ac5477e05e41d97de48f23342f8c7635c458222c4428cc"
+    },
+    {
+      "path": "docs/design/first-product-v1/styles.css",
+      "bytes": 44786,
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/README.md",
+      "bytes": 3800,
+      "sha256": "5e70bec4a552d620d0aefc84ccf04c2f933889bdf58df531b563805c6d43f178"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/material-mask.svg",
+      "bytes": 278,
+      "sha256": "6088cbd118b5a170a9e9d9a88446bf3cc82ec283b895ceac771f055e05835903"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/provenance.json",
+      "bytes": 1206,
+      "sha256": "8620168776d78897d7ef82f99f89321473917ddf292334022d1f320489b9d34f"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/reference-desktop.png",
+      "bytes": 3156652,
+      "sha256": "5e55a763e78e22efb8e6b83fbfb262fbc1f5b51d3d1e7090b07c8d791006af3c"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/wallpaper-frame.png",
+      "bytes": 1616086,
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/wallpaper-preview.png",
+      "bytes": 434883,
+      "sha256": "7d576f6f88035acca3d2462cbf3b0ad7cb37af2e294c1d45abfbd24de172aa5d"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.css",
+      "bytes": 7194,
+      "sha256": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.js",
+      "bytes": 2815,
+      "sha256": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/compare.css",
+      "bytes": 7998,
+      "sha256": "187349f87e8f288d721562e235edee449d7e9dc289fe7860ae8c52af8dc7f575"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/compare.js",
+      "bytes": 2508,
+      "sha256": "8333b2501425138381367dbe2e7e9fa54dc9f13fca3883e6b3169cb955ed27de"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/comparison.html",
+      "bytes": 8055,
+      "sha256": "a5b923c6d700a99bd70a95d4e6a133d69f0694675c964a86fa2b46e0f1a3d25c"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/index.html",
+      "bytes": 2553,
+      "sha256": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/manifest.json",
+      "bytes": 3112,
+      "sha256": "6378cfb4961121b56ba201e12f732ff6d0b900430666dfa775c2a9ca79995c9f"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/blur-off-window.png",
+      "bytes": 290418,
+      "sha256": "11e046106686727073c0625535f794f1fb50c1d6b252bdea821e72e12e4dbf19"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/case-desktop.png",
+      "bytes": 1125068,
+      "sha256": "e0148b33bb12e7d768fd2e9621819ccd125a80ff1ffa9409b4cdc5733ef34b6e"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/case-window.png",
+      "bytes": 157449,
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/comparison-page.png",
+      "bytes": 950149,
+      "sha256": "c40a9a13d8f8055b72c149f08645455bfa31ca564a8e4720aab8538d7ed7ccc5"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/moved-window.png",
+      "bytes": 191461,
+      "sha256": "fae96031a0d91edc4459f947ad323851b49e6bc576f7bbf99637ac6c8d63d0f7"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/reference-window.png",
+      "bytes": 169444,
+      "sha256": "0255e9ea8ce4e18ee5d0e573e58c6dee7c69921e4bfbadf6aa10c3cc98806141"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/verification.json",
+      "bytes": 1116,
+      "sha256": "6583b79a0782f0d4d3e6921afd5ae99f4d754f37c4cc0d26df97204750cab6b0"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261018-R2.json",
+      "bytes": 30587,
+      "sha256": "4da853dd8d70e939188bb1e404aa6524e6ec02dd0ca7cd63e6a0ad46ca2e4917"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261018-R3.json",
+      "bytes": 32278,
+      "sha256": "f13143c9d8d28528a1f3c0fff53b598300694a7b1ece64beb1b66c7a0973b2d2"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R13.json",
+      "bytes": 38052,
+      "sha256": "01a6dd54469e3801372e6f7b513d7d24d074ed30b17337f1500696825288ceb7"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R14.json",
+      "bytes": 74212,
+      "sha256": "969881c58a2d9ef9769efa015799c769fa76b7ad88d7fa59a8bb2deebe644323"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R15.json",
+      "bytes": 74763,
+      "sha256": "3762b0aee50341cfc0a73673730f02637e338f9630811d7dbe2dd3ac09afcbc2"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R16.json",
+      "bytes": 75659,
+      "sha256": "174295724eec863d964796d19ef9ec5083306df1c5052d2730219258aced9973"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R17.json",
+      "sha256": "5556bf32c7d9a0a0bd1ac659e53fe20947ca9b5a7e721e4d019792b15f9787ce",
+      "bytes": 90173
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R18.json",
+      "bytes": 90549,
+      "sha256": "5812564e4eb0223782828c224d6a6d28976ef1f9b8d3868689423e870656ba0c"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R19.json",
+      "sha256": "e0350caebc6d6f71db0d21186683a76c86e4b8c6bf7a3890facf09e514765b9e",
+      "bytes": 91056
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R20.json",
+      "sha256": "c7c8e877ca119d3949b9cec12b27c7bf7395f0f5b40d122f74ea3a5c692010df",
+      "bytes": 92374
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R21.json",
+      "sha256": "c74727f968191cfe73912b22dec7bba630b89693970580e28f59c9dafbb80ea8",
+      "bytes": 152051
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R22.json",
+      "sha256": "177a81176d10a354606dbecb0366ef872f01c150f1471b8b1454a104836678d7",
+      "bytes": 152906
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R23.json",
+      "sha256": "34a1d2ab7c9dc90eebfcdb5bdc772ae89158818935331050dbe86be4a0cb264e",
+      "bytes": 153331
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R24.json",
+      "sha256": "661fb8f52a172667909aacc0f2142373686fca0bb585eb34a37747617887f760",
+      "bytes": 153710
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R25.json",
+      "sha256": "5b3dab313db99797c267a20eb758b3619df46ebc59e57b8d283ea8325d114551",
+      "bytes": 154910
+    },
+    {
+      "path": "docs/development/client-learning-extensions.csv",
+      "bytes": 1140,
+      "sha256": "6fe3858491a4f63443fe799deaccc6c38dcf15b780c160bcae9088eb120e1978"
+    },
+    {
+      "path": "docs/development/client-rebuild-tasks.csv",
+      "bytes": 31385,
+      "sha256": "554a0d61be4e49489cf67d5a580c98fecd697937e08ce5595f4136b5a315cff4"
+    },
+    {
+      "path": "docs/development/client-regression.csv",
+      "bytes": 79465,
+      "sha256": "106a55d73caf36dc3ca59f57f8d008477372e934ec227d128a3f5447943981ee"
+    },
+    {
+      "path": "docs/development/client-regression.md",
+      "bytes": 25960,
+      "sha256": "098f6c204bae2bc93dd7306968326817700edaa9892e80023702950f21962117"
+    },
+    {
+      "path": "docs/development/design-approval-20261019.json",
+      "bytes": 9776,
+      "sha256": "4d4fbb9640ad1c8d8fce4c33b564292d1cb0a053dd9e1b18b985ad93b889f87a"
+    },
+    {
+      "path": "docs/development/design-review-gap-analysis.md",
+      "bytes": 8513,
+      "sha256": "48e827206fce4df726b7890761665049763e0958087b654bf668d10e2a67f483"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "bytes": 11082,
+      "sha256": "37fd003e352b9a55001a3e61f8204a59e80c9cf435a009b7c9fab3124912fae3"
+    },
+    {
+      "path": "docs/development/first-product-test-coverage.csv",
+      "bytes": 21878,
+      "sha256": "ad0dce993872aba88717952c77ff93f4fa1d20db229fe1bd499ef1e47a4f3694"
+    },
+    {
+      "path": "docs/development/first-product-test-enablement.csv",
+      "bytes": 3542,
+      "sha256": "47130471b7bc126496f1dc7818ce5d560bb71f44760a0ef12f728e3bb62d760e"
+    },
+    {
+      "path": "docs/development/first-product-test-execution-dependencies.csv",
+      "bytes": 12576,
+      "sha256": "93bc1c0f2cd4b50386f28c076d4f842bd74809a31afbcc8640d695c753f4a731"
+    },
+    {
+      "path": "docs/development/first-product-test-executions.csv",
+      "bytes": 144879,
+      "sha256": "67fd8c1c880cd5102f0ec4119309f3a5a9edf6a753a749cd0b67ebbd740c6c88"
+    },
+    {
+      "path": "docs/development/first-product-test-layers.svg",
+      "bytes": 6058,
+      "sha256": "26f1da25ae5d9e34e6a5036fc00915ef03fdce17912505a625c70b5a42cac370"
+    },
+    {
+      "path": "docs/development/first-product-test-maintenance.csv",
+      "bytes": 4731,
+      "sha256": "bba44583fcda23527cf3321e2bffbf7360f3cd9317a3a4ef16ff7a9d1762a2fc"
+    },
+    {
+      "path": "docs/development/first-product-test-matrix.csv",
+      "bytes": 9504,
+      "sha256": "51a18dc612b067abc2be1eef9ade3faf2f52125321c197025bc8ebd3177f8bfa"
+    },
+    {
+      "path": "docs/development/first-product-test-operations.json",
+      "bytes": 50120,
+      "sha256": "10b872df080b48f2d521253c115fc000013544de1b6a8beda2a0b3bcc79ef4fe"
+    },
+    {
+      "path": "docs/development/first-product-test-operations.md",
+      "bytes": 13359,
+      "sha256": "5003a8f3f27f14d43b7dc8e5a00a49d295bf31d3a056daf306ba5c94fafcdddf"
+    },
+    {
+      "path": "docs/development/first-product-test-plan.json",
+      "bytes": 234392,
+      "sha256": "79b58cf9f6c1ab1e488d756cb7fbd49c4a44be023efb4d80b97c63bf9c8f44a7"
+    },
+    {
+      "path": "docs/development/first-product-test-plan.md",
+      "bytes": 22615,
+      "sha256": "739914aedbb1e4d4aaf16491158507b24e594fac783929e7e54ead5ec88e71b8"
+    },
+    {
+      "path": "docs/development/first-product-test-prerequisites.csv",
+      "bytes": 19248,
+      "sha256": "3a6111b9e220b3e87e5e71fabbff25dc3fa807be93e2069f00f61aa713f16065"
+    },
+    {
+      "path": "docs/development/iteration-governance.md",
+      "bytes": 12699,
+      "sha256": "d2160a86bfefb3691fc83293f0321056bf2b8563a0bbff213af8747244007850"
+    },
+    {
+      "path": "docs/development/iteration-template.md",
+      "bytes": 3732,
+      "sha256": "7f9cedb285dbd91b8ca230c8eb2bb43a1113989e7e63f16cddc5da52b8285031"
+    },
+    {
+      "path": "docs/development/iterations/FP1-IMPLEMENT-20261019/technical-decisions.md",
+      "bytes": 4135,
+      "sha256": "d38458fc3d0c4ee4cd8e17546b1427bdfb2380d24757efb42d1e69b66343953c"
+    },
+    {
+      "path": "docs/development/plan.md",
+      "bytes": 26656,
+      "sha256": "0391a7967b7cfc5e17f25d86f3070a8e2d6aa520f628270bdcefd4f42f9209b5"
+    },
+    {
+      "path": "docs/development/reading-window-test-coverage.json",
+      "bytes": 114789,
+      "sha256": "b96b7f2c046307fc459556d9caf8633d42a29d0f144a9df1cf2e1d84c3f2487c"
+    },
+    {
+      "path": "docs/development/reading-window-test-coverage.md",
+      "bytes": 12613,
+      "sha256": "adacf8daa74682c441d6675e6de22f6daae206bd2e73f79849522668e47a812c"
+    },
+    {
+      "path": "docs/development/release-execution-evidence.md",
+      "bytes": 5994,
+      "sha256": "886bf0d37acbbd0663331e363e23d618582c14f21f123349a8efad66381f69f7"
+    },
+    {
+      "path": "docs/development/requirements.csv",
+      "bytes": 4390,
+      "sha256": "6611f9a024b500b01f319f4df1c34a0852d45726ef66c81a4c0cc291629fde91"
+    },
+    {
+      "path": "docs/development/storage-acceptance.json",
+      "bytes": 14220,
+      "sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0"
+    },
+    {
+      "path": "docs/development/storage-acceptance.md",
+      "bytes": 12720,
+      "sha256": "5fa18071fbb9d2fcb60ace11ed5f9a85f308052cb8117756cc5557978be7c27f"
+    },
+    {
+      "path": "docs/product/README.md",
+      "bytes": 6101,
+      "sha256": "361341b50efa0d76b09744540c3e6fa38f393dd01f19b9b3893f53aeb4f7b1cd"
+    },
+    {
+      "path": "docs/product/ai-reading-prd.md",
+      "bytes": 12280,
+      "sha256": "a95bc5868f0d4f6dbddd616e5a9e90c9a482a2beef96bda3d73c8dbd09e72795"
+    },
+    {
+      "path": "docs/product/first-product-scope.md",
+      "bytes": 6547,
+      "sha256": "c0810bc25c3233ec44e805ec09070a0db89f40f92d0323cd3312bc9687aefc4e"
+    },
+    {
+      "path": "docs/product/game-library-window-acceptance.csv",
+      "bytes": 1998,
+      "sha256": "054d64c9a7f6e08248ac66e2f7895fbd0d3740ba46549e52fd3ad8e33f8a56c8"
+    },
+    {
+      "path": "docs/product/game-library-window-prd.md",
+      "bytes": 9251,
+      "sha256": "03390272901783756344f9f81f1949b589e245e2f1d3b03f3879721301e250bb"
+    },
+    {
+      "path": "docs/product/model-configuration-acceptance.csv",
+      "bytes": 8298,
+      "sha256": "d76dd831ebf99ca0f0c5cd9c95eb648ca2eedf4123cb65ed9c052fc8cd34270a"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "bytes": 24302,
+      "sha256": "e0faddae1fd54d121d1e4fb6a9208cfe431f9d4213524408d9eae7f724383862"
+    },
+    {
+      "path": "docs/product/original/docs/01-prd.md",
+      "bytes": 88203,
+      "sha256": "175471b9a44a40791d713cdaf3d96e3e099a4e22cba600b77da76be2f6e1ae06"
+    },
+    {
+      "path": "docs/product/original/docs/02-design-spec.md",
+      "bytes": 71524,
+      "sha256": "cbaeca245a6eeacf2875784ecfdbbd1d8d7f8e9601763f1424e75b9524cf585f"
+    },
+    {
+      "path": "docs/product/reading-window-session-acceptance.csv",
+      "bytes": 4613,
+      "sha256": "56b4148991cda9ad2b3d2869a614c0768bd7973bcc5978612251f925016e23bc"
+    },
+    {
+      "path": "docs/product/reading-window-session-prd.md",
+      "bytes": 19994,
+      "sha256": "285a08fd857e5200daa1e2226c80b34f616ded748aca7b66c7686038d82d287b"
+    },
+    {
+      "path": "docs/product/source-manifest.json",
+      "bytes": 89197,
+      "sha256": "8fb70a37eac27b5867671bb672e340117ac5f8feb5aa4d55a4d6c862183026ed"
+    },
+    {
+      "path": "native/core-runtime.lock.json",
+      "bytes": 2435,
+      "sha256": "f1b1cf61dabad747e2feab3ab21f2982f7fc8eb20a5c3d21286f19aa412e732a"
+    },
+    {
+      "path": "openspec/changes/align-reviewed-design-and-test-coverage/baseline-review-r17.json",
+      "bytes": 117940,
+      "sha256": "feaf1a5e75cf200bd4ff726c87545e4f9be6df68243c7eb3ccf80aada52bbcca"
+    },
+    {
+      "path": "openspec/changes/align-reviewed-design-and-test-coverage/baseline-review-r18.json",
+      "sha256": "38b5db8c991ef74d3e70b06000cf81ef018ef1875036f06a5586d14c7b230485",
+      "bytes": 4508
+    },
+    {
+      "path": "openspec/changes/align-reviewed-design-and-test-coverage/baseline-review-r19.json",
+      "bytes": 5716,
+      "sha256": "e2868fc5cc306c78db458da92cef831dff492e9e6ae0625bddaae4e66f905d44"
+    },
+    {
+      "path": "openspec/changes/annotate-current-implementation-status/baseline-review-r20.json",
+      "bytes": 12819,
+      "sha256": "ff2ae56f2455c96e3bbdd10b625edebef4632d23f5233a4e87616153e126a1bc"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/baseline-review-r14.json",
+      "bytes": 39854,
+      "sha256": "c85d4d7b14064c5bef474d6ba1fcc9f7a293bcc428099b510d612a86e323e7e2"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/baseline-review-r15.json",
+      "bytes": 4004,
+      "sha256": "fb6cfcaf981b6a3803bb9772caf769208d5184d0856bd93b678313c987e42902"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/baseline-review-r16.json",
+      "bytes": 5761,
+      "sha256": "5f20279591c86e425a8b2be0f845deb1c017b2bfb35d0bfbc649d43bff15e2fd"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/exact-delta-review-r15.json",
+      "bytes": 9941,
+      "sha256": "1f007bf7c38fe63529b1dffe6c550e029c47334e977f1e46b5735dc3c7fe12b2"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/exact-delta-review-r16.json",
+      "bytes": 49360,
+      "sha256": "e649a361542feaa69664bbd88d8e15cbecc57718309999d89e61b77a2e16ca4d"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/protected-authority-review-r14.json",
+      "bytes": 11195,
+      "sha256": "3d48442ea20dda1db4e616dc55d846f0d9292663a69ef1c13a47ef6274a82d9f"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/protected-guard-review-r14.json",
+      "bytes": 2004,
+      "sha256": "17ff8360a677018e4589b97b92f154aee78155e4edbc05d9764f52f1d3a14cc4"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/storage-package-review-r14.json",
+      "bytes": 11859,
+      "sha256": "76c08ee77c630d05d340c8a75265b1a6cfce715e837f41271bfa036c6d0799b1"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/visual-reference-review-r14.json",
+      "bytes": 10964,
+      "sha256": "36245a57e8834dac87555647f208443a1a0ea8c45ea533568448eea44c0c85d1"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r21.json",
+      "bytes": 362530,
+      "sha256": "7554dea0907d8ea2dcdecba2e4ff4deadcab2edcf604484d6f3773e50dfca893"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r22.json",
+      "bytes": 188633,
+      "sha256": "c107b08a4b5b2c72752227234bb9990422eb73acc057dd2e0bc631efaf1d877b"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r23.json",
+      "bytes": 185245,
+      "sha256": "7f716806eeaf3c694a13d6515b6d3ec4756972d568517c723ba58e2a63781610"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r24.json",
+      "bytes": 175253,
+      "sha256": "bacdf6fc710877529ffb228cb2378fa75c8b943874ce190a56b24e4dced4d7b1"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r25.json",
+      "sha256": "062c89929b00026bf449cd08323ed3911d2c8ea1a2bcf250a27e8fe8b8919c93",
+      "bytes": 190608
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/closure-integrity-review.md",
+      "sha256": "2404dd0f722e0a07ce761af22372200889173f772d54a032632fd01339fe4fe9",
+      "bytes": 989
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/platform-review.md",
+      "sha256": "5d6f4b7e93925da7b9562384d487d40fedaba19e703d33ace9551d3fd9b785e1",
+      "bytes": 2819
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/r25-runtime-closure-work-item.md",
+      "sha256": "7162f79f8a8648a54f3a7432698b325327ff681ab86111c0eedb064737f1c2ac",
+      "bytes": 3170
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/r26-preview-csp-work-item.md",
+      "sha256": "15653f9f9b7babc14041e41780c09809d34fa8b40ce8b4175802675723c24e16",
+      "bytes": 3937
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/schema2-review.md",
+      "sha256": "a40b297d8fe0a2b2f861e3be3ea85d5f58558119fefef0427eb13921764fab0e",
+      "bytes": 1376
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/scope-and-activation-review.md",
+      "sha256": "038ec3afb2b312eaa36014371a7eb5d20dcdae7fb3050745b5510b999ebcb7c4",
+      "bytes": 5193
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/technology-lock-before-native.json",
+      "sha256": "08409adadc4ab38c80584f225537b34285c648ac1ba6c12521f33050af6f1d12",
+      "bytes": 6669
+    },
+    {
+      "path": "openspec/legacy-debt.json",
+      "bytes": 8683,
+      "sha256": "fb0021504423bd16c24d023f9d84e48ad511a518b353b4a3dd499ad22ab7ae07"
+    },
+    {
+      "path": "openspec/technology-lock.json",
+      "bytes": 7482,
+      "sha256": "b8bfd585c9376242bdafe681778641aabe7a32fe43a291308a46b1a3057c9c70"
+    },
+    {
+      "path": "resources/language/dictionary-provenance.json",
+      "bytes": 2008,
+      "sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b"
+    },
+    {
+      "path": "resources/language/manifest.json",
+      "bytes": 4854,
+      "sha256": "04e403be83c592419227b70383b349ad265b7f84900d78866b3227a6cfe48a4b"
+    },
+    {
+      "path": "scripts/build_desktop.py",
+      "bytes": 7124,
+      "sha256": "710c2e06e5fddf360588dd912561052d070654f7d892489774cee1f5a31ac925"
+    },
+    {
+      "path": "scripts/contracts/compare_product_capture.mjs",
+      "bytes": 1720,
+      "sha256": "b73ecc19f94f39c00e5cd8902b030d860b26aaf6d80f41a3e691963f4c34b652"
+    },
+    {
+      "path": "scripts/contracts/verify_contracts.py",
+      "bytes": 4646,
+      "sha256": "e9655bb44b3452bc0ca907a8f07559201ffa81656658386944f96cc4538d5821"
+    },
+    {
+      "path": "scripts/quality/implementation_status.py",
+      "sha256": "0c717e03a2bcd7680ec6d8fe006fd707658bb229390efae4d8f9ff77be48674f",
+      "bytes": 32182
+    },
+    {
+      "path": "scripts/quality/interaction_coverage.py",
+      "bytes": 37582,
+      "sha256": "13f350aac3e1c5436c76536881e534841a414248cdd2df3bb9468685f62d89fb"
+    },
+    {
+      "path": "scripts/quality/package_identity.py",
+      "bytes": 10368,
+      "sha256": "110fd89f00f81d3aa8b7b4c689d299384487271498f4c3e4d86b4ca8f541ff89"
+    },
+    {
+      "path": "scripts/quality/product_execution.py",
+      "bytes": 34665,
+      "sha256": "af137edefea635dbf05595768fc4c7cde76413a7eddc9d24828d7abcc47c6b2a"
+    },
+    {
+      "path": "scripts/quality/reading_components.py",
+      "sha256": "9cb04ccde7c528c4663a8fe5e2ad1c4b7cc2a89e2f4bc3ab5da47df85462d41a",
+      "bytes": 24549
+    },
+    {
+      "path": "scripts/quality/spec_contract.py",
+      "bytes": 38923,
+      "sha256": "740093657c2674b7295d2542d3cd15067d61ed9e71f1c3520afbbde0d5a23340"
+    },
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "bytes": 68923,
+      "sha256": "12c5cd828b883aecb105f1b96b4aee825caaa2ac563d9231f4478b3b16948f29"
+    },
+    {
+      "path": "scripts/quality/storage_product_adapter.py",
+      "bytes": 13602,
+      "sha256": "f4d5f7706fe9d243e6b662ac4db9cee7b4445e050b8153a749376e1cee458cad"
+    },
+    {
+      "path": "scripts/quality/storage_product_process.py",
+      "bytes": 6984,
+      "sha256": "729553b572d53bd2722c99842ae68a34613378430ccc1be7e7da8bae521c2a18"
+    },
+    {
+      "path": "scripts/quality/storage_schema.py",
+      "bytes": 12626,
+      "sha256": "aba76adf898f071def88e2ff758b3aad3c1f192138a14430a61e78a1afc1edcd"
+    },
+    {
+      "path": "scripts/quality/storage_schema_v2.py",
+      "sha256": "5c070bee74034dc8819bd876b34e884477f3077327e8f54d7b8e1f29ea9454c9",
+      "bytes": 7109
+    },
+    {
+      "path": "scripts/quality/test_implementation_status.py",
+      "sha256": "463335050778de530768acfbe7b8c025aa97043966a1e9438556ecac5ec9bc74",
+      "bytes": 18644
+    },
+    {
+      "path": "scripts/quality/test_interaction_coverage.py",
+      "bytes": 28795,
+      "sha256": "0b68373ec3bd2cf42093f261f3fcd3593b3bf50b898fed4419b8aba2fd947834"
+    },
+    {
+      "path": "scripts/quality/test_package_identity.py",
+      "bytes": 9893,
+      "sha256": "2b9422a32ae46d6dc10c0f27bdc370f7daf3a038a4d5a6570677f29cca80e4f5"
+    },
+    {
+      "path": "scripts/quality/test_product_capture_v4.py",
+      "sha256": "0a2a4dff783863ca9c0b7a301097b9eda9a331ab50b9e925b42bc20fdca773e0",
+      "bytes": 9402
+    },
+    {
+      "path": "scripts/quality/test_product_execution.py",
+      "bytes": 33271,
+      "sha256": "4459b3f860c87d6486c2f1433512f35e53023cdd78b9fce56afcbf2d54ace62f"
+    },
+    {
+      "path": "scripts/quality/test_reading_components.py",
+      "sha256": "b847dac4761697ebaae2c85d88d8b2c03d23852b22eea20ec78043c0026b48d5",
+      "bytes": 27455
+    },
+    {
+      "path": "scripts/quality/test_spec_contract.py",
+      "bytes": 33282,
+      "sha256": "c8593218ba4cb0047c4de7d938f82462e46964ce6bd9fdcd27bada135f053520"
+    },
+    {
+      "path": "scripts/quality/test_storage_acceptance.py",
+      "bytes": 47035,
+      "sha256": "9124d7951efbd43993f3090d7283a99d1005002553b6047746fc461373214ae8"
+    },
+    {
+      "path": "scripts/quality/test_storage_acceptance_v2.py",
+      "sha256": "3646c47aa968d43d9960fb15e13dbc092c519b161517017962e1d1259ba638b7",
+      "bytes": 8190
+    },
+    {
+      "path": "scripts/quality/test_storage_schema.py",
+      "bytes": 18688,
+      "sha256": "626247fc9a5cde3bd8ea5de9610c32da8be88ed29908e38684e3034d27f9b39a"
+    },
+    {
+      "path": "scripts/quality/test_storage_schema_v2.py",
+      "sha256": "88e0a51022000b52663e02c97e47bddebea68e1360e1ceb0f67de2bd7699c5e3",
+      "bytes": 6445
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "bytes": 21413,
+      "sha256": "0ce09ccedc78063b13eb9fc5c391cb7dad7f6038510045054ff1b089ec60129b"
+    },
+    {
+      "path": "scripts/report/build_engineering_baseline_report.py",
+      "bytes": 55525,
+      "sha256": "3cb6173465be2e6b9d669398f41f7298730da650b7e22a5203538db647aff73a"
+    },
+    {
+      "path": "scripts/report/build_reading_batch_report.py",
+      "sha256": "b4ff97bb071a043864c4a8acb152fbbe985ef5e9f0a9ef34c7b4ef389ce72fde",
+      "bytes": 8124
+    },
+    {
+      "path": "scripts/report/verify_interaction_coverage_report.cjs",
+      "bytes": 7883,
+      "sha256": "1cd0d76bdef7aead2109f48fa507c1e2856b3589d0074c68bc3c80e46ac5461b"
+    },
+    {
+      "path": "scripts/report/verify_interaction_gap_design.cjs",
+      "bytes": 58398,
+      "sha256": "fffbaa8ffa9b9cf460f0b5654abfeaffaaf26a7008b9b7d2bb85b1305642fea1"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r26.json",
+      "bytes": 187816,
+      "sha256": "6bbcdb1921feb9dc206b79d977cbdd77269f2df593a656d464dd8647957787cf"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R26.json",
+      "bytes": 155470,
+      "sha256": "8ffb17b94e8d1087c287b7c1251b6c8e99891a6d84fecd97cc810d7fdcd2c8f9"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/r27-capture-continuation-work-item.md",
+      "bytes": 6524,
+      "sha256": "e01312c5af953d11173fb2195cb618e4a428174255fdd0cbcf84ba1f9ad3d39f"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/exact-delta-review-r27.json",
+      "bytes": 17277,
+      "sha256": "f0011d976592e5bacf9af8a3490032a536ba0b84e67501a90e7ce142be1929d8"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r27.json",
+      "bytes": 2111,
+      "sha256": "cb24efe672b587d2de2ad55dd1a5440bb9042c2a726dd713ce594c9c905c82fc"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261020-R27.json",
+      "sha256": "8592d6be89279f9e589c2c30742e78b1c07a0470dd5ba1bd026071c799b72c9b",
+      "bytes": 156344
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/r28-quoted-prefix-growth-work-item.md",
+      "sha256": "b3b2aecd3e6d564ec7ea5720002874d14e7e85e5fd6c7a345522a153c2f2bf8e",
+      "bytes": 3852
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/exact-delta-review-r28.json",
+      "sha256": "8821fccc8451465be4806b4b854e0e03dd50fd0e92e2d5617e6bb10c5060ccc0",
+      "bytes": 11177
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r28.json",
+      "sha256": "d5ee3ae2b29f4b000c4a9e16db282e69a757739a729060f2eb9fb6771ed7c433",
+      "bytes": 2025
+    }
+  ],
+  "parent_baseline": "FP1-20261020-R27",
+  "parent_manifest_sha256": "8592d6be89279f9e589c2c30742e78b1c07a0470dd5ba1bd026071c799b72c9b",
+  "revision_reason": "R28在原有界V2基础上，仅对唯一未闭合引号后缀严格增长保留平衡姓名前缀；精确重建多raw引用并保留真实incoming来源。V1/V2历史与6000ms/64KiB/128硬界、不可变修订、finalized-only任务权限保留；原SR08失败与07工程通过分别保留，不继承为R28实机通过。",
+  "revision_finalization": {
+    "record": "openspec/changes/implement-reviewed-reading-session-batch/baseline-review-r28.json",
+    "independent_review_sha256": "09da9ea9e1d82d91126d193ea2150252e3e20b3087a9cf0ef8d012a1d4a948c3",
+    "independent_source_review_sha256": "b8d92024d308a81c3527e389afd1478c2ab272ca827c4c3fe753e15ba15f14f2",
+    "approvals_unchanged": true,
+    "product_acceptance_promoted": false,
+    "original_R27_archived_exact": true,
+    "status": "independently_reviewed_root_authorized_authority_only"
+  },
+  "prior_product_implementation_authorization_preserved": true
+}

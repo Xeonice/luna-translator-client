@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-preview-subscriptions",
+  "parent_baseline_sha256": "cdeb59e40cb030390c77061e06070daecf1787c4e3d2be4de226f24d8d3cde57",
+  "exact_delta_sha256": "138e5946673b14daecd8fd71de4f1657c10313d2d643764993d30f480adfdb12",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr2/independent-code-review.json",
+    "sha256": "8145e49f66bc0c1e4a96106d228082aa797aaf831c382406a131eb7743fe41dc",
+    "bytes": 30766
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

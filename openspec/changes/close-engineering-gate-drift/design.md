@@ -1,0 +1,13 @@
+# 门禁修复设计
+
+先只读核对，再在精确路径实施。映射从实际AST和批准源交叉求证，8项新入口不能一律标已获设计；未保存确认按钮差异和Google撤销缺图如实保留。旧三个ModelConfig Sheet退役不得使用把36条适用状态缩成3个absence的旧快捷规则，原义务和ID逐项留存、关联替代职责并新增absence。未实现完整服务复制等仍blocked。旧fixture注入现行可达导航并证明AST确实发现；lifecycle测试按实际adapter覆盖集合断言全局所需状态，不能缩小impact。
+
+源码登记按78记录和完整产品闭包逐项复审；旧quote消失必须重新核对应实现符号、职责、现状和限制。原审计日期及旧运行证据保留身份，本次增量源审单独记录。非作者review绑定产品map/证据变换及catalog去audit_inputs后的正文，避免回执与catalog互相包含hash。先完成并复审catalog，再生成MD/两个CSV。
+
+基线采用以R90完整前像和真实Main为准，覆盖整个已审delta，而非只刷75旧pin。原R90字节归档，新增R91明确parent/delta/reason/复审来源；未变parent pins、批准源/PNG/token、债务账本保持原值，新增权威源经审查后补pin。prepare→独立packet review→事务采用→逐项验证，最终完整after-tree review/receipt置.build，不能回写造成自引用。
+
+存储登记添加实际导入闭包的6源之前，逐文件审查编译/运行边界；保留closure遗漏负例、schema版本与运行义务。不得移除新源实际编译或改scanner让漏项被忽略。
+
+General S5原用户决定、原2320原件与0RGBA失败均不可改。验证器只增加本次精确且经过独立review的QA/docs增量准入；原15路径规则不放大、生产源码变化/未知增量/缺或陈旧review仍拒绝。候选Source62和新验证器source分别绑定，不新拍图或构建包。
+
+Root完整verify的12个旧失败及暴露出的连锁问题必须实际清零。完整产品仍按真实运行、服务、存储和四游戏证据判定，工程工具成功不能伪称已上线。

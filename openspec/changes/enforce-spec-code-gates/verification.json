@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "enforce-spec-code-gates",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/enforce-spec-code-gates/**",
+    "openspec/specs/**",
+    "openspec/config.yaml",
+    "openspec/active-change.json",
+    "openspec/legacy-debt.json",
+    "openspec/technology-lock.json",
+    "scripts/quality/**",
+    "package.json",
+    "package-lock.json",
+    ".github/workflows/engineering-gates.yml",
+    ".gitignore",
+    "AGENTS.md",
+    "README.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/iteration-governance.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/**",
+    "scripts/report/build_engineering_baseline_report.py"
+  ],
+  "source_snapshot": "openspec/changes/enforce-spec-code-gates/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ENG-001",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "missing-mapping",
+      "checks": [
+        "spec-contract-tests"
+      ]
+    },
+    {
+      "id": "ENG-002",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "frontend-cross-layer",
+      "checks": [
+        "frontend-boundary-tests"
+      ]
+    },
+    {
+      "id": "ENG-003",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "rust-cross-layer",
+      "checks": [
+        "rust-boundary-tests"
+      ]
+    },
+    {
+      "id": "ENG-004",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "legacy-ratchet",
+      "checks": [
+        "gate-unit-tests"
+      ]
+    },
+    {
+      "id": "ENG-005",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "real-compilation",
+      "checks": [
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "ENG-006",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "source-outside-prd",
+      "checks": [
+        "gate-unit-tests",
+        "source-scope"
+      ]
+    },
+    {
+      "id": "ENG-007",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "design-mismatch",
+      "checks": [
+        "technology-contract-tests",
+        "visual-guard-tests",
+        "baseline-integrity"
+      ]
+    },
+    {
+      "id": "ENG-007",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "unapproved-framework",
+      "checks": [
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "ENG-008",
+      "spec": "specs/engineering-enforcement/spec.md",
+      "scenario": "fake-release-evidence",
+      "checks": [
+        "release-evidence-tests"
+      ]
+    }
+  ]
+}

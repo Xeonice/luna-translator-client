@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "id": "repair-lifecycle-execution-order",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/repair-lifecycle-execution-order/**",
+    "scripts/quality/verify.py",
+    "scripts/quality/test_lifecycle_impact.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R54.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-lifecycle-execution-order/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-12",
+      "spec": "specs/execution-closure-order/spec.md",
+      "scenario": "late-executed-lifecycle-check-is-recorded-before-declaration-validation",
+      "source_requirement_ids": [
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "lifecycle-impact-execution"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run"
+}

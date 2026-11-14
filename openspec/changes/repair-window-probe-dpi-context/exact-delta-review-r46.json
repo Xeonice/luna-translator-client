@@ -1,0 +1,182 @@
+{
+  "kind": "R46_window_probe_thread_dpi_context_candidate",
+  "status": "candidate_pending_independent_exact_review_and_Root_adoption",
+  "reason": "2026-10-26真实同HWND严格ABA及新旧probe对照定位查询线程DPI虚拟化倒置矩形。仅修target_probe自己的PMv2 scope，恢复原context且不改变游戏几何/配置；原R45和A/B快照/批准图/视觉失败与发布状态保持。",
+  "parent_baseline_sha256": "41a1fcbf8bf3086e0eeaf4476a1ca0506f749c9da8407f43c8a1f91948d2a7bb",
+  "frozen_sources": {
+    "status": "Root_reviewed_frozen_source_and_authority_scope",
+    "reason": "2026-10-26真实同HWND严格ABA及新旧probe对照定位查询线程DPI虚拟化倒置矩形。仅修target_probe自己的PMv2 scope，恢复原context且不改变游戏几何/配置；原R45和A/B快照/批准图/视觉失败与发布状态保持。",
+    "frozen_map": ".build/window-probe-dpi-20261026-r46-candidate/frozen-source-map.json",
+    "frozen_map_sha256": "09a5c00e3be88ac39f75c31a5a6de838a8d16d0ee0d290f2ff9efa8d043e4912",
+    "frozen_source_tree_sha256": "d02d24e995233c78ed52c688be8f52e7ddf09113d55db0b0f0b0e99863c221a5",
+    "frozen_source_entries": 1717,
+    "allowed_product_updates": [
+      "apps/desktop/src-tauri/resources/brokers/x64/target_probe.exe",
+      "apps/desktop/src-tauri/resources/brokers/x86/target_probe.exe",
+      "apps/desktop/src-tauri/resources/core-staging-receipt.json",
+      "crates/lunahook-host/examples/target_probe.rs"
+    ],
+    "allowed_old_controlled_updates": [
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/engineering-modules.csv",
+      "docs/architecture/engineering-components.csv",
+      "docs/architecture/first-product-engineering-baseline.md"
+    ],
+    "new_controlled_paths": [
+      "openspec/changes/repair-window-probe-dpi-context/proposal.md",
+      "openspec/changes/repair-window-probe-dpi-context/design.md",
+      "openspec/changes/repair-window-probe-dpi-context/tasks.md",
+      "openspec/changes/repair-window-probe-dpi-context/iteration-card.md",
+      "openspec/changes/repair-window-probe-dpi-context/verification.json",
+      "openspec/changes/repair-window-probe-dpi-context/source-snapshot.json",
+      "openspec/changes/repair-window-probe-dpi-context/specs/window-discovery/spec.md",
+      "openspec/changes/repair-window-probe-dpi-context/exact-delta-review-r46.json",
+      "openspec/changes/repair-window-probe-dpi-context/baseline-review-r46.json",
+      "docs/development/baselines/FP1-20261024-R45.json"
+    ],
+    "semantic_records": [
+      {
+        "group": "modules",
+        "id": "M02",
+        "append": {
+          "current_behavior": "R46仅修复target probe自身线程PMv2查询scope；枚举与点选坐标链一致，恢复原context后才输出。保持原身份/矩形保护与无坐标核对命令。",
+          "gap": "R46源审阅、host10项与双架构Wine探针对照不替代最终签名包窗口列表/绑定/真实帧验收；原视觉failed、性能与发布缺口保留。",
+          "next_step": "按repair-window-probe-dpi-context用同源签名包验证窗口发现、绑定及实际变化帧，Hook/词法与睡眠恢复另建运行记录。"
+        }
+      },
+      {
+        "group": "components",
+        "id": "C13",
+        "append": {
+          "current_behavior": "R46仅修复target probe自身线程PMv2查询scope；枚举与点选坐标链一致，恢复原context后才输出。保持原身份/矩形保护与无坐标核对命令。",
+          "gap": "R46源审阅、host10项与双架构Wine探针对照不替代最终签名包窗口列表/绑定/真实帧验收；原视觉failed、性能与发布缺口保留。",
+          "next_step": "按repair-window-probe-dpi-context用同源签名包验证窗口发现、绑定及实际变化帧，Hook/词法与睡眠恢复另建运行记录。"
+        }
+      },
+      {
+        "group": "components",
+        "id": "C14",
+        "append": {
+          "current_behavior": "R46仅修复target probe自身线程PMv2查询scope；枚举与点选坐标链一致，恢复原context后才输出。保持原身份/矩形保护与无坐标核对命令。",
+          "gap": "R46源审阅、host10项与双架构Wine探针对照不替代最终签名包窗口列表/绑定/真实帧验收；原视觉failed、性能与发布缺口保留。",
+          "next_step": "按repair-window-probe-dpi-context用同源签名包验证窗口发现、绑定及实际变化帧，Hook/词法与睡眠恢复另建运行记录。"
+        }
+      }
+    ],
+    "independent_evidence": [
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-independent-review/review.json",
+        "sha256": "1ead698aece400724e5512f9df276bade1450834cfc53a8d61cbf13040ad174a",
+        "bytes": 6133
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-fix-owner/cargo-test-final.json",
+        "sha256": "2213f2c4664561cb8a19adf7cce71a8821221f85dc61f7bb6ae470a3b3da7c52",
+        "bytes": 381
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-build/receipt.json",
+        "sha256": "aa1421a3491a1f76b51f59662ad1e74907c9cfea562b32b9fb1e7674595bbf38",
+        "bytes": 428
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/raw-desktop-diagnosis/dpi-query-variant/v3/root-run-01/receipt.json",
+        "sha256": "d08199f7b6696af2ed62467c53aac5184618f8a72fb1be9e3069964950471edc",
+        "bytes": 7811
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-live-probe-comparison/old-x64-before/receipt.json",
+        "sha256": "7e5f79a6b4ba84a172875e466b5dd9cf277b82d620929da094d998ef3cffce26",
+        "bytes": 507
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-live-probe-comparison/new-x64/receipt.json",
+        "sha256": "9304282999a71a5c20922df40f8fd4855b0f255a5db2627d73cb7e95b81d7d04",
+        "bytes": 1127
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-live-probe-comparison/new-x86/receipt.json",
+        "sha256": "5aac8e86237696a9920fc2b75993893e164ffc9db3ecf30cad99d8284bc96683",
+        "bytes": 1127
+      },
+      {
+        "path": ".build/game-regression-20261026-restart/dpi-live-probe-comparison/old-x64-after/receipt.json",
+        "sha256": "01cc34c71c76224ab9800557573a30f48836b2c28a50d1850b3e929327b768f3",
+        "bytes": 507
+      }
+    ]
+  },
+  "source_delta_before_generated_authority": [
+    {
+      "path": "apps/desktop/src-tauri/resources/brokers/x64/target_probe.exe",
+      "before": "b93311967b03b9bec3ad29a0349dd58392b21a058850d4fa24f8cbbd9605ca3d",
+      "after": "896d3d7c71cb7042d813d55159eac4b08ea3ccdcf137ce5f5811be0aa61aadc9"
+    },
+    {
+      "path": "apps/desktop/src-tauri/resources/brokers/x86/target_probe.exe",
+      "before": "84d4a30ecb353e68cccc508f572b548e5821ff1ee991440250a9e97b76a410e8",
+      "after": "d56d098f5f31338593ee667d0ab9fc9dc44349db9bb5d59c9ac89b3f5be005fc"
+    },
+    {
+      "path": "apps/desktop/src-tauri/resources/core-staging-receipt.json",
+      "before": "d5ce8fe1f4666fa032feb1b624f231c6e2bf297bd6f46d314d98da2410d8a922",
+      "after": "98d90f2a291a491b38cf25092ed1cec0745a8332afca81dcd1d2c49ce280df6d"
+    },
+    {
+      "path": "crates/lunahook-host/examples/target_probe.rs",
+      "before": "8e9de2dfa6de81d0e0afa2667d61fafe2839946602f1bc256fa1217827d04475",
+      "after": "108d6eae27242fcf915a1801af4cfc8de72ca43d5af61699224fde3fc72d8b6c"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "60265eddec1e363885219bd5de5bd797045170a162e47768fb4e81abd1131400",
+      "after": "1a987f4a5f402d6a31c4281edecefe08f8085a2bb555801b472122cedabb51e0"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/design.md",
+      "before": null,
+      "after": "590af2a30a1b4a7c41700af35ae639268e379d3881ba9472e3f3ae0765fa8e1c"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/iteration-card.md",
+      "before": null,
+      "after": "58f55debd23676d574c93b8c1018001ced5db0c0f0a1bba7d174a7a7d3ac1ff2"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/proposal.md",
+      "before": null,
+      "after": "a6884268ced53760612de7c231401dfd6797c2a1522600683ab2c08a00e929fd"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/source-snapshot.json",
+      "before": null,
+      "after": "768335aabaf23826cd672054fed0ae3b6a1279bf7bc79a34c52b12dab0519b54"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/specs/window-discovery/spec.md",
+      "before": null,
+      "after": "d7b295fa1cdfad2fd74a619cbe5e34af3911b4d47190022187d68038806ea1f8"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/tasks.md",
+      "before": null,
+      "after": "b3de4478a1c9cba28a1e07ccb6bf4ccc8c11014d91af232812ec7a0963cb67fb"
+    },
+    {
+      "path": "openspec/changes/repair-window-probe-dpi-context/verification.json",
+      "before": null,
+      "after": "b222a788f40ee532fbb3a5315bfbb53ee186f91878da4694dc8c21a0adc2f731"
+    }
+  ],
+  "source_evidence_remaps": [],
+  "source_evidence_count": 497,
+  "product_source_delta": [
+    "apps/desktop/src-tauri/resources/brokers/x64/target_probe.exe",
+    "apps/desktop/src-tauri/resources/brokers/x86/target_probe.exe",
+    "apps/desktop/src-tauri/resources/core-staging-receipt.json",
+    "crates/lunahook-host/examples/target_probe.rs"
+  ],
+  "original_snapshot_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

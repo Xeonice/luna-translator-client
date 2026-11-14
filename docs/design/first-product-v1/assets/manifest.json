@@ -1,0 +1,159 @@
+{
+  "purpose": "local product design review",
+  "origin": "existing local Core evidence",
+  "runtime_status": "NOT_RUN for new client",
+  "files": [
+    {
+      "file": "assets/sakura-01.png",
+      "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+      "source": "luna-hooks-core/verification/game-sakura-x64/10-dialogue1.png",
+      "sample_index": 0,
+      "source_text": "その風景には、悲しさも、痛みも、なかった。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sakura-02.png",
+      "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e",
+      "source": "luna-hooks-core/verification/game-sakura-x64/12-dialogue2.png",
+      "sample_index": 1,
+      "source_text": "だから、俺は泣かなかったのだろうか？",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sakura-03.png",
+      "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274",
+      "source": "luna-hooks-core/verification/game-sakura-x64/14-dialogue3.png",
+      "sample_index": 2,
+      "source_text": "風に舞う薄紅は、たしかに美しくはあったが、俺にはただそれだけの事としか感じられない。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sakura-04.png",
+      "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66",
+      "source": "luna-hooks-core/verification/game-sakura-x64/17-dialogue4-restored.png",
+      "sample_index": 3,
+      "source_text": "鼻につくような桜の香り――いや、桜にそんな強い芳香などない――の中を人々の手によって大事に運ばれる棺。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sakura-05.png",
+      "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc",
+      "source": "luna-hooks-core/verification/game-sakura-x64/19-dialogue5.png",
+      "sample_index": 4,
+      "source_text": "桜の美しさの中にいる親父の死骸は、ただ、醜いだけだった。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/mo-01.png",
+      "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a",
+      "source": "luna-hooks-core/verification/game-mo-x86/line3.png",
+      "sample_index": 1,
+      "source_text": "秋をひしひしと感じる季節になっていた。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/mo-02.png",
+      "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e",
+      "source": "luna-hooks-core/verification/game-mo-x86/line4.png",
+      "sample_index": 2,
+      "source_text": "いつもと何ら変わりない生活。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/mo-03.png",
+      "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053",
+      "source": "luna-hooks-core/verification/game-mo-x86/line5.png",
+      "sample_index": 3,
+      "source_text": "隣りの幼なじみに起こされ、けだるい体で家を出る。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/mo-04.png",
+      "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810",
+      "source": "luna-hooks-core/verification/game-mo-x86/line6.png",
+      "sample_index": 4,
+      "source_text": "【智也】「……お待たせ」",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/never7-01.png",
+      "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8",
+      "source": "luna-hooks-core/verification/game-never7-x64/13-after-held-click.png",
+      "sample_index": 0,
+      "source_text": "それはオレの言葉だったのだろうか？",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/never7-02.png",
+      "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1",
+      "source": "luna-hooks-core/verification/game-never7-x64/line2.png",
+      "sample_index": 1,
+      "source_text": "それはオレの言葉だったのだろうか？\nあるいは……別の誰かの？",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/never7-03.png",
+      "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d",
+      "source": "luna-hooks-core/verification/game-never7-x64/line3.png",
+      "sample_index": 2,
+      "source_text": "いや、今となっては、そもそもそれが『言葉』だったのかどうかさえ疑わしい。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/never7-04.png",
+      "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236",
+      "source": "luna-hooks-core/verification/game-never7-x64/line4.png",
+      "sample_index": 3,
+      "source_text": "ここには何も無かった。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/never7-05.png",
+      "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64",
+      "source": "luna-hooks-core/verification/game-never7-x64/line5.png",
+      "sample_index": 4,
+      "source_text": "ここには何も無かった。\n音も無く、色も無く、風も無く……。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sr-01.png",
+      "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697",
+      "source": "luna-hooks-core/verification/game-sr-x86/06b-line1-complete.png",
+      "sample_index": 0,
+      "source_text": "【法珞】「原来是这样。啊……那样子叫我太见外了。所以请叫我法珞就好了。和我亲近的人都这样叫我。」",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sr-02.png",
+      "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688",
+      "source": "luna-hooks-core/verification/game-sr-x86/09-line2.png",
+      "sample_index": 1,
+      "source_text": "【库里斯】「法珞……同学？」",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sr-03.png",
+      "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a",
+      "source": "luna-hooks-core/verification/game-sr-x86/12-line3.png",
+      "sample_index": 2,
+      "source_text": "虽然不认为从此以后我就真的能变成跟她亲近的人，但是被她这么一说，我也没有什么需要拒绝的理由。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sr-04.png",
+      "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151",
+      "source": "luna-hooks-core/verification/game-sr-x86/15-line4.png",
+      "sample_index": 3,
+      "source_text": "虽然这样，总是有点不习惯……所以忍不住还是在后面加了个「同学」。",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    },
+    {
+      "file": "assets/sr-05.png",
+      "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246",
+      "source": "luna-hooks-core/verification/game-sr-x86/18-line5.png",
+      "sample_index": 4,
+      "source_text": "【法珞】「嗯」",
+      "provenance": "previous native Core probe screenshot; not a current product regression result"
+    }
+  ]
+}

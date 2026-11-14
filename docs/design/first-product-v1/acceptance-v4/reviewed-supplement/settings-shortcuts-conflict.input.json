@@ -1,0 +1,105 @@
+{
+  "preferences": {
+    "scopeKey": "global",
+    "theme": "dark",
+    "transparencyMode": "material",
+    "segmentationEnabled": true,
+    "showRuby": true,
+    "showPos": false,
+    "readingDisplayMode": "both",
+    "hudBackgroundOpacity": 0.82,
+    "sourceFontPt": 18,
+    "translationFontPt": 24,
+    "hudWidthPt": 560,
+    "shortcuts": {
+      "toggleHud": "Alt+Super+H",
+      "togglePause": "Alt+Super+P",
+      "cycleDisplayMode": ""
+    },
+    "overrides": {
+      "hud.compact": false,
+      "hud.alwaysOnTop": true
+    }
+  },
+  "draft": {
+    "scopeKey": "global",
+    "theme": "dark",
+    "transparencyMode": "material",
+    "segmentationEnabled": true,
+    "showRuby": true,
+    "showPos": false,
+    "readingDisplayMode": "both",
+    "hudBackgroundOpacity": 0.82,
+    "sourceFontPt": 18,
+    "translationFontPt": 24,
+    "hudWidthPt": 560,
+    "shortcuts": {
+      "toggleHud": "Alt+Super+H",
+      "togglePause": "Alt+Super+H",
+      "cycleDisplayMode": ""
+    },
+    "overrides": {
+      "hud.compact": false,
+      "hud.alwaysOnTop": true
+    }
+  },
+  "game": {
+    "id": "sakura",
+    "title": "サクラノ詩 10th Anniversary edition"
+  },
+  "dirty": true,
+  "capabilities": {
+    "geometry": {
+      "state": "restored",
+      "logicalBounds": {
+        "x": 400,
+        "y": 600,
+        "width": 560,
+        "height": 172
+      },
+      "monitorId": "design-display",
+      "scaleFactor": 2,
+      "errorCode": null
+    },
+    "material": {
+      "requested": "material",
+      "effective": "native_material",
+      "systemReduceTransparency": false,
+      "effectiveReduceTransparency": false,
+      "errorCode": null
+    },
+    "shortcuts": {
+      "state": "failed",
+      "registrationGeneration": "4",
+      "dispatchSuppressed": false,
+      "bindings": [
+        {
+          "intent": "toggle_hud",
+          "desired": "Alt+Super+H",
+          "effective": "Alt+Super+H",
+          "scopeKey": "global",
+          "errorCode": null,
+          "errorMessage": null
+        },
+        {
+          "intent": "toggle_capture_pause",
+          "desired": "Alt+Super+H",
+          "effective": "Alt+Super+P",
+          "scopeKey": "global",
+          "errorCode": "shortcut_duplicate",
+          "errorMessage": "与“显示 / 隐藏浮窗”重复。应用失败，保留原生效组合。"
+        },
+        {
+          "intent": "cycle_reading_display_mode",
+          "desired": null,
+          "effective": null,
+          "scopeKey": "global",
+          "errorCode": null,
+          "errorMessage": null
+        }
+      ]
+    }
+  },
+  "saveError": "shortcut_duplicate: 与“显示 / 隐藏浮窗”重复。应用失败，保留原生效组合。",
+  "expectedActionOutcome": "save_scoped_preferences rejected; dirty draft and previous effective native bindings retained"
+}

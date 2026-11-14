@@ -1,0 +1,904 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-hud-translation-placeholder",
+  "parent_baseline_sha256": "4040be8a7fcc017d2564d79580c5d709fe8ef0648a5bd21af3d72371a938ba59",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+      "before": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551",
+      "after": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+    },
+    {
+      "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+      "before": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4",
+      "after": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "before": "16f96fbc146898cc7a14be5aab49612eff7df57872e2834e5dd953a9c1fcefdb",
+      "after": "ba0ab03f88eb362806d4832a3cd52894df17137a69e7089aebb2b58e817b345a"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/design.md",
+      "before": null,
+      "after": "17ba9230afebc05895755e1b8228d6b6bb9f6266a7740fd7a928aa8564e38758"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/iteration-card.md",
+      "before": null,
+      "after": "d5815873313f9e0ad2febfc4fa9b5fd1b663e63a2b997d8443013520fe872d87"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/proposal.md",
+      "before": null,
+      "after": "d2680e9aa42d2e88e354d8945a09f0431f87426ddd20a350153cd6e2f179cf67"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/source-snapshot.json",
+      "before": null,
+      "after": "706b45c0bcc2c36c915997ac6332f0df3b96417290afe40e7f33f8c3abe22231"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/specs/hud-translation-placeholder/spec.md",
+      "before": null,
+      "after": "e0a7d657946f154b6d82752d66fcafe9ccc09121f165a51312bce8968f7cd19e"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/tasks.md",
+      "before": null,
+      "after": "7ce97e23b46639743af8762f0174c936c5926f357ef5e350befc5b270b177d93"
+    },
+    {
+      "path": "openspec/changes/repair-hud-translation-placeholder/verification.json",
+      "before": null,
+      "after": "1849c3a3dd10eb2e92180c1dbc475a6ab88b7ba62e6984214db7bd5ea9ea9af9"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/windows/hud/HudWindow.tsx",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/hud-translation-placeholder-r68/integration-review/source-governance-review.json",
+    "sha256": "ef02346dabc71042c119074640a9bfbad80dc898a5f7d33e74a9a6cf40eaaa6a",
+    "bytes": 3518
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M10",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C17",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 18,
+        "quote": "export function TranslationStack({ unit, fontPt, compact = false }: { unit: ReadingUnit; fontPt: number; compact?: boolean }) {",
+        "symbol": "TranslationStack",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 18,
+        "quote": "export function TranslationStack({ unit, fontPt, compact = false, emptyFallback = <p className={styles.unavailable}>尚无译文。翻译用途未配置、未启用或仍在处理时，原文保持可读。</p> }: { unit: ReadingUnit; fontPt: number; compact?: boolean; emptyFallback?: ReactNode }) {",
+        "symbol": "TranslationStack",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      },
+      "explicit_reason": "Explicitly review the changed exported signature: TranslationStack adds optional emptyFallback while retaining its default caller behavior."
+    },
+    {
+      "group": "components",
+      "id": "C17",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 197,
+        "quote": "export function TranslationTaskStates({ snapshot, unit, store, active = true, queryFeedback = 'notice' }: { snapshot: AppSnapshot; unit: ReadingUnit; store: ApplicationStore; active?: boolean; queryFeedback?: TranslationQueryFeedback }) {",
+        "symbol": "TranslationTaskStates",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 197,
+        "quote": "export function TranslationTaskStates({ snapshot, unit, store, active = true, queryFeedback = 'notice', translationContent }: { snapshot: AppSnapshot; unit: ReadingUnit; store: ApplicationStore; active?: boolean; queryFeedback?: TranslationQueryFeedback; translationContent?: { fontPt: number; compact?: boolean; render?: (unit: ReadingUnit, translation: ReactNode) => ReactNode } }) {",
+        "symbol": "TranslationTaskStates",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      },
+      "explicit_reason": "Explicitly review the changed exported signature: TranslationTaskStates adds optional HUD translationContent/render composition, preserving one useReadingUnitProjection owner and strict newer-commit content choice."
+    },
+    {
+      "group": "components",
+      "id": "C18",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C18",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C18",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C18",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 52,
+        "quote": "const effective = shortcuts?.bindings.find(binding => binding.intent === intent)?.effective;",
+        "symbol": "effective",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 52,
+        "quote": "const effective = shortcuts?.bindings.find(binding => binding.intent === intent)?.effective;",
+        "symbol": "effective",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C18",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 81,
+        "quote": "const unit = snapshot?.current;",
+        "symbol": "HUD consumes authoritative current; no UI selector copy",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 81,
+        "quote": "const unit = snapshot?.current;",
+        "symbol": "HUD consumes authoritative current; no UI selector copy",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C36",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 130,
+        "quote": "<footer className={styles.toolbar} aria-label=\"阅读操作\" onPointerDown={event => { if (event.button === 0 && event.target === event.currentTarget) void action.run(() => store.port.beginHudDrag()); }}>",
+        "symbol": "aria-label=\"阅读操作\"",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 134,
+        "quote": "<footer className={styles.toolbar} aria-label=\"阅读操作\" onPointerDown={event => { if (event.button === 0 && event.target === event.currentTarget) void action.run(() => store.port.beginHudDrag()); }}>",
+        "symbol": "aria-label=\"阅读操作\"",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 99,
+        "quote": "const unbind = () => void action.run(async () => {",
+        "symbol": "const unbind =",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-09",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 56,
+        "quote": "if (value.state === 'unavailable' && ['window_proof_busy', 'preview_verification_unavailable', 'preview_capture_busy', 'preview_capture_timeout', 'preview_worker_transport'].includes(value.errorCode ?? '') && previous?.state === 'bound' && previous.sessionId === value.sessionId && previous.targetIdentitySha256 === value.targetIdentitySha256) {",
+        "symbol": "ReadingPanel.refreshBinding",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-CONTROLS",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-CONTROLS",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-CONTROLS",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 89,
+        "quote": "{ id: 'unbind', label: '解除窗口关联', disabled: !snapshot.session, action: () => void action.run(async () => { const binding = await store.port.gameWindowBinding(); if(binding.state!=='bound'||binding.sessionId!==snapshot.session?.sessionId||!binding.sessionId||!binding.targetIdentitySha256)throw new Error(binding.errorCode==='window_proof_busy'?'窗口正在核对，请稍后重试解除关联。':'当前窗口关联已改变，请重新核对。'); await store.command({ kind:'unbind_window', payload:{expectedSessionId:binding.sessionId,expectedTargetIdentitySha256:binding.targetIdentitySha256} }); }) },",
+        "symbol": "id: 'unbind'",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-CONTROLS",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 81,
+        "quote": "const unit = snapshot?.current;",
+        "symbol": "HUD consumes authoritative current; no UI selector copy",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 81,
+        "quote": "const unit = snapshot?.current;",
+        "symbol": "HUD consumes authoritative current; no UI selector copy",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-DRAG",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-SCROLL-MENU",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 15,
+        "quote": "export function HudWindow({ store }: { store: ApplicationStore }) {",
+        "symbol": "export function HudWindow",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-SCROLL-MENU",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 86,
+        "quote": "const menu: ActionMenuItem[] = snapshot ? [",
+        "symbol": "const menu: ActionMenuItem[]",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-SCROLL-MENU",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 130,
+        "quote": "<footer className={styles.toolbar} aria-label=\"阅读操作\" onPointerDown={event => { if (event.button === 0 && event.target === event.currentTarget) void action.run(() => store.port.beginHudDrag()); }}>",
+        "symbol": "aria-label=\"阅读操作\"",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 134,
+        "quote": "<footer className={styles.toolbar} aria-label=\"阅读操作\" onPointerDown={event => { if (event.button === 0 && event.target === event.currentTarget) void action.run(() => store.port.beginHudDrag()); }}>",
+        "symbol": "aria-label=\"阅读操作\"",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-SCROLL-MENU",
+      "before": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 134,
+        "quote": "<Button intent=\"quiet\" label=\"假名注音\" pressed={preferences.showRuby} onPress={() => void action.run(() => store.command({ kind: 'set_reading_annotations', payload: { showRuby: !preferences.showRuby, showPos: preferences.showPos } }))}>注音</Button>",
+        "symbol": "label=\"假名注音\"",
+        "sha256": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+      },
+      "after": {
+        "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+        "line": 138,
+        "quote": "<Button intent=\"quiet\" label=\"假名注音\" pressed={preferences.showRuby} onPress={() => void action.run(() => store.command({ kind: 'set_reading_annotations', payload: { showRuby: !preferences.showRuby, showPos: preferences.showPos } }))}>注音</Button>",
+        "symbol": "label=\"假名注音\"",
+        "sha256": "f953ce14a8e48e1e85ef2b08b41d1f50d9e5ec974417d6f0a130a407408d69e5"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SESSION-UI",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-STORAGE",
+      "before": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+        "line": 155,
+        "quote": "</div><aside className={styles.previewColumn}>{bound ? <WindowPreview key={`${session.sessionId}:${binding.targetIdentitySha256}`} port={store.port} candidateId=\"\" consumer=\"session\" consumerId={session.sessionId} title={binding.windowTitle || game?.displayName || '当前关联窗口'} detail={[bottle,executable].filter(Boolean).join(' · ') || '当前会话的已验证绑定'} identityDetail={`会话 ${session.sessionId}`}/> : <section className={styles.unboundPreview} aria-label=\"运行窗口预览\"><Icon name=\"window\" size={26}/><strong>{binding?.state === 'stale' ? '关联窗口已失效' : '尚无可核验的关联窗口'}</strong><p>{binding?.detail ?? '关联窗口核验后自动预览。游戏取文与窗口画面分别保留。'}</p><Button onPress={onConnect}>关联并接入游戏窗口…</Button></section>}</aside></div>",
+        "symbol": "<SessionRecordPanel",
+        "sha256": "640c926d1f9fdf2038469eca215bb16553da30a21894bbc547daf0d469393841"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "contract_delta": [],
+  "source_evidence_additions": [],
+  "runtime_visual_release_promoted": false
+}

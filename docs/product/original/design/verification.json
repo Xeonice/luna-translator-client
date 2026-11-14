@@ -1,0 +1,287 @@
+{
+  "designContract": "aligned-v1",
+  "designAcceptance": {
+    "status": "accepted",
+    "date": "2026-10-13"
+  },
+  "scope": "editable native design preview; production runtime remains unverified",
+  "environment": {
+    "os": "macOS 27.0.1",
+    "compiler": "Swift 6.4",
+    "target": "arm64-apple-macosx26.0"
+  },
+  "nativeBuild": "passed",
+  "visualReview": {
+    "defaultScreens": 22,
+    "lightScreens": 22,
+    "darkScreens": 22,
+    "additionalCapturedStates": 16,
+    "evidence": "manifest.json contains capture paths and SHA-256"
+  },
+  "runtimeTests": "NOT_RUN",
+  "notExecuted": [
+    "all 49 production-client test cases",
+    "real native game attach/extraction/writeback",
+    "real translation/Anki/network/migration/resource actions",
+    "all planned screen variants",
+    "200% text on all settings/core pages",
+    "full keyboard focus/VoiceOver audit",
+    "measured contrast/increase contrast/reduce transparency/reduce motion",
+    "multiple displays, Spaces and actual fullscreen games",
+    "CrossOver/Wine helper auto-start, bottle/guest identity, bridge/Hook and new GUI variants",
+    "real standalone OCR capture/recognition/translation pipeline",
+    "production always-on-top and global HUD visibility shortcut",
+    "all uncaptured ocr-source-v1 states listed in ocrSourceDesignExtension.notCaptured",
+    "production global shortcut / display overlays / foreground focus restoration",
+    "real screen capture, OCR and translation",
+    "all display sizes/DPI/Spaces/fullscreen cases",
+    "full keyboard and VoiceOver audit",
+    "200% text and auxiliary appearances"
+  ],
+  "knownLimits": [
+    "native selectable-text AX can lag behind the visual text",
+    "system status marker and pointer are present in unedited screenshots"
+  ],
+  "sourceHashes": {
+    "OverlaySample.swift": "2e5b09675d7f9c88aaf37227f8f9817f488b41233378a72ace5da59b92d91e23",
+    "DesignSystem.swift": "0e32edca9cc926243b335d480ade9dca4654f0507810565de07f084263245c85",
+    "CoreScreens.swift": "c83a93759b3ec9a8404537ac1fd7aa48e1d504d21846897ef4178dc30ca94c57",
+    "SettingsScreens.swift": "6811b329f12270f48f411e070238086cdbefd010a790ba981b704d5ac53ca971",
+    "OCRSourcePreview.swift": "1b8d6169658f5e4911b69555c0c0fd37b8bd772a46d94fc4947f92b2dcbc018a",
+    "OCRSelectionPreview.swift": "27f818f6ce0d5840f1d430d08d33b551e931d2bd707071352c17702641198576",
+    "CompatConnectionPreview.swift": "cd594a5df8378ffc7d6d53fb612b84a32b8bfdbc54b4e2804e619d3f0d47bb3d",
+    "main.swift": "dbf0684d00d4f63228c5c7042ed0211004ac1c7beb22d04f38fae21d01e7dde7",
+    "build.sh": "15fb6459c9bd99ac59b3f4dd2fa501c9262b5dfb2d8c522cfffd2aa1c587faf7",
+    "capture-ocr-previews.py": "8715d7d75229c05f15dfc37589de1d799335624e10c3373fe30aece9351caae3",
+    "capture-compat-previews.py": "325847a86ce63bef2bb9b509710644e972ab3fe90cd0c1720e50540f6770a693"
+  },
+  "nativeBuildDate": "2026-10-16",
+  "nativeBuildCommand": "./design/build.sh",
+  "bundledPreviewAssets": "verified identical to design/assets",
+  "currentPrdVersion": "1.2",
+  "acceptedVisualPrdVersion": "1.1",
+  "designAcceptanceScope": "aligned-v1 existing 60 captures plus separately recorded six ocr-selection-v2 visual captures; source-v1 and compat_windows not accepted",
+  "compatDesignExtension": {
+    "version": "compat-x86-v1",
+    "date": "2026-10-16",
+    "executionEnvironment": "compat_windows",
+    "prdVersion": "1.2",
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "not_reviewed",
+    "runtimeTests": "NOT_RUN",
+    "screens": [
+      "SCR-03",
+      "SCR-04",
+      "SCR-22"
+    ],
+    "captures": [
+      "previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    "captureCount": 8,
+    "primaryFlow": "Select game and bottle; automatically route x86/x64 target components to the x64 receiver; report launch, component readiness, connection, extraction, HUD and embedding independently",
+    "renderer": "actual AppKit/SwiftUI window capture of authored fixture data; ASCII temporary output copied unchanged into guarded publication",
+    "sourceHashes": {
+      "OverlaySample.swift": "2e5b09675d7f9c88aaf37227f8f9817f488b41233378a72ace5da59b92d91e23",
+      "DesignSystem.swift": "0e32edca9cc926243b335d480ade9dca4654f0507810565de07f084263245c85",
+      "CoreScreens.swift": "c83a93759b3ec9a8404537ac1fd7aa48e1d504d21846897ef4178dc30ca94c57",
+      "SettingsScreens.swift": "6811b329f12270f48f411e070238086cdbefd010a790ba981b704d5ac53ca971",
+      "OCRSourcePreview.swift": "1b8d6169658f5e4911b69555c0c0fd37b8bd772a46d94fc4947f92b2dcbc018a",
+      "OCRSelectionPreview.swift": "27f818f6ce0d5840f1d430d08d33b551e931d2bd707071352c17702641198576",
+      "CompatConnectionPreview.swift": "cd594a5df8378ffc7d6d53fb612b84a32b8bfdbc54b4e2804e619d3f0d47bb3d",
+      "main.swift": "dbf0684d00d4f63228c5c7042ed0211004ac1c7beb22d04f38fae21d01e7dde7",
+      "build.sh": "15fb6459c9bd99ac59b3f4dd2fa501c9262b5dfb2d8c522cfffd2aa1c587faf7",
+      "capture-ocr-previews.py": "8715d7d75229c05f15dfc37589de1d799335624e10c3373fe30aece9351caae3",
+      "capture-compat-previews.py": "325847a86ce63bef2bb9b509710644e972ab3fe90cd0c1720e50540f6770a693"
+    },
+    "exampleTarget": "memo01/Game.exe PE32 I386; design fixture only; no real-game compatibility result",
+    "notCaptured": [
+      "unresolved bottle confirmation",
+      "resource repair progress",
+      "injection-stage cancellation and unknown cleanup detail",
+      "target exit",
+      "advanced disclosure expanded",
+      "200% text and full keyboard/VoiceOver audit"
+    ]
+  },
+  "ocrSourceDesignExtension": {
+    "version": "ocr-source-v1",
+    "date": "2026-10-13",
+    "prdVersion": "1.2",
+    "userStory": "US-10",
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "not_reviewed",
+    "screens": [
+      "SCR-01",
+      "SCR-06",
+      "SCR-14"
+    ],
+    "captures": [
+      "previews/SCR-01-ocr-reading-light.png",
+      "previews/SCR-01-ocr-reading-dark.png",
+      "previews/SCR-01-ocr-paused-light.png",
+      "previews/SCR-06-ocr-window-light.png",
+      "previews/SCR-06-ocr-window-dark.png",
+      "previews/SCR-06-ocr-screen-light.png",
+      "previews/SCR-06-ocr-running-light.png",
+      "previews/SCR-06-ocr-paused-light.png",
+      "previews/SCR-06-ocr-editing-light.png",
+      "previews/SCR-06-ocr-permission-light.png",
+      "previews/SCR-06-ocr-target-missing-light.png",
+      "previews/SCR-06-ocr-empty-light.png",
+      "previews/SCR-06-ocr-compact-light.png",
+      "previews/SCR-14-ocr-settings-light.png",
+      "previews/SCR-14-ocr-settings-dark.png"
+    ],
+    "captureCount": 15,
+    "renderer": "actual AppKit/SwiftUI native window captures of authored fixture content",
+    "workflow": "ordinary application window or screen rectangle → continuous OCR → original and translation in resident HUD",
+    "runtimeTests": "NOT_RUN",
+    "notCaptured": [
+      "multiple independent regions",
+      "online OCR credentials and upload disclosure",
+      "image stability / input-event detailed settings",
+      "recognition/translation in-flight and failure variants",
+      "in-place translation",
+      "HUD more menu open, hidden/restored, 200% OCR text",
+      "multiple displays, fullscreen/Spaces, minimized/occluded windows"
+    ],
+    "rating": "Good",
+    "reviewScope": "coordinator inspected actual native captures and source; no production-runtime or user acceptance inferred",
+    "reviewDate": "2026-10-13",
+    "revisionStatus": "previous draft; screen selection superseded by ocr-selection-v2",
+    "sourceHashes": {
+      "OverlaySample.swift": "2e5b09675d7f9c88aaf37227f8f9817f488b41233378a72ace5da59b92d91e23",
+      "DesignSystem.swift": "8a27c415e14e7702839751eb16b498d0e26085da9e7461e86e846bc7b9b221b6",
+      "CoreScreens.swift": "cd6b27f641d83f79b9a44e2923e0952b93b65f0ec70d599852483140399395fe",
+      "SettingsScreens.swift": "fc74f8de6ffdaed9295f9c0d77a94125d51e44f8544032f9421e84441ea4edc9",
+      "OCRSourcePreview.swift": "bde95d74f574406d12e70981d2bf99edb2cff3fa89c6ec3e7623b2650750cf2a",
+      "main.swift": "6f84dbbd2abe89f6f0d3c9c6b5ad2b1640bb9e375d06c26e09bfd768f9cb3097",
+      "build.sh": "e7d44d59ac5aec302c58c08980c64b35ed624fee23818ade0c7ab1618d0a2820",
+      "capture-ocr-previews.py": "8ddf7ce13d3e3daf5168aed5d6d2efa4810b0fe6562aa56d00dc330d8b8f42d6"
+    }
+  },
+  "baselineSourceHashes": {
+    "OverlaySample.swift": "e6f205876ea1e1327a547399f446909f6e46ca0596a48295c5e84c4db1eb7a5f",
+    "DesignSystem.swift": "d446b458aa18c927de402e49ce0fd631176887d6b81143647b57efb2f14b5a39",
+    "CoreScreens.swift": "cfdd2d63e4a2e4b448aa566055459519926f8f11024b801394dfe31ba2f607fd",
+    "SettingsScreens.swift": "5917129c3772bdd8c984144fafd1abed1aa8833cf46b50b6f3dfc006e15fc897",
+    "main.swift": "403b5fd51b18156e7a5921f1c623eae49e1988536981d2d5f1dc6368761ef373"
+  },
+  "ocrContrastSamples": {
+    "scope": "sRGB values from current PNG full-coverage glyphs and neighboring backgrounds; not full accessibility audit",
+    "workspace": {
+      "light": {
+        "surface": "#FFFFFF",
+        "primary": "#272727",
+        "primaryRatio": 14.94,
+        "secondary": "#636363",
+        "secondaryRatio": 6.01
+      },
+      "dark": {
+        "surface": "#1E1E1E",
+        "primary": "#DDDDDD",
+        "primaryRatio": 12.27,
+        "secondary": "#A8A8A8",
+        "secondaryRatio": 7.01
+      }
+    },
+    "hudLight": {
+      "captionRatio": 5.12,
+      "sourceRatio": 6.09,
+      "translationRatio": 6.02
+    },
+    "fixes": [
+      "OCR HUD scrim .50, increased contrast .65, reduce transparency opaque black",
+      "OCR workspace secondary style changed to primary opacity .72"
+    ]
+  },
+  "galleryReview": {
+    "revision": "ocr-selection-v2",
+    "deepLinks": "checked",
+    "threeStepFlow": "checked",
+    "reloadPreservesSelection": "checked",
+    "screenshotsLoad": "checked",
+    "historyCollapsed": "checked",
+    "selectedStepUnique": "checked",
+    "fullKeyboardAndVoiceOver": "NOT_RUN"
+  },
+  "currentOcrDesignRevision": "ocr-selection-v2",
+  "ocrSelectionDesignExtension": {
+    "version": "ocr-selection-v2",
+    "date": "2026-10-13",
+    "prdVersion": "1.2",
+    "userStory": "US-10",
+    "screens": [
+      "SCR-06"
+    ],
+    "captures": [
+      "previews/SCR-06-ocr-selection-idle-light.png",
+      "previews/SCR-06-ocr-selection-dragging-light.png",
+      "previews/SCR-06-ocr-selection-adjusting-light.png",
+      "previews/SCR-06-ocr-selection-reading-light.png",
+      "previews/SCR-06-ocr-task-light.png",
+      "previews/SCR-06-ocr-task-dark.png"
+    ],
+    "captureCount": 6,
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "accepted",
+    "runtimeTests": "NOT_RUN",
+    "primaryFlow": "shortcut → display selection layer → rectangle drag → release starts OCR and translation in resident HUD",
+    "secondaryFlow": "existing-range edit → Return applies / Esc restores previous region, source and run state",
+    "units": "pt in authored design scene; production pixel mapping by display scale/DPI remains unverified",
+    "renderer": "actual AppKit/SwiftUI design window captures; self-authored desktop artwork",
+    "reviewScope": "visual and source review only; no user acceptance or production runtime inferred",
+    "notExecuted": [
+      "production global shortcut / display overlays / foreground focus restoration",
+      "real screen capture, OCR and translation",
+      "all display sizes/DPI/Spaces/fullscreen cases",
+      "full keyboard and VoiceOver audit",
+      "200% text and auxiliary appearances"
+    ],
+    "rating": "Good",
+    "contrastSamples": {
+      "scope": "final native PNG local pixel samples only",
+      "instructionBarRatio": 19.08,
+      "dimensionLabelRatio": 19.44,
+      "hudCaptionRatio": 4.92,
+      "hudSourceRatio": 6.02,
+      "hudTranslationRatio": 6.02,
+      "taskSecondaryLightRatio": 6.01,
+      "taskSecondaryDarkRatio": 7.01
+    },
+    "limits": [
+      "near-fullscreen selection may leave no room for a non-overlapping HUD; least overlap and manual placement remain available"
+    ],
+    "designAcceptedAt": "2026-10-13",
+    "designAcceptanceScope": "visual design of the six ocr-selection-v2 captures only",
+    "approvalSource": "user feedback in current session",
+    "approvalQuote": "目前设计上看着没问题了",
+    "approvedCaptures": [
+      "previews/SCR-06-ocr-selection-idle-light.png",
+      "previews/SCR-06-ocr-selection-dragging-light.png",
+      "previews/SCR-06-ocr-selection-adjusting-light.png",
+      "previews/SCR-06-ocr-selection-reading-light.png",
+      "previews/SCR-06-ocr-task-light.png",
+      "previews/SCR-06-ocr-task-dark.png"
+    ],
+    "approvedCaptureHashes": {
+      "previews/SCR-06-ocr-selection-idle-light.png": "fd5f9491ffb5ec5540a68f19c737b0cacdbf1d9dfb4594c33139e94ad78a2737",
+      "previews/SCR-06-ocr-selection-dragging-light.png": "757582e37626a6236415931993ea1991aea69f1b750726ce301a4efa5e973143",
+      "previews/SCR-06-ocr-selection-adjusting-light.png": "b30b50a8874a6cc70c9fcc87b40bc02eb846cbb776e31ad92028ca9a545bb5dc",
+      "previews/SCR-06-ocr-selection-reading-light.png": "ec4a73a337e1dfccc5c1d813ca9ee189dce026b48bbcfabc4e25995555a5760d",
+      "previews/SCR-06-ocr-task-light.png": "9b371a231be6655e44896b7e2ef38cf8492f8fcf023d895e3362e81e010f00f5",
+      "previews/SCR-06-ocr-task-dark.png": "f8955ffcbe977c4d89f39a5422bc6be0a3615cbde0d8faaec50c937b4a719b4a"
+    }
+  },
+  "currentCompatDesignRevision": "compat-x86-v1"
+}

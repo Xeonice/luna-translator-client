@@ -1,0 +1,51 @@
+{
+  "source": "Root approved independent same-unit renderHUD initialization for surrounding source only; original hand card/definitions/geometries unchanged",
+  "approvedJsHashes": {
+    "docs/design/first-product-v1/app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "docs/design/first-product-v1/learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "docs/design/first-product-v1/review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25"
+  },
+  "scenarios": {
+    "wordcard-native-size": {
+      "html": "<span class=\"lp-source lp-ruby\" lang=\"ja\">新しい原文。</span>",
+      "preferences": {
+        "segmentation": true,
+        "furigana": true,
+        "pos": true,
+        "fontScale": 1,
+        "preset": "comfortable",
+        "appearance": "standard"
+      },
+      "input": {
+        "scenario": "wordcard-native-size",
+        "source": "新しい原文。",
+        "tokens": []
+      }
+    },
+    "dictionary-distinct-headwords": {
+      "html": "<span class=\"lp-source lp-ruby\" lang=\"ja\"><button class=\"lp-token lp-pos-noun  \" data-token-index=\"0\" data-unit-id=\"independent-dictionary-distinct-headwords\" aria-label=\"查词：箸\"><ruby>箸<rp>（</rp><rt>はし</rt><rp>）</rp></ruby></button></span>",
+      "preferences": {
+        "segmentation": true,
+        "furigana": true,
+        "pos": true,
+        "fontScale": 1,
+        "preset": "comfortable",
+        "appearance": "standard"
+      },
+      "input": {
+        "scenario": "dictionary-distinct-headwords",
+        "source": "箸",
+        "tokens": [
+          {
+            "surface": "箸",
+            "lemma": "箸",
+            "reading": "はし",
+            "pos": "名词",
+            "meaning": "筷子。"
+          }
+        ]
+      }
+    }
+  },
+  "notProductRuntime": true
+}

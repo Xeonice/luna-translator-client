@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "id": "repair-hud-refresh-height-jitter",
+  "kind": "product",
+  "status": "isolated_candidate_pending_independent_source_and_governance_review",
+  "allowed_paths": [
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/windows/hud/HudWindow.tsx",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "openspec/changes/repair-hud-refresh-height-jitter/**",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/stability-refactor-progress.md",
+    "openspec/active-change.json",
+    "docs/development/baselines/FP1-20261028-R65.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261028-R66.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-hud-refresh-height-jitter/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "HJ-001",
+      "spec": "specs/hud-refresh-height/spec.md",
+      "scenario": "unchanged-content-query-refresh-does-not-pulse-hud-height",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/interaction-review.html#25-toolbar-560"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "baseline-integrity",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "rust-boundary-tests",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "HJ-002",
+      "spec": "specs/hud-refresh-height/spec.md",
+      "scenario": "visible-errors-and-default-notices-remain-observable",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/interaction-review.html#25-toolbar-560"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "baseline-integrity",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "rust-boundary-tests",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "HJ-003",
+      "spec": "specs/hud-refresh-height/spec.md",
+      "scenario": "natural-content-fit-and-query-owner-contracts-remain",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/interaction-review.html#25-toolbar-560"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "baseline-integrity",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "rust-boundary-tests",
+        "rust-compile"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "parent_baseline_id": "FP1-20261028-R65",
+  "parent_baseline_sha256": "693da6d19024252692da9b920d28c9460d17afbf72c60b6052ab9236adb5b520",
+  "product_acceptance_status": "not_run",
+  "scope_note": "Independent candidate only; query feedback presentation defect repair; source and test hashes require independent authority adoption, never automatic pin refresh."
+}

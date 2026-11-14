@@ -1,0 +1,15 @@
+{
+  "kind": "actual-schema2-production-writer-fixture/v1",
+  "original_evidence_directory": ".build/current-client-execution-20261105/cp03/original-writer-v2-1793880933436725000",
+  "original_evidence_manifest_sha256": "c041bc691079d8fbad502975f0fce970f11f03ef5c7e9225ebbe08410e0e639f",
+  "producer_binary_sha256": "f38514a104048c840f2e33459cf8f76fc4dac47a787169b4efc78541fabb976e",
+  "source_sha256": "197b032f0820ef8f77b14b9b012b998e1b9094469fe1298edfe00cec67c61b0c",
+  "stored_seal": "1cf7a481c12155893ba7d16e08abf26c8e01c43e347dab848f1cf95c8e2e0a4b",
+  "loaded_rehash": "5a531ddff0bed1b3683b7459dcc36b78f993fe67a61bf67a9d9383bf11c4d3bf",
+  "fixture_files": {
+    "http-schema2-original.sql": "ac4b9dd97dc464c1a039170e529cf3e3db4490029ceb4342b5f76a7a4665b725",
+    "http-schema2-original-input.json": "b6d97456861dfe12bda8d218c9ec105449d998edc939b89b20be4f32ab3a31a2",
+    "http-schema2-original-loaded.json": "fbea6b54620fdf51eea3b2f7f931fea2299f6538b15429a352dc2f1aeb0f128d"
+  },
+  "privacy": "Controlled synthetic fixture; no real user profile or secret."
+}

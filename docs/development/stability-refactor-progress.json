@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "program": "SR0-SR6",
+  "implementation_authorization": "2026-10-27 user: 开始处理，直至整个重构计划完成",
+  "remaining_product_features": "deferred_until_SR6_stability_exit",
+  "slices": [
+    {
+      "stage": "SR-1",
+      "change_id": "refactor-preview-state-policy",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/sr1/independent-code-review.json",
+        "sha256": "686e45fd75e075e180377efc9d76d0eaaea3f52ab046e617c71ef6ee5694b7f1",
+        "bytes": 10061
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/sr1",
+      "note": "2026-10-27 SR1仅将预览服务六项既有纯政策提取至私有state.rs，锁/资源/effect、公开DTO及所有原安全和控制语义保持；原逻辑表征22/22、迁移后Native157/157及独审通过，不表示视觉/正式包/四游戏或整个重构已验收。"
+    },
+    {
+      "stage": "SR-2",
+      "change_id": "refactor-preview-subscriptions",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/sr2/independent-code-review.json",
+        "sha256": "8145e49f66bc0c1e4a96106d228082aa797aaf831c382406a131eb7743fe41dc",
+        "bytes": 30766
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/sr2",
+      "note": "2026-10-27 SR2将预览订阅提取为私有client、端口仅委托；修复旧context永不结束阻挡新context及transport失败后metadata-only误升Live两条真实红例，权威投影/图像与本地transport notice分存。原100检查ID和业务断言保留，完整真实组件100/100、2016断言及独审通过；不代表pixel/原生/游戏/SR6通过。旧视觉来源前置下一独立窄工作项处理。"
+    },
+    {
+      "stage": "SR-V",
+      "change_id": "repair-reviewed-reference-source-resolution",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/visual-resolution/independent-code-review.json",
+        "sha256": "f6a0f3b451332aaae3dbb38fd3f1efc69fadde01a68528e2bfc74b66e90ad7d4",
+        "bytes": 12291
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/visual-resolution",
+      "note": "2026-10-27 SR-V仅修复旧v4历史来源的显式不可变解析：306项闭域301identity/5原hash既有origin，原catalogue/approval/PNG/token/37状态77变体及像素算法不变；Python71/71、Node49/49和代码独审通过。真实root在采用前因manifest未独立pin正确拒绝，采用后必须实跑原图比较；不批准新图片、不提升pixel/原生/游戏/SR6。"
+    },
+    {
+      "stage": "SR-3",
+      "change_id": "refactor-session-preview-coordination",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/sr3-sandbox/independent-code-review.json",
+        "sha256": "986243fa602ec78dd580415aea0c53656012f1b109f29e60032a0a8993a43c8f",
+        "bytes": 16748
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/sr3",
+      "note": "2026-10-27 SR3按独审attempt03精确合入Main六文件，唯一ownership coordinator与封面私有只读/受校验提交能力分离，AppHandle/Runtime/Hook/flag及任意commit不可回取，四字段E0616与commit E0624真实拒绝且恢复。原IPC/ACL/31断言/CAS/Weak/原子提交链保持；Main实际Native158/158通过。Sandbox首两轮changes_required及失败日志保留；原R50真实视觉库存/scroll/behavior/pixel失败仍未闭合，不提升同包/游戏/SR6。"
+    },
+    {
+      "stage": "SR-5",
+      "change_id": "refactor-owner-geometry-policy",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/sr5-sandbox/independent-code-review.json",
+        "sha256": "ed042dc5167fe720997c8df8ed1ef8e47b879b49c9bd26df6750f191f92846d3",
+        "bytes": 15844
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/sr5",
+      "note": "2026-10-27 SR5按独审精确迁移既有content_fit_policy至owner_geometry.rs，逻辑模块content_fit_policy与super/类型可见性保持，原14测试61断言和4329token一致；不新增规则/阈值/延时，native apply/readback与持久化留window_manager。主工程158维护独占重编，实机词卡几何及四游戏留SR6。共享Cargo污染回执不采纳；原视觉失败与批准参考保持。"
+    },
+    {
+      "stage": "SR-4",
+      "change_id": "refactor-hook-association-boundaries",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/sr4-sandbox/independent-code-review.json",
+        "sha256": "8618a6cd34cedede06e1aee7d21344b30b573772d9f5413db30f24f109a96736",
+        "bytes": 13518
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/sr4",
+      "note": "2026-10-27 SR4按39项独审精确合入5文件，候选窗口发现/关联读取、预览identity冻结/证明及纯journal投影各迁入私有模块，facade保留原associate/commit/drain/FIFO/barrier四原子块；102旧函数体token、原25测试不变并增加wire roundtrip，Core ABI1七callback/JSONL2/资源/DB/License/预算不变。仅最新私有Sandbox infra671与Native158有效，旧共享Cargo污染和环境失败完整保留；Main独占重编与完整工程检查另跑。正式包/游戏/睡醒及视觉历史不提升。"
+    },
+    {
+      "stage": "SR-6-PRE",
+      "change_id": "prepare-stability-acceptance",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/acceptance-preparation/independent-integration-code-review.json",
+        "sha256": "ffd6e0633d419c611fdf7d2b6e0f97dfe40c24c1f48bd01e163188a9d850b317",
+        "bytes": 22327
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/acceptance-preparation",
+      "note": "2026-10-27 SR6前置精确整合private observer7、真实视觉Owner/lease前置3及impact/runtime工具13。原Native158与100组件业务断言保留，Main Native167与100/2016实跑；工具首轮3P1和冷启动零fact P1经新negative修正，历次失败不覆盖。实际diff义务/组件Owner/原日志case执行闭包与独立正式包运行分支加入，worker/service/delivery/UI层分开、tail health和有序wire来源严格复算。当前仍未运行最终RC/四游戏/真实SleepWake，不将guard或旧包升级；原37/77/PNG/token/zero及V2真实6布局overflow/两oldoff迁移未采用，用户布局选择pending。"
+    },
+    {
+      "stage": "SR-QA-FIX",
+      "change_id": "repair-lifecycle-execution-order",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/execution-order-fix/independent-code-review.json",
+        "sha256": "07876637391bca4de1eee9469293c807036469cd648fe0423339dbc3a2ce7aa6",
+        "bytes": 8530
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/execution-order-fix",
+      "note": "2026-10-27 修复R54真实完整gate的终结顺序误报：真实lifecycle closure先执行并追加回执，再核对显式声明是否已执行；声明保留，真正缺失/失败仍拒绝。原27维护方法不改，新增3真实finalizer/close_execution回归旧顺序3红修正3绿，注册入口30/30及维护213/213。只2质量工具文件，产品代码与原设计/PNG/阈值不变，R54原63/66与SourceStable原件保留；视觉/签名RC/四游戏/Sleep尚未通过。用户已选择保持紧凑先重做预览候选，本次工具修复不批准新设计。"
+    },
+    {
+      "stage": "SR-DESIGN",
+      "change_id": "adopt-compact-preview-design",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/compact-design-integration/independent-design-integration-review-02.json",
+        "sha256": "6cc363a98cbf62b6eccce878e7b708935ac0fbcbe04ab9731838314f55f496ae",
+        "bytes": 22776
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/compact-design-integration",
+      "note": "2026-10-27 用户明确确认已独审compact-preview-design-v1并要求更新完整设计稿。本片只整合设计原型和设计验证，复用原previewHTML/state、会话与选窗同组件；主卡紧凑、全文详情可读可复制，自动预览/原帧时间/暂停/取消隔离原断言保持。原PNG/catalogue/token/旧稿/License保留；不含产品UI实现、不批准product视觉通过、不将设计或guard提升四游戏/真实睡醒。R55原65/66视觉失败保留。 初轮独审两项P1原回执保留：新增6条same-original-SHA历史源解析许可、同目标候选取消后的详情归属修复，均另冻源码并实际回归；不把修复前设计回执当最终源通过。"
+    },
+    {
+      "stage": "SR-DESIGN-LOCK",
+      "change_id": "align-compact-preview-design-lock",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/compact-design-lock-alignment/independent-code-review.json",
+        "sha256": "131fc259b8a99b57b7bc5c21839748ecd4c931404c1820e09411fd1451ec4b18",
+        "bytes": 10565
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/compact-design-lock-alignment",
+      "note": "2026-10-27按用户已确认canonical紧凑设计，将技术合同中5项design_sources旧SHA登记为与R56采用记录/frozen16/独审完全一致的现行同路径身份。只有5个SHA叶值变化；其余15设计行、approved_stack、全部manifests、旧design_review_adoption/native_increment_review、代码算法、原PNG/token/306历史来源与阈值均保持。R56实际59/61两失败回执保留；本次实际technology CLI red→green、原20守卫通过，源码/packet preflight必须实际执行current technology check，不能以fixture替代。产品视觉偏差、RC四游戏和真实睡醒不由本次登记提升。"
+    },
+    {
+      "stage": "SR-DESIGN-LOCK-FORMAT",
+      "change_id": "align-compact-preview-design-lock",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/compact-design-lock-alignment/spec-format-fix/independent-code-review.json",
+        "sha256": "dcdfbd5a22c03d66d8781a620b919e3d47cbdd6b1eb5ce856c91debc5a234651",
+        "bytes": 8707
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/compact-design-lock-alignment/spec-format-fix",
+      "note": "2026-10-27 R57实际全检查59/61：已批准5SHA技术合同passed，OpenSpec规范首行缺MUST/SHALL格式错误及原产品v4偏差仍failed。此次只在同一窄change的3份文档补同义MUST首行、精确父R57归档许可与实际OpenSpec严格preflight记录；原中文规则/场景与检查要求均保留，5SHA技术锁、设计源、产品实现、框架、Core、DB、原PNG/阈值均未再改。实际固定OpenSpec全31项严格CLI及当前technology CLI必须独立执行，不再用custom spec/tests替代；失败尝试/回执保留。此修订不提升产品视觉、RC、四游戏或睡醒验收。"
+    },
+    {
+      "stage": "SR6-OBS-EVIDENCE",
+      "change_id": "repair-native-preview-evidence",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/runtime-observer-repair-review/code-review-02.json",
+        "sha256": "e60ff50f7318db8bf10862725d0a71bfab884c77431f2aaf53ca99d97d51d3be",
+        "bytes": 10465
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/runtime-observer-repair-adoption",
+      "note": "2026-10-27 原SR6现场游戏/主窗/HUD文字一致但预览AX裁剪为0，定位只读OSobserver原生CGFloat到Any再as Double转换及含阴影截图几何取证缺陷。本片仅修runtime_observer.swift及原RuntimeStabilityGuards中的真实Swift纯类型/几何/失败诊断测试，原29260字节测试前缀/原AST/断言与原runtime_stability_evidence.py均保留。首轮48/native15通过后独审仍发现OBS-002非等比x/y生产路径测试缺口，805978... changes_required及旧回执原样保留；Root仅追加负原点+偏移x2/y3、精确rect(56,90,400,300)的nonuniform_xy_scale_geometry及对应ID，observer992ed41...不变，正式test新SHA682117ad...。第二轮实际注册48/48、native16、零skip、exit0只证明当前工具测试；产品source/Core/DB/设计/PNG/token/阈值/600预算均未改，product_delta=[]。三次旧runtime超时/缺crop与原v4失败保持，不提升四游戏/真实SleepWake或整体重构通过。最终验证计划后续另存前像显式rebase并重建固定C514证书新RC，新nonce同包从头回归，不复用旧fd78包或局部OCR结果。Stage Manager已正常恢复原1。"
+    },
+    {
+      "stage": "SR6-PREVIEW-TARGET-DRIVE",
+      "change_id": "repair-preview-target-drive-resolution",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/preview-drive-contract-review/code-adoption-review.json",
+        "sha256": "926fc982aa0d73e0d74208464f6b5bbae988cd6ac82b5f70b8c6323778bb5257",
+        "bytes": 4203
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/preview-drive-resolution-r60",
+      "note": "2026-10-28 R60：R59实机失败后定位到预览冻结对无关失效D:执行全盘canonicalize，阻断有效C:目标。本片只把预览解析收窄到实际请求盘符，并保存canonical image_path再次核验冻结目标；目标盘失败、路径越界、重映射及原全盘调用严格性均保留。私有采集器Frozen传输结构同步升级version2至3，实际UnixStream旧Hello拒绝及旧Ready/Frame/缺字段/未知字段拒绝已在隔离生产路径测试；公开DTO/IPC、Core ABI1和Hook JSONL2不变。精确5源已获独立代码与架构审阅，候选22个测试及独审28个不同测试零skip通过，仅代表已执行的代码测试。原R59完整门禁65/68失败、38/50步骤和原visual v4失败原样保留；本片尚未完成Main完整门禁、新RC、四游戏或真实睡眠恢复，不提升产品或发布验收。自然退出operation持久化及单窗口截图边界为后续独立片。新紧凑预览仅设计获确认，产品布局未实施。"
+    },
+    {
+      "stage": "SR6-DURABLE-OPERATION-TERMINAL",
+      "change_id": "repair-natural-exit-operation-terminal",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/durable-operation-stop-storage-carrier-review-r61/storage-carrier-review-r61.json",
+        "sha256": "c5ecfbae52644dd3628d77c0af357f6cf76a82c330c5df3a35aa2279c442cebb",
+        "bytes": 12304
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/durable-operation-stop-r61",
+      "note": "R61仅修R59已证明的自然退出持久终态缺失：既有Immediate事务成功关闭精确SID session时同批结束该SID active operations，错误回滚并拒绝成功ACK。attempt02两精确源码已独审；隔离R59受控三Runtime FIFO/一Repository SQLite测试四项逐一通过、完整41/41与两旧代码预期红例分别保存，不是Main/新包通过。原124616字节测试前缀保留；DDL/公开契约/Core ABI1 Hook JSONL2/collector私有v3/设计/PNG/token/oracle预算不变。旧终态session回填、legacy无SID诊断和替换session路径不在本片范围。完整存储adapter、Main工程、最终同包四游戏和真实睡醒另据新回执，不提升R59失败或产品验收。 R60实际62/66保留；两完整存储守卫均拒绝同一实际编译输入遗漏，本片工具仅向v1 base增加preview_identity.rs供v1/v2原策略继承。R61非DDL代码引发迁移来源全文件hash差异另有前置阻断，未经独审/精确范围不能刷新原引用。 按Root明确的carrier审阅范围，当前schema2 registry的两source_sha256与schema2 review的一source hash只允许在独立确认migration SQL/DDL完全未变后，绑定已审阅的database.rs新完整身份；历史schema1 registry及其hash不改，保留所有源hash拒绝检查。此独审/采用尚待实际回执。 独立新storage-carrier-review-r61 c5ecfbae已逐字确认非DDL8行更新及精确5文件，并实际验证旧3项hash拒绝→当前三指针零错误、每个指针及SQL身份篡改仍拒绝。Root已精确集成并实跑storage_requirement_gaps零错误；这不是完整adapter或产品通过。"
+    },
+    {
+      "stage": "SR6-SINGLE-WINDOW-EVIDENCE",
+      "change_id": "repair-native-single-window-evidence",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/native-evidence-r62/code-review/review.json",
+        "sha256": "9c10b10ce0158090beb7b92bd7220fb990ce49f6075c56249450f65263877709",
+        "bytes": 6803
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/native-evidence-r62",
+      "note": "R59 attached HUD/wordcard screenshot union defect: only the two QA observer/test paths request -a with -o and validate actual CGImage canvas before OCR. Original48 guards/16 native IDs and exact oracle/visual thresholds/time budgets retained. Ignored independent compile/run48 guards27 native zero skips establishes pure tooling behavior only. Dimensions do not prove ownership/origin; fractional-point rounding conservatively refuses. No new real -a capture, same-package games or SleepWake passed; old R59 failures remain immutable. Root-approved explicit five-input R62 scope: strict schema2 additional final cohort registry read under unique exact authority pin, old primary/phase/nine obligations/fourteen links/cases unchanged. New final ID is registry data, not code/metadata switch. Original30 lifecycle tests plus3helpers AST preserved;12 new tests, unified90 actual pure guards pass. Missing/duplicate/illegal/phase-colliding registrations, unpinned append and unknown development runtime ID fail closed. No R59 workitem or release-policy change. R61实际完整门禁65/67，真实rust-storage-complete-v2编译/执行及10+66存储守卫通过；原v4及其闭环失败仍保留。R62精确5输入获独立代码审阅9c10b10c，独立实际90/90零skip；Root源scope与未pin结构校验通过，但新权威pin、完整门禁、新包和原生/游戏仍待实际采用和执行。"
+    },
+    {
+      "stage": "SR6-TRANSLATION-CURRENT-STATUS",
+      "change_id": "repair-translation-current-status",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/translation-current-status-r63/code-review04/review.json",
+        "sha256": "8b59c3ccab505f308bbf2753d79ec1320340e374201b02402d108ef038937b7d",
+        "bytes": 21071
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/translation-current-status-r63/governance-r63",
+      "note": "R63 packet06 exact source already Root-integrated after independent code approval; current translation status is a separate fixed-object readonly projection and explicit causal admission graph, not rewritten task/attempt history. New RPC/DTO and TaskView optional actual attempt identity are reviewed public increments; original Core ABI1/Hook JSONL2/private collector3 unchanged. Main205 catalog failures consist only of exact product closure/reference drift;202 already-valid historical references/current old package/language provenance remain byte-identical. Only112 reviewed source references,4 explicit quote remaps,5 new structured helper/RPC/hook evidence rows and source-only semantic notes are proposed. V2 current carrier three pointers require separate nonDDL identity review. R59/R62 failed/partial evidence and visual differences remain; no new package, actual storage adapter or four-game/final acceptance promoted."
+    },
+    {
+      "stage": "SR6-RECOVERY-FIXTURE-CLOSURE",
+      "change_id": "close-stability-recovery-and-reading-fixture",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/recovery-fixture-batch-r64/independent-review/review.json",
+        "sha256": "b550ccdbf07063fa6b5e879469aba8e8ed7148d6229f4febe4e31abec48cd081",
+        "bytes": 23900
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/recovery-fixture-batch-r64",
+      "note": "R64 batch contains only six independently code-reviewed Native preview recovery sources and one independently reviewed QA projection capture supply. The seven exact product closure entries and seven unchanged source quotes are the only catalog source updates; all row statuses/artifact/runtime/history fields stay unchanged. Private collector3 to4 is explicit; Core ABI1/Hook JSONL2/public DTO unchanged. Original leaf WI/snapshots/freeze remain external frozen audit inputs because cross-change scope grants are forbidden. SQL/DDL/schema/carrier, approved PNG/token, caps/budgets, lifecycle schema2 registrations and9 obligations/14 links/50 steps unchanged. Full visual failures and real SCK/four-game/finalR63 not_run remain; source authority is not product acceptance."
+    },
+    {
+      "stage": "SR6-CURRENT-LANGUAGE-WORKER-STAGING",
+      "change_id": "stage-current-language-worker-r65",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/language-worker-staging-r65/independent-review/review.json",
+        "sha256": "e29174e7d5baad71bb732d9556057ff59636cdcc064c44e3a03b786a9ecfa23e",
+        "bytes": 19173
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/language-worker-staging-r65",
+      "note": "R65 stages only the exact current-code derived language-worker executable18b588 to2f2a337 after build-rc01 preparation correctly rejected its single-source drift. No worker Rust/business/protocol/guard/expectation change. Catalog changes only one product resource closure; row semantics/status/runtime/artifact/history remain unchanged. Existing JSONL v1, Core ABI1/Hook JSONL2/private collector4, SQL/carrier/approved PNG/token/caps/budgets/lifecycle9 obligations14links50steps unchanged. Final63 existing seven WI not modified or newly pinned; independent rebase occurs only after actual R65 adoption. Current signed package/real SCK/four games/final63 remain not_run; R64 visual/lifecycle failures preserved."
+    },
+    {
+      "stage": "SR6-HUD-REFRESH-HEIGHT-REPAIR",
+      "change_id": "repair-hud-refresh-height-jitter",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/hud-refresh-height-r66/reviews/source-governance-review.json",
+        "sha256": "02229477e70110c79aab43ecb6281a0d39c36ef6ffce12d55d9cb63edaea6bcd",
+        "bytes": 3692
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/hud-refresh-height-r66",
+      "note": "R66 repairs only the proved HUD query-state occupancy pulse using the shared reading presenter and explicit HUD composition. Query ownership/as-of/commit floor/100ms/late reply/error retry remain. Product closure changes exactly ReadingPanel.tsx, HudWindow.tsx and the existing component runner; all original100 RBC IDs/assertions and actual Rust/SQLite fixtures remain. Reading-version and wordcard-geometry obligations retain required core/infra/native/component/capture checks and five-scenario execution. No legacy visual failure, approved PNG/token/zero threshold, SQL/protocol/native geometry, final63 WI, runtime/artifact/history/approval or product acceptance state is promoted. Browser/source checks do not replace a new signed-package native and four-game run."
+    },
+    {
+      "stage": "SR6-HUD-STORAGE-EXECUTION-DECLARATION",
+      "change_id": "repair-hud-refresh-height-jitter",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/hud-refresh-height-r66/governance-storage-supplement/reviews/source-governance-review.json",
+        "sha256": "6b05c5ecf8404648bbb71d6da12918c7bcd49ef6ac59ac734bcbc51053b877a3",
+        "bytes": 3932
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/hud-refresh-height-r66/governance-storage-supplement",
+      "note": "R67 corrects the R66 work-item omission of mandatory real storage execution for M03. Only the existing verification metadata declares the registered schema2 rust-storage-complete-v2 adapter and the exact parent R66 archive path. HUD source/tests, all original requirements and16 checks, approved PNG/token/zero thresholds, the original R65 snapshot and source identity are unchanged. R66 full verification60/64, original Native197/198 failure, separate unchanged-source Native198 rerun, existing v4 failure and all runtime/release limits remain separate historical receipts. This source-reviewed declaration is not actual storage execution or new-package/native/four-game acceptance."
+    },
+    {
+      "stage": "SR6-HUD-TRANSLATION-PLACEHOLDER-REPAIR",
+      "change_id": "repair-hud-translation-placeholder",
+      "source_review": {
+        "path": ".build/stability-refactor-20261027/hud-translation-placeholder-r68/integration-review/source-governance-review.json",
+        "sha256": "ef02346dabc71042c119074640a9bfbad80dc898a5f7d33e74a9a6cf40eaaa6a",
+        "bytes": 3518
+      },
+      "implementation_status": "source_reviewed",
+      "acceptance_status": "pending_full_checks",
+      "evidence_directory": ".build/stability-refactor-20261027/hud-translation-placeholder-r68",
+      "note": "R68 repairs the HUD generic empty-translation placeholder by composing real Rust-projected translation state and translation content under the existing single reading projection owner. The HUD opts into TranslationStack empty fallback suppression and real queued/running/partial/completed/failed/cancelled/unrequested/unavailable/unordered states; a strictly newer query commit may supply content, equal/older snapshots preserve their known text. HUD hasTranslation and translation-only source fallback use the same selected contentUnit via a plain render callback, while SourceText/lexical/word-card identity stays the existing props unit. The two changed export signatures and the hasTranslation/composition changes require explicit independent review. Query hook, public DTO/protocol, Rust/SQLite/schema/registry, CSS/tokens/resources, partial typography and all original100 component IDs/assertions are preserved. M03 declares schema2 rust-storage-complete-v2 from initial metadata; base/lifecycle/readingguard/product-ui-capture-v4 and automatic five negatives remain. Frozen leaf100/2414 component and real storage receipts are separate from the new governance cohort, fresh complete verification, same-certificate package/native/four-game and release acceptance; existing v4 failures and all old records/images/zero thresholds are preserved and no approval/result is promoted."
+    }
+  ],
+  "stability_complete": false
+}

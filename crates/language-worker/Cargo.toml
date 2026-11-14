@@ -1,0 +1,19 @@
+[package]
+name = "language-worker"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+app-core = { path = "../app-core", default-features = false }
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+libloading = "=0.8.9"
+
+[lints]
+workspace = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+sha2 = { workspace = true, features = ["asm"] }

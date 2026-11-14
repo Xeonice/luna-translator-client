@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "adopted_limited_engineering_support_policy",
+  "owner": "root",
+  "independent_reviewer": "history_architecture_review",
+  "review_artifact": ".build/storage-field-ownership-independent-review.json",
+  "candidate": "openspec/changes/implement-first-product/storage-pre14-candidate.json",
+  "candidate_sha256": "5605a85770b832781ff28212a6e5b38f817376712b3e5357d994c08c412a59eb",
+  "supported_scope": "New profile schema1 and dictionary index1; reopen same known migration identity; paired same-version backup recovery; reject unknown, unversioned, corrupt, migration/schema mismatch or invalid relationships without changing rejected sources.",
+  "no_poc_or_v2_migration": true,
+  "identity_review": "Production Rust source, ordered production SQL, actual SQL migration ledger and dictionary provenance independently checked. Only the source identity changed for read-only history queries.",
+  "existing_route_evidence": [
+    ".build/storage-acceptance-real-routes.log",
+    ".build/storage-pre14-source-refresh-final.json"
+  ],
+  "approval_boundary": {
+    "engineering_support_matrix": true,
+    "database_field_design": false,
+    "full_design_layout": false,
+    "all_431_typed_mappings": false,
+    "all_22_storage_checks": false,
+    "product_release": false
+  },
+  "remaining": "Full production adapter is unregistered and full acceptance remains blocked. Real game and native/package case matrices remain separately required."
+}

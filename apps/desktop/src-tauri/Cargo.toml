@@ -1,0 +1,23 @@
+[package]
+name = "luna-reader"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+default-run = "luna-reader"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[target.'cfg(target_os = "macos")'.build-dependencies]
+cc = "=1.8.0"
+
+[dependencies]
+tauri = { version = "2", features = ["macos-private-api"] }
+serde.workspace = true
+serde_json.workspace = true
+app-core = { path = "../../../crates/app-core" }
+app-infra = { path = "../../../crates/app-infra" }
+
+[lints]
+workspace = true

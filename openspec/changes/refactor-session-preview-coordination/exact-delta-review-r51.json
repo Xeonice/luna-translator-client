@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-session-preview-coordination",
+  "parent_baseline_sha256": "f1e4bd58657a58ad189c20141cbe92ec539c81e1b7ca18cc5d0adf007322b20f",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+      "before": "e63a38e8102d4fffc9113158adfab7b445ce0adc15dd75b5a6ff5197f5e58eaa",
+      "after": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/commands.rs",
+      "before": "b12b1221583e6de1387101162ef68052b44ea3352436020da3afba21db6d0f70",
+      "after": "bee4eaba1250b470e5f71176b248be7c48208bc1fe588344823419a3f2094cc3"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "before": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+      "after": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/mod.rs",
+      "before": "07db0bf02ecfc11dd5654df89dd03bd688df37229d88df372dfef41a615d010b",
+      "after": "6a27e5137c21a0e58711e7a74183b4f72aa2996fa8a7e5631384d1767d607460"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+      "before": null,
+      "after": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs",
+      "before": null,
+      "after": "0dbda2563cb13a65ac647a99a505ae8edefa53e08533cdce93aab78a3ba9303b"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/design.md",
+      "before": null,
+      "after": "8f5b6d4bbed0bc4dd1a75e336b9be00620be2ea226f8b6f05c82afa85578776d"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/iteration-card.md",
+      "before": null,
+      "after": "e113b29d62c1710922279f203f7d4d88a81b9399f4c8795f59bd617325ef9530"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/proposal.md",
+      "before": null,
+      "after": "4d377c1b08dd047e6b9181fb55bfb722d25f92942e509de0e6592969a4958670"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/source-snapshot.json",
+      "before": null,
+      "after": "3679362af44bf6801bd937b4dff42f77890bcd76947886da32997bcef2fb81a1"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/specs/session-preview-coordination/spec.md",
+      "before": null,
+      "after": "fec4f3be00266e51b190df01f7f786c1b43ee6991a2b45813811f48cdc11c374"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/tasks.md",
+      "before": null,
+      "after": "392e22c812c8c95d31576f259bd69838e3b416020d3e8ccfc4ddac063b762599"
+    },
+    {
+      "path": "openspec/changes/refactor-session-preview-coordination/verification.json",
+      "before": null,
+      "after": "83988a925e765ec8d02a9152e476518c0cc840846d71f0b9e80db84009d0f82f"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+    "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr3-sandbox/independent-code-review.json",
+    "sha256": "986243fa602ec78dd580415aea0c53656012f1b109f29e60032a0a8993a43c8f",
+    "bytes": 16748
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+        "line": 723,
+        "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+        "sha256": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb",
+        "line": 20,
+        "quote": "pub(crate) fn spawn(dependencies: SessionCoverDependencies, consumer: SessionCoverConsumer) {"
+      },
+      "explicit_reason": "原误名preview-coordinator的首帧封面loop按独审迁入显式cover模块，主体职责未改变；生产者ownership另由SessionPreviewCoordinator持有，完整代码独审/合入回执绑定。"
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 201,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "e63a38e8102d4fffc9113158adfab7b445ce0adc15dd75b5a6ff5197f5e58eaa"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+        "line": 723,
+        "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+        "sha256": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb",
+        "line": 20,
+        "quote": "pub(crate) fn spawn(dependencies: SessionCoverDependencies, consumer: SessionCoverConsumer) {"
+      },
+      "explicit_reason": "原误名preview-coordinator的首帧封面loop按独审迁入显式cover模块，主体职责未改变；生产者ownership另由SessionPreviewCoordinator持有，完整代码独审/合入回执绑定。"
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 201,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "e63a38e8102d4fffc9113158adfab7b445ce0adc15dd75b5a6ff5197f5e58eaa"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+        "line": 723,
+        "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+        "sha256": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb",
+        "line": 20,
+        "quote": "pub(crate) fn spawn(dependencies: SessionCoverDependencies, consumer: SessionCoverConsumer) {"
+      },
+      "explicit_reason": "原误名preview-coordinator的首帧封面loop按独审迁入显式cover模块，主体职责未改变；生产者ownership另由SessionPreviewCoordinator持有，完整代码独审/合入回执绑定。"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+        "line": 723,
+        "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+        "sha256": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb",
+        "line": 20,
+        "quote": "pub(crate) fn spawn(dependencies: SessionCoverDependencies, consumer: SessionCoverConsumer) {"
+      },
+      "explicit_reason": "原误名preview-coordinator的首帧封面loop按独审迁入显式cover模块，主体职责未改变；生产者ownership另由SessionPreviewCoordinator持有，完整代码独审/合入回执绑定。"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 381,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 201,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "e63a38e8102d4fffc9113158adfab7b445ce0adc15dd75b5a6ff5197f5e58eaa"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+        "line": 723,
+        "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+        "sha256": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb",
+        "line": 20,
+        "quote": "pub(crate) fn spawn(dependencies: SessionCoverDependencies, consumer: SessionCoverConsumer) {"
+      },
+      "explicit_reason": "原误名preview-coordinator的首帧封面loop按独审迁入显式cover模块，主体职责未改变；生产者ownership另由SessionPreviewCoordinator持有，完整代码独审/合入回执绑定。"
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+        "line": 723,
+        "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+        "sha256": "a671986ffdba3a10b34bd329bb43cb5d76c3f0a5b0a9a5698705fab4be4372fb",
+        "line": 20,
+        "quote": "pub(crate) fn spawn(dependencies: SessionCoverDependencies, consumer: SessionCoverConsumer) {"
+      },
+      "explicit_reason": "原误名preview-coordinator的首帧封面loop按独审迁入显式cover模块，主体职责未改变；生产者ownership另由SessionPreviewCoordinator持有，完整代码独审/合入回执绑定。"
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 201,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "e63a38e8102d4fffc9113158adfab7b445ce0adc15dd75b5a6ff5197f5e58eaa"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

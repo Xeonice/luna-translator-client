@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "kind": "concrete-preview-design-resolution-candidate/v1",
+  "status": "pending_review",
+  "candidate_id": "preview-contract-20261104",
+  "source_approval_granted": false,
+  "entry": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html",
+  "manifest": {
+    "path": "docs/design/first-product-v1/candidates/preview-contract-20261104/manifest.json",
+    "sha256": "65a5159cfc9e5bd934329c3ba532e62d2b6829132abdb09e2216e2902d51d41b"
+  },
+  "authored_sources": {
+    "index.html": {
+      "sha256": "d2ea83e4f845fe410509fd927828e7ba319ec45570adaa1dbd94d535903ae18b",
+      "bytes": 8000
+    },
+    "preview-contract.css": {
+      "sha256": "c75fda32c755be7d86195eb951da3cbd64bb3e261b965e21df8fc312e7749338",
+      "bytes": 11498
+    },
+    "preview-contract.js": {
+      "sha256": "2e1c62e01a52ee05d87765bdfb36a29a7c1e293faeb4d6afc35a7c74abd8b38e",
+      "bytes": 18467
+    }
+  },
+  "author_ids": [
+    "/root/preview_design_resolution"
+  ],
+  "parent_composition_unchanged": {
+    "target_id": "guided-service-reading-20261030",
+    "composition_id": "complete-guided-history-20261031",
+    "approval_record": "docs/development/design-approval-complete-20261031.json",
+    "approval_sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc",
+    "design_source_count": 61,
+    "design_closure_sha256": "72e788d89b489eded79caafd836177b67fa04b463861bf96b110da05e0257ffd",
+    "original61_unchanged_at_generation": true
+  },
+  "requested_user_confirmation": {
+    "prompt": "是否采用这份C35预览状态/事实与边界补充，作为原完整组合的后续设计增量？",
+    "exact_scope": [
+      {
+        "id": "PC-01",
+        "decision": "演示回放说明仅在产品外评审工具显示；卡片使用真实状态标签，保留帧标“最后画面”。",
+        "reason": "RW-02/04禁止回放或旧图冒充实时。"
+      },
+      {
+        "id": "PC-02",
+        "decision": "仅选择、可编辑资料、缺核验事实与完整核验已成立分开；未知Native字段保持未提供。",
+        "reason": "RW-01/05及身份权威边界，避免靠选择行为断言身份已核对。"
+      },
+      {
+        "id": "PC-03",
+        "decision": "纵排图片限宽280px居中，内容宽520px转横排；346px卡高与200%详情视口限制、独立正文滚动。",
+        "reason": "当前源在中间宽度与200%有实际溢出；以可读性/可操作性补安全边界，而不是放宽比较阈值。"
+      },
+      {
+        "id": "PC-04",
+        "decision": "补stale和permission_revoked；旧帧展示必须有有效复用依据，权限/关闭/身份失效或无复用证明时清除可显示画面；最近成功历史事实独立保留。继续仅进入等待恢复，不丢已知旧时间；首次启动无历史仍未提供，只有明确收到有效新帧才建立或更新时间。",
+        "reason": "RW-02～06要求保留观测事实与权限隔离；恢复意图不得制造或抹去观测，历史成功本身不证明当前可用、权限或复用依据。"
+      },
+      {
+        "id": "PC-05",
+        "decision": "详情拆开投影权限/能力检查，标数据来源与归属；只展示已有事实，原始Native未知不补固定样例值。",
+        "reason": "FP-12诊断需要事实来源与未知边界，不以能力检查绿覆盖采集器拒绝。"
+      }
+    ],
+    "does_not_approve": [
+      "原始61源的覆盖或删除",
+      "其他产品页面的新设计",
+      "公开DTO/数据库或Core ABI变更",
+      "真实录屏权限/Native采集/Hook/四游戏通过",
+      "独立参照目录自动审批",
+      "产品准出或发布"
+    ]
+  },
+  "review_urls": {
+    "default": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html",
+    "stale": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html?state=stale",
+    "permission_revoked_conflicting_check": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html?state=permission_revoked&capability=granted",
+    "medium_boundary": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html?width=521",
+    "first_horizontal": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html?width=522",
+    "long_name_zoom200": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html?zoom=2&title=long",
+    "current_session": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html?owner=session&origin=game_record"
+  },
+  "design_only_quality": {
+    "status": "passed",
+    "matrix_cases": 23,
+    "assertions": 341,
+    "page_errors": 0,
+    "request_errors": 0,
+    "original61_unchanged": true,
+    "receipt": {
+      "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/verification.json",
+      "sha256": "667999f2ea5877daedd372d670d5f1200ef0e7f18e91c0b221294cf48e78db20"
+    },
+    "clipboard_receipt": {
+      "path": ".build/gate-closure-20261104/design-resolution/clipboard-verification.json",
+      "sha256": "f88a5c52b4397e9624ea6fa2f9b2645abcec50e891291042883d0573792372fa"
+    },
+    "image_index": [
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/dark-live-282.png",
+        "sha256": "ccdf6361edf56ca311b26cf4d466fadf2d78d6bd5b693eea5f59cb7f91e94afe"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/dark-live-282-details.png",
+        "sha256": "9e687a5efd05c68190aa93591f5923e09bd770444057114504295c71253f8de5"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/light-live-282.png",
+        "sha256": "8fc516cf444134ac388bb4f42c5dcfac03ba7c7baf6de030ad29bcc718a2df3d"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/light-live-282-details.png",
+        "sha256": "fdc274d620ffa6a6df85d2901ef5f0fb76ccc3feaf3a6d32a3e8563e49299331"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/dark-live-708.png",
+        "sha256": "1afc4c43266292ef0d4359cba9e8d033b458842862744d900a7870809eadbbd9"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/light-live-708.png",
+        "sha256": "4ecf7a2f1a4d623efd75f6b50d8f672fdddcb8edf80edfae102da38b0f185f17"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/boundary-519.png",
+        "sha256": "8b5988145d1f0a166479bad198bca6fd07535cee6a16761cd4b60ff76b603378"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/boundary-520.png",
+        "sha256": "9929f90c1cfb36b93d184cd4e7cac2a74056f3a05008cffb500b1ad372c787b3"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/boundary-521.png",
+        "sha256": "c05aca713b72152e70c631ddff8ead170a36e78f1ec06885df5a6c568d32e1e7"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/boundary-522.png",
+        "sha256": "7ed52e2d94b9405d017d46ffd12ea94ff2e29b293aee31bb97b06382803f4682"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-paused.png",
+        "sha256": "8f43a4f7aa27d5ba9e479370e2c16609d579974b9db27aea2e969a12f709ab5c"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-stale.png",
+        "sha256": "6c13fcd94392802db94991a8cb1e0eae8d143a28c280d9b5589d726dc4bf0bf0"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-starting.png",
+        "sha256": "617ce3dfedd2df9f90e40f0823dec3110d4b5db0ea320f24795427a78906b368"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-permission_denied.png",
+        "sha256": "b07b6a86957b01d9cd2024470711bfa06b8be8549922b7faa203fd501b436202"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-permission_revoked.png",
+        "sha256": "087f1beec5c0b6eb3474c31e1e5fdcff3369b6ccb93169f6b81abe84d5547b47"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-permission_revoked-details.png",
+        "sha256": "eda77b173948153ecb53c0cdfc4028cb204c5c634a4e4227e87175b69948cae7"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-unavailable.png",
+        "sha256": "8770b8caf08183f8862ed9d3c97954ef39b21a51f01a503aacb66aa12b69141c"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-target_closed.png",
+        "sha256": "4eb707aa2a80b56878cb60ab6361037dfde7a58dcfb67cba3429cbeae1ece52e"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/state-identity_error.png",
+        "sha256": "7c9c5131509130c6e1e9a7120376a95ed1ce0c9171ffa4879df9db15f1d2c295"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/dark-zoom200.png",
+        "sha256": "7cba49c8049b86f18b7c603b9fa1c98e3d54970acc794197b32118354ccff53e"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/dark-zoom200-details.png",
+        "sha256": "0f886fea793875af367dc3036ebc3f051fa16b16159486544c93aff60c737fe4"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/light-zoom200.png",
+        "sha256": "d16ad42fbb09a3955da646d84d3bcb07a2bdb84ceb75e51d28bc351381fa5508"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/light-zoom200-details.png",
+        "sha256": "ffe67223188f2220f1238a0ad88c7244c3bf8eaaf6b0a378f82ce75d2e9df74f"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/session-owner.png",
+        "sha256": "ad50997bca38c1b024e9f9931362eb084c2743bab4fcb9292d50da0a25f74ba0"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/record-origin.png",
+        "sha256": "ad50997bca38c1b024e9f9931362eb084c2743bab4fcb9292d50da0a25f74ba0"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/verified-condition.png",
+        "sha256": "ea5c464678dfda7e6990c11fe2b5864125bd7e2638d84f5172b25da7fc915e4c"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/phone-390.png",
+        "sha256": "2781edd5fb8eed5ce863eeae6c6f98d2f840414ecd18222cfc682d87717bfba5"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/narrow-details-200.png",
+        "sha256": "1430e639d08a8cb391535c6a3d9d9e09933dcffbefda8a69656d0819237df073"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/run-1793766998828/narrow-details-200-details.png",
+        "sha256": "83771db65b1c0cecc75cbe9de8abc2d926d273f2051811bc1217f0954cd6a8ea"
+      }
+    ],
+    "scope": "Only proposed source/browser design behavior is checked. It is neither an approved reference nor product/Native/game evidence.",
+    "focused_history_receipt": {
+      "path": ".build/gate-closure-20261104/design-resolution/pc04-history-1793766997214/verification.json",
+      "sha256": "fc85fa423414a2ea296e59f708e103b0a93a28935dcc11343b26d357471463f3"
+    },
+    "focused_history_cases": 5,
+    "focused_history_assertions": 34,
+    "clipboard_assertions": 6,
+    "total_assertions": 381,
+    "focused_history_images": [
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/pc04-history-1793766997214/resume-starting-details.png",
+        "sha256": "616ad7ed1218acaccacf5dc8b9be03d1e4b141bf69dbb38f7661e5cb82e04523"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/pc04-history-1793766997214/revoked-history-details.png",
+        "sha256": "1841501384c7834a2e036e1b47c637af476935ac8fef87945792687bb488ff58"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/pc04-history-1793766997214/closed-history-details.png",
+        "sha256": "3ffd2e7860f66e82198e442c0b9ea4abacf10f01198ab9354d511f567ace1561"
+      },
+      {
+        "path": ".build/gate-closure-20261104/design-resolution/pc04-history-1793766997214/first-start-details.png",
+        "sha256": "180e082939e1faa0050a0d7e899876a33e10e9b1c5bfccdb90b5fe54b6a8e677"
+      }
+    ]
+  },
+  "preserved_prior_attempts": [
+    "run-1793764673212: setup fixture incomplete, failed22 cases; original source not changed",
+    "run-1793764991687: duplicate review-control selector, failed6 cases; scoped to proposed host, original comparison made aria-hidden+inert",
+    "run-1793765073257: 22 layout cases passed; manual screenshot review found an intrinsic image crop. Added explicit img bounds/contain assertions and constrained the image child before final QA.",
+    "clipboard-attempt1-unobserved-restore.json: superseded receipt, restore observation added before final success",
+    "pc04-before/: complete prior five-source candidate, identity and old browser/clipboard receipts retained. Independent review found resume-starting erased known history despite static layout checks passing; the new focused five-case/34-assertion interaction receipt closes that specific semantic gap. No prior result is relabelled as coverage of this fix."
+  ],
+  "activation": "No current target,source-version resolver,approval record,old37 PNG,token orthreshold is modified by this candidate."
+}

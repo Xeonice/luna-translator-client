@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "plan-layered-first-product-validation",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/plan-layered-first-product-validation/**",
+    "openspec/active-change.json",
+    "package.json",
+    "README.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/**",
+    "scripts/quality/verify.py",
+    "scripts/quality/test_plan_contract.py",
+    "scripts/quality/test_test_plan_contract.py",
+    "scripts/quality/render_test_plan.py",
+    "scripts/quality/test_render_test_plan.py",
+    "scripts/report/build_engineering_baseline_report.py",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/first-product-test-plan.json",
+    "docs/development/first-product-test-matrix.csv",
+    "docs/development/first-product-test-executions.csv",
+    "docs/development/first-product-test-coverage.csv",
+    "docs/development/first-product-test-enablement.csv",
+    "docs/development/first-product-test-layers.svg",
+    "scripts/report/build_test_case_report.py",
+    "scripts/report/test_case_feature_summaries.json"
+  ],
+  "source_snapshot": "openspec/changes/plan-layered-first-product-validation/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "TPG-001",
+      "spec": "specs/layered-test-planning/spec.md",
+      "scenario": "missing-or-weakened-acceptance",
+      "checks": [
+        "test-plan-contract",
+        "test-plan-contract-tests"
+      ]
+    },
+    {
+      "id": "TPG-002",
+      "spec": "specs/layered-test-planning/spec.md",
+      "scenario": "invalid-layer-or-environment",
+      "checks": [
+        "test-plan-contract-tests"
+      ]
+    },
+    {
+      "id": "TPG-003",
+      "spec": "specs/layered-test-planning/spec.md",
+      "scenario": "premature-product-pass",
+      "checks": [
+        "test-plan-contract-tests"
+      ]
+    },
+    {
+      "id": "TPG-004",
+      "spec": "specs/layered-test-planning/spec.md",
+      "scenario": "edited-execution-table",
+      "checks": [
+        "test-plan-export-identity",
+        "test-plan-export-tests"
+      ]
+    },
+    {
+      "id": "TPG-005",
+      "spec": "specs/layered-test-planning/spec.md",
+      "scenario": "product-source-mutated-by-planning",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    }
+  ]
+}

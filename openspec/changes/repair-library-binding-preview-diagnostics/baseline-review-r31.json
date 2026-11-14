@@ -1,0 +1,12 @@
+{
+  "kind": "R31_baseline_review_pending",
+  "status": "candidate_waiting_independent_review",
+  "parent_baseline_sha256": "a6cd5a0f387ec9a9e2e235c5e145375e2b60317425742b2709b2012c3ca2ff4d",
+  "exact_delta_review": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/exact-delta-review-r31.json",
+    "sha256": "313a6b5318baacd5da1892630ac55b387c4db57087ebd203a5d2bed2a4bfd065"
+  },
+  "independent_review": "not_run",
+  "root_actual_adoption": "not_performed",
+  "product_acceptance_promoted": false
+}

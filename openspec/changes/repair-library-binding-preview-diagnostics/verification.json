@@ -1,0 +1,616 @@
+{
+  "schema_version": 1,
+  "id": "repair-library-binding-preview-diagnostics",
+  "kind": "product",
+  "status": "planned",
+  "allowed_paths": [
+    "openspec/changes/repair-library-binding-preview-diagnostics/**",
+    "crates/app-infra/src/hook_backend.rs",
+    "crates/app-core/src/ports/runtime.rs",
+    "crates/app-infra/src/storage/queries/session_records.rs",
+    "crates/app-infra/tests/session_records_batch.rs",
+    "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+    "apps/desktop/src/features/library/LibraryScreen.tsx",
+    "apps/desktop/src/features/library/styles.module.css",
+    "apps/desktop/src/features/capture/CaptureSheet.tsx",
+    "apps/desktop/src/features/capture/WindowPreview.tsx",
+    "apps/desktop/src/features/capture/styles.module.css",
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/tests/visual/verify-ui.mjs",
+    "apps/desktop/tests/visual/verify-library-binding.mjs",
+    "docs/product/README.md",
+    "docs/product/first-product-scope.md",
+    "docs/product/game-library-window-prd.md",
+    "docs/product/reading-window-session-prd.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/design/first-product-v1/app.js",
+    "docs/design/first-product-v1/game-library.js",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/design/first-product-v1/review-gaps.js",
+    "docs/design/first-product-v1/review-gaps.css",
+    "docs/product/game-library-window-acceptance.csv",
+    "docs/product/reading-window-session-acceptance.csv",
+    "scripts/report/verify_game_onboarding_cases.cjs",
+    "scripts/report/verify_interaction_gap_design.cjs",
+    "scripts/report/verify_first_product_design.cjs",
+    "crates/app-core/src/application/session_records.rs",
+    "crates/app-core/src/contracts/mod.rs",
+    "crates/app-core/src/contracts/window_capabilities.rs",
+    "crates/app-core/src/ports/mod.rs",
+    "crates/app-core/src/application/mod.rs",
+    "crates/app-core/src/application/runtime.rs",
+    "crates/app-infra/src/platform/mod.rs",
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/src/storage/queries/mod.rs",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/ipc/mod.rs",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview.rs",
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "crates/app-core/src/contracts/game_assets.rs",
+    "crates/app-core/src/application/game_assets.rs",
+    "crates/app-infra/src/platform/game_assets.rs",
+    "crates/app-infra/src/platform/game_paths.rs",
+    "crates/app-infra/src/storage/queries/game_assets.rs",
+    "crates/app-infra/tests/game_assets.rs",
+    "apps/desktop/src-tauri/src/ipc/game_assets.rs",
+    "apps/desktop/src/bridge/contracts.generated.ts",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "crates/app-infra/src/platform/game_launch.rs",
+    "crates/app-infra/tests/application_runtime.rs",
+    "apps/desktop/src-tauri/src/ipc/queries.rs",
+    "apps/desktop/src/features/reading/styles.module.css",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "scripts/quality/reading_components.py",
+    "scripts/quality/product_execution.py",
+    "openspec/specs/first-product/spec.md",
+    "openspec/specs/game-onboarding/spec.md",
+    "scripts/quality/test_reading_components.py",
+    "apps/desktop/src-tauri/resources/language-worker",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/reading-window-test-coverage.json",
+    "docs/development/first-product-test-plan.json",
+    "docs/development/first-product-test-executions.csv",
+    "openspec/technology-lock.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261021-R30.json",
+    "crates/app-infra/src/storage/queries/capture.rs",
+    "docs/architecture/database/v2/storage-acceptance.json",
+    "docs/architecture/database/v2/storage-review.json",
+    "docs/development/baselines/FP1-20261021-R31.json",
+    "docs/development/iterations/FP1-20261021-runtime-followup/plan.md",
+    "apps/desktop/tests/support/bootstrap.tsx",
+    "crates/app-infra/tests/history_queries.rs",
+    "crates/app-infra/tests/storage_product.rs",
+    "crates/hook-client/src/window_binding.rs",
+    "crates/lunahook-host/examples/target_probe.rs",
+    "scripts/quality/test_product_execution.py",
+    "apps/desktop/src-tauri/resources/brokers/x86/target_probe.exe",
+    "apps/desktop/src-tauri/resources/brokers/x64/target_probe.exe",
+    "apps/desktop/src-tauri/resources/core-staging-receipt.json",
+    "crates/hook-client/src/lib.rs",
+    "scripts/quality/window_title_proof_api.py",
+    "scripts/quality/fixtures/window_title_fixture.c",
+    "docs/development/baselines/FP1-20261021-R32.json",
+    "docs/development/baselines/FP1-20261021-R33.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-library-binding-preview-diagnostics/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "product_runtime_checks": [],
+  "implementation_paths_status": "root_authorized_exact_paths_with_independent_review_before_baseline_adoption",
+  "product_acceptance_status": "not_run",
+  "requirements": [
+    {
+      "id": "REQ-038",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "real-cover-asset-roundtrip",
+      "source_requirement_ids": [
+        "REQ-038",
+        "FP-02",
+        "REQ-043"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M01",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C11",
+        "C12",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-infra-tests",
+        "product-core-tests",
+        "product-reading-component-tests",
+        "product-native-ipc-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "one-confirmation-association-and-hook",
+      "source_requirement_ids": [
+        "REQ-002",
+        "REQ-004",
+        "GL-11",
+        "GL-12",
+        "GL-13",
+        "GL-14",
+        "GL-15",
+        "GL-17",
+        "GL-18",
+        "GL-19",
+        "GL-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C05",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-02",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "running-game-only-entrypoints",
+      "source_requirement_ids": [
+        "REQ-037",
+        "FP-02",
+        "GL-01",
+        "GL-06",
+        "GL-19"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M13"
+      ],
+      "component_ids": [
+        "C09",
+        "C11",
+        "C13"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-reading-component-tests",
+        "product-native-ipc-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "RW-01",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "automatic-session-owned-preview",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C35",
+        "C34"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "REQ-052",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "useful-native-diagnostics-without-raw-noise",
+      "source_requirement_ids": [
+        "FP-12",
+        "FP-09",
+        "REQ-052",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/original/docs/01-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M02",
+        "M10",
+        "M14",
+        "M15",
+        "M13"
+      ],
+      "component_ids": [
+        "C36",
+        "C33"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-reading-component-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "RW-01",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "native-title-proof-fails-closed-before-write",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-compile",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-window-title-proof-api-tests"
+      ]
+    },
+    {
+      "id": "REQ-052",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "window-title-proof-errors-remain-explicit",
+      "source_requirement_ids": [
+        "FP-12",
+        "REQ-052",
+        "RW-17",
+        "RW-18",
+        "RW-19"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-compile",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-window-title-proof-api-tests"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "natural-disconnect-cleans-only-owned-session",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12",
+        "REQ-052",
+        "RW-01",
+        "RW-02",
+        "RW-04",
+        "RW-17",
+        "RW-18",
+        "RW-19"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#connection-sheet",
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M02",
+        "M10",
+        "M12",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-compile",
+        "product-hook-client-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-09",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "following-typed-snapshot-expiry-recovers-once",
+      "source_requirement_ids": [
+        "FP-07",
+        "FP-09",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-09",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "paused-or-invalid-range-requires-explicit-latest",
+      "source_requirement_ids": [
+        "FP-07",
+        "FP-09",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-09",
+      "spec": "specs/library-binding-preview-diagnostics/spec.md",
+      "scenario": "history-recovery-isolated-from-stale-and-general-errors",
+      "source_requirement_ids": [
+        "FP-07",
+        "FP-09",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    }
+  ]
+}

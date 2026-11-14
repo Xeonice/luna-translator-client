@@ -1,0 +1,36 @@
+.source{line-height:1.85;letter-spacing:.01em;white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;line-break:strict}.token{display:inline;position:relative;padding:0;margin:0;min-height:0;border:0;background:transparent;font:inherit;line-height:inherit;color:inherit;white-space:pre-wrap;border-radius:3px;vertical-align:baseline}.token:not(:disabled):hover{background:var(--material-control-hover)}.token:focus-visible{outline:1px solid var(--material-accent);outline-offset:4px}.token:disabled{opacity:1}.token rt{font-size:.53em;font-weight:400;letter-spacing:.03em;line-height:inherit;color:inherit;user-select:none}.pos:after{content:'';position:absolute;bottom:-3px;left:50%;width:3px;height:3px;border-radius:50%;background:var(--material-text-tertiary);opacity:.75}.card{padding:18px;border:1px solid var(--material-line);border-radius:13px;background:var(--material-inset-fill)}.card h3{font-size:22px;margin:0 0 6px}.card p{font-size:12px;line-height:1.8;color:var(--material-text-secondary)}.card small{color:var(--material-text-tertiary);font-size:11px}.entries{list-style:none;padding:0;margin:18px 0}.entries>li{border-top:1px solid var(--material-line);padding:14px 0;font-size:13px;line-height:1.85}.entries small{display:block;margin-top:8px;font-size:10px;color:var(--material-text-tertiary)}
+.popover{width:340px;max-width:calc(100vw - 32px);max-height:min(560px,80vh);overflow:auto;background:var(--material-menu-fill);border:1px solid var(--material-outline);border-radius:13px;box-shadow:var(--material-window-shadow),inset 0 1px var(--material-glint);backdrop-filter:blur(var(--material-blur)) saturate(var(--material-saturation));z-index:120}.wordDialog{outline:none;padding:16px 18px}.wordDialog>header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.wordDialog h3{margin:0;font-size:22px;line-height:1.6}.wordDialog>p{font-size:12px;line-height:1.8;color:var(--material-text-secondary)}.wordDialog>small{font-size:10px;color:var(--material-text-tertiary)}.wordDialog footer{display:flex;gap:7px;padding-top:17px;margin-top:17px;border-top:1px solid var(--material-line)}.entries p{margin:7px 0;font-size:13px;line-height:1.8}
+.highlight,.token[data-highlighted]{background:var(--material-selected-fill);box-shadow:0 1px 0 var(--material-accent);color:var(--material-text);border-radius:3px}
+
+.typographicGroup{white-space:nowrap}
+
+.nativeCard{width:100%;height:100%;display:flex;flex-direction:column;overflow:hidden;background:var(--material-menu-fill);border:1px solid var(--material-outline);border-radius:13px;box-shadow:inset 0 1px var(--material-glint);backdrop-filter:blur(var(--material-blur)) saturate(var(--material-saturation));padding:14px 16px}.nativeCard>header{flex:none;display:flex;align-items:center;justify-content:space-between;padding-bottom:10px}.nativeCardBody{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable}.nativeCardBody h3{font-size:22px;margin:0;line-height:1.6}.nativeCardBody>p{font-size:12px;line-height:1.8;color:var(--material-text-secondary)}.nativeCardBody>small{font-size:10px;color:var(--material-text-tertiary)}.nativeCard>footer{flex:none;display:flex;gap:7px;padding-top:12px;margin-top:10px;border-top:1px solid var(--material-line)}
+
+.rubySource{line-height:2.2}
+
+/* Native temporary dictionary surface follows the authored learning-card design. */
+.nativeCard{padding:14px 17px}.nativeCard>header>span{font-size:10px;color:var(--material-text-secondary)}.nativeCard>header>button{min-height:24px;padding:2px 4px;border:0}.nativeCard>header>button>svg{width:16px;height:16px}.nativeCardBody>h3{font-size:26px;font-weight:500;letter-spacing:.04em;line-height:1.4}.nativeCardBody>p{font-size:13px;line-height:1.85}.nativeCardBody>h3+p{font-size:12px;margin:6px 0 12px}.nativeCardBody>small{display:block;line-height:1.7;margin:12px 0;overflow-wrap:anywhere}.wordFacts{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:11px;color:var(--material-text-secondary);margin:0 0 12px}.wordFacts>div{display:flex;gap:5px}.wordFacts dt,.wordFacts dd{margin:0}.nativeCard .entries{margin:0}.nativeCard .entries h4{font-size:18px;font-weight:550;margin:0}.nativeCard .entries header{margin-bottom:8px}.nativeCard .entries header p{font-size:12px;color:var(--material-text-secondary);margin:4px 0}.nativeCard .entries p{margin:5px 0;font-size:13px;line-height:1.85}.nativeCard .entries>li{padding:14px 0}.nativeCard .entries small{margin-top:10px;line-height:1.8}.nativeCard .entries details{margin-top:8px;padding-top:8px;border-top:1px solid var(--material-line);font-size:10px}.nativeCard .entries summary{font-size:10px}.nativeCard>footer>button{font-size:11px;padding:4px 8px;min-height:28px;gap:5px}.nativeCard>footer>button>svg{width:14px;height:14px}
+
+.token ruby{ruby-align:center}
+
+/* Native dictionary typography and uninterrupted attribution flow. */
+.nativeCardBody{scrollbar-gutter:auto}
+.nativeCardBody>h3+p{font-size:13px}
+.nativeCardBody>.emptyDefinition{padding:12px 0 16px;margin:0}
+.nativeCard .entries details{border-top:0}
+.nativeCard .entries details small{font-size:10px;line-height:1.85;margin:5px 0}
+
+/* Dictionary entries keep each sense and its source in uninterrupted reading flow. */
+.nativeCard .entries>li{line-height:1.5}
+.nativeCard .entries article>span{display:inline-block;padding:2px 6px;margin:4px 0;line-height:1.5}
+.nativeCard .entries .usage{font-size:11px;line-height:1.5;margin:0;color:var(--material-text-secondary)}
+.nativeCard .entries details{line-height:1.5;border-top:1px solid var(--material-line)}
+.nativeCard .entries details>p{font-size:10px;line-height:1.85;margin:5px 0;color:var(--material-text)}
+
+/* Ruby-only spans preserve source flow without creating clickable segmentation
+   or POS affordances. Original whitespace and punctuation remain unmodified. */
+.rubyToken{ruby-align:center}.rubyToken rt{font-size:.53em;font-weight:400;letter-spacing:.03em;line-height:inherit;color:inherit;user-select:none}
+.lexicalNotice{font-size:10px;line-height:1.7;color:var(--material-text-secondary);margin:8px 0 0}.lexicalNotice button{min-height:20px;padding:0 3px;background:transparent;border:0;box-shadow:none;font:inherit;color:inherit}
+
+/* Reviewed lexical marks use the same restrained semantic colors as the design. */
+.token{padding:0 1px;margin:0 1px}.posNoun:after{background:rgba(155,175,196,.85)}.posVerb:after{background:rgba(182,163,194,.8)}.posParticle:after{background:rgba(189,176,151,.8)}

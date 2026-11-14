@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "purpose": "First product implementation technology decision FP1-IMPLEMENT-20261019; exact manifests and resources, with prior PoC technology lock archived. This does not approve visual layout or product release.",
+  "approved_stack": {
+    "packages": {
+      "react": "19",
+      "typescript": "5.9",
+      "@tauri-apps/api": "2",
+      "@tauri-apps/cli": "2",
+      "react-dom": "19",
+      "vite": "8",
+      "react-aria-components": "1.22.1"
+    },
+    "cargo": {
+      "tauri": "2",
+      "tokio": "1.53.3",
+      "rusqlite": "0.40.2",
+      "ts-rs": "12.0.1",
+      "reqwest": "0.13.5",
+      "eventsource-stream": "0.2.3",
+      "security-framework": "3.7.0"
+    },
+    "rust": {
+      "edition": "2024",
+      "rust-version": "1.89"
+    }
+  },
+  "manifests": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "af6cf530a4f437da667937408973dd5739a675af750a6ce72f865159ed50d26b"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "6d4bab1ffdc86799aa31bc9b2b0975597591aae0739cfd6051330785ac9095de"
+    },
+    {
+      "path": "apps/desktop/package-lock.json",
+      "sha256": "b85c1c7cbb9a4c6249920022220646cda99fe76fa7ba2237ff5b8e7e3da06a81"
+    },
+    {
+      "path": "apps/desktop/package.json",
+      "sha256": "cac29206c7a906039be6e5dcc82d5507d4f6cb5015607a7f956d00bd58fa74a4"
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "sha256": "f3d69cc7c8444c6aefc5e3d0c88f78ea1a4d59e29062361640076b54304e3c40"
+    },
+    {
+      "path": "apps/desktop/src-tauri/tauri.conf.json",
+      "sha256": "f8305aa09d4b6ca6db71096ac8aeac6684d0ca6be6eb3f6cf117d30d925b6f8b"
+    },
+    {
+      "path": "apps/desktop/tests/tsconfig.json",
+      "sha256": "74159d77d58de2326f4041b93292d0c8a739a89dc3ee7c64fbf754a83dacd3d1"
+    },
+    {
+      "path": "apps/desktop/tests/visual/vite.config.ts",
+      "sha256": "f174491c629e12ee31ee7526325966ab2f253da29b88844eacd11d6871138962"
+    },
+    {
+      "path": "apps/desktop/tsconfig.json",
+      "sha256": "954da1b2bd90ef309404729e44d790d863f42be585e3a28cdb4159e06421d6d9"
+    },
+    {
+      "path": "apps/desktop/vite.config.ts",
+      "sha256": "0792349c0770924d43c2eb0dee4d07d321ddbb6e04a09ea3b59ff83647c63cc2"
+    },
+    {
+      "path": "crates/app-core/Cargo.toml",
+      "sha256": "47b4c1d2149c8d93eb19bcbee1c8c36c372e86f375ac32ced445a391d8e46ef1"
+    },
+    {
+      "path": "crates/app-infra/Cargo.toml",
+      "sha256": "2dbe09345cca023bc098ac06f8eee5d46845138a17baf2dec454d0a59fac6a87"
+    },
+    {
+      "path": "crates/hook-client/Cargo.toml",
+      "sha256": "acd835ab56449ccba0907090447f6eeabe4526b89a5cc1e1bbea7ec3f2ed2cdb"
+    },
+    {
+      "path": "crates/hook-contracts/Cargo.toml",
+      "sha256": "5ec8a675247c6c5d97040a840d4abf916fc9de8037ae3bc2c28cf6a78a5f318b"
+    },
+    {
+      "path": "crates/language-worker/Cargo.toml",
+      "sha256": "7a222fc17c72adaab5d548af9c720c5c7eaf7fd681d2abc09a5dc29ac2eda94c"
+    },
+    {
+      "path": "crates/lunahook-host/Cargo.toml",
+      "sha256": "8ca8bdf8bc2e4b09a8cb0835d3c273056538e830e4e268e774d3ace7a91d121f"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "fd2ea4d7178e704b3452a556ee60cd224ffc69e8053fcdd9b1c039741346e4ae"
+    }
+  ],
+  "design_sources": [
+    {
+      "path": "docs/design/macos-material-case-v1/index.html",
+      "sha256": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.css",
+      "sha256": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.js",
+      "sha256": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/style-guide.md",
+      "sha256": "fd143b5ca2bc79fcaa31c026ca6602daf357de49a2f4a89b7b8ec2b1125ee492"
+    }
+  ]
+}

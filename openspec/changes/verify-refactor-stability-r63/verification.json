@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "id": "verify-refactor-stability-r63",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/verify-refactor-stability-r63/**"
+  ],
+  "source_snapshot": "openspec/changes/verify-refactor-stability-r63/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-12",
+      "spec": "specs/stability-verification/spec.md",
+      "scenario": "real-four-game-cold-discovery-reading-drain-card-and-sleep-wake",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M04",
+        "M07",
+        "M10",
+        "M12",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C11",
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "lifecycle-impact-execution",
+        "product-packaged-stability-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "product_runtime_checks": [
+    "product-packaged-stability-tests"
+  ],
+  "product_acceptance_status": "not_run"
+}

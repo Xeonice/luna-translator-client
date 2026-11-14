@@ -1,0 +1,3597 @@
+{
+  "schemaVersion": 4,
+  "status": "proposal_pending_independent_review",
+  "states": [
+    {
+      "id": "empty-library",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "add-game",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 837
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 348,
+              "clientHeight": 489,
+              "scrollHeight": 837
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "target-review",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 357,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings-connections",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 609,
+              "scrollHeight": 1117
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 508,
+              "clientHeight": 609,
+              "scrollHeight": 1117
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-hud",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 560,
+            "height": 172
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 172
+          },
+          "expectedSize": [
+            560,
+            172
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 0,
+              "clientHeight": 112,
+              "scrollHeight": 112
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "learning-fixed",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 600,
+            "height": 670
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 600,
+            "height": 670
+          },
+          "expectedSize": [
+            600,
+            670
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 0,
+              "clientHeight": 503,
+              "scrollHeight": 577
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 600,
+            "height": 670
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 600,
+            "height": 670
+          },
+          "expectedSize": [
+            600,
+            670
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 74,
+              "clientHeight": 503,
+              "scrollHeight": 577
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "library-batch",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 880
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 391,
+              "clientHeight": 489,
+              "scrollHeight": 880
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "display-preferences",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 560,
+            "height": 366
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 366
+          },
+          "expectedSize": [
+            560,
+            366
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 0,
+              "clientHeight": 306,
+              "scrollHeight": 337
+            },
+            {
+              "selector": "[role=\"menu\"]",
+              "top": 0,
+              "clientHeight": 164,
+              "scrollHeight": 164
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 560,
+            "height": 366
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 366
+          },
+          "expectedSize": [
+            560,
+            366
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 31,
+              "clientHeight": 306,
+              "scrollHeight": 337
+            },
+            {
+              "selector": "[role=\"menu\"]",
+              "top": 0,
+              "clientHeight": 164,
+              "scrollHeight": 164
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model-scheduling",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 609,
+              "scrollHeight": 796
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 187,
+              "clientHeight": 609,
+              "scrollHeight": 796
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "connection-proxy",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 609,
+              "scrollHeight": 932
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 323,
+              "clientHeight": 609,
+              "scrollHeight": 932
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history-earlier",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "wordcard-native-size",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "constrained-workarea",
+          "viewport": {
+            "width": 560,
+            "height": 290
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 290
+          },
+          "expectedSize": [
+            560,
+            290
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 159,
+              "scrollHeight": 224
+            }
+          ]
+        },
+        {
+          "variantId": "resource-footer",
+          "viewport": {
+            "width": 560,
+            "height": 290
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 290
+          },
+          "expectedSize": [
+            560,
+            290
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 65,
+              "clientHeight": 159,
+              "scrollHeight": 224
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "source-a-attribution",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 130,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "second-headword-source",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 438,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-0",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-1",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 125,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-2",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 250,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-3",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 375,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-4",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 500,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "closed-license-bottom",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 536,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ]
+        },
+        {
+          "variantId": "source-b-attribution-footer",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 583,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-0",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-1",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 125,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-2",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 250,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-3",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 375,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-4",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 500,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-bottom",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 583,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-editing",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "saved-global",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 791
+            }
+          ]
+        },
+        {
+          "variantId": "terms-and-footer",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 142,
+              "clientHeight": 649,
+              "scrollHeight": 791
+            }
+          ]
+        },
+        {
+          "variantId": "save-failure-draft-retained",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 791
+            }
+          ]
+        },
+        {
+          "variantId": "save-failure-draft-retained-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 142,
+              "clientHeight": 649,
+              "scrollHeight": 791
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "learning-japanese-linebreak",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "wide18",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 0,
+              "clientHeight": 587,
+              "scrollHeight": 587
+            }
+          ]
+        },
+        {
+          "variantId": "narrow200percent",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 900
+          },
+          "expectedSize": [
+            390,
+            900
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 0,
+              "clientHeight": 733,
+              "scrollHeight": 763
+            }
+          ]
+        },
+        {
+          "variantId": "narrow200percent-bottom",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 900
+          },
+          "expectedSize": [
+            390,
+            900
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 30,
+              "clientHeight": 733,
+              "scrollHeight": 763
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-current-body",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 1436
+            },
+            {
+              "selector": "[role=log]",
+              "top": 0,
+              "clientHeight": 145,
+              "scrollHeight": 145
+            }
+          ]
+        },
+        {
+          "variantId": "region0-page1",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 650,
+              "clientHeight": 674,
+              "scrollHeight": 1436
+            },
+            {
+              "selector": "[role=log]",
+              "top": 0,
+              "clientHeight": 145,
+              "scrollHeight": 145
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 762,
+              "clientHeight": 674,
+              "scrollHeight": 1436
+            },
+            {
+              "selector": "[role=log]",
+              "top": 0,
+              "clientHeight": 145,
+              "scrollHeight": 145
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-current-extraction",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 674
+            },
+            {
+              "selector": "[role=log]",
+              "top": 0,
+              "clientHeight": 233,
+              "scrollHeight": 233
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-current-hook-events",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 873
+            },
+            {
+              "selector": "[role=log]",
+              "top": 407,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 199,
+              "clientHeight": 674,
+              "scrollHeight": 873
+            },
+            {
+              "selector": "[role=log]",
+              "top": 0,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        },
+        {
+          "variantId": "region1-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 873
+            },
+            {
+              "selector": "[role=log]",
+              "top": 407,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "library-populated",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 883
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"main-content\"]",
+              "top": 209,
+              "clientHeight": 674,
+              "scrollHeight": 883
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "target-review-preview-off",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 357,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "target-review-preview-live",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 357,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings-shortcuts-active",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"preferences\"]",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 1377
+            }
+          ]
+        },
+        {
+          "variantId": "region0-page1",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"preferences\"]",
+              "top": 625,
+              "clientHeight": 649,
+              "scrollHeight": 1377
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"preferences\"]",
+              "top": 728,
+              "clientHeight": 649,
+              "scrollHeight": 1377
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings-shortcuts-conflict",
+      "surfaceKind": "full-window",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"preferences\"]",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 1439
+            }
+          ]
+        },
+        {
+          "variantId": "region0-page1",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"preferences\"]",
+              "top": 625,
+              "clientHeight": 649,
+              "scrollHeight": 1439
+            }
+          ]
+        },
+        {
+          "variantId": "region0-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"preferences\"]",
+              "top": 790,
+              "clientHeight": 649,
+              "scrollHeight": 1439
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hud-toolbar-560",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 560,
+            "height": 172
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 172
+          },
+          "expectedSize": [
+            560,
+            172
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "hud-toolbar-500",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 500,
+            "height": 165
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 500,
+            "height": 165
+          },
+          "expectedSize": [
+            500,
+            165
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "hud-ruby-only",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 560,
+            "height": 172
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 172
+          },
+          "expectedSize": [
+            560,
+            172
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "hud-lexical-error",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 560,
+            "height": 193
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 193
+          },
+          "expectedSize": [
+            560,
+            193
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "select-normal",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[data-select-panel]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 59,
+            "width": 340,
+            "height": 156
+          },
+          "expectedSize": [
+            340,
+            156
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "select-long-list",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[data-select-panel]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 59,
+            "width": 340,
+            "height": 286
+          },
+          "expectedSize": [
+            340,
+            286
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "preview-off",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[aria-label=\"运行窗口预览\"]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 282,
+            "height": 346
+          },
+          "expectedSize": [
+            282,
+            346
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "preview-live",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[aria-label=\"运行窗口预览\"]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 282,
+            "height": 346
+          },
+          "expectedSize": [
+            282,
+            346
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "preview-paused",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[aria-label=\"运行窗口预览\"]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 282,
+            "height": 346
+          },
+          "expectedSize": [
+            282,
+            346
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "preview-permission",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[aria-label=\"运行窗口预览\"]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 282,
+            "height": 346
+          },
+          "expectedSize": [
+            282,
+            346
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "preview-unavailable",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[aria-label=\"运行窗口预览\"]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 282,
+            "height": 346
+          },
+          "expectedSize": [
+            282,
+            346
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "preview-exited",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 800,
+            "height": 900
+          },
+          "selector": "[aria-label=\"运行窗口预览\"]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 282,
+            "height": 346
+          },
+          "expectedSize": [
+            282,
+            346
+          ],
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "session-extraction",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 1040,
+            "height": 1200
+          },
+          "selector": "[data-reviewed-session-surface]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 848,
+            "height": 484.140625
+          },
+          "expectedSize": [
+            848,
+            485
+          ],
+          "scrollTop": [
+            {
+              "selector": "[role=log]",
+              "top": 0,
+              "clientHeight": 233,
+              "scrollHeight": 233
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-hook-events",
+      "surfaceKind": "component",
+      "variants": [
+        {
+          "variantId": "default",
+          "viewport": {
+            "width": 1040,
+            "height": 1200
+          },
+          "selector": "[data-reviewed-session-surface]",
+          "expectedBounds": {
+            "x": 24,
+            "y": 24,
+            "width": 848,
+            "height": 728.765625
+          },
+          "expectedSize": [
+            848,
+            729
+          ],
+          "scrollTop": [
+            {
+              "selector": "[role=log]",
+              "top": 407,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "reviewedComponents": [
+    {
+      "id": "hud-toolbar-560",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-07",
+        "RW-25",
+        "RW-33"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "width": 560,
+        "segmentation": true,
+        "ruby": true,
+        "pos": true,
+        "hud": {
+          "segmentation": true,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 560,
+        "height": 172
+      },
+      "sourceFile": "hud-toolbar-560.design.html",
+      "sourceSha256": "50ee610df9de68814532c97619a3cd635f94311646e905237750aa8fe7df6c1c",
+      "file": "hud-toolbar-560.png",
+      "sha256": "6d06848e47c4012a5cdaabc66b3688e0f59c6d94fd717b2d99e46ebcdb7a3125",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 172
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 560,
+        "height": 171.59375
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 560,
+        "height": 172
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 560,
+          "height": 172
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景ふうけいには、悲しさかなしさも、痛みいたみも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-toolbar-560.png",
+      "referenceSha256": "6d06848e47c4012a5cdaabc66b3688e0f59c6d94fd717b2d99e46ebcdb7a3125",
+      "expectedSize": [
+        560,
+        172
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "hud-toolbar-500",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-07",
+        "RW-25",
+        "RW-33"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "width": 500,
+        "preset": "compact",
+        "hud": {
+          "segmentation": true,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 500,
+        "height": 165
+      },
+      "sourceFile": "hud-toolbar-500.design.html",
+      "sourceSha256": "79f0e82380ec55d4633b341023eda1e70742dbfaa26d30efaad6d5513cdbc260",
+      "file": "hud-toolbar-500.png",
+      "sha256": "4edc846022dc247c27f1d19d13066a4e06c9ef3e7603b2739d8a51f20dc4a333",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 500,
+        "height": 165
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 500,
+        "height": 164.1875
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 500,
+        "height": 165
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 500,
+          "height": 165
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景ふうけいには、悲しさかなしさも、痛みいたみも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-toolbar-500.png",
+      "referenceSha256": "4edc846022dc247c27f1d19d13066a4e06c9ef3e7603b2739d8a51f20dc4a333",
+      "expectedSize": [
+        500,
+        165
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "hud-ruby-only",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-27",
+        "RW-28"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "segmentation": false,
+        "ruby": true,
+        "pos": false,
+        "hud": {
+          "segmentation": false,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 560,
+        "height": 172
+      },
+      "sourceFile": "hud-ruby-only.design.html",
+      "sourceSha256": "1f7860ce0d961d56531258310032c00f1e0e73f5d9d2e1b97e0caf4b13c8aefd",
+      "file": "hud-ruby-only.png",
+      "sha256": "5e7f14fb476a89d48ce582b203d225215ff0bd4e916afc51309a5653137046d7",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 172
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 560,
+        "height": 171.59375
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 560,
+        "height": 172
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 560,
+          "height": 172
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景ふうけいには、悲しさかなしさも、痛みいたみも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-ruby-only.png",
+      "referenceSha256": "5e7f14fb476a89d48ce582b203d225215ff0bd4e916afc51309a5653137046d7",
+      "expectedSize": [
+        560,
+        172
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "hud-lexical-error",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-28"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "lexical": "worker_failed",
+        "preserveOriginal": true,
+        "hud": {
+          "segmentation": true,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 560,
+        "height": 193
+      },
+      "sourceFile": "hud-lexical-error.design.html",
+      "sourceSha256": "b666b0b8cec129b05b5c26c450b939601f4f62755f422359d16ebd15db46bb4e",
+      "file": "hud-lexical-error.png",
+      "sha256": "8c8bcac24844dae9a3827c6030d577dd233b13e4255e06c7408f7c31a5ccc95d",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 193
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 560,
+        "height": 192.296875
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 560,
+        "height": 193
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 560,
+          "height": 193
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景には、悲しさも、痛みも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n词法暂不可用，原文已保留。注音与词性待恢复后显示。重试分词\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/hud-lexical-error.png",
+      "referenceSha256": "8c8bcac24844dae9a3827c6030d577dd233b13e4255e06c7408f7c31a5ccc95d",
+      "expectedSize": [
+        560,
+        193
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "select-normal",
+      "state": "default",
+      "kind": "select",
+      "requirements": [
+        "RW-13",
+        "RW-14",
+        "RW-31",
+        "RW-32"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "selected": "body",
+        "rows": 4
+      },
+      "selector": ".luna-select-panel",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "select-normal.design.html",
+      "sourceSha256": "76941fcfd97299d5ae832cf4e0f4a32a94e58cbc204309b4e81825491d3656df",
+      "file": "select-normal.png",
+      "sha256": "7595ee68f8a22dcdae667446029b44fcc736a04a7e15e36559af559c9df24492",
+      "bounds": {
+        "x": 24,
+        "y": 59,
+        "width": 340,
+        "height": 156
+      },
+      "originalBounds": {
+        "x": 518,
+        "y": 441.546875,
+        "width": 340,
+        "height": 156
+      },
+      "underlayOrigin": [
+        494,
+        324.546875
+      ],
+      "surfaceSize": {
+        "width": 340,
+        "height": 156
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 59
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "Artemis · 正文\nArtemis · 界面文本\nGameN7_Steam.exe · Steam · MAGES2 · 长文本来源名称完整显示\n已退出来源 · 不可选择",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/select-normal.png",
+      "referenceSha256": "7595ee68f8a22dcdae667446029b44fcc736a04a7e15e36559af559c9df24492",
+      "expectedSize": [
+        340,
+        156
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "select-long-list",
+      "state": "default",
+      "kind": "select",
+      "requirements": [
+        "RW-13",
+        "RW-14",
+        "RW-31",
+        "RW-32"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "selected": "body",
+        "rows": 44
+      },
+      "selector": ".luna-select-panel",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "select-long-list.design.html",
+      "sourceSha256": "c3d841030bb40e2f92e71454357352c7b2e0d930ce9e098a2db5221ce6f539fd",
+      "file": "select-long-list.png",
+      "sha256": "8064599679becdf89d6c17ec0d947926e2b2eb1666cd516eee1c419516f8c5ab",
+      "bounds": {
+        "x": 24,
+        "y": 59,
+        "width": 340,
+        "height": 286
+      },
+      "originalBounds": {
+        "x": 518,
+        "y": 441.546875,
+        "width": 340,
+        "height": 286
+      },
+      "underlayOrigin": [
+        494,
+        324.546875
+      ],
+      "surfaceSize": {
+        "width": 340,
+        "height": 286
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 59
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "Artemis · 正文\nArtemis · 界面文本\nGameN7_Steam.exe · Steam · MAGES2 · 长文本来源名称完整显示\n已退出来源 · 不可选择\n完整会话来源 1\n完整会话来源 2\n完整会话来源 3\n完整会话来源 4\n完整会话来源 5\n完整会话来源 6\n完整会话来源 7\n完整会话来源 8\n完整会话来源 9\n完整会话来源 10\n完整会话来源 11\n完整会话来源 12\n完整会话来源 13\n完整会话来源 14\n完整会话来源 15\n完整会话来源 16\n完整会话来源 17\n完整会话来源 18\n完整会话来源 19\n完整会话来源 20\n完整会话来源 21\n完整会话来源 22\n完整会话来源 23\n完整会话来源 24\n完整会话来源 25\n完整会话来源 26\n完整会话来源 27\n完整会话来源 28\n完整会话来源 29\n完整会话来源 30\n完整会话来源 31\n完整会话来源 32\n完整会话来源 33\n完整会话来源 34\n完整会话来源 35\n完整会话来源 36\n完整会话来源 37\n完整会话来源 38\n完整会话来源 39\n完整会话来源 40",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/select-long-list.png",
+      "referenceSha256": "8064599679becdf89d6c17ec0d947926e2b2eb1666cd516eee1c419516f8c5ab",
+      "expectedSize": [
+        340,
+        286
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "preview-off",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "off",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "只预览所选窗口，画面不保存、不发送到模型。开启时按平台需要请求屏幕录制权限。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-off.design.html",
+      "sourceSha256": "2f478c5a9811c0a93e2ef741e68bc4bc62e93aa31606c717de9d45654d6a0fd4",
+      "file": "preview-off.png",
+      "sha256": "ef52f7b3d869cb4d0c8ee776c9c5effee115457f14891607077e57cb6f232a16",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n未开启\n查看运行窗口的当前画面\n\n只预览所选窗口，画面不保存、不发送到模型。开启时按平台需要请求屏幕录制权限。\n\n开启窗口预览\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 尚无成功画面\n刷新\n暂停预览",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-off.png",
+      "referenceSha256": "ef52f7b3d869cb4d0c8ee776c9c5effee115457f14891607077e57cb6f232a16",
+      "expectedSize": [
+        282,
+        346
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "preview-live",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "available",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": null,
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-live.design.html",
+      "sourceSha256": "22767a88b21fab7a75fd8de74d2966d1fb8e1561871c9cf2663ac2ac884f80e5",
+      "file": "preview-live.png",
+      "sha256": "0eb72d801f2c056c87cd2b0e67183a723f0abdb2b615dcf59f1e38f4826031d5",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n画面回放\n离线采集回放\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-live.png",
+      "referenceSha256": "0eb72d801f2c056c87cd2b0e67183a723f0abdb2b615dcf59f1e38f4826031d5",
+      "expectedSize": [
+        282,
+        346
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "preview-paused",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "paused",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": null,
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-paused.design.html",
+      "sourceSha256": "155e4b099990ca024444aee4668b5bee3430773c2d8055abdfefd1f8ecd1374a",
+      "file": "preview-paused.png",
+      "sha256": "009416feca6a5c00a0982aadc2048adc118825a4f23d9036531e21659459075a",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n已暂停\n离线采集回放\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n继续预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-paused.png",
+      "referenceSha256": "009416feca6a5c00a0982aadc2048adc118825a4f23d9036531e21659459075a",
+      "expectedSize": [
+        282,
+        346
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "preview-permission",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "permission",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "授权后可刷新画面；当前窗口关联与取文不会因此中断。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-permission.design.html",
+      "sourceSha256": "8cc7b1d4a29e2ef12dda5a165e8e08439958b1e15a8b1eecf9ced8b92fa026cd",
+      "file": "preview-permission.png",
+      "sha256": "b4b3b7ab24ad414625df758320a6793a1f6eead0e324bade46a436b3a92d837c",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n预览不可用\n最后画面 · 离线采集回放\n需要屏幕录制权限\n\n授权后可刷新画面；当前窗口关联与取文不会因此中断。\n\n查看授权说明…\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-permission.png",
+      "referenceSha256": "b4b3b7ab24ad414625df758320a6793a1f6eead0e324bade46a436b3a92d837c",
+      "expectedSize": [
+        282,
+        346
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "preview-unavailable",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "unavailable",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "保留窗口身份，可手动刷新或继续核对进程。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-unavailable.design.html",
+      "sourceSha256": "070efddf9425aa2c6d7e113ebd1ce18a5aa42c32611fb7391c9fbc21957b7c08",
+      "file": "preview-unavailable.png",
+      "sha256": "d63ca99aa7d2ed355f5faa11485daa6c54d595d6b680f7472feb565d7ee5e1ab",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n预览不可用\n最后画面 · 离线采集回放\n暂时无法预览这个窗口\n\n保留窗口身份，可手动刷新或继续核对进程。\n\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-unavailable.png",
+      "referenceSha256": "d63ca99aa7d2ed355f5faa11485daa6c54d595d6b680f7472feb565d7ee5e1ab",
+      "expectedSize": [
+        282,
+        346
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "preview-exited",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "exited",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "已停止刷新并保留会话记录。重新选择运行窗口后继续。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-exited.design.html",
+      "sourceSha256": "a1e38388ca90897a43c8ac06cfde289b3287351aa57a9b40dd14d2f6b644a8d9",
+      "file": "preview-exited.png",
+      "sha256": "bbe19c539c358671ec9d42bb4b982aa4ea5be44f9d56657dc680225a81fc568c",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n预览不可用\n最后画面 · 离线采集回放\n目标窗口已关闭\n\n已停止刷新并保留会话记录。重新选择运行窗口后继续。\n\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/preview-exited.png",
+      "referenceSha256": "bbe19c539c358671ec9d42bb4b982aa4ea5be44f9d56657dc680225a81fc568c",
+      "expectedSize": [
+        282,
+        346
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "session-extraction",
+      "state": "default",
+      "kind": "session",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "dataset": "extraction",
+        "source": "Root-reviewed independent candidate05 typed supplement, canonical-contract corrections",
+        "supplement": {
+          "dataset": "extraction",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "extraction",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "extraction",
+                "sequence": "1",
+                "eventId": "sakura-session-1:raw:1",
+                "sourceId": "sakura-body",
+                "wireSequence": "1",
+                "text": "その風景には、悲しさも、痛みも、なかった。",
+                "observedAtMs": 1792319048000,
+                "reason": "正文",
+                "bodyRefs": [
+                  {
+                    "unitId": "sakura-session-1:event:0",
+                    "textRevision": 1
+                  }
+                ],
+                "payloadRetained": true
+              },
+              {
+                "kind": "extraction",
+                "sequence": "2",
+                "eventId": "sakura-session-1:raw:2",
+                "sourceId": "sakura-secondary",
+                "wireSequence": "2",
+                "text": "セーブ　ロード　設定",
+                "observedAtMs": 1792319048000,
+                "reason": "未选中来源",
+                "bodyRefs": [],
+                "payloadRetained": true
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-extraction-snapshot",
+              "refreshCursor": "opaque-design-refresh-extraction",
+              "highWatermark": "2",
+              "firstAvailable": "1",
+              "lastReceived": "2",
+              "lastPersisted": "2",
+              "retainedFrom": "1",
+              "matchingCount": "2",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "2"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        }
+      },
+      "selector": "#session-history",
+      "viewport": {
+        "width": 1040,
+        "height": 1200
+      },
+      "sourceFile": "session-extraction.design.html",
+      "sourceSha256": "05e2d6a8ff525098700633517f3e2fbd81adbbbcf1cbc0240b405668ee6d4082",
+      "file": "session-extraction.png",
+      "sha256": "ef60fd693f8bbaec2dfe315e2f5586f75f7fdf1bd2d3652d1ba0c4be7f0adcbd",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 848,
+        "height": 484.140625
+      },
+      "originalBounds": {
+        "x": 471,
+        "y": 333.234375,
+        "width": 848,
+        "height": 484.140625
+      },
+      "underlayOrigin": [
+        447,
+        251.234375
+      ],
+      "surfaceSize": {
+        "width": 848,
+        "height": 485
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 1040,
+          "height": 1200
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "本次会话的全部提取文本\n\n所有已接收来源均可查看；未选中的流不进入阅读字幕。\n\n共 2 条\n全部文本来源\n跟随新内容\n导出…\n本次已接收范围均已保存\n本次查看范围固定，晚到内容单独提示\n查看保存范围与接收详情\n#1\nArtemis\n正文\n已形成 1 条正文关联\n18:24:08\n\nその風景には、悲しさも、痛みも、なかった。\n\n查看完整来源\n#2\nArtemis\n未选中来源\n未进入字幕\n18:24:08\n\nセーブ　ロード　設定\n\n查看完整来源\n已显示 2 / 2 条 · 记录 1～2\n已到记录起点",
+      "recordScroll": [
+        {
+          "top": 0,
+          "clientHeight": 233,
+          "scrollHeight": 233
+        }
+      ],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/session-extraction.png",
+      "referenceSha256": "ef60fd693f8bbaec2dfe315e2f5586f75f7fdf1bd2d3652d1ba0c4be7f0adcbd",
+      "expectedSize": [
+        848,
+        485
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    },
+    {
+      "id": "session-hook-events",
+      "state": "default",
+      "kind": "session",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "dataset": "hook_events",
+        "source": "Root-reviewed independent candidate05 typed supplement, canonical-contract corrections",
+        "supplement": {
+          "dataset": "hook_events",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "hook_events",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "hook_event",
+                "sequence": "1",
+                "eventId": "design-hook-1",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "目标核对",
+                "code": "TARGET_VERIFIED",
+                "message": "运行窗口与游戏进程身份已核对",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "2",
+                "eventId": "design-hook-2",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "资源检查",
+                "code": "HOOK_RESOURCE_READY",
+                "message": "取文组件已准备",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "3",
+                "eventId": "design-hook-3",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "Hook 注入",
+                "code": "HOOK_ATTACH_STARTED",
+                "message": "已向所选目标启动接入",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "4",
+                "eventId": "design-hook-4",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "回调握手",
+                "code": "HOOK_HANDSHAKE_READY",
+                "message": "采集端连接已建立",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "5",
+                "eventId": "design-hook-5",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "发现文本流",
+                "code": "STREAM_DISCOVERED",
+                "message": "收到候选来源，保留每次提取事件",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "6",
+                "eventId": "design-hook-6",
+                "operationId": "sakura-session-1:event:0",
+                "sessionId": "sakura-session-1",
+                "sourceId": "sakura-body",
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本回调",
+                "code": "HOOK_TEXT_RECEIVED",
+                "message": "收到文本事件 #1 · 正文来源",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "7",
+                "eventId": "design-hook-7",
+                "operationId": "sakura-session-1:event:0",
+                "sessionId": "sakura-session-1",
+                "sourceId": "sakura-secondary",
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本回调",
+                "code": "HOOK_TEXT_RECEIVED",
+                "message": "收到文本事件 #2 · 未选中来源",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "8",
+                "eventId": "design-hook-8",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本来源",
+                "code": "HOOK_LIFECYCLE_EVENT",
+                "message": "已连接 sakuranouta10th.exe，正文流已选择",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-hook_events-snapshot",
+              "refreshCursor": "opaque-design-refresh-hook_events",
+              "highWatermark": "8",
+              "firstAvailable": "1",
+              "lastReceived": "8",
+              "lastPersisted": "8",
+              "retainedFrom": "1",
+              "matchingCount": "8",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "8"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        }
+      },
+      "selector": "#hook-events",
+      "viewport": {
+        "width": 1040,
+        "height": 1200
+      },
+      "sourceFile": "session-hook-events.design.html",
+      "sourceSha256": "f6e703ae5850994f7180f8f3da2f4d300d3075d4d65080f6c4d8ff69251c0eb4",
+      "file": "session-hook-events.png",
+      "sha256": "8e62fe5e33f7396cd08f6507adbd7e65e87e4a3da3171dbd7dd1702f67497100",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 848,
+        "height": 728.765625
+      },
+      "originalBounds": {
+        "x": 471,
+        "y": 333.234375,
+        "width": 848,
+        "height": 728.765625
+      },
+      "underlayOrigin": [
+        447,
+        251.234375
+      ],
+      "surfaceSize": {
+        "width": 848,
+        "height": 729
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 1040,
+          "height": 1200
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "Hook 接入日志\n\n从目标核对、接入到恢复的事件，按发生顺序保留。\n\n共 8 条\n所有级别\n跟随新内容\n导出…\n本次已接收范围均已保存\n本次查看范围固定，晚到内容单独提示\n查看保存范围与接收详情\n#1\n目标核对\n信息\n18:24:08\n\n运行窗口与游戏进程身份已核对\n\n查看事件详情\n#2\n资源检查\n信息\n18:24:08\n\n取文组件已准备\n\n查看事件详情\n#3\nHook 注入\n信息\n18:24:08\n\n已向所选目标启动接入\n\n查看事件详情\n#4\n回调握手\n信息\n18:24:08\n\n采集端连接已建立\n\n查看事件详情\n#5\n发现文本流\n信息\n18:24:08\n\n收到候选来源，保留每次提取事件\n\n查看事件详情\n#6\n文本回调\n信息\n18:24:08\n\n收到文本事件 #1 · 正文来源\n\n查看事件详情\n#7\n文本回调\n信息\n18:24:08\n\n收到文本事件 #2 · 未选中来源\n\n查看事件详情\n#8\n文本来源\n信息\n18:24:08\n\n已连接 sakuranouta10th.exe，正文流已选择\n\n查看事件详情\n已显示 8 / 8 条 · 记录 1～8\n已到记录起点",
+      "recordScroll": [
+        {
+          "top": 407,
+          "clientHeight": 478,
+          "scrollHeight": 885
+        }
+      ],
+      "notProductRuntime": true,
+      "reference": "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/session-hook-events.png",
+      "referenceSha256": "8e62fe5e33f7396cd08f6507adbd7e65e87e4a3da3171dbd7dd1702f67497100",
+      "expectedSize": [
+        848,
+        729
+      ],
+      "counterpartStatus": "mandatory_actual_comparison",
+      "notPassed": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "design-flat-service-and-session",
+  "parent_baseline_sha256": "2ae180cdb2d3b04dce306e098aaa7a860c021d7fc13b2224f134347c865d5b85",
+  "exact_delta_sha256": "147ac9f60b8de04878c248ce2d90e8dff55e5d9217ae78fe96c657a1a7df3391",
+  "documentation_review": {
+    "path": ".build/flat-design-20261030/review/docs-review.json",
+    "bytes": 4994,
+    "sha256": "57832a443986548705e27581202c559e1ab9eadd85e44b7bbffe8d0333069a27"
+  },
+  "code_review": {
+    "path": ".build/flat-design-20261030/review/tooling-review.json",
+    "bytes": 7177,
+    "sha256": "e97118a232c69e00e7cff4b1504189b164b0cbac113dd35e2d200288814ab646"
+  },
+  "ui_review": {
+    "path": ".build/flat-design-20261030/review/ui-review.json",
+    "bytes": 8248,
+    "sha256": "53576fdd734c36e977f803f4c18a7e748b4d9c65ce046d80c82a8a45b1e05238"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

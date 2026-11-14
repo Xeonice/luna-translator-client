@@ -1,0 +1,629 @@
+{
+  "schema_version": 1,
+  "id": "close-general-page-visual-contract",
+  "kind": "product",
+  "allowed_paths": [
+    "apps/desktop/src/windows/settings/SettingsWindow.tsx",
+    "apps/desktop/src/windows/settings/styles.module.css",
+    "apps/desktop/src/ui/patterns/WindowFrame.tsx",
+    "apps/desktop/src/ui/patterns/window.module.css",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/desktop-client.md",
+    "openspec/changes/close-general-page-visual-contract/proposal.md",
+    "openspec/changes/close-general-page-visual-contract/design.md",
+    "openspec/changes/close-general-page-visual-contract/tasks.md",
+    "openspec/changes/close-general-page-visual-contract/iteration-card.md",
+    "openspec/changes/close-general-page-visual-contract/verification.json",
+    "openspec/changes/close-general-page-visual-contract/source-snapshot.json",
+    "openspec/changes/close-general-page-visual-contract/specs/general-page-alignment/spec.md",
+    "apps/desktop/tests/live-preview/verify-general-settings-structure.mjs",
+    "apps/desktop/src/features/preferences/styles.module.css",
+    "apps/desktop/tests/live-preview/verify-settings-navigation.mjs",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/README.md",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/assets/icons.js",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/assets/material-tokens.css",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/index.html",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-dark-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-dark-1000x720-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-dark-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-dark-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-dark-760x560-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-dark-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-light-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-light-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-light-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/empty-light-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-dark-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-dark-1000x720-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-dark-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-dark-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-dark-760x560-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-dark-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-dark-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-dark-1000x720-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-dark-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-dark-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-dark-760x560-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-dark-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-light-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-light-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-light-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-initial-light-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-light-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-light-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-light-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/loading-light-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/native-context-browser-only-dark.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/native-context-browser-only-light.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-dark-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-dark-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-dark-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-dark-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-light-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-light-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-light-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/normal-light-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-dark-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-dark-1000x720-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-dark-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-dark-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-dark-760x560-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-dark-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-light-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-light-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-light-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/read-error-light-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-dark-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-dark-1000x720-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-dark-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-dark-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-dark-760x560-z2-scrolled.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-dark-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-light-1000x720-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-light-1000x720-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-light-760x560-z1.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/png/save-failed-light-760x560-z2.png",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/qa/capture.mjs",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/qa/report.json",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/settings.html",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/README.md",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/index.html",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/manifest.json",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/settings.css",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/settings.html",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/source/settings.js",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/state-gap.css",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/state-gap.js",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/manifest.json",
+    "docs/design/first-product-v1/candidates/general-state-evidence-20261108/promotion.json",
+    "docs/development/design-approval-general-states-20261108.json",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/visual_verification.rs",
+    "apps/desktop/src-tauri/tauri.visual.conf.json",
+    "apps/desktop/vite.config.ts",
+    "apps/desktop/general-visual.html",
+    "apps/desktop/tests/native/general/native-context.ts",
+    "apps/desktop/tests/native/general/reference-replay.js",
+    "scripts/report/general_visual_assets.mjs",
+    "scripts/report/verify_general_native_visual.py",
+    "apps/desktop/tests/native/general/native-mode.test.mjs",
+    "apps/desktop/src/features/preferences/PreferencesScreen.tsx",
+    "scripts/quality/current_general_visual_authority.py",
+    "scripts/quality/current_general_reference.py",
+    "scripts/quality/current_general_visual_adapter.py",
+    "scripts/quality/current_general_visual_inspect.py",
+    "scripts/quality/current_general_visual_recompute.py",
+    "scripts/report/capture_general_visual_references.mjs",
+    "scripts/report/verify_general_visual_react.mjs",
+    "scripts/quality/test_current_general_visual.py",
+    "apps/desktop/tests/native/general/entry.tsx",
+    "apps/desktop/tests/native/general/general-port.ts",
+    "apps/desktop/tests/native/general/state-contract.ts",
+    "apps/desktop/tests/native/general/fixture-data.json",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/current_reference_catalogue.py",
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/verify.py",
+    "scripts/report/general_visual_webkit_host.swift",
+    "scripts/report/general_visual_webkit.py",
+    "scripts/quality/general_capture_provider.py",
+    "apps/desktop/tests/visual/general-source-capture-provider.mjs",
+    "apps/desktop/tests/tsconfig.json",
+    "docs/design/first-product-v1/README.md",
+    "apps/desktop/src/features/preferences/GeneralSettings.tsx",
+    "docs/development/current-general-reference-catalogue.json",
+    "docs/development/current-general-reference-review.json",
+    "scripts/quality/test_current_design_alignment.py",
+    "apps/desktop/src/ui/primitives/Select.tsx",
+    "apps/desktop/src/ui/primitives/controls.module.css",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "apps/desktop/tests/fixtures/general-visual/legacy-general-descriptors.json",
+    "scripts/quality/test_current_reference_catalogue.py",
+    "docs/README.md",
+    "docs/development/engineering-gates.md",
+    "scripts/quality/general_native_display_probe.swift",
+    "scripts/quality/current_general_native_display.py",
+    "apps/desktop/tests/live-preview/verify-live-preview.mjs",
+    "openspec/technology-lock.json"
+  ],
+  "source_snapshot": "openspec/changes/close-general-page-visual-contract/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "GVC-001",
+      "spec": "specs/general-page-alignment/spec.md",
+      "scenario": "general-shell-and-material-match-approved-source",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "general-settings-source-authority",
+        "general-settings-authority-tests",
+        "general-settings-structure-tests",
+        "general-settings-test-version-tests",
+        "settings-navigation-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/development/design-alignment-and-release.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C04",
+        "C23",
+        "C32",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=settings",
+      "design_supplement": {
+        "supplement_id": "general-settings-structure-20261107",
+        "approval_record": {
+          "path": "docs/development/design-approval-general-settings-20261107.json",
+          "bytes": 9455,
+          "sha256": "4e5fc7f285de9d58d585fb0e0f46df39631ea38a1cfa261b4cb60114969b9989"
+        },
+        "manifest": {
+          "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/manifest.json",
+          "bytes": 5653,
+          "sha256": "efd9e1b52c908a60ddfaa3f4e66c4efb6a8cba494d744db67ea010574005398a"
+        },
+        "entry": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+        "source_count": 6,
+        "viewports": {
+          "narrow": [
+            760,
+            560
+          ],
+          "normal": [
+            1000,
+            720
+          ]
+        },
+        "themes": [
+          "dark",
+          "light"
+        ],
+        "zoom": [
+          1,
+          2
+        ],
+        "evidence_role": "design_source_only"
+      },
+      "test_supersession": {
+        "kind": "approved-general-settings-test-definition-migration/v1",
+        "supplement_id": "general-settings-structure-20261107",
+        "approval_record": {
+          "path": "docs/development/design-approval-general-settings-20261107.json",
+          "bytes": 9455,
+          "sha256": "4e5fc7f285de9d58d585fb0e0f46df39631ea38a1cfa261b4cb60114969b9989"
+        },
+        "authority_check": "general-settings-source-authority",
+        "authority_script": "scripts/quality/current_general_settings_authority.py",
+        "superseded_check": {
+          "id": "settings-layout-refinement-tests",
+          "test": {
+            "path": "apps/desktop/tests/live-preview/verify-settings-layout-refinement.mjs",
+            "sha256": "202f60b66744c93051d47f3bd362d76d9e464d942e5ad181f1faaccf17de1d65",
+            "bytes": 25683
+          },
+          "case_count": 5
+        },
+        "replacement_check": {
+          "id": "general-settings-structure-tests",
+          "test": "apps/desktop/tests/live-preview/verify-general-settings-structure.mjs"
+        },
+        "preserved_obligations": [
+          "Actual WindowRoot components at normal/narrow, dark/light and200 percent with approved source comparison, safe rows and reachable footer",
+          "Exact admitted before-image and source/browser/runtime-preview epochs; retained original red artifacts",
+          "POS disabled while segmentation is off retains its preference, ruby remains independent, save and discard retain real preference semantics",
+          "Failed save, dirty scope lock, per-field game inheritance, restore-draft/save/discard, CAS and stale request isolation",
+          "Always-saved history and real typed history/session navigation; session immediate controls remain in current session, not a duplicate general switch",
+          "OS startup states, unavailable/error/last-known/pending and write-then-confirm remain independent from preference saving"
+        ],
+        "prior_geometry_supplement": "layout-refinements-20261107",
+        "replacement_geometry_supplement": "general-settings-structure-20261107",
+        "replacement_execution_required": true,
+        "evidence_role": "test_definition_migration_only",
+        "acceptance_granted": false
+      }
+    },
+    {
+      "id": "GVC-002",
+      "spec": "specs/general-page-alignment/spec.md",
+      "scenario": "independent-general-visual-state-closure",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "general-visual-contract-tests",
+        "product-general-visual-react-tests",
+        "product-general-visual-native-tests",
+        "live-ui-preview-tests",
+        "technology-contract-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/development/design-alignment-and-release.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M14",
+        "M15",
+        "M12"
+      ],
+      "component_ids": [
+        "C04",
+        "C23",
+        "C32",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=settings",
+      "general_visual_source": {
+        "schema_version": 1,
+        "kind": "general-visual-source-mapping/v1",
+        "scope": "settings:general/controlled_visual_only",
+        "entry": "docs/design/first-product-v1/candidates/general-state-evidence-20261108/settings.html",
+        "approval": {
+          "path": "docs/development/design-approval-general-states-20261108.json",
+          "sha256": "6e1694583d1c12a7597c9b00cf91dd21154a04f6f463fc4a9aa48a5042a6cb8a"
+        },
+        "promotion": {
+          "path": "docs/design/first-product-v1/candidates/general-state-evidence-20261108/promotion.json",
+          "sha256": "345205c37d1b77df870b429efbd84c6811c34f1416bbd0b1cc8cac1e81547b84"
+        },
+        "source_closure_sha256": "012da7ca2fa26321358b42e9c462b6598baea2165adb785eadf042083f80d5fe",
+        "context": "user-approved-native-content-transparent-body-system-chrome",
+        "state_ids": [
+          "all-page-settings-general-normal",
+          "all-page-settings-general-empty",
+          "all-page-settings-general-loading",
+          "all-page-settings-general-error",
+          "all-page-settings-general-disabled",
+          "all-page-settings-general-long-text",
+          "all-page-settings-general-light",
+          "all-page-settings-general-narrow",
+          "all-page-settings-general-zoom-200",
+          "all-page-settings-general-keyboard-focus-escape",
+          "all-page-settings-general-scope-global",
+          "all-page-settings-general-scope-game",
+          "all-page-settings-general-restore-inheritance",
+          "all-page-settings-general-save-failed"
+        ],
+        "capture_scope": "whole_client",
+        "cases": [
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-empty",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "initial",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-error",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-disabled",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-long-text",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-light",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-narrow",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-zoom-200",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "menu-open",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-scope-global",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-scope-game",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-restore-inheritance",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-save-failed",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          }
+        ],
+        "rgba_threshold": 0,
+        "mask": false,
+        "crop": false,
+        "resample": false,
+        "fixture_visual_only": true,
+        "game_tests_executed": false,
+        "os_runtime_verified": false,
+        "storage_runtime_verified": false
+      }
+    }
+  ],
+  "product_visual_checks": [
+    "product-general-visual-react-tests",
+    "product-general-visual-native-tests"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/general-visual-closure-20261108/phase-2/review/final-source-review.json",
+    "authors": [
+      "/root",
+      "/root/general_settings_client_implementation",
+      "/root/general_settings_client_qa",
+      "/root/general_native_isolated_renderer",
+      "/root/general_pending_error_ui",
+      "/root/general_phase2_reference_adapter",
+      "/root/general_missing_state_design",
+      "/root/session_navigation_contract_review",
+      "/root/general_exact_visual_repair",
+      "/root/general_native_observation_debug",
+      "/root/general_state_design",
+      "/root/general_native_renderer_design",
+      "/root/general_phase2_security_review",
+      "/root/general_live_preview_test_fix",
+      "/root/general_native_security_review"
+    ]
+  },
+  "authorization": "处理一下剩余的几个任务，完成后再停止；按已批准源完成本页剩余项，保留全R90/原失败/0阈值/基线，无Git提交推送。"
+}

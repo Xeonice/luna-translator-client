@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "id": "enforce-storage-schema-and-boundaries",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/enforce-storage-schema-and-boundaries/**",
+    "openspec/active-change.json",
+    "docs/architecture/database/**",
+    "docs/architecture/database-design.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/development/storage-acceptance.json",
+    "docs/development/storage-acceptance.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261019-R5.json",
+    "scripts/quality/storage_schema.py",
+    "scripts/quality/test_storage_schema.py",
+    "scripts/quality/storage_boundaries.py",
+    "scripts/quality/test_storage_boundaries.py",
+    "scripts/quality/storage_acceptance.py",
+    "scripts/quality/test_storage_acceptance.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/test_engineering_report_evidence.py",
+    "scripts/report/build_engineering_baseline_report.py",
+    "scripts/report/verify_engineering_baseline_report.cjs",
+    "package.json",
+    "scripts/report/build_test_case_report.py",
+    "scripts/report/verify_test_case_report.cjs"
+  ],
+  "source_snapshot": "openspec/changes/enforce-storage-schema-and-boundaries/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "STE-001",
+      "spec": "specs/storage-enforcement/spec.md",
+      "scenario": "schema-drift",
+      "checks": [
+        "storage-schema-contract",
+        "storage-schema-tests"
+      ]
+    },
+    {
+      "id": "STE-002",
+      "spec": "specs/storage-enforcement/spec.md",
+      "scenario": "missing-or-fake-field-boundary",
+      "checks": [
+        "storage-boundaries",
+        "storage-boundary-tests",
+        "storage-boundary-execution"
+      ]
+    },
+    {
+      "id": "STE-003",
+      "spec": "specs/storage-enforcement/spec.md",
+      "scenario": "unexecuted-storage-acceptance",
+      "checks": [
+        "storage-acceptance-contract",
+        "storage-acceptance-tests"
+      ]
+    },
+    {
+      "id": "STE-004",
+      "spec": "specs/storage-enforcement/spec.md",
+      "scenario": "missing-or-forged-product-adapter",
+      "checks": [
+        "storage-acceptance-tests"
+      ]
+    },
+    {
+      "id": "STE-005",
+      "spec": "specs/storage-enforcement/spec.md",
+      "scenario": "report-or-source-drift",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "database-report-evidence-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    }
+  ]
+}

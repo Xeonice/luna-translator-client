@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "captured-general-settings-before-test-inputs/v1",
+  "source_tree_sha256": "5093178435fbb6492d5a5197d89574412520e1149fa117eb666eb10d5b2adbce",
+  "scope": "exact three source leaves from installed pre-change client, overlaid into private full-src test workspace only",
+  "files": {
+    "PreferencesScreen.tsx.capture": {
+      "original_path": "apps/desktop/src/features/preferences/PreferencesScreen.tsx",
+      "sha256": "cf0c0d516aafc0d06f9763f927f55ebacfb437efc5618225a4b56cb9850a0ff7",
+      "bytes": 29513
+    },
+    "GeneralSettings.tsx.capture": {
+      "original_path": "apps/desktop/src/features/preferences/GeneralSettings.tsx",
+      "sha256": "59ceb8a000dbe31078806a1711231eec5ad4492dec9f9db682f0bb062ab58c35",
+      "bytes": 7458
+    },
+    "styles.module.css.capture": {
+      "original_path": "apps/desktop/src/features/preferences/styles.module.css",
+      "sha256": "1da4c2be440e339759c5774877bb27bc8d22da552a9be1f6fe00d5b412acac4c",
+      "bytes": 9043
+    }
+  },
+  "production_import_permitted": false,
+  "does_not_grant": "reference PNG approval or product acceptance"
+}

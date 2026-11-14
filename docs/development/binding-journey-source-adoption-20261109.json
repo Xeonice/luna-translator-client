@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "binding-journey-source-adoption-definition/v1",
+  "change_id": "align-approved-binding-journey",
+  "parent_baseline_id": "FP1-20261109-R92",
+  "baseline_id": "FP1-20261109-R93",
+  "parent_raw_sha256": "730f15f9d6c649c2589bea21e4b11cb94796bc18848bb5a4a426d4e100d8de7b",
+  "existing_R92_archive": {
+    "path": "docs/development/baselines/FP1-20261109-R92.json",
+    "sha256": "730f15f9d6c649c2589bea21e4b11cb94796bc18848bb5a4a426d4e100d8de7b",
+    "bytes": 364532
+  },
+  "parent_actual_source_map": {
+    "path": ".build/runtime-game-translation-20261109/governance/packet-03/after.json",
+    "sha256": "9846c771a12952a83ea5358f5ebcc6c2968f116d4f5bb7fba822044fee903c9d",
+    "bytes": 389034
+  },
+  "parent_complete_source_snapshot": {
+    "path": "openspec/changes/align-approved-binding-journey/source-snapshot.json",
+    "sha256": "9c0536f83d6bf349387fcf289b3555ff841fef01ce58d446247dd4dc0efa70de",
+    "bytes": 394746
+  },
+  "source_before_sha256": "7b81fb7bca9422a3a284bd5a2904658bbee676002d163fa3b820a9d44a8bd305",
+  "source_before_count": 2810,
+  "baseline_candidate_sha256": "e74521a539d215422ce67f36c2032ee9c82833541c11aad190248791612e04f1",
+  "source_review": {
+    "path": ".build/binding-journey-alignment-20261109/phase-3-r3/r93-independent-review-01/review.json",
+    "sha256": "edffabef0a6a99f2ba446f8056c70313c505ab9022ec9fadf70e6865db53190c",
+    "bytes": 7738
+  },
+  "previous_current_proof_historical_lineage": {
+    "previous_ref": {
+      "path": ".build/runtime-game-translation-20261109/source-audit/source-review.json",
+      "sha256": "d0eec16802d92e85b0a38799c7de19a12d5e6ca2edd1e2c8f935a99409b5868b",
+      "purpose": "Exact admitted service-management source increment; previous proof preserved via before catalogue; current tests remain controlled-only and no Native/runtime/product promotion."
+    },
+    "before_catalog": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/source-audit-candidate-r93-05/before/catalog.json",
+      "sha256": "c4467147176bdecedcb6c2f6e5598f6cd597ca6ad3a74d09fdb8f7d81011b8dc",
+      "bytes": 687620
+    }
+  },
+  "pin_delta_sha256": "a7fe6e76a3860924e6192a0112858f33968a5e33b2c727172dd27d43eb693cbd",
+  "pin_delta_count": 95,
+  "status": "definition_only_transaction_success_recorded_externally",
+  "cycle_policy": "R93 and active do not pin themselves or this definition; exact old R92 archive is pinned, not rewritten; final after-tree and packet/program review/transaction receipt remain ignored.",
+  "product_completion": "incomplete",
+  "runtime_package_modified": false,
+  "product_acceptance_promoted": false,
+  "native_acceptance_promoted": false,
+  "current_release_approved": false,
+  "next_stage_allowed": false,
+  "remaining_failures": [
+    "outside-scope lifecycle mappings",
+    "outside-scope CaptureSheet AST/all-page and missing executors/reference",
+    "old9 historical Cargo artifact consumer strict Storage FAILED"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "kind": "explicit-history-control-semantic-decision",
+  "effective_date": "2026-11-04",
+  "user_question": "设计稿里的“保留原文、译文及来源”是可关闭开关，但现行 PRD 要求全量保存。这个控件应采用哪种行为？我会先继续替换旧配置导航。",
+  "user_answer": "始终保存，改为保存状态与历史入口（推荐）",
+  "history_preservation": "always",
+  "editable_history_switch": false,
+  "history_action": "openMainPage(history)",
+  "parent_design_sources_modified": false,
+  "visual_source_or_reference_approval_promoted": false,
+  "product_acceptance_promoted": false
+}

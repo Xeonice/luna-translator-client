@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "id": "revise-first-product-interaction-gaps",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/revise-first-product-interaction-gaps/**",
+    "openspec/specs/first-product/spec.md",
+    "docs/product/README.md",
+    "docs/product/first-product-scope.md",
+    "docs/product/game-library-window-prd.md",
+    "docs/product/reading-window-session-prd.md",
+    "docs/product/reading-window-session-acceptance.csv",
+    "docs/design/first-product-v1/**",
+    "docs/development/design-review-gap-analysis.md",
+    "docs/development/iterations/revise-first-product-interaction-gaps/**",
+    "scripts/report/verify_first_product_design.cjs",
+    "scripts/report/verify_interaction_gap_design.cjs",
+    "scripts/report/build_first_product_gallery.py",
+    "scripts/report/design_controls.cjs",
+    "scripts/report/verify_game_onboarding_cases.cjs",
+    "scripts/report/build_interaction_gap_design.py",
+    "scripts/report/verify_interaction_review_report.cjs"
+  ],
+  "source_snapshot": "openspec/changes/revise-first-product-interaction-gaps/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "DREV-001",
+      "spec": "specs/interaction-design/spec.md",
+      "scenario": "preview-provenance",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "visual-guard-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "DREV-002",
+      "spec": "specs/interaction-design/spec.md",
+      "scenario": "movable-hud",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "visual-guard-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "DREV-003",
+      "spec": "specs/interaction-design/spec.md",
+      "scenario": "custom-select",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "visual-guard-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "DREV-004",
+      "spec": "specs/interaction-design/spec.md",
+      "scenario": "full-session-data",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "visual-guard-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "DREV-005",
+      "spec": "specs/interaction-design/spec.md",
+      "scenario": "visible-ruby-and-material",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "visual-guard-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "DREV-006",
+      "spec": "specs/interaction-design/spec.md",
+      "scenario": "coverage-gap-explanation",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "visual-guard-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    }
+  ]
+}

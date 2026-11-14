@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_alignment_tool_delta_pending_packet_adoption",
+  "change_id": "consolidate-current-docs-and-design-gates",
+  "parent_baseline_sha256": "c385bb1f06ae38ba83943fc4bd219768ecc71d5699f956c92b3c2eeedc0ec3bf",
+  "source_delta": [
+    {
+      "path": "AGENTS.md",
+      "before": "7b37c55a4139d044c79ab66c77b1820869e7f95762543561e221515d80896474",
+      "after": "5a2b771c37441c0167561181ae408c4ed4688bca8d8e39e81628c8fcbe9a6e1f"
+    },
+    {
+      "path": "README.md",
+      "before": "54a1ea276aa4ca97f89b8291de20c2b13588c11a7b2b31b1f5849e13a2f4e005",
+      "after": "577d98f433a3b9a45ae9658030ed6935abbc3ba081a4f12a477a56488ff66190"
+    },
+    {
+      "path": "docs/README.md",
+      "before": null,
+      "after": "1610e68bce391283e5ad4bf0dfd090d535eea7984e14c8563c3acd858bdf338f"
+    },
+    {
+      "path": "docs/architecture/client-rebuild-architecture.md",
+      "before": "0ecdf164cf00f9b9d1440e4a8883102ad500550ce2f74484c7f25e5d6a125a73",
+      "after": "ebc4656cfbaaa558d5cfadfe894342d99b21dc41a9eebe66c584b5c13e9ed127"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "fff5b01bebc06f984b2e44394346fe758a7123a9f560a2abd4cc5a5402b452ba",
+      "after": "7df3fc62aa5fc6cdf3e7e9d40d363a7c80ff9bc2379d6d200cf43a32fb41184e"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "ac0364b81604add670d35b0207c7e4ac516dc65623a9f797e1b83ff074cd5ddb",
+      "after": "0d2ddd5f079afbc7c65b1333393fdca9fcc092435ba00954cee3ce07e3972cdd"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "7eb114eb45c658515d0dd29f5893bc1691d702ac1f2358cfd9db96f4fab6f563",
+      "after": "bcdec1496e723b0da63215b9a31eeddfa5ec2651b625c28e0ffbc5bfab5746f2"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "201aafe6931a857cb278551bbd50a9c50eceb3c2d074a3aae182c272ae143ba9",
+      "after": "dc94af14ced3137ff644d04726f2cf81ccd39c72202ea182b857dc459493d15e"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before": "d6ae7773ef35400a07a21a3dad7ce6afd96167e7961df882c6c2eaf0c44e49ac",
+      "after": "966ff293875f8c77fd450a933ca04cd7deb54bbabf9e5c1975a75d0d58e008fe"
+    },
+    {
+      "path": "docs/archive/documentation-r75/AGENTS.md",
+      "before": null,
+      "after": "7b37c55a4139d044c79ab66c77b1820869e7f95762543561e221515d80896474"
+    },
+    {
+      "path": "docs/archive/documentation-r75/README.md",
+      "before": null,
+      "after": "54a1ea276aa4ca97f89b8291de20c2b13588c11a7b2b31b1f5849e13a2f4e005"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/architecture/client-rebuild-architecture.md",
+      "before": null,
+      "after": "0ecdf164cf00f9b9d1440e4a8883102ad500550ce2f74484c7f25e5d6a125a73"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/architecture/first-product-engineering-baseline.md",
+      "before": null,
+      "after": "ac0364b81604add670d35b0207c7e4ac516dc65623a9f797e1b83ff074cd5ddb"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/architecture/japanese-study-and-llm.md",
+      "before": null,
+      "after": "201aafe6931a857cb278551bbd50a9c50eceb3c2d074a3aae182c272ae143ba9"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/architecture/reading-window-session-technical-design.md",
+      "before": null,
+      "after": "d6ae7773ef35400a07a21a3dad7ce6afd96167e7961df882c6c2eaf0c44e49ac"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/design/first-product-v1/README.md",
+      "before": null,
+      "after": "184f578f9438f20f3dab9e4c4a51df8280176690a47695df4aea537549443724"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/client-regression.md",
+      "before": null,
+      "after": "5db196c91cfc0f96b85ee71bbf09d104bf411c1b059e40fff2f5d8fd3677687c"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/current-client-alignment-plan.md",
+      "before": null,
+      "after": "5b08488d1540f05d676f9ce9dfca5e25f6f94d82a9ff541a1c14b85491e7cd7b"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/current-product-test-coverage.md",
+      "before": null,
+      "after": "3e6dbb0be5c41650167a22df556490de92875402e4123f9ee321d14bb0345025"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/desktop-client.md",
+      "before": null,
+      "after": "ec1b7e1252a383d99b8389c622b4ae14273f5eca938636f967a5d5e4753889c6"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/engineering-gates.md",
+      "before": null,
+      "after": "5250e6034501d65686ed8676aa0cb2b1012b5adb4e189694161154acaecd8a33"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/first-product-test-plan.md",
+      "before": null,
+      "after": "87480ac9f77c70081f00e47c140bc7ba877f8dd348dfad8c8dca3c3bbc54c3ca"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/guided-service-reading-tests.md",
+      "before": null,
+      "after": "1c0829196591faa919e32dfe624cdc2c1d98ae7289e975dcd413d88fad9864a9"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/iteration-governance.md",
+      "before": null,
+      "after": "a8b640a7e28bd91b10895fc94b35e6f5b41076d385bd21814a29b3a214d09d49"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/development/release-execution-evidence.md",
+      "before": null,
+      "after": "b0246c32cd5d201af2c327610439f18a46aa4cedd459d303e4fe2598fd1dfee5"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/product/README.md",
+      "before": null,
+      "after": "84a2cfd60866fd90318cd3ec483b3176937b852fb56539bf855e079c261aa816"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/product/first-product-scope.md",
+      "before": null,
+      "after": "d9416c919ce3a03f79e440e20dfdea01280c1b4f0ce6b262a0d4062807b52681"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/product/model-configuration-prd.md",
+      "before": null,
+      "after": "7481f7a2d3a87d4fe5ad5f46478627e9bd9917dc407bc72a02e1e0792c43b205"
+    },
+    {
+      "path": "docs/archive/documentation-r75/docs/product/reading-window-session-prd.md",
+      "before": null,
+      "after": "cf091e3343139d5a5c0ca3322ef1fde9b7529589f661de8bfa60c7ecd94cd58e"
+    },
+    {
+      "path": "docs/archive/documentation-r75/index.md",
+      "before": null,
+      "after": "ed13847fb1f70954fc0573b52fa26709ed2129b0cbd7cf8f9a2e2d784876dd28"
+    },
+    {
+      "path": "docs/archive/documentation-r75/manifest.json",
+      "before": null,
+      "after": "b5759603962d63f059a0704c0708adad3db88bb5eefa7b1bbac790d011cd9af2"
+    },
+    {
+      "path": "docs/current-documentation.json",
+      "before": null,
+      "after": "28097ec1ca857fa8beb4baca6af445de46d78e51c57ef8ab2dfe0445cee78119"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "184f578f9438f20f3dab9e4c4a51df8280176690a47695df4aea537549443724",
+      "after": "caa05c40f4abe12f7c3988f25398ec1925a1c318f2fa52ec54d8213300c3562e"
+    },
+    {
+      "path": "docs/development/client-regression.md",
+      "before": "5db196c91cfc0f96b85ee71bbf09d104bf411c1b059e40fff2f5d8fd3677687c",
+      "after": "8c1746873729c1c1677bfafe34f56e0600bf0bdba3362935eecc28f0ab9458b8"
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "before": "5b08488d1540f05d676f9ce9dfca5e25f6f94d82a9ff541a1c14b85491e7cd7b",
+      "after": "f4aff0cfa3cef755c4d92d2d5a1b920f50dafaf5854e2aaa0b1f84577132a93f"
+    },
+    {
+      "path": "docs/development/current-design-alignment.json",
+      "before": null,
+      "after": "914d6eec25550750e8783522566f5f1bf939d6e0da9ec911c76ae687c7ca7ead"
+    },
+    {
+      "path": "docs/development/current-product-test-coverage.md",
+      "before": "3e6dbb0be5c41650167a22df556490de92875402e4123f9ee321d14bb0345025",
+      "after": "4b88af88103ce9d7bd7e55ccf4fa7ea7d1e0c43f7c4ab6a17afec2585491b3dd"
+    },
+    {
+      "path": "docs/development/design-alignment-and-release.md",
+      "before": null,
+      "after": "420d7928ec3769ffa91aa35057f0ae6f04ec6a508fbb1698375771b3555bbae5"
+    },
+    {
+      "path": "docs/development/desktop-client.md",
+      "before": "ec1b7e1252a383d99b8389c622b4ae14273f5eca938636f967a5d5e4753889c6",
+      "after": "c17dcc1c1945b774428234496d585723016ff1e6bf5fabb3cd7645c590e1a9ff"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "before": "5250e6034501d65686ed8676aa0cb2b1012b5adb4e189694161154acaecd8a33",
+      "after": "98beb3b86ab243ba4b7966c8eaa0621071e01bcd493f4620ed96faedf2e16512"
+    },
+    {
+      "path": "docs/development/first-product-test-plan.md",
+      "before": "87480ac9f77c70081f00e47c140bc7ba877f8dd348dfad8c8dca3c3bbc54c3ca",
+      "after": "68a29cf7148793bfd22f079a04502b87b56ff1446cc71ff4c8960e5f4d3ec3b5"
+    },
+    {
+      "path": "docs/development/guided-service-reading-tests.md",
+      "before": "1c0829196591faa919e32dfe624cdc2c1d98ae7289e975dcd413d88fad9864a9",
+      "after": "69bcc931d59e19fc77229627545ce2d8a48a4d38a22b0da08b80205cb1a3b478"
+    },
+    {
+      "path": "docs/development/iteration-governance.md",
+      "before": "a8b640a7e28bd91b10895fc94b35e6f5b41076d385bd21814a29b3a214d09d49",
+      "after": "1afa9742dd5d875b569459699db475878bf29705d07775ace68f816c34a512d1"
+    },
+    {
+      "path": "docs/development/release-execution-evidence.md",
+      "before": "b0246c32cd5d201af2c327610439f18a46aa4cedd459d303e4fe2598fd1dfee5",
+      "after": "3f3b6883b7ee2d51bc324083e5fc1f4dab86c49922c8760dc00773e29defebdd"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "84a2cfd60866fd90318cd3ec483b3176937b852fb56539bf855e079c261aa816",
+      "after": "c889490c1cc853d2b9ef81597d5745c569134fb70b2ee513ca42ce36c297046d"
+    },
+    {
+      "path": "docs/product/first-product-scope.md",
+      "before": "d9416c919ce3a03f79e440e20dfdea01280c1b4f0ce6b262a0d4062807b52681",
+      "after": "f3375f362e09fb7e319e2e18e59eead72d636fe0839e82558a47b18f0024dcb0"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "7481f7a2d3a87d4fe5ad5f46478627e9bd9917dc407bc72a02e1e0792c43b205",
+      "after": "0433c7cdf6bc4c5415427d121c5186ee5b66037acc9ad3baf191f1158ce542e0"
+    },
+    {
+      "path": "docs/product/reading-window-session-prd.md",
+      "before": "cf091e3343139d5a5c0ca3322ef1fde9b7529589f661de8bfa60c7ecd94cd58e",
+      "after": "d9fdaa5c53296adb293a340d957f079e7eec6258dcdcd53175d27a869f051695"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/design.md",
+      "before": null,
+      "after": "55ad786ac19cae8f367ad9a218bc274131e1a01c0fc9b108ea9e3d99b449e4ad"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/iteration-card.md",
+      "before": null,
+      "after": "3d3ea2708345710c21cc12e641777299521d65e860d31394b852ac7555550000"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/proposal.md",
+      "before": null,
+      "after": "f587caff180795a185ab7eb5cb335ca343b4f1cacd2fa595f149f97a24a624d0"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/source-snapshot.json",
+      "before": null,
+      "after": "cc58bbb253105bf325bde33c004c1fd880246043817fb41f56c570f95ae5c426"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/specs/current-documentation-and-design-alignment/spec.md",
+      "before": null,
+      "after": "3f0e2ee25c91df89bb93c94641b5275c9a6b0415d7b2cf2e7e1b5817a176599c"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/tasks.md",
+      "before": null,
+      "after": "017160464ab168fd4311936fac1d917d64d20c9c48b8f1d12ed3a1f8e4d3da1a"
+    },
+    {
+      "path": "openspec/changes/consolidate-current-docs-and-design-gates/verification.json",
+      "before": null,
+      "after": "1193de36d7ddccbf1947794439cfec35f1acd8654bafa15928da9d5b281ce3f6"
+    },
+    {
+      "path": "scripts/quality/current_design_alignment.py",
+      "before": null,
+      "after": "d2b14162568a29c8792a6559a7b8e2160314a855714afbf5522f49749299b778"
+    },
+    {
+      "path": "scripts/quality/documentation_contract.py",
+      "before": null,
+      "after": "04904682f2eb868b1a4116aa04d49061642005fa9da2232a08a49e53af6dd2dc"
+    },
+    {
+      "path": "scripts/quality/test_current_design_alignment.py",
+      "before": null,
+      "after": "e776d7316d29a7ce23246b913f9d6d632d36cde937b99a18ce9cf73ba6686437"
+    },
+    {
+      "path": "scripts/quality/test_documentation_contract.py",
+      "before": null,
+      "after": "4c9260733e5ae8bcefcb484c521496cbadd4708bc25d07a5e461c491a7ab6a95"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "296a9ab1044d3db1ec55e08a9660c1fce9a2b9117bddca965233ae71f38f816e",
+      "after": "60ffbbff80cf831d13234aaa7e5676c78b26f7babe6ed0f92f2967db2ad49bca"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/documentation-alignment-20261031/review/docs-review.json",
+    "bytes": 15116,
+    "sha256": "9fe82e65cb0f27ee59b955e058f96eff24dc8c42ba50b54666826843241fb003"
+  },
+  "code_review": {
+    "path": ".build/documentation-alignment-20261031/review/tooling-review.json",
+    "bytes": 11294,
+    "sha256": "f30c86a9be47f1bd94495598a22c08c9f62116f266f09e0c543f91088ece495b"
+  },
+  "governance_review": {
+    "path": ".build/documentation-alignment-20261031/review/governance-review.json",
+    "bytes": 3188,
+    "sha256": "bf1c9d4f952d5684f0addbd068503247a5809dc422482e5088abb40ab90c55e0"
+  },
+  "closed_owner_source_paths": [
+    "README.md",
+    "AGENTS.md",
+    "docs/product/README.md",
+    "docs/product/first-product-scope.md",
+    "docs/product/model-configuration-prd.md",
+    "docs/product/reading-window-session-prd.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/client-regression.md",
+    "docs/development/release-execution-evidence.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/guided-service-reading-tests.md",
+    "docs/development/current-product-test-coverage.md",
+    "docs/development/iteration-governance.md",
+    "docs/README.md",
+    "docs/current-documentation.json",
+    "docs/development/design-alignment-and-release.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/client-rebuild-architecture.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/development/desktop-client.md",
+    "docs/archive/documentation-r75/README.md",
+    "docs/archive/documentation-r75/AGENTS.md",
+    "docs/archive/documentation-r75/docs/product/README.md",
+    "docs/archive/documentation-r75/docs/product/first-product-scope.md",
+    "docs/archive/documentation-r75/docs/product/model-configuration-prd.md",
+    "docs/archive/documentation-r75/docs/product/reading-window-session-prd.md",
+    "docs/archive/documentation-r75/docs/design/first-product-v1/README.md",
+    "docs/archive/documentation-r75/docs/development/current-client-alignment-plan.md",
+    "docs/archive/documentation-r75/docs/development/first-product-test-plan.md",
+    "docs/archive/documentation-r75/docs/development/client-regression.md",
+    "docs/archive/documentation-r75/docs/development/release-execution-evidence.md",
+    "docs/archive/documentation-r75/docs/development/engineering-gates.md",
+    "docs/archive/documentation-r75/docs/development/guided-service-reading-tests.md",
+    "docs/archive/documentation-r75/docs/development/current-product-test-coverage.md",
+    "docs/archive/documentation-r75/docs/development/iteration-governance.md",
+    "docs/archive/documentation-r75/docs/architecture/first-product-engineering-baseline.md",
+    "docs/archive/documentation-r75/docs/architecture/reading-window-session-technical-design.md",
+    "docs/archive/documentation-r75/docs/architecture/client-rebuild-architecture.md",
+    "docs/archive/documentation-r75/docs/architecture/japanese-study-and-llm.md",
+    "docs/archive/documentation-r75/docs/development/desktop-client.md",
+    "docs/archive/documentation-r75/manifest.json",
+    "docs/archive/documentation-r75/index.md",
+    "scripts/quality/documentation_contract.py",
+    "scripts/quality/test_documentation_contract.py",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/test_current_design_alignment.py",
+    "scripts/quality/verify.py",
+    "docs/development/current-design-alignment.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "openspec/changes/consolidate-current-docs-and-design-gates/proposal.md",
+    "openspec/changes/consolidate-current-docs-and-design-gates/design.md",
+    "openspec/changes/consolidate-current-docs-and-design-gates/tasks.md",
+    "openspec/changes/consolidate-current-docs-and-design-gates/iteration-card.md",
+    "openspec/changes/consolidate-current-docs-and-design-gates/source-snapshot.json",
+    "openspec/changes/consolidate-current-docs-and-design-gates/specs/current-documentation-and-design-alignment/spec.md",
+    "openspec/changes/consolidate-current-docs-and-design-gates/verification.json"
+  ],
+  "source_evidence_remaps": {
+    "scope": "M15 only verify.py evidence hash rebinding and exact derived module CSV; no status or behavior changed"
+  },
+  "scope": "Exact current-documentation consolidation, original-byte R75 history archives, and latest guided capability/real-layer engineering gates only. Original product IDs/obligations, plans/CSVs, product sources/packages, generated product targets, UI/candidates/PNG/tokens, technology lock, approvals, active change, phase and historical execution authority remain unchanged. Engineering readiness never grants product acceptance."
+}

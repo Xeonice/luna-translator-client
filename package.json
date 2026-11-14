@@ -1,0 +1,30 @@
+{
+  "name": "luna-engineering-gates",
+  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "verify": "python3 scripts/quality/development_gates.py",
+    "verify:tooling": "python3 scripts/quality/development_gates.py --change implement-effective-development-gates",
+    "verify:release": "python3 scripts/quality/development_gates.py --stage release",
+    "spec:validate": "openspec validate --all --strict --no-interactive",
+    "test:guards": "python3 scripts/quality/gate_effectiveness.py",
+    "verify:test-plan": "python3 scripts/quality/test_plan_contract.py --json",
+    "verify:test-operations": "python3 scripts/quality/test_operations_contract.py --json",
+    "verify:database-design": "python3 scripts/quality/database_design.py --check && python3 -m unittest discover -s scripts/quality -p test_database_design.py -v",
+    "verify:storage-contract": "python3 scripts/quality/storage_schema.py --check && python3 scripts/quality/storage_boundaries.py --check && python3 scripts/quality/storage_acceptance.py --check",
+    "verify:storage": "python3 scripts/quality/storage_acceptance.py --runtime",
+    "verify:legacy": "python3 scripts/quality/verify.py",
+    "verify:quick": "python3 scripts/quality/development_gates.py --stage quick",
+    "verify:delivery": "python3 scripts/quality/development_gates.py --stage delivery",
+    "report:visual": "python3 scripts/quality/visual_review.py"
+  },
+  "devDependencies": {
+    "@fission-ai/openspec": "1.2.0",
+    "pixelmatch": "7.1.0",
+    "playwright-core": "1.56.1",
+    "pngjs": "7.0.0"
+  }
+}

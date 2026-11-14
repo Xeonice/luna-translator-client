@@ -1,0 +1,5 @@
+# SR-DESIGN技术设计
+
+以compact-preview-design-v1 index SHAed53777dbccf61d9e2ee584f823404ea0da337002874eb55db9720ad8636387c及独审e8fc28c259d82126205caa57634c4c6c48bb4aa570dd2cb7eebbf2b3cf4a6424为已确认目标。只更新原review-gaps共享renderer/state、CSS与dialog壳及明确离线数据；会话和选窗继续同一renderer。主卡不整体滚动/缩字/缩放，只有详情正文滚动；恢复不冒真权限。设计测试经真实详情入口读取全文，保留原业务断言。
+
+遵循R47技术合同、单writer/身份/许可/预算/代次/CAS和真实释放确认；不改变公共ApplicationPort、DTO/IPC、Core ABI/JSONL2或数据库schema。文档与测试伴随本片，结果不继承旧包。

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "kind": "user-requested-design-refinement",
+  "status": "approved_for_implementation",
+  "date": "2026-11-07T07:53:53.699742+00:00",
+  "user_request": "几个小问题需要修正一下，从设计稿开始：历史筛选和下方未对齐；设置间距不对；当前会话断开时无用按钮偏多且视觉重心有偏差",
+  "entry": "docs/design/first-product-v1/candidates/layout-refinements-20261107/index.html",
+  "manifest": {
+    "path": "docs/design/first-product-v1/candidates/layout-refinements-20261107/manifest.json",
+    "sha256": "0af63c192e7777fe98bb23a472c59b18ec7718541a2cbbcffba8953c2148baf6"
+  },
+  "observed_causes": [
+    "History parent source has different grid tracks/insets in filters and body; product inherits those differences.",
+    "Settings source rows had safe padding but production used unpadded Switch children; this is an implementation deviation, not a new spacing theme.",
+    "Stopped-session actions and unbound preview occupy the active-session layout; state-specific hierarchy is missing."
+  ],
+  "implementation_plan_after_review": [
+    "Source approval complete; exact client scope admitted under implement-approved-client-plan.",
+    "Current PRD/technical/test sections will be overwritten to this approved conditional layout.",
+    "Production components, independent reference comparisons and same-signed Native observation are required separately."
+  ],
+  "approval_not_inherited": [
+    "final delta pixels",
+    "machine authority adapter for the delta",
+    "production implementation",
+    "Native/system behavior",
+    "whole-product release"
+  ],
+  "runtime_package_modified": false,
+  "product_completion": "incomplete",
+  "next_stage_allowed": false,
+  "user_confirmation": "目前没有问题了，开始做更新修改吧",
+  "source_approval": {
+    "path": "docs/development/design-approval-layout-refinements-20261107.json",
+    "sha256": "08b61a71a685f73e2bd2f7dd8f3917ba212bb7c437509ab797b74b446e68cb54"
+  }
+}

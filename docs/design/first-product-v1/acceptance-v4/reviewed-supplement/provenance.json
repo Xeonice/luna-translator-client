@@ -1,0 +1,81 @@
+{
+  "sourceCandidate": "candidate-05",
+  "originalSources": {
+    "supplement.js": "c2c331ea4d28c8af012f40750231e280194ebb63bf73b0b960042f9d487e6aaa",
+    "supplement.css": "041ec3f02a4a23ea4bba7180720f9f67ebe3fe0ebef6b2e610706de99c7862a8",
+    "README.md": "dd806efd0c12005616661ba80b63355115b310cdb703014836c9b36128366bf7"
+  },
+  "sourceInputs": {
+    "session-current-body": "e1274bfd7b61a4ce975ac35971e051e439ee9f28ee0528a11db8f97eef256981",
+    "session-current-extraction": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+    "session-current-hook-events": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+    "settings-shortcuts-active": "d1acb1a3da65dc2c59b9f47b84221c67a4aa5ff6135511589eb4f760d711502d",
+    "settings-shortcuts-conflict": "341f4574aed33bb0e16dee133c59ea59a09f23a647042421aaf3677e64739ce1"
+  },
+  "adaptations": [
+    {
+      "id": "canonical-shortcut-contract",
+      "basis": "Root reviewed correction: typed desired/effective and draft use canonical Alt+Super+H/P; only presentation formatter renders Apple glyphs."
+    },
+    {
+      "id": "all-stage-server-search",
+      "basis": "Root reviewed correction: event stage is free text against full server dataset, never finite options inferred from loaded records."
+    },
+    {
+      "id": "scoped-field-mask-contract",
+      "basis": "Rust ScopedPreferences supports true scalar field masks plus hud.compact/hud.alwaysOnTop values; candidate05 README only described original demonstration keys. No merge authority moved to UI."
+    },
+    {
+      "id": "shortcut-save-rejection-stage",
+      "basis": "Root explicitly selected failed saveError plus failed native receipt/effective old, preserving dirty draft and action error; source uses approved ls-boundary/ls-error-text styles, not product CSS."
+    },
+    {
+      "id": "compact-base-effective-help",
+      "basis": "Root approved explicit distinction between base fields and compact effective text sizes; same semantic explanatory sentence shown independently."
+    },
+    {
+      "id": "dirty-scope-no-switch",
+      "basis": "Root approved scope disabled until user saves/discards dirty draft; presentation follows typed dirty and prevents scope contamination."
+    },
+    {
+      "id": "fixed-unit-copy-and-origin",
+      "basis": "Root approved preservation of existing immutable unit copy and visible sourceSummary-derived origin; not inferred from gameId."
+    },
+    {
+      "id": "follow-latest-initial-anchor",
+      "basis": "Root approved correction: typed follow=true places original sorted received records at their independently measured latest extent; no product scroll number or PNG consulted. follow=false preserves fixed viewport."
+    },
+    {
+      "id": "active-caption-semantics",
+      "basis": "Root approved independent receiving-caption mapping, retaining active/paused/opening/terminal distinctions; this fixture explicitly represents active selected-source receiving."
+    },
+    {
+      "id": "settings-actions-reuse-c02",
+      "basis": "Root independently corrected candidate05 missing ls-button primitive. New settings actions reuse approved C02 ls-button12px/28px/4x11 and apply disabled is derived from typed dirty. Original bare-button candidate retained, no styling taken from product pixels."
+    },
+    {
+      "id": "session-preview-identity-projection",
+      "basis": "Root approved session consumer displays typed session identity, not the offline candidate/PID replay. Candidate consumer keeps complete CID/PID, title/Bottle/EXE/frame/time/identity metadata remain."
+    },
+    {
+      "id": "shortcut-failure-cascade-priority",
+      "basis": "Root independently approved RW11 error semantic priority: candidate05 ls-boundary secondary color overrode earlier ls-error-text. Explicit combined selector restores failure color using approved token, never product pixels. Original candidate05 and previous PNG retained."
+    },
+    {
+      "id": "follow-scroll-pauses-at-older-range",
+      "basis": "Root approved shared policy: more than32 logical pixels above independently measured latest pauses follow and exposes return-to-latest; typed follow=true still anchors first load at latest. Reference listens only to its own design DOM scroll and records each variant follow condition; no actual scrollTop or PNG used."
+    }
+  ],
+  "productPixelsOrStylesUsed": false,
+  "notProductAcceptance": true,
+  "corrections": [
+    {
+      "id": "range-cascade-attribution-correction",
+      "evidence": "Direct Playwright of approved index.html?scenario=settings&theme=dark at display category: native range height28,padding5px8px,minHeight0. styles.css generic input cascade supplies padding/border; native-content.css contains no claimed selector. Earlier proposed exclusion did not match and was never applied to expected output. Root withdrew it and approved matching product to complete original cascade."
+    },
+    {
+      "id": "follow-clone-approved-icons-initialization",
+      "evidence": "Candidate21 static native clone intentionally stripped scripts, so follow render had no LunaIcons and omitted check/pause SVG. Producer now loads the already approved independent icons.js before binding, never imports product icons. Candidate21 failed images retained."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "repair-reviewed-reference-source-resolution",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/repair-reviewed-reference-source-resolution/**",
+    "apps/desktop/tests/visual/design-source-versions.mjs",
+    "apps/desktop/tests/visual/capture-catalogue.mjs",
+    "apps/desktop/tests/visual/verify-ui.mjs",
+    "apps/desktop/tests/visual/design-source-versions.test.mjs",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R49.json",
+    "openspec/active-change.json",
+    "docs/development/design-source-version-v4.json",
+    "scripts/quality/design_source_versions.py",
+    "scripts/quality/product_execution.py",
+    "scripts/quality/test_product_capture_v4.py",
+    "scripts/quality/verify.py"
+  ],
+  "source_snapshot": "openspec/changes/repair-reviewed-reference-source-resolution/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ENG-RF-V001",
+      "spec": "specs/reviewed-reference-version/spec.md",
+      "scenario": "exact-historical-source-resolution-preserves-original-images-and-claims",
+      "source_requirement_ids": [
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-v4-execution-guard-tests",
+        "design-source-version-node-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run"
+}

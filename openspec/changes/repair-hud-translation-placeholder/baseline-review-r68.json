@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-hud-translation-placeholder",
+  "parent_baseline_sha256": "4040be8a7fcc017d2564d79580c5d709fe8ef0648a5bd21af3d72371a938ba59",
+  "exact_delta_sha256": "cd0a1d28c917083d51ac42578ec581fe274a899a61f158e8d6ca84822ec4e9e4",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/hud-translation-placeholder-r68/integration-review/source-governance-review.json",
+    "sha256": "ef02346dabc71042c119074640a9bfbad80dc898a5f7d33e74a9a6cf40eaaa6a",
+    "bytes": 3518
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

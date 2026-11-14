@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "id": "stage-current-language-worker-r65",
+  "kind": "product",
+  "status": "isolated_derived_resource_candidate_pending_source_and_governance_review",
+  "allowed_paths": [
+    "apps/desktop/src-tauri/resources/language-worker",
+    "openspec/changes/stage-current-language-worker-r65/**",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/stability-refactor-progress.md",
+    "openspec/active-change.json",
+    "docs/development/baselines/FP1-20261028-R64.json",
+    "docs/development/iteration-baseline.json"
+  ],
+  "source_snapshot": "openspec/changes/stage-current-language-worker-r65/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "LWS-001",
+      "spec": "specs/derived-language-worker/spec.md",
+      "scenario": "stage-exact-current-derived-worker-from-real-build-preimage",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-11",
+        "FP-12",
+        "RW-26",
+        "RW-27",
+        "RW-29"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M07",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C19"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "implementation-status-contract",
+        "implementation-status-tests",
+        "spec-contract-tests",
+        "package-identity-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    },
+    {
+      "id": "LWS-002",
+      "spec": "specs/derived-language-worker/spec.md",
+      "scenario": "real-supervisor-unicode-and-capture-checks-remain-required",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-11",
+        "FP-12",
+        "RW-26",
+        "RW-27",
+        "RW-29"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M07",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C19"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "implementation-status-contract",
+        "implementation-status-tests",
+        "spec-contract-tests",
+        "package-identity-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    },
+    {
+      "id": "LWS-003",
+      "spec": "specs/derived-language-worker/spec.md",
+      "scenario": "source-authority-and-final-same-package-regression-stay-separate",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-11",
+        "FP-12",
+        "RW-26",
+        "RW-27",
+        "RW-29"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M07",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C19"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "implementation-status-contract",
+        "implementation-status-tests",
+        "spec-contract-tests",
+        "package-identity-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261028-R64",
+  "parent_baseline_sha256": "5e29853a84589b0a51a331fd40aad009b80bdd592567b9fbb33187196b1e2cbb",
+  "derived_resource": {
+    "path": "apps/desktop/src-tauri/resources/language-worker",
+    "before_sha256": "18b588eda5d46b5c969ee234a89857a6623819b8bef03423b0056e595af36a53",
+    "after_sha256": "2f2a33778edd923be29241c65d60cb47d5457e0cb2231bc45520bf31e5cae639",
+    "after_bytes": 618640,
+    "actual_input": ".build/stability-refactor-20261027/final-stability-r64/preserved-language-worker-preparation/new-worker-2f2a337.artifact",
+    "protocol": "existing language JSONL v1 unchanged",
+    "business_source_changed": false
+  },
+  "product_acceptance_status": "not_run",
+  "final_cohort_change_id": "verify-refactor-stability-r63",
+  "scope_note": "Only one derived executable plus own WI; no Main/compiler/prepare, no worker Rust/protocol/oracle/guard changes. Source allowed paths remain narrow; governance extension is a separate independently reviewed after-input. No final63 WI modification or extra pin. Current full visual/package/four-game acceptance not inherited.",
+  "governance_scope_disposition": "Exact authority-output extension requires independent source+governance review and Root adoption; source candidate itself remains narrow."
+}

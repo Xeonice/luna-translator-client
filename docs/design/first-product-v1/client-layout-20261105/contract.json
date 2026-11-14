@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "kind": "approved-client-container-contract/v1",
+  "id": "client-layout-c1-20261105",
+  "parent_composition_id": "complete-guided-history-20261031",
+  "target_id": "guided-service-reading-20261030",
+  "approval_record": "docs/development/design-approval-client-layout-20261105.json",
+  "styles": "docs/design/first-product-v1/client-layout-20261105/client-c1.css",
+  "bootstrap": "docs/design/first-product-v1/client-layout-20261105/client-c1.js",
+  "required_query": {
+    "settingsSize": "native"
+  },
+  "roles": {
+    "main": {
+      "normal": {
+        "viewport": {
+          "width": 1040,
+          "height": 720
+        },
+        "selector": "#main-window",
+        "sidebar_width": 190,
+        "preview_width": 282
+      },
+      "narrow": {
+        "viewport": {
+          "width": 760,
+          "height": 560
+        },
+        "selector": "#main-window",
+        "sidebar_width": 57,
+        "preview_placement": "after_reading"
+      }
+    },
+    "history": {
+      "normal": {
+        "viewport": {
+          "width": 1040,
+          "height": 720
+        },
+        "selector": "#main-window",
+        "sidebar_width": 190
+      },
+      "narrow": {
+        "viewport": {
+          "width": 760,
+          "height": 560
+        },
+        "selector": "#main-window",
+        "sidebar_width": 57
+      }
+    },
+    "settings": {
+      "normal": {
+        "viewport": {
+          "width": 1000,
+          "height": 720
+        },
+        "selector": "#settings-window",
+        "sidebar_width": 198
+      },
+      "narrow": {
+        "viewport": {
+          "width": 760,
+          "height": 560
+        },
+        "selector": "#settings-window",
+        "sidebar_width": 180
+      }
+    }
+  },
+  "allowed_transformations": [
+    "remove_demonstration_sibling_surfaces",
+    "anchor_selected_surface_to_client_origin",
+    "apply_exact_approved_container_css",
+    "set_exact_approved_client_query_context"
+  ],
+  "forbidden_substitutes": [
+    "crop_large_desktop_as_client",
+    "freeze_computed_styles",
+    "change_material_tokens",
+    "change_content_or_controls",
+    "use_settings_B_as_approved_normal_reference"
+  ],
+  "approval_scope": "Client container mapping and declared normal/narrow geometry only; per-state references, real React and Native remain independently unapproved."
+}

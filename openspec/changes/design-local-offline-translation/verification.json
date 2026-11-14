@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "id": "design-local-offline-translation",
+  "kind": "tooling",
+  "allowed_paths": [
+    "docs/product/model-configuration-prd.md",
+    "docs/product/README.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/architecture/model-service-registry-design.json",
+    "docs/architecture/database-design.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/design/first-product-v1/candidates/local-offline-20261030/**",
+    "docs/development/local-offline-translation-tests.md",
+    "docs/development/engineering-gates.md",
+    "scripts/quality/offline_translation_design.py",
+    "scripts/quality/test_offline_translation_design.py",
+    "scripts/report/verify_local_offline_design.cjs",
+    "scripts/quality/verify.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261029-R70.json",
+    "openspec/changes/design-local-offline-translation/**"
+  ],
+  "source_snapshot": "openspec/changes/design-local-offline-translation/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "OTD-001",
+      "spec": "specs/offline-translation-design/spec.md",
+      "scenario": "offline-engine-is-a-separate-execution-backend",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests"
+      ]
+    },
+    {
+      "id": "OTD-002",
+      "spec": "specs/offline-translation-design/spec.md",
+      "scenario": "settings-journey-exposes-non-llm-local-translation",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests"
+      ]
+    },
+    {
+      "id": "OTD-003",
+      "spec": "specs/offline-translation-design/spec.md",
+      "scenario": "lifecycle-resource-and-migration-candidates-are-explicit",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests"
+      ]
+    },
+    {
+      "id": "OTD-004",
+      "spec": "specs/offline-translation-design/spec.md",
+      "scenario": "design-tests-do-not-promote-product-acceptance",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261029-R70",
+  "parent_baseline_sha256": "39f2f6b5f38c3805c6fb90633ace18d1cc5a177e54a9672b023594983010b16d",
+  "product_acceptance_status": "not_run"
+}

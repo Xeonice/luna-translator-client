@@ -1,0 +1,13 @@
+{
+  "kind": "R34_baseline_review_record",
+  "status": "source_reviews_complete_exact_authority_copy_pending_Root_check",
+  "parent_baseline_sha256": "d0df1aaee1267c8d2bb412bc327db3988fbcc4305a8c7bd07a4acd683e9f5d7e",
+  "exact_delta_record": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/exact-delta-review-r34.json",
+    "sha256": "54a65c2d472bd062f4676bcec080873511fabdb6263a2dcbbdf25f303d317bd5"
+  },
+  "root_authorization": "Root final four SHA freeze and explicit six typed UI error-branch anchors; prepare exact nine authority candidates only",
+  "root_adoption": "awaiting_root_mechanical_comparison_and_exact_copy",
+  "storage_or_technical_change": false,
+  "runtime_visual_release_promoted": false
+}

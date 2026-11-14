@@ -1,0 +1,116 @@
+{
+  "dataset": "body",
+  "query": {
+    "sessionId": "sakura-session-1",
+    "dataset": "body",
+    "order": "newest_first",
+    "filter": {
+      "search": null,
+      "sourceId": null,
+      "level": null,
+      "stage": null
+    },
+    "cursor": null,
+    "pageSize": 50
+  },
+  "page": {
+    "records": [
+      {
+        "kind": "body",
+        "sequence": "1",
+        "unit": {
+          "sourceSummary": {
+            "sessionId": "sakura-session-1",
+            "gameId": "sakura",
+            "sourceKind": "hook",
+            "state": "active",
+            "startedAtMs": 1792319048000,
+            "endedAtMs": null
+          },
+          "unitId": "sakura-session-1:event:0",
+          "sessionId": "sakura-session-1",
+          "gameId": "sakura",
+          "textRevision": 1,
+          "sourceText": "その風景には、悲しさも、痛みも、なかった。",
+          "sourceHash": "f7d2690f72c8a38a5aaa370a1f43deac68f4c52de359ec8fd431da41dc9895e5",
+          "sourceLanguage": "ja",
+          "createdAtMs": 1792319048000,
+          "translations": [
+            {
+              "translationId": "design-translation-1",
+              "taskId": "design-task-1",
+              "text": "那片景色中，没有悲伤，也没有痛楚。",
+              "providerLabel": "Microsoft · 日中翻译",
+              "targetLanguage": "zh-CN",
+              "correction": null
+            }
+          ],
+          "tokens": []
+        },
+        "sourceRefs": [
+          {
+            "eventId": "sakura-session-1:raw:1",
+            "byteStart": 0,
+            "byteEnd": 63
+          }
+        ]
+      }
+    ],
+    "nextCursor": null,
+    "snapshot": {
+      "snapshotId": "design-body-snapshot",
+      "refreshCursor": "opaque-design-refresh-body",
+      "highWatermark": "1",
+      "firstAvailable": "1",
+      "lastReceived": "1",
+      "lastPersisted": "1",
+      "retainedFrom": "1",
+      "matchingCount": "1",
+      "newerCount": "0",
+      "databaseRevision": "12"
+    },
+    "loadedRange": {
+      "first": "1",
+      "last": "1"
+    },
+    "completeness": {
+      "status": "complete_received_range",
+      "scope": "received_range_only",
+      "knownLoss": false,
+      "unknownRange": false,
+      "cleanedPayloadCount": "0",
+      "notes": []
+    }
+  },
+  "sources": [
+    {
+      "sourceId": "sakura-body",
+      "label": "Artemis",
+      "hook": "Artemis",
+      "address": "5370399856",
+      "context": "0",
+      "context2": "0",
+      "selected": true
+    },
+    {
+      "sourceId": "sakura-secondary",
+      "label": "Artemis",
+      "hook": "Artemis",
+      "address": "5370399888",
+      "context": "1",
+      "context2": "0",
+      "selected": false
+    }
+  ],
+  "stages": [
+    "目标核对",
+    "资源检查",
+    "Hook 注入",
+    "回调握手",
+    "发现文本流",
+    "文本回调",
+    "文本来源"
+  ],
+  "follow": true,
+  "loadError": false
+}

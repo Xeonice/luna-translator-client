@@ -1,0 +1,2706 @@
+{
+  "expanded_old_enums": [
+    "profile.connections.protocol",
+    "profile.connections.auth_mode",
+    "profile.credential_refs.auth_kind"
+  ],
+  "field_ids": [
+    "profile.config_revisions.codec_version",
+    "profile.connections.adapter_binding_schema",
+    "profile.connections.adapter_contract_revision",
+    "profile.connections.compatibility_profile_id",
+    "profile.connections.compatibility_profile_revision",
+    "profile.connections.provider_preset_id",
+    "profile.connections.provider_preset_revision",
+    "profile.credential_refs.envelope_schema",
+    "profile.provider_preset_versions.adapter_contract_revision",
+    "profile.provider_preset_versions.auth_kind",
+    "profile.provider_preset_versions.compatibility_profile_id",
+    "profile.provider_preset_versions.compatibility_profile_revision",
+    "profile.provider_preset_versions.content_hash",
+    "profile.provider_preset_versions.created_at_ms",
+    "profile.provider_preset_versions.display_name",
+    "profile.provider_preset_versions.endpoint",
+    "profile.provider_preset_versions.namespace",
+    "profile.provider_preset_versions.options_json",
+    "profile.provider_preset_versions.preset_id",
+    "profile.provider_preset_versions.preset_revision",
+    "profile.provider_preset_versions.protocol_id",
+    "profile.provider_preset_versions.provider_id",
+    "profile.provider_preset_versions.provider_label",
+    "profile.provider_preset_versions.source_json"
+  ],
+  "fixtures_sha256": "02ab9ee4c1e1f7361e6acc6eb0c768141c2f85af1ebd2dfe1d003608df96e9d1",
+  "kind": "schema_three_http_boundary_registry",
+  "not_product_acceptance": true,
+  "probes": [
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.valid",
+      "kind": "field",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "config_revisions.codec_version",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.type",
+      "kind": "field",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": null
+      },
+      "expected": {
+        "error_contains": "config_revisions.codec_version",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.null",
+      "kind": "field",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": 1.5
+      },
+      "expected": {
+        "error_contains": "config_revisions.codec_version",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.fraction",
+      "kind": "field",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.zero",
+      "kind": "field",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {
+        "codec_version": 3
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:config_revisions.codec_version.unknown",
+      "kind": "field",
+      "table": "config_revisions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.valid",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "connections.adapter_binding_schema",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.type",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.null",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1.5
+      },
+      "expected": {
+        "error_contains": "connections.adapter_binding_schema",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.fraction",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 2
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.adapter_binding_schema.unknown",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.valid",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "connections.adapter_contract_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.type",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.null",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 1.5
+      },
+      "expected": {
+        "error_contains": "connections.adapter_contract_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.fraction",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.zero",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.negative",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 4294967295
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.u32_max",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 4294967296
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.adapter_contract_revision.u32_overflow",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.valid",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "connections.compatibility_profile_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.type",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.null",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": "profile\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.nul",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.empty",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": "profile/escape"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.invalid_ascii",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": "profilexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_id.too_long",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.valid",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "connections.compatibility_profile_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.type",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.null",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 1.5
+      },
+      "expected": {
+        "error_contains": "connections.compatibility_profile_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.fraction",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.zero",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.negative",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 4294967295
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.u32_max",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 4294967296
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.compatibility_profile_revision.u32_overflow",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.provider_preset_id.valid",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_id": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "connections.provider_preset_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.provider_preset_id.type",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.provider_preset_id.null",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.valid",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "connections.provider_preset_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.type",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.null",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": 1.5
+      },
+      "expected": {
+        "error_contains": "connections.provider_preset_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.fraction",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.zero",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.negative",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": 4294967295
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.u32_max",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_revision": 4294967296
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.provider_preset_revision.u32_overflow",
+      "kind": "field",
+      "table": "connections"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.valid",
+      "kind": "field",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "credential_refs.envelope_schema",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.type",
+      "kind": "field",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.null",
+      "kind": "field",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": 1.5
+      },
+      "expected": {
+        "error_contains": "credential_refs.envelope_schema",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.fraction",
+      "kind": "field",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.zero",
+      "kind": "field",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "envelope_schema": 3
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:credential_refs.envelope_schema.unknown",
+      "kind": "field",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_id": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.preset_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_id": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.preset_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_id": "user.fixture\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_id": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_id": "user.fixture/escape"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.invalid_ascii",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_id": "user.fixturexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_id.too_long",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.preset_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.preset_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": 1.5
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.preset_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.fraction",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.zero",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.negative",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": 4294967295
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.u32_max",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "preset_revision": 4294967296
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.preset_revision.u32_overflow",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.namespace.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "namespace": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.namespace",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.namespace.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "namespace": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.namespace",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.namespace.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "namespace": "arbitrary"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.namespace.unknown",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "namespace": "builtin"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.namespace.mismatch",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "namespace": "builtin",
+        "preset_id": "builtin.fixture"
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.namespace.builtin",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_id": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.provider_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_id": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.provider_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_id": "provider\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_id": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_id": "provider/escape"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.invalid_ascii",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_id": "providerxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_id.too_long",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_label.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_label": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.provider_label",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_label.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_label": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.provider_label",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_label.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_label": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_label.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "provider_label": "visible\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.provider_label.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.display_name.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "display_name": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.display_name",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.display_name.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "display_name": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.display_name",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.display_name.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "display_name": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.display_name.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "display_name": "visible\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.display_name.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "protocol_id": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.protocol_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "protocol_id": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.protocol_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "protocol_id": "openai_compatible\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "protocol_id": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "protocol_id": "openai_compatible/escape"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.invalid_ascii",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "protocol_id": "openai_compatiblexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.protocol_id.too_long",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.adapter_contract_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.adapter_contract_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 1.5
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.adapter_contract_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.fraction",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.zero",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.negative",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 4294967295
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.u32_max",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_contract_revision": 4294967296
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.adapter_contract_revision.u32_overflow",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.compatibility_profile_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.compatibility_profile_id",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": "profile\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": "profile/escape"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.invalid_ascii",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_id": "profilexxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_id.too_long",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.compatibility_profile_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.compatibility_profile_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 1.5
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.compatibility_profile_revision",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.fraction",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 0
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.zero",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.negative",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 4294967295
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.u32_max",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "compatibility_profile_revision": 4294967296
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.compatibility_profile_revision.u32_overflow",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.endpoint.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "endpoint": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.endpoint",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.endpoint.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "endpoint": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.endpoint.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "endpoint": "https://example.invalid\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.endpoint.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "endpoint": "https://example.invalid?key=x"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.endpoint.query",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "endpoint": "https://example.invalid#x"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.endpoint.fragment",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.auth_kind.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "auth_kind": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.auth_kind",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.auth_kind.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "auth_kind": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.auth_kind",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.auth_kind.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "auth_kind": "headers"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.auth_kind.unknown",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.options_json.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "options_json": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.options_json",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.options_json.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "options_json": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.options_json",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.options_json.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "options_json": "{"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.options_json.malformed",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "options_json": "[]"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.options_json.wrong_top",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "options_json": "{}\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.options_json.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.content_hash",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.content_hash",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": ""
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.empty",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.short",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.upper",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "content_hash": "gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.content_hash.nonhex",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.source_json.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "source_json": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.source_json",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.source_json.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "source_json": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.source_json",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.source_json.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "source_json": "{"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.source_json.malformed",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "source_json": "{}"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.source_json.wrong_top",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "source_json": "[]\u0000tail"
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.source_json.nul",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {},
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.valid",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": {
+          "$bytes_hex": "00ff"
+        }
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.created_at_ms",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.type",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": null
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.created_at_ms",
+        "outcome": "reject",
+        "sqlite_errorcode": 1299
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.null",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": {
+          "$integer": "9223372036854775808"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.physical_i64_upper",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": {
+          "$integer": "-9223372036854775809"
+        }
+      },
+      "expected": {
+        "error_class": "OverflowError",
+        "outcome": "binding_reject"
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.physical_i64_lower",
+      "kind": "physical_driver_boundary",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": 1.5
+      },
+      "expected": {
+        "error_contains": "provider_preset_versions.created_at_ms",
+        "outcome": "reject",
+        "sqlite_errorcode": 3091
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.fraction",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": -1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.negative",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "created_at_ms": 0
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:provider_preset_versions.created_at_ms.zero",
+      "kind": "field",
+      "table": "provider_preset_versions"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.binding_mask.0",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.1",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.2",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.3",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.4",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.5",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.6",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": null,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.7",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.8",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.9",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.10",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": null,
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.11",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.12",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": null,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.13",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": null,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.binding_mask.14",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "adapter_binding_schema": 1,
+        "adapter_contract_revision": 1,
+        "compatibility_profile_id": "profile",
+        "compatibility_profile_revision": 1,
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.binding_mask.15",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_id": null,
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.preset_mask.0",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_id": "user.fixture",
+        "provider_preset_revision": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.preset_mask.1",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_id": null,
+        "provider_preset_revision": 1
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:connections.preset_mask.2",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "provider_preset_id": "user.fixture",
+        "provider_preset_revision": 1
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.preset_mask.3",
+      "kind": "nullable_group",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "envelope_schema": null
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:credential_refs.envelope.legacy_raw",
+      "kind": "metadata",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "auth_kind": "baidu_app_secret"
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:credential_refs.envelope.typed_app",
+      "kind": "metadata",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "auth_kind": "baidu_app_secret",
+        "envelope_schema": null
+      },
+      "expected": {
+        "error_contains": "CHECK constraint failed",
+        "outcome": "reject",
+        "sqlite_errorcode": 275
+      },
+      "id": "V3-PROBE:credential_refs.envelope.app_without_schema",
+      "kind": "metadata",
+      "table": "credential_refs"
+    },
+    {
+      "changes": {
+        "protocol": "deepl_v2"
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.expanded_old_enum.protocol",
+      "kind": "expanded_old_enum",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "auth_mode": "baidu_app_secret"
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:connections.expanded_old_enum.auth_mode",
+      "kind": "expanded_old_enum",
+      "table": "connections"
+    },
+    {
+      "changes": {
+        "auth_kind": "youdao_app_secret"
+      },
+      "expected": {
+        "outcome": "accept"
+      },
+      "id": "V3-PROBE:credential_refs.expanded_old_enum.auth_kind",
+      "kind": "expanded_old_enum",
+      "table": "credential_refs"
+    }
+  ],
+  "projection": "v3_exact_tables_without_triggers_foreign_keys_off",
+  "relationship_ids": [
+    "preset_fk_protocol",
+    "preset_fk_revision",
+    "preset_fk_profile",
+    "preset_immutable_update",
+    "preset_immutable_delete",
+    "preset_secret_option",
+    "preset_nested_option",
+    "credential_schema_immutable",
+    "connection_immutable",
+    "sealed_connection_insert",
+    "sealed_connection_delete",
+    "legacy_codec_extension"
+  ],
+  "schema_version": 1,
+  "source_design_sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2"
+}

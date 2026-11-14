@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "abi_profile": "lunahooks-core-abi1-cdecl-seven",
+  "abi_version": 1,
+  "repository": "https://github.com/Xeonice/luna-hooks-core",
+  "commit": "e9242ebac32a09e911f306b7c90714891c217302",
+  "protocol_version": 2,
+  "files": [
+    {
+      "architecture": "x86",
+      "runtime_path": "LunaHookCore32.dll",
+      "sha256": "f1e35b780c268929608e145bf519d9f8c682bed11b5ec7defd9e49ecfefbe621",
+      "size": 3021312
+    },
+    {
+      "architecture": "x86",
+      "runtime_path": "LunaHostCore32.dll",
+      "sha256": "6dc3ac55de2c304a4c56e1451f51eae2b00ea259bd13790c62bf0404c3afb4f1",
+      "size": 446464
+    },
+    {
+      "architecture": "x86",
+      "runtime_path": "LunaInjectCore32.exe",
+      "sha256": "b4c20a97f981e578986711f92f5d70c708618555013a708d4df4b672fd1d7c8b",
+      "size": 215040
+    },
+    {
+      "architecture": "x64",
+      "runtime_path": "LunaHookCore64.dll",
+      "sha256": "cba7aa1a225df45d8e780a9763a5405ae9f600dc4f893f1e7f87ba192993d631",
+      "size": 3526656
+    },
+    {
+      "architecture": "x64",
+      "runtime_path": "LunaHostCore64.dll",
+      "sha256": "28428a28cf85ce22f6b18844bca13af10c764b3621afa622cf7a532e4a652175",
+      "size": 1824256
+    },
+    {
+      "architecture": "x64",
+      "runtime_path": "LunaInjectCore64.exe",
+      "sha256": "afb3de05660acfbd68b356a2a11e074fc823cba3a8f60b01942d9740e5499c46",
+      "size": 1454592
+    }
+  ],
+  "licenses": [
+    {
+      "source_path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "size": 35149
+    },
+    {
+      "source_path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "f3d896f4059455fb4526fd9f9e8f4c14bd320511aa6fa3490a874fff0b0d888b",
+      "size": 3007
+    },
+    {
+      "source_path": "licenses/CMakeHelpers-LICENSE.txt",
+      "sha256": "462a1c135421c038c0cc9048a8b648511ba3e9e6d4cc2289a5be1175688e336c",
+      "size": 1109
+    },
+    {
+      "source_path": "licenses/windows-classic-samples-LICENSE.txt",
+      "sha256": "3645a237b872306e4955bc2ce75783537bd7123bcb57332f8819e4cfbcf50b45",
+      "size": 1231
+    },
+    {
+      "source_path": "vendor/minhook/LICENSE.txt",
+      "sha256": "d5c2224982b0b95a16b098a561335fa93f3eaf4d0aa964b7843edb986df78dc8",
+      "size": 4365
+    },
+    {
+      "source_path": "vendor/uchardet/COPYING",
+      "sha256": "107a29ccdd2d778aa2df5462f85dddfa099059abd22e064e07ec2cc9bafc37cd",
+      "size": 70517
+    }
+  ]
+}

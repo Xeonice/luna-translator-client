@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261020-R28",
+  "parent": "FP1-20261020-R27",
+  "parent_sha256": "8592d6be89279f9e589c2c30742e78b1c07a0470dd5ba1bd026071c799b72c9b",
+  "captured_at": "2026-10-20T13:44:45.143697+00:00",
+  "status": "independently_reviewed_root_authorized_authority_only",
+  "reason": "R28在原有界V2基础上，仅对唯一未闭合引号后缀严格增长保留平衡姓名前缀；精确重建多raw引用并保留真实incoming来源。V1/V2历史与6000ms/64KiB/128硬界、不可变修订、finalized-only任务权限保留；原SR08失败与07工程通过分别保留，不继承为R28实机通过。",
+  "independent_review": {
+    "path": ".build/next-batch-20261020/aggregation-fix-r28/governance-independent-review/accepted-receipt.json",
+    "sha256": "09da9ea9e1d82d91126d193ea2150252e3e20b3087a9cf0ef8d012a1d4a948c3",
+    "bytes": 8564
+  },
+  "exact_delta_review": {
+    "path": "openspec/changes/implement-reviewed-reading-session-batch/exact-delta-review-r28.json",
+    "sha256": "8821fccc8451465be4806b4b854e0e03dd50fd0e92e2d5617e6bb10c5060ccc0",
+    "bytes": 11177
+  },
+  "root_review": {
+    "status": "root_explicit_adoption_authorized_authority_only",
+    "authorization": {
+      "path": ".build/next-batch-20261020/aggregation-fix-r28/governance-review/root-adoption-authorization.json",
+      "sha256": "1184ebd1ed6d02f0e84522587af083b4893419c61d3f4fd313512c16c8eaec7a",
+      "bytes": 1254
+    },
+    "approvals_and_enforcement_unchanged": true,
+    "product_acceptance_promoted": false,
+    "R27_archived_exact": true,
+    "all_five_sources_frozen": true,
+    "new_canonical_package_and_four_games": "not_run",
+    "original_failures_retained": true,
+    "no_commit_or_push": true
+  },
+  "finalized_at": "2026-10-20T14:10:59.993887+00:00",
+  "independent_source_review": {
+    "path": ".build/next-batch-20261020/aggregation-fix-r28/code-review/receipt.json",
+    "sha256": "b8d92024d308a81c3527e389afd1478c2ab272ca827c4c3fe753e15ba15f14f2",
+    "bytes": 6359
+  }
+}

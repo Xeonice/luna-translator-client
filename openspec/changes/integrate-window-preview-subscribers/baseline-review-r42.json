@@ -1,0 +1,8 @@
+{
+  "kind": "R42_metadata_only_candidate_review",
+  "status": "candidate_pending_independent_exact_review_and_Root_adoption",
+  "parent_baseline_sha256": "2451fbd240a287d6a8e6f301698cdb67642b8f026a6b0b1e4e67effe8dbaacc6",
+  "exact_delta_sha256": "a8f4716da1444dcb32e62b6f4bba6b03bc2e901316ca28d691ccc4ffcd8b8f3e",
+  "prior_scope_failure_retained": true,
+  "product_runtime_release_promoted": false
+}

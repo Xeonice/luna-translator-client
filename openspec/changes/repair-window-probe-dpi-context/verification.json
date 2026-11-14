@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "id": "repair-window-probe-dpi-context",
+  "kind": "product",
+  "status": "proposed",
+  "allowed_paths": [
+    "openspec/changes/repair-window-probe-dpi-context/**",
+    "crates/lunahook-host/examples/target_probe.rs",
+    "apps/desktop/src-tauri/resources/brokers/x86/target_probe.exe",
+    "apps/desktop/src-tauri/resources/brokers/x64/target_probe.exe",
+    "apps/desktop/src-tauri/resources/brokers/x86/lunahook-host.exe",
+    "apps/desktop/src-tauri/resources/brokers/x64/lunahook-host.exe",
+    "apps/desktop/src-tauri/resources/core-staging-receipt.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261024-R45.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-window-probe-dpi-context/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "requirements": [
+    {
+      "id": "FP-03",
+      "spec": "specs/window-discovery/spec.md",
+      "scenario": "window-enumeration-and-picking-share-physical-coordinate-scope",
+      "source_requirement_ids": [
+        "FP-03"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02"
+      ],
+      "component_ids": [
+        "C13",
+        "C14"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-compile",
+        "product-target-probe-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "typescript-compile"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/window-discovery/spec.md",
+      "scenario": "query-errors-never-skip-context-restoration",
+      "source_requirement_ids": [
+        "FP-03"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02"
+      ],
+      "component_ids": [
+        "C13",
+        "C14"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-compile",
+        "product-target-probe-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "typescript-compile"
+      ]
+    },
+    {
+      "id": "FP-12",
+      "spec": "specs/window-discovery/spec.md",
+      "scenario": "real-window-discovery-precedes-runtime-acceptance",
+      "source_requirement_ids": [
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02"
+      ],
+      "component_ids": [
+        "C13",
+        "C14"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-compile",
+        "product-target-probe-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-hook-client-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "typescript-compile"
+      ]
+    }
+  ]
+}

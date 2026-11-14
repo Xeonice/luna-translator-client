@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "kind": "R28_exact_delta_review_candidate",
+  "status": "independently_reviewed_source_and_governance_root_authorized_authority_only",
+  "captured_at": "2026-10-20T13:44:45.142712+00:00",
+  "parent_baseline": {
+    "id": "FP1-20261020-R27",
+    "path": "docs/development/iteration-baseline.json",
+    "sha256": "8592d6be89279f9e589c2c30742e78b1c07a0470dd5ba1bd026071c799b72c9b",
+    "entries": 725
+  },
+  "source_deltas": [
+    {
+      "path": "crates/app-core/src/domain/capture.rs",
+      "before_sha256": "a1d4bda758f8447d14f2de51b477ba41ae39bec85dc3b7436e7fb5a9605ddbcf",
+      "after_sha256": "9227b3e484f8aca38101efee4c817889928ab078f14d95ce8404326148ccb0a9"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/capture.rs",
+      "before_sha256": "579236a602186888d299edcd6379229ccd941cb5e7b4275a06a85573e394df6a",
+      "after_sha256": "288a63cf50c066dc4a873df3791f9bc8c5fa73350cfb14f857e5b55aacb5d1d3"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_product.rs",
+      "before_sha256": "9c136072b55cd4e7f48bc450529808d994d17b2a8be1055d8b28281e037faef8",
+      "after_sha256": "aa9aae1002d667c4544701df3769e523882c73e0f6f399fd382b06f489795f2c"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "before_sha256": "5a5dfa1ed37d3f1dfd46f8f2359a438ea2faf6b0b5ef6f5d228c59705156644f",
+      "after_sha256": "8609d264c492f7ce5aa3d5bc8b4b878ddaf34a872082497258dcb8f52b3d19a8"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+      "before_sha256": "153fcb6962792150d38b3f2a09377f16e3512521e2d0c98fc564869745bcbfa3",
+      "after_sha256": "bd3113d2f74f8a9a8417b246441ceae36840246a58b360ba7cc85d0c6bb03947"
+    }
+  ],
+  "exact_existing_file_changes": [
+    {
+      "path": "crates/app-core/src/domain/capture.rs",
+      "before_sha256": "a1d4bda758f8447d14f2de51b477ba41ae39bec85dc3b7436e7fb5a9605ddbcf",
+      "after_sha256": "9227b3e484f8aca38101efee4c817889928ab078f14d95ce8404326148ccb0a9",
+      "bytes": 19421,
+      "candidate": "crates/app-core/src/domain/capture.rs"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/capture.rs",
+      "before_sha256": "579236a602186888d299edcd6379229ccd941cb5e7b4275a06a85573e394df6a",
+      "after_sha256": "288a63cf50c066dc4a873df3791f9bc8c5fa73350cfb14f857e5b55aacb5d1d3",
+      "bytes": 32166,
+      "candidate": "crates/app-infra/src/storage/queries/capture.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_product.rs",
+      "before_sha256": "9c136072b55cd4e7f48bc450529808d994d17b2a8be1055d8b28281e037faef8",
+      "after_sha256": "aa9aae1002d667c4544701df3769e523882c73e0f6f399fd382b06f489795f2c",
+      "bytes": 113195,
+      "candidate": "crates/app-infra/tests/storage_product.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "before_sha256": "5a5dfa1ed37d3f1dfd46f8f2359a438ea2faf6b0b5ef6f5d228c59705156644f",
+      "after_sha256": "8609d264c492f7ce5aa3d5bc8b4b878ddaf34a872082497258dcb8f52b3d19a8",
+      "bytes": 93622,
+      "candidate": "crates/app-infra/tests/application_runtime.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+      "before_sha256": "153fcb6962792150d38b3f2a09377f16e3512521e2d0c98fc564869745bcbfa3",
+      "after_sha256": "bd3113d2f74f8a9a8417b246441ceae36840246a58b360ba7cc85d0c6bb03947",
+      "bytes": 101255,
+      "candidate": "crates/app-infra/tests/storage_acceptance_support/fields.rs"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md",
+      "before_sha256": "6ba5a24cda01b0efe18a29e0c159d29c49c3d8a25b03218465d65ec6f87bd079",
+      "after_sha256": "b4beb84e14496a9d654c41d459ee0e06de054e24e751bc3dc248e99339eb103f",
+      "bytes": 2342,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/design.md",
+      "before_sha256": "ecf1aaa3d1ab05602efe9af87113989301fdbb267c29f329cf756d2cf7150338",
+      "after_sha256": "9ad99af43b0895a03e241dd3ba374ebc1687fde5d0ef887b00d0fbdc5d42dd18",
+      "bytes": 6963,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/design.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md",
+      "before_sha256": "3965a012a018c1aea3d95066cb03d55331841b68a84cb0a358abd5512682358f",
+      "after_sha256": "e6341815703956dd6f04efdbf2b56518d6f461089b56e4506d3a7e6703d04836",
+      "bytes": 3448,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md",
+      "before_sha256": "50d2c3eb43b5dd840c9adac7f608dfe6018c4e42b8cd25660764cafd225c4772",
+      "after_sha256": "cbfa61cb891ec49a3bf767cbbe8ce563027141ab5d39073e1445a12c81b08fdf",
+      "bytes": 17915,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/verification.json",
+      "before_sha256": "f7fea3a78303f7e934db1fd5dfff0c631e5abb1806df2bc88ee1a7c43239e917",
+      "after_sha256": "428c8a87d7756cb6b1ee084564022eb97f4ab877458c5cddafc4bf99a8e206b4",
+      "bytes": 44863,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/verification.json"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before_sha256": "a0fecad4c8ebba4c76da9f3c519791c1668800a181e89349b9ce3815967ed59d",
+      "after_sha256": "d3f95c1632c4d0f8dc47de00458be57ebd0261f695f8ca988e4a4c86eb960a57",
+      "bytes": 64399,
+      "candidate": "docs/architecture/reading-window-session-technical-design.md"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before_sha256": "84288da9fce44c732eaa2878fafb0a20ed9b7a22a4772ebb3cf2144f6cfcaa7a",
+      "after_sha256": "1eb2702d612208222dbd6f4b91523bf8fa9b59997a023d566e21f59bbd680203",
+      "bytes": 581027,
+      "candidate": ".build/next-batch-20261020/aggregation-fix-r28/governance-review/candidates/docs/architecture/implementation-status.json"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before_sha256": "6717ad347b3e23aacbb58e3ba020a0432487c6071dff3726188d40c067b39173",
+      "after_sha256": "4a55e385bb8f6ec76a84eab5dd578c6ebdd60a718ecea8ce6709964c3010cb79",
+      "bytes": 144056,
+      "candidate": ".build/next-batch-20261020/aggregation-fix-r28/governance-review/candidates/docs/architecture/implementation-status.md"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before_sha256": "5efb5e3fa084bbf4ba2b0f585aba3b8efd5adf08c0aab8921cccf497ca4a84f3",
+      "after_sha256": "88617fd5b62a2ac254732a365cd92c3161f357e97da07084be78d9fdf0654d85",
+      "bytes": 39897,
+      "candidate": ".build/next-batch-20261020/aggregation-fix-r28/governance-review/candidates/docs/architecture/engineering-modules.csv"
+    }
+  ],
+  "R27_full_inverse": {
+    "source_sha256": "bb1939feb76c676db63235bec5c2b702df2bb1c8724872850ecb448a5fb7a98f",
+    "entries": 1597,
+    "inverse_match": true
+  },
+  "status_candidate_manifest": {
+    "path": ".build/next-batch-20261020/aggregation-fix-r28/governance-review/status-candidate-review-manifest.json",
+    "sha256": "17c8599f053622d1204bd83fa97a5c8f72212e9f16e5e970b3204a63cdbf13d9",
+    "bytes": 45169
+  },
+  "protected": {
+    "seed": ".build/next-batch-20261020/context/protected-before.json",
+    "unchanged_protected_files": 420,
+    "groups": {
+      "original_prd": 101,
+      "license": 36,
+      "approved_design_sources": 16,
+      "approved_design_png": 37,
+      "approval_and_visual_inputs": 206,
+      "tokens": 2,
+      "database_design": 12,
+      "baseline_archive_and_retained_old_candidate": 6,
+      "historical_evidence": 5
+    },
+    "unchanged_catalogue_inputs": 306,
+    "pixel_policy": {
+      "threshold": 0.1,
+      "includeAA": true,
+      "maxRatio": 0
+    },
+    "pins": [
+      {
+        "path": "docs/development/storage-acceptance.json",
+        "sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+        "bytes": 14220
+      },
+      {
+        "path": "docs/architecture/database/v2/storage-acceptance.json",
+        "sha256": "dfd2b0577ed5523f0e7ee618adddad2060886f3bd7cc9362b8a39f60017fa8ad",
+        "bytes": 14807
+      },
+      {
+        "path": "openspec/legacy-debt.json",
+        "sha256": "fb0021504423bd16c24d023f9d84e48ad511a518b353b4a3dd499ad22ab7ae07",
+        "bytes": 8683
+      },
+      {
+        "path": "openspec/technology-lock.json",
+        "sha256": "b8bfd585c9376242bdafe681778641aabe7a32fe43a291308a46b1a3057c9c70",
+        "bytes": 7482
+      }
+    ]
+  },
+  "semantics": {
+    "new_policy": "hook-bounded-quoted-growth-v3",
+    "fold": "GrowingQuotedSnapshot",
+    "snapshot_policy": "bounded-quoted-growth-v3",
+    "quoted_growth": "unique-open-quote-prefix-growth-v1",
+    "join": "exact-ref-concatenation",
+    "completion": "balanced-terminal-v2",
+    "prior_V1_V2_identity_and_meaning_retained": true,
+    "no_game_name_or_text_hardcoding": true,
+    "old_raw_revision_refs_immutable": true,
+    "multi_ref_nonzero_offset_checked_utf8_exact_reconstruction": true,
+    "retained_refs_plus_incoming_at_most128": true,
+    "result_prefix_plus_incoming_at_most65536": true,
+    "creation_hard_age6000_unchanged": true,
+    "finalized_latest_model_authority_unchanged": true,
+    "existing_storage_failure_effective_unknown_marker": true,
+    "no_reliable_page_signal_or_universal_redraw_guarantee": true,
+    "independent_source_review": {
+      "status": "accepted",
+      "review": {
+        "path": ".build/next-batch-20261020/aggregation-fix-r28/code-review/receipt.json",
+        "sha256": "b8d92024d308a81c3527e389afd1478c2ab272ca827c4c3fe753e15ba15f14f2",
+        "bytes": 6359
+      }
+    },
+    "new_canonical_package_runtime": "not_run"
+  },
+  "approvals_and_enforcement_unchanged": true,
+  "runtime_verified_this_audit": false,
+  "current_release_approved": false,
+  "new_canonical_and_package_and_games": "not_run",
+  "commit_or_push": false,
+  "finalized_at": "2026-10-20T14:10:59.991708+00:00",
+  "completed_reviews": {
+    "source_review": {
+      "path": ".build/next-batch-20261020/aggregation-fix-r28/code-review/receipt.json",
+      "sha256": "b8d92024d308a81c3527e389afd1478c2ab272ca827c4c3fe753e15ba15f14f2",
+      "bytes": 6359
+    },
+    "governance_review": {
+      "path": ".build/next-batch-20261020/aggregation-fix-r28/governance-independent-review/accepted-receipt.json",
+      "sha256": "09da9ea9e1d82d91126d193ea2150252e3e20b3087a9cf0ef8d012a1d4a948c3",
+      "bytes": 8564
+    },
+    "root_adoption_authorization": {
+      "path": ".build/next-batch-20261020/aggregation-fix-r28/governance-review/root-adoption-authorization.json",
+      "sha256": "1184ebd1ed6d02f0e84522587af083b4893419c61d3f4fd313512c16c8eaec7a",
+      "bytes": 1254
+    }
+  },
+  "review_binding_finalization_only": true
+}

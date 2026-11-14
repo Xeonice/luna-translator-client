@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261020-R27",
+  "parent": "FP1-20261020-R26",
+  "parent_sha256": "8ffb17b94e8d1087c287b7c1251b6c8e99891a6d84fecd97cc810d7fdcd2c8f9",
+  "captured_at": "2026-10-20T11:56:29.475128+00:00",
+  "status": "independently_reviewed_authority_adoption_authorized_not_product_acceptance",
+  "reason": "Repair actual SR06b slow-line early-finalization within existing hard limits using named V2; preserve V1 proofs, original failures, exact immutable text/raw provenance, finalized-only task authority, no reliable page guarantee.",
+  "independent_review": {
+    "path": ".build/next-batch-20261020/aggregation-fix/code-review/governance-candidate-independent-review.json",
+    "sha256": "e47cf024d9471c9d0468e9688ea6997832951ac39ecd01138e0814fee9ed849e",
+    "bytes": 5514,
+    "attestation": "Candidate semantic content and exact source/authority/derived/protected bytes independently reviewed; completed sixth source review bound per required finalization."
+  },
+  "exact_delta_review": {
+    "path": "openspec/changes/implement-reviewed-reading-session-batch/exact-delta-review-r27.json",
+    "sha256": "f0011d976592e5bacf9af8a3490032a536ba0b84e67501a90e7ce142be1929d8"
+  },
+  "root_review": {
+    "status": "root_explicit_adoption_authorized_authority_only",
+    "authorization": "Adopt reviewed six-source R27 authority only; no current canonical/package/game/runtime/release approval. Exact finalization limited to completed review binding and its derived hashes.",
+    "approvals_and_enforcement_unchanged": true,
+    "product_acceptance_promoted": false,
+    "R26_archived_exact": true,
+    "all_six_source_hashes_frozen": true,
+    "canonical_and_new_package_and_same_candidate_games": "not_run",
+    "original_failures_retained": true,
+    "no_commit_or_push": true
+  },
+  "finalized_at": "2026-10-20T12:07:39.457287+00:00",
+  "independent_six_source_review": {
+    "path": ".build/next-batch-20261020/aggregation-fix/code-review/final-review-addendum.json",
+    "sha256": "daace51ea5d4d16c4cd277ad789e3cad6c7c7e14e8da3ad5ba56de990bbabbaf",
+    "bytes": 4686
+  }
+}

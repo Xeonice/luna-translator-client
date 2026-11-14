@@ -1,0 +1,53 @@
+{
+  "kind": "R33_exact_RF04_RF05_candidate_reconciliation",
+  "status": "root_independently_reviewed_awaiting_exact_copy",
+  "parent_baseline_sha256": "3edece551291cb40ff7d8c433f76ec0dcd8ff933b5f8b608963947633a529422",
+  "source_freeze": {
+    "at": "2026-10-21T15:47:06.731391+00:00",
+    "authorization": "Root final stopped-owner message after staged worker18b588; candidate generation only, no adoption",
+    "map": ".build/governance-rf04-rf05-final/pre-authority-source-map.json",
+    "map_sha256": "9109a0d557d9edb95f72df9484cb298c2363f7753e0abf4f79ba5ed05b5b0492",
+    "tree_sha256": "31447de3dafb0352a53021c619464caf39924c5511f9555a3339603599981187",
+    "entries": 1635,
+    "parent_R32_sha256": "3edece551291cb40ff7d8c433f76ec0dcd8ff933b5f8b608963947633a529422"
+  },
+  "source_evidence_updates": 72,
+  "explicit_quote_replacements": 0,
+  "semantic_record_ids": [
+    "M02",
+    "M10",
+    "M12",
+    "M14",
+    "M15",
+    "C14",
+    "C35",
+    "C36",
+    "FP-03",
+    "FP-05",
+    "FP-12",
+    "CAP-CORE",
+    "CAP-PREVIEW",
+    "CAP-HOOK-LOG",
+    "CAP-STORAGE"
+  ],
+  "new_controlled_entries": [
+    "docs/development/baselines/FP1-20261021-R32.json",
+    "openspec/changes/repair-library-binding-preview-diagnostics/storage-carrier-review-r33.json",
+    "openspec/changes/repair-library-binding-preview-diagnostics/exact-delta-review-r33.json",
+    "openspec/changes/repair-library-binding-preview-diagnostics/baseline-review-r33.json",
+    "scripts/quality/window_title_proof_api.py",
+    "scripts/quality/fixtures/window_title_fixture.c"
+  ],
+  "storage_carrier_review": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/storage-carrier-review-r33.json",
+    "sha256": "d2102f147c18465c68ff1221a466b59bc239d8852d371a61a7513d17ca7363db"
+  },
+  "history_approvals_original_visual_thresholds_unchanged": true,
+  "actual_canonical_modified": false,
+  "root_independent_review": {
+    "by": "/root",
+    "scope": "Root independently read manifest, three-pin-only storage diff, actual database method diff, semantic status changes; approved exact12 candidate scope and final pending-copy state; no runtime/release/visual promotion",
+    "message": "Root已读manifest/三storagepin diff、数据库新增方法实际diff及status语义，批准该精确范围。最后一次生成final，Root已独立核精确delta且采用等待copy。",
+    "adoption": "authorized_awaiting_mechanical_exact_copy"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-lifecycle-execution-order",
+  "parent_baseline_sha256": "dfb34a92cf2e1ad58eb13a6365ef88177a8f99701f596b96825a8ff38190751f",
+  "source_delta": [
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/design.md",
+      "before": null,
+      "after": "caf704875cac79536ed09c160e781806c7fc7a816ea9950d874d18c853431659"
+    },
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/iteration-card.md",
+      "before": null,
+      "after": "927de060cc9f61a4b6650d0111927b71cb608549e3c71a228aee59e7074cf70e"
+    },
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/proposal.md",
+      "before": null,
+      "after": "0b208563e49e999aae8efed13afce1a9c898e6e23bd10ce9c9e88970543a9d90"
+    },
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/source-snapshot.json",
+      "before": null,
+      "after": "043625b5d3751f989b7f0fe0de34d08d715df8b091d30c9c453c961e25e03d7e"
+    },
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/specs/execution-closure-order/spec.md",
+      "before": null,
+      "after": "5dfca44aa0f9b300847d24b25efca5d21dd3318022aeb22059d2bd54113e583c"
+    },
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/tasks.md",
+      "before": null,
+      "after": "e569687fbda1cdb6120747234515cc6a2d4f5ffd7aaa606bb511601477f5459e"
+    },
+    {
+      "path": "openspec/changes/repair-lifecycle-execution-order/verification.json",
+      "before": null,
+      "after": "9b3f7ab75a6d4bf8c263a0358d962aadb75f21045273004485b42cc26f15fb03"
+    },
+    {
+      "path": "scripts/quality/test_lifecycle_impact.py",
+      "before": "970e21f61a33e16c3dc9fb7f224f4de577bf0ebca98d90c7ce5a0a8e4d66d785",
+      "after": "59e1aa79a4a9133daf360fca3c3457e67bd9fec4b8d2996959376f2ac5ceb099"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "fef980b1fb0c549e7c38c4b82ac6b4bab046b0742be5a4fbce6db553aa120dd7",
+      "after": "1289aa104b178ca41c5d7551e0f55dc2ace5d49125fab24033843b73833c06ef"
+    }
+  ],
+  "product_delta": [],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/execution-order-fix/independent-code-review.json",
+    "sha256": "07876637391bca4de1eee9469293c807036469cd648fe0423339dbc3a2ce7aa6",
+    "bytes": 8530
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/verify.py",
+        "line": 19,
+        "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+        "symbol": "READING_COMPONENT_CHECK",
+        "sha256": "fef980b1fb0c549e7c38c4b82ac6b4bab046b0742be5a4fbce6db553aa120dd7"
+      },
+      "after": {
+        "path": "scripts/quality/verify.py",
+        "line": 19,
+        "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+        "symbol": "READING_COMPONENT_CHECK",
+        "sha256": "1289aa104b178ca41c5d7551e0f55dc2ace5d49125fab24033843b73833c06ef"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

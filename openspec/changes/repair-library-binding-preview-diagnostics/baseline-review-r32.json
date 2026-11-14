@@ -1,0 +1,12 @@
+{
+  "kind": "R32_baseline_candidate_review",
+  "status": "candidate_waiting_independent_review",
+  "parent_baseline_sha256": "a5f2213291e086c534690bb39db05e31a5cc91b249a199d6b0aa15616bf9abe8",
+  "exact_delta_record": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/exact-delta-review-r32.json",
+    "sha256": "182b020afdc49a6ffcd28c6180daa035d2acad9780c6362c2c9c88bb471da623"
+  },
+  "independent_exact_candidate_review": "not_run",
+  "root_adoption": "not_performed",
+  "runtime_visual_or_release_promoted": false
+}

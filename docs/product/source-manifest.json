@@ -1,0 +1,2329 @@
+{
+  "schemaVersion": 1,
+  "importedAt": "2026-10-17T17:08:57.361192+00:00",
+  "source": {
+    "remoteHostAlias": "douglas-mini",
+    "remoteHost": "douglasdong@100.97.190.45",
+    "remoteRoot": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性",
+    "revision": "1a9dda19593075e8f2141c28be36e6c2ca51becf",
+    "selectedFilesWorkingTreeStatus": [
+      "?? design/README.md",
+      "?? design/assets/README.md",
+      "?? design/assets/meadow.jpg",
+      "?? design/assets/sylvie.png",
+      "?? design/compat-x86-v1-qa.json",
+      "?? design/index.html",
+      "?? design/manifest.json",
+      "?? design/previews/SCR-01-dark.jpg",
+      "?? design/previews/SCR-01-error.jpg",
+      "?? design/previews/SCR-01-large.jpg",
+      "?? design/previews/SCR-01-light.jpg",
+      "?? design/previews/SCR-01-long-end.jpg",
+      "?? design/previews/SCR-01-long.jpg",
+      "?? design/previews/SCR-01-ocr-paused-light.png",
+      "?? design/previews/SCR-01-ocr-reading-dark.png",
+      "?? design/previews/SCR-01-ocr-reading-light.png",
+      "?? design/previews/SCR-01-restricted.jpg",
+      "?? design/previews/SCR-02-dark.jpg",
+      "?? design/previews/SCR-02-empty.jpg",
+      "?? design/previews/SCR-02-light.jpg",
+      "?? design/previews/SCR-03-dark.jpg",
+      "?? design/previews/SCR-03-light.jpg",
+      "?? design/previews/SCR-04-dark.jpg",
+      "?? design/previews/SCR-04-light.jpg",
+      "?? design/previews/SCR-04-restricted.jpg",
+      "?? design/previews/SCR-05-dark.jpg",
+      "?? design/previews/SCR-05-empty.jpg",
+      "?? design/previews/SCR-05-light.jpg",
+      "?? design/previews/SCR-06-dark.jpg",
+      "?? design/previews/SCR-06-light.jpg",
+      "?? design/previews/SCR-06-ocr-compact-light.png",
+      "?? design/previews/SCR-06-ocr-editing-light.png",
+      "?? design/previews/SCR-06-ocr-empty-light.png",
+      "?? design/previews/SCR-06-ocr-paused-light.png",
+      "?? design/previews/SCR-06-ocr-permission-light.png",
+      "?? design/previews/SCR-06-ocr-running-light.png",
+      "?? design/previews/SCR-06-ocr-screen-light.png",
+      "?? design/previews/SCR-06-ocr-selection-adjusting-light.png",
+      "?? design/previews/SCR-06-ocr-selection-dragging-light.png",
+      "?? design/previews/SCR-06-ocr-selection-idle-light.png",
+      "?? design/previews/SCR-06-ocr-selection-reading-light.png",
+      "?? design/previews/SCR-06-ocr-target-missing-light.png",
+      "?? design/previews/SCR-06-ocr-task-dark.png",
+      "?? design/previews/SCR-06-ocr-task-light.png",
+      "?? design/previews/SCR-06-ocr-window-dark.png",
+      "?? design/previews/SCR-06-ocr-window-light.png",
+      "?? design/previews/SCR-07-busy.jpg",
+      "?? design/previews/SCR-07-dark.jpg",
+      "?? design/previews/SCR-07-error.jpg",
+      "?? design/previews/SCR-07-light.jpg",
+      "?? design/previews/SCR-08-dark.jpg",
+      "?? design/previews/SCR-08-light.jpg",
+      "?? design/previews/SCR-09-dark.jpg",
+      "?? design/previews/SCR-09-light.jpg",
+      "?? design/previews/SCR-10-dark.jpg",
+      "?? design/previews/SCR-10-error.jpg",
+      "?? design/previews/SCR-10-light.jpg",
+      "?? design/previews/SCR-11-dark.jpg",
+      "?? design/previews/SCR-11-light.jpg",
+      "?? design/previews/SCR-12-dark.jpg",
+      "?? design/previews/SCR-12-light.jpg",
+      "?? design/previews/SCR-13-dark.jpg",
+      "?? design/previews/SCR-13-light.jpg",
+      "?? design/previews/SCR-14-dark.jpg",
+      "?? design/previews/SCR-14-light.jpg",
+      "?? design/previews/SCR-14-ocr-settings-dark.png",
+      "?? design/previews/SCR-14-ocr-settings-light.png",
+      "?? design/previews/SCR-15-compact.jpg",
+      "?? design/previews/SCR-15-dark.jpg",
+      "?? design/previews/SCR-15-error.jpg",
+      "?? design/previews/SCR-15-light.jpg",
+      "?? design/previews/SCR-16-dark.jpg",
+      "?? design/previews/SCR-16-light.jpg",
+      "?? design/previews/SCR-17-dark.jpg",
+      "?? design/previews/SCR-17-light.jpg",
+      "?? design/previews/SCR-18-dark.jpg",
+      "?? design/previews/SCR-18-error.jpg",
+      "?? design/previews/SCR-18-light.jpg",
+      "?? design/previews/SCR-19-dark.jpg",
+      "?? design/previews/SCR-19-light.jpg",
+      "?? design/previews/SCR-20-dark.jpg",
+      "?? design/previews/SCR-20-error.jpg",
+      "?? design/previews/SCR-20-light.jpg",
+      "?? design/previews/SCR-21-dark.jpg",
+      "?? design/previews/SCR-21-light.jpg",
+      "?? design/previews/SCR-22-dark.jpg",
+      "?? design/previews/SCR-22-light.jpg",
+      "?? design/previews/SCR-22-restricted.jpg",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png",
+      "?? design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "?? design/screen-plan.json",
+      "?? design/verification.json",
+      "?? docs/01-prd.md",
+      "?? docs/02-design-spec.md"
+    ],
+    "revisionScope": "Repository HEAD context only. Every imported document/design resource was untracked at capture time; per-file SHA-256 and importedAt identify the authoritative imported working-tree snapshot."
+  },
+  "scope": "Original PRD and design specification plus their reachable static design gallery, metadata, images, and asset attribution; no old production code, native preview implementation, task plans, skills, or build artifacts.",
+  "files": [
+    {
+      "relativePath": "design/README.md",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/README.md",
+      "bytes": 16388,
+      "sha256": "32a833f125198c57b2d21c2f1ad7a5d325fabc9813f9fd483528f368bc1c04b8",
+      "localPath": "original/design/README.md",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/assets/README.md",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/assets/README.md",
+      "bytes": 378,
+      "sha256": "96629259fd8248d15a0930c38410c125a2b0822c759fbf4981b80295f724954e",
+      "localPath": "original/design/assets/README.md",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/assets/meadow.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/assets/meadow.jpg",
+      "bytes": 733434,
+      "sha256": "c6d77eb070edb21658d66d5db5bc1578a535437ff9f9cbb34baf4d2ce46cb2a6",
+      "localPath": "original/design/assets/meadow.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/assets/sylvie.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/assets/sylvie.png",
+      "bytes": 266526,
+      "sha256": "8a19f9138cdc9efc85e01264bfa26458586f679653ecb1a43b1215c983f626e3",
+      "localPath": "original/design/assets/sylvie.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/compat-x86-v1-qa.json",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/compat-x86-v1-qa.json",
+      "bytes": 13286,
+      "sha256": "3fc03e9e692b007654e868acbca0a68169215ed983b45055ee12ece4e450a5b9",
+      "localPath": "original/design/compat-x86-v1-qa.json",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/index.html",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/index.html",
+      "bytes": 13438,
+      "sha256": "64022fc74e03d9df65926560ae499a2cb165274f75336346768fcd34916f02ef",
+      "localPath": "original/design/index.html",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/manifest.json",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/manifest.json",
+      "bytes": 59573,
+      "sha256": "7831eced5639f69f6c500acf60485cebde4339d26c814f10a3dc6a477fce891f",
+      "localPath": "original/design/manifest.json",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-dark.jpg",
+      "bytes": 333100,
+      "sha256": "d47545b9a7827d9ee6931a506b02132a5ecb749f547ef47efdd83df16eec094c",
+      "localPath": "original/design/previews/SCR-01-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-error.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-error.jpg",
+      "bytes": 417359,
+      "sha256": "0a2e847afbe7addc6d822d1b3eca61ba939c4c8f4a3b4d771e510eca425f16e5",
+      "localPath": "original/design/previews/SCR-01-error.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-large.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-large.jpg",
+      "bytes": 376313,
+      "sha256": "bc0c6273b904a27d9961ef08939c7e8a0fb57789b416e51bede786ddfa64fe6a",
+      "localPath": "original/design/previews/SCR-01-large.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-light.jpg",
+      "bytes": 425061,
+      "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6",
+      "localPath": "original/design/previews/SCR-01-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-long-end.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-long-end.jpg",
+      "bytes": 428209,
+      "sha256": "a74a3dacd780500cf9ee71866a1cde5ab2278e18802987325e9af93061da95fa",
+      "localPath": "original/design/previews/SCR-01-long-end.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-long.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-long.jpg",
+      "bytes": 439459,
+      "sha256": "ac2b05086abe340328b226821715cb5dfafbbf8cf072694c40a5b6b9186cca90",
+      "localPath": "original/design/previews/SCR-01-long.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-ocr-paused-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-ocr-paused-light.png",
+      "bytes": 159882,
+      "sha256": "d8dd3f2faaf9e54d0075fc78fb19dc1b28c83f950fe094e02eae033e313861da",
+      "localPath": "original/design/previews/SCR-01-ocr-paused-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-ocr-reading-dark.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-ocr-reading-dark.png",
+      "bytes": 156221,
+      "sha256": "a04d2cb9e8d26aeeaadb0723a8d28de41a1c26968d0c29288f810f1a8ae14efa",
+      "localPath": "original/design/previews/SCR-01-ocr-reading-dark.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-ocr-reading-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-ocr-reading-light.png",
+      "bytes": 160720,
+      "sha256": "44e09096552410aed08d4cf6816afdcf11de34e5e7dee966062c4ec6c5173d22",
+      "localPath": "original/design/previews/SCR-01-ocr-reading-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-01-restricted.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-01-restricted.jpg",
+      "bytes": 427111,
+      "sha256": "8598c4b1cf687a727ecb9ccb19dd14f5e00776d9c28ad31f355600a79037c269",
+      "localPath": "original/design/previews/SCR-01-restricted.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-02-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-02-dark.jpg",
+      "bytes": 214379,
+      "sha256": "78c28dd1d22ec2e894e07a4229e9c7c1e4a0635afe09e490022058782951808b",
+      "localPath": "original/design/previews/SCR-02-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-02-empty.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-02-empty.jpg",
+      "bytes": 135755,
+      "sha256": "6e78679383a9752568c49afc0d777dc5a4a14a9dfff0aae39c0db6d2d8c6bfe9",
+      "localPath": "original/design/previews/SCR-02-empty.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-02-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-02-light.jpg",
+      "bytes": 217185,
+      "sha256": "4b7385e3ed21db29ca5811cbf0a7c664b61975326b1f7a72b628f8e16c436d6b",
+      "localPath": "original/design/previews/SCR-02-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-03-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-03-dark.jpg",
+      "bytes": 186799,
+      "sha256": "21e1b1ad0969cf98d6b1bd639eb09f854feed3555816f84481313ddb14d9e358",
+      "localPath": "original/design/previews/SCR-03-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-03-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-03-light.jpg",
+      "bytes": 191003,
+      "sha256": "758c23d635269efc06e382acd1421ec6c6f83d52b7d64a2409f2635765ee0826",
+      "localPath": "original/design/previews/SCR-03-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-04-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-04-dark.jpg",
+      "bytes": 160075,
+      "sha256": "47485de87ac2b19483ab9e477a565e772c456ac10bb8a0e21385d3e60608b9b3",
+      "localPath": "original/design/previews/SCR-04-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-04-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-04-light.jpg",
+      "bytes": 157789,
+      "sha256": "1c39e0edf1cf7cc075de69c8b9d1f2be308a8866a840286ec79582a60be861ab",
+      "localPath": "original/design/previews/SCR-04-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-04-restricted.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-04-restricted.jpg",
+      "bytes": 169116,
+      "sha256": "c2030beac76f091fc11b34a6a693f1f1a2dda8e14dbc1c296993e7bcd7cbca28",
+      "localPath": "original/design/previews/SCR-04-restricted.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-05-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-05-dark.jpg",
+      "bytes": 223447,
+      "sha256": "2bc924d3f0609164bfd4d759607da8e333cc60375c9cc1437463328eaa86429d",
+      "localPath": "original/design/previews/SCR-05-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-05-empty.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-05-empty.jpg",
+      "bytes": 145828,
+      "sha256": "2769455efab7a86bb4d5faab0fecfe1b24cc468d41809f6d18a1e550bd190920",
+      "localPath": "original/design/previews/SCR-05-empty.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-05-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-05-light.jpg",
+      "bytes": 221704,
+      "sha256": "3df8cb3f3489118497c5d4a6d42c19c795628e187be0ad07a1c6eb4e6ad1410c",
+      "localPath": "original/design/previews/SCR-05-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-dark.jpg",
+      "bytes": 348203,
+      "sha256": "fb84d096c3b92b4b924ca1eeea072b2a5d3f3370bc31a51892dbe960d6d4e45d",
+      "localPath": "original/design/previews/SCR-06-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-light.jpg",
+      "bytes": 350851,
+      "sha256": "fcf82036bd77250d6d3ee3352f3efa0d7abc91d944d5f93b24fd0d3c62db66e2",
+      "localPath": "original/design/previews/SCR-06-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-compact-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-compact-light.png",
+      "bytes": 179187,
+      "sha256": "b2d2ff82b5d21c07deea651119d1dfd61d6a085dab92aed579c97bb64f56dc85",
+      "localPath": "original/design/previews/SCR-06-ocr-compact-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-editing-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-editing-light.png",
+      "bytes": 212702,
+      "sha256": "ee71c00bca6409d5ff630c472f6f3d254cc9344d7d59b59adb88386785d9dbb4",
+      "localPath": "original/design/previews/SCR-06-ocr-editing-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-empty-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-empty-light.png",
+      "bytes": 201807,
+      "sha256": "c5e54197aad75d5e8ee615d688fa55590517b6d64b5df03ddc98902c04a4579f",
+      "localPath": "original/design/previews/SCR-06-ocr-empty-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-paused-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-paused-light.png",
+      "bytes": 208512,
+      "sha256": "1d47aff55e30f7d371f0b0169a2dbe7ed2aee83d66a3cd4868e2c9fbdd23f16f",
+      "localPath": "original/design/previews/SCR-06-ocr-paused-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-permission-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-permission-light.png",
+      "bytes": 204515,
+      "sha256": "faef7768a41a42ce5842f45d1a1803b44880c7058ca9cc19be1385a7b1d8b9c9",
+      "localPath": "original/design/previews/SCR-06-ocr-permission-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-running-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-running-light.png",
+      "bytes": 209357,
+      "sha256": "82a4ef40c903515e80f554b64cf44cbdbe34646e0b1dc568bb28ebeeff565f3f",
+      "localPath": "original/design/previews/SCR-06-ocr-running-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-screen-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-screen-light.png",
+      "bytes": 208055,
+      "sha256": "502e934671e1a4864ec86b9851fb1f957227c759bd158b3e0a43167548c7d174",
+      "localPath": "original/design/previews/SCR-06-ocr-screen-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-selection-adjusting-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-selection-adjusting-light.png",
+      "bytes": 438158,
+      "sha256": "b30b50a8874a6cc70c9fcc87b40bc02eb846cbb776e31ad92028ca9a545bb5dc",
+      "localPath": "original/design/previews/SCR-06-ocr-selection-adjusting-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-selection-dragging-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-selection-dragging-light.png",
+      "bytes": 426665,
+      "sha256": "757582e37626a6236415931993ea1991aea69f1b750726ce301a4efa5e973143",
+      "localPath": "original/design/previews/SCR-06-ocr-selection-dragging-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-selection-idle-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-selection-idle-light.png",
+      "bytes": 422880,
+      "sha256": "fd5f9491ffb5ec5540a68f19c737b0cacdbf1d9dfb4594c33139e94ad78a2737",
+      "localPath": "original/design/previews/SCR-06-ocr-selection-idle-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-selection-reading-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-selection-reading-light.png",
+      "bytes": 524317,
+      "sha256": "ec4a73a337e1dfccc5c1d813ca9ee189dce026b48bbcfabc4e25995555a5760d",
+      "localPath": "original/design/previews/SCR-06-ocr-selection-reading-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-target-missing-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-target-missing-light.png",
+      "bytes": 201464,
+      "sha256": "c7ab2b3812d20700d92a0ea758ed56881b327870f75e5fa09d3eb863a5613e0d",
+      "localPath": "original/design/previews/SCR-06-ocr-target-missing-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-task-dark.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-task-dark.png",
+      "bytes": 158964,
+      "sha256": "f8955ffcbe977c4d89f39a5422bc6be0a3615cbde0d8faaec50c937b4a719b4a",
+      "localPath": "original/design/previews/SCR-06-ocr-task-dark.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-task-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-task-light.png",
+      "bytes": 156038,
+      "sha256": "9b371a231be6655e44896b7e2ef38cf8492f8fcf023d895e3362e81e010f00f5",
+      "localPath": "original/design/previews/SCR-06-ocr-task-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-window-dark.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-window-dark.png",
+      "bytes": 211273,
+      "sha256": "49e0a7accbdb607a63869c4982f34bfb97bc07ab2d038efb99a15ac09a0cf0a9",
+      "localPath": "original/design/previews/SCR-06-ocr-window-dark.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-06-ocr-window-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-06-ocr-window-light.png",
+      "bytes": 208856,
+      "sha256": "3f230e4cf7ee3e14d2316df133f9bfbb63af2989b7bdab0799b0855d3cca3823",
+      "localPath": "original/design/previews/SCR-06-ocr-window-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-07-busy.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-07-busy.jpg",
+      "bytes": 223349,
+      "sha256": "e4218b6ffded93a4fb271428e363fa3721cab71107a9892e6416b1cfdee36031",
+      "localPath": "original/design/previews/SCR-07-busy.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-07-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-07-dark.jpg",
+      "bytes": 161948,
+      "sha256": "7ee931736e9c935806e6b9880dcd3fe84374de373804ce7ca0e5096d50ee27dd",
+      "localPath": "original/design/previews/SCR-07-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-07-error.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-07-error.jpg",
+      "bytes": 224530,
+      "sha256": "6a3ce079873a51cc74214e3cd43e17a6447d826d064a4e71c635187b5395260d",
+      "localPath": "original/design/previews/SCR-07-error.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-07-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-07-light.jpg",
+      "bytes": 162486,
+      "sha256": "1e61765258b944d5b2290c7d8abd13cbf92e64daacf65698f9d6ba90eb08714e",
+      "localPath": "original/design/previews/SCR-07-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-08-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-08-dark.jpg",
+      "bytes": 209159,
+      "sha256": "3d18f85c57ebd11d3a83fe8062f204c367dd99e71b982ddfb3e504a26f23d12b",
+      "localPath": "original/design/previews/SCR-08-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-08-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-08-light.jpg",
+      "bytes": 212757,
+      "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea",
+      "localPath": "original/design/previews/SCR-08-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-09-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-09-dark.jpg",
+      "bytes": 200096,
+      "sha256": "ac6e807ffd633db498f1f5df02cf5699d94eadaf7581627bb22c721f53dedb03",
+      "localPath": "original/design/previews/SCR-09-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-09-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-09-light.jpg",
+      "bytes": 202052,
+      "sha256": "ee7505babe5bcfce9560c24a62d6e964b78e94f6752e929a7687a0aea630ea22",
+      "localPath": "original/design/previews/SCR-09-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-10-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-10-dark.jpg",
+      "bytes": 218022,
+      "sha256": "75d562eec878c25bf2fbcbe209846637f5579eb10524d2f02cd0a0f4c2d8b681",
+      "localPath": "original/design/previews/SCR-10-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-10-error.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-10-error.jpg",
+      "bytes": 229989,
+      "sha256": "02aa8a2e6da5e5d7fa84c41723f30aac3de21422b6e44201528f470163def225",
+      "localPath": "original/design/previews/SCR-10-error.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-10-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-10-light.jpg",
+      "bytes": 220871,
+      "sha256": "a0ae43ddbe40b54285b270fce1e79862b55171c5c54344b16354c35c2c66dd83",
+      "localPath": "original/design/previews/SCR-10-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-11-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-11-dark.jpg",
+      "bytes": 180913,
+      "sha256": "de948fa34b8d93a9017c45bc31b179344f9b9af50953d20ea7632ec0dd1ba2cc",
+      "localPath": "original/design/previews/SCR-11-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-11-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-11-light.jpg",
+      "bytes": 181587,
+      "sha256": "88f890ba5234965669547bc3a3b52309066ac2845bd0a3eed7befe126191df50",
+      "localPath": "original/design/previews/SCR-11-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-12-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-12-dark.jpg",
+      "bytes": 181866,
+      "sha256": "4e68e90c3f155df6ba864e897602dad7d6d8d0899c1600066ddbfd4481bd5ce9",
+      "localPath": "original/design/previews/SCR-12-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-12-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-12-light.jpg",
+      "bytes": 183889,
+      "sha256": "94cfbd61bc41a778008f0b111b68953380665d032e359cc29ec1011456e1465c",
+      "localPath": "original/design/previews/SCR-12-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-13-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-13-dark.jpg",
+      "bytes": 211113,
+      "sha256": "67fb3192c67ecb75f1736c55133737f52cab19750ebb9e4b1c1991e0ec21611c",
+      "localPath": "original/design/previews/SCR-13-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-13-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-13-light.jpg",
+      "bytes": 215807,
+      "sha256": "778ab77504e5775bbe711e8271272dba6479d20f9e3e1372fc5d2c7200d317de",
+      "localPath": "original/design/previews/SCR-13-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-14-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-14-dark.jpg",
+      "bytes": 199251,
+      "sha256": "f3e42dfc2a5b452ee198057bae8a46d0922bf8f6247e0ec026c4f15cc1cc924d",
+      "localPath": "original/design/previews/SCR-14-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-14-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-14-light.jpg",
+      "bytes": 202259,
+      "sha256": "ef5957dbb82f5b32e99c6692ef532a1b31ddb248e01bd56c7d04219a2faf2028",
+      "localPath": "original/design/previews/SCR-14-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-14-ocr-settings-dark.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-14-ocr-settings-dark.png",
+      "bytes": 223108,
+      "sha256": "7f4f5a3e4a26240bba8a7350438aa076672f63fc76eea857b2e7e1b37012255d",
+      "localPath": "original/design/previews/SCR-14-ocr-settings-dark.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-14-ocr-settings-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-14-ocr-settings-light.png",
+      "bytes": 204616,
+      "sha256": "385afa857f399da497f2ccba4283f9882bb0b39339b3a355e520ba9dce3a1c58",
+      "localPath": "original/design/previews/SCR-14-ocr-settings-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-15-compact.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-15-compact.jpg",
+      "bytes": 163897,
+      "sha256": "8abf50e37ea97e3d2b5fa5b2f4e9c55f45e9e5e3accae7a67a5edc3e114ec310",
+      "localPath": "original/design/previews/SCR-15-compact.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-15-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-15-dark.jpg",
+      "bytes": 194343,
+      "sha256": "f39fdaf82b3c368b5aa73173547ec0f6ebf8abcc5b624fc90c3cbb7783b0379d",
+      "localPath": "original/design/previews/SCR-15-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-15-error.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-15-error.jpg",
+      "bytes": 199935,
+      "sha256": "8285226218c3229a6f49eb24e72792d97c218ecc041fe08b6696797827288d66",
+      "localPath": "original/design/previews/SCR-15-error.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-15-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-15-light.jpg",
+      "bytes": 194918,
+      "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b",
+      "localPath": "original/design/previews/SCR-15-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-16-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-16-dark.jpg",
+      "bytes": 195175,
+      "sha256": "6eca2bb0d039e1898041b87fae52f0e62aea63c3b7dab7245ddaad1191a4f79b",
+      "localPath": "original/design/previews/SCR-16-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-16-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-16-light.jpg",
+      "bytes": 196348,
+      "sha256": "47be93bf25c2c4904b1bf4802c93e4ec4b9874c6cc8e3709b323cdb373706a5f",
+      "localPath": "original/design/previews/SCR-16-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-17-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-17-dark.jpg",
+      "bytes": 197736,
+      "sha256": "c93dc483e0ad9eb51d3d2d06b4b92395ed592caed7f28c6b5e966627dc2f7252",
+      "localPath": "original/design/previews/SCR-17-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-17-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-17-light.jpg",
+      "bytes": 197779,
+      "sha256": "30f578672524d8ad2fcdb0e2e079173d98afd46e4ede0491a723fecd92d781ee",
+      "localPath": "original/design/previews/SCR-17-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-18-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-18-dark.jpg",
+      "bytes": 203829,
+      "sha256": "12bffc67bed44d5ecfd3106a7f516628607791761c26e5dd826bbd2a21d25cfc",
+      "localPath": "original/design/previews/SCR-18-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-18-error.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-18-error.jpg",
+      "bytes": 202389,
+      "sha256": "ddbe64faf06dbfd2502096ac1b1ec227a068b6d3edd13ae56e148eeb12a65aca",
+      "localPath": "original/design/previews/SCR-18-error.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-18-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-18-light.jpg",
+      "bytes": 204341,
+      "sha256": "f2d848b5f927dd57872a2f457261069f45f7205199becadb8bb032c7de58008b",
+      "localPath": "original/design/previews/SCR-18-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-19-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-19-dark.jpg",
+      "bytes": 194706,
+      "sha256": "901d2aef71aef1a03f14a946ca06c5dffe49b220b5e89c7700c688a6a7a63c8e",
+      "localPath": "original/design/previews/SCR-19-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-19-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-19-light.jpg",
+      "bytes": 195896,
+      "sha256": "1518b84002e399f346272b41dbb7385c59235c6ae66f93908dfd4462b3615110",
+      "localPath": "original/design/previews/SCR-19-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-20-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-20-dark.jpg",
+      "bytes": 203407,
+      "sha256": "4d544fab92bd8acc732f363f3ea89715e48003e0059895577749b57e72eee933",
+      "localPath": "original/design/previews/SCR-20-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-20-error.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-20-error.jpg",
+      "bytes": 220892,
+      "sha256": "561bfcffa2ef53958499cf11add734c7a53859ae60671c054e78986fb5753aa6",
+      "localPath": "original/design/previews/SCR-20-error.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-20-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-20-light.jpg",
+      "bytes": 206152,
+      "sha256": "027ad4702f0a8c97f2dccf78afe26ce9a4da1765425d226f61fcb6022e4acad1",
+      "localPath": "original/design/previews/SCR-20-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-21-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-21-dark.jpg",
+      "bytes": 192717,
+      "sha256": "5a72dc8588835d3b43db34a17e753aaecf7945fec8dffad94bbfe1c8d652ae84",
+      "localPath": "original/design/previews/SCR-21-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-21-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-21-light.jpg",
+      "bytes": 193685,
+      "sha256": "0dbe7c637aea3814cef19e1a640b22eaa3c5f2511be0f5e9375a077427f123dc",
+      "localPath": "original/design/previews/SCR-21-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-22-dark.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-22-dark.jpg",
+      "bytes": 262088,
+      "sha256": "8ecd798b337781063471243b7689f150271afa25a3614b1c9783f649a53a3c65",
+      "localPath": "original/design/previews/SCR-22-dark.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-22-light.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-22-light.jpg",
+      "bytes": 263850,
+      "sha256": "6f24ba51893b13b7b8bc080de577ed6d70e7c21ec55f3a780315799aa6a5f6e8",
+      "localPath": "original/design/previews/SCR-22-light.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/SCR-22-restricted.jpg",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/SCR-22-restricted.jpg",
+      "bytes": 275017,
+      "sha256": "70a2df8412059a18bfe6a19c363600be720fd8ecf93f895b0aee6d2881ebba28",
+      "localPath": "original/design/previews/SCR-22-restricted.jpg",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "bytes": 499037,
+      "sha256": "4b99590bfb66c3f65df7161bab9e350cee433caf4684a71343f5c06601be5af9",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "bytes": 606896,
+      "sha256": "ec36bae36833803264f117e930427cf8862120164263e54ff0e496202c2ea66c",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "bytes": 588926,
+      "sha256": "3a4a675c779393db993793a39b1df2ca457c545f5fdb29c15cca5cbc5ab2d594",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "bytes": 598555,
+      "sha256": "34dc3b3749254d64761c1edf9336663ffb2517689ce8ed5a141ed87ab26a1431",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "bytes": 600935,
+      "sha256": "1bd123f7f371fe602240e530a1e8ba68858c27eaaa6857582c195380e9d0ee03",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "bytes": 605781,
+      "sha256": "f81b91304fb9de4a544f934c7505fecb60e7441eee2e812bed96b99a0727624b",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png",
+      "bytes": 471157,
+      "sha256": "6bae6b8d3461e8fd70ee81f822458603b40884b609ab3c7e0c35ab5c778605bf",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "bytes": 516599,
+      "sha256": "64e1a03bec3097ff8323bc6c7727d3be68e841034e92c5dfdbe19baf12a2d42d",
+      "localPath": "original/design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/screen-plan.json",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/screen-plan.json",
+      "bytes": 32028,
+      "sha256": "b2f81003dce4ccfaea94e9a51f33935b42d5b4cb427d5db00af5c1290433930b",
+      "localPath": "original/design/screen-plan.json",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "design/verification.json",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/design/verification.json",
+      "bytes": 14031,
+      "sha256": "04faebcebc1a05e8374ab6b6b7d83d2525ba3852dbea9c07ba1adb5c1f5f256e",
+      "localPath": "original/design/verification.json",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "docs/01-prd.md",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/docs/01-prd.md",
+      "bytes": 88203,
+      "sha256": "175471b9a44a40791d713cdaf3d96e3e099a4e22cba600b77da76be2f6e1ae06",
+      "localPath": "original/docs/01-prd.md",
+      "sha256Verified": true
+    },
+    {
+      "relativePath": "docs/02-design-spec.md",
+      "remotePath": "/Users/douglasdong/orca/workspaces/luna-translater-rust/项目迁移至-rust-并跨平台维护的可能性/docs/02-design-spec.md",
+      "bytes": 71524,
+      "sha256": "cbaeca245a6eeacf2875784ecfdbbd1d8d7f8e9601763f1424e75b9524cf585f",
+      "localPath": "original/docs/02-design-spec.md",
+      "sha256Verified": true
+    }
+  ],
+  "links": [
+    [
+      "design/README.md",
+      "design/assets/README.md"
+    ],
+    [
+      "design/README.md",
+      "design/compat-x86-v1-qa.json"
+    ],
+    [
+      "design/README.md",
+      "design/index.html"
+    ],
+    [
+      "design/README.md",
+      "design/manifest.json"
+    ],
+    [
+      "design/README.md",
+      "design/screen-plan.json"
+    ],
+    [
+      "design/README.md",
+      "design/verification.json"
+    ],
+    [
+      "design/README.md",
+      "docs/02-design-spec.md"
+    ],
+    [
+      "design/assets/README.md",
+      "design/assets/meadow.jpg"
+    ],
+    [
+      "design/assets/README.md",
+      "design/assets/sylvie.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    [
+      "design/compat-x86-v1-qa.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png"
+    ],
+    [
+      "design/index.html",
+      "design/README.md"
+    ],
+    [
+      "design/index.html",
+      "design/compat-x86-v1-qa.json"
+    ],
+    [
+      "design/index.html",
+      "design/manifest.json"
+    ],
+    [
+      "design/index.html",
+      "design/screen-plan.json"
+    ],
+    [
+      "design/index.html",
+      "design/verification.json"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-error.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-large.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-long-end.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-long.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-ocr-paused-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-ocr-reading-dark.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-ocr-reading-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-01-restricted.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-02-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-02-empty.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-02-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-03-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-03-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-04-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-04-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-04-restricted.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-05-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-05-empty.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-05-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-compact-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-editing-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-empty-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-paused-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-permission-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-running-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-screen-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-selection-adjusting-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-selection-dragging-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-selection-idle-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-selection-reading-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-target-missing-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-task-dark.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-task-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-window-dark.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-06-ocr-window-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-07-busy.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-07-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-07-error.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-07-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-08-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-08-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-09-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-09-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-10-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-10-error.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-10-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-11-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-11-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-12-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-12-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-13-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-13-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-14-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-14-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-14-ocr-settings-dark.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-14-ocr-settings-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-15-compact.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-15-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-15-error.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-15-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-16-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-16-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-17-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-17-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-18-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-18-error.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-18-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-19-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-19-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-20-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-20-error.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-20-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-21-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-21-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-22-dark.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-22-light.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/SCR-22-restricted.jpg"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    [
+      "design/manifest.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/README.md"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/manifest.json"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-error.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-large.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-long-end.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-long.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-ocr-paused-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-ocr-reading-dark.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-ocr-reading-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-01-restricted.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-02-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-02-empty.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-02-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-03-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-03-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-04-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-04-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-04-restricted.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-05-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-05-empty.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-05-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-compact-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-editing-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-empty-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-paused-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-permission-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-running-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-screen-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-selection-adjusting-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-selection-dragging-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-selection-idle-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-selection-reading-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-target-missing-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-task-dark.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-task-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-window-dark.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-06-ocr-window-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-07-busy.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-07-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-07-error.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-07-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-08-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-08-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-09-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-09-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-10-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-10-error.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-10-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-11-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-11-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-12-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-12-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-13-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-13-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-14-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-14-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-14-ocr-settings-dark.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-14-ocr-settings-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-15-compact.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-15-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-15-error.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-15-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-16-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-16-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-17-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-17-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-18-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-18-error.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-18-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-19-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-19-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-20-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-20-error.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-20-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-21-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-21-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-22-dark.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-22-light.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/SCR-22-restricted.jpg"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png"
+    ],
+    [
+      "design/screen-plan.json",
+      "docs/01-prd.md"
+    ],
+    [
+      "design/screen-plan.json",
+      "docs/02-design-spec.md"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-01-ocr-paused-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-01-ocr-reading-dark.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-01-ocr-reading-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-compact-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-editing-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-empty-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-paused-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-permission-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-running-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-screen-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-selection-adjusting-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-selection-dragging-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-selection-idle-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-selection-reading-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-target-missing-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-task-dark.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-task-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-window-dark.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-06-ocr-window-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-14-ocr-settings-dark.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/SCR-14-ocr-settings-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    [
+      "design/verification.json",
+      "design/previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png"
+    ],
+    [
+      "docs/01-prd.md",
+      "design/README.md"
+    ],
+    [
+      "docs/01-prd.md",
+      "design/manifest.json"
+    ],
+    [
+      "docs/01-prd.md",
+      "docs/02-design-spec.md"
+    ],
+    [
+      "docs/02-design-spec.md",
+      "design/README.md"
+    ],
+    [
+      "docs/02-design-spec.md",
+      "design/compat-x86-v1-qa.json"
+    ],
+    [
+      "docs/02-design-spec.md",
+      "design/index.html"
+    ],
+    [
+      "docs/02-design-spec.md",
+      "design/manifest.json"
+    ],
+    [
+      "docs/02-design-spec.md",
+      "design/screen-plan.json"
+    ],
+    [
+      "docs/02-design-spec.md",
+      "docs/01-prd.md"
+    ]
+  ],
+  "externalReferences": [
+    "https://cleanshot.com/features?xs=1",
+    "https://developer.apple.com/design/human-interface-guidelines/accessibility/",
+    "https://developer.apple.com/design/human-interface-guidelines/color/",
+    "https://developer.apple.com/design/human-interface-guidelines/designing-for-macos/",
+    "https://developer.apple.com/design/human-interface-guidelines/materials/",
+    "https://developer.apple.com/design/human-interface-guidelines/panels/",
+    "https://developer.apple.com/design/human-interface-guidelines/privacy/",
+    "https://developer.apple.com/design/human-interface-guidelines/sidebars/",
+    "https://developer.apple.com/design/human-interface-guidelines/typography/"
+  ],
+  "excludedReferences": [
+    {
+      "from": "docs/01-prd.md",
+      "target": "04-test-plan.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "docs/01-prd.md",
+      "target": "00-source-map.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "docs/01-prd.md",
+      "target": "03-client-architecture.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "docs/01-prd.md",
+      "target": "05-development-plan.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "docs/02-design-spec.md",
+      "target": "03-client-architecture.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "docs/02-design-spec.md",
+      "target": "05-development-plan.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "design/README.md",
+      "target": "../.agents/skills/apple-design/SKILL.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/README.md",
+      "target": "../docs/06-development-workflow.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "design/README.md",
+      "target": "DesignSystem.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "OCRSourcePreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "OCRSelectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "OverlaySample.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "CoreScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "CompatConnectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "capture-compat-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "SettingsScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "main.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "capture-ocr-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/README.md",
+      "target": "../docs/04-test-plan.md",
+      "reason": "old architecture, test, source-map, or development document; not inherited"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "OverlaySample.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "DesignSystem.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "CoreScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "SettingsScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "OCRSourcePreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "OCRSelectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "CompatConnectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "main.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "build.sh",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "capture-ocr-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/manifest.json",
+      "target": "capture-compat-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "./design/build.sh",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "design/.build/ocr-capture-compat-x86-v1-final-r3-report.json",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "OverlaySample.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "DesignSystem.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "CoreScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "SettingsScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "OCRSourcePreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "OCRSelectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "CompatConnectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "main.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "build.sh",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "capture-ocr-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": "capture-compat-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/accessibility.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/layout.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/typography.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/color.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/designing-for-macos.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/buttons.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/loading.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/feedback.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/writing.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/compat-x86-v1-qa.json",
+      "target": ".agents/skills/apple-design/references/hig/progress-indicators.md",
+      "reason": "excluded implementation, skill, or build resource"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "OverlaySample.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "DesignSystem.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "CoreScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "SettingsScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "OCRSourcePreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "OCRSelectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "CompatConnectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "main.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "build.sh",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "capture-ocr-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/screen-plan.json",
+      "target": "capture-compat-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "OverlaySample.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "DesignSystem.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "CoreScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "SettingsScreens.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "OCRSourcePreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "OCRSelectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "CompatConnectionPreview.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "main.swift",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "build.sh",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "capture-ocr-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "capture-compat-previews.py",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/verification.json",
+      "target": "./design/build.sh",
+      "reason": "excluded editable native implementation or build/capture code"
+    },
+    {
+      "from": "design/assets/README.md",
+      "target": "source-options.rpy",
+      "reason": "excluded editable native implementation or build/capture code"
+    }
+  ],
+  "missingReferences": [],
+  "localRoot": "/Users/tanghehui/ExploreProject/luna-translator/docs/product/original",
+  "designSnapshot": {
+    "prdVersion": "1.2",
+    "acceptedVisualPrdVersion": "1.1",
+    "screenCount": 22,
+    "previewCount": 89,
+    "previewHashesMatchOriginalDesignManifest": true,
+    "previewHashMismatches": [],
+    "visualRevisions": [
+      {
+        "version": "aligned-v1",
+        "captureCount": 60,
+        "designAcceptance": "accepted"
+      },
+      {
+        "version": "ocr-source-v1",
+        "captureCount": 15,
+        "designAcceptance": "not_reviewed"
+      },
+      {
+        "version": "ocr-selection-v2",
+        "captureCount": 6,
+        "designAcceptance": "accepted",
+        "scope": "visual only"
+      },
+      {
+        "version": "compat-x86-v1",
+        "captureCount": 8,
+        "designAcceptance": "not_reviewed"
+      }
+    ],
+    "runtimeAcceptanceInherited": false,
+    "figmaLinksFound": false
+  },
+  "verification": {
+    "allImportedFileHashesMatch": true,
+    "requirementCount": 56,
+    "requirementRange": [
+      "REQ-001",
+      "REQ-056"
+    ],
+    "allRequirementIdsPresent": true,
+    "prohibitedImplementationFilesCopied": []
+  }
+}

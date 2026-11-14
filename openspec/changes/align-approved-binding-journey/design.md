@@ -1,0 +1,33 @@
+# 设计与执行边界
+
+## 阶段与续写信任链
+
+原R92 source-snapshot、P1r1/未签P2r1/P1r2/P2r2及首次P3 admission保持原字节、时间和范围。r3不能把已准入P3重标为旧P2。完整checkpoint须先由旧guard实际检查与非作者复核：全source_files图、产品图、合法implementation差异、23计划/16门禁/原签字与批准74闭包、真实命令/raw/exit/前后稳定树和失败原件。完整祖先验证后，只有显式r3分支可将活跃产品比较基准取checkpoint；R92历史比较不全局放宽。03封存raw库存中的历史Tauri相对alias保持原字节；它们只由非作者独立派生canonical archive view并给出完整raw→canonical映射。视图须分safe canonical authoritative closure、additional historical-only和quarantine，完整raw/alias映射保留。当前权威与归档取字节路径逐项核lexical/no symlink/no escape及实际bytes/hash，重复冲突拒绝；3个历史工具origin因parent symlink仅核已经归档的普通字节SHA，明确untrusted_not_revalidated，不跟原target，也不把03曾经读取改称never-followed。当前直属P1/P2/P3链和fresh oldguard不得依赖3条/41不安全历史ref；不得回填当前source/identity/工具或批准图。该view明确为派生视图，不冒充原始历史树；新epoch仅消费独审view的safe authoritative分区，所有当前authority ref仍经safe_path并直接拒绝..，不能将旧alias例外推广到当前引用。失败01/02未产生checkpoint，不继承。
+
+r3依次plan-only（产品/门禁冻结）→非作者计划审阅→gate-only（产品/新计划冻结）→fresh32hex同源真实RPC/React语义RED和全部守卫/原五类负例→非作者新P2审阅→新目录独占resume admission→implementation-only。不能覆盖旧receipt、复用新目录、删checks或改kind/changeId绕过。基础设施错误不充RED；本修订不默认授权全绿等效路线。
+
+## 观察合同与产品权威
+
+Rust决定完整目标关系、review/head/Hook witness及真实operation阶段；UI只管草稿。当前candidates_ready事实和同一Rust sourceSelection成员驱动批准来源面板，旧connecting列表不必常驻；Node/Python/保留DOM必须同义核operation、真实可见来源复选框、明确开始/稍后及无提前提交。来源名称与高级Hook重复是合法内容，按唯一sourceId/可见语义定位，不隐藏信息迁就测试。Pending核实际面板、一次提交和无重复提交，不能对已退场旧按钮取状态。
+
+Library页头全局入口必须unscoped，选中A卡不覆盖运行B的精确已入库匹配；MainWindow包装connect(null)即可，LibraryScreen路径不扩。明确scoped的CurrentSession恢复入口保留归属意图。多库真实A/B场景核默认B、零隐式新建和确认前零注入，单game样本不等效。正式客户端使用reviewed associate重载。旧Native bool请求仅返回reviewed_association_required且零Core/Hook/预览epoch/窗口副作用；Core内部旧none/reuse和SelectSource兼容仍不得绕过新权威。旧/replayed/过期操作不能修改新的预览、候选、偏好或窗口。候选关闭不取消已提交关联；当前Core authority有效时，Session常驻预览独立于面板epoch。M12需独立订阅实际Core active-session/代次，必要时使用只读current-session preview authority与profile/完整active witness短guard，幂等协调Session capture；UI只订阅，不以旧operation或previewSession纯读轮询驱动生命周期。S1成功待handoff→关面板→S2资源/target lease在stop_owned_session前失败→S1仍active时，应自动最终建立S1 Session预览，旧candidate callback仍零且新候选不被动。无window/首次明确授权/typedbusy重复均不重启采集，不新增框架、业务表或游戏变更。为避免旧Session加新Candidate满额时永久preview_lease_limit，r3仅新增window_preview.rs精确实现路径，提供nonblocking exact lease retire/admission；guard内只标stop_requested及bounded enqueue，guard外等真实release，原2active+1draining预算/typed busy/ownership/Fence保持，禁止旧op停止新candidate或guard内同步Stop等待。
+
+## 选择集合与迁移
+
+schema5原字段/类型/FK/trigger/view设计不变：83表/748字段，14新增字段、5FK、6trigger及当前成员视图；001～004与独立v4原义/旧Store4实测保持。一次单writer事务分配全部成员新revision、seal并写operation回执，失败全回滚；双自动资格与正文消费共用current-members，A→B→A不重授旧句。temporary不改saved，无game拒remember，无可移植证明requires_review。
+
+私有cfg(test)故障由父integration与同源实际libtest child执行，consumer分别验证locked编译artifact、Cargo.lock/source/binary、list/fixed exact/raw/exit/PID/时间/nonce/output、arming/native码和DB/backup/ledger链。readonly/busy各有独立record，ENOSPC有独立限容卷/设备/容量/OS28/SQLite13/清理原命令。不暴露debug/public故障API，不用父hash或relay时间替代实际子writer。
+
+## 可执行覆盖与生产时间事实
+
+机器plan的execution_obligations绑定LIB/LIFE/LEASE与存储的Owner、固定真实scene/test、调用路径、raw证据、独立Python断言和P2/P3任务。P2只注册消费者/能力与负例，P3准入后在原63路径补真实producer；当前全部not_implemented/not_run。LIB保留原38加两多库scene，实际SaveGames A/B/生产MainWindow/CaptureSheet与真实Rust snapshot/target派生ID；Native coordinator五个exact test与WindowPreviewService两个exact test用真实M12代码和低层barrier，不借UI轮询、不冒OS。Native正式包/四游戏/翻译仍独立。
+
+Storage当前Scope::new时间不是API入口，backup_completed_at_ms沿reached而AfterDdl为0；record_fault现取rollback时间也未证明回读。P2不得根据这些字段绿；P3仅私有cfg(test)在真实open/worker/备份原子交付sync/BEGIN/DDL/native故障/returned/旧库回读处补事件。每route按机器适用性与严格事件序/monotonic及非倒退wall核验，未发生nullable＋not_reached原因，适用缺失/0或父relay替代拒绝，保持全部原DB/backup/ledger/故障义务。
+
+BJ08/09按固定Native角色：before/draft等Main、成功outcome为HUD＋原Main隐藏及完整DB/journal；后续记住选择检查由正常菜单显示Main→重开文本流只读，保存意图与saved_reopened单独命名且零额外注入/提交/set/原窗口效果。当前重开draft重置false不否认真实saved_snapshot，temporary要非空真实保存基线。BJ06按真实operation/source及OS区间选waiting-observed或fast-candidates，历史顺序用loss-free事实，不强造等待PNG或生产延迟；首次poll无原件不声明。三固定Native writer当前未实现，P2先消费/反例，P3再真正产原件；不授BJ14任何豁免。
+
+## 原生效果与渲染
+
+beginReading先持久化，再以profile/server generation/session/set/op guard显示HUD并读回可见成功、隐藏Main并读回隐藏。失败结果与持久化分别回执；只重试窗口，不重新提交集合。BJ13采用before实际Main身份＋completed真实最终OS/HUD原图＋同authority loss-free app-held事件顺序；不强迫外部定格同步中间瞬间，不加产品停顿/改时间/截watermark。并发review不能串单，guard内仅bounded enqueue，独立writer落盘并报告loss/health。
+
+BJ13观察形态不授BJ14豁免。BJ14仍全Main独立Native参照、1040×720/760×560、原字体/比例/显示环境和零RGBA，无mask或新阈值。BJC05有限诊断缺口保留，只有同source/nonce/run的完整BJS10实际RPC/DOM/u64独算可精确discharged_by展示，不全局清blocked。源码、参照、真实组件、签名包Native、四游戏与真实翻译分别验收，缺项仍未完成。

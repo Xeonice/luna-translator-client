@@ -1,0 +1,6088 @@
+{
+  "schema_version": 1,
+  "phase": "additional_current_design_plan",
+  "product_execution": "not_run",
+  "design_approval": "pending_review",
+  "design_target": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+  "source_catalog": "docs/architecture/model-service-registry-design.json",
+  "gui_source": "scripts/report/verify_guided_service_reading.cjs",
+  "legacy_contract": {
+    "definitions": 128,
+    "executions": 153,
+    "source_cases": 97,
+    "original_client_cases": 111,
+    "files": {
+      "docs/development/first-product-test-plan.json": "c272641def1b836f408e2c3be96d6de8738f8480233467ab71a6ea881063ac3f",
+      "docs/development/first-product-test-executions.csv": "e63c5cc76a88670ed6915407b33de67d19625ddefeeaf52c284b7e320f46f4eb",
+      "docs/development/first-product-test-coverage.csv": "ad0dce993872aba88717952c77ff93f4fa1d20db229fe1bd499ef1e47a4f3694",
+      "docs/development/client-regression.csv": "106a55d73caf36dc3ca59f57f8d008477372e934ec227d128a3f5447943981ee"
+    }
+  },
+  "inventory": {
+    "counts": {
+      "http_presets": 21,
+      "http_protocols": 13,
+      "offline_engines": 4,
+      "services": 25
+    },
+    "protocol_ids": [
+      "openai_compatible",
+      "openai_responses",
+      "anthropic",
+      "gemini_generate_content",
+      "ollama_native",
+      "lmstudio_native_v1",
+      "azure_translator",
+      "deepl_v2",
+      "google_translate_v2",
+      "google_translate_v3",
+      "baidu_vip",
+      "youdao_v3",
+      "tencent_tokenhub_translation"
+    ],
+    "offline_engine_ids": [
+      "apple_translation",
+      "argos_translate",
+      "jbeijing",
+      "kingsoft_fastait"
+    ],
+    "services": [
+      {
+        "id": "builtin.deepseek",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "deepseek-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.qwen",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "qwen-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.ark",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "ark-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.gemini-compatible",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "gemini-compatible-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.openrouter",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "openrouter-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.ollama",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "ollama-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.lmstudio",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "lmstudio-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.openai-chat",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "openai-chat-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.anthropic",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "anthropic",
+        "profile_id": "anthropic-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "anthropic_api_key"
+      },
+      {
+        "id": "builtin.azure-translator",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "protocol_id": "azure_translator",
+        "profile_id": "azure-translator-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "azure_subscription_key"
+      },
+      {
+        "id": "builtin.deepl",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "protocol_id": "deepl_v2",
+        "profile_id": "deepl-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "deepl_auth_key"
+      },
+      {
+        "id": "builtin.google-v2",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "protocol_id": "google_translate_v2",
+        "profile_id": "google-v2-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "google_api_key"
+      },
+      {
+        "id": "builtin.baidu",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "protocol_id": "baidu_vip",
+        "profile_id": "baidu-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "baidu_app_secret"
+      },
+      {
+        "id": "builtin.openai-responses",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_responses",
+        "profile_id": "openai-responses-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "bearer_api_key"
+      },
+      {
+        "id": "builtin.gemini-native",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "gemini_generate_content",
+        "profile_id": "gemini-native-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "google_api_key"
+      },
+      {
+        "id": "builtin.youdao",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "protocol_id": "youdao_v3",
+        "profile_id": "youdao-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "youdao_app_secret"
+      },
+      {
+        "id": "builtin.google-v3",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "optional",
+        "protocol_id": "google_translate_v3",
+        "profile_id": "google-v3-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "google_oauth"
+      },
+      {
+        "id": "builtin.ollama-native",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "ollama_native",
+        "profile_id": "ollama-native-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.lmstudio-native",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation",
+          "grammar",
+          "context_word"
+        ],
+        "model_identity": "required",
+        "protocol_id": "lmstudio_native_v1",
+        "profile_id": "lmstudio-native-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.tencent-tokenhub-chat",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "required",
+        "protocol_id": "openai_compatible",
+        "profile_id": "tencent-tokenhub-chat-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "none_or_bearer_api_key"
+      },
+      {
+        "id": "builtin.tencent-tokenhub-translation",
+        "kind": "http",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "required",
+        "protocol_id": "tencent_tokenhub_translation",
+        "profile_id": "tencent-tokenhub-translation-text",
+        "adapter_contract_revision": 1,
+        "profile_revision": 1,
+        "preset_revision": 1,
+        "auth_kind": "bearer_api_key"
+      },
+      {
+        "id": "apple_translation",
+        "kind": "offline",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "execution_backend": "platform_native",
+        "engine_contract_revision": 1
+      },
+      {
+        "id": "argos_translate",
+        "kind": "offline",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "execution_backend": "local_worker",
+        "engine_contract_revision": 1
+      },
+      {
+        "id": "jbeijing",
+        "kind": "offline",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "execution_backend": "local_worker",
+        "engine_contract_revision": 1
+      },
+      {
+        "id": "kingsoft_fastait",
+        "kind": "offline",
+        "allowed_purposes": [
+          "translation"
+        ],
+        "model_identity": "not_applicable",
+        "execution_backend": "local_worker",
+        "engine_contract_revision": 1
+      }
+    ]
+  },
+  "cases": [
+    {
+      "id": "PA-01",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-01",
+        "label": "注册完整性",
+        "assertion": "重复 ID、预设引用缺失适配器、目录/实现不一致都拒绝启动。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "catalog",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "重复 ID、预设引用缺失适配器、目录/实现不一致都拒绝启动。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "重复 ID、预设引用缺失适配器、目录/实现不一致都拒绝启动。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-02",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-02",
+        "label": "所有入口精确查找",
+        "assertion": "未知协议在应用、发送、测试、发现四处拒绝；零取密钥、零网络；禁止默认 Bearer / GET models。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "credentials",
+        "domain",
+        "protocol"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "未知协议在应用、发送、测试、发现四处拒绝；零取密钥、零网络；禁止默认 Bearer / GET models。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "未知协议在应用、发送、测试、发现四处拒绝；零取密钥、零网络；禁止默认 Bearer / GET models。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-03",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-03",
+        "label": "用途与硬能力",
+        "assertion": "传统翻译用于 grammar/context_word 必须失败；用户声明不能突破 adapter 硬限制。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "domain",
+        "protocol"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "传统翻译用于 grammar/context_word 必须失败；用户声明不能突破 adapter 硬限制。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "传统翻译用于 grammar/context_word 必须失败；用户声明不能突破 adapter 硬限制。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-04",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-04",
+        "label": "请求契约",
+        "assertion": "本地 HTTP fixture 实际检查路由、认证、签名、语言码、模型与参数白名单。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "protocol",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "本地 HTTP fixture 实际检查路由、认证、签名、语言码、模型与参数白名单。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "本地 HTTP fixture 实际检查路由、认证、签名、语言码、模型与参数白名单。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-05",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-05",
+        "label": "流与终止",
+        "assertion": "拆分 UTF-8 / SSE、缺终止、流内错误、拒绝、截断、reasoning-only / tool 输出、超大响应。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "protocol",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "拆分 UTF-8 / SSE、缺终止、流内错误、拒绝、截断、reasoning-only / tool 输出、超大响应。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "拆分 UTF-8 / SSE、缺终止、流内错误、拒绝、截断、reasoning-only / tool 输出、超大响应。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-06",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-06",
+        "label": "生命周期隔离",
+        "assertion": "取消、撤权、停用、换配置后迟到流不能写成功/缓存；future 不得脱离任务。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "domain",
+        "service",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "取消、撤权、停用、换配置后迟到流不能写成功/缓存；future 不得脱离任务。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "取消、撤权、停用、换配置后迟到流不能写成功/缓存；future 不得脱离任务。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-07",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-07",
+        "label": "秘密和网络隔离",
+        "assertion": "Header/query/body/错误/Debug 脱敏；共用 client 不串 Key，Key 不进入默认头或普通 JSON。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "credentials",
+        "protocol"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "Header/query/body/错误/Debug 脱敏；共用 client 不串 Key，Key 不进入默认头或普通 JSON。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "Header/query/body/错误/Debug 脱敏；共用 client 不串 Key，Key 不进入默认头或普通 JSON。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-08",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-08",
+        "label": "旧配置迁移",
+        "assertion": "真实旧 profile 备份副本迁移、事务回滚、FK/seal/历史保持；旧客户端明确拒绝新 schema。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "真实旧 profile 备份副本迁移、事务回滚、FK/seal/历史保持；旧客户端明确拒绝新 schema。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "真实旧 profile 备份副本迁移、事务回滚、FK/seal/历史保持；旧客户端明确拒绝新 schema。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-09",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-09",
+        "label": "身份与缓存",
+        "assertion": "从已保存adapterBinding冻结protocol/contract/profile版本进入请求/测试/缓存身份；升级失效，preset更新不能重解释旧配置。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "从已保存adapterBinding冻结protocol/contract/profile版本进入请求/测试/缓存身份；升级失效，preset更新不能重解释旧配置。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "从已保存adapterBinding冻结protocol/contract/profile版本进入请求/测试/缓存身份；升级失效，preset更新不能重解释旧配置。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-10",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-10",
+        "label": "架构与 UI",
+        "assertion": "UI/核心不得绕层 HTTP/SQL/FFI；目录驱动表单保持草稿、测试、应用和启用分离。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "component",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "UI/核心不得绕层 HTTP/SQL/FFI；目录驱动表单保持草稿、测试、应用和启用分离。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "UI/核心不得绕层 HTTP/SQL/FFI；目录驱动表单保持草稿、测试、应用和启用分离。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-11",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-11",
+        "label": "真实服务验收",
+        "assertion": "每服务实际 ja→zh、多句连续、取消/失败恢复；学习用途单独核解释结果，模型列表成功不代替。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "每服务实际 ja→zh、多句连续、取消/失败恢复；学习用途单独核解释结果，模型列表成功不代替。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "每服务实际 ja→zh、多句连续、取消/失败恢复；学习用途单独核解释结果，模型列表成功不代替。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "PA-12",
+      "source_group": "acceptance",
+      "source_record": {
+        "id": "PA-12",
+        "label": "同包游戏回归",
+        "assertion": "新旧候选分别固定包身份；所有新服务改动在同一新包内完成 SR/MO/Never7/樱之诗回归，不继承旧包通过。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11",
+          "FP-12"
+        ],
+        "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "game"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-07",
+        "PRE-08",
+        "PRE-10",
+        "PRE-12",
+        "PRE-13",
+        "PRE-17"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "新旧候选分别固定包身份；所有新服务改动在同一新包内完成 SR/MO/Never7/樱之诗回归，不继承旧包通过。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "新旧候选分别固定包身份；所有新服务改动在同一新包内完成 SR/MO/Never7/樱之诗回归，不继承旧包通过。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-01",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-01",
+        "label": "目录与执行方式",
+        "assertion": "HTTP13协议/21预设逐对象不变，离线目录与http/platform_native/local_worker分开。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-14"
+        ],
+        "verification_layer": "document_and_catalog",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-14",
+        "FP-06"
+      ],
+      "required_layers": [
+        "catalog"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "HTTP13协议/21预设逐对象不变，离线目录与http/platform_native/local_worker分开。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "HTTP13协议/21预设逐对象不变，离线目录与http/platform_native/local_worker分开。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-02",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-02",
+        "label": "离线条件字段",
+        "assertion": "四引擎按实际类型展示字段，没有假URL/模型ID/Key或虚假模型实体。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-02",
+          "AI-CFG-08"
+        ],
+        "verification_layer": "design_and_product_ui",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-08",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "四引擎按实际类型展示字段，没有假URL/模型ID/Key或虚假模型实体。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "四引擎按实际类型展示字段，没有假URL/模型ID/Key或虚假模型实体。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-03",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-03",
+        "label": "用途硬限制",
+        "assertion": "离线仅translation，grammar/context_word在应用/测试/执行前拒绝，零取凭据/零外发。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-06"
+        ],
+        "verification_layer": "rust_contract_and_ui",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-06",
+        "FP-06",
+        "FP-08"
+      ],
+      "required_layers": [
+        "component",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "离线仅translation，grammar/context_word在应用/测试/执行前拒绝，零取凭据/零外发。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "离线仅translation，grammar/context_word在应用/测试/执行前拒绝，零取凭据/零外发。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-04",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-04",
+        "label": "配置生命周期",
+        "assertion": "草稿/本机探测/真实样句测试/应用/启用独立；CAS冲突、测试过时与恢复可见。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-05",
+          "AI-CFG-13"
+        ],
+        "verification_layer": "runtime_and_ui",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-13",
+        "FP-06"
+      ],
+      "required_layers": [
+        "component",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "草稿/本机探测/真实样句测试/应用/启用独立；CAS冲突、测试过时与恢复可见。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "草稿/本机探测/真实样句测试/应用/启用独立；CAS冲突、测试过时与恢复可见。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-05",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-05",
+        "label": "Apple版本与许可",
+        "assertion": "按OS/SDK符号可用性、传统策略和同策略语言对核对；系统下载授权拒绝/取消不提升就绪。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-06",
+          "AI-CFG-14"
+        ],
+        "verification_layer": "apple_native",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-06",
+        "AI-CFG-14",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "native"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "按OS/SDK符号可用性、传统策略和同策略语言对核对；系统下载授权拒绝/取消不提升就绪。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "按OS/SDK符号可用性、传统策略和同策略语言对核对；系统下载授权拒绝/取消不提升就绪。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-06",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-06",
+        "label": "资源缺失与失效",
+        "assertion": "未安装、缺包、损坏、版本不兼容、路径移动各有真实状态和恢复，不以目录存在判成功。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-05",
+          "AI-CFG-14"
+        ],
+        "verification_layer": "resource_and_runtime",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-14",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "domain",
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "未安装、缺包、损坏、版本不兼容、路径移动各有真实状态和恢复，不以目录存在判成功。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "未安装、缺包、损坏、版本不兼容、路径移动各有真实状态和恢复，不以目录存在判成功。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-07",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-07",
+        "label": "直达与显式中转",
+        "assertion": "默认direct_only，缺直达包不自动pivot；明确应用完整路径和逐跳资源，失败不换路由。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-09",
+          "AI-CFG-12"
+        ],
+        "verification_layer": "resource_and_routing",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-09",
+        "AI-CFG-12",
+        "FP-06"
+      ],
+      "required_layers": [
+        "domain",
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "默认direct_only，缺直达包不自动pivot；明确应用完整路径和逐跳资源，失败不换路由。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "默认direct_only，缺直达包不自动pivot；明确应用完整路径和逐跳资源，失败不换路由。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-08",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-08",
+        "label": "DLL进程与平台隔离",
+        "assertion": "J北京/金山仅同位数独立worker加载；不入UI/主业务/Hook/游戏；Windows与CrossOver独立验证。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-14"
+        ],
+        "verification_layer": "windows_and_crossover_worker",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-14",
+        "FP-06",
+        "FP-12"
+      ],
+      "required_layers": [
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "J北京/金山仅同位数独立worker加载；不入UI/主业务/Hook/游戏；Windows与CrossOver独立验证。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "J北京/金山仅同位数独立worker加载；不入UI/主业务/Hook/游戏；Windows与CrossOver独立验证。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-09",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-09",
+        "label": "worker故障与预算",
+        "assertion": "卡死/崩溃/超时/超长输出及队列资源均有界；只回收自有worker，不阻塞Hook/UI/词法。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-12"
+        ],
+        "verification_layer": "private_protocol_and_process",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-12",
+        "FP-04",
+        "FP-12"
+      ],
+      "required_layers": [
+        "protocol",
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "卡死/崩溃/超时/超长输出及队列资源均有界；只回收自有worker，不阻塞Hook/UI/词法。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "卡死/崩溃/超时/超长输出及队列资源均有界；只回收自有worker，不阻塞Hook/UI/词法。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-10",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-10",
+        "label": "取消与迟到",
+        "assertion": "取消/停用/换配置/换资源推进终态或epoch；旧worker/旧attempt迟到不写成功/缓存，原句归属保持。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-09"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-13"
+        ],
+        "verification_layer": "runtime_and_storage",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-13",
+        "FP-04",
+        "FP-09"
+      ],
+      "required_layers": [
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "取消/停用/换配置/换资源推进终态或epoch；旧worker/旧attempt迟到不写成功/缓存，原句归属保持。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "取消/停用/换配置/换资源推进终态或epoch；旧worker/旧attempt迟到不写成功/缓存，原句归属保持。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-11",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-11",
+        "label": "断网真实翻译",
+        "assertion": "指定真实安装/语言包在断网环境产生实际译文；不隐式联网、云回退、后台下载。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-10"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-12",
+          "AI-CFG-14"
+        ],
+        "verification_layer": "real_offline_runtime",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-12",
+        "AI-CFG-14",
+        "FP-06",
+        "FP-10"
+      ],
+      "required_layers": [
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "指定真实安装/语言包在断网环境产生实际译文；不隐式联网、云回退、后台下载。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "指定真实安装/语言包在断网环境产生实际译文；不隐式联网、云回退、后台下载。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-12",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-12",
+        "label": "资源版本与缓存",
+        "assertion": "engine/backend/worker/包/route/config进入测试与缓存身份；升级/观察代次变化不误命中。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-09",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-05",
+          "AI-CFG-13"
+        ],
+        "verification_layer": "identity_cache_and_storage",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-13",
+        "FP-09",
+        "FP-11"
+      ],
+      "required_layers": [
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "engine/backend/worker/包/route/config进入测试与缓存身份；升级/观察代次变化不误命中。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "engine/backend/worker/包/route/config进入测试与缓存身份；升级/观察代次变化不误命中。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-13",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-13",
+        "label": "codec与真实迁移",
+        "assertion": "新旧codec/seal保真、EngineTarget XOR和同版本FK、未知版本拒绝、GC与真实迁移/回滚。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-15"
+        ],
+        "verification_layer": "storage_migration",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-15",
+        "FP-06",
+        "FP-12"
+      ],
+      "required_layers": [
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "新旧codec/seal保真、EngineTarget XOR和同版本FK、未知版本拒绝、GC与真实迁移/回滚。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "新旧codec/seal保真、EngineTarget XOR和同版本FK、未知版本拒绝、GC与真实迁移/回滚。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-14",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-14",
+        "label": "导入与本机重绑定",
+        "assertion": "导出不带DLL/商业资源/绝对安装路径/授权/测试通过；导入和复制重新定位并明确应用。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-10",
+          "AI-CFG-15"
+        ],
+        "verification_layer": "import_export_and_storage",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-10",
+        "AI-CFG-15",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "导出不带DLL/商业资源/绝对安装路径/授权/测试通过；导入和复制重新定位并明确应用。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "导出不带DLL/商业资源/绝对安装路径/授权/测试通过；导入和复制重新定位并明确应用。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-15",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-15",
+        "label": "多引擎与历史",
+        "assertion": "有序独立结果、全局/游戏覆盖、停用、人工修正和历史来源保持，不自动HTTP回退。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-09"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-10",
+          "AI-CFG-13"
+        ],
+        "verification_layer": "runtime_ui_and_history",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-10",
+        "AI-CFG-13",
+        "FP-04",
+        "FP-09"
+      ],
+      "required_layers": [
+        "component",
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "有序独立结果、全局/游戏覆盖、停用、人工修正和历史来源保持，不自动HTTP回退。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "有序独立结果、全局/游戏覆盖、停用、人工修正和历史来源保持，不自动HTTP回退。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "OT-16",
+      "source_group": "offline_acceptance",
+      "source_record": {
+        "id": "OT-16",
+        "label": "正式包与语言质量",
+        "assertion": "同一最终包逐engine/平台/合法资源核实际离线译文、多句/Unicode/简繁质量与四游戏；不继承旧结果。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06",
+          "FP-10",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-05",
+          "AI-CFG-06",
+          "AI-CFG-14"
+        ],
+        "verification_layer": "signed_package_and_real_quality",
+        "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-14",
+        "FP-04",
+        "FP-06",
+        "FP-10",
+        "FP-12"
+      ],
+      "required_layers": [
+        "game",
+        "review",
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-GUI-REVIEW",
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-07",
+        "PRE-08",
+        "PRE-10",
+        "PRE-11",
+        "PRE-12",
+        "PRE-13",
+        "PRE-17"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "同一最终包逐engine/平台/合法资源核实际离线译文、多句/Unicode/简繁质量与四游戏；不继承旧结果。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "同一最终包逐engine/平台/合法资源核实际离线译文、多句/Unicode/简繁质量与四游戏；不继承旧结果。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。",
+        "当前Mac/CrossOver按4引擎×4游戏16项分别核精确engine/runtime/资源、逐状态译文及独立质量，不能由4worker与4game聚合结果代替。",
+        "每项真实资源必须ready、已授权且route支持；缺授权/未知/不支持仍blocked，不隐式联网或换引擎。",
+        "SR中文只如实验同语种原文/直通/非日语降级及适用的实际非日语翻译；未调用引擎不可记日语翻译质量，其他日文游戏须实际引擎调用/原译文与质量。"
+      ]
+    },
+    {
+      "id": "SS-01",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-01",
+        "label": "同一浅层选择器",
+        "assertion": "当前会话浅层与HUD复用同一翻译服务选择器、同一已保存列表及有效绑定投影。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-16"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "native_multiwindow"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-16",
+        "FP-04",
+        "FP-06"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "native"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "当前会话浅层与HUD复用同一翻译服务选择器、同一已保存列表及有效绑定投影。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "当前会话浅层与HUD复用同一翻译服务选择器、同一已保存列表及有效绑定投影。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-02",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-02",
+        "label": "仅已保存且用途支持",
+        "assertion": "只允许当前配置档已添加、已保存、字段合法且显式支持translation的资源；目录模板只在添加服务，未保存草稿不成为可选项。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-04"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_domain",
+          "configuration_projection"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-04",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "design",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "只允许当前配置档已添加、已保存、字段合法且显式支持translation的资源；目录模板只在添加服务，未保存草稿不成为可选项。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "只允许当前配置档已添加、已保存、字段合法且显式支持translation的资源；目录模板只在添加服务，未保存草稿不成为可选项。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-03",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-03",
+        "label": "禁选原因与恢复",
+        "assertion": "未配置、缺字段/凭据、已停用及当前版本已知失败不可选，并显示对应对象/版本的原因和修复入口。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-05",
+          "AI-CFG-11"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_domain",
+          "vault_and_actual_failure"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-11",
+        "FP-06",
+        "FP-12"
+      ],
+      "required_layers": [
+        "credentials",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "未配置、缺字段/凭据、已停用及当前版本已知失败不可选，并显示对应对象/版本的原因和修复入口。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "未配置、缺字段/凭据、已停用及当前版本已知失败不可选，并显示对应对象/版本的原因和修复入口。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-04",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-04",
+        "label": "HTTP未验证不等于未配置",
+        "assertion": "HTTP合法保存且用途支持但未测时可明确选用并保持未验证；新版本不挪用旧测试，未测试不导致永久禁选。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-05"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_domain",
+          "real_http"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "FP-06"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "HTTP合法保存且用途支持但未测时可明确选用并保持未验证；新版本不挪用旧测试，未测试不导致永久禁选。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "HTTP合法保存且用途支持但未测时可明确选用并保持未验证；新版本不挪用旧测试，未测试不导致永久禁选。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-05",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-05",
+        "label": "本机健康门禁",
+        "assertion": "本机仍按系统能力、资源、语言对与运行route门禁判定；必要条件未知、缺包或未实现路线不可选。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-14"
+        ],
+        "verification_layers": [
+          "design",
+          "real_platform",
+          "resource_worker"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-14",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "design",
+        "native",
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "本机仍按系统能力、资源、语言对与运行route门禁判定；必要条件未知、缺包或未实现路线不可选。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "本机仍按系统能力、资源、语言对与运行route门禁判定；必要条件未知、缺包或未实现路线不可选。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-06",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-06",
+        "label": "显式用途与能力过滤",
+        "assertion": "翻译列表按templatePurpose和translation能力筛选，精读-only不列入，不用名称/品牌推断用途，不升级离线能力。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-06",
+          "AI-CFG-07"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_catalog",
+          "purpose_authorization"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-06",
+        "AI-CFG-07",
+        "FP-06",
+        "FP-08"
+      ],
+      "required_layers": [
+        "catalog",
+        "design",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "翻译列表按templatePurpose和translation能力筛选，精读-only不列入，不用名称/品牌推断用途，不升级离线能力。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "翻译列表按templatePurpose和translation能力筛选，精读-only不列入，不用名称/品牌推断用途，不升级离线能力。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-07",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-07",
+        "label": "保存与选用分离",
+        "assertion": "新增编辑保存或指定样句测试不改变current服务；明确选择仅引用已保存不可变revision及其冻结依赖。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-10"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_configuration",
+          "real_storage"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-10",
+        "FP-06"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "新增编辑保存或指定样句测试不改变current服务；明确选择仅引用已保存不可变revision及其冻结依赖。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "新增编辑保存或指定样句测试不改变current服务；明确选择仅引用已保存不可变revision及其冻结依赖。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-08",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-08",
+        "label": "选中后续句与独立启停",
+        "assertion": "选择即activate新绑定并只作用后续句，保持purpose enabled/会话开关；当前句重译独立且历史旧结果保留。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06",
+          "FP-09"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-04",
+          "AI-CFG-13"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_runtime",
+          "real_service",
+          "final_package"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-13",
+        "FP-04",
+        "FP-06",
+        "FP-09"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "native",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-08",
+        "PRE-10",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "选择即activate新绑定并只作用后续句，保持purpose enabled/会话开关；当前句重译独立且历史旧结果保留。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "选择即activate新绑定并只作用后续句，保持purpose enabled/会话开关；当前句重译独立且历史旧结果保留。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-09",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-09",
+        "label": "全局与游戏继承",
+        "assertion": "明确全局默认、游戏覆盖与恢复继承来源；修改不串游戏或配置档，取消不改变任何绑定。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-10"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_scope",
+          "real_storage"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-10",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "明确全局默认、游戏覆盖与恢复继承来源；修改不串游戏或配置档，取消不改变任何绑定。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "明确全局默认、游戏覆盖与恢复继承来源；修改不串游戏或配置档，取消不改变任何绑定。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-10",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-10",
+        "label": "取消与迟到隔离",
+        "assertion": "取消选择不改绑定；新绑定取消旧队列/在途，旧分片不覆盖当前句或写新成功/缓存，既有历史保留原来源。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-12",
+          "AI-CFG-13"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_race",
+          "actual_transport_cancellation",
+          "history_cache"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-12",
+        "AI-CFG-13",
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "service",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "取消选择不改绑定；新绑定取消旧队列/在途，旧分片不覆盖当前句或写新成功/缓存，既有历史保留原来源。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "取消选择不改绑定；新绑定取消旧队列/在途，旧分片不覆盖当前句或写新成功/缓存，既有历史保留原来源。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-11",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-11",
+        "label": "主对照有序去重",
+        "assertion": "主翻译仅一项、对照有序；同一资源不同时作为主与对照，同名不同配置按ID区分，单项失败不取消其他结果。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-12"
+        ],
+        "verification_layers": [
+          "design",
+          "rust_multi_engine",
+          "final_package"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-12",
+        "FP-04",
+        "FP-06"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "native"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "主翻译仅一项、对照有序；同一资源不同时作为主与对照，同名不同配置按ID区分，单项失败不取消其他结果。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "主翻译仅一项、对照有序；同一资源不同时作为主与对照，同名不同配置按ID区分，单项失败不取消其他结果。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "SS-12",
+      "source_group": "selection_acceptance",
+      "source_record": {
+        "id": "SS-12",
+        "label": "带上下文配置往返",
+        "assertion": "去配置携带来源/scope/game/purpose/目标并可返回原选择器；保存或取消都不自动选用、测试、发送或重译。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-16"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "native_multiwindow",
+          "final_package"
+        ],
+        "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-16",
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "native"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "去配置携带来源/scope/game/purpose/目标并可返回原选择器；保存或取消都不自动选用、测试、发送或重译。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "去配置携带来源/scope/game/purpose/目标并可返回原选择器；保存或取消都不自动选用、测试、发送或重译。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-01",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-01",
+        "label": "统一服务管理与同页编辑",
+        "assertion": "同一已添加服务列表同时呈现云端/本机非大模型/LLM资源，类型为标签；选中后同页编辑，无family和五实体Tab导航。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-02",
+          "AI-CFG-16"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "configuration_projection"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-16",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "同一已添加服务列表同时呈现云端/本机非大模型/LLM资源，类型为标签；选中后同页编辑，无family和五实体Tab导航。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "同一已添加服务列表同时呈现云端/本机非大模型/LLM资源，类型为标签；选中后同页编辑，无family和五实体Tab导航。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-02",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-02",
+        "label": "条件字段与真实对象",
+        "assertion": "传统HTTP、LLM和离线引擎仅展示适用字段；不虚造模型ID/URL/Key，不通过隐藏必要未知条件绕过门禁。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-02",
+          "AI-CFG-06",
+          "AI-CFG-14"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_catalog",
+          "real_platform"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-06",
+        "AI-CFG-14",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "catalog",
+        "component",
+        "design",
+        "native"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "传统HTTP、LLM和离线引擎仅展示适用字段；不虚造模型ID/URL/Key，不通过隐藏必要未知条件绕过门禁。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "传统HTTP、LLM和离线引擎仅展示适用字段；不虚造模型ID/URL/Key，不通过隐藏必要未知条件绕过门禁。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-03",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-03",
+        "label": "资源版本与配置选择分离",
+        "assertion": "连接/模型/用途和独立离线资源关系不变；草稿/保存/检查/样句不改当前绑定，明确选择、应用和启停保持原语义。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-04",
+          "AI-CFG-05",
+          "AI-CFG-10",
+          "AI-CFG-13",
+          "AI-CFG-16"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "rust_configuration",
+          "real_storage",
+          "real_service"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-10",
+        "AI-CFG-13",
+        "AI-CFG-16",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "service",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "连接/模型/用途和独立离线资源关系不变；草稿/保存/检查/样句不改当前绑定，明确选择、应用和启停保持原语义。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "连接/模型/用途和独立离线资源关系不变；草稿/保存/检查/样句不改当前绑定，明确选择、应用和启停保持原语义。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-04",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-04",
+        "label": "高级能力与学习用途保留",
+        "assertion": "适用模板/参数/上下文/运行策略/密钥池可按需展开并有摘要；精读和语境查词独立配置，互不借用或自动启用。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-07",
+          "AI-CFG-08",
+          "AI-CFG-09",
+          "AI-CFG-11",
+          "AI-CFG-12"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_purpose",
+          "actual_credentials"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "AI-CFG-09",
+        "AI-CFG-11",
+        "AI-CFG-12",
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "credentials",
+        "design",
+        "domain"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "适用模板/参数/上下文/运行策略/密钥池可按需展开并有摘要；精读和语境查词独立配置，互不借用或自动启用。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "适用模板/参数/上下文/运行策略/密钥池可按需展开并有摘要；精读和语境查词独立配置，互不借用或自动启用。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-05",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-05",
+        "label": "会话三独立区域同页可达",
+        "assertion": "正文历史、原始提取和Hook诊断同页保留各区标题/范围/计数/摘要/入口，详情按需展开，不互斥替换。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-17",
+          "RW-18",
+          "RW-31",
+          "RW-32"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "final_package"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "FP-09",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-31",
+        "RW-32"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "native"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "正文历史、原始提取和Hook诊断同页保留各区标题/范围/计数/摘要/入口，详情按需展开，不互斥替换。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "正文历史、原始提取和Hook诊断同页保留各区标题/范围/计数/摘要/入口，详情按需展开，不互斥替换。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-06",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-06",
+        "label": "区域视图状态互不污染",
+        "assertion": "各区查询/筛选/页/滚动独立；操作一处不重置另一处，不切流、不重注入、不暂停取文。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-19",
+          "RW-21",
+          "RW-23"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_session",
+          "real_storage"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "FP-09",
+        "FP-12",
+        "RW-19",
+        "RW-21",
+        "RW-23"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "storage"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C36"
+      ],
+      "owners": [
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "各区查询/筛选/页/滚动独立；操作一处不重置另一处，不切流、不重注入、不暂停取文。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "各区查询/筛选/页/滚动独立；操作一处不重置另一处，不切流、不重注入、不暂停取文。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-07",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-07",
+        "label": "全量数据搜索与导出保留",
+        "assertion": "选流前和未选流事件、顺序/身份/增量关系、脱敏Hook原生事实、缺口、全量分页/搜索及明确数据集导出完整保留。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-17",
+          "RW-18",
+          "RW-19",
+          "RW-20",
+          "RW-22",
+          "RW-23"
+        ],
+        "verification_layers": [
+          "design",
+          "real_pipeline",
+          "real_storage",
+          "final_package"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "FP-09",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-22",
+        "RW-23"
+      ],
+      "required_layers": [
+        "design",
+        "native",
+        "pipeline",
+        "storage"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AP",
+        "HK",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "选流前和未选流事件、顺序/身份/增量关系、脱敏Hook原生事实、缺口、全量分页/搜索及明确数据集导出完整保留。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "选流前和未选流事件、顺序/身份/增量关系、脱敏Hook原生事实、缺口、全量分页/搜索及明确数据集导出完整保留。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-08",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-08",
+        "label": "独立跟随与常驻预览",
+        "assertion": "各区独立跟随/暂停和新到计数；上翻某区仍收取事件，折叠/滚动不重启同一会话预览或改变采集时间身份。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-03",
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-01",
+          "RW-02",
+          "RW-05",
+          "RW-21"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "native_preview",
+          "real_pipeline"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "FP-03",
+        "FP-09",
+        "FP-12",
+        "RW-01",
+        "RW-02",
+        "RW-05",
+        "RW-21"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "native",
+        "pipeline"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AP",
+        "HK",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "各区独立跟随/暂停和新到计数；上翻某区仍收取事件，折叠/滚动不重启同一会话预览或改变采集时间身份。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "各区独立跟随/暂停和新到计数；上翻某区仍收取事件，折叠/滚动不重启同一会话预览或改变采集时间身份。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-09",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-09",
+        "label": "功能审计与演示控制归位",
+        "assertion": "清理重复导航/日常选用入口和不适用字段；演示返回/故障注入只在页外工具，不留空按钮、不伪造成功、不删除高级与审计能力。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-09",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-11",
+          "AI-CFG-12",
+          "AI-CFG-13",
+          "AI-CFG-16"
+        ],
+        "source_reading_requirement_ids": [
+          "RW-17",
+          "RW-18",
+          "RW-34"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "independent_review"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "AI-CFG-11",
+        "AI-CFG-12",
+        "AI-CFG-13",
+        "AI-CFG-16",
+        "FP-06",
+        "FP-09",
+        "FP-11",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-34"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "review"
+      ],
+      "module_ids": [
+        "M03",
+        "M04",
+        "M05",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C26",
+        "C27",
+        "C29",
+        "C36"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-GUI-REVIEW",
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "清理重复导航/日常选用入口和不适用字段；演示返回/故障注入只在页外工具，不留空按钮、不伪造成功、不删除高级与审计能力。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "清理重复导航/日常选用入口和不适用字段；演示返回/故障注入只在页外工具，不留空按钮、不伪造成功、不删除高级与审计能力。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "FL-10",
+      "source_group": "flat_acceptance",
+      "source_record": {
+        "id": "FL-10",
+        "label": "可访问布局与证据隔离",
+        "assertion": "键盘/焦点、暗浅色、窄窗、长标签和200%下同页区域仍可达；新候选与截图独立留存，旧候选/目录/计划/批准源及产品状态不变。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-09",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-31",
+          "RW-32",
+          "RW-33",
+          "RW-34"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "native_accessibility",
+          "final_package"
+        ],
+        "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+      },
+      "requirement_ids": [
+        "FP-06",
+        "FP-09",
+        "FP-11",
+        "FP-12",
+        "RW-31",
+        "RW-32",
+        "RW-33",
+        "RW-34"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "native"
+      ],
+      "module_ids": [
+        "M03",
+        "M04",
+        "M05",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C26",
+        "C27",
+        "C29",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "键盘/焦点、暗浅色、窄窗、长标签和200%下同页区域仍可达；新候选与截图独立留存，旧候选/目录/计划/批准源及产品状态不变。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "键盘/焦点、暗浅色、窄窗、长标签和200%下同页区域仍可达；新候选与截图独立留存，旧候选/目录/计划/批准源及产品状态不变。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-01",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-01",
+        "label": "独立当前正文优先",
+        "assertion": "当前原文、译文/状态及来源是首屏独立阅读卡，常用动作可达，不以整份历史列表替代当前对象。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06",
+          "FP-09"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-13"
+        ],
+        "source_reading_requirement_ids": [
+          "RW-17",
+          "RW-31",
+          "RW-32"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_reading",
+          "final_package"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-13",
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "RW-17",
+        "RW-31",
+        "RW-32"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "native"
+      ],
+      "module_ids": [
+        "M03",
+        "M04",
+        "M05",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C26",
+        "C27",
+        "C29",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "当前原文、译文/状态及来源是首屏独立阅读卡，常用动作可达，不以整份历史列表替代当前对象。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "当前原文、译文/状态及来源是首屏独立阅读卡，常用动作可达，不以整份历史列表替代当前对象。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-02",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-02",
+        "label": "历史与诊断后置默认折叠",
+        "assertion": "正文历史、全部提取、Hook诊断在当前阅读后方同页各自默认折叠，数量和警告/错误/缺口摘要保持可见。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-17",
+          "RW-18",
+          "RW-20",
+          "RW-21"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "real_pipeline"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-12",
+        "RW-17",
+        "RW-18",
+        "RW-20",
+        "RW-21"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "pipeline"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C33",
+        "C36"
+      ],
+      "owners": [
+        "AP",
+        "HK",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "正文历史、全部提取、Hook诊断在当前阅读后方同页各自默认折叠，数量和警告/错误/缺口摘要保持可见。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "正文历史、全部提取、Hook诊断在当前阅读后方同页各自默认折叠，数量和警告/错误/缺口摘要保持可见。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-03",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-03",
+        "label": "折叠保持全量与独立状态",
+        "assertion": "折叠/展开不重置查询/筛选/页/滚动/跟随/新到计数，不丢数据/停止订阅或重建预览，完整与过滤导出范围保持。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-03",
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-01",
+          "RW-17",
+          "RW-18",
+          "RW-19",
+          "RW-20",
+          "RW-21",
+          "RW-22",
+          "RW-23"
+        ],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "real_storage",
+          "native_preview"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "FP-03",
+        "FP-09",
+        "FP-12",
+        "RW-01",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "native",
+        "pipeline",
+        "storage"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C33",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AP",
+        "HK",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "折叠/展开不重置查询/筛选/页/滚动/跟随/新到计数，不丢数据/停止订阅或重建预览，完整与过滤导出范围保持。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "折叠/展开不重置查询/筛选/页/滚动/跟随/新到计数，不丢数据/停止订阅或重建预览，完整与过滤导出范围保持。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-04",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-04",
+        "label": "品牌与精确接口目录",
+        "assertion": "呈现目录逐项绑定原21HTTP预设/13协议/4离线引擎；品牌多接口明确确认，建议不等于自动选用或允许切协议。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-02",
+          "AI-CFG-14"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "catalog_contract",
+          "rust_catalog",
+          "real_component"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-14",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "catalog",
+        "component",
+        "design"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "呈现目录逐项绑定原21HTTP预设/13协议/4离线引擎；品牌多接口明确确认，建议不等于自动选用或允许切协议。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "呈现目录逐项绑定原21HTTP预设/13协议/4离线引擎；品牌多接口明确确认，建议不等于自动选用或允许切协议。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-05",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-05",
+        "label": "必要字段与有来源缺省",
+        "assertion": "每字段分类/类型/标签/条件/来源可查；内置固定或明确site/plan地址由目录带入，资料缺口独立阻断，不让普通用户代填；实际必要项可见，模型不伪填。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-02",
+          "AI-CFG-04",
+          "AI-CFG-08"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "catalog_contract",
+          "rust_configuration",
+          "actual_service"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-04",
+        "AI-CFG-08",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "catalog",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "每字段分类/类型/标签/条件/来源可查；内置固定或明确site/plan地址由目录带入，资料缺口独立阻断，不让普通用户代填；实际必要项可见，模型不伪填。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "每字段分类/类型/标签/条件/来源可查；内置固定或明确site/plan地址由目录带入，资料缺口独立阻断，不让普通用户代填；实际必要项可见，模型不伪填。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-06",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-06",
+        "label": "不适用与内部字段不强填",
+        "assertion": "传统、本机、LLM各只要求适用内容；协议/schema/revision/签名/salt/安全引用内部持有，不把它们变成用户必填。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-06",
+          "AI-CFG-08",
+          "AI-CFG-11"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_catalog"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-06",
+        "AI-CFG-08",
+        "AI-CFG-11",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "catalog",
+        "component",
+        "design"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "传统、本机、LLM各只要求适用内容；协议/schema/revision/签名/salt/安全引用内部持有，不把它们变成用户必填。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "传统、本机、LLM各只要求适用内容；协议/schema/revision/签名/salt/安全引用内部持有，不把它们变成用户必填。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-07",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-07",
+        "label": "遮罩密钥与明确授权",
+        "assertion": "Key/应用密钥用用户语义遮罩，常规草稿仅不透明引用；多字段签名与Google授权不混成通用Key，不伪造OAuth/测试成功。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-05",
+          "AI-CFG-11",
+          "AI-CFG-15"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "actual_vault_oauth",
+          "actual_service"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-11",
+        "AI-CFG-15",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "component",
+        "credentials",
+        "design",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14",
+        "PRE-18"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "Key/应用密钥用用户语义遮罩，常规草稿仅不透明引用；多字段签名与Google授权不混成通用Key，不伪造OAuth/测试成功。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "Key/应用密钥用用户语义遮罩，常规草稿仅不透明引用；多字段签名与Google授权不混成通用Key，不伪造OAuth/测试成功。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-08",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-08",
+        "label": "高级及独立学习按需",
+        "assertion": "适用高级模板/参数/网络/密钥池/运行策略保留；精读/查词独立默认折叠，互不借用/串状态/自动启用。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-07",
+          "AI-CFG-08",
+          "AI-CFG-09",
+          "AI-CFG-11",
+          "AI-CFG-12",
+          "AI-CFG-16"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_purpose",
+          "actual_study"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "AI-CFG-09",
+        "AI-CFG-11",
+        "AI-CFG-12",
+        "AI-CFG-16",
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "适用高级模板/参数/网络/密钥池/运行策略保留；精读/查词独立默认折叠，互不借用/串状态/自动启用。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "适用高级模板/参数/网络/密钥池/运行策略保留；精读/查词独立默认折叠，互不借用/串状态/自动启用。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-09",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-09",
+        "label": "保存选用与版本启停保持",
+        "assertion": "编辑/保存/样句不切服务；选择仍限已添加已保存合法资源，当前版本失败禁选，后续句/范围/启停/重译与迟到历史规则保持。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06",
+          "FP-09",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-04",
+          "AI-CFG-05",
+          "AI-CFG-10",
+          "AI-CFG-12",
+          "AI-CFG-13",
+          "AI-CFG-16"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "rust_binding_runtime",
+          "real_storage",
+          "actual_service",
+          "final_package"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-10",
+        "AI-CFG-12",
+        "AI-CFG-13",
+        "AI-CFG-16",
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-12"
+      ],
+      "required_layers": [
+        "design",
+        "domain",
+        "native",
+        "service",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-08",
+        "PRE-10",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "编辑/保存/样句不切服务；选择仍限已添加已保存合法资源，当前版本失败禁选，后续句/范围/启停/重译与迟到历史规则保持。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "编辑/保存/样句不切服务；选择仍限已添加已保存合法资源，当前版本失败禁选，后续句/范围/启停/重译与迟到历史规则保持。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-10",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-10",
+        "label": "本机条件未知仍阻断",
+        "assertion": "四本机引擎按API/传统策略/安装/资源/语言对/运行路线门禁；未知必要条件、缺资源、未实现路线不可用，不以简化表单放行。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-05",
+          "AI-CFG-06",
+          "AI-CFG-14"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_platform",
+          "resource_worker",
+          "final_package"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-14",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "design",
+        "native",
+        "worker"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31",
+        "C32",
+        "C33",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-OFFLINE-LICENSE",
+        "PRE-01",
+        "PRE-08",
+        "PRE-10",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "四本机引擎按API/传统策略/安装/资源/语言对/运行路线门禁；未知必要条件、缺资源、未实现路线不可用，不以简化表单放行。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "四本机引擎按API/传统策略/安装/资源/语言对/运行路线门禁；未知必要条件、缺资源、未实现路线不可用，不以简化表单放行。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-11",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-11",
+        "label": "自定义必要字段不能隐藏",
+        "assertion": "适用兼容服务的自定义地址、认证、实际模型与服务要求的项目/区域在条件成立时可见且校验；不退回默认协议/地址/模型。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-02",
+          "AI-CFG-04",
+          "AI-CFG-08",
+          "AI-CFG-11",
+          "AI-CFG-14"
+        ],
+        "source_reading_requirement_ids": [],
+        "verification_layers": [
+          "design",
+          "real_component",
+          "rust_configuration",
+          "actual_service"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-04",
+        "AI-CFG-08",
+        "AI-CFG-11",
+        "AI-CFG-14",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "适用兼容服务的自定义地址、认证、实际模型与服务要求的项目/区域在条件成立时可见且校验；不退回默认协议/地址/模型。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "适用兼容服务的自定义地址、认证、实际模型与服务要求的项目/区域在条件成立时可见且校验；不退回默认协议/地址/模型。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GD-12",
+      "source_group": "guided_acceptance",
+      "source_record": {
+        "id": "GD-12",
+        "label": "可访问样式与证据边界",
+        "assertion": "键盘/焦点/窄窗/长文/主题及200%分别留真实截图和限制；独立候选/源hash，旧计划/批准图/产品not_run不提升。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06",
+          "FP-09",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [],
+        "source_reading_requirement_ids": [
+          "RW-31",
+          "RW-32",
+          "RW-33",
+          "RW-34"
+        ],
+        "verification_layers": [
+          "design",
+          "independent_visual_review",
+          "real_component",
+          "native_accessibility",
+          "final_package"
+        ],
+        "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+      },
+      "requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-11",
+        "FP-12",
+        "RW-31",
+        "RW-32",
+        "RW-33",
+        "RW-34"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "game",
+        "native",
+        "review"
+      ],
+      "module_ids": [
+        "M03",
+        "M04",
+        "M05",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C26",
+        "C27",
+        "C29",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-GUI-REVIEW",
+        "PRE-01",
+        "PRE-07",
+        "PRE-08",
+        "PRE-10",
+        "PRE-12",
+        "PRE-13",
+        "PRE-17"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "键盘/焦点/窄窗/长文/主题及200%分别留真实截图和限制；独立候选/源hash，旧计划/批准图/产品not_run不提升。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "键盘/焦点/窄窗/长文/主题及200%分别留真实截图和限制；独立候选/源hash，旧计划/批准图/产品not_run不提升。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI01",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI01",
+        "label": "当前服务连接的代理可达且独立保存",
+        "assertion": "代理仅改当前连接；保存重开仍保留，其他连接和当前绑定/自动开关不变。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-11"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-11",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "protocol",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "代理仅改当前连接；保存重开仍保留，其他连接和当前绑定/自动开关不变。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "代理仅改当前连接；保存重开仍保留，其他连接和当前绑定/自动开关不变。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI02",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI02",
+        "label": "学习用途各自保留温度三态、模板覆盖与预览",
+        "assertion": "grammar/context_word逐用途验证继承/设置/省略温度、模板覆盖与预览身份，互不改写且不外发未授权正文。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-08",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-07",
+          "AI-CFG-08",
+          "AI-CFG-09",
+          "AI-CFG-16"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "AI-CFG-09",
+        "AI-CFG-16",
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C22",
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "grammar/context_word逐用途验证继承/设置/省略温度、模板覆盖与预览身份，互不改写且不外发未授权正文。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "grammar/context_word逐用途验证继承/设置/省略温度、模板覆盖与预览身份，互不改写且不外发未授权正文。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI03",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI03",
+        "label": "资源草稿隔离用途策略并只在明确选用后应用",
+        "assertion": "新增/保存未绑定资源不改任何用途；预览区分草稿/已应用，明确选用后仅后续句冻结新版本。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-04",
+          "AI-CFG-10",
+          "AI-CFG-13"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-10",
+        "AI-CFG-13",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "service",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "新增/保存未绑定资源不改任何用途；预览区分草稿/已应用，明确选用后仅后续句冻结新版本。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "新增/保存未绑定资源不改任何用途；预览区分草稿/已应用，明确选用后仅后续句冻结新版本。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI04",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI04",
+        "label": "主阅读复制与重译使用现有记录处理流程",
+        "assertion": "复制准确当前原文；独立重译新建记录并保留旧记录/来源，不改服务和自动开关；新句到达不偷换目标。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-04",
+          "FP-06",
+          "FP-09"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-13"
+        ],
+        "source_reading_requirement_ids": [
+          "RW-17",
+          "RW-31",
+          "RW-32"
+        ]
+      },
+      "requirement_ids": [
+        "AI-CFG-13",
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "RW-17",
+        "RW-31",
+        "RW-32"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "game",
+        "storage"
+      ],
+      "module_ids": [
+        "M03",
+        "M04",
+        "M05",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C17",
+        "C18",
+        "C23",
+        "C26",
+        "C27",
+        "C29",
+        "C34",
+        "C35"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "PRE-01",
+        "PRE-07",
+        "PRE-08",
+        "PRE-10",
+        "PRE-12",
+        "PRE-13",
+        "PRE-14",
+        "PRE-17"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "复制准确当前原文；独立重译新建记录并保留旧记录/来源，不改服务和自动开关；新句到达不偷换目标。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "复制准确当前原文；独立重译新建记录并保留旧记录/来源，不改服务和自动开关；新句到达不偷换目标。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI05",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI05",
+        "label": "失效测试退出运行态且资源任务独立结算",
+        "assertion": "运行中修改令精确任务stale并可重新测试；A/B完成与取消独立，迟到不覆盖新版本或其他资源。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-04",
+          "AI-CFG-05",
+          "AI-CFG-12",
+          "AI-CFG-13"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-12",
+        "AI-CFG-13",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "运行中修改令精确任务stale并可重新测试；A/B完成与取消独立，迟到不覆盖新版本或其他资源。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "运行中修改令精确任务stale并可重新测试；A/B完成与取消独立，迟到不覆盖新版本或其他资源。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI06",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI06",
+        "label": "凭据组观察与显示名不得洗掉已知认证失败",
+        "assertion": "池观察/显示名变更不改请求凭据身份或原失败fingerprint；已知认证失败继续禁选且保留原因。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11",
+          "FP-12"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-05",
+          "AI-CFG-11",
+          "AI-CFG-15"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-11",
+        "AI-CFG-15",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "required_layers": [
+        "component",
+        "credentials",
+        "design",
+        "domain",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29",
+        "C30"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "PL",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14",
+        "PRE-18"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "池观察/显示名变更不改请求凭据身份或原失败fingerprint；已知认证失败继续禁选且保留原因。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "池观察/显示名变更不改请求凭据身份或原失败fingerprint；已知认证失败继续禁选且保留原因。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI07",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI07",
+        "label": "传统翻译用途预览只展示适用参数",
+        "assertion": "真实传统请求和预览均不带LLM prompt/model/temperature/history，保留适用语言与运行策略。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-01",
+          "AI-CFG-06",
+          "AI-CFG-07",
+          "AI-CFG-08"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-06",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "FP-06",
+        "FP-11"
+      ],
+      "required_layers": [
+        "catalog",
+        "component",
+        "design",
+        "protocol",
+        "service"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "真实传统请求和预览均不带LLM prompt/model/temperature/history，保留适用语言与运行策略。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "真实传统请求和预览均不带LLM prompt/model/temperature/history，保留适用语言与运行策略。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    },
+    {
+      "id": "GUI08",
+      "source_group": "gui_regressions",
+      "source_record": {
+        "id": "GUI08",
+        "label": "明确选用大模型后上下文范围可编辑且预览与保存隔离",
+        "assertion": "已选LLM翻译用途可编辑0/正上限与原文/译文/both范围；保存不应用，不串学习；明确重选才冻结策略。",
+        "status": "not_run",
+        "source_requirement_ids": [
+          "FP-06",
+          "FP-09",
+          "FP-11"
+        ],
+        "source_configuration_requirement_ids": [
+          "AI-CFG-03",
+          "AI-CFG-04",
+          "AI-CFG-09",
+          "AI-CFG-13"
+        ],
+        "source_reading_requirement_ids": []
+      },
+      "requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-09",
+        "AI-CFG-13",
+        "FP-06",
+        "FP-09",
+        "FP-11"
+      ],
+      "required_layers": [
+        "component",
+        "design",
+        "domain",
+        "service",
+        "storage"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M10",
+        "M13"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "owners": [
+        "AI",
+        "AP",
+        "QA",
+        "UI"
+      ],
+      "prerequisite_ids": [
+        "CURRENT-SERVICE-MATERIALS",
+        "PRE-01",
+        "PRE-06",
+        "PRE-11",
+        "PRE-13",
+        "PRE-14"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "design_checks": [
+        "guided-service-reading-design"
+      ],
+      "steps": [
+        "记录当前源码、精确配置/用途/版本及适用前置，按本项真实层和每个变体独立准备环境。",
+        "已选LLM翻译用途可编辑0/正上限与原文/译文/both范围；保存不应用，不串学习；明确重选才冻结策略。",
+        "执行动作与故障/恢复，保留逐观察原始回执、实际日志与证据，不能由设计样例替代真实层。"
+      ],
+      "observable_expectations": [
+        "已选LLM翻译用途可编辑0/正上限与原文/译文/both范围；保存不应用，不串学习；明确重选才冻结策略。",
+        "结果属于精确对象/版本/用途；缺外部条件记blocked，未实现或未执行记not_run；禁止继承旧包或另层通过。"
+      ]
+    }
+  ],
+  "current_scope": "macos-arm64-crossover",
+  "separate_platform_qualifications": [
+    {
+      "execution_id": "OT-08@worker@ENGINE-jbeijing-RUNTIME-WINDOWS",
+      "case_id": "OT-08",
+      "layer": "worker",
+      "engine_id": "jbeijing",
+      "runtime": "WINDOWS",
+      "scope": "separate_windows_platform_qualification",
+      "environment_ids": [
+        "ENV-WINDOWS-NATIVE",
+        "ENGINE-jbeijing"
+      ],
+      "abi_policy": "same_bitness_isolated_worker_and_engine_dll",
+      "resource_policy": "licensed_engine_dll_version_architecture_and_content_hash",
+      "artifact_policy": "independent_windows_worker_artifact_and_resources; never reuse macOS app hash",
+      "required_evidence": [
+        "actual_windows_worker_identity",
+        "engine_abi_and_licensed_resource_identity",
+        "actual_result_fault_and_recovery"
+      ],
+      "status": "not_run",
+      "release_required_for_current_scope": false
+    },
+    {
+      "execution_id": "OT-08@worker@ENGINE-kingsoft_fastait-RUNTIME-WINDOWS",
+      "case_id": "OT-08",
+      "layer": "worker",
+      "engine_id": "kingsoft_fastait",
+      "runtime": "WINDOWS",
+      "scope": "separate_windows_platform_qualification",
+      "environment_ids": [
+        "ENV-WINDOWS-NATIVE",
+        "ENGINE-kingsoft_fastait"
+      ],
+      "abi_policy": "same_bitness_isolated_worker_and_engine_dll",
+      "resource_policy": "licensed_engine_dll_version_architecture_and_content_hash",
+      "artifact_policy": "independent_windows_worker_artifact_and_resources; never reuse macOS app hash",
+      "required_evidence": [
+        "actual_windows_worker_identity",
+        "engine_abi_and_licensed_resource_identity",
+        "actual_result_fault_and_recovery"
+      ],
+      "status": "not_run",
+      "release_required_for_current_scope": false
+    },
+    {
+      "execution_id": "OT-16@worker@ENGINE-jbeijing-RUNTIME-WINDOWS",
+      "case_id": "OT-16",
+      "layer": "worker",
+      "engine_id": "jbeijing",
+      "runtime": "WINDOWS",
+      "scope": "separate_windows_platform_qualification",
+      "environment_ids": [
+        "ENV-WINDOWS-NATIVE",
+        "ENGINE-jbeijing"
+      ],
+      "abi_policy": "same_bitness_isolated_worker_and_engine_dll",
+      "resource_policy": "licensed_engine_dll_version_architecture_and_content_hash",
+      "artifact_policy": "independent_windows_worker_artifact_and_resources; never reuse macOS app hash",
+      "required_evidence": [
+        "actual_windows_worker_identity",
+        "engine_abi_and_licensed_resource_identity",
+        "actual_result_fault_and_recovery"
+      ],
+      "status": "not_run",
+      "release_required_for_current_scope": false
+    },
+    {
+      "execution_id": "OT-16@worker@ENGINE-kingsoft_fastait-RUNTIME-WINDOWS",
+      "case_id": "OT-16",
+      "layer": "worker",
+      "engine_id": "kingsoft_fastait",
+      "runtime": "WINDOWS",
+      "scope": "separate_windows_platform_qualification",
+      "environment_ids": [
+        "ENV-WINDOWS-NATIVE",
+        "ENGINE-kingsoft_fastait"
+      ],
+      "abi_policy": "same_bitness_isolated_worker_and_engine_dll",
+      "resource_policy": "licensed_engine_dll_version_architecture_and_content_hash",
+      "artifact_policy": "independent_windows_worker_artifact_and_resources; never reuse macOS app hash",
+      "required_evidence": [
+        "actual_windows_worker_identity",
+        "engine_abi_and_licensed_resource_identity",
+        "actual_result_fault_and_recovery"
+      ],
+      "status": "not_run",
+      "release_required_for_current_scope": false
+    }
+  ]
+}

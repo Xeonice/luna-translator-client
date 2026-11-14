@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_tool_delta_pending_packet_adoption",
+  "change_id": "design-local-offline-translation",
+  "parent_baseline_sha256": "39f2f6b5f38c3805c6fb90633ace18d1cc5a177e54a9672b023594983010b16d",
+  "source_delta": [
+    {
+      "path": "docs/architecture/database-design.md",
+      "before": "317e75dce84cb09e1ca0c73d1b49d6dbad7e7c91108b5ee0b4177b519a6a9452",
+      "after": "6c49066f7e24aa309f8802b34f96266aab121d9534b9c77c6f40734cd142bc8a"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "ee2aa210a44c3e55f7251db05e9f9601f7fc8e255a8d8bbdac14bb306de076ab",
+      "after": "a5d9d15b35f24885d626a62b07778ff54fe7e4bd360e47a487d320b20438453c"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "51d9df949d22d8cba24213e335a64f351078a2bcee82716e04b5bb76126e2ddb",
+      "after": "49d2c9f74b5045d637a7f6fad78a9f6b4abada08ce11ea3f84e9f76a584797fc"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "b76697dff2181ae33ce1375afe7974ee636efd202d6b00f7c8f9a9f741f43a13",
+      "after": "7451cce0632b110b843c49d47ab201aba15894fd6b3770772d6a121befd45bd3"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "c1770fc4fca17ce0b7fa8236f8bf4da545b71e20dbdfa9c22188730e5238b2d5",
+      "after": "bdb88a2a4217b8483ca502eefeba7e34edcb0716daf86530e8e3fa6b3cf01a8d"
+    },
+    {
+      "path": "docs/architecture/model-service-registry-design.json",
+      "before": "e3bf6879007cb09d777f6242d024f13498f0cac101363c7665a2b69280c68428",
+      "after": "1ec6efa0cd2dc477b14d048963f8f3cbb864220891710033ad7e8a9149f56223"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "0dea9f5a2548e9acdc449f663554661dde616ddd531c85dd869e6aebbcf6e60b",
+      "after": "7bfd005d14c2db9a792f02bd042051170713fd20dd8416ae558d524e723ec18c"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/local-offline-20261030/index.html",
+      "before": null,
+      "after": "023a95ab3d808ff43540b099d7f15ecb5370fdc82a32e1888a6fb22303022a0b"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/local-offline-20261030/local-translation-design.css",
+      "before": null,
+      "after": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/local-offline-20261030/local-translation-design.js",
+      "before": null,
+      "after": "09aac33ff00266e51f0156eb8d2fb9d77edb080a6ee637edbfbabd6b30a04c23"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/local-offline-20261030/manifest.json",
+      "before": null,
+      "after": "19a59eab2b067b18ca002fee821eca43c212d191accaefe279374ae78a6cf6a3"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/local-offline-20261030/settings.js",
+      "before": null,
+      "after": "3757962a7c8f977007eb58ac040c2a18f617f6718b2eecd297578e477552f24e"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "before": "bada27910d2043a4239687808fb53773aa3f1eb1016cbe7e3ac13adaf8439307",
+      "after": "f90681714d10e09de892ac5126f3823672939ffc9933f0053a8b107b00424a14"
+    },
+    {
+      "path": "docs/development/local-offline-translation-tests.md",
+      "before": null,
+      "after": "abc4bbb256bdd3cdaf7aaf8a32520ca3f6240c89facdff802d60786c3cd38782"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "6dec677c29fde6c39133ebedcb6577a3d836fac92c0b4460dedb006e4743e72e",
+      "after": "fb35a89fa58832f591505d03d7a538f975f625ea51807337758a1339c2cdd08f"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "87c387c608f929aa80e73806ea99d7fdedbcf2bf84099cd7307831ba08fa786f",
+      "after": "d32373c86c75b067b10544c86ed853a957721a28d6daf0f6f3c64a1d97a7fb79"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/design.md",
+      "before": null,
+      "after": "c5cec03beeb07e9c32d256b5e05e51eba928d6bdf3655b5cce43876cd688d149"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/iteration-card.md",
+      "before": null,
+      "after": "ad19106a5b8f55cc099e56b4b95f06d2b6abd7cbc13488ebd05ab02f20024212"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/proposal.md",
+      "before": null,
+      "after": "b10fd919a1881df6ebe5e8b15d1ca61f1b3db2798f8dfd4190d085d118acd87b"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/source-snapshot.json",
+      "before": null,
+      "after": "841c102633c5b9ae329e3d66044b11b2ec026883784c32bb850894a964a08e13"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/specs/offline-translation-design/spec.md",
+      "before": null,
+      "after": "4d4a9121a5a1938f4a266c85add9ec256263f6fa20343c2f08147618128776fa"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/tasks.md",
+      "before": null,
+      "after": "cb228fe74812e0787a4e06433b43ea3f6ffcf12510a7ddc331f5d76ea1bf41b2"
+    },
+    {
+      "path": "openspec/changes/design-local-offline-translation/verification.json",
+      "before": null,
+      "after": "75c53b7c007655391bb1f7baacf3464a0648b67a5d6637cbe09eaff53abf10e3"
+    },
+    {
+      "path": "scripts/quality/offline_translation_design.py",
+      "before": null,
+      "after": "754fd5be34ec4576650ead04bec2e2528983621ea4e66387688d47ed7696feb5"
+    },
+    {
+      "path": "scripts/quality/test_offline_translation_design.py",
+      "before": null,
+      "after": "091145fae4c52b2f452baaabc43049b19536e55bc6945de24f7817a6d254827a"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "ae05159be861c24e1264aa9be91369969f81b443ec83c260e3e6c3734ea2631e",
+      "after": "b52d8d599bd94e20d03672d12140adffc5b87a52554e261c5b32ea2d76aa9975"
+    },
+    {
+      "path": "scripts/report/verify_local_offline_design.cjs",
+      "before": null,
+      "after": "5d1689047182332ac16006171386d7b9ec0f3fd0c4969e3235914af87016237a"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/offline-translation-design-20261030/review/architecture-review02.json",
+    "bytes": 8319,
+    "sha256": "643dc953fbfcd6fdda7f141e0bf900bf467609bb4196a2f614ac01a5504a4f24"
+  },
+  "code_review": {
+    "path": ".build/offline-translation-design-20261030/review/tooling-review.json",
+    "bytes": 2412,
+    "sha256": "2ee1ddbe5cdc23856c69b5db57b35fd70c95f5b13acc18dacb0af48a1af3f50a"
+  },
+  "source_evidence_remaps": {
+    "scope": "M15 only unchanged quote hash and derived module CSV; no status or behavior changed"
+  },
+  "ui_review": {
+    "path": ".build/offline-translation-design-20261030/review/ui-code-review.json",
+    "bytes": 7623,
+    "sha256": "eb363faa0034743c57265ac7b456839b82759a85b9bfe4f26305ff45d6c13faf"
+  },
+  "scope": "Non-LLM local translation documentation and pending full-design candidate; existing HTTP13/21 identities and approved sources unchanged; candidate fields/platform/runtime not promoted."
+}

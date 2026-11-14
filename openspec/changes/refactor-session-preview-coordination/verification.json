@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "id": "refactor-session-preview-coordination",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/refactor-session-preview-coordination/**",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs",
+    "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R50.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/refactor-session-preview-coordination/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-03",
+      "spec": "specs/session-preview-coordination/spec.md",
+      "scenario": "late-candidate-cancel-and-old-session-stop-cannot-release-current-owner",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "FP-02",
+      "spec": "specs/session-preview-coordination/spec.md",
+      "scenario": "cover-failure-and-consumer-lifecycle-never-stop-shared-capture",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run"
+}

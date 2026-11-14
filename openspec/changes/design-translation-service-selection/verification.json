@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "design-translation-service-selection",
+  "kind": "tooling",
+  "allowed_paths": [
+    "docs/product/model-configuration-prd.md",
+    "docs/product/README.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/architecture/model-service-registry-design.json",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/design/first-product-v1/candidates/translation-service-selection-20261030/**",
+    "docs/development/translation-service-selection-tests.md",
+    "scripts/quality/translation_service_selection.py",
+    "scripts/quality/test_translation_service_selection.py",
+    "scripts/report/verify_translation_service_selection.cjs",
+    "scripts/quality/verify.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261030-R71.json",
+    "openspec/changes/design-translation-service-selection/**"
+  ],
+  "source_snapshot": "openspec/changes/design-translation-service-selection/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "TSS-001",
+      "spec": "specs/translation-service-selection/spec.md",
+      "scenario": "single-shallow-service-selection-and-separate-configuration",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests"
+      ]
+    },
+    {
+      "id": "TSS-002",
+      "spec": "specs/translation-service-selection/spec.md",
+      "scenario": "only-saved-configured-translation-services-are-selectable",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests"
+      ]
+    },
+    {
+      "id": "TSS-003",
+      "spec": "specs/translation-service-selection/spec.md",
+      "scenario": "selection-scope-version-and-enablement-remain-explicit",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests"
+      ]
+    },
+    {
+      "id": "TSS-004",
+      "spec": "specs/translation-service-selection/spec.md",
+      "scenario": "design-evidence-does-not-promote-product-acceptance",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261030-R71",
+  "parent_baseline_sha256": "a9b8eb71ab09a282bfd826c3306796d181e596c5517185d85fa31fb160fb46b7",
+  "product_acceptance_status": "not_run"
+}

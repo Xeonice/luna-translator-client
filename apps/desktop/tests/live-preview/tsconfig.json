@@ -1,0 +1,1 @@
+{"extends":"../../tsconfig.json","include":["preview.ts","client.tsx","../../src","../support/design-port.ts"],"compilerOptions":{"types":["vite/client"]}}

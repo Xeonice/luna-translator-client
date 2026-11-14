@@ -1,0 +1,11 @@
+/* Pending design additions only. The approved V3 stylesheet and material tokens
+   are copied verbatim; this file introduces state feedback and context flags. */
+.state-notice{margin:0 0 18px;padding:10px 12px;border:1px solid var(--material-line);border-radius:var(--material-control-radius);color:var(--material-text-secondary);background:var(--material-control-fill);font-size:12px;line-height:1.65;overflow-wrap:anywhere;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.state-notice p{flex:1 1 200px;margin:0;min-width:0}
+.state-notice.error{color:var(--material-error)}
+.state-notice .control{flex-shrink:0;max-width:100%;white-space:normal;text-align:left}
+.state-notice .pending-mark{height:12px;width:12px;border:1.5px solid var(--material-line);border-top-color:var(--material-text-secondary);border-radius:50%;flex-shrink:0}
+/* New Native reference context PROPOSAL, not a native screenshot or approval.
+   No fill, blur, saturation, alpha, border, type or spacing token is changed. */
+html[data-context="native-proposal"],html[data-context="native-proposal"] body{background:transparent}
+html[data-context="native-proposal"] .traffic{visibility:hidden}

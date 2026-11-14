@@ -1,0 +1,52 @@
+{
+  "schema_version": 2,
+  "status": "current",
+  "entry": "docs/README.md",
+  "design_target": "guided-service-reading-20261030",
+  "documents": {
+    "entry": "docs/README.md",
+    "product": "docs/product/README.md",
+    "scope": "docs/product/first-product-scope.md",
+    "model": "docs/product/model-configuration-prd.md",
+    "reading": "docs/product/reading-window-session-prd.md",
+    "design": "docs/design/first-product-v1/README.md",
+    "architecture": "docs/architecture/first-product-engineering-baseline.md",
+    "reading_technical": "docs/architecture/reading-window-session-technical-design.md",
+    "language_technical": "docs/architecture/japanese-study-and-llm.md",
+    "client": "docs/development/desktop-client.md",
+    "alignment_plan": "docs/development/current-client-alignment-plan.md",
+    "testing": "docs/development/first-product-test-plan.md",
+    "regression": "docs/development/client-regression.md",
+    "coverage": "docs/development/current-product-test-coverage.md",
+    "release": "docs/development/release-execution-evidence.md",
+    "engineering": "docs/development/engineering-gates.md",
+    "governance": "docs/development/iteration-governance.md",
+    "alignment_gate": "docs/development/design-alignment-and-release.md",
+    "page_coverage": "docs/development/all-page-design-coverage.md",
+    "history_product": "docs/product/history-session-paging-prd.md",
+    "history_plan": "docs/development/history-session-paging-tests.md",
+    "ai_product": "docs/product/ai-reading-prd.md",
+    "game_product": "docs/product/game-library-window-prd.md",
+    "guided_plan": "docs/development/guided-service-reading-tests.md",
+    "flat_plan": "docs/development/flat-service-session-tests.md"
+  },
+  "archive_manifest": "docs/archive/documentation-r75/manifest.json",
+  "history_policy": "historical_only; no fallback authority or inherited acceptance",
+  "design_composition_id": "complete-guided-history-20261031",
+  "design_authority": {
+    "path": "docs/development/design-approval-complete-20261031.json",
+    "sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc"
+  },
+  "surface_entries": {
+    "default": {
+      "entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+      "query": {}
+    },
+    "main:history": {
+      "entry": "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html",
+      "query": {
+        "scenario": "history"
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "id": "repair-native-preview-evidence",
+  "kind": "tooling",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/repair-native-preview-evidence/**",
+    "scripts/quality/runtime_observer.swift",
+    "scripts/quality/test_runtime_stability.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R58.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-native-preview-evidence/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "OBS-001",
+      "spec": "specs/native-preview-evidence/spec.md",
+      "scenario": "native-cgfloat-frame-survives-the-production-type-path",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "OBS-002",
+      "spec": "specs/native-preview-evidence/spec.md",
+      "scenario": "shadowless-window-screenshot-matches-observed-bounds",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "OBS-003",
+      "spec": "specs/native-preview-evidence/spec.md",
+      "scenario": "each-native-observation-failure-retains-a-real-diagnostic",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "OBS-004",
+      "spec": "specs/native-preview-evidence/spec.md",
+      "scenario": "old-failed-runs-do-not-become-new-source-acceptance",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests",
+        "package-identity-tests",
+        "product-execution-guard-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "scope_note": "QA evidence-tool and pure-test repair only. No product source, original runtime oracle, registry, PRD/design or PNG/token/threshold change. Original v4 failure remains; actual packaged stability is the separate final validation work item."
+}

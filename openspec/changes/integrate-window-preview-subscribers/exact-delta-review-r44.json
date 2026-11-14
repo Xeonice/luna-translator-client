@@ -1,0 +1,249 @@
+{
+  "kind": "R44_C35_message_structure_regression_fix_candidate",
+  "status": "candidate_pending_independent_exact_review_and_Root_adoption",
+  "reason": "candidate21完整verify实际56/58：原RBC94独立友好说明段落断言失败，另原视觉source drift仍失败；仅恢复C35友好说明独立p、安全detail另p，runner和Native11不变，记录旧失败并待同源candidate22真实回归，不提升实机或发布。",
+  "parent_baseline_sha256": "0c6213267dc84e7db3dd6275b07f4221dd7886fd7bd817dde659ff6a040232f2",
+  "frozen_sources": {
+    "status": "Root_reviewed_frozen_source_and_authority_scope",
+    "reason": "candidate21完整verify实际56/58：原RBC94独立友好说明段落断言失败，另原视觉source drift仍失败；仅恢复C35友好说明独立p、安全detail另p，runner和Native11不变，记录旧失败并待同源candidate22真实回归，不提升实机或发布。",
+    "frozen_map": ".build/window-preview-sakura-20261024-r44-candidate/source-map-before-authority.json",
+    "frozen_map_sha256": "22bb10083c257f86e18300ead19f1262991bdcde27fa007872838591fd630661",
+    "allowed_old_controlled_updates": [
+      "docs/architecture/engineering-components.csv",
+      "docs/architecture/engineering-modules.csv",
+      "docs/architecture/first-product-engineering-baseline.md",
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/reading-window-session-technical-design.md",
+      "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "openspec/changes/integrate-window-preview-subscribers/verification.json"
+    ],
+    "semantic_records": [
+      {
+        "group": "modules",
+        "id": "M13",
+        "append": {
+          "current_behavior": "R44源码将C35原友好说明恢复为独立段落，安全detail另段呈现；保留既有生产adapter、Native11及测试runner字节，不迁就原断言或更换批准视觉。",
+          "gap": "candidate21静态包审不等于上线通过；完整verify原56/58及RBC94、视觉来源漂移失败保留，21未安装；candidate22最终同源完整门禁和真实变化帧/游戏回归尚待执行。",
+          "next_step": "先核对原RBC94与98–100聚焦实跑及精确源码，再采用候选并重新构建candidate22和运行完整verify；旧安装仍为candidate20，不继承旧实机或发布通过。"
+        }
+      },
+      {
+        "group": "components",
+        "id": "C35",
+        "append": {
+          "current_behavior": "R44源码将C35原友好说明恢复为独立段落，安全detail另段呈现；保留既有生产adapter、Native11及测试runner字节，不迁就原断言或更换批准视觉。",
+          "gap": "candidate21静态包审不等于上线通过；完整verify原56/58及RBC94、视觉来源漂移失败保留，21未安装；candidate22最终同源完整门禁和真实变化帧/游戏回归尚待执行。",
+          "next_step": "先核对原RBC94与98–100聚焦实跑及精确源码，再采用候选并重新构建candidate22和运行完整verify；旧安装仍为candidate20，不继承旧实机或发布通过。"
+        }
+      },
+      {
+        "group": "capabilities",
+        "id": "CAP-PREVIEW",
+        "append": {
+          "current_behavior": "R44源码将C35原友好说明恢复为独立段落，安全detail另段呈现；保留既有生产adapter、Native11及测试runner字节，不迁就原断言或更换批准视觉。",
+          "gap": "candidate21静态包审不等于上线通过；完整verify原56/58及RBC94、视觉来源漂移失败保留，21未安装；candidate22最终同源完整门禁和真实变化帧/游戏回归尚待执行。",
+          "next_step": "先核对原RBC94与98–100聚焦实跑及精确源码，再采用候选并重新构建candidate22和运行完整verify；旧安装仍为candidate20，不继承旧实机或发布通过。"
+        }
+      }
+    ],
+    "independent_evidence": [
+      {
+        "path": ".build/quality/20261024T052420.382857Z.json",
+        "sha256": "114e6632ea767083e6932f114c97b3ee2d699c6bd2a5c990ff3bb034eed3d338",
+        "bytes": 32312
+      },
+      {
+        "path": ".build/game-regression-20261024-candidate21/verify-completion.json",
+        "sha256": "a9b55f2195bd7be705be3b622991d4faa44f52b3f79922e0b4297fd915097b06",
+        "bytes": 851
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-first-frame-review/focused-four-20261024T054659.736390Z/receipt.json",
+        "sha256": "e09f886a05dd193f92a09a71dd35bced27ff27f5ba84d0fee44e680174971f82",
+        "bytes": 4050
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-first-frame-review/focused-four-20261024T054659.736390Z/independent-audit.json",
+        "sha256": "da13cf38d3fed9be0e9761f756aa3c959906cdfd2fd5204319222b97dae9af53",
+        "bytes": 6246
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-first-frame-review/focused-four-20261024T054659.736390Z/source-review.json",
+        "sha256": "05cfed9fd49420a0be17845606012134d8c3b49d264bbb13bf9d0769e85ded1b",
+        "bytes": 1040
+      }
+    ],
+    "evidence_scope_note": "原candidate21完整56/58失败为实际机器回执；独立focused4使用原RBC94/98–100真实组件断言，172断言通过且只限当前8源/受控SQLite fixture，不冒充完整100、Native或游戏。Native11/runner、原snapshot/批准图/token/阈值均保持；候选尚待Root精确审阅授权生成，Root采用后才运行新完整门禁与签名实机。"
+  },
+  "source_delta_before_generated_authority": [
+    {
+      "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+      "before": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39",
+      "after": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "a739626b6adbeb710ccbeeb79217fa0ad81bbd899d0568e258be5e982594eeed",
+      "after": "5c783f75eb7878778d5822df92bc74dce1a3e7b0741d03feb48d0fb3c839933c"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before": "e1fcf2a5ea2b9946b81ae7434d164ca02a798ed32b0bdb99a5cf952f14a154cb",
+      "after": "56cc054625775d128861c171c699e9e3730cf3203aa3a38fc84a5eb7cc2fd02d"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "before": "216491ddf7c79e97b0957e553989dfecbf91db4d9e6df4102d13fd788aa33531",
+      "after": "bfc77da38c5682abf75003ba30bf0d01dc61ead43c3d0cf44b5d8283bc98b0c7"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "before": "9c28ace14d836f49a7f151e70b8851afebb7b31f92b30b8392cabce2d97e7908",
+      "after": "176105b08fcefded9c251006e7f701166a1c972e00394b57ce76912f2fc09b1c"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/verification.json",
+      "before": "ff26deba0f6962b5ddfaab602056604073aedd8333cdd978523b4878704edfae",
+      "after": "d75ac412554446c84e1c5f6845c84ae9a0312b5dadbc4f5d431b9b03352a7003"
+    }
+  ],
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "145b23a143c54d2787227f77eaa8f61ba277ce99856e8ba8a3edc5f6fe58502f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    }
+  ],
+  "original_snapshot_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

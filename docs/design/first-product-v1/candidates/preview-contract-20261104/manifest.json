@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "candidate_id": "preview-contract-20261104",
+  "status": "pending_review",
+  "entry": "docs/design/first-product-v1/candidates/preview-contract-20261104/index.html",
+  "title": "C35 预览状态、事实与安全边界补充",
+  "author_ids": [
+    "/root/preview_design_resolution"
+  ],
+  "parent": {
+    "target_id": "guided-service-reading-20261030",
+    "composition_id": "complete-guided-history-20261031",
+    "approval_record": "docs/development/design-approval-complete-20261031.json",
+    "approval_sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc",
+    "design_source_count": 61,
+    "design_closure_sha256": "72e788d89b489eded79caafd836177b67fa04b463861bf96b110da05e0257ffd",
+    "original61_unchanged_at_generation": true
+  },
+  "authored_sources": {
+    "index.html": {
+      "sha256": "d2ea83e4f845fe410509fd927828e7ba319ec45570adaa1dbd94d535903ae18b",
+      "bytes": 8000
+    },
+    "preview-contract.css": {
+      "sha256": "c75fda32c755be7d86195eb951da3cbd64bb3e261b965e21df8fc312e7749338",
+      "bytes": 11498
+    },
+    "preview-contract.js": {
+      "sha256": "2e1c62e01a52ee05d87765bdfb36a29a7c1e293faeb4d6afc35a7c74abd8b38e",
+      "bytes": 18467
+    }
+  },
+  "imported_parent_design_sources": [
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+      "bytes": 2770,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/styles.css",
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+      "bytes": 44786,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.css",
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+      "bytes": 11331,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/local-translation-design.css",
+      "sha256": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143",
+      "bytes": 848,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.css",
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+      "bytes": 12086,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.css",
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+      "bytes": 11214,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/controls.css",
+      "sha256": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+      "bytes": 3766,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.css",
+      "sha256": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd",
+      "bytes": 21051,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/service-picker.css",
+      "sha256": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e",
+      "bytes": 7779,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/flat-layout.css",
+      "sha256": "adb603b38009ca5d329696a6cca3170eeaf1f86abeef5fcbc1099148ef1a7a66",
+      "bytes": 8491,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+      "bytes": 3501,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/data.js",
+      "sha256": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9",
+      "bytes": 70721,
+      "in_parent61": true
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.js",
+      "sha256": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e",
+      "bytes": 47127,
+      "in_parent61": true
+    }
+  ],
+  "additional_shared_assets": [
+    {
+      "path": "docs/design/first-product-v1/assets/wallpaper-frame.png",
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+      "bytes": 1616086,
+      "authority": "existing shared material dependency; not approved by this new manifest"
+    }
+  ],
+  "production_imports": [],
+  "approval": {
+    "design_source": "pending_user_confirmation",
+    "independent_references": "not_granted",
+    "product_alignment": "not_granted",
+    "packaged_native": "not_run",
+    "game_regression": "not_run"
+  },
+  "display_states": [
+    "live",
+    "paused",
+    "stale",
+    "starting",
+    "permission_denied",
+    "permission_revoked",
+    "unavailable",
+    "target_closed",
+    "identity_error"
+  ],
+  "owners": [
+    "candidate",
+    "session"
+  ],
+  "fact_origins": [
+    "candidate",
+    "game_record"
+  ],
+  "identity_conditions": [
+    "selected",
+    "verified_complete_proof_condition",
+    "unknown"
+  ],
+  "width_cases": [
+    282,
+    519,
+    520,
+    521,
+    522,
+    708
+  ],
+  "zoom_cases": [
+    1,
+    2
+  ],
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "activation_policy": "The existing current target and61 source record remain active until explicit user confirmation and a separately versioned authority/reference review. This manifest cannot grant approval or install an executor.",
+  "semantics": {
+    "native_fields": "No Native PID,HWND,operation,API or proof hash is invented; missing values remain unprovided.",
+    "verified_appearance": "Only an explicit outside design condition of a complete independent verification record can illustrate the verified label; this page is never that record.",
+    "frame_time": "Only explicit new-valid-frame fixture input changes time; ordinary state/render/refresh intent never does.",
+    "terminal_frames": "Permission denied/revoked,closed,identity loss and unavailable without reuse proof show no old image; proven-reusable transient history is shown as stale.",
+    "privacy": "No screen capture,Hook,model,network service or game-window modification.",
+    "last_success_history": "A known same-target last-success time is historical fact and survives resume-starting, permission revocation and target close. Clearing the displayed image never erases that historical fact. First start without success remains unprovided; only explicit new-valid-frame input establishes or updates time. A known history time does not establish current permission, target validity or reuse proof."
+  }
+}

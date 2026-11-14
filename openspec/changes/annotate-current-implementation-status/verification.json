@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "id": "annotate-current-implementation-status",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/annotate-current-implementation-status/**",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/engineering-layout.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "scripts/quality/implementation_status.py",
+    "scripts/quality/test_implementation_status.py",
+    "scripts/quality/verify.py",
+    "scripts/report/build_engineering_baseline_report.py",
+    "scripts/report/verify_interaction_coverage_report.cjs",
+    "docs/development/iterations/annotate-current-implementation-status/**",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261019-R19.json"
+  ],
+  "source_snapshot": "openspec/changes/annotate-current-implementation-status/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ISTAT-001",
+      "spec": "specs/implementation-status/spec.md",
+      "scenario": "source-backed-status",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "implementation-status-contract",
+        "implementation-status-tests",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "interaction-coverage-contract",
+        "interaction-design-execution"
+      ]
+    },
+    {
+      "id": "ISTAT-002",
+      "spec": "specs/implementation-status/spec.md",
+      "scenario": "synchronized-report",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "implementation-status-contract",
+        "implementation-status-tests",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "interaction-coverage-contract",
+        "interaction-design-execution"
+      ]
+    }
+  ]
+}

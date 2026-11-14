@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "specify-full-provider-registry-design",
+  "parent_baseline_sha256": "9144294e684e8c6db2944d1ed492f0fbefcac7097d7006ca8370fe3bf79eb3c4",
+  "exact_delta_sha256": "3a4d2ad3c1e6808f62f2ffc98f2a0ea548a0f778936d3c45ae5b4a9cf3b22b8b",
+  "documentation_review": {
+    "path": ".build/provider-docs-update-20261030/review/architecture-review.json",
+    "bytes": 11511,
+    "sha256": "425ac5087f13f2010d64a909faaff53d04dc0812be24c4a7a553e83c4c30e9a2"
+  },
+  "code_review": {
+    "path": ".build/provider-docs-update-20261030/governance/tooling-implementation/review/review02.json",
+    "bytes": 4343,
+    "sha256": "3ce4b90cdd412d080fc3e08b15e94d7dcbee8d22a7ac8a776481410dcc399c6b"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

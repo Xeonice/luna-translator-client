@@ -1,0 +1,204 @@
+{
+  "dataset": "hook_events",
+  "query": {
+    "sessionId": "sakura-session-1",
+    "dataset": "hook_events",
+    "order": "newest_first",
+    "filter": {
+      "search": null,
+      "sourceId": null,
+      "level": null,
+      "stage": null
+    },
+    "cursor": null,
+    "pageSize": 50
+  },
+  "page": {
+    "records": [
+      {
+        "kind": "hook_event",
+        "sequence": "1",
+        "eventId": "design-hook-1",
+        "operationId": "design-operation-sakura",
+        "sessionId": "sakura-session-1",
+        "sourceId": null,
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "目标核对",
+        "code": "TARGET_VERIFIED",
+        "message": "运行窗口与游戏进程身份已核对",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "2",
+        "eventId": "design-hook-2",
+        "operationId": "design-operation-sakura",
+        "sessionId": "sakura-session-1",
+        "sourceId": null,
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "资源检查",
+        "code": "HOOK_RESOURCE_READY",
+        "message": "取文组件已准备",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "3",
+        "eventId": "design-hook-3",
+        "operationId": "design-operation-sakura",
+        "sessionId": "sakura-session-1",
+        "sourceId": null,
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "Hook 注入",
+        "code": "HOOK_ATTACH_STARTED",
+        "message": "已向所选目标启动接入",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "4",
+        "eventId": "design-hook-4",
+        "operationId": "design-operation-sakura",
+        "sessionId": "sakura-session-1",
+        "sourceId": null,
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "回调握手",
+        "code": "HOOK_HANDSHAKE_READY",
+        "message": "采集端连接已建立",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "5",
+        "eventId": "design-hook-5",
+        "operationId": "design-operation-sakura",
+        "sessionId": "sakura-session-1",
+        "sourceId": null,
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "发现文本流",
+        "code": "STREAM_DISCOVERED",
+        "message": "收到候选来源，保留每次提取事件",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "6",
+        "eventId": "design-hook-6",
+        "operationId": "sakura-session-1:event:0",
+        "sessionId": "sakura-session-1",
+        "sourceId": "sakura-body",
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "文本回调",
+        "code": "HOOK_TEXT_RECEIVED",
+        "message": "收到文本事件 #1 · 正文来源",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "7",
+        "eventId": "design-hook-7",
+        "operationId": "sakura-session-1:event:0",
+        "sessionId": "sakura-session-1",
+        "sourceId": "sakura-secondary",
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "文本回调",
+        "code": "HOOK_TEXT_RECEIVED",
+        "message": "收到文本事件 #2 · 未选中来源",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      },
+      {
+        "kind": "hook_event",
+        "sequence": "8",
+        "eventId": "design-hook-8",
+        "operationId": "design-operation-sakura",
+        "sessionId": "sakura-session-1",
+        "sourceId": null,
+        "wireSequence": null,
+        "observedAtMs": 1792319048000,
+        "level": "info",
+        "stage": "文本来源",
+        "code": "HOOK_LIFECYCLE_EVENT",
+        "message": "已连接 sakuranouta10th.exe，正文流已选择",
+        "lostCount": null,
+        "integrity": "complete_received_range"
+      }
+    ],
+    "nextCursor": null,
+    "snapshot": {
+      "snapshotId": "design-hook_events-snapshot",
+      "refreshCursor": "opaque-design-refresh-hook_events",
+      "highWatermark": "8",
+      "firstAvailable": "1",
+      "lastReceived": "8",
+      "lastPersisted": "8",
+      "retainedFrom": "1",
+      "matchingCount": "8",
+      "newerCount": "0",
+      "databaseRevision": "12"
+    },
+    "loadedRange": {
+      "first": "1",
+      "last": "8"
+    },
+    "completeness": {
+      "status": "complete_received_range",
+      "scope": "received_range_only",
+      "knownLoss": false,
+      "unknownRange": false,
+      "cleanedPayloadCount": "0",
+      "notes": []
+    }
+  },
+  "sources": [
+    {
+      "sourceId": "sakura-body",
+      "label": "Artemis",
+      "hook": "Artemis",
+      "address": "5370399856",
+      "context": "0",
+      "context2": "0",
+      "selected": true
+    },
+    {
+      "sourceId": "sakura-secondary",
+      "label": "Artemis",
+      "hook": "Artemis",
+      "address": "5370399888",
+      "context": "1",
+      "context2": "0",
+      "selected": false
+    }
+  ],
+  "stages": [
+    "目标核对",
+    "资源检查",
+    "Hook 注入",
+    "回调握手",
+    "发现文本流",
+    "文本回调",
+    "文本来源"
+  ],
+  "follow": true,
+  "loadError": false
+}

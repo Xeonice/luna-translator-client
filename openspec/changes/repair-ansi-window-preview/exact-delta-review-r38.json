@@ -1,0 +1,311 @@
+{
+  "kind": "R38_continuous_preview_race_identity_exact_candidate_review",
+  "status": "independent_sources_reviewed_candidate_only_awaiting_Root_exact_authority_review",
+  "parent_baseline_sha256": "31e63a4b0e9db4b3bc1c235f2edf867ad3da5b4a97c809c75f5bc14ed1fdbf42",
+  "source_freeze": {
+    "status": "root_authorized_final_source_and_architecture",
+    "at": "2026-10-23T16:31:56.205030+00:00",
+    "map": ".build/window-preview-sakura-20261023/r38-candidate/root-source-freeze-map.json",
+    "map_sha256": "f17473d5f4db4dcd5e85c7a4060646e505f5f3343cc9377e1f6ace096d595e0a",
+    "source_tree_sha256": "ca8c53cf0543fca918886980474aaa97ed237d6b234786c388592ff6746efa07",
+    "reviewed_implementation_source": {
+      "apps/desktop/src-tauri/src/ipc/reading.rs": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "apps/desktop/src-tauri/src/platform/macos/bridge.m": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "apps/desktop/src-tauri/src/platform/macos/mod.rs": "c8f4f13fbc94f8d0e25d3e8c7f5cb10d781acfe48be76b18644ca2fc68b6c8cf",
+      "apps/desktop/src-tauri/src/platform/window_preview.rs": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c"
+    },
+    "independent_evidence": [
+      {
+        "path": ".build/window-preview-sakura-20261023/independent-code-review/continuous-preview-r38/final-review.json",
+        "sha256": "6a625882659b38caefba74aed7788f3ac35f6a34c6bc328626bf80f56954125f"
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/native-fix/continuous-frame-r38/handoff-r38.json",
+        "sha256": "cb6d2d36f447a202904ea80b49dca44fd8870d4860859ec5b75b367573bf6325"
+      }
+    ],
+    "source_entries": 1669
+  },
+  "semantic_review_input": {
+    "path": ".build/window-preview-sakura-20261023/r38-candidate/root-semantic-review.json",
+    "sha256": "03c38dfcb3263ffa689ac2b28f46d16daf6515bf56b3c4ace584304c48a2ac93"
+  },
+  "source_evidence_updates": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "index": 1,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "index": 9,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "index": 11,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 747,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 805
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "index": 10,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 13,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 15,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 18,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "old_line": 26,
+      "new_sha256": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "new_line": 26
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 19,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 747,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 805
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "index": 4,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "index": 0,
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+      "old_sha256": "4f2fb211f1e0482bcaf2ea0f859fdc8a527199a19681cfcdd22116d65f39fb81",
+      "old_line": 241,
+      "new_sha256": "c8f4f13fbc94f8d0e25d3e8c7f5cb10d781acfe48be76b18644ca2fc68b6c8cf",
+      "new_line": 242
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "index": 1,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "index": 6,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "index": 8,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "index": 9,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "old_line": 26,
+      "new_sha256": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "new_line": 26
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "index": 1,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "index": 3,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 747,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 805
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "index": 7,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "old_line": 26,
+      "new_sha256": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "new_line": 26
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "index": 1,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "index": 9,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "index": 11,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 747,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 805
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 6,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub async fn application_show_associated_game(",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 338,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 338
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 17,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 747,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 805
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "index": 1,
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "quote": "pub fn start(",
+      "old_sha256": "6e66b414638b21142ca68300247a10d54b872a289524c55e94b680ca1455e50c",
+      "old_line": 455,
+      "new_sha256": "02b960f17b8963f0e1d828b9da736fd3a9f22f32fa1f95ecbafc30a3e616034c",
+      "new_line": 455
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "index": 3,
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "old_sha256": "092c753300b1b8efdd8f13e43fcc886218db683d7bfbee172cb2dd07edf08734",
+      "old_line": 747,
+      "new_sha256": "cd751870b0f7ba9d467ed024f9fb6db86851d97d1c119f2adc3203a4c0112053",
+      "new_line": 805
+    }
+  ],
+  "source_quote_replacements": 0,
+  "old_source_evidence_count": 494,
+  "semantic_record_ids": [
+    "M12",
+    "C35",
+    "CAP-PREVIEW"
+  ],
+  "original_snapshot_sha256": "830cf41d796e1145b2340f24b7d0b8838cfc9c68a0d61fbda8cda1a75e1b665e",
+  "snapshot_rewritten": false,
+  "DB_technology_reference_tokens_debt_unchanged": true,
+  "history_approval_artifact_runtime_release_promoted": false,
+  "canonical_authority_written": false
+}

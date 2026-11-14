@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>磨砂玻璃 · 材质案例对照</title>
+  <link rel="stylesheet" href="compare.css">
+  <script src="compare.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <div>
+        <p class="eyebrow">LUNA · MATERIAL STUDY 01</p>
+        <h1>先看材质，再决定下一步</h1>
+        <p class="intro">以你提供的窗口为参考，只检查磨砂半透、背景色扩散、内部层次与边缘。该风格已确认为首版视觉基准。</p>
+      </div>
+      <div class="header-actions">
+        <span class="status"><span></span>风格已确认</span>
+        <a class="primary-link" href="index.html">打开可操作案例 <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <section class="comparison-section" aria-labelledby="comparison-heading">
+      <div class="section-toolbar">
+        <h2 id="comparison-heading">同一取景，直接对照</h2>
+        <div class="segmented" role="group" aria-label="选择对照方式">
+          <button type="button" data-mode="side" aria-pressed="true">并排</button>
+          <button type="button" data-mode="overlay" aria-pressed="false">叠图</button>
+          <button type="button" data-mode="reveal" aria-pressed="false">滑动揭示</button>
+        </div>
+      </div>
+
+      <div class="mode-panel" id="panel-side" data-panel="side">
+        <div class="side-grid">
+          <figure class="image-card">
+            <figcaption><span><i class="key reference-key"></i>你的参考图</span><a href="previews/reference-window.png" target="_blank" rel="noreferrer">查看原图 ↗</a></figcaption>
+            <a class="image-link" href="previews/reference-window.png" target="_blank" rel="noreferrer" aria-label="打开参考窗口原图"><img src="previews/reference-window.png" alt="你提供的磨砂玻璃参考窗口裁切，包含深色外壳与较厚输入面板" width="1450" height="956"></a>
+          </figure>
+          <figure class="image-card">
+            <figcaption><span><i class="key case-key"></i>本次案例稿</span><a href="previews/case-window.png" target="_blank" rel="noreferrer">查看原图 ↗</a></figcaption>
+            <a class="image-link" href="previews/case-window.png" target="_blank" rel="noreferrer" aria-label="打开案例窗口原图"><img src="previews/case-window.png" alt="本次使用干净壁纸帧和实时背景模糊实现的材质案例窗口" width="1450" height="956"></a>
+          </figure>
+        </div>
+      </div>
+
+      <div class="mode-panel" id="panel-overlay" data-panel="overlay" hidden>
+        <div class="blend-controls">
+          <label for="opacity-slider">案例稿叠加比例 <output id="opacity-value" for="opacity-slider">50%</output></label>
+          <input id="opacity-slider" type="range" min="0" max="100" value="50" aria-describedby="opacity-help">
+          <p id="opacity-help">0% 仅参考图；100% 仅案例稿。中间位置用于检查轮廓、明暗与色块差异。</p>
+        </div>
+        <figure class="single-comparison">
+          <div class="comparison-stage overlay-stage">
+            <img class="base-image" src="previews/reference-window.png" alt="叠图底层：参考窗口">
+            <img class="top-image" id="overlay-image" src="previews/case-window.png" alt="叠图上层：案例窗口">
+            <span class="stage-label left">参考图</span><span class="stage-label right">案例稿 · <span id="stage-opacity">50%</span></span>
+          </div>
+          <figcaption>叠图只帮助发现差异，不代表两张图已达到一致。</figcaption>
+        </figure>
+      </div>
+
+      <div class="mode-panel" id="panel-reveal" data-panel="reveal" hidden>
+        <div class="blend-controls">
+          <label for="reveal-slider">对照分界 <output id="reveal-value" for="reveal-slider">50%</output></label>
+          <input id="reveal-slider" type="range" min="0" max="100" value="50" aria-describedby="reveal-help">
+          <p id="reveal-help">左右移动分界线，检查相同位置的材质。左侧为参考图，右侧为案例稿。</p>
+        </div>
+        <figure class="single-comparison">
+          <div class="comparison-stage reveal-stage" id="reveal-stage">
+            <img class="base-image" src="previews/reference-window.png" alt="滑动对比左侧：参考窗口">
+            <img class="top-image" id="reveal-image" src="previews/case-window.png" alt="滑动对比右侧：案例窗口">
+            <span class="reveal-divider" aria-hidden="true"><span>↔</span></span>
+            <span class="stage-label left">参考图</span><span class="stage-label right">案例稿</span>
+          </div>
+          <figcaption>图像使用同一窗口取景。可通过上方滑块或在图上拖动分界线。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="inspection" aria-labelledby="inspection-heading">
+      <h2 id="inspection-heading">这次看四处</h2>
+      <div class="inspection-grid">
+        <div><span class="index">01</span><h3>外壳的透光</h3><p>背景的蓝色、亮部和暗部，是否柔和地进入整个窗体。</p></div>
+        <div><span class="index">02</span><h3>背景的扩散</h3><p>人物细节被模糊，而明暗与色块仍保留；不是一块纯色蒙层。</p></div>
+        <div><span class="index">03</span><h3>内部的厚度</h3><p>输入面板比外壳更厚，右侧更轻，仍属于同一套材质。</p></div>
+        <div><span class="index">04</span><h3>边缘的悬浮感</h3><p>细边框、内缘高光与外部阴影是否自然，文字是否清晰。</p></div>
+      </div>
+    </section>
+
+    <section class="evidence" aria-labelledby="evidence-heading">
+      <div class="section-toolbar"><div><h2 id="evidence-heading">材质行为检查</h2><p class="section-note">窗口移动后重新采样背景；关闭模糊后，背后细节重新显现。</p></div><a class="text-link" href="index.html">在案例中试一试 ↗</a></div>
+      <div class="evidence-grid">
+        <figure class="image-card"><figcaption><span>正常模糊</span><a href="previews/case-window.png" target="_blank" rel="noreferrer">原图 ↗</a></figcaption><a class="image-link" href="previews/case-window.png" target="_blank" rel="noreferrer"><img src="previews/case-window.png" alt="正常开启实时背景模糊的案例窗口" loading="lazy" width="1450" height="956"></a></figure>
+        <figure class="image-card"><figcaption><span>关闭模糊</span><a href="previews/blur-off-window.png" target="_blank" rel="noreferrer">原图 ↗</a></figcaption><a class="image-link" href="previews/blur-off-window.png" target="_blank" rel="noreferrer"><img src="previews/blur-off-window.png" alt="关闭背景模糊、保留透明度的案例窗口，用于检查真实背景采样" loading="lazy" width="1450" height="956"></a></figure>
+        <figure class="image-card"><figcaption><span>移动窗口后</span><a href="previews/moved-window.png" target="_blank" rel="noreferrer">原图 ↗</a></figcaption><a class="image-link" href="previews/moved-window.png" target="_blank" rel="noreferrer"><img src="previews/moved-window.png" alt="移动窗口后重新采样后方壁纸光影的案例窗口" loading="lazy" width="1450" height="956"></a></figure>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>已按用户确认将该风格应用到完整首版设计，整稿页面另行评审。网页截图用于视觉比较，不能证明原生 macOS 材质、游戏取文或模型功能已实现。</p>
+      <div><a href="assets/reference-desktop.png" target="_blank" rel="noreferrer">完整参考图 ↗</a><a href="previews/case-desktop.png" target="_blank" rel="noreferrer">案例桌面全景 ↗</a><a href="README.md">案例说明</a></div>
+    </footer>
+  </main>
+</body>
+</html>

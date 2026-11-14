@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "id": "close-engineering-gate-drift",
+  "kind": "tooling",
+  "allowed_paths": [
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "scripts/quality/test_lifecycle_impact.py",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "docs/development/current-design-alignment.json",
+    "docs/development/model-config-surface-lineage-20261109.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "scripts/quality/test_implementation_status.py",
+    "scripts/quality/storage_acceptance.py",
+    "scripts/quality/test_storage_acceptance.py",
+    "scripts/quality/test_storage_acceptance_v2.py",
+    "scripts/quality/current_general_visual_acceptance.py",
+    "scripts/quality/test_current_general_visual_acceptance.py",
+    "scripts/quality/test_engineering_gate_closure.py",
+    "scripts/quality/verify.py",
+    "docs/README.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/design-alignment-and-release.md",
+    "docs/development/current-phase.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261105-R90.json",
+    "docs/development/baselines/FP1-20261109-R91.json",
+    "docs/development/engineering-source-adoption-20261109.json",
+    "openspec/changes/close-engineering-gate-drift/proposal.md",
+    "openspec/changes/close-engineering-gate-drift/design.md",
+    "openspec/changes/close-engineering-gate-drift/tasks.md",
+    "openspec/changes/close-engineering-gate-drift/iteration-card.md",
+    "openspec/changes/close-engineering-gate-drift/verification.json",
+    "openspec/changes/close-engineering-gate-drift/source-snapshot.json",
+    "openspec/changes/close-engineering-gate-drift/specs/engineering-closure/spec.md",
+    "scripts/quality/test_current_design_alignment.py",
+    "scripts/quality/implementation_status.py"
+  ],
+  "source_snapshot": "openspec/changes/close-engineering-gate-drift/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "EGC-001",
+      "spec": "specs/engineering-closure/spec.md",
+      "scenario": "surface-inventory-preserves-design-obligations",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "all-page-design-coverage-tests",
+        "current-design-alignment-tests",
+        "current-preview-authority-tests",
+        "lifecycle-impact-guard-tests",
+        "engineering-gate-closure-tests"
+      ]
+    },
+    {
+      "id": "EGC-002",
+      "spec": "specs/engineering-closure/spec.md",
+      "scenario": "review-current-source-and-adopt-exact-baseline",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "baseline-integrity",
+        "implementation-status-tests",
+        "engineering-gate-closure-tests",
+        "change-review-tests"
+      ]
+    },
+    {
+      "id": "EGC-003",
+      "spec": "specs/engineering-closure/spec.md",
+      "scenario": "registered-storage-test-closure-is-complete",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "storage-acceptance-tests",
+        "storage-acceptance-v2-tests",
+        "engineering-gate-closure-tests"
+      ]
+    },
+    {
+      "id": "EGC-004",
+      "spec": "specs/engineering-closure/spec.md",
+      "scenario": "scoped-visual-acceptance-survives-reviewed-tooling-only-increment",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "general-visual-acceptance-tests",
+        "general-native-visual-acceptance",
+        "engineering-gate-closure-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/engineering-gate-closure-20261109/final-source-review.json",
+    "authors": [
+      "/root",
+      "/root/gate_surface_repair",
+      "/root/gate_source_audit",
+      "/root/gate_storage_closure"
+    ]
+  },
+  "authorization": "进行修正，这部分要求问题全部处理完成。修复最新Root12失败及其连锁原因；源审后精确采用基线，禁止自动刷hash/删义务/改设计迁就实现/扩大legacy-debt。当前General S5视觉接受保留，不重新追平。无需Git提交推送，不提升产品/运行/发布验收。"
+}

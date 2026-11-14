@@ -1,0 +1,68 @@
+.host{display:flex;flex-direction:column;flex:1;min-height:0}.scroll{padding:25px 28px;overflow:auto;min-height:0;flex:1}.footer{display:flex;justify-content:space-between;align-items:center;gap:15px;min-height:64px;padding:15px 28px;border-top:1px solid var(--material-line);background:var(--material-navigation-fill)}.footer>span{font-size:10px;color:var(--material-text-tertiary)}.resource{display:flex;align-items:center;flex-wrap:wrap;gap:10px}.resource>code{width:100%;font-size:9px;overflow-wrap:anywhere;color:var(--material-text-tertiary)}
+.opacityControl{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--material-text-secondary)}.opacityControl input{width:150px;accent-color:var(--material-text-secondary)}.shortcutActions{display:flex;gap:6px;flex-wrap:wrap}.effectiveShortcuts{font-size:10px;line-height:1.8;color:var(--material-text-secondary);padding:10px 0}.effectiveShortcuts>strong{font-weight:500;color:var(--material-text);margin-right:10px}.effectiveShortcuts>p{margin:3px 0}.capability{font-size:11px;color:var(--material-text-secondary);line-height:1.7}
+
+/* Display adopts the approved settings form rhythm, sharing real primitives. */
+.display{font-size:13px;line-height:1.5}.display .scroll{padding:26px 30px 28px;scrollbar-gutter:stable;scrollbar-color:var(--material-line) transparent}.heading{display:flex;align-items:center;gap:12px;margin:0 0 21px}.heading>svg{color:var(--material-text-secondary);flex:none}.heading h1{font-size:23px;line-height:30px;font-weight:650;margin:0}.heading p{font-size:13px;color:var(--material-text-secondary);margin:2px 0 0}.display .scroll>section{margin:0 0 23px}.display section>h2{font-size:13px;font-weight:600;margin:0 0 8px 1px;line-height:20px}.display section>h2+div{padding:0;border:1px solid var(--material-outline);border-radius:var(--material-panel-radius);overflow:hidden;box-shadow:inset 0 1px 0 var(--material-glint),0 1px 3px rgba(0,0,0,.06)}.display [data-form-row]{display:grid;grid-template-columns:120px minmax(0,1fr);gap:10px;padding:11px 14px;align-items:start;min-height:43px;font-size:13px;border-bottom:0}.display [data-form-row]+[data-form-row],.display [data-form-row]:has(+div)>div{border-top:0}.display [data-form-row]+[data-form-row],.display section>h2+div>div:has(>[data-form-row])+[data-form-row]{border-top:1px solid var(--material-line)}.display [data-form-row]>div:first-child{padding-top:3px}.display [data-form-row] strong{font-weight:400}.display input:not([type=checkbox]):not([type=range]){font:inherit;font-size:13px;min-height:28px;padding:4px 7px;border:1px solid var(--material-outline);border-radius:var(--material-control-radius);background:var(--material-field-fill);color:var(--material-text);box-shadow:inset 0 1px 2px rgba(0,0,0,.10),0 0 0 1px var(--material-glint)}.display [data-select-field]{font-size:13px;min-width:130px}.display [role=combobox]{font:inherit;min-height:30px}.display [data-field-label]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.display [data-form-row] button:not([role=combobox]){font-size:13px;min-height:28px;padding:4px 11px;line-height:18px;border-color:var(--material-outline);background:var(--material-field-fill);box-shadow:inset 0 1px 0 var(--material-glint),0 1px 2px rgba(0,0,0,.10),0 0 0 1px var(--material-glint)}.display [data-form-row] button[data-disabled]{opacity:.42}.inlineNumber{display:inline-flex;width:100px;vertical-align:baseline}.unit{margin:0 8px;color:var(--material-text-secondary);font-size:12px}.display .opacityControl{display:inline-flex;gap:0;font-size:13px;color:var(--material-text)}.display .opacityControl input{vertical-align:middle;accent-color:var(--material-accent);width:160px;margin:0 12px 0 0}.check{display:inline-flex;align-items:center;gap:7px;min-height:27px;cursor:pointer}.check input{accent-color:var(--material-accent);height:14px;width:14px;margin:0;flex:none}.help{font-size:12px;color:var(--material-text-secondary);line-height:1.55;margin:5px 0 0}.boundary{font-size:12px;color:var(--material-text-secondary);line-height:1.65;margin:2px 2px 18px}.boundary[role=alert]{color:var(--material-error)}.boundary p{margin:0}.display .footer{min-height:65px;padding:11px 20px;gap:14px;background:transparent}.display .footer>span{font-size:11px;line-height:1.5;color:var(--material-text-secondary)}.display .footer button{min-height:28px;padding:4px 11px;line-height:18px}
+@media(max-width:950px){.display .scroll{padding:22px 21px}.display [data-form-row]{grid-template-columns:105px minmax(0,1fr);padding:10px 12px}.display .footer{padding:10px 14px}}@media(max-width:650px){.display [data-form-row]{grid-template-columns:1fr;gap:8px}}
+
+.shortcutSource{font-size:11px;line-height:1.7;color:var(--material-text-secondary);margin:6px 0 0}
+.shortcutSource kbd{font:12px/1.6 -apple-system,BlinkMacSystemFont,sans-serif;background:var(--material-control-fill);border:1px solid var(--material-line);border-radius:4px;padding:0 5px}
+.shortcutError{color:var(--material-error)}
+.shortcutStatus{font-size:12px;line-height:1.8;margin:7px 2px 17px;color:var(--material-text-secondary)}
+.shortcutStatus strong{font-weight:500;color:var(--material-text)}
+.materialEffective{font-weight:500}
+.materialBadge{display:inline-flex;margin-left:6px;padding:1px 5px;border-radius:4px;border:1px solid var(--material-line);font-size:11px;color:var(--material-text-secondary)}
+.footerActions{display:flex;gap:7px;align-items:center}
+
+.fields{display:contents;border:0;margin:0;padding:0;min-width:0}
+.display .fields>section{margin:0 0 23px}
+.fieldSources{font-size:11px;line-height:1.8;color:var(--material-text-secondary);margin-top:7px}
+.fieldSources summary{font-size:11px}
+
+.display .fields>section>p{font-size:12px;color:var(--material-text-secondary);line-height:1.5;margin:7px 3px 0}
+.materialEffective{margin-right:7px}
+.materialBadge{line-height:18px;border:0;background:var(--material-selected-fill);padding:1px 6px;margin:0 3px 0 0;vertical-align:middle}
+
+.shortcutKey{display:inline-flex;gap:4px;align-items:center}
+
+/* Preserve the complete reviewed generic-input plus native-range cascade. */
+.display .opacityControl{display:inline}
+.display .opacityControl input{margin:2px 12px 2px 2px;padding:5px 8px;border:1px solid var(--material-line);border-radius:var(--material-control-radius);background:var(--material-inset-fill);box-shadow:inset 0 1px 2px rgba(0,0,0,.09),0 1px 0 rgba(255,255,255,.025);min-height:0}
+
+.heading h1{letter-spacing:-.3px}
+.display [data-form-row] button:not([role=combobox]){font-size:12px}
+
+.display input::placeholder{color:var(--material-text-secondary);opacity:1}
+.display .footer button{font-size:12px;border-color:var(--material-outline);background:var(--material-field-fill);color:var(--material-text);box-shadow:inset 0 1px 0 var(--material-glint),0 1px 2px rgba(0,0,0,.10),0 0 0 1px var(--material-glint)}
+.display .footer button[data-intent=primary]{background:var(--material-selected-fill);box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 1px 3px rgba(0,0,0,.16),0 0 0 1px var(--material-glint)}
+.generalStatus{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;min-height:27px}
+.general [data-form-row] .boundary{margin:6px 0 0;font-size:12px}
+.general .scroll>section{margin-bottom:23px}
+.general [role=switch]{font-size:13px}
+.general [role=switch] strong{font-weight:400}
+
+/* Approved general settings refinement: cards own no inset; each row owns
+   its safety padding. Keep the shared Switch and other preference pages intact. */
+.general{container:general-settings / inline-size}
+.general .scroll{padding-bottom:32px;overflow-x:hidden}
+.general .footer{flex-shrink:0}
+.general .scroll>section,.general .fields>section{margin:0 0 24px}
+.general .scroll>section:last-child{margin-bottom:0}
+.general section>p{font-size:12px;color:var(--material-text-secondary);line-height:1.5;margin:7px 3px 0}
+.general [data-form-row]{padding:11px 14px;grid-template-columns:120px minmax(0,1fr)}
+.general [data-form-row]>div,.general [data-switch-label]{min-width:0;overflow-wrap:anywhere}
+.toggleRow+ .toggleRow,.toggleRow+[data-form-row]{border-top:1px solid var(--material-line)}
+.general .toggleRow>[data-rac]{min-width:0;min-height:54px;padding:12px 14px;gap:16px}
+.general .toggleRow [data-switch-label]{gap:4px}
+.general .toggleRow strong{font-size:13px;font-weight:400}
+.general .toggleRow small{font-size:12px;line-height:1.55;color:var(--material-text-secondary)}
+.general .toggleRow [data-switch-label]+span{width:32px;height:19px;box-sizing:border-box}
+@container general-settings (max-width:440px){
+  .general .scroll{padding:18px 16px 28px}
+  .general [data-form-row]{grid-template-columns:minmax(0,1fr);gap:6px}
+  .general .toggleRow>[data-rac]{gap:12px}
+  .general .footer{flex-wrap:wrap;gap:8px;padding-inline:16px}
+  .general .footer>span{flex-basis:100%;overflow-wrap:anywhere}
+  .general .footerActions{max-width:100%;flex-wrap:wrap}
+  .general .footer button{white-space:normal}
+}

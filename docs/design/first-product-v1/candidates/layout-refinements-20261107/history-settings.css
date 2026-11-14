@@ -1,0 +1,311 @@
+/* Pending local layout refinement only. The approved source, C1 shell and
+   material tokens remain the parent. No product state is defined here. */
+
+/* HISTORY
+   Both primary regions use exactly the same two tracks. The 16px pane inset
+   belongs inside each track, so it does not shift the filter divider relative
+   to the list/detail divider or consume a third column for pagination. */
+html[data-layout-refinement="history"] #main-content.hx-host {
+  container-name: layout-history;
+  min-height: 0;
+}
+/* An explicit shrinkable grid row prevents the compact navigation's natural
+   height from making the history scroll viewport taller than the C1 window
+   at 200%. Navigation remains independently reachable by scrolling. */
+html[data-layout-refinement="history"] .main-layout {
+  min-height: 0;
+  grid-template-rows: minmax(0, 1fr);
+}
+html[data-layout-refinement="history"] .main-sidebar {
+  min-height: 0;
+  overflow-y: auto;
+}
+html[data-layout-refinement="history"] #hx-root {
+  --layout-history-tracks: minmax(0, .86fr) minmax(0, 1.4fr);
+}
+html[data-layout-refinement="history"] .hx-filters,
+html[data-layout-refinement="history"] .hx-body {
+  grid-template-columns: var(--layout-history-tracks);
+  column-gap: 0;
+  padding-inline: 0;
+}
+html[data-layout-refinement="history"] .hx-filters {
+  padding-block: 0 14px;
+  align-items: start;
+}
+/* Game: its label and select share the list's 16px content start/end. The
+   title has the same 24px row as the session title/action on the right. */
+html[data-layout-refinement="history"] .hx-filters > .hx-filter {
+  padding-inline: 16px;
+  gap: 6px;
+}
+html[data-layout-refinement="history"] .hx-filters > .hx-filter > span:first-child {
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+}
+/* Session: the existing label, select, action and live count keep their DOM
+   and semantics. Explicit grid slots reserve space for every field: title at
+   left and lightweight action at right; select below; status on a third row.
+   Long status/error text may wrap without covering the label or select. */
+html[data-layout-refinement="history"] .layout-history-session-tools {
+  min-width: 0;
+  padding-inline: 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: minmax(24px, auto) auto auto;
+  gap: 6px 10px;
+  align-items: center;
+}
+html[data-layout-refinement="history"] .layout-history-session-tools > .hx-filter,
+html[data-layout-refinement="history"] .layout-history-session-tools > .hx-directory {
+  display: contents;
+}
+html[data-layout-refinement="history"] .layout-history-session-tools .hx-filter > span:first-child {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+html[data-layout-refinement="history"] .layout-history-session-tools .luna-select,
+html[data-layout-refinement="history"] .layout-history-session-tools #hx-session-filter {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  min-width: 0;
+  width: 100%;
+}
+html[data-layout-refinement="history"] .layout-history-session-tools #hx-sessions-more {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  min-height: 24px;
+  padding: 2px 0;
+  font-size: 10px;
+  line-height: 18px;
+}
+html[data-layout-refinement="history"] .layout-history-session-tools #hx-session-status {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  min-width: 0;
+  justify-self: end;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: end;
+  font-size: 9px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+/* List heading/footer: 16px content inset. A record's 8px outer gutter plus
+   1px border and 7px inner padding put its text on the same 16px guide. */
+html[data-layout-refinement="history"] .hx-list-heading {
+  padding: 13px 16px 10px;
+}
+html[data-layout-refinement="history"] #hx-records-scroll {
+  padding: 0 8px 6px;
+}
+html[data-layout-refinement="history"] .hx-record {
+  padding-inline: 7px;
+}
+html[data-layout-refinement="history"] .hx-list-footer {
+  padding-inline: 16px;
+}
+/* Detail: the topline, original, translation, actions and provenance share
+   the session filter's 16px start. Preserve the existing vertical rhythm. */
+html[data-layout-refinement="history"] .hx-detail {
+  padding-inline: 16px;
+}
+html[data-layout-refinement="history"] .hx-detail-topline {
+  flex-wrap: wrap;
+}
+html[data-layout-refinement="history"] .hx-detail-topline > * {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+html[data-layout-refinement="history"] .hx-provenance div {
+  min-width: 0;
+}
+
+/* At narrow/zoomed effective widths, both filters follow the same single
+   primary track as the stacked list/detail. Existing main scrolling makes
+   both panes and independent pagination reachable instead of clipping them. */
+@container layout-history (max-width: 600px) {
+  html[data-layout-refinement="history"] #hx-root {
+    --layout-history-tracks: minmax(0, 1fr);
+    height: auto;
+    overflow: visible;
+  }
+  html[data-layout-refinement="history"] .hx-filters {
+    row-gap: 12px;
+  }
+  html[data-layout-refinement="history"] .hx-body {
+    flex: 1 0 640px;
+    min-height: 640px;
+    grid-template-rows: minmax(260px, .9fr) minmax(320px, 1.1fr);
+  }
+  html[data-layout-refinement="history"] .hx-list-column {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* SETTINGS
+   Every FormRow retains a 14px horizontal / 11px vertical safety inset,
+   including direct switch rows. Group titles and notes keep the existing
+   shared material and one consistent spacing rhythm. */
+html[data-layout-refinement="settings"] .ls-main {
+  container: layout-settings-content / inline-size;
+}
+html[data-layout-refinement="settings"] .ls-scroll {
+  padding-bottom: 32px;
+  overflow-x: hidden;
+}
+html[data-layout-refinement="settings"] .ls-section {
+  margin-block: 0 24px;
+}
+html[data-layout-refinement="settings"] .ls-section:last-child {
+  margin-bottom: 0;
+}
+html[data-layout-refinement="settings"] .ls-section h3 {
+  margin: 0 0 8px 1px;
+  line-height: 20px;
+}
+html[data-layout-refinement="settings"] .ls-row {
+  padding: 11px 14px;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 10px;
+  min-width: 0;
+}
+html[data-layout-refinement="settings"] .ls-row-label,
+html[data-layout-refinement="settings"] .ls-row-value,
+html[data-layout-refinement="settings"] .ls-help,
+html[data-layout-refinement="settings"] .ls-content-heading > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+html[data-layout-refinement="settings"] .ls-check {
+  max-width: 100%;
+}
+html[data-layout-refinement="settings"] .ls-check > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+/* The three lexical switches are a full-width row: visible label/description
+   on the left and a fixed 32x19 control at the same right safety inset.
+   Source-owned checkbox interactions and accessible text remain intact. */
+html[data-layout-refinement="settings"] .ls-row.layout-toggle-row {
+  grid-template-columns: minmax(0, 1fr) 32px;
+  gap: 4px 16px;
+  align-items: center;
+  min-height: 54px;
+  padding-block: 12px;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row > .ls-row-label {
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 0;
+  display: grid;
+  gap: 4px;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row > .ls-row-value {
+  display: contents;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row .ls-help {
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 0;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row .ls-check {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  min-height: 27px;
+  width: 32px;
+  gap: 0;
+  position: relative;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row .ls-check > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 32px;
+  height: 19px;
+  margin: 0;
+  border: 1px solid var(--ls-edge);
+  border-radius: 10px;
+  background: var(--ls-field);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  position: relative;
+  cursor: pointer;
+}
+html[data-layout-refinement="settings"] .layout-toggle-row input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--material-text-secondary);
+}
+html[data-layout-refinement="settings"] .layout-toggle-row input[type="checkbox"]:checked {
+  background: var(--material-accent);
+}
+html[data-layout-refinement="settings"] .layout-toggle-row input[type="checkbox"]:checked::before {
+  transform: translateX(12px);
+  background: var(--material-solid-shell);
+}
+html[data-layout-refinement="settings"] .layout-toggle-row input[type="checkbox"]:disabled {
+  cursor: default;
+}
+
+/* Effective width handles both a real small window and 200% CSS zoom. Keep
+   the sidebar contract; stack normal FormRows so their copy stays reachable.
+   Switch rows retain their left copy/right control pairing at every width. */
+@container layout-settings-content (max-width: 440px) {
+  html[data-layout-refinement="settings"] .ls-scroll {
+    padding: 18px 16px 28px;
+  }
+  html[data-layout-refinement="settings"] .ls-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+  html[data-layout-refinement="settings"] .ls-row.layout-toggle-row {
+    grid-template-columns: minmax(0, 1fr) 32px;
+    gap: 4px 12px;
+  }
+  html[data-layout-refinement="settings"] .ls-content-heading {
+    align-items: flex-start;
+  }
+  html[data-layout-refinement="settings"] .ls-content-heading h2 {
+    overflow-wrap: anywhere;
+  }
+  html[data-layout-refinement="settings"] .ls-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-inline: 16px;
+  }
+  html[data-layout-refinement="settings"] .ls-footer-status {
+    flex-basis: 100%;
+    overflow-wrap: anywhere;
+  }
+  html[data-layout-refinement="settings"] .ls-footer-buttons {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  html[data-layout-refinement="settings"] .ls-footer-buttons .ls-button {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "previous_baseline": "FP1-20261019-R11",
+  "previous_sha256": "86c04cc614e2c6269d6cc95043a1e827283ecb876b6327d2bf54e7973f0050d5",
+  "current_baseline": "FP1-20261019-R12",
+  "independent_review": ".build/native-initial-size-lock-review.json",
+  "previous_technology_lock": "openspec/changes/implement-first-product/technology-lock-before-main-size.json",
+  "reviewed_fingerprints": {
+    "openspec/technology-lock.json": "87054c513544b5c2d37dc599413cde3eb3a70a494b528d65c24258d3de4f94a8"
+  },
+  "manifest_change": {
+    "path": "apps/desktop/src-tauri/tauri.conf.json",
+    "previous_sha256": "f8305aa09d4b6ca6db71096ac8aeac6684d0ca6be6eb3f6cf117d30d925b6f8b",
+    "current_sha256": "82d88c0af1d726ab6ff2971c4dc10f8fb571f37615f8222d50b852d1e7d630f4",
+    "only_changed_values": {
+      "width": [
+        1180,
+        1040
+      ],
+      "height": [
+        820,
+        720
+      ],
+      "minWidth": [
+        800,
+        760
+      ],
+      "minHeight": [
+        620,
+        560
+      ]
+    }
+  },
+  "approvals_unchanged": true,
+  "product_acceptance_promoted": false
+}

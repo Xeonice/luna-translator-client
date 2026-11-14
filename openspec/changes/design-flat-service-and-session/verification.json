@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "id": "design-flat-service-and-session",
+  "kind": "tooling",
+  "allowed_paths": [
+    "docs/product/model-configuration-prd.md",
+    "docs/product/reading-window-session-prd.md",
+    "docs/product/first-product-scope.md",
+    "docs/product/README.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/architecture/model-service-registry-design.json",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/development/flat-service-session-tests.md",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/**",
+    "scripts/quality/flat_service_session.py",
+    "scripts/quality/test_flat_service_session.py",
+    "scripts/report/verify_flat_service_session.cjs",
+    "scripts/quality/verify.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261030-R72.json",
+    "openspec/changes/design-flat-service-and-session/**",
+    "openspec/specs/first-product/spec.md"
+  ],
+  "source_snapshot": "openspec/changes/design-flat-service-and-session/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FSS-001",
+      "spec": "specs/flat-service-session/spec.md",
+      "scenario": "configuration-families-and-stages-are-flat-sections",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests"
+      ]
+    },
+    {
+      "id": "FSS-002",
+      "spec": "specs/flat-service-session/spec.md",
+      "scenario": "current-session-information-is-visible-on-one-page",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests"
+      ]
+    },
+    {
+      "id": "FSS-003",
+      "spec": "specs/flat-service-session/spec.md",
+      "scenario": "advanced-and-diagnostic-details-remain-reachable",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests"
+      ]
+    },
+    {
+      "id": "FSS-004",
+      "spec": "specs/flat-service-session/spec.md",
+      "scenario": "existing-service-selection-and-history-semantics-are-preserved",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests"
+      ]
+    },
+    {
+      "id": "FSS-005",
+      "spec": "specs/flat-service-session/spec.md",
+      "scenario": "fresh-design-evidence-cannot-promote-product-acceptance",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests",
+        "offline-translation-design",
+        "offline-translation-design-tests",
+        "translation-service-selection-design",
+        "translation-service-selection-tests",
+        "flat-service-session-design",
+        "flat-service-session-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261030-R72",
+  "parent_baseline_sha256": "2ae180cdb2d3b04dce306e098aaa7a860c021d7fc13b2224f134347c865d5b85",
+  "product_acceptance_status": "not_run"
+}

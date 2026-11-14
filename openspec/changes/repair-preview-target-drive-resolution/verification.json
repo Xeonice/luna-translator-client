@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "id": "repair-preview-target-drive-resolution",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "source_snapshot": "openspec/changes/repair-preview-target-drive-resolution/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "allowed_paths": [
+    "openspec/changes/repair-preview-target-drive-resolution/**",
+    "crates/app-infra/src/platform/game_launch.rs",
+    "crates/app-infra/src/hook_backend/preview_identity.rs",
+    "crates/app-infra/src/hook_backend.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R59.json",
+    "openspec/active-change.json"
+  ],
+  "requirements": [
+    {
+      "id": "DRV-001",
+      "spec": "specs/preview-target-drive/spec.md",
+      "scenario": "unrelated-broken-drive-does-not-block-valid-preview-target",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "DRV-002",
+      "spec": "specs/preview-target-drive/spec.md",
+      "scenario": "requested-drive-and-path-failures-are-not-silently-ignored",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "DRV-003",
+      "spec": "specs/preview-target-drive/spec.md",
+      "scenario": "remapped-target-is-rejected-and-legacy-callers-retain-checks",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "DRV-004",
+      "spec": "specs/preview-target-drive/spec.md",
+      "scenario": "engineering-repair-does-not-promote-old-game-evidence",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "DRV-005",
+      "spec": "specs/preview-target-drive/spec.md",
+      "scenario": "private-worker-v3-rejects-old-or-incomplete-frozen-target",
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    }
+  ],
+  "scope_note": "Private target-path repair only. Full-drive callers, identity refusal, schema/Core/public contracts and approved design remain. R59 failed runtime/visual receipts and validation workitem stay immutable. New same-package actual stability remains a separate final validation; no acceptance promotion. Explicit internal worker schema update only: private collector version2 to3 with required frozen canonical image path, same executable authentication and strict old/incomplete payload refusal. Core ABI1, Hook JSONL2 and public DTO/IPC remain unchanged."
+}

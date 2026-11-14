@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "align-compact-preview-design-lock",
+  "parent_baseline_sha256": "e814bcfe6822150d0729d28ac7c41a5d7456661fe2018f36d4855a36dad2dd46",
+  "exact_delta_sha256": "d107f8c3eb6162c6fbdaeca97e986899affc63fcbf2bedab60752ec05feabdb0",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/compact-design-lock-alignment/spec-format-fix/independent-code-review.json",
+    "sha256": "dcdfbd5a22c03d66d8781a620b919e3d47cbdd6b1eb5ce856c91debc5a234651",
+    "bytes": 8707
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

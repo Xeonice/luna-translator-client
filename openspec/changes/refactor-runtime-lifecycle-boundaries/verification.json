@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "id": "refactor-runtime-lifecycle-boundaries",
+  "kind": "tooling",
+  "status": "proposed_documentation_phase",
+  "allowed_paths": [
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/**",
+    "openspec/active-change.json",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/architecture/runtime-lifecycle-contracts.json",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/development/stability-refactor-plan.md",
+    "docs/development/stability-refactor-plan.json",
+    "docs/development/refactor-impact-matrix.json",
+    "docs/development/current-phase.json",
+    "docs/development/iteration-governance.md",
+    "docs/development/plan.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261026-R46.json"
+  ],
+  "source_snapshot": "openspec/changes/refactor-runtime-lifecycle-boundaries/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ENG-RF-001",
+      "spec": "specs/stability-refactor/spec.md",
+      "scenario": "stability-precedes-feature-completion",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "ENG-RF-002",
+      "spec": "specs/stability-refactor/spec.md",
+      "scenario": "state-authority-and-safe-boundaries-remain-explicit",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "ENG-RF-003",
+      "spec": "specs/stability-refactor/spec.md",
+      "scenario": "each-slice-has-real-regression-and-honest-evidence",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    }
+  ],
+  "implementation_scope": "S0 documentation only; no product source granted; each later SR slice needs its own product change and source snapshot",
+  "product_acceptance_status": "not_run"
+}

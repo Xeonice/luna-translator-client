@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "kind": "R29_v2_exact_delta_review_candidate",
+  "status": "independently_reviewed_root_authorized_authority_only",
+  "captured_at": "2026-10-20T16:04:07.643898+00:00",
+  "parent_baseline": {
+    "id": "FP1-20261020-R28",
+    "sha256": "4f80cbadbf2b6aa1d4d256a6320038de92a48dd1ff08f2691e70b028f76398e5",
+    "entries": 729
+  },
+  "owner_handoff": {
+    "path": ".build/next-batch-20261020/stable-signing-r29/owner-tests-v2/owner-handoff-v2.json",
+    "sha256": "48456ceffc3c2e7f4c81ba3ecf4b38786ac1189cece45f2d441ff99677c49f8a",
+    "bytes": 6249
+  },
+  "source_deltas": [
+    {
+      "path": "scripts/build_desktop.py",
+      "before_sha256": "710c2e06e5fddf360588dd912561052d070654f7d892489774cee1f5a31ac925",
+      "after_sha256": "9b0baa76035203becde99de2a6b15b9c9e1aefd803010a34237fae2c90864722"
+    },
+    {
+      "path": "scripts/quality/package_identity.py",
+      "before_sha256": "110fd89f00f81d3aa8b7b4c689d299384487271498f4c3e4d86b4ca8f541ff89",
+      "after_sha256": "a2a5370a11276a9a1a0d04d480bd0a99ed40f116cd7df20d8fc2e1f61083fbcc"
+    },
+    {
+      "path": "scripts/quality/test_package_identity.py",
+      "before_sha256": "2b9422a32ae46d6dc10c0f27bdc370f7daf3a038a4d5a6570677f29cca80e4f5",
+      "after_sha256": "37712c272637203f165d55aadd56bf0af823d18517b71b10fddd95c682e4ddb9"
+    }
+  ],
+  "exact_existing_file_changes": [
+    {
+      "path": "scripts/build_desktop.py",
+      "before_sha256": "710c2e06e5fddf360588dd912561052d070654f7d892489774cee1f5a31ac925",
+      "after_sha256": "9b0baa76035203becde99de2a6b15b9c9e1aefd803010a34237fae2c90864722",
+      "bytes": 8407,
+      "candidate": "scripts/build_desktop.py"
+    },
+    {
+      "path": "scripts/quality/package_identity.py",
+      "before_sha256": "110fd89f00f81d3aa8b7b4c689d299384487271498f4c3e4d86b4ca8f541ff89",
+      "after_sha256": "a2a5370a11276a9a1a0d04d480bd0a99ed40f116cd7df20d8fc2e1f61083fbcc",
+      "bytes": 19377,
+      "candidate": "scripts/quality/package_identity.py"
+    },
+    {
+      "path": "scripts/quality/test_package_identity.py",
+      "before_sha256": "2b9422a32ae46d6dc10c0f27bdc370f7daf3a038a4d5a6570677f29cca80e4f5",
+      "after_sha256": "37712c272637203f165d55aadd56bf0af823d18517b71b10fddd95c682e4ddb9",
+      "bytes": 30358,
+      "candidate": "scripts/quality/test_package_identity.py"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md",
+      "before_sha256": "b4beb84e14496a9d654c41d459ee0e06de054e24e751bc3dc248e99339eb103f",
+      "after_sha256": "9205f96d29fd7738223c39409e7223ca592c472f2312983e3f9d91b5568b4d10",
+      "bytes": 3058,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/design.md",
+      "before_sha256": "9ad99af43b0895a03e241dd3ba374ebc1687fde5d0ef887b00d0fbdc5d42dd18",
+      "after_sha256": "f88ef2a3dc1a74cc17a43386448b60d559253192fbb523655ca944aeb3ebff58",
+      "bytes": 9168,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/design.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md",
+      "before_sha256": "e6341815703956dd6f04efdbf2b56518d6f461089b56e4506d3a7e6703d04836",
+      "after_sha256": "ff18ba9dea7a3e9bf34e53e0d04a64cfb2fd3d424d6c996bb1dd903111c18ae0",
+      "bytes": 4498,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md",
+      "before_sha256": "cbfa61cb891ec49a3bf767cbbe8ce563027141ab5d39073e1445a12c81b08fdf",
+      "after_sha256": "2b45b905a71f5f5d4d6a65df6c89434ffd8fb1cb46efd7a2e54d10b320fddeda",
+      "bytes": 20331,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/verification.json",
+      "before_sha256": "428c8a87d7756cb6b1ee084564022eb97f4ab877458c5cddafc4bf99a8e206b4",
+      "after_sha256": "45013b4e0acbb4685fa4415916f5ba1970f7be09b4d81679514005a65d7db7ed",
+      "bytes": 47563,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/verification.json"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before_sha256": "1eb2702d612208222dbd6f4b91523bf8fa9b59997a023d566e21f59bbd680203",
+      "after_sha256": "9e49c0e6d70e1d7a99a76c7f240262e00705554faf9e28575789e9e6faa27541",
+      "bytes": 581027,
+      "candidate": ".build/next-batch-20261020/stable-signing-r29/governance-v2/candidates/docs/architecture/implementation-status.json"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before_sha256": "4a55e385bb8f6ec76a84eab5dd578c6ebdd60a718ecea8ce6709964c3010cb79",
+      "after_sha256": "2193ab291aab16b26a31f13270fe3cf833e8b3c569210f5e613748d635fb6793",
+      "bytes": 144056,
+      "candidate": ".build/next-batch-20261020/stable-signing-r29/governance-v2/candidates/docs/architecture/implementation-status.md"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before_sha256": "88617fd5b62a2ac254732a365cd92c3161f357e97da07084be78d9fdf0654d85",
+      "after_sha256": "0c051324f21b73dc1ae8bdaf12277289993cf4e22b457fd353120283ffe20a38",
+      "bytes": 39897,
+      "candidate": ".build/next-batch-20261020/stable-signing-r29/governance-v2/candidates/docs/architecture/engineering-modules.csv"
+    }
+  ],
+  "current_status_ref_delta": {
+    "path": ".build/next-batch-20261020/stable-signing-r29/governance-v2/status-candidate-review-manifest.json",
+    "sha256": "131a2fc12ca22a1cf93e3fe957a1b271123ac1983296490a8cdb1a7b3ac5117b",
+    "bytes": 2082
+  },
+  "complete_R28_inverse": {
+    "path": ".build/next-batch-20261020/stable-signing-r29/governance-v2/R28-full-inverse-proof.json",
+    "sha256": "22c5f366f5e5205ad8f10605aab7166bbe77fda090e89c508e81d6a6ce8b27c2",
+    "bytes": 1481
+  },
+  "R28_archive": {
+    "path": "docs/development/baselines/FP1-20261020-R28.json",
+    "sha256": "4f80cbadbf2b6aa1d4d256a6320038de92a48dd1ff08f2691e70b028f76398e5",
+    "bytes": 157290,
+    "byte_exact": true
+  },
+  "protected": {
+    "seed": ".build/next-batch-20261020/context/protected-before.json",
+    "unchanged_protected_files": 420,
+    "groups": {
+      "original_prd": 101,
+      "license": 36,
+      "approved_design_sources": 16,
+      "approved_design_png": 37,
+      "approval_and_visual_inputs": 206,
+      "tokens": 2,
+      "database_design": 12,
+      "baseline_archive_and_retained_old_candidate": 6,
+      "historical_evidence": 5
+    },
+    "unchanged_catalogue_inputs": 306,
+    "pixel_policy": {
+      "threshold": 0.1,
+      "includeAA": true,
+      "maxRatio": 0
+    },
+    "pins": [
+      {
+        "path": "docs/development/storage-acceptance.json",
+        "sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+        "bytes": 14220
+      },
+      {
+        "path": "docs/architecture/database/v2/storage-acceptance.json",
+        "sha256": "dfd2b0577ed5523f0e7ee618adddad2060886f3bd7cc9362b8a39f60017fa8ad",
+        "bytes": 14807
+      },
+      {
+        "path": "openspec/legacy-debt.json",
+        "sha256": "fb0021504423bd16c24d023f9d84e48ad511a518b353b4a3dd499ad22ab7ae07",
+        "bytes": 8683
+      },
+      {
+        "path": "openspec/technology-lock.json",
+        "sha256": "b8bfd585c9376242bdafe681778641aabe7a32fe43a291308a46b1a3057c9c70",
+        "bytes": 7482
+      }
+    ]
+  },
+  "business_semantics": {
+    "module": "M15",
+    "requirement": "REQ-056 / RW-33 / RW-34",
+    "selection": "explicit CLI > nonempty APPLE_SIGNING_IDENTITY > unique valid codesigning identity",
+    "ad_hoc": "explicit --ad-hoc only",
+    "signing_failure": "fail closed, no fallback, no current successful manifest",
+    "signing_identity": "same resolved leaf SHA1 for Tauri and final resource-sealed app",
+    "preservation": "entitlements/flags retained; obsolete ad-hoc requirements not retained",
+    "actual_metadata": "mode/Identifier/TeamIdentifier/Authority/CDHash/DR/leaf SHA1 read from real application, matched with selection and both manifests",
+    "signed_marker": [
+      "signature_contract",
+      "signing_mode",
+      "expected_leaf_sha1"
+    ],
+    "legacy": "original strict source/seal/resource/executable/archive/signature checks retained; no invented developer identity",
+    "threat_boundary": "external metadata stripping cannot downgrade new signed contract; full attacker re-sign and seal rewrite remains outside local-build-provenance scope",
+    "no_UI_Core_database_dependency_or_TCC_policy_change": true
+  },
+  "review_state": {
+    "source_review": {
+      "status": "accepted",
+      "reference": {
+        "path": ".build/stable-signing-r29/independent-review/source-review-v2.json",
+        "sha256": "9dd720a15fd9277eb9ff5bb8d76151cd491d1225fca711ed9a8accfab88e5d93",
+        "bytes": 6186
+      }
+    },
+    "governance_review": {
+      "status": "accepted",
+      "reference": {
+        "path": ".build/stable-signing-r29/independent-review/metadata-review-v2.json",
+        "sha256": "9390ff3a41f9b9cf2d442169d104d4ab2a910371653e0bc2ad2e1357216b0f9b"
+      }
+    },
+    "root_adoption": {
+      "status": "authorized_authority_only",
+      "reference": {
+        "path": ".build/next-batch-20261020/stable-signing-r29/governance-v2/root-adoption-authorization.json",
+        "sha256": "a174fb196d94ac4749d157f861e28468520ffafb1e4ee2760e563beab7fe6097"
+      }
+    }
+  },
+  "original38_scenarios_and16checks_retained": true,
+  "new2_scenarios_add_existing_package_identity_tests": true,
+  "product_runtime_verified": false,
+  "current_release_approved": false,
+  "new_Luna_package_TCC_updates_and_four_games": "not_run",
+  "no_commit_or_push": true,
+  "source_review_bound_at": "2026-10-20T16:05:39.745084+00:00",
+  "finalized_at": "2026-10-20T16:09:49.286799+00:00"
+}

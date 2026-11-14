@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261019-R19",
+  "parent": "FP1-20261019-R18",
+  "parent_sha256": "5812564e4eb0223782828c224d6a6d28976ef1f9b8d3868689423e870656ba0c",
+  "reason": "Report search intentionally matches all CSV columns: C13 references C35 and C23 references C36, so each query correctly returns2 rows. Repair incorrect QA assumption of exactly1 by deriving exact expected results from independent CSV and checking requested primary ID remains visible. No report/UI behavior or expected source changed.",
+  "independent_review": {
+    "path": ".build/coverage-architecture-20261019/context/review-r19-qa-repair.json",
+    "sha256": "448884d583886bf0828dcf6677cd78593772c6fe77b47bc12bbcc04fc622e4ae",
+    "attestation": {
+      "schema_version": 1,
+      "review_type": "independent_narrow_report_QA_semantic_repair",
+      "status": "passed",
+      "reviewed_at": "2026-10-19T15:32:56.801176+00:00",
+      "candidate": ".build/coverage-architecture-20261019/qa-repair-r19-candidate.json",
+      "candidate_sha256": "69e0d3c990ccd61ee42be04933340704c80c9d339f3daa03a4840b9df0daaa78",
+      "parent_baseline": "FP1-20261019-R18",
+      "parent_sha256": "5812564e4eb0223782828c224d6a6d28976ef1f9b8d3868689423e870656ba0c",
+      "reviewed_changes": [
+        {
+          "path": "scripts/report/verify_interaction_coverage_report.cjs",
+          "before_sha256": "547d07f23bc1f1cfc0f778f57a75d5397dc1aaa0e66109bff5c6e09aa3744da6",
+          "after_sha256": "b0569b5d3a29dd8e41b08509736cac98c060810802216db9b7f690c227e4d2c1"
+        },
+        {
+          "path": "openspec/changes/align-reviewed-design-and-test-coverage/verification.json",
+          "after_sha256": "32d63dd03239f14b4eba18119d9014ab2717093eb6a1aadca5cb1840f07c3354",
+          "reason": "allow exact immutable R18 archive only"
+        }
+      ],
+      "checks": [
+        {
+          "id": "exactQAonlysearchrepair",
+          "passed": true,
+          "details": "Replacing only revised search-QA block with prior exact line reconstructs frozen R18 QA script byte identity; other QA assertions unchanged."
+        },
+        {
+          "id": "CSVauthorityindependentandunchanged",
+          "passed": true,
+          "details": {
+            "source_sha256": "ca9ca670a0fba0855f6b1a12844142bdfed2724627cf8d7e01b4f679d4caaa56",
+            "report_csv_sha256": "ca9ca670a0fba0855f6b1a12844142bdfed2724627cf8d7e01b4f679d4caaa56"
+          }
+        },
+        {
+          "id": "actualtwoqueriesexpectedsets",
+          "passed": true,
+          "details": {
+            "C35": [
+              "C13",
+              "C35"
+            ],
+            "C36": [
+              "C23",
+              "C36"
+            ]
+          }
+        },
+        {
+          "id": "exactcountplusprimaryID",
+          "passed": true,
+          "details": "Expected count comes from Python standard csv parsing of report-source matrix; requested primary row independently required, not weakening to at-least-one or changing source/UI."
+        },
+        {
+          "id": "allowonlyexactR18archive",
+          "passed": true,
+          "details": {
+            "before_actual_source_sha256": "3d6f3ef244b6a51ba80c6d40d3ac75dbbb3adb99a3fd1f1fe3f344130cc4e718",
+            "reconstructed_before_sha256": "3d6f3ef244b6a51ba80c6d40d3ac75dbbb3adb99a3fd1f1fe3f344130cc4e718"
+          }
+        },
+        {
+          "id": "R18archiveandother422unchanged",
+          "passed": true,
+          "details": {
+            "archive_sha256": "5812564e4eb0223782828c224d6a6d28976ef1f9b8d3868689423e870656ba0c",
+            "parent_entries": 423,
+            "actual_source_changes": [
+              "scripts/report/verify_interaction_coverage_report.cjs"
+            ]
+          }
+        },
+        {
+          "id": "diagnosticQAidentityscope",
+          "passed": true,
+          "details": {
+            "captures": 6,
+            "png_drift": [],
+            "scope": "Offline diagnostic report rendering only, R18 report; not R19 frozen source execution or product acceptance."
+          }
+        },
+        {
+          "id": "preservedfailedQAandnoproductchange",
+          "passed": true,
+          "details": "Root preserved first failed QA output; new source requires new engineering run/export/official QA."
+        },
+        {
+          "id": "diagnosticvisualreadability",
+          "passed": true,
+          "details": "Independently viewed desktop and390px overview PNGs from actual diagnostic Playwright; readable wrapping and no root horizontal overflow, technical-not-implemented/release-not-passed labels visible."
+        }
+      ],
+      "approval_scope": "Only corrected report-search QA oracle, exact R18 archive allowlist append; R19 may replace QA script hash, add original R18 archive and one derived repair record. All other422 parent identity entries unchanged.",
+      "excluded_claims": [
+        "Product behavior or data changed",
+        "Any R19 engineering gate passed before rerun",
+        "R18 report diagnostic reused as formal R19 report QA",
+        "Product runtime or release acceptance passed"
+      ],
+      "required_after_adoption": [
+        "Freeze R19 metadata and actually rerun complete engineering gate.",
+        "Export a fresh reviewed-v3 report from matching R19 passed receipt, preserving v2/failed output.",
+        "Run actual final report Playwright QA on that new export, then retain artifact identities."
+      ],
+      "blocking_findings": []
+    }
+  },
+  "source_changed": "report QA assumption only; real table full-column filtering preserved",
+  "product_code_changed": false,
+  "approvals_changed": false,
+  "legacy_debt_expanded": false,
+  "failed_and_diagnostic_qa_preserved": true
+}

@@ -1,0 +1,288 @@
+{
+  "schema_version": 1,
+  "id": "close-product-acceptance-loop",
+  "kind": "tooling",
+  "allowed_paths": [
+    "scripts/quality/product_completion.py",
+    "scripts/quality/test_product_completion.py",
+    "scripts/quality/render_evidence.py",
+    "scripts/quality/test_render_evidence.py",
+    "scripts/quality/current_design_react_adapter.py",
+    "scripts/quality/current_design_react_inspect.py",
+    "scripts/quality/current_design_react_recompute.py",
+    "scripts/quality/test_current_design_react_adapter.py",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/verify.py",
+    "scripts/report/measure_render_evidence.mjs",
+    "scripts/report/verify_current_design_react.mjs",
+    "docs/development/product-acceptance-loop.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/current-phase.json",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261105-R86.json",
+    "docs/README.md",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "openspec/changes/close-product-acceptance-loop/proposal.md",
+    "openspec/changes/close-product-acceptance-loop/design.md",
+    "openspec/changes/close-product-acceptance-loop/tasks.md",
+    "openspec/changes/close-product-acceptance-loop/iteration-card.md",
+    "openspec/changes/close-product-acceptance-loop/verification.json",
+    "openspec/changes/close-product-acceptance-loop/source-snapshot.json",
+    "openspec/changes/close-product-acceptance-loop/specs/acceptance-completion/spec.md",
+    "scripts/quality/current_design_render_qualification.py",
+    "scripts/quality/test_current_design_render_qualification.py",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/close-product-acceptance-loop/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "VAC-001",
+      "spec": "specs/acceptance-completion/spec.md",
+      "scenario": "effective-render-state-is-independent",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "documentation-contract-tests",
+        "current-design-alignment-tests",
+        "current-design-react-guard-tests",
+        "current-reference-catalogue-tests",
+        "source-inventory-tests",
+        "product-completion-tests",
+        "render-evidence-tests",
+        "product-completion-assessment",
+        "typescript-compile",
+        "rust-compile",
+        "current-render-qualification-tests",
+        "product-current-design-react-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C26",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "VAC-002",
+      "spec": "specs/acceptance-completion/spec.md",
+      "scenario": "whole-client-context-is-not-a-target-crop",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "documentation-contract-tests",
+        "current-design-alignment-tests",
+        "current-design-react-guard-tests",
+        "current-reference-catalogue-tests",
+        "source-inventory-tests",
+        "product-completion-tests",
+        "render-evidence-tests",
+        "product-completion-assessment",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C26",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "VAC-003",
+      "spec": "specs/acceptance-completion/spec.md",
+      "scenario": "runtime-and-artifact-subjects-stay-bound",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "documentation-contract-tests",
+        "current-design-alignment-tests",
+        "current-design-react-guard-tests",
+        "current-reference-catalogue-tests",
+        "source-inventory-tests",
+        "product-completion-tests",
+        "render-evidence-tests",
+        "product-completion-assessment",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C26",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "VAC-004",
+      "spec": "specs/acceptance-completion/spec.md",
+      "scenario": "incomplete-product-cannot-advance",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "documentation-contract-tests",
+        "current-design-alignment-tests",
+        "current-design-react-guard-tests",
+        "current-reference-catalogue-tests",
+        "source-inventory-tests",
+        "product-completion-tests",
+        "render-evidence-tests",
+        "product-completion-assessment",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C26",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "VAC-005",
+      "spec": "specs/acceptance-completion/spec.md",
+      "scenario": "actual-positive-and-negative-closure-evidence",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "documentation-contract-tests",
+        "current-design-alignment-tests",
+        "current-design-react-guard-tests",
+        "current-reference-catalogue-tests",
+        "source-inventory-tests",
+        "product-completion-tests",
+        "render-evidence-tests",
+        "product-completion-assessment",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C26",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    }
+  ],
+  "product_visual_checks": [
+    "product-current-design-react-tests"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/acceptance-loop-20261105/review/final-change-review.json",
+    "authors": [
+      "/root",
+      "/root/settings_arch_review"
+    ]
+  },
+  "authorization": "User explicitly prioritizes executable verification closure before further product changes and requires product gate incomplete. No product-root changes or product acceptance promotion authorized by this tooling change."
+}

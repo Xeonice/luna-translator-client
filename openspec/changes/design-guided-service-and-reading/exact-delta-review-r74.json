@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_tool_delta_pending_packet_adoption",
+  "change_id": "design-guided-service-and-reading",
+  "parent_baseline_sha256": "4bac316bd1da9da25e2e3657856b142ed6fddd9e96dc9cf3f34dadcfc8e5dc92",
+  "source_delta": [
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "d2a0b40a9f69ec99663b8da8b81a88629ef27c9f6932590a25d2174dc63c4019",
+      "after": "f7d5f8fa3d72010314865a5e431e8c3eef1d6287093a1287e4abd473af8e7e83"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "d3525598295811cdc1ea8f225968ebcb284c30d4ff3fe546cb8ab2f520c0fc31",
+      "after": "9169085bdfda960d007595b6a9930e37a71dae3e9c8ae0e3871f495fd12bf007"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "015e7e84c18b17b4f3c0533f61418cc769f4874b019aef86bd832fe5a71725af",
+      "after": "1e8c90bb25ca405badd5939739ae4e1ff5c2154f01574d10b213101e78046342"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "87dc503544bbe825358b7e91bca1aa8ab7c0f74ba2ebd43ce693cd749a0d3c63",
+      "after": "29543f9eba36ab25f0990317905dc807ba98d2392e885ee0c442d421fa339995"
+    },
+    {
+      "path": "docs/architecture/model-service-registry-design.json",
+      "before": "37a7fcc727b51ba1e45bcc07af732e8a26637ea482dbe6d38c5c49a1253935a0",
+      "after": "32d5c81aa3480a962c94fa59922a3faed9cee897ac2479430998e9d74a07a9f2"
+    },
+    {
+      "path": "docs/architecture/service-configuration-presentation.json",
+      "before": null,
+      "after": "9ee94eae5975a0891c51db50b401130779d03b410203c7f95d20092d052ae3a6"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "976f7f70cd257674b1bf4e869451165cef75595deb1dfb9704d14adda67c03d8",
+      "after": "acfd34532711a9f8067e3827becac57eda99c34d7e234a5e765a91da0d389067"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/flat-layout.css",
+      "before": null,
+      "after": "adb603b38009ca5d329696a6cca3170eeaf1f86abeef5fcbc1099148ef1a7a66"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/flat-layout.js",
+      "before": null,
+      "after": "13ad561888ed4430629d228c0c9bbd5e2ac597f38ad3623c00b68f27fd35b5ee"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/guided-catalog.js",
+      "before": null,
+      "after": "649c986b6e8fa152abecc84adf9fdf8e58aa3cf503309da0b0ae9bd22b14da33"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/guided-config.js",
+      "before": null,
+      "after": "51aee0f8b2b8df252972c91cb47c0cc5c2b016dfdd51f5032d83f7187da87c76"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+      "before": null,
+      "after": "1a8269771e23e2ecfb577e7666409947dd32ce50e135940d90b7d6e11d23ecaa"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/local-translation-design.css",
+      "before": null,
+      "after": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/local-translation-design.js",
+      "before": null,
+      "after": "0a24585c3135706d65adb73f7d693cee20712d9800cff2bc3959e7fea19a33ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/manifest.json",
+      "before": null,
+      "after": "3e1d23cc8486706ae4027d1766e0599a41c3b1eca4c06869a9a132803beb0233"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/service-picker.css",
+      "before": null,
+      "after": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/service-picker.js",
+      "before": null,
+      "after": "9ce3ca72a9690d2c5eb35fff9cd0f3e524bc10e71c92d1e19c44c507803ede48"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/settings.js",
+      "before": null,
+      "after": "92667203cc0d868361f0d2981757cbef240c0643db750deae7c79d90c964d981"
+    },
+    {
+      "path": "docs/development/guided-service-reading-tests.md",
+      "before": null,
+      "after": "a3378836328f749cd86502f93b49b85d45c1ac4c2e2f3640ec10f37960940785"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "d0b55fb82150cd1fbe0c2ad2ea89064c1f7807fc281dd4503e42846ada916dbd",
+      "after": "557dcf1302f908d2b4fe8dbd10cb894afa648c059b1c057251b40869e178cbcb"
+    },
+    {
+      "path": "docs/product/first-product-scope.md",
+      "before": "56f3444aec24486fd2548de1d6707c86e6c454b89e95045e5b31da0392b5b9cc",
+      "after": "559a5be42120c68fd5e23c23218264f06d7962461477955971a34e6377cbd89c"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "670e840a9fc6449d1e0251a42b96b3052c988a21b1366f1373b527a6855d58bb",
+      "after": "83518d6a1f5b6f6294272b2c7c1a0ac3e963cf5b70b1d56dcac7f210a8cb25d9"
+    },
+    {
+      "path": "docs/product/reading-window-session-prd.md",
+      "before": "b35ee181d2d5f02ba39c747baa5a44af110b9a70c3a29b82f15af0094666c44d",
+      "after": "64682c5d8394c09650248796e156010e9fb9b2a0af92caa5710f1ad3ba8fedf4"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/design.md",
+      "before": null,
+      "after": "129ecdba49e0e1b8e6e844e120ba27d745e2330c17868d3ebce64cd606ee9d29"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/iteration-card.md",
+      "before": null,
+      "after": "e0f413b3035d22fc72c814abc2b0039df995dec859856e0ef9cf06a76a2b4e00"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/proposal.md",
+      "before": null,
+      "after": "46583be24f9d6c5fc45584930584371296880f138ae9fe9038c82211f9ffcb8a"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/source-snapshot.json",
+      "before": null,
+      "after": "89176b2292ad20dede2778af7cbf5a9795d94452f1f25eab362076c32dadccc9"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/specs/guided-service-reading/spec.md",
+      "before": null,
+      "after": "8091dac763eda88103020d1e59cea63fd44f19fc0e2ff80fe104430ad4ec853a"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/tasks.md",
+      "before": null,
+      "after": "1c42709bcc6a48b62b76468bd1af14ef9f92b584eb0cbe64b8474d3596cb19cd"
+    },
+    {
+      "path": "openspec/changes/design-guided-service-and-reading/verification.json",
+      "before": null,
+      "after": "0cf0018c5024ccc5300ba87afca2bb6946b4ee162febc12bc6b3875907cc7c4b"
+    },
+    {
+      "path": "openspec/specs/first-product/spec.md",
+      "before": "615b8fa1ed1215f7a46d3f9730c19ca3f87e95357918420129883e55bb5b2ad5",
+      "after": "def68ce237be3365c7791e6ecc4a513912a257094431ec6e77082ab2086101bd"
+    },
+    {
+      "path": "scripts/quality/guided_service_reading.py",
+      "before": null,
+      "after": "e1a5b45581832b87e3d0ee5e562720df3c5e81af200faaccc3f1fdd54abfac1c"
+    },
+    {
+      "path": "scripts/quality/test_guided_service_reading.py",
+      "before": null,
+      "after": "f20fe6c1eb0ef0ce16a5696fbc4c39b2d405a8d3c30b452997f0d13869da4f27"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "1e32b5e2dee65af11f0a2a76d1125484b2e6fb7420baf74341aea1755464225a",
+      "after": "cc9080e0020e4a7642064498bb11d17d8332f0cbd9ce33d22ac512e58bd99fb4"
+    },
+    {
+      "path": "scripts/report/verify_guided_service_reading.cjs",
+      "before": null,
+      "after": "6a4af7af0e3479a37a5d7a21fac6dd5e667f05a932b18c684f208f5148ed3648"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/guided-design-20261030/review/docs-review.json",
+    "bytes": 8660,
+    "sha256": "84022f3508abaa028f3ab657c7f806a31c79d213870d3ed1447164d091d71ba1"
+  },
+  "code_review": {
+    "path": ".build/guided-design-20261030/review/tooling-review.json",
+    "bytes": 4932,
+    "sha256": "03e8301bfa51265c81be51eaceaa0bdc459d71bc5ca2c47438e77a2c34096cc9"
+  },
+  "source_evidence_remaps": {
+    "scope": "M15 only unchanged quote hash and derived module CSV; no status or behavior changed"
+  },
+  "ui_review": {
+    "path": ".build/guided-design-20261030/review/ui-review.json",
+    "bytes": 12014,
+    "sha256": "c162e574f96d4a1c4fbd7149c15ac294328b2f2d9a37f251486988ed41684f2a"
+  },
+  "scope": "Reading-first presentation, default collapsed supporting history/diagnostics and concrete-service required-field guidance only. Any authorized first-product target is a deterministic projection of the actual FP-table change; all other R73 sources and product/approval boundaries remain exact."
+}

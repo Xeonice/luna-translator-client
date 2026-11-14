@@ -1,0 +1,3 @@
+Chinese Wiktionary Japanese entries. Copyright the contributors of Chinese Wiktionary. Extracted via Kaikki.org / Wiktextract, snapshot 2026-10-18 based on Wikimedia dump 2026-10-01.
+Source: https://zh.wiktionary.org/ and https://kaikki.org/zhwiktionary/
+Content is redistributed under CC BY-SA 4.0. The offline SQLite format changes storage only; Chinese gloss text is retained. Per-entry source URLs and original sense IDs are retained. No endorsement by Wikimedia or Kaikki is implied.

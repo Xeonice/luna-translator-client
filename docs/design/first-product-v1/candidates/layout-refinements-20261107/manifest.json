@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "kind": "proposed-three-page-layout-refinement",
+  "status": "pending_user_review",
+  "entry": "docs/design/first-product-v1/candidates/layout-refinements-20261107/index.html",
+  "parent_target": "guided-service-reading-20261030",
+  "parent_composition": "complete-guided-history-20261031",
+  "parent_sources": {
+    "guided_entry": {
+      "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+      "sha256": "1a8269771e23e2ecfb577e7666409947dd32ce50e135940d90b7d6e11d23ecaa"
+    },
+    "history_entry": {
+      "path": "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html",
+      "sha256": "6c2cdfa3478822d8be6fed973b126cee82805b8a4a484af29e0df80155eab236"
+    },
+    "complete_approval": {
+      "path": "docs/development/design-approval-complete-20261031.json",
+      "sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc"
+    }
+  },
+  "sources": {
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/history-settings.css": {
+      "sha256": "166c73ba929f0c32d4c7c9ec26c2b23d545b0575ef40148e7bb986f56028381b",
+      "bytes": 10156
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/history.html": {
+      "sha256": "d54f2b90357d8f29ac96ed4550866b32de5188b3c11d748b8413aa34d5b37f96",
+      "bytes": 12528
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/index.html": {
+      "sha256": "52ee8eda51ae93996bb71c595ed014128628c5da353fef9382277aa550d31896",
+      "bytes": 3124
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/refinement.js": {
+      "sha256": "dc26e915ec1f86baced3da2a147817741c32db30f699ec1115842ee63503bd35",
+      "bytes": 9536
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/review.css": {
+      "sha256": "1ac523e5f4b40305898cce4024559842e0078bae6dd02561ffe945bbf5b73635",
+      "bytes": 2813
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/review.js": {
+      "sha256": "196ff29abea89b5563e2c9bbdd0306872cfd9b894155afd444e1ade966a7a8be",
+      "bytes": 2953
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/session.css": {
+      "sha256": "ecb240d4281647b3911325e15ee52781c6941d9f17352a295ff13630a8b09631",
+      "bytes": 4633
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/session.html": {
+      "sha256": "6858dd83b2a7d82fbde451da79d8d02283dbc638d2e53f04c68ba530291e6b85",
+      "bytes": 12072
+    },
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/settings.html": {
+      "sha256": "709b17917a356fbf3728151e9c2669fb44c4ceacff691ffc7046ff250e1e9b57",
+      "bytes": 12073
+    }
+  },
+  "client_viewports": {
+    "history": [
+      1040,
+      720
+    ],
+    "settings": [
+      1000,
+      720
+    ],
+    "session": [
+      1040,
+      720
+    ],
+    "narrow": [
+      760,
+      560
+    ]
+  },
+  "changes": {
+    "history": "Same column tracks and16px pane content lines for filters/list/detail; light directory action remains within session track.",
+    "settings": "Local switch row safe insets, group rhythm, wrapping; history is always-saved status; unsupported OCR identification remains separate from window preview permission.",
+    "session": "Stopped+saved object focuses source and three saved-sentence actions, one primary reconnect, no unbound placeholder; existing verified preview follows current binding independently of Hook. Empty current is not absence of saved history. Auxiliary prototype canvases visibly open/close; disabled service has an honest recovery link."
+  },
+  "approval_scope": "User requested a design correction, not acceptance of these final numeric layouts. Original61/C1/C35/tokens/approved PNGs unchanged.",
+  "runtime_package_modified": false,
+  "product_completion": "incomplete",
+  "next_stage_allowed": false
+}

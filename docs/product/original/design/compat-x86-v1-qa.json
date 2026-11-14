@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "version": "compat-x86-v1",
+  "reviewDate": "2026-10-16",
+  "reviewer": "golden_from_screens (design author visual check; independent root review pending)",
+  "scope": "editable native design and document work only",
+  "rating": "Good",
+  "visualReview": "visual_checked",
+  "designAcceptance": "not_reviewed",
+  "runtimeTests": "NOT_RUN",
+  "nativeBuild": {
+    "command": "./design/build.sh",
+    "result": "PASS",
+    "binary": "design/.build/LunaAlignedDesign.app/Contents/MacOS/LunaAlignedDesign",
+    "sha256": "b6ee7aa0fc838e64e29cdd572e16af13f0a7bcfdfe38cc3d396c1d924ec5ffd2"
+  },
+  "rendering": {
+    "command": "python3 design/capture-compat-previews.py --revision-tag compat-x86-v1-final-r3",
+    "method": "Existing owned-window native capture workflow; screencapture -l windowId writes PNG into a unique ASCII /tmp directory, Python copies identical bytes into guarded atomic publication",
+    "firstAttempt": "Unicode destination path failed; no image was registered. Locale-only retry also failed. ASCII temporary destination succeeded.",
+    "captureReport": "design/.build/ocr-capture-compat-x86-v1-final-r3-report.json"
+  },
+  "sourceHashes": {
+    "OverlaySample.swift": "2e5b09675d7f9c88aaf37227f8f9817f488b41233378a72ace5da59b92d91e23",
+    "DesignSystem.swift": "0e32edca9cc926243b335d480ade9dca4654f0507810565de07f084263245c85",
+    "CoreScreens.swift": "c83a93759b3ec9a8404537ac1fd7aa48e1d504d21846897ef4178dc30ca94c57",
+    "SettingsScreens.swift": "6811b329f12270f48f411e070238086cdbefd010a790ba981b704d5ac53ca971",
+    "OCRSourcePreview.swift": "1b8d6169658f5e4911b69555c0c0fd37b8bd772a46d94fc4947f92b2dcbc018a",
+    "OCRSelectionPreview.swift": "27f818f6ce0d5840f1d430d08d33b551e931d2bd707071352c17702641198576",
+    "CompatConnectionPreview.swift": "cd594a5df8378ffc7d6d53fb612b84a32b8bfdbc54b4e2804e619d3f0d47bb3d",
+    "main.swift": "dbf0684d00d4f63228c5c7042ed0211004ac1c7beb22d04f38fae21d01e7dde7",
+    "build.sh": "15fb6459c9bd99ac59b3f4dd2fa501c9262b5dfb2d8c522cfffd2aa1c587faf7",
+    "capture-ocr-previews.py": "8715d7d75229c05f15dfc37589de1d799335624e10c3373fe30aece9351caae3",
+    "capture-compat-previews.py": "325847a86ce63bef2bb9b509710644e972ab3fe90cd0c1720e50540f6770a693"
+  },
+  "captureCount": 8,
+  "captures": [
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "screen": 3,
+      "variant": "兼容配置",
+      "appearance": "light",
+      "compact": false,
+      "window": {
+        "height": 720,
+        "ocrStatus": "尚未开始",
+        "pid": 56231,
+        "screen": 3,
+        "variant": "兼容配置",
+        "width": 1000,
+        "windowId": 344653
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "4b99590bfb66c3f65df7161bab9e350cee433caf4684a71343f5c06601be5af9",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "screen": 4,
+      "variant": "兼容检查",
+      "appearance": "light",
+      "compact": false,
+      "window": {
+        "height": 660,
+        "ocrStatus": "尚未开始",
+        "pid": 56276,
+        "screen": 4,
+        "variant": "兼容检查",
+        "width": 840,
+        "windowId": 344657
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "34dc3b3749254d64761c1edf9336663ffb2517689ce8ed5a141ed87ab26a1431",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "screen": 4,
+      "variant": "兼容检查",
+      "appearance": "dark",
+      "compact": false,
+      "window": {
+        "height": 660,
+        "ocrStatus": "尚未开始",
+        "pid": 56310,
+        "screen": 4,
+        "variant": "兼容检查",
+        "width": 840,
+        "windowId": 344659
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "3a4a675c779393db993793a39b1df2ca457c545f5fdb29c15cca5cbc5ab2d594",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "screen": 4,
+      "variant": "兼容缺少组件",
+      "appearance": "light",
+      "compact": false,
+      "window": {
+        "height": 660,
+        "ocrStatus": "尚未开始",
+        "pid": 56364,
+        "screen": 4,
+        "variant": "兼容缺少组件",
+        "width": 840,
+        "windowId": 344661
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "f81b91304fb9de4a544f934c7505fecb60e7441eee2e812bed96b99a0727624b",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "screen": 4,
+      "variant": "兼容组合不符",
+      "appearance": "light",
+      "compact": false,
+      "window": {
+        "height": 660,
+        "ocrStatus": "尚未开始",
+        "pid": 56397,
+        "screen": 4,
+        "variant": "兼容组合不符",
+        "width": 840,
+        "windowId": 344663
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "1bd123f7f371fe602240e530a1e8ba68858c27eaaa6857582c195380e9d0ee03",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "screen": 4,
+      "variant": "兼容已取消",
+      "appearance": "light",
+      "compact": false,
+      "window": {
+        "height": 660,
+        "ocrStatus": "尚未开始",
+        "pid": 56435,
+        "screen": 4,
+        "variant": "兼容已取消",
+        "width": 840,
+        "windowId": 344665
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "ec36bae36833803264f117e930427cf8862120164263e54ff0e496202c2ea66c",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "screen": 22,
+      "variant": "兼容能力报告",
+      "appearance": "light",
+      "compact": false,
+      "window": {
+        "height": 720,
+        "ocrStatus": "尚未开始",
+        "pid": 56459,
+        "screen": 22,
+        "variant": "兼容能力报告",
+        "width": 1000,
+        "windowId": 344666
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "64e1a03bec3097ff8323bc6c7727d3be68e841034e92c5dfdbe19baf12a2d42d",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    },
+    {
+      "file": "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png",
+      "screen": 22,
+      "variant": "兼容能力报告",
+      "appearance": "dark",
+      "compact": true,
+      "window": {
+        "height": 600,
+        "ocrStatus": "尚未开始",
+        "pid": 56506,
+        "screen": 22,
+        "variant": "兼容能力报告",
+        "width": 900,
+        "windowId": 344667
+      },
+      "renderer": "actual AppKit/SwiftUI window; authored fixture contents",
+      "sha256": "6bae6b8d3461e8fd70ee81f822458603b40884b609ab3c7e0c35ab5c778605bf",
+      "review": "Viewed individually with view_image at original detail; per-stage state and recovery/export actions legible without overlap or clipping. Technical component names are collapsed under advanced diagnostics."
+    }
+  ],
+  "baselinePreservation": {
+    "existingCaptureCount": 81,
+    "allExistingCaptureSha256Match": true,
+    "acceptedBaselineCount": 60,
+    "ocrCaptureCount": 21,
+    "approvalStatus": "Original baseline acceptance and OCR extension approval fields preserved; new compatibility extension has no approval fields"
+  },
+  "higReferences": [
+    {
+      "file": ".agents/skills/apple-design/references/hig/accessibility.md",
+      "heading": "Vision",
+      "guideline": "Convey information with more than color alone."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/layout.md",
+      "heading": "Visual hierarchy",
+      "guideline": "Use progressive disclosure to make layouts cleaner and easier to interact with."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/typography.md",
+      "heading": "Ensuring legibility",
+      "guideline": "Use font sizes that most people can read easily."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/color.md",
+      "heading": "Best practices",
+      "guideline": "Avoid using the same color to mean different things."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/designing-for-macos.md",
+      "heading": "Best practices",
+      "guideline": "Let people resize, hide, show, and move your windows to fit their work style and device configuration."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/buttons.md",
+      "heading": "Content",
+      "guideline": "Ensure that each button clearly communicates its purpose."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/loading.md",
+      "heading": "Showing progress",
+      "guideline": "Clearly communicate that content is loading and how long it might take to complete."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/feedback.md",
+      "heading": "Best practices",
+      "guideline": "Consider integrating status feedback into your interface."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/writing.md",
+      "heading": "Best practices",
+      "guideline": "Write clear error messages."
+    },
+    {
+      "file": ".agents/skills/apple-design/references/hig/progress-indicators.md",
+      "heading": "Best practices",
+      "guideline": "When it’s feasible, let people halt processing."
+    }
+  ],
+  "designDecisions": {
+    "thesis": "A familiar game connection sheet explains the target and next action while automatically matching architecture behind an advanced disclosure.",
+    "tokens": "Reuse existing semantic surfaces, primary label and primary at 0.78 for secondary content; no new accent or decorative shell.",
+    "typography": "System 23pt heading, 17pt target title, 13pt body/status; Regular/Medium/Semibold.",
+    "signature": "One stable target identity and four connection stages; scope and failures stay visible instead of a generic green support badge.",
+    "motion": "No required motion or fake determinate percentage.",
+    "controls": "Native buttons/disclosure/checkboxes; cancel stays available. Full keyboard focus and VoiceOver testing remains NOT_RUN."
+  },
+  "contrastSamples": {
+    "scope": "Two representative full-coverage grayscale text colors and adjacent background within the final SCR-22 PNG identity block; not a full accessibility audit.",
+    "method": "NSBitmapImageRep.colorAt converted to sRGB; crop x=70%-90%, y=38%-45%; dominant background and full-coverage glyph colors; WCAG relative luminance",
+    "light": {
+      "foreground": "#6A6A6A",
+      "background": "#FFFFFF",
+      "ratio": 5.4088
+    },
+    "dark": {
+      "foreground": "#BFBFBF",
+      "background": "#282828",
+      "ratio": 8.0175
+    },
+    "fontPt": 13
+  },
+  "limits": [
+    "All content is authored fixture design state, not actual process detection or game capability.",
+    "The actual 900x600 report sample is visible; 200% text, auxiliary appearances, expanded diagnostics, full keyboard and VoiceOver audits remain NOT_RUN.",
+    "Runtime versions, hashes and Mac host fields are planned report data; live values were not captured.",
+    "The new x86 route is not implemented and has no positive runtime evidence.",
+    "Ever17 repaired package is not original-release acceptance evidence."
+  ],
+  "minimumWindow": {
+    "screen": "SCR-22",
+    "appearance": "dark",
+    "actualWidthPt": 900,
+    "actualHeightPt": 600,
+    "result": "PASS for default 13pt report content in actual 900x600 capture; 200% text remains NOT_RUN"
+  }
+}

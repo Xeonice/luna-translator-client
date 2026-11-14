@@ -1,0 +1,10 @@
+{
+  "kind": "user-authorized-tooling-scope/v1",
+  "instruction": "为当前项目建立 github 仓库，然后设定为公开，验证 github 的东西",
+  "repository": "Xeonice/luna-translator-client",
+  "scope_snapshot": {
+    "path": "openspec/changes/activate-public-github-gates/source-snapshot.json",
+    "sha256": "64cb4b16b9c967500118309b3cee0c0bc62cc35a73b8f0aa00af897179ff58cd"
+  },
+  "product_acceptance_promoted": false
+}

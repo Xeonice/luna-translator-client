@@ -1,0 +1,1337 @@
+{
+  "version": "aligned-v1.0",
+  "date": "2026-10-12",
+  "screenCount": 22,
+  "defaultPreviewCount": 44,
+  "additionalPreviewCount": 45,
+  "delivery": "editable_native_design_source_with_actual_window_captures",
+  "runtimeTests": "NOT_RUN",
+  "screens": [
+    {
+      "id": "SCR-01",
+      "title": "翻译浮窗",
+      "isSettings": false,
+      "layoutFamily": "readingHUD",
+      "requirements": [
+        "REQ-001",
+        "REQ-015",
+        "REQ-017",
+        "REQ-018",
+        "REQ-024",
+        "REQ-029",
+        "REQ-031",
+        "REQ-034",
+        "REQ-041",
+        "REQ-042",
+        "REQ-043",
+        "REQ-044",
+        "REQ-045",
+        "REQ-046",
+        "REQ-053"
+      ],
+      "status": "本轮 OCR 稿已视觉复核；待用户评审；客户端测试 NOT_RUN",
+      "previews": [
+        {
+          "key": "ocr-reading-light",
+          "title": "OCR 浮窗 · 浅色背景",
+          "description": "普通网页背景上显示识别原文与译文。更多菜单含保持置顶、隐藏浮窗、调整范围和停止实时 OCR；设计中的显隐快捷键为⌥⌘H，预览只在应用内响应；全局注册未验证。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-01-ocr-reading-light.png",
+          "sha256": "44e09096552410aed08d4cf6816afdcf11de34e5e7dee966062c4ec6c5173d22",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-reading-dark",
+          "title": "OCR 浮窗 · 深色背景",
+          "description": "深色网页背景上显示同一阅读 HUD。两个单色图标为暂停/继续与更多；前景对比增强。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-01-ocr-reading-dark.png",
+          "sha256": "a04d2cb9e8d26aeeaadb0723a8d28de41a1c26968d0c29288f810f1a8ae14efa",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-paused-light",
+          "title": "OCR 浮窗 · 已暂停",
+          "description": "暂停状态持续显示，当前识别原文与译文保留；继续动作明确可见。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-01-ocr-paused-light.png",
+          "sha256": "d8dd3f2faaf9e54d0075fc78fb19dc1b28c83f950fe094e02eae033e313861da",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "light",
+          "title": "基线 · 浅色",
+          "description": "同一半透明 HUD 在明亮游戏背景上。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-light.jpg",
+          "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6"
+        },
+        {
+          "key": "dark",
+          "title": "基线 · 深色",
+          "description": "同一半透明 HUD 在较暗游戏背景上。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-dark.jpg",
+          "sha256": "d47545b9a7827d9ee6931a506b02132a5ecb749f547ef47efdd83df16eec094c"
+        },
+        {
+          "key": "error",
+          "title": "服务超时",
+          "description": "在阅读 HUD 中保留已有译文与超时说明。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-error.jpg",
+          "sha256": "0a2e847afbe7addc6d822d1b3eca61ba939c4c8f4a3b4d771e510eca425f16e5"
+        },
+        {
+          "key": "large",
+          "title": "200% 字号",
+          "description": "原文32 pt、译文44 pt；操作图标和32 pt命中区域保持原尺寸。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-large.jpg",
+          "sha256": "bc0c6273b904a27d9961ef08939c7e8a0fb57789b416e51bede786ddfa64fe6a"
+        },
+        {
+          "key": "long-end",
+          "title": "长句滚动末尾",
+          "description": "实际滚动到译文末尾后，暂停和更多仍留在固定操作区。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-long-end.jpg",
+          "sha256": "a74a3dacd780500cf9ee71866a1cde5ab2278e18802987325e9af93061da95fa"
+        },
+        {
+          "key": "long",
+          "title": "200% 长句",
+          "description": "正文独立滚动；固定操作区不随正文滚动。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-long.jpg",
+          "sha256": "ac2b05086abe340328b226821715cb5dfafbbf8cf072694c40a5b6b9186cca90"
+        },
+        {
+          "key": "paused",
+          "title": "已暂停",
+          "description": "持续显示已暂停，下一步操作使用继续图标。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-01-restricted.jpg",
+          "sha256": "8598c4b1cf687a727ecb9ccb19dd14f5e00776d9c28ad31f355600a79037c269"
+        }
+      ],
+      "reviewDefault": "ocr-reading-light"
+    },
+    {
+      "id": "SCR-02",
+      "title": "游戏库",
+      "isSettings": false,
+      "layoutFamily": "librarySplit",
+      "requirements": [
+        "REQ-002",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-049"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-02-light.jpg",
+          "sha256": "4b7385e3ed21db29ca5811cbf0a7c664b61975326b1f7a72b628f8e16c436d6b"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-02-dark.jpg",
+          "sha256": "78c28dd1d22ec2e894e07a4229e9c7c1e4a0635afe09e490022058782951808b"
+        },
+        {
+          "key": "empty",
+          "title": "空游戏库",
+          "description": "保留添加入口，解释新增游戏后的用途。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-02-empty.jpg",
+          "sha256": "6e78679383a9752568c49afc0d777dc5a4a14a9dfff0aae39c0db6d2d8c6bfe9"
+        }
+      ]
+    },
+    {
+      "id": "SCR-03",
+      "title": "游戏详情",
+      "isSettings": false,
+      "layoutFamily": "gameDetailSplitForm",
+      "requirements": [
+        "REQ-005",
+        "REQ-006",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-022",
+        "REQ-025",
+        "REQ-027",
+        "REQ-028",
+        "REQ-035",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-043"
+      ],
+      "status": "Existing native visual baseline accepted; compat-x86-v1 visual_checked / not_reviewed; production runtime NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-03-light.jpg",
+          "sha256": "758c23d635269efc06e382acd1421ec6c6f83d52b7d64a2409f2635765ee0826"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-03-dark.jpg",
+          "sha256": "21e1b1ad0969cf98d6b1bd639eb09f854feed3555816f84481313ddb14d9e358"
+        },
+        {
+          "key": "compat-x86-config-light",
+          "title": "CrossOver x86 configuration",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+          "sha256": "4b99590bfb66c3f65df7161bab9e350cee433caf4684a71343f5c06601be5af9",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "SCR-04",
+      "title": "连接游戏",
+      "isSettings": false,
+      "layoutFamily": "processTableSheet",
+      "requirements": [
+        "REQ-002",
+        "REQ-003",
+        "REQ-007",
+        "REQ-010",
+        "REQ-037",
+        "REQ-043",
+        "REQ-052",
+        "REQ-055"
+      ],
+      "status": "Existing native visual baseline accepted; compat-x86-v1 visual_checked / not_reviewed; production runtime NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-04-light.jpg",
+          "sha256": "1c39e0edf1cf7cc075de69c8b9d1f2be308a8866a840286ec79582a60be861ab"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-04-dark.jpg",
+          "sha256": "47485de87ac2b19483ab9e477a565e772c456ac10bb8a0e21385d3e60608b9b3"
+        },
+        {
+          "key": "restricted",
+          "title": "连接受限",
+          "description": "保留目标与检查上下文，说明原生入口限制和替代输入入口。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-04-restricted.jpg",
+          "sha256": "c2030beac76f091fc11b34a6a693f1f1a2dda8e14dbc1c296993e7bcd7cbca28"
+        },
+        {
+          "key": "compat-x86-check-light",
+          "title": "CrossOver x86 check (light)",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+          "sha256": "34dc3b3749254d64761c1edf9336663ffb2517689ce8ed5a141ed87ab26a1431",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        },
+        {
+          "key": "compat-x86-check-dark",
+          "title": "CrossOver x86 check (dark)",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+          "sha256": "3a4a675c779393db993793a39b1df2ca457c545f5fdb29c15cca5cbc5ab2d594",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        },
+        {
+          "key": "compat-x86-missing-light",
+          "title": "Missing 32-bit components",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+          "sha256": "f81b91304fb9de4a544f934c7505fecb60e7441eee2e812bed96b99a0727624b",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        },
+        {
+          "key": "compat-x86-mismatch-light",
+          "title": "Wrong architecture combination",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+          "sha256": "1bd123f7f371fe602240e530a1e8ba68858c27eaaa6857582c195380e9d0ee03",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        },
+        {
+          "key": "compat-x86-cancelled-light",
+          "title": "Cancelled connection",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+          "sha256": "ec36bae36833803264f117e930427cf8862120164263e54ff0e496202c2ea66c",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        }
+      ]
+    },
+    {
+      "id": "SCR-05",
+      "title": "选择文本",
+      "isSettings": false,
+      "layoutFamily": "streamTableSplit",
+      "requirements": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-006",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-025",
+        "REQ-035",
+        "REQ-055"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-05-light.jpg",
+          "sha256": "3df8cb3f3489118497c5d4a6d42c19c795628e187be0ad07a1c6eb4e6ad1410c"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-05-dark.jpg",
+          "sha256": "2bc924d3f0609164bfd4d759607da8e333cc60375c9cc1437463328eaa86429d"
+        },
+        {
+          "key": "empty",
+          "title": "无候选文本",
+          "description": "隐藏选定文本和规则，不允许保存；重新检测保持等待，不造出成功结果。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-05-empty.jpg",
+          "sha256": "2769455efab7a86bb4d5faab0fecfe1b24cc468d41809f6d18a1e550bd190920"
+        }
+      ]
+    },
+    {
+      "id": "SCR-06",
+      "title": "实时 OCR",
+      "isSettings": false,
+      "layoutFamily": "ocrRegionOverlay",
+      "requirements": [
+        "REQ-011",
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015",
+        "REQ-016",
+        "REQ-043"
+      ],
+      "status": "本轮6张屏幕选区视觉已获用户确认；运行测试 NOT_RUN",
+      "previews": [
+        {
+          "key": "ocr-selection-idle-light",
+          "title": "快捷键唤起 · 准星",
+          "file": "previews/SCR-06-ocr-selection-idle-light.png",
+          "description": "在当前屏幕上唤起轻量选择层；十字准星与 Esc 取消可发现，无需进入主窗口。 本地原生设计示例；桌面为自绘背景，未执行真实屏幕捕获、OCR、翻译或全局快捷键注册。",
+          "sha256": "fd5f9491ffb5ec5540a68f19c737b0cacdbf1d9dfb4594c33139e94ad78a2737",
+          "revision": "ocr-selection-v2",
+          "designAcceptance": "accepted",
+          "visualReview": "visual_checked",
+          "runtimeTests": "NOT_RUN",
+          "designAcceptedAt": "2026-10-13"
+        },
+        {
+          "key": "ocr-selection-dragging-light",
+          "title": "屏幕拖框 · 松手开始",
+          "file": "previews/SCR-06-ocr-selection-dragging-light.png",
+          "description": "矩形外暗化、内保留原画，显示十字准星、白色边框与 pt 尺寸；新建范围松手即开始。 本地原生设计示例；桌面为自绘背景，未执行真实屏幕捕获、OCR、翻译或全局快捷键注册。",
+          "sha256": "757582e37626a6236415931993ea1991aea69f1b750726ce301a4efa5e973143",
+          "revision": "ocr-selection-v2",
+          "designAcceptance": "accepted",
+          "visualReview": "visual_checked",
+          "runtimeTests": "NOT_RUN",
+          "designAcceptedAt": "2026-10-13"
+        },
+        {
+          "key": "ocr-selection-adjusting-light",
+          "title": "调整已有范围",
+          "file": "previews/SCR-06-ocr-selection-adjusting-light.png",
+          "description": "仅调整已有任务时出现 Return 应用与 Esc 取消，恢复原运行或暂停状态；工具条不压住所选文字。 本地原生设计示例；桌面为自绘背景，未执行真实屏幕捕获、OCR、翻译或全局快捷键注册。",
+          "sha256": "b30b50a8874a6cc70c9fcc87b40bc02eb846cbb776e31ad92028ca9a545bb5dc",
+          "revision": "ocr-selection-v2",
+          "designAcceptance": "accepted",
+          "visualReview": "visual_checked",
+          "runtimeTests": "NOT_RUN",
+          "designAcceptedAt": "2026-10-13"
+        },
+        {
+          "key": "ocr-selection-reading-light",
+          "title": "松手后 · 实时译文浮窗",
+          "file": "previews/SCR-06-ocr-selection-reading-light.png",
+          "description": "选择遮罩撤去，识别原文与译文进入常驻浮窗；浮窗按选区避让，也可拖动微调。 本地原生设计示例；桌面为自绘背景，未执行真实屏幕捕获、OCR、翻译或全局快捷键注册。",
+          "sha256": "ec4a73a337e1dfccc5c1d813ca9ee189dce026b48bbcfabc4e25995555a5760d",
+          "revision": "ocr-selection-v2",
+          "designAcceptance": "accepted",
+          "visualReview": "visual_checked",
+          "runtimeTests": "NOT_RUN",
+          "designAcceptedAt": "2026-10-13"
+        },
+        {
+          "key": "ocr-task-light",
+          "title": "任务管理 · 浅色",
+          "file": "previews/SCR-06-ocr-task-light.png",
+          "description": "任务页负责查看、暂停、停止、配置和恢复；缩略图只读，框选或调区跳到屏幕选择层。 本地原生设计示例；桌面为自绘背景，未执行真实屏幕捕获、OCR、翻译或全局快捷键注册。",
+          "sha256": "9b371a231be6655e44896b7e2ef38cf8492f8fcf023d895e3362e81e010f00f5",
+          "revision": "ocr-selection-v2",
+          "designAcceptance": "accepted",
+          "visualReview": "visual_checked",
+          "runtimeTests": "NOT_RUN",
+          "designAcceptedAt": "2026-10-13"
+        },
+        {
+          "key": "ocr-task-dark",
+          "title": "任务管理 · 深色",
+          "file": "previews/SCR-06-ocr-task-dark.png",
+          "description": "同一任务页的深色外观；主要入口为屏幕框选，应用窗口绑定保留为次级方式。 本地原生设计示例；桌面为自绘背景，未执行真实屏幕捕获、OCR、翻译或全局快捷键注册。",
+          "sha256": "f8955ffcbe977c4d89f39a5422bc6be0a3615cbde0d8faaec50c937b4a719b4a",
+          "revision": "ocr-selection-v2",
+          "designAcceptance": "accepted",
+          "visualReview": "visual_checked",
+          "runtimeTests": "NOT_RUN",
+          "designAcceptedAt": "2026-10-13"
+        },
+        {
+          "key": "ocr-window-light",
+          "title": "上轮 · 窗口范围 · 浅色",
+          "description": "选择普通应用窗口并指定字幕范围，开始后将原文与译文送至常驻浮窗。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-window-light.png",
+          "sha256": "3f230e4cf7ee3e14d2316df133f9bfbb63af2989b7bdab0799b0855d3cca3823",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-window-dark",
+          "title": "上轮 · 窗口范围 · 深色",
+          "description": "同一窗口范围任务的深色外观。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-window-dark.png",
+          "sha256": "49e0a7accbdb607a63869c4982f34bfb97bc07ab2d038efb99a15ac09a0cf0a9",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-screen-light",
+          "title": "上轮 · 屏幕框选",
+          "description": "屏幕区域固定在所选显示器，明确区别于随应用窗口移动的范围。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-screen-light.png",
+          "sha256": "502e934671e1a4864ec86b9851fb1f957227c759bd158b3e0a43167548c7d174",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-running-light",
+          "title": "上轮 · 实时识别中",
+          "description": "顶部固定暂停、停止和查看浮窗；隐藏浮窗不停止采集。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-running-light.png",
+          "sha256": "82a4ef40c903515e80f554b64cf44cbdbe34646e0b1dc568bb28ebeeff565f3f",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-paused-light",
+          "title": "上轮 · 识别已暂停",
+          "description": "持续显示已暂停；继续从当前画面读取，保留当前原文与译文。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-paused-light.png",
+          "sha256": "1d47aff55e30f7d371f0b0169a2dbe7ed2aee83d66a3cd4868e2c9fbdd23f16f",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-editing-light",
+          "title": "上轮 · 调整范围",
+          "description": "拖动位置或尺寸；精确调整菜单支持键盘，取消保留原范围，确认后应用。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-editing-light.png",
+          "sha256": "ee71c00bca6409d5ff630c472f6f3d254cc9344d7d59b59adb88386785d9dbb4",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-permission-light",
+          "title": "上轮 · 捕获权限未授予",
+          "description": "说明屏幕录制权限用途，保留范围，提供系统设置和重新检查入口。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-permission-light.png",
+          "sha256": "faef7768a41a42ce5842f45d1a1803b44880c7058ca9cc19be1385a7b1d8b9c9",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-target-missing-light",
+          "title": "上轮 · 目标窗口不可用",
+          "description": "目标不可用时保留范围与语言；提供重选窗口入口，不改抓其他应用。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-target-missing-light.png",
+          "sha256": "c7ab2b3812d20700d92a0ea758ed56881b327870f75e5fa09d3eb863a5613e0d",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-empty-light",
+          "title": "上轮 · 尚无识别范围",
+          "description": "邀请框选屏幕或选择普通应用窗口；设置范围前不能启动。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-empty-light.png",
+          "sha256": "c5e54197aad75d5e8ee615d688fa55590517b6d64b5df03ddc98902c04a4579f",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-compact-light",
+          "title": "上轮 · 最小窗口",
+          "description": "900×600pt；开始/暂停/停止和查看浮窗位于固定顶部，次级设置可滚动。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-06-ocr-compact-light.png",
+          "sha256": "b2d2ff82b5d21c07deea651119d1dfd61d6a085dab92aed579c97bb64f56dc85",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "light",
+          "title": "基线 · 浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-06-light.jpg",
+          "sha256": "fcf82036bd77250d6d3ee3352f3efa0d7abc91d944d5f93b24fd0d3c62db66e2"
+        },
+        {
+          "key": "dark",
+          "title": "基线 · 深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-06-dark.jpg",
+          "sha256": "fb84d096c3b92b4b924ca1eeea072b2a5d3f3370bc31a51892dbe960d6d4e45d"
+        }
+      ],
+      "reviewDefault": "ocr-selection-idle-light"
+    },
+    {
+      "id": "SCR-07",
+      "title": "编辑与文件翻译",
+      "isSettings": false,
+      "layoutFamily": "textFileSplit",
+      "requirements": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-024",
+        "REQ-046"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-07-light.jpg",
+          "sha256": "1e61765258b944d5b2290c7d8abd13cbf92e64daacf65698f9d6ba90eb08714e"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-07-dark.jpg",
+          "sha256": "7ee931736e9c935806e6b9880dcd3fe84374de373804ce7ca0e5096d50ee27dd"
+        },
+        {
+          "key": "busy",
+          "title": "文件任务进行中",
+          "description": "当前项进度与等待项分别显示，取消任务操作保持可见。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-07-busy.jpg",
+          "sha256": "e4218b6ffded93a4fb271428e363fa3721cab71107a9892e6416b1cfdee36031"
+        },
+        {
+          "key": "error",
+          "title": "文件任务失败",
+          "description": "表格逐项呈现格式错误，保留已完成项目和固定重试入口。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-07-error.jpg",
+          "sha256": "6a3ce079873a51cc74214e3cd43e17a6447d826d064a4e71c635187b5395260d"
+        }
+      ]
+    },
+    {
+      "id": "SCR-08",
+      "title": "翻译历史",
+      "isSettings": false,
+      "layoutFamily": "historySplit",
+      "requirements": [
+        "REQ-019",
+        "REQ-024",
+        "REQ-027",
+        "REQ-031",
+        "REQ-045",
+        "REQ-050",
+        "REQ-053"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-08-light.jpg",
+          "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-08-dark.jpg",
+          "sha256": "3d18f85c57ebd11d3a83fe8062f204c367dd99e71b982ddfb3e504a26f23d12b"
+        }
+      ]
+    },
+    {
+      "id": "SCR-09",
+      "title": "查词与注音",
+      "isSettings": false,
+      "layoutFamily": "dictionarySplit",
+      "requirements": [
+        "REQ-018",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-032",
+        "REQ-034",
+        "REQ-053"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-09-light.jpg",
+          "sha256": "ee7505babe5bcfce9560c24a62d6e964b78e94f6752e929a7687a0aea630ea22"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-09-dark.jpg",
+          "sha256": "ac6e807ffd633db498f1f5df02cf5699d94eadaf7581627bb22c721f53dedb03"
+        }
+      ]
+    },
+    {
+      "id": "SCR-10",
+      "title": "Anki 卡片",
+      "isSettings": false,
+      "layoutFamily": "ankiFormPreview",
+      "requirements": [
+        "REQ-031",
+        "REQ-032",
+        "REQ-033",
+        "REQ-043",
+        "REQ-054"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-10-light.jpg",
+          "sha256": "a0ae43ddbe40b54285b270fce1e79862b55171c5c54344b16354c35c2c66dd83"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-10-dark.jpg",
+          "sha256": "75d562eec878c25bf2fbcbe209846637f5579eb10524d2f02cd0a0f4c2d8b681"
+        },
+        {
+          "key": "duplicate",
+          "title": "重复卡片",
+          "description": "重复提示不自动覆盖已有卡片，保留草稿和卡片预览。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-10-error.jpg",
+          "sha256": "02aa8a2e6da5e5d7fa84c41723f30aac3de21422b6e44201528f470163def225"
+        }
+      ]
+    },
+    {
+      "id": "SCR-11",
+      "title": "备忘录",
+      "isSettings": false,
+      "layoutFamily": "noteEditorSplit",
+      "requirements": [
+        "REQ-040",
+        "REQ-049",
+        "REQ-050"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-11-light.jpg",
+          "sha256": "88f890ba5234965669547bc3a3b52309066ac2845bd0a3eed7befe126191df50"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-11-dark.jpg",
+          "sha256": "de948fa34b8d93a9017c45bc31b179344f9b9af50953d20ea7632ec0dd1ba2cc"
+        }
+      ]
+    },
+    {
+      "id": "SCR-12",
+      "title": "通用",
+      "isSettings": true,
+      "layoutFamily": "settingsForm",
+      "requirements": [
+        "REQ-001",
+        "REQ-029",
+        "REQ-049",
+        "REQ-053",
+        "REQ-054",
+        "REQ-056"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-12-light.jpg",
+          "sha256": "94cfbd61bc41a778008f0b111b68953380665d032e359cc29ec1011456e1465c"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-12-dark.jpg",
+          "sha256": "4e68e90c3f155df6ba864e897602dad7d6d8d0899c1600066ddbfd4481bd5ce9"
+        }
+      ]
+    },
+    {
+      "id": "SCR-13",
+      "title": "输入与 HOOK",
+      "isSettings": true,
+      "layoutFamily": "settingsForm",
+      "requirements": [
+        "REQ-001",
+        "REQ-003",
+        "REQ-005",
+        "REQ-006",
+        "REQ-007",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-017",
+        "REQ-018",
+        "REQ-036",
+        "REQ-048",
+        "REQ-055"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-13-light.jpg",
+          "sha256": "778ab77504e5775bbe711e8271272dba6479d20f9e3e1372fc5d2c7200d317de"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-13-dark.jpg",
+          "sha256": "67fb3192c67ecb75f1736c55133737f52cab19750ebb9e4b1c1991e0ec21611c"
+        }
+      ]
+    },
+    {
+      "id": "SCR-14",
+      "title": "OCR 引擎",
+      "isSettings": true,
+      "layoutFamily": "settingsForm",
+      "requirements": [
+        "REQ-011",
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015",
+        "REQ-016",
+        "REQ-054"
+      ],
+      "status": "本轮 OCR 稿已视觉复核；待用户评审；客户端测试 NOT_RUN",
+      "previews": [
+        {
+          "key": "ocr-settings-light",
+          "title": "OCR 设置 · 浅色",
+          "description": "引擎、识别语言和持续识别策略使用原生 Form；任务操作进入实时 OCR 工作页。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-14-ocr-settings-light.png",
+          "sha256": "385afa857f399da497f2ccba4283f9882bb0b39339b3a355e520ba9dce3a1c58",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "ocr-settings-dark",
+          "title": "OCR 设置 · 深色",
+          "description": "同一 OCR 设置的深色外观；高级触发参数按需展开，OCR 与翻译配置分开。 本地原生设计示例；识别、译文、权限及窗口状态为演示数据，未执行真实 OCR/翻译。",
+          "file": "previews/SCR-14-ocr-settings-dark.png",
+          "sha256": "7f4f5a3e4a26240bba8a7350438aa076672f63fc76eea857b2e7e1b37012255d",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN",
+          "visualReview": "visual_checked",
+          "revision": "ocr-source-v1"
+        },
+        {
+          "key": "light",
+          "title": "基线 · 浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-14-light.jpg",
+          "sha256": "ef5957dbb82f5b32e99c6692ef532a1b31ddb248e01bd56c7d04219a2faf2028"
+        },
+        {
+          "key": "dark",
+          "title": "基线 · 深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。 PRD 1.1 已确认视觉基线，供追溯。独立实时 OCR 以本轮新稿为准。",
+          "file": "previews/SCR-14-dark.jpg",
+          "sha256": "f3e42dfc2a5b452ee198057bae8a46d0922bf8f6247e0ec026c4f15cc1cc924d"
+        }
+      ],
+      "reviewDefault": "ocr-settings-light"
+    },
+    {
+      "id": "SCR-15",
+      "title": "翻译服务",
+      "isSettings": true,
+      "layoutFamily": "settingsServicesSplitForm",
+      "requirements": [
+        "REQ-020",
+        "REQ-021",
+        "REQ-022",
+        "REQ-023",
+        "REQ-024",
+        "REQ-027",
+        "REQ-054",
+        "REQ-055"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-15-light.jpg",
+          "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-15-dark.jpg",
+          "sha256": "f39fdaf82b3c368b5aa73173547ec0f6ebf8abcc5b624fc90c3cbb7783b0379d"
+        },
+        {
+          "key": "compact",
+          "title": "900×600 pt",
+          "description": "最小窗口保留全部10个设置类别；后续参数可以原生滚动查看。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-15-compact.jpg",
+          "sha256": "8abf50e37ea97e3d2b5fa5b2f4e9c55f45e9e5e3accae7a67a5edc3e114ec310"
+        },
+        {
+          "key": "error",
+          "title": "连接超时",
+          "description": "字段保留，状态由图标和文字说明，同时提供重新测试入口。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-15-error.jpg",
+          "sha256": "8285226218c3229a6f49eb24e72792d97c218ecc041fe08b6696797827288d66"
+        }
+      ]
+    },
+    {
+      "id": "SCR-16",
+      "title": "文本处理",
+      "isSettings": true,
+      "layoutFamily": "pipelineTableSplit",
+      "requirements": [
+        "REQ-009",
+        "REQ-022",
+        "REQ-025",
+        "REQ-026",
+        "REQ-027",
+        "REQ-028",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-16-light.jpg",
+          "sha256": "47be93bf25c2c4904b1bf4802c93e4ec4b9874c6cc8e3709b323cdb373706a5f"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-16-dark.jpg",
+          "sha256": "6eca2bb0d039e1898041b87fae52f0e62aea63c3b7dab7245ddaad1191a4f79b"
+        }
+      ]
+    },
+    {
+      "id": "SCR-17",
+      "title": "语音",
+      "isSettings": true,
+      "layoutFamily": "settingsForm",
+      "requirements": [
+        "REQ-028",
+        "REQ-034",
+        "REQ-035",
+        "REQ-036",
+        "REQ-053",
+        "REQ-054",
+        "REQ-055"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-17-light.jpg",
+          "sha256": "30f578672524d8ad2fcdb0e2e079173d98afd46e4ede0491a723fecd92d781ee"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-17-dark.jpg",
+          "sha256": "c93dc483e0ad9eb51d3d2d06b4b92395ed592caed7f28c6b5e966627dc2f7252"
+        }
+      ]
+    },
+    {
+      "id": "SCR-18",
+      "title": "显示与快捷键",
+      "isSettings": true,
+      "layoutFamily": "settingsForm",
+      "requirements": [
+        "REQ-014",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-041",
+        "REQ-042",
+        "REQ-043",
+        "REQ-044",
+        "REQ-046",
+        "REQ-053"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-18-light.jpg",
+          "sha256": "f2d848b5f927dd57872a2f457261069f45f7205199becadb8bb032c7de58008b"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-18-dark.jpg",
+          "sha256": "12bffc67bed44d5ecfd3106a7f516628607791761c26e5dd826bbd2a21d25cfc"
+        },
+        {
+          "key": "error",
+          "title": "快捷键冲突",
+          "description": "冲突说明可见，保留菜单栏恢复入口。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-18-error.jpg",
+          "sha256": "ddbe64faf06dbfd2502096ac1b1ec227a068b6d3edd13ae56e148eeb12a65aca"
+        }
+      ]
+    },
+    {
+      "id": "SCR-19",
+      "title": "网络服务",
+      "isSettings": true,
+      "layoutFamily": "settingsForm",
+      "requirements": [
+        "REQ-033",
+        "REQ-047",
+        "REQ-048",
+        "REQ-054"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-19-light.jpg",
+          "sha256": "1518b84002e399f346272b41dbb7385c59235c6ae66f93908dfd4462b3615110"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-19-dark.jpg",
+          "sha256": "901d2aef71aef1a03f14a946ca06c5dffe49b220b5e89c7700c688a6a7a63c8e"
+        }
+      ]
+    },
+    {
+      "id": "SCR-20",
+      "title": "配置与数据",
+      "isSettings": true,
+      "layoutFamily": "profileMigrationSplitForm",
+      "requirements": [
+        "REQ-049",
+        "REQ-050",
+        "REQ-051",
+        "REQ-054",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-20-light.jpg",
+          "sha256": "027ad4702f0a8c97f2dccf78afe26ce9a4da1765425d226f61fcb6022e4acad1"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-20-dark.jpg",
+          "sha256": "4d544fab92bd8acc732f363f3ea89715e48003e0059895577749b57e72eee933"
+        },
+        {
+          "key": "error",
+          "title": "迁移预检冲突",
+          "description": "导入前说明保留、合并或新建，不宣称实际迁移完成。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-20-error.jpg",
+          "sha256": "561bfcffa2ef53958499cf11add734c7a53859ae60671c054e78986fb5753aa6"
+        }
+      ]
+    },
+    {
+      "id": "SCR-21",
+      "title": "更新与诊断",
+      "isSettings": true,
+      "layoutFamily": "diagnosticTableSplit",
+      "requirements": [
+        "REQ-002",
+        "REQ-007",
+        "REQ-016",
+        "REQ-020",
+        "REQ-023",
+        "REQ-026",
+        "REQ-029",
+        "REQ-032",
+        "REQ-033",
+        "REQ-036",
+        "REQ-050",
+        "REQ-051",
+        "REQ-052",
+        "REQ-054",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "status": "浅深色默认画面已视觉检查；客户端测试NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-21-light.jpg",
+          "sha256": "0dbe7c637aea3814cef19e1a640b22eaa3c5f2511be0f5e9375a077427f123dc"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-21-dark.jpg",
+          "sha256": "5a72dc8588835d3b43db34a17e753aaecf7945fec8dffad94bbfe1c8d652ae84"
+        }
+      ]
+    },
+    {
+      "id": "SCR-22",
+      "title": "原生游戏兼容性",
+      "isSettings": false,
+      "layoutFamily": "capabilityTableSplit",
+      "requirements": [
+        "REQ-002",
+        "REQ-003",
+        "REQ-007",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-044",
+        "REQ-052",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "status": "Existing native visual baseline accepted; compat-x86-v1 visual_checked / not_reviewed; production runtime NOT_RUN",
+      "previews": [
+        {
+          "key": "light",
+          "title": "浅色",
+          "description": "浅色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-22-light.jpg",
+          "sha256": "6f24ba51893b13b7b8bc080de577ed6d70e7c21ec55f3a780315799aa6a5f6e8"
+        },
+        {
+          "key": "dark",
+          "title": "深色",
+          "description": "深色原生默认画面；较长内容继续位于原生滚动区。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-22-dark.jpg",
+          "sha256": "8ecd798b337781063471243b7689f150271afa25a3614b1c9783f649a53a3c65"
+        },
+        {
+          "key": "restricted",
+          "title": "原生目标受限",
+          "description": "系统限制独立说明，连接、取文、内嵌和协议夹具证据不混同。 数据与动作属于本地设计预览。",
+          "file": "previews/SCR-22-restricted.jpg",
+          "sha256": "70a2df8412059a18bfe6a19c363600be720fd8ecf93f895b0aee6d2881ebba28"
+        },
+        {
+          "key": "compat-x86-report-light",
+          "title": "Independent capability report (light)",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+          "sha256": "64e1a03bec3097ff8323bc6c7727d3be68e841034e92c5dfdbe19baf12a2d42d",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        },
+        {
+          "key": "compat-x86-report-dark",
+          "title": "Independent capability report (dark, compact)",
+          "description": "Authored memo01 x86 design example. Native preview only; no game connection, text extraction or compatibility PASS. New visual not reviewed by user.",
+          "file": "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png",
+          "sha256": "6bae6b8d3461e8fd70ee81f822458603b40884b609ab3c7e0c35ab5c778605bf",
+          "revision": "compat-x86-v1",
+          "designAcceptance": "not_reviewed",
+          "runtimeTests": "NOT_RUN"
+        }
+      ]
+    }
+  ],
+  "designAcceptance": "accepted",
+  "designAcceptedAt": "2026-10-13",
+  "prdVersion": "1.1",
+  "currentPrdVersion": "1.2",
+  "acceptedVisualPrdVersion": "1.1",
+  "designAcceptanceScope": "aligned-v1 existing 60 captures plus separately recorded six ocr-selection-v2 visual captures; source-v1 and compat_windows not accepted",
+  "compatDesignExtension": {
+    "version": "compat-x86-v1",
+    "date": "2026-10-16",
+    "executionEnvironment": "compat_windows",
+    "prdVersion": "1.2",
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "not_reviewed",
+    "runtimeTests": "NOT_RUN",
+    "screens": [
+      "SCR-03",
+      "SCR-04",
+      "SCR-22"
+    ],
+    "captures": [
+      "previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    "captureCount": 8,
+    "primaryFlow": "Select game and bottle; automatically route x86/x64 target components to the x64 receiver; report launch, component readiness, connection, extraction, HUD and embedding independently",
+    "renderer": "actual AppKit/SwiftUI window capture of authored fixture data; ASCII temporary output copied unchanged into guarded publication",
+    "sourceHashes": {
+      "OverlaySample.swift": "2e5b09675d7f9c88aaf37227f8f9817f488b41233378a72ace5da59b92d91e23",
+      "DesignSystem.swift": "0e32edca9cc926243b335d480ade9dca4654f0507810565de07f084263245c85",
+      "CoreScreens.swift": "c83a93759b3ec9a8404537ac1fd7aa48e1d504d21846897ef4178dc30ca94c57",
+      "SettingsScreens.swift": "6811b329f12270f48f411e070238086cdbefd010a790ba981b704d5ac53ca971",
+      "OCRSourcePreview.swift": "1b8d6169658f5e4911b69555c0c0fd37b8bd772a46d94fc4947f92b2dcbc018a",
+      "OCRSelectionPreview.swift": "27f818f6ce0d5840f1d430d08d33b551e931d2bd707071352c17702641198576",
+      "CompatConnectionPreview.swift": "cd594a5df8378ffc7d6d53fb612b84a32b8bfdbc54b4e2804e619d3f0d47bb3d",
+      "main.swift": "dbf0684d00d4f63228c5c7042ed0211004ac1c7beb22d04f38fae21d01e7dde7",
+      "build.sh": "15fb6459c9bd99ac59b3f4dd2fa501c9262b5dfb2d8c522cfffd2aa1c587faf7",
+      "capture-ocr-previews.py": "8715d7d75229c05f15dfc37589de1d799335624e10c3373fe30aece9351caae3",
+      "capture-compat-previews.py": "325847a86ce63bef2bb9b509710644e972ab3fe90cd0c1720e50540f6770a693"
+    },
+    "exampleTarget": "memo01/Game.exe PE32 I386; design fixture only; no real-game compatibility result",
+    "notCaptured": [
+      "unresolved bottle confirmation",
+      "resource repair progress",
+      "injection-stage cancellation and unknown cleanup detail",
+      "target exit",
+      "advanced disclosure expanded",
+      "200% text and full keyboard/VoiceOver audit"
+    ]
+  },
+  "ocrSourceDesignExtension": {
+    "version": "ocr-source-v1",
+    "date": "2026-10-13",
+    "prdVersion": "1.2",
+    "userStory": "US-10",
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "not_reviewed",
+    "screens": [
+      "SCR-01",
+      "SCR-06",
+      "SCR-14"
+    ],
+    "captures": [
+      "previews/SCR-01-ocr-reading-light.png",
+      "previews/SCR-01-ocr-reading-dark.png",
+      "previews/SCR-01-ocr-paused-light.png",
+      "previews/SCR-06-ocr-window-light.png",
+      "previews/SCR-06-ocr-window-dark.png",
+      "previews/SCR-06-ocr-screen-light.png",
+      "previews/SCR-06-ocr-running-light.png",
+      "previews/SCR-06-ocr-paused-light.png",
+      "previews/SCR-06-ocr-editing-light.png",
+      "previews/SCR-06-ocr-permission-light.png",
+      "previews/SCR-06-ocr-target-missing-light.png",
+      "previews/SCR-06-ocr-empty-light.png",
+      "previews/SCR-06-ocr-compact-light.png",
+      "previews/SCR-14-ocr-settings-light.png",
+      "previews/SCR-14-ocr-settings-dark.png"
+    ],
+    "captureCount": 15,
+    "renderer": "actual AppKit/SwiftUI native window captures of authored fixture content",
+    "workflow": "ordinary application window or screen rectangle → continuous OCR → original and translation in resident HUD",
+    "runtimeTests": "NOT_RUN",
+    "notCaptured": [
+      "multiple independent regions",
+      "online OCR credentials and upload disclosure",
+      "image stability / input-event detailed settings",
+      "recognition/translation in-flight and failure variants",
+      "in-place translation",
+      "HUD more menu open, hidden/restored, 200% OCR text",
+      "multiple displays, fullscreen/Spaces, minimized/occluded windows"
+    ],
+    "rating": "Good",
+    "reviewScope": "coordinator inspected actual native captures and source; no production-runtime or user acceptance inferred",
+    "reviewDate": "2026-10-13",
+    "revisionStatus": "previous draft; screen selection superseded by ocr-selection-v2"
+  },
+  "updatedAt": "2026-10-16",
+  "currentOcrDesignRevision": "ocr-selection-v2",
+  "ocrSelectionDesignExtension": {
+    "version": "ocr-selection-v2",
+    "date": "2026-10-13",
+    "prdVersion": "1.2",
+    "userStory": "US-10",
+    "screens": [
+      "SCR-06"
+    ],
+    "captures": [
+      "previews/SCR-06-ocr-selection-idle-light.png",
+      "previews/SCR-06-ocr-selection-dragging-light.png",
+      "previews/SCR-06-ocr-selection-adjusting-light.png",
+      "previews/SCR-06-ocr-selection-reading-light.png",
+      "previews/SCR-06-ocr-task-light.png",
+      "previews/SCR-06-ocr-task-dark.png"
+    ],
+    "captureCount": 6,
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "accepted",
+    "runtimeTests": "NOT_RUN",
+    "primaryFlow": "shortcut → display selection layer → rectangle drag → release starts OCR and translation in resident HUD",
+    "secondaryFlow": "existing-range edit → Return applies / Esc restores previous region, source and run state",
+    "units": "pt in authored design scene; production pixel mapping by display scale/DPI remains unverified",
+    "renderer": "actual AppKit/SwiftUI design window captures; self-authored desktop artwork",
+    "reviewScope": "visual and source review only; no user acceptance or production runtime inferred",
+    "notExecuted": [
+      "production global shortcut / display overlays / foreground focus restoration",
+      "real screen capture, OCR and translation",
+      "all display sizes/DPI/Spaces/fullscreen cases",
+      "full keyboard and VoiceOver audit",
+      "200% text and auxiliary appearances"
+    ],
+    "designAcceptedAt": "2026-10-13",
+    "designAcceptanceScope": "visual design of the six ocr-selection-v2 captures only",
+    "approvalSource": "user feedback in current session",
+    "approvalQuote": "目前设计上看着没问题了",
+    "approvedCaptures": [
+      "previews/SCR-06-ocr-selection-idle-light.png",
+      "previews/SCR-06-ocr-selection-dragging-light.png",
+      "previews/SCR-06-ocr-selection-adjusting-light.png",
+      "previews/SCR-06-ocr-selection-reading-light.png",
+      "previews/SCR-06-ocr-task-light.png",
+      "previews/SCR-06-ocr-task-dark.png"
+    ],
+    "approvedCaptureHashes": {
+      "previews/SCR-06-ocr-selection-idle-light.png": "fd5f9491ffb5ec5540a68f19c737b0cacdbf1d9dfb4594c33139e94ad78a2737",
+      "previews/SCR-06-ocr-selection-dragging-light.png": "757582e37626a6236415931993ea1991aea69f1b750726ce301a4efa5e973143",
+      "previews/SCR-06-ocr-selection-adjusting-light.png": "b30b50a8874a6cc70c9fcc87b40bc02eb846cbb776e31ad92028ca9a545bb5dc",
+      "previews/SCR-06-ocr-selection-reading-light.png": "ec4a73a337e1dfccc5c1d813ca9ee189dce026b48bbcfabc4e25995555a5760d",
+      "previews/SCR-06-ocr-task-light.png": "9b371a231be6655e44896b7e2ef38cf8492f8fcf023d895e3362e81e010f00f5",
+      "previews/SCR-06-ocr-task-dark.png": "f8955ffcbe977c4d89f39a5422bc6be0a3615cbde0d8faaec50c937b4a719b4a"
+    }
+  },
+  "currentCompatDesignRevision": "compat-x86-v1"
+}

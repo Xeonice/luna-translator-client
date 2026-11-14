@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_tool_delta_pending_packet_adoption",
+  "change_id": "align-client-plan-and-release-coverage",
+  "parent_baseline_sha256": "f9e561d0f1b78f4414f519d098693172fd69d3a940f5d2dfeb8c4dc377d45331",
+  "source_delta": [
+    {
+      "path": "docs/architecture/client-rebuild-architecture.md",
+      "before": "7c697f714961a25e7702581bc94f1eec5e4e028f308760e643549083828e6472",
+      "after": "0ecdf164cf00f9b9d1440e4a8883102ad500550ce2f74484c7f25e5d6a125a73"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "f7d5f8fa3d72010314865a5e431e8c3eef1d6287093a1287e4abd473af8e7e83",
+      "after": "fff5b01bebc06f984b2e44394346fe758a7123a9f560a2abd4cc5a5402b452ba"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "9169085bdfda960d007595b6a9930e37a71dae3e9c8ae0e3871f495fd12bf007",
+      "after": "ac0364b81604add670d35b0207c7e4ac516dc65623a9f797e1b83ff074cd5ddb"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "1e8c90bb25ca405badd5939739ae4e1ff5c2154f01574d10b213101e78046342",
+      "after": "7eb114eb45c658515d0dd29f5893bc1691d702ac1f2358cfd9db96f4fab6f563"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "29543f9eba36ab25f0990317905dc807ba98d2392e885ee0c442d421fa339995",
+      "after": "201aafe6931a857cb278551bbd50a9c50eceb3c2d074a3aae182c272ae143ba9"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before": "d696ae17954b792d9f3900ad126860979b5e6757b2e681e4aabb1b2e004749ab",
+      "after": "d6ae7773ef35400a07a21a3dad7ce6afd96167e7961df882c6c2eaf0c44e49ac"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "acfd34532711a9f8067e3827becac57eda99c34d7e234a5e765a91da0d389067",
+      "after": "184f578f9438f20f3dab9e4c4a51df8280176690a47695df4aea537549443724"
+    },
+    {
+      "path": "docs/development/client-regression.md",
+      "before": "098f6c204bae2bc93dd7306968326817700edaa9892e80023702950f21962117",
+      "after": "5db196c91cfc0f96b85ee71bbf09d104bf411c1b059e40fff2f5d8fd3677687c"
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "before": null,
+      "after": "5b08488d1540f05d676f9ce9dfca5e25f6f94d82a9ff541a1c14b85491e7cd7b"
+    },
+    {
+      "path": "docs/development/current-product-test-coverage.json",
+      "before": null,
+      "after": "e9da1de7e2cc869a8ecff767d3864bd40247845dea82a7191bd9054606f24224"
+    },
+    {
+      "path": "docs/development/current-product-test-coverage.md",
+      "before": null,
+      "after": "3e6dbb0be5c41650167a22df556490de92875402e4123f9ee321d14bb0345025"
+    },
+    {
+      "path": "docs/development/desktop-client.md",
+      "before": "472b55ea7234fc03d6d3fe7bbaa7babf54ad61116cf830698ffe639875c9a525",
+      "after": "ec1b7e1252a383d99b8389c622b4ae14273f5eca938636f967a5d5e4753889c6"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "before": "f90681714d10e09de892ac5126f3823672939ffc9933f0053a8b107b00424a14",
+      "after": "5250e6034501d65686ed8676aa0cb2b1012b5adb4e189694161154acaecd8a33"
+    },
+    {
+      "path": "docs/development/first-product-test-plan.md",
+      "before": "739914aedbb1e4d4aaf16491158507b24e594fac783929e7e54ead5ec88e71b8",
+      "after": "87480ac9f77c70081f00e47c140bc7ba877f8dd348dfad8c8dca3c3bbc54c3ca"
+    },
+    {
+      "path": "docs/development/guided-service-reading-tests.md",
+      "before": "a3378836328f749cd86502f93b49b85d45c1ac4c2e2f3640ec10f37960940785",
+      "after": "1c0829196591faa919e32dfe624cdc2c1d98ae7289e975dcd413d88fad9864a9"
+    },
+    {
+      "path": "docs/development/release-execution-evidence.md",
+      "before": "886bf0d37acbbd0663331e363e23d618582c14f21f123349a8efad66381f69f7",
+      "after": "b0246c32cd5d201af2c327610439f18a46aa4cedd459d303e4fe2598fd1dfee5"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "557dcf1302f908d2b4fe8dbd10cb894afa648c059b1c057251b40869e178cbcb",
+      "after": "84a2cfd60866fd90318cd3ec483b3176937b852fb56539bf855e079c261aa816"
+    },
+    {
+      "path": "docs/product/first-product-scope.md",
+      "before": "559a5be42120c68fd5e23c23218264f06d7962461477955971a34e6377cbd89c",
+      "after": "d9416c919ce3a03f79e440e20dfdea01280c1b4f0ce6b262a0d4062807b52681"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "83518d6a1f5b6f6294272b2c7c1a0ac3e963cf5b70b1d56dcac7f210a8cb25d9",
+      "after": "7481f7a2d3a87d4fe5ad5f46478627e9bd9917dc407bc72a02e1e0792c43b205"
+    },
+    {
+      "path": "docs/product/reading-window-session-prd.md",
+      "before": "64682c5d8394c09650248796e156010e9fb9b2a0af92caa5710f1ad3ba8fedf4",
+      "after": "cf091e3343139d5a5c0ca3322ef1fde9b7529589f661de8bfa60c7ecd94cd58e"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/design.md",
+      "before": null,
+      "after": "af3ab759f31a4a8901620b4d4c3e8bcf49d8ec1d1d909167bd85d0dc9359e017"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/iteration-card.md",
+      "before": null,
+      "after": "623a3186d913c81cf46210586083c5c08b98573d55e6c447a176a6cf9bbc21cb"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/proposal.md",
+      "before": null,
+      "after": "4e88eecba5aed81b8f9233a902df93efcd0a316178c62ec87a94d55b49b6ce5b"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/source-snapshot.json",
+      "before": null,
+      "after": "48c5d8bd9614c2615dcf454695a110a2a6ddad3b40a7aa20745f46f48b82c9a1"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/specs/client-plan-and-release-coverage/spec.md",
+      "before": null,
+      "after": "fd5a283d1c405aaf88f4731b4e5c6ebefdf4455e192b0c5cb591056f7af841e7"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/tasks.md",
+      "before": null,
+      "after": "6666b2b00828865a5d6400630f4582e0e3fb3863662c30fcb09c9befcacc57df"
+    },
+    {
+      "path": "openspec/changes/align-client-plan-and-release-coverage/verification.json",
+      "before": null,
+      "after": "ca3c0973a7465cd5a425ade0758c6992142553272916fbf099299ebd840bdb14"
+    },
+    {
+      "path": "scripts/quality/current_product_coverage.py",
+      "before": null,
+      "after": "aa64f3f9c59b0711b56fe0997da5e601c14f39b077961c44d3bbbd997925cf07"
+    },
+    {
+      "path": "scripts/quality/test_current_product_coverage.py",
+      "before": null,
+      "after": "c6817db515fe7dce3c168406e697d0c21278c91c37b9f723b5808b0e128d7fa0"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "cc9080e0020e4a7642064498bb11d17d8332f0cbd9ce33d22ac512e58bd99fb4",
+      "after": "296a9ab1044d3db1ec55e08a9660c1fce9a2b9117bddca965233ae71f38f816e"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/current-alignment-20261031/review/docs-review.json",
+    "bytes": 7241,
+    "sha256": "bbf0ec6ea9f46dc06ab46c1f1749bd2f88367fbe9a1226504e289bee54be169e"
+  },
+  "code_review": {
+    "path": ".build/current-alignment-20261031/review/tooling-review.json",
+    "bytes": 9477,
+    "sha256": "001cb0aaf1168855a65927bb42ab9e9d395ddfa410c1001f71c54073a37180e2"
+  },
+  "source_evidence_remaps": {
+    "scope": "M15 only verify.py evidence hash rebinding and exact derived module CSV; no status or behavior changed"
+  },
+  "scope": "Current PRD/client implementation-gap documentation, owned incremental plans and the 70-source layered coverage/variant release contract only. All generated product specs, existing plans/CSVs, UI sources/candidates/images/tokens, product/package and approval/phase/history boundaries remain exact. Readiness assessment does not grant product acceptance."
+}

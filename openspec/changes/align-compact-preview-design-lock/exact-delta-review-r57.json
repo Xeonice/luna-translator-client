@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "align-compact-preview-design-lock",
+  "parent_baseline_sha256": "5755cce7ed3defab1986d718b5b6802cf62426d04e9e5ad58e17923bfbbce9a9",
+  "source_delta": [
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/design.md",
+      "before": null,
+      "after": "6ab9a4a7eb1486e1a9966494c0d383c82cbe709cbd1f33ced894e7d812518c9d"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/iteration-card.md",
+      "before": null,
+      "after": "ea9c91eaa54b23c590b3f99d84fb234f3c12e0b5cf0a8175a1d2ada472b6c3b6"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/proposal.md",
+      "before": null,
+      "after": "c4803822708e103beca4625fada752eb6817c7c171aad9489b8cddaf77469eaf"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/source-snapshot.json",
+      "before": null,
+      "after": "f91d533d93a550d73da1c23a8fde02f1f85403b0e7426a0059eb07fec451a89c"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/specs/approved-design-source-lock/spec.md",
+      "before": null,
+      "after": "4ebe8311e84f8f8a00a6135644594cfa901d00ac03eb9f97d275b5c44814b31f"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/tasks.md",
+      "before": null,
+      "after": "dd2a125e61013c61b2f09dacd1b2ba6f1b561d83350792b7a7e8ad0e46e2d496"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/verification.json",
+      "before": null,
+      "after": "1ee0a4ff3e6a2d0eae07fd22b7fa383df434416689a711ed61847090e61a68e5"
+    },
+    {
+      "path": "openspec/technology-lock.json",
+      "before": "5d6494c09dfbf3fe39f2fb4aad47f56b4ea5eeeae31e056be06e1f7d1a030c3a",
+      "after": "dae67de6f8dd0b88e543524a78963ccfa97a1050e9cb8156ce56dd771dde2e46"
+    }
+  ],
+  "product_delta": [],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/compact-design-lock-alignment/independent-code-review.json",
+    "sha256": "131fc259b8a99b57b7bc5c21839748ecd4c931404c1820e09411fd1451ec4b18",
+    "bytes": 10565
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

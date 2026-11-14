@@ -1,0 +1,181 @@
+{
+  "kind": "R34_RF07_exact_authority_candidate_review",
+  "status": "root_reviewed_source_scope_and_six_anchors_awaiting_mechanical_comparison",
+  "parent_baseline_sha256": "d0df1aaee1267c8d2bb412bc327db3988fbcc4305a8c7bd07a4acd683e9f5d7e",
+  "source_freeze": {
+    "recorded_at": "2026-10-21T19:38:24.383026+00:00",
+    "authorization": "Root final four-source freeze and six exact error-anchor replacements; candidate only, no adoption",
+    "map": ".build/rf07-history-governance/r34-final/pre-authority-source-map.json",
+    "map_sha256": "d32f606b72946467754d5b424976148698a81294b5ff24a0e3dd9325d7f64161",
+    "source_tree_sha256": "aff4e66cd275c3ce0984fb3a58aa7979669aa1452f9f876d1adf540029afc37d",
+    "entries": 1640,
+    "reviewed_implementation_source": {
+      "apps/desktop/src/features/reading/SessionRecordPanel.tsx": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee",
+      "apps/desktop/tests/visual/verify-reviewed-reading.mjs": "e2874a440379c91d196a935539d11f22f5122df3726d677a3c2d3e6477a1da09",
+      "scripts/quality/reading_components.py": "f1f920e93fb9ac7b60158025a37bdb704353051aac69a619c834520b3701f156",
+      "scripts/quality/test_reading_components.py": "d273ccfda5c1929eb965720fefb71f1cccec04674636996fb2bc9cdedd8a8bb6"
+    },
+    "baseline_R33_sha256": "d0df1aaee1267c8d2bb412bc327db3988fbcc4305a8c7bd07a4acd683e9f5d7e"
+  },
+  "implementation_source_paths": [
+    "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "scripts/quality/reading_components.py",
+    "scripts/quality/test_reading_components.py"
+  ],
+  "independent_evidence": [
+    {
+      "path": ".build/rf07-history-independent-review/final-ui-review.json",
+      "sha256": "c11bbf7270715640a1a2b321bef79c453886d944a5c9677ca911a2f6ae8cd2c1"
+    },
+    {
+      "path": ".build/rf07-history-independent-review/qa-registration/root-independent-review.json",
+      "sha256": "d72e156518b70d07455d7c3ea1d9e534f27ca4ebd645aede1a3d827db1da6cb6"
+    },
+    {
+      "path": ".build/rf07-history-independent-review/green-final-receipt-inspection.json",
+      "sha256": "eba86ada4090a05367e826227fa02d59982f1f4e75cd08241ca7ae6c336dc48f"
+    },
+    {
+      "path": ".build/rf07-history-independent-review/original-fifty-preservation.json",
+      "sha256": "4d9058a4aeb0c47eedc6c1cf3aea828a0e245ab964e4f4b8ba6e606d8c2b0e1e"
+    },
+    {
+      "path": ".build/rf07-history-independent-review/rust-ttl-coverage-limits.json",
+      "sha256": "be13ce9ca4a946fbcebe239d683acce357e101a07ce87c80b9904de53927ea83"
+    }
+  ],
+  "source_evidence_updates": 34,
+  "explicit_six_UI_anchor_replacements": [
+    {
+      "record": "M10",
+      "index": 7,
+      "before": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 139,
+        "quote": "if (isCurrent()) { retryKind.current = kind; errorRef.current = errorMessage(cause); setError(errorRef.current); }",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "be1bf34b2c49c96fab11dd6b376320f6dfd2de15075387941f473ab788323bca"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 152,
+        "quote": "const range = invalidRange(cause);",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee"
+      }
+    },
+    {
+      "record": "M13",
+      "index": 7,
+      "before": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 139,
+        "quote": "if (isCurrent()) { retryKind.current = kind; errorRef.current = errorMessage(cause); setError(errorRef.current); }",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "be1bf34b2c49c96fab11dd6b376320f6dfd2de15075387941f473ab788323bca"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 152,
+        "quote": "const range = invalidRange(cause);",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee"
+      }
+    },
+    {
+      "record": "C36",
+      "index": 2,
+      "before": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 139,
+        "quote": "if (isCurrent()) { retryKind.current = kind; errorRef.current = errorMessage(cause); setError(errorRef.current); }",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "be1bf34b2c49c96fab11dd6b376320f6dfd2de15075387941f473ab788323bca"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 152,
+        "quote": "const range = invalidRange(cause);",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee"
+      }
+    },
+    {
+      "record": "FP-09",
+      "index": 2,
+      "before": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 139,
+        "quote": "if (isCurrent()) { retryKind.current = kind; errorRef.current = errorMessage(cause); setError(errorRef.current); }",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "be1bf34b2c49c96fab11dd6b376320f6dfd2de15075387941f473ab788323bca"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 152,
+        "quote": "const range = invalidRange(cause);",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee"
+      }
+    },
+    {
+      "record": "CAP-SESSION-UI",
+      "index": 2,
+      "before": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 139,
+        "quote": "if (isCurrent()) { retryKind.current = kind; errorRef.current = errorMessage(cause); setError(errorRef.current); }",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "be1bf34b2c49c96fab11dd6b376320f6dfd2de15075387941f473ab788323bca"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 152,
+        "quote": "const range = invalidRange(cause);",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee"
+      }
+    },
+    {
+      "record": "CAP-STORAGE",
+      "index": 5,
+      "before": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 139,
+        "quote": "if (isCurrent()) { retryKind.current = kind; errorRef.current = errorMessage(cause); setError(errorRef.current); }",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "be1bf34b2c49c96fab11dd6b376320f6dfd2de15075387941f473ab788323bca"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/reading/SessionRecordPanel.tsx",
+        "line": 152,
+        "quote": "const range = invalidRange(cause);",
+        "symbol": "same typed read-kind retry; old generation and owner rejected",
+        "sha256": "5161c85a2ae14523c5405b18f97f00d76ada7f9d30b8ce1b3617af29a8de90ee"
+      }
+    }
+  ],
+  "semantic_record_ids": [
+    "M10",
+    "M13",
+    "M15",
+    "C36",
+    "FP-09",
+    "FP-12",
+    "CAP-SESSION-UI",
+    "CAP-HOOK-LOG",
+    "CAP-STORAGE"
+  ],
+  "new_controlled_entries": [
+    "openspec/changes/repair-library-binding-preview-diagnostics/rf07-history-range-recovery-work-item.md",
+    "docs/development/baselines/FP1-20261021-R33.json",
+    "openspec/changes/repair-library-binding-preview-diagnostics/exact-delta-review-r34.json",
+    "openspec/changes/repair-library-binding-preview-diagnostics/baseline-review-r34.json"
+  ],
+  "storage_technology_approved_reference_unchanged": true,
+  "history_flags_approvals_and_runtime_unchanged": true,
+  "backend_TTL_boundaries_newly_executed": false,
+  "canonical_current_not_written": true,
+  "product_runtime_or_release_promoted": false
+}

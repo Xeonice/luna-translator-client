@@ -1,0 +1,13 @@
+{
+  "scope": "historical architecture source before first-product engineering baseline; not current specification",
+  "files": [
+    {
+      "path": "docs/architecture/client-rebuild-architecture.md",
+      "sha256": "3e1df8c72524eaf87b88ff9f081752ad8c502838828d5f83819e086877579b52"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "sha256": "73256f5a4330fd07db451387a90c59a7df8a7cc3778b826766329f39d724590e"
+    }
+  ]
+}

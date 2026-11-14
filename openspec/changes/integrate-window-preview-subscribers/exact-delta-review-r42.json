@@ -1,0 +1,81 @@
+{
+  "kind": "R42_metadata_only_scope_correction",
+  "status": "candidate_only_pending_independent_exact_review_and_Root_adoption",
+  "parent_baseline_sha256": "2451fbd240a287d6a8e6f301698cdb67642b8f026a6b0b1e4e67effe8dbaacc6",
+  "reason": "candidate19统一verify真实拒绝B对A目录三项grant；恢复A3精确R40，执行顺序覆盖仅留B；不放宽守卫，不改原snapshot或产品实现。",
+  "source_delta": [
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "before": "04583d0937f4ffa2d50a4f2314107d129f1a423719cdf3e0b38226e363bc4f21",
+      "after": "97a4be580f4bc5e1d4315fe05c973800d28aea7a160950933941bea155b8036f",
+      "action": "correct_current_B_registration_and_record_actual_failure"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "before": "925741e45438a9b578b84b760fd470f99b5fbcae368508e2f323c3376901143d",
+      "after": "9d09822c5db2769164a08c9048516c51d4376414ce1785a6996ca1e53f6ed6e4",
+      "action": "correct_current_B_registration_and_record_actual_failure"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/verification.json",
+      "before": "178851f6dab2532956cc659f8e304b77fb729b6aadf47d53f80102c3ded448ef",
+      "after": "614fb6ec8853bc5aea133589706c3c789f309bdb7ecf07532f1da11752c5c744",
+      "action": "correct_current_B_registration_and_record_actual_failure"
+    },
+    {
+      "path": "openspec/changes/isolate-window-preview-collector/design.md",
+      "before": "a58257faece69097265372ef1c2faa1b8a42342cfec4cb5305f5b7eb0ffc18f1",
+      "after": "ee38ab9908bad63cb30d7382a8843081d7ba97a1be28764e926d182e445e6735",
+      "action": "restore_exact_R40_source"
+    },
+    {
+      "path": "openspec/changes/isolate-window-preview-collector/iteration-card.md",
+      "before": "2b589711bbab84c7f29884edab52ba119b9ad0e869f213954abf80ef7af475b4",
+      "after": "40f32ac55f7a338bfdbbf09da4cf24a79ae45caaaa737129d8c08894d3c95c8b",
+      "action": "restore_exact_R40_source"
+    },
+    {
+      "path": "openspec/changes/isolate-window-preview-collector/specs/window-preview/spec.md",
+      "before": "d5b485e89ae88fe00c17ec239ad94e286fdb40c58ebd9e4e43b67bbd7d11c922",
+      "after": "f5911e85dea5f41b162953b928b4a70d6b89f0d70298b4fb35b42f3625ce3bd0",
+      "action": "restore_exact_R40_source"
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".build/window-preview-sakura-20261023/r41-b-integration-candidate/r42-correction-inputs/contract-and-scope.json",
+      "sha256": "b85ce41d4a8132d4e0b6e7ec0fdc4b338279899c402cbc39fa600a3918b53c8a",
+      "bytes": 936
+    },
+    {
+      "path": ".build/window-preview-sakura-20261023/scope-recovery-candidates/root-spec-recovery.json",
+      "sha256": "2ccfee6ebbd647742a19229fc8323968cc984c8f5f3f0d7ac73f73a5355f4a63",
+      "bytes": 1469
+    },
+    {
+      "path": ".build/window-preview-sakura-20261023/scope-recovery-candidates/receipt.json",
+      "sha256": "a426f9152607a92159cc58025118f521a0c1af480212458016d4019a50a80223",
+      "bytes": 5017
+    },
+    {
+      "path": ".build/game-regression-20261024-candidate19/verify-completion.json",
+      "sha256": "ec612f22dbbcb949e8c4348e0105fd60a2c87534c44a0c32516edba35f6b25c5",
+      "bytes": 850
+    },
+    {
+      "path": ".build/window-preview-sakura-20261023/independent-code-review/collector-r41-b/post-adoption-contract-failure/receipt.json",
+      "sha256": "554fb75080c5c4378979d9b81bd0bc5e7cc7e11cd3f7df95e53f93bee73fb5be",
+      "bytes": 2291
+    }
+  ],
+  "actual_pre_candidate_change_contract_errors": [],
+  "actual_pre_candidate_original_snapshot_scope_errors": [],
+  "product_sources": 459,
+  "product_source_identity_unchanged_from_R41": true,
+  "catalog_and497_references_unchanged": true,
+  "snapshot_rewritten": false,
+  "guard_approval_visual_runtime_release_promoted": false,
+  "candidate19_failure_preserved": true,
+  "candidate19_install_and_audit": "not_run",
+  "candidate20": "not_run"
+}

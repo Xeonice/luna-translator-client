@@ -1,0 +1,346 @@
+{
+  "schema_version": 1,
+  "id": "consume-scoped-visual-acceptance",
+  "kind": "tooling",
+  "allowed_paths": [
+    "scripts/quality/current_general_visual_acceptance.py",
+    "scripts/quality/test_current_general_visual_acceptance.py",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/verify.py",
+    "docs/development/general-native-visual-acceptance-20261109.json",
+    "docs/development/design-alignment-and-release.md",
+    "docs/development/engineering-gates.md",
+    "docs/README.md",
+    "openspec/changes/consume-scoped-visual-acceptance/proposal.md",
+    "openspec/changes/consume-scoped-visual-acceptance/design.md",
+    "openspec/changes/consume-scoped-visual-acceptance/tasks.md",
+    "openspec/changes/consume-scoped-visual-acceptance/iteration-card.md",
+    "openspec/changes/consume-scoped-visual-acceptance/verification.json",
+    "openspec/changes/consume-scoped-visual-acceptance/source-snapshot.json",
+    "openspec/changes/consume-scoped-visual-acceptance/specs/visual-acceptance/spec.md"
+  ],
+  "source_snapshot": "openspec/changes/consume-scoped-visual-acceptance/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "VUA-001",
+      "spec": "specs/visual-acceptance/spec.md",
+      "scenario": "exact-user-accepted-retained-visual-result",
+      "checks": [
+        "source-scope",
+        "general-visual-acceptance-tests",
+        "general-native-visual-acceptance",
+        "spec-contract-tests",
+        "documentation-contract-tests"
+      ]
+    },
+    {
+      "id": "VUA-002",
+      "spec": "specs/visual-acceptance/spec.md",
+      "scenario": "refuse-scope-integrity-and-semantic-bypass",
+      "checks": [
+        "source-scope",
+        "general-visual-acceptance-tests",
+        "general-visual-contract-tests",
+        "product-completion-tests"
+      ],
+      "general_visual_source": {
+        "schema_version": 1,
+        "kind": "general-visual-source-mapping/v1",
+        "scope": "settings:general/controlled_visual_only",
+        "entry": "docs/design/first-product-v1/candidates/general-state-evidence-20261108/settings.html",
+        "approval": {
+          "path": "docs/development/design-approval-general-states-20261108.json",
+          "sha256": "6e1694583d1c12a7597c9b00cf91dd21154a04f6f463fc4a9aa48a5042a6cb8a"
+        },
+        "promotion": {
+          "path": "docs/design/first-product-v1/candidates/general-state-evidence-20261108/promotion.json",
+          "sha256": "345205c37d1b77df870b429efbd84c6811c34f1416bbd0b1cc8cac1e81547b84"
+        },
+        "source_closure_sha256": "012da7ca2fa26321358b42e9c462b6598baea2165adb785eadf042083f80d5fe",
+        "context": "user-approved-native-content-transparent-body-system-chrome",
+        "state_ids": [
+          "all-page-settings-general-normal",
+          "all-page-settings-general-empty",
+          "all-page-settings-general-loading",
+          "all-page-settings-general-error",
+          "all-page-settings-general-disabled",
+          "all-page-settings-general-long-text",
+          "all-page-settings-general-light",
+          "all-page-settings-general-narrow",
+          "all-page-settings-general-zoom-200",
+          "all-page-settings-general-keyboard-focus-escape",
+          "all-page-settings-general-scope-global",
+          "all-page-settings-general-scope-game",
+          "all-page-settings-general-restore-inheritance",
+          "all-page-settings-general-save-failed"
+        ],
+        "capture_scope": "whole_client",
+        "cases": [
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "1000x720-light-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-dark-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "primary",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-normal",
+            "subcase": "content-end",
+            "canvas_id": "760x560-light-z2",
+            "width": 760,
+            "height": 560,
+            "theme": "light",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-empty",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-loading",
+            "subcase": "initial",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-error",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-disabled",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-long-text",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-light",
+            "subcase": "primary",
+            "canvas_id": "1000x720-light-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "light",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-narrow",
+            "subcase": "primary",
+            "canvas_id": "760x560-dark-z1",
+            "width": 760,
+            "height": 560,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-zoom-200",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z2",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 2
+          },
+          {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-keyboard-focus-escape",
+            "subcase": "menu-open",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-scope-global",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-scope-game",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-restore-inheritance",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          },
+          {
+            "state_id": "all-page-settings-general-save-failed",
+            "subcase": "primary",
+            "canvas_id": "1000x720-dark-z1",
+            "width": 1000,
+            "height": 720,
+            "theme": "dark",
+            "zoom": 1
+          }
+        ],
+        "rgba_threshold": 0,
+        "mask": false,
+        "crop": false,
+        "resample": false,
+        "fixture_visual_only": true,
+        "game_tests_executed": false,
+        "os_runtime_verified": false,
+        "storage_runtime_verified": false
+      }
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/general-visual-acceptance-20261109/final-source-review.json",
+    "authors": [
+      "/root",
+      "/root/visual_acceptance_gate",
+      "/root/visual_acceptance_tests"
+    ]
+  },
+  "authorization": "用户先明确接受本轮微小视觉差异“卡在99%我理解就可以了，不用刷的更高”，后明确要求“接入自动化门禁”。仅消费精确既有S5结果，不推广到其他包、不放宽布局/功能/交互检查、不提交推送。"
+}

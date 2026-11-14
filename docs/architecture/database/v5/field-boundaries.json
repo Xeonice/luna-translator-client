@@ -1,0 +1,600 @@
+{
+  "schema_version": 1,
+  "kind": "schema_five_selection_set_boundary_plan",
+  "phase": "planning_pending_non_author_review",
+  "production_migrated": false,
+  "product_acceptance_promoted": false,
+  "source_design": "docs/architecture/database/v5/005_source_selection_sets.design.sql",
+  "source_design_sha256": "114b32d5ee4dccbf511ebf3c489dffc0c4e7f96143b4f9656bb544a93fae6c18",
+  "parent_production_schema": 4,
+  "source_requirement_ids": [
+    "FP-03",
+    "FP-04",
+    "FP-05",
+    "FP-09",
+    "FP-12"
+  ],
+  "table_count": 2,
+  "field_count": 14,
+  "max_selection_members": 64,
+  "field_ids": [
+    "profile.source_selection_sets.session_id",
+    "profile.source_selection_sets.selection_set_revision",
+    "profile.source_selection_sets.operation_id",
+    "profile.source_selection_sets.origin_kind",
+    "profile.source_selection_sets.persistence_kind",
+    "profile.source_selection_sets.match_snapshot_json",
+    "profile.source_selection_sets.selected_at_ms",
+    "profile.source_selection_sets.member_count",
+    "profile.source_selection_sets.state",
+    "profile.source_selection_members.session_id",
+    "profile.source_selection_members.selection_set_revision",
+    "profile.source_selection_members.source_id",
+    "profile.source_selection_members.selection_revision",
+    "profile.source_selection_members.member_ordinal"
+  ],
+  "fields": [
+    {
+      "id": "profile.source_selection_sets.session_id",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "existing Hook session opaque ID",
+      "sql_guards": [
+        "nonempty_no_nul",
+        "sessions_fk"
+      ],
+      "required_rust_checks": [
+        "active_session_generation",
+        "profile_ownership",
+        "not_display_name"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.selection_set_revision",
+      "sqlite_type": "INTEGER",
+      "nullable": false,
+      "domain": "positive SQLite i64; IPC canonical decimal string",
+      "sql_guards": [
+        "positive",
+        "session_compound_pk",
+        "explicit_next_revision"
+      ],
+      "required_rust_checks": [
+        "canonical_lossless_ipc",
+        "expected_set_head_cas",
+        "checked_increment"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.operation_id",
+      "sqlite_type": "TEXT",
+      "nullable": true,
+      "domain": "NULL exactly legacy_singleton; explicit nonempty opaque ID",
+      "sql_guards": [
+        "origin_null_relationship",
+        "unique",
+        "operation_receipts_deferred_fk"
+      ],
+      "required_rust_checks": [
+        "same_operation_same_request_replay",
+        "conflicting_request_hash_rejected",
+        "receipt_same_writer_transaction"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.origin_kind",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "explicit_set | legacy_singleton",
+      "sql_guards": [
+        "enum",
+        "explicit_vs_legacy_shape"
+      ],
+      "required_rust_checks": [
+        "legacy_is_migration_only",
+        "caller_cannot_claim_legacy_bypass"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.persistence_kind",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "temporary | saved_snapshot",
+      "sql_guards": [
+        "enum",
+        "new_saved_requires_session_game"
+      ],
+      "required_rust_checks": [
+        "no_game_remember_rejected",
+        "temporary_preserves_last_saved",
+        "caller_intent_exact"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.match_snapshot_json",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "JSON object; versioned typed explanation",
+      "sql_guards": [
+        "json_object",
+        "no_nul"
+      ],
+      "required_rust_checks": [
+        "strict_version_and_inner_field_types",
+        "no_unknown_authority_or_fake_matching_proof",
+        "aslr_or_session_identity_requires_review",
+        "legacy_bytes_preserved"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.selected_at_ms",
+      "sqlite_type": "INTEGER",
+      "nullable": false,
+      "domain": "UTC milliseconds >= 0",
+      "sql_guards": [
+        "nonnegative"
+      ],
+      "required_rust_checks": [
+        "actual_confirm_time",
+        "legacy_exact_time_preserved",
+        "checked_clock_conversion"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.member_count",
+      "sqlite_type": "INTEGER",
+      "nullable": false,
+      "domain": "1..64",
+      "sql_guards": [
+        "bounded_1_64",
+        "seal_exact_member_count"
+      ],
+      "required_rust_checks": [
+        "same_shared_max_selection_members_policy",
+        "no_truncation",
+        "request_unique_count_equals_members"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_sets.state",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "building -> sealed exactly once",
+      "sql_guards": [
+        "enum",
+        "insert_building_only",
+        "seal_complete_contiguous",
+        "sealed_immutable"
+      ],
+      "required_rust_checks": [
+        "single_writer_atomic_transaction",
+        "never_publish_building",
+        "rollback_all_on_any_error"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_members.session_id",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "same session as header/source/old selection",
+      "sql_guards": [
+        "nonempty_no_nul",
+        "set_compound_fk",
+        "source_compound_fk",
+        "selection_compound_fk"
+      ],
+      "required_rust_checks": [
+        "current_active_session",
+        "cross_profile_and_session_rejected"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_members.selection_set_revision",
+      "sqlite_type": "INTEGER",
+      "nullable": false,
+      "domain": "positive owning set revision",
+      "sql_guards": [
+        "positive",
+        "set_compound_fk",
+        "building_header_required"
+      ],
+      "required_rust_checks": [
+        "correct_current_command_set",
+        "head_cas_retained"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_members.source_id",
+      "sqlite_type": "TEXT",
+      "nullable": false,
+      "domain": "actual complete source ID",
+      "sql_guards": [
+        "nonempty_no_nul",
+        "source_compound_fk",
+        "source_unique_in_set",
+        "old_selection_source_match"
+      ],
+      "required_rust_checks": [
+        "source_belongs_to_current_session",
+        "no_hook_name_or_fixed_index_identity",
+        "unique_source_ids"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_members.selection_revision",
+      "sqlite_type": "INTEGER",
+      "nullable": false,
+      "domain": "existing positive per-source selection revision",
+      "sql_guards": [
+        "positive",
+        "selection_compound_fk",
+        "one_set_per_member_revision"
+      ],
+      "required_rust_checks": [
+        "new_revision_for_every_member_every_new_set",
+        "checked_legacy_u32_revision_increment",
+        "never_reauthorize_old_a_b_a_revision"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    },
+    {
+      "id": "profile.source_selection_members.member_ordinal",
+      "sqlite_type": "INTEGER",
+      "nullable": false,
+      "domain": "0..63; contiguous 0..count-1",
+      "sql_guards": [
+        "bounded_0_63",
+        "ordinal_unique_in_set",
+        "ordinal_below_member_count",
+        "seal_contiguous"
+      ],
+      "required_rust_checks": [
+        "stable_confirmed_order",
+        "no_implicit_source_merge"
+      ],
+      "planned_assertions": [
+        "valid_value",
+        "sqlite_type_and_coercion",
+        "null_boundary",
+        "domain_boundary"
+      ]
+    }
+  ],
+  "foreign_keys": [
+    {
+      "table": "source_selection_sets",
+      "columns": [
+        "session_id"
+      ],
+      "references": "sessions",
+      "reference_columns": [
+        "session_id"
+      ],
+      "on_delete": "RESTRICT"
+    },
+    {
+      "table": "source_selection_sets",
+      "columns": [
+        "operation_id"
+      ],
+      "references": "operation_receipts",
+      "reference_columns": [
+        "operation_id"
+      ],
+      "on_delete": "RESTRICT",
+      "deferrable": "INITIALLY DEFERRED"
+    },
+    {
+      "table": "source_selection_members",
+      "columns": [
+        "session_id",
+        "selection_set_revision"
+      ],
+      "references": "source_selection_sets",
+      "reference_columns": [
+        "session_id",
+        "selection_set_revision"
+      ],
+      "on_delete": "RESTRICT"
+    },
+    {
+      "table": "source_selection_members",
+      "columns": [
+        "session_id",
+        "selection_revision"
+      ],
+      "references": "source_selections",
+      "reference_columns": [
+        "session_id",
+        "selection_revision"
+      ],
+      "on_delete": "RESTRICT"
+    },
+    {
+      "table": "source_selection_members",
+      "columns": [
+        "source_id",
+        "session_id"
+      ],
+      "references": "capture_sources",
+      "reference_columns": [
+        "source_id",
+        "session_id"
+      ],
+      "on_delete": "RESTRICT"
+    }
+  ],
+  "shared_authority": {
+    "view": "current_source_selection_members",
+    "required_consumers": [
+      "raw_to_reading_unit_consumption",
+      "prepare_automatic_work_tasks",
+      "prepare_automatic_legacy_tasks_and_retry"
+    ],
+    "forbidden_shortcut": "selection_revision == max(source_selections.selection_revision)"
+  },
+  "sql_vs_rust_note": "SQLite STRICT may coerce lossless scalar representations; valid SQL carrier does not establish valid typed request, current authority, portable matcher or user confirmation. SQL and Rust assertions are independent.",
+  "case_plan": [
+    {
+      "id": "V5-S01",
+      "layer": "sql",
+      "assertion": "legacy_singleton_backfill_preserves_original_selection_bytes_and_current_single_head",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S02",
+      "layer": "sql",
+      "assertion": "two_members_retain_distinct_source_selection_revisions_and_both_are_current",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S03",
+      "layer": "sql",
+      "assertion": "building_header_and_partial_members_never_appear_as_current",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S04",
+      "layer": "sql",
+      "assertion": "empty_or_over_limit_member_count_rejected",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S05",
+      "layer": "sql",
+      "assertion": "duplicate_source_ordinal_or_member_revision_rejected",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S06",
+      "layer": "sql",
+      "assertion": "cross_session_or_wrong_source_revision_member_rejected",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S07",
+      "layer": "sql",
+      "assertion": "missing_or_gapped_members_cannot_be_sealed",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S08",
+      "layer": "sql",
+      "assertion": "sealed_header_and_members_are_immutable",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S09",
+      "layer": "sql",
+      "assertion": "new_saved_set_without_game_rejected_legacy_bytes_retained",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-S10",
+      "layer": "sql",
+      "assertion": "explicit_operation_receipt_fk_is_same_transaction_or_commit_rejected",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R01",
+      "layer": "rust_storage",
+      "assertion": "begin_reading_validates_nonempty_unique_same_session_and_expected_head",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R02",
+      "layer": "rust_storage",
+      "assertion": "failure_during_any_member_seal_or_receipt_rolls_back_all_rows_and_old_open_unit_state",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R03",
+      "layer": "rust_storage",
+      "assertion": "duplicate_operation_returns_original_set_conflicting_payload_fails",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R04",
+      "layer": "rust_storage",
+      "assertion": "legacy_select_source_uses_atomic_singleton_set_authority",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R05",
+      "layer": "rust_storage",
+      "assertion": "both_members_get_automatic_tasks_in_both_real_repository_paths",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R06",
+      "layer": "rust_storage",
+      "assertion": "old_set_or_old_member_revision_cannot_get_automatic_tasks_after_switch",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R07",
+      "layer": "rust_storage",
+      "assertion": "a_b_a_allocates_new_revisions_and_never_reauthorizes_old_unit",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R08",
+      "layer": "rust_storage",
+      "assertion": "different_source_events_never_merge_in_one_reading_unit",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R09",
+      "layer": "rust_storage",
+      "assertion": "temporary_does_not_overwrite_saved_and_no_game_remember_is_explicit_error",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R10",
+      "layer": "rust_storage",
+      "assertion": "raw_payload_retention_keeps_matching_snapshot_and_original_lineage",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R11",
+      "layer": "rust_storage",
+      "assertion": "aslr_session_ids_hook_name_and_unknown_matcher_version_return_requires_review_without_preselection",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-R12",
+      "layer": "rust_storage",
+      "assertion": "u64_source_addresses_contexts_remain_canonical_decimal_strings_through_real_dto",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-M01",
+      "layer": "migration",
+      "assertion": "production_zero_one_two_three_four_to_five_and_reopen_five",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-M02",
+      "layer": "migration",
+      "assertion": "unchanged_001_004_ledger_and_exact_old_rows_refs_text_translation_processing_snapshots",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-M03",
+      "layer": "migration",
+      "assertion": "old_reader_rejects_schema_five_without_writing_original_database",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-M04",
+      "layer": "migration",
+      "assertion": "unknown_schema_corruption_readonly_busy_enospc_and_external_kill_leave_atomic_or_restorable_database",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-W01",
+      "layer": "native",
+      "assertion": "persist_then_show_hud_success_then_hide_main",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-W02",
+      "layer": "native",
+      "assertion": "window_failure_reports_saved_selection_and_retry_does_not_create_new_set_or_inject",
+      "planned_status": "not_run"
+    },
+    {
+      "id": "V5-W03",
+      "layer": "native",
+      "assertion": "stale_session_set_operation_window_effect_cannot_affect_new_session",
+      "planned_status": "not_run"
+    }
+  ],
+  "prior_obligations_retained": [
+    "schema1_fields_relationships_boundaries",
+    "schema2_session_records",
+    "schema3_http_identity",
+    "schema4_service_graph",
+    "original_source_ref_selected_source_trigger",
+    "old_single_source_history_and_explicit_history_retranslation"
+  ],
+  "completion": "incomplete",
+  "next_stage_allowed": false
+}

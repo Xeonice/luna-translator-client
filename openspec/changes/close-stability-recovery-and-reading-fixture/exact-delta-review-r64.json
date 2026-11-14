@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "close-stability-recovery-and-reading-fixture",
+  "parent_baseline_sha256": "aae00b78b178b70cf0d43ef7da5f7ac2307325d3786410488ba160899f76fac8",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "before": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f",
+      "after": "26675787cc4e6456bf47848e378e0df86825606a9bf2649a5dd64d65416f1d00"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "before": "72e5d1035ee867c4241052d5b4413f876a57e524670c41a24c6436580682fc56",
+      "after": "d44b2846012ab2265f6511d906148b549aa57f5bfd5a2002e2ea855023f8ca4d"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+      "before": "a3d15a11e5d87e5802e34cae636f95ac122b8cba5aad7b16cfb07fd8c2995525",
+      "after": "392e02d111aaa378dea6b485d40b4e8b8fff35cca9bdaeac736fb2cd22621321"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "before": "ceb593c850e17ecc6a1d93c018ef9a831d1653a4fca264009d3e7b5d97b77520",
+      "after": "47829fe8098a0ae434cd4344394ac7c7f1f8882051d7a1242bcb8505f3496375"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+      "before": "a884403aba56181f7efcf349a78659da91045d440161981ab7c763804ad78bcf",
+      "after": "18a50c343e35c7be24dc0f113b62d07f02cfc935f0d123232708b9399c32ff93"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "before": "53d243f02152d654125d6591943b71e6583d8070aa6fc6b4cb6b60c98408403a",
+      "after": "69b5f7d6f5d7ba25e0dee8f836f2b7d8cc8a57fd79fca9f1bcfbbd3504b16656"
+    },
+    {
+      "path": "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+      "before": "a7ee82236a8284024501ff4b1248d481d07f9875c33b5420c34c3b3f5db35c47",
+      "after": "da42b9a3ce54086656c38978612a74e20b7936f807a1b3a27bf02c3dd8c1d37f"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/design.md",
+      "before": null,
+      "after": "88096dd582051553de6d037d0e5d9d9e800ba57779d461c526fca7eff78277a1"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/iteration-card.md",
+      "before": null,
+      "after": "e5619d75386eaace681443b8f3a783c74f9a6679dfb9be5778f74d657941a31e"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/proposal.md",
+      "before": null,
+      "after": "baae01dea67632fbbf0164958ba90209b9855e19a3ed50fc77521f62c1cfb4e7"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/source-snapshot.json",
+      "before": null,
+      "after": "997cb3e1273754e79c26ddba2a801e5b1de3ef45a684d5a1829105c94f5571fd"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/specs/recovery-fixture-batch/spec.md",
+      "before": null,
+      "after": "c1bb8b17ca93298a8984ea4b0db550ea19bf11d9912a981301d5665e5e0ba57c"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/tasks.md",
+      "before": null,
+      "after": "67fd594a80112e1d391256f39a2d96d4f552d6e03a7437943dbf2a4f39de30b9"
+    },
+    {
+      "path": "openspec/changes/close-stability-recovery-and-reading-fixture/verification.json",
+      "before": null,
+      "after": "a4eb808f3e21e0f6dcdde90f6c4c62a6de66570c5488d59a29781f22ef615ef1"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+    "apps/desktop/tests/visual/capture-reviewed-states.mjs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/recovery-fixture-batch-r64/independent-review/review.json",
+    "sha256": "b550ccdbf07063fa6b5e879469aba8e8ed7148d6229f4febe4e31abec48cd081",
+    "bytes": 23900
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "26675787cc4e6456bf47848e378e0df86825606a9bf2649a5dd64d65416f1d00"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 341,
+        "sha256": "ceb593c850e17ecc6a1d93c018ef9a831d1653a4fca264009d3e7b5d97b77520"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 349,
+        "sha256": "47829fe8098a0ae434cd4344394ac7c7f1f8882051d7a1242bcb8505f3496375"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+        "quote": "pub(super) fn read_json<T: DeserializeOwned>(reader: &mut impl Read) -> io::Result<T> {",
+        "symbol": "pub(super) fn read_json",
+        "line": 28,
+        "sha256": "a884403aba56181f7efcf349a78659da91045d440161981ab7c763804ad78bcf"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+        "quote": "pub(super) fn read_json<T: DeserializeOwned>(reader: &mut impl Read) -> io::Result<T> {",
+        "symbol": "pub(super) fn read_json",
+        "line": 28,
+        "sha256": "18a50c343e35c7be24dc0f113b62d07f02cfc935f0d123232708b9399c32ff93"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 208,
+        "sha256": "53d243f02152d654125d6591943b71e6583d8070aa6fc6b4cb6b60c98408403a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 208,
+        "sha256": "69b5f7d6f5d7ba25e0dee8f836f2b7d8cc8a57fd79fca9f1bcfbbd3504b16656"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+        "line": 242,
+        "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+        "symbol": "pub fn set_hud_material",
+        "sha256": "72e5d1035ee867c4241052d5b4413f876a57e524670c41a24c6436580682fc56"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+        "line": 242,
+        "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+        "symbol": "pub fn set_hud_material",
+        "sha256": "d44b2846012ab2265f6511d906148b549aa57f5bfd5a2002e2ea855023f8ca4d"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "26675787cc4e6456bf47848e378e0df86825606a9bf2649a5dd64d65416f1d00"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "26675787cc4e6456bf47848e378e0df86825606a9bf2649a5dd64d65416f1d00"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "contract_delta": [],
+  "source_evidence_additions": [],
+  "runtime_visual_release_promoted": false
+}

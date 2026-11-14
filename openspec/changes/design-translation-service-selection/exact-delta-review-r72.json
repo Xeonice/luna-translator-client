@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_tool_delta_pending_packet_adoption",
+  "change_id": "design-translation-service-selection",
+  "parent_baseline_sha256": "a9b8eb71ab09a282bfd826c3306796d181e596c5517185d85fa31fb160fb46b7",
+  "source_delta": [
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "a5d9d15b35f24885d626a62b07778ff54fe7e4bd360e47a487d320b20438453c",
+      "after": "3ac7d62bcdb3741fa5a50316f8d3083c06e74b624f2cd29f82d7703b233c7b47"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "49d2c9f74b5045d637a7f6fad78a9f6b4abada08ce11ea3f84e9f76a584797fc",
+      "after": "a6cbd10ce98e1675b707ea4e6b7cbed3ca99eaf88748952ec3105fd898b67d65"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "7451cce0632b110b843c49d47ab201aba15894fd6b3770772d6a121befd45bd3",
+      "after": "595b2a330bd1eb3f3a5478882335582910fc55e3146ddca8c182184d128d9f0c"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "bdb88a2a4217b8483ca502eefeba7e34edcb0716daf86530e8e3fa6b3cf01a8d",
+      "after": "27be4060e5414d9d46623147de61a1a2a0e5332961c2e5658f462455613ae105"
+    },
+    {
+      "path": "docs/architecture/model-service-registry-design.json",
+      "before": "1ec6efa0cd2dc477b14d048963f8f3cbb864220891710033ad7e8a9149f56223",
+      "after": "b814d5fc4fe1b1cbe1b6dd4f42eceec56ca4c8edbe7d29fb432c4d5d73e9cc25"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "7bfd005d14c2db9a792f02bd042051170713fd20dd8416ae558d524e723ec18c",
+      "after": "0bda3376402a402990d5fa2f8a39f0666709af5e0d8ea0d172c75abee39e2d05"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/index.html",
+      "before": null,
+      "after": "e837fa0a01a370ba77d3afb4c7492e0b9104a9379e51f2f5a0d065824d684982"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/local-translation-design.css",
+      "before": null,
+      "after": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/local-translation-design.js",
+      "before": null,
+      "after": "54c6d2fdd80e8affa00c44fc4a2e46c64a242e8d9dbd6bb92e7ce5c216a035fd"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/manifest.json",
+      "before": null,
+      "after": "7f61ddc14a60855b0f2b83f7d89860aba4bd420e9563cb249e5d70154b3eb871"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/service-picker.css",
+      "before": null,
+      "after": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/service-picker.js",
+      "before": null,
+      "after": "0c19283b5e75b3dfcb28aee76cd835a4aaf3c22fd23d8e2fe18ca21ffadb43dc"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/settings.js",
+      "before": null,
+      "after": "5734536e722a7ee03c0dfef2deff8f2a3c302dd24122e37193d809bcc47cb815"
+    },
+    {
+      "path": "docs/development/translation-service-selection-tests.md",
+      "before": null,
+      "after": "178fcca6d55e6de2e97866c5357fea1527967f76f0805cc34337a59ba247ad26"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "fb35a89fa58832f591505d03d7a538f975f625ea51807337758a1339c2cdd08f",
+      "after": "3c9227bbbd0984476b983396a15c3566a251965928a8eca61bc61309c1dba971"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "d32373c86c75b067b10544c86ed853a957721a28d6daf0f6f3c64a1d97a7fb79",
+      "after": "50dadea3762427b3246c439b674d728e714ae3453c69779b9ec541b33c8f9f78"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/design.md",
+      "before": null,
+      "after": "22f184a048d0fa7698948e6d657e2a8d74e45e3f934e54596b12a0000dc2f87c"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/iteration-card.md",
+      "before": null,
+      "after": "5e0ef376f4afb6ba01524dbbe70696c34ea1be481307770b69e3d0179bcdffe9"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/proposal.md",
+      "before": null,
+      "after": "5c754feac838d7abbba8c9c22d0e4c484e94be70fa7907a8236c25d89af71866"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/source-snapshot.json",
+      "before": null,
+      "after": "375baaf67229b9663f926a708e5ef7b1623c4ed88008ef839e541207668959bf"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/specs/translation-service-selection/spec.md",
+      "before": null,
+      "after": "b7a09c19ddcf216e348a6e6adf6f0e10c6a59a20f38695d0f575e10d6f31f488"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/tasks.md",
+      "before": null,
+      "after": "ef2990b11516d5d53fbd584cdca66e23b81937834dae7f78ddfda7e0b2e712b5"
+    },
+    {
+      "path": "openspec/changes/design-translation-service-selection/verification.json",
+      "before": null,
+      "after": "6bfbc69d6968be78502a293f409160a4008599101cf759de236ee6df13105a33"
+    },
+    {
+      "path": "scripts/quality/test_translation_service_selection.py",
+      "before": null,
+      "after": "1e643d946b6649a1dc7c22693b42b2e9106e03ef6214c2209e3f6f13871f674c"
+    },
+    {
+      "path": "scripts/quality/translation_service_selection.py",
+      "before": null,
+      "after": "b54427b6b99a280fce769a5bb1ede4f965fe4e4e26b59d4fce85aaddca414052"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "b52d8d599bd94e20d03672d12140adffc5b87a52554e261c5b32ea2d76aa9975",
+      "after": "93c44ff81f4255fe6d611bda94dadfb0820d5d76167dc55911a50f6d77af079b"
+    },
+    {
+      "path": "scripts/report/verify_translation_service_selection.cjs",
+      "before": null,
+      "after": "a804c071412916fc50a79541b8d9a5b5aa2921de492a7bfad035b6f3e3791554"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/translation-service-selection-20261030/review/docs-review.json",
+    "bytes": 3671,
+    "sha256": "cba961179fba804a37fedaeb299417c2daa569fb13fcabaecf1cc7d9daa1ad48"
+  },
+  "code_review": {
+    "path": ".build/translation-service-selection-20261030/review/tooling-review.json",
+    "bytes": 5033,
+    "sha256": "e054d41ac45c856a973461ba466871f392d9a7758bf0db03fdb011b329786c37"
+  },
+  "source_evidence_remaps": {
+    "scope": "M15 only unchanged quote hash and derived module CSV; no status or behavior changed"
+  },
+  "ui_review": {
+    "path": ".build/translation-service-selection-20261030/review/ui-code-review.json",
+    "bytes": 5089,
+    "sha256": "a63c10f691d413d8f1593b29fa0ba173c79b8622739b907925b177a50cec830c"
+  },
+  "scope": "Unified saved-service selector and separate configuration design only; R71 sources and all product/approval boundaries preserved."
+}

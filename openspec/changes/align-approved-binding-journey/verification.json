@@ -1,0 +1,431 @@
+{
+  "allowed_paths": [
+    "docs/README.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/current-phase.json",
+    "docs/product/game-library-window-prd.md",
+    "docs/product/reading-window-session-prd.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/database/v5/README.md",
+    "docs/architecture/database/v5/005_source_selection_sets.design.sql",
+    "docs/architecture/database/v5/field-boundaries.json",
+    "docs/development/binding-journey-plan.json",
+    "docs/development/current-product-test-coverage.md",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/product-acceptance-loop.md",
+    "docs/development/engineering-gates.md",
+    "openspec/changes/align-approved-binding-journey/proposal.md",
+    "openspec/changes/align-approved-binding-journey/design.md",
+    "openspec/changes/align-approved-binding-journey/tasks.md",
+    "openspec/changes/align-approved-binding-journey/iteration-card.md",
+    "openspec/changes/align-approved-binding-journey/verification.json",
+    "openspec/changes/align-approved-binding-journey/source-snapshot.json",
+    "openspec/changes/align-approved-binding-journey/phase-policy.json",
+    "openspec/changes/align-approved-binding-journey/specs/binding-journey/spec.md",
+    "docs/architecture/database/v5/schema-contract.json",
+    "scripts/quality/binding_phase_guard.py",
+    "scripts/quality/test_binding_phase_guard.py",
+    "scripts/quality/binding_journey.py",
+    "scripts/quality/test_binding_journey.py",
+    "scripts/quality/binding_journey_inspect.py",
+    "scripts/quality/binding_journey_recompute.py",
+    "scripts/report/verify_binding_journey.mjs",
+    "scripts/report/export_binding_journey_projection.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/lifecycle_impact.py",
+    "scripts/quality/product_completion.py",
+    "scripts/quality/test_product_completion.py",
+    "scripts/quality/test_lifecycle_impact.py",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/storage_schema_v5.py",
+    "scripts/quality/test_storage_schema_v5.py",
+    "crates/app-core/src/contracts/mod.rs",
+    "crates/app-core/src/contracts/desktop.rs",
+    "crates/app-core/src/contracts/binding_journey.rs",
+    "crates/app-core/src/application/mod.rs",
+    "crates/app-core/src/application/runtime.rs",
+    "crates/app-core/src/application/binding_journey.rs",
+    "crates/app-core/src/ports/mod.rs",
+    "crates/app-core/src/ports/runtime.rs",
+    "crates/app-infra/src/hook_backend.rs",
+    "crates/app-infra/src/hook_backend/window_association.rs",
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/src/storage/queries/mod.rs",
+    "crates/app-infra/src/storage/queries/capture.rs",
+    "crates/app-infra/src/storage/queries/session_records.rs",
+    "crates/app-infra/src/storage/queries/source_selection.rs",
+    "crates/app-infra/src/storage/migrations/005_source_selection_sets.sql",
+    "crates/app-infra/tests/binding_journey.rs",
+    "crates/app-infra/tests/source_selection_sets.rs",
+    "crates/app-infra/tests/application_runtime.rs",
+    "crates/app-infra/tests/session_records_batch.rs",
+    "crates/app-infra/tests/reading_component_fixtures.rs",
+    "crates/app-infra/tests/desktop_snapshot.rs",
+    "crates/app-core/tests/binding_journey.rs",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "apps/desktop/src-tauri/src/ipc/queries.rs",
+    "apps/desktop/src-tauri/src/ipc/mod.rs",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview/state.rs",
+    "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs",
+    "apps/desktop/src/bridge/contracts.generated.ts",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/src/bridge/projections/application-store.ts",
+    "apps/desktop/src/features/capture/CaptureSheet.tsx",
+    "apps/desktop/src/features/capture/WindowPreview.tsx",
+    "apps/desktop/src/features/capture/styles.module.css",
+    "apps/desktop/src/windows/main/MainWindow.tsx",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "apps/desktop/tests/visual/verify-library-binding.mjs",
+    "apps/desktop/tests/visual/verify-ui.mjs",
+    "apps/desktop/tests/unit/tauri-port.test.ts",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/current-design-alignment.json",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261109-R93.json",
+    "docs/development/binding-journey-source-adoption-20261109.json",
+    "crates/app-infra/tests/storage_schema_contract.rs",
+    "crates/app-infra/tests/storage_service_graph_v4.rs",
+    "crates/app-infra/tests/storage_service_graph_crash.rs",
+    "crates/app-infra/tests/storage_http_identity_v3.rs",
+    "crates/app-infra/tests/storage_http_identity_crash.rs",
+    "crates/app-infra/tests/storage_acceptance_routes.rs",
+    "crates/app-infra/tests/storage_session_v2.rs",
+    "crates/app-infra/tests/storage_product.rs",
+    "crates/app-infra/tests/storage_acceptance_support/frozen_hosts.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview.rs"
+  ],
+  "authorization": "用户要求先计划→门禁→实现。原P3合法写入先独立封存；本r3只在checkpoint、计划与新门禁分别非作者审核且程序签fresh续写准入后恢复implementation。旧签字/历史通过不授新oracle或产品准出。",
+  "id": "align-approved-binding-journey",
+  "kind": "product",
+  "phase_policy": "openspec/changes/align-approved-binding-journey/phase-policy.json",
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "product_visual_checks": [],
+  "requirements": [
+    {
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "binding-journey-execution"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=existing-library",
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#app-dialog",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#connection-sheet"
+      ],
+      "id": "BIND-001",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "scenario": "one-reviewed-target-and-explicit-system-window-intent",
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "spec": "specs/binding-journey/spec.md"
+    },
+    {
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "binding-journey-execution"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=existing-library",
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#app-dialog",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#connection-sheet"
+      ],
+      "id": "BIND-002",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "scenario": "truthful-preview-selection-required-state",
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "spec": "specs/binding-journey/spec.md"
+    },
+    {
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "binding-journey-execution"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=existing-library",
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#app-dialog",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#connection-sheet"
+      ],
+      "id": "BIND-003",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "scenario": "rust-authoritative-reuse-switch-and-operation-progress",
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "spec": "specs/binding-journey/spec.md"
+    },
+    {
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "binding-journey-execution",
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=existing-library",
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#app-dialog",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#connection-sheet"
+      ],
+      "id": "BIND-004",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "scenario": "explicit-reading-confirmation-and-source-details",
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "spec": "specs/binding-journey/spec.md"
+    },
+    {
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "binding-journey-execution",
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=existing-library",
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#app-dialog",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#connection-sheet"
+      ],
+      "id": "BIND-005",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "scenario": "atomic-selection-sets-saved-policy-and-history",
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "spec": "specs/binding-journey/spec.md"
+    },
+    {
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "binding-phase-guard-tests",
+        "binding-journey-guard-tests",
+        "binding-journey-execution",
+        "storage-schema-v5-tests",
+        "storage-schema-v5-contract",
+        "storage-schema-v5-boundaries",
+        "storage-schema-v5-runtime-inspection"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=existing-library",
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#app-dialog",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#connection-sheet"
+      ],
+      "id": "BIND-006",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "scenario": "ordered-plan-gates-implementation-and-complete-journey-evidence",
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/game-library-window-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "spec": "specs/binding-journey/spec.md"
+    }
+  ],
+  "resume_epoch": {
+    "ancestor_admission": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3/admission.json",
+      "sha256": "74024e311eca0cdaff66870fa76a62bf17de4d74872f1be14d640504a9955e4c"
+    },
+    "checkpoint_review": {
+      "path": ".build/binding-journey-alignment-20261109/resumption-r3/predecessor-checkpoint-03/checkpoint-review.json",
+      "sha256": "bb0fa36767c9d1f9cad3454ad37143829ef6879e16e1bcddfb479b47203f0296"
+    },
+    "checkpoint_review_required": true,
+    "current_stage": "published_plan_pending_review",
+    "epoch_id": "r3",
+    "execution_obligations": "docs/development/binding-journey-plan.json#execution_obligations",
+    "execution_obligations_status": "planned_not_implemented_not_run",
+    "new_admission": ".build/binding-journey-alignment-20261109/phase-3-r3/admission.json",
+    "plan_revision_id": "P1r3-revision-2",
+    "policy": "openspec/changes/align-approved-binding-journey/phase-policy.json",
+    "previous_plan_review": {
+      "path": ".build/binding-journey-alignment-20261109/phase-1-r3/plan-review-attempt-01.json",
+      "sha256": "7297f1105a85636c8c15700ecc8ea5e20ea9a5348d5f6b021bfea4c56940eded"
+    }
+  },
+  "review_evidence": {
+    "authors": [
+      "/root",
+      "/root/binding_plan_docs",
+      "/root/binding_gate_implementation",
+      "/root/binding_backend_implementation",
+      "/root/binding_ui_implementation",
+      "/root/binding_storage_implementation",
+      "/root/binding_source_audit",
+      "/root/binding_native_coordinator_fix",
+      "/root/binding_resumption_plan",
+      "/root/binding_resumption_gate_implementation",
+      "/root/binding_storage_gate_resumption"
+    ],
+    "path": ".build/binding-journey-alignment-20261109/final-source-review.json"
+  },
+  "schema_version": 1,
+  "source_snapshot": "openspec/changes/align-approved-binding-journey/source-snapshot.json"
+}

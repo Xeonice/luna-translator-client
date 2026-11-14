@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-native-single-window-evidence",
+  "parent_baseline_sha256": "ff6f48622a257136ee101ff73787d2315a1202d4d69d019f89c7d16228c2daaf",
+  "source_delta": [
+    {
+      "path": "docs/development/lifecycle-impact-contract.json",
+      "before": "340162d3183f9919f2c6fb6633e8427081fa83aca7862a2d8d076248895e9a0f",
+      "after": "c20a262c069d4faa0f46fdf54147cb415ecc97af620d8bce2cc3e5875c337117"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/design.md",
+      "before": null,
+      "after": "5cdc47765931f9f59c244f44f1111305936e928e36834b4dfc95821e65ba561b"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/iteration-card.md",
+      "before": null,
+      "after": "b1b1901df7f8f4295f40bb122f38106b0ea662b9859da410e2c732a1d165014a"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/proposal.md",
+      "before": null,
+      "after": "0b2ee483eee7b91c0a06b95e47e11a1d14be071aee18cf65c59639619cc5452d"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/source-snapshot.json",
+      "before": null,
+      "after": "b14487c8cbd4d0e1e41dac92dcd426fd4d4dd2ae38658996c4582a038131e032"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/specs/final-cohort-registration/spec.md",
+      "before": null,
+      "after": "98e35030e9ce6431a5f37999dd66d5ea10166038dd73fa39e4075fbaf3a99ab7"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/specs/native-single-window-evidence/spec.md",
+      "before": null,
+      "after": "7fa40470d522d478e46d9cc7d182c47e3d86fd43fb3e920255b7fa14ad51ef9e"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/tasks.md",
+      "before": null,
+      "after": "d68c0c19b6a024911fcb1bc20267681345c32843b48604ad8850c98a2f518af8"
+    },
+    {
+      "path": "openspec/changes/repair-native-single-window-evidence/verification.json",
+      "before": null,
+      "after": "70dc3809a112926362c6dd1173575174de3eaaa853806aa796202d5ec295136e"
+    },
+    {
+      "path": "scripts/quality/lifecycle_impact.py",
+      "before": "632b10a08ccef6411e17b9ed19ab48ea56971efdb4fd00b695391226a9eb30ca",
+      "after": "527b9d67fea0aff94db7f690eb9d5069f5e2fed0b7376d25c266f55669057eed"
+    },
+    {
+      "path": "scripts/quality/runtime_observer.swift",
+      "before": "992ed41b55c430f973aa5767864497849d9e1b641d36f848d16b8067ac6cd9d5",
+      "after": "5c0f5bfcccde0119b5c7ae90e536b4b3bc7750e549181fd319d131570640cb19"
+    },
+    {
+      "path": "scripts/quality/test_lifecycle_impact.py",
+      "before": "59e1aa79a4a9133daf360fca3c3457e67bd9fec4b8d2996959376f2ac5ceb099",
+      "after": "d22d6ecd4e2a2786d20de3ae71ecb1ad74aa23680b968d74d1cd2e90119ff452"
+    },
+    {
+      "path": "scripts/quality/test_runtime_stability.py",
+      "before": "682117ad33d556a06bc0e9bf693736b04239987c4ea8ba2e9e279816951e71f0",
+      "after": "4b269f3397039b495ee4686cd1776a2dfd5afeb9613c257904abe948d8623996"
+    }
+  ],
+  "product_delta": [],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/native-evidence-r62/code-review/review.json",
+    "sha256": "9c10b10ce0158090beb7b92bd7220fb990ce49f6075c56249450f65263877709",
+    "bytes": 6803
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

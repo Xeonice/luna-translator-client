@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "kind": "user-approved-general-settings-structure/v1",
+  "approval_id": "general-settings-user-approval-20261107",
+  "status": "approved_by_user",
+  "decision_date": "2026-11-07",
+  "decision_basis": "explicit_user_message",
+  "user_confirmation": "判断设计稿没问题，进行修正，然后重新升级客户端",
+  "reviewed_entry": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/index.html",
+  "reviewed_manifest": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/manifest.json",
+    "sha256": "8bf2b8a3eb51a055c4c9150bb280f8eb5bb6eb9c2795b430a0056bc08490bcc0",
+    "bytes": 5041
+  },
+  "reviewed_freeze": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/freeze.json",
+    "sha256": "a2f576edd5b114a3b8312d70b0634b93af05909c97461deee8478317d8404703",
+    "bytes": 3866
+  },
+  "reviewed_sources": {
+    "index.html": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/index.html",
+      "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+      "bytes": 4622
+    },
+    "settings.html": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/settings.html",
+      "sha256": "6734155af5a9cd9251b21f665156c67a0c97bb473c162ddb9856e3efcd674b9a",
+      "bytes": 6970
+    },
+    "settings.css": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/settings.css",
+      "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+      "bytes": 11112
+    },
+    "settings.js": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/settings.js",
+      "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+      "bytes": 9570
+    },
+    "README.md": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/README.md",
+      "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+      "bytes": 3544
+    }
+  },
+  "reviewed_before_image": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/reported-native-before.png",
+    "sha256": "5302991f2187e6a92ab15eb3a66245a1add521e1b9024d6e704c2f5aeb3d3363",
+    "bytes": 412122
+  },
+  "promoted_manifest": {
+    "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/manifest.json",
+    "sha256": "efd9e1b52c908a60ddfaa3f4e66c4efb6a8cba494d744db67ea010574005398a",
+    "bytes": 5653
+  },
+  "promoted_sources": {
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html": {
+      "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+      "bytes": 4622
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html": {
+      "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+      "bytes": 6900
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.css": {
+      "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+      "bytes": 11112
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.js": {
+      "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+      "bytes": 9570
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/README.md": {
+      "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+      "bytes": 3544
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/reported-native-before.png": {
+      "sha256": "5302991f2187e6a92ab15eb3a66245a1add521e1b9024d6e704c2f5aeb3d3363",
+      "bytes": 412122
+    }
+  },
+  "relocation": [
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/index.html",
+        "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+        "bytes": 4622
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html",
+        "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+        "bytes": 4622
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.html",
+        "sha256": "6734155af5a9cd9251b21f665156c67a0c97bb473c162ddb9856e3efcd674b9a",
+        "bytes": 6970
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+        "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+        "bytes": 6900
+      },
+      "transformation": "two_dependency_relative_urls_only"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.css",
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.css",
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.js",
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.js",
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/README.md",
+        "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+        "bytes": 3544
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/README.md",
+        "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+        "bytes": 3544
+      },
+      "transformation": "verbatim"
+    }
+  ],
+  "captured_records": [
+    {
+      "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/capture-manifest.json",
+      "sha256": "8bf2b8a3eb51a055c4c9150bb280f8eb5bb6eb9c2795b430a0056bc08490bcc0",
+      "bytes": 5041
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/capture-freeze.json",
+      "sha256": "a2f576edd5b114a3b8312d70b0634b93af05909c97461deee8478317d8404703",
+      "bytes": 3866
+    }
+  ],
+  "runtime_dependencies": [
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+      "bytes": 2770
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+      "bytes": 3501
+    }
+  ],
+  "target_id": "guided-service-reading-20261030",
+  "composition_id": "complete-guided-history-20261031",
+  "supplement_id": "general-settings-structure-20261107",
+  "parent_approval": {
+    "path": "docs/development/design-approval-layout-refinements-20261107.json",
+    "sha256": "08b61a71a685f73e2bd2f7dd8f3917ba212bb7c437509ab797b74b446e68cb54",
+    "bytes": 4811
+  },
+  "approved_scope": [
+    "General settings three groups: lexical, always-saved reading records and local OS preference",
+    "Session immediate input/translation controls remain in current session; general only typed navigation link",
+    "Per-field global/game inheritance, source visibility and restore/discard/save semantics retained",
+    "Login startup remains true OS authority with independent pending/error/readback; collapsed detail is presentation, not system registration recovery"
+  ],
+  "viewports": {
+    "normal": [
+      1000,
+      720
+    ],
+    "narrow": [
+      760,
+      560
+    ]
+  },
+  "allowed_relocation": "Only two dependency relative URLs in settings.html; other five leaves verbatim. Original five captured source leaves and capture records retained under captured/. Raw visual relocation identity is separately executed; no reference PNG or runtime approval is granted.",
+  "captured_pending_labels": "Original pending labels are retained as captured bytes. This separate user decision establishes source approval.",
+  "not_granted": [
+    "reference PNG approval",
+    "real component or Native acceptance",
+    "system login-startup recovery verified",
+    "whole-product release acceptance"
+  ]
+}

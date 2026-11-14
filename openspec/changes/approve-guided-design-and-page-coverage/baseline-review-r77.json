@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "approve-guided-design-and-page-coverage",
+  "parent_baseline_sha256": "953a793fee29e910c1fdaa5f30c3832f518f2cbf044cc2256542a44e8276038f",
+  "exact_delta_sha256": "9f325c3cb39f7a567ec16a7985ad7dfca18e138443aaa847c5f71103503eea1e",
+  "documentation_review": {
+    "path": ".build/design-approval-all-pages-20261031/review/docs-review.json",
+    "bytes": 12017,
+    "sha256": "34aa5c42c73ba7948791dca2b26e6329caf2949fd5c9099ae5079a39034fc91f"
+  },
+  "code_review": {
+    "path": ".build/design-approval-all-pages-20261031/review/tooling-review.json",
+    "bytes": 10903,
+    "sha256": "a625d77e0c1318d78c4ed232c1814525eeca13c382a438bd89ace876abc15da0"
+  },
+  "governance_review": {
+    "path": ".build/design-approval-all-pages-20261031/review/governance-review.json",
+    "bytes": 3001,
+    "sha256": "0389dc934ebfa519f09a602f02483712da76ad6710437c32737144e14c5d8471"
+  },
+  "explicit_user_source_version_approval": {
+    "target_id": "guided-service-reading-20261030",
+    "status": "approved_by_user",
+    "record": {
+      "path": "docs/development/design-approval-guided-20261031.json",
+      "sha256": "bb68cdc9fa93f1b0b58e1d716e5269e8f17a989737acabeb6c8e5217764020b1"
+    },
+    "design_closure_sha256": "5d3ab428f7af2c88b2a96293c20d14a6729fdcc0c12fff843bac298482255e9a"
+  },
+  "historical_approval_records_preserved": true,
+  "independent_reference_acceptance_promoted": false,
+  "product_acceptance_promoted": false
+}

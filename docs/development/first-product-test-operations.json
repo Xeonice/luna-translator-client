@@ -1,0 +1,1986 @@
+{
+  "schema_version": 1,
+  "id": "FP1-TEST-OPS-20261019-R1",
+  "phase": "planning",
+  "product_tests_executed": false,
+  "prerequisites": [
+    {
+      "id": "PRE-01",
+      "title": "设计、支持范围与测试政策",
+      "provider": "shared",
+      "owners": [
+        "QA",
+        "UI"
+      ],
+      "status": "pending_review",
+      "required_by_gates": [
+        "B0",
+        "B5"
+      ],
+      "deliverable": "当前完整设计最终评审；支持OS/机型/显示范围；视觉字体/scale/mask/阈值；语言与性能政策的版本和批准记录",
+      "user_action": "确认团队提交的完整设计与验收政策；现阶段无需自行写测试用例",
+      "validation": "逐项核对批准对象/版本与计划，材质确认不能代替整稿；待批准不得默认为通过",
+      "current_evidence": "范围/材质/架构已有确认；完整设计、性能/语言政策仍待冻结",
+      "applies_to": [
+        {
+          "case_ids": [
+            "TP-31",
+            "CR-10-VISUAL",
+            "TP-28",
+            "TP-19",
+            "TP-20",
+            "TP-29"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-02",
+      "title": "OpenAI兼容远程服务",
+      "provider": "user",
+      "owners": [
+        "AI",
+        "PL"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "非秘密的端点、真实模型ID/版本、翻译/精读/查词用途及能力；专用测试凭据引用",
+      "user_action": "选择或授权可用服务/模型；凭据在客户端设置或安全存储录入，不发送到聊天",
+      "validation": "实际协议请求、模型/用途能力和余额/限额分别复验；品牌名称不代表协议可用",
+      "current_evidence": "只有目标环境登记；本轮未核验账号、模型和配额",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "REMOTE-COMPAT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-03",
+      "title": "Anthropic协议服务",
+      "provider": "user",
+      "owners": [
+        "AI",
+        "PL"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "真实Messages协议端点、模型ID、流式/结构化能力及专用凭据引用",
+      "user_action": "授权可用服务；可与其他协议共用提供商，但要独立验证实际协议",
+      "validation": "检查实际wire请求与每用途结果，不借OpenAI兼容结果抵补",
+      "current_evidence": "已规划协议；没有本轮可用性证据",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "ANTHROPIC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-04",
+      "title": "Azure传统翻译服务",
+      "provider": "user",
+      "owners": [
+        "AI"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B3",
+        "B5"
+      ],
+      "deliverable": "Translator端点、必要region/订阅配置、允许语言方向及安全凭据引用",
+      "user_action": "授权测试资源与允许语言方向；不要求LLM模型ID",
+      "validation": "完成真实翻译及不支持文法时的正确降级",
+      "current_evidence": "环境已登记；资源、额度和访问尚未复验",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "TRADITIONAL"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-05",
+      "title": "本机兼容模型服务",
+      "provider": "shared",
+      "owners": [
+        "AI",
+        "PL"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "实际可访问本机URL、已加载模型/版本、用途能力、运行器/权重来源许可与资源窗口",
+      "user_action": "授权使用已有运行器/模型与算力时段；没有环境时由团队提出准备方案",
+      "validation": "检查实际本机路由；停止服务后错误/取消恢复，不静默转云；客户端不托管模型",
+      "current_evidence": "仅规划ENV-LOCAL，本轮未启动或验证运行器",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "LOCAL-COMPAT"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-06",
+      "title": "真实调用预算与输入授权",
+      "provider": "user",
+      "owners": [
+        "AI",
+        "QA"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "允许调用的模型/用途、费用或token/次数上限、并发与时段、允许上传文本范围。多凭据池专项见PRE-18，普通翻译不要求两个Key。",
+      "user_action": "确认付费调用和文本上传边界；凭据在安全存储录入；不操作生产Key做撤销故障",
+      "validation": "执行前冻结预算与允许输入，执行中统计；Key通过安全引用，不写CSV/HTML/日志",
+      "current_evidence": "产品默认并发1/60秒/重试关闭不等于用户已授权实际付费调用",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "REMOTE-COMPAT",
+            "ANTHROPIC",
+            "TRADITIONAL",
+            "LOCAL-COMPAT"
+          ]
+        },
+        {
+          "case_ids": [
+            "CR-05-SR",
+            "CR-05-MO",
+            "CR-05-N7",
+            "CR-05-SAKURA",
+            "CR-13-FINAL-SR",
+            "CR-13-FINAL-MO",
+            "CR-13-FINAL-N7",
+            "CR-13-FINAL-SAKURA",
+            "MC-03",
+            "MC-04",
+            "MC-11",
+            "MC-15",
+            "CR-13-PRIVACY-BUDGET"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-07",
+      "title": "四游戏安装、对白存档与登录",
+      "provider": "shared",
+      "owners": [
+        "HK",
+        "QA"
+      ],
+      "status": "prior_evidence_recheck",
+      "required_by_gates": [
+        "B5"
+      ],
+      "deliverable": "SR中文x86、MO日文x86、Never7日文x64、サクラノ詩10th日文x64的EXE/Bottle；可重复对白存档或推进路径、证据留存范围",
+      "user_action": "提供可用安装/登录/存档或推进协助及测试时段；不结束另一台Steam会话",
+      "validation": "逐款核对位数、目标身份与画面；每款5状态、N7至少3页、预选连续样本；不测Ever17",
+      "current_evidence": "项目有历史现场，但本轮未复验安装/登录/存档当前可用性",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "GAME-SR",
+            "GAME-MO",
+            "GAME-N7",
+            "GAME-SAKURA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-08",
+      "title": "基础Mac、CrossOver与原生权限",
+      "provider": "shared",
+      "owners": [
+        "PL",
+        "QA"
+      ],
+      "status": "prior_evidence_recheck",
+      "required_by_gates": [
+        "B0",
+        "B2",
+        "B5"
+      ],
+      "deliverable": "支持的macOS arm64设备、OS/硬件清单；Hook场景CrossOver/Bottle版本与设置、基本窗口/辅助控制等测试权限。真实双屏附加要求另见PRE-16。",
+      "user_action": "安排基础设备与可操作时段；本人处理系统登录/权限，不改变工作Bottle全局设置",
+      "validation": "按当前组合核对基础原生行为；1x/2x多屏仅在PRE-16的DISPLAYS组合额外要求",
+      "current_evidence": "Mac/CrossOver曾有历史验证，当前设备/OS/Bottle与权限状态本轮未复验",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "NATIVE",
+            "DISPLAYS",
+            "REMOTE-COMPAT",
+            "ANTHROPIC",
+            "TRADITIONAL",
+            "LOCAL-COMPAT",
+            "GAME-SR",
+            "GAME-MO",
+            "GAME-N7",
+            "GAME-SAKURA"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-09",
+      "title": "干净安装与恢复用环境",
+      "provider": "shared",
+      "owners": [
+        "PL",
+        "QA"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B0",
+        "B5"
+      ],
+      "deliverable": "符合支持范围的干净Mac用户或设备；正常quarantine、足够空间、可恢复的隔离测试数据",
+      "user_action": "安排可用环境并授权测试；干净用户与全新设备的区别按B0安装政策记录",
+      "validation": "无需源码/旧Luna/缓存冷启、离线查词、支持的迁移/恢复；不删除隔离属性冒充成功",
+      "current_evidence": "ENV-CLEAN-MAC仅规划，尚未确认可用环境",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "DISTRIBUTION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-10",
+      "title": "分发身份、签名授权与最终RC",
+      "provider": "shared",
+      "owners": [
+        "PL",
+        "QA"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B0",
+        "B5"
+      ],
+      "deliverable": "分发渠道、发布主体/bundle标识、签名/公证政策；对应安全授权引用；最终RC及实际bundle资源清单",
+      "user_action": "确认渠道/发布主体并通过安全存储或CI secret配置授权；不在聊天提供证书私钥或公证密码",
+      "validation": "先完成分发处理再冻结RC；核对签名身份、安装bundle与分发hash；重包换RC重新验证",
+      "current_evidence": "渠道与证书可用性尚未确认，最终RC尚未交付；本轮不访问Apple账户或安装证书",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "NATIVE",
+            "DISPLAYS",
+            "REMOTE-COMPAT",
+            "ANTHROPIC",
+            "TRADITIONAL",
+            "LOCAL-COMPAT",
+            "GAME-SR",
+            "GAME-MO",
+            "GAME-N7",
+            "GAME-SAKURA",
+            "DISTRIBUTION"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-11",
+      "title": "日语审校者与授权质量语料",
+      "provider": "shared",
+      "owners": [
+        "JA",
+        "AI",
+        "QA"
+      ],
+      "status": "pending_review",
+      "required_by_gates": [
+        "B0",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "团队先准备自制/授权分层语料和可接受解释范围；审校者/争议复核人、样本量、严重度及通过线",
+      "user_action": "指定或确认具备日语判断能力的审校者并评审团队提出的质量标准",
+      "validation": "实际MeCab/词典/模型结果独立审阅；原型标注和模型自评分不充当正确率",
+      "current_evidence": "语料、人员与评分政策未冻结；设计样例不是产品金标",
+      "applies_to": [
+        {
+          "case_ids": [
+            "TP-19",
+            "TP-20",
+            "TP-31"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-12",
+      "title": "新Core双架构消费资源",
+      "provider": "team",
+      "owners": [
+        "HK",
+        "JA",
+        "PL",
+        "QA"
+      ],
+      "status": "team_preparation_pending",
+      "required_by_gates": [
+        "B0",
+        "B1"
+      ],
+      "deliverable": "团队锁定Core e9242eb... ABI1七回调及PE32/64 broker/Host/Injector/Hook整套产物hash和许可；语言资源另见PRE-17",
+      "user_action": "无需用户准备Core构建或DLL；团队构建和核验",
+      "validation": "真实Rust双架构七回调、字段宽度、字符串寿命与同Bottle/位数消费验证；纯UNIT/合成协议不要求实际注入",
+      "current_evidence": "Core源码锁与历史探针有记录；正式Rust消费资源及双架构包尚待交付",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "CORE32",
+            "CORE64"
+          ]
+        },
+        {
+          "module_ids": [
+            "M14"
+          ],
+          "layer_ids": [
+            "L6",
+            "L7",
+            "L8"
+          ]
+        },
+        {
+          "case_ids": [
+            "TP-31"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-13",
+      "title": "测试代码、受控样本和执行器",
+      "provider": "team",
+      "owners": [
+        "QA",
+        "AP",
+        "HK",
+        "JA",
+        "AI",
+        "UI",
+        "PL"
+      ],
+      "status": "team_preparation_pending",
+      "required_by_gates": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "按TE-01..12开发受控时钟/barrier、SQLite/Keychain/HTTP/worker故障工具、x86/x64目标、组件/native/game runner及真实capture/runtime adapter",
+      "user_action": "无需用户编写测试设施；团队按垂直切片实现并注册执行命令",
+      "validation": "实际运行断言和回执；不得用计划lint、空目录、假adapter或旧探针代替产品harness",
+      "current_evidence": "现有工程守卫可用；TE设施及真实产品adapter仍planned，19项旧债务未迁移",
+      "applies_to": [
+        {
+          "layer_ids": [
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5",
+            "L6",
+            "L7",
+            "L8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-14",
+      "title": "迁移范围、隔离DB及恢复样本",
+      "provider": "shared",
+      "owners": [
+        "AP",
+        "PL"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B0",
+        "B2",
+        "B5"
+      ],
+      "deliverable": "受支持schema/前版/回退配对、可恢复DB与Keychain专用命名空间、备份基准、磁盘满/只读等隔离构造",
+      "user_action": "确认是否需要迁移旧PoC数据；团队制作测试副本，用户无需交出唯一原件或生产秘密",
+      "validation": "支持版本迁移/失败恢复，不兼容降级预检拒绝；没有正式前版时明确候选/schema范围",
+      "current_evidence": "样本与支持版本未冻结；不默认任意PoC数据可自动迁移",
+      "applies_to": [
+        {
+          "case_ids": [
+            "TP-01",
+            "TP-02",
+            "TP-03",
+            "TP-04",
+            "TP-05",
+            "TP-24",
+            "TP-25",
+            "TP-30",
+            "CR-09-UPGRADE",
+            "MC-16"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-15",
+      "title": "版本库、Runner和证据留存政策",
+      "provider": "shared",
+      "owners": [
+        "QA",
+        "PL"
+      ],
+      "status": "not_configured",
+      "required_by_gates": [
+        "B0",
+        "B5"
+      ],
+      "deliverable": "正式代码托管、Runner与required checks的配置权限；私有制品保存位置、访问人员、保留期/清理政策和备份；非秘密归档索引",
+      "user_action": "确认仓库归属、Runner和受控存储权限及留存政策；未经指示不初始化、提交或推送",
+      "validation": "代码/基准随版本管理，证据按run_id不可覆盖；实测远端CI和制品可取回才确认就绪",
+      "current_evidence": "当前目录无Git/remote，CI仅配置文件；本地工程检查可先做，不宣称远端已运行",
+      "applies_to": [
+        {
+          "case_ids": [
+            "TP-31",
+            "CR-01-REPRODUCE",
+            "TP-30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-16",
+      "title": "真实1x/2x双屏附加环境",
+      "provider": "shared",
+      "owners": [
+        "PL",
+        "QA"
+      ],
+      "status": "needs_confirmation",
+      "required_by_gates": [
+        "B2",
+        "B4",
+        "B5"
+      ],
+      "deliverable": "真实1x/2x显示器、双屏/负坐标/全屏/减少透明度组合及可用时段；不是基础Mac就绪的替代",
+      "user_action": "安排现有显示器/双屏使用时段；不要求为当前纯规则测试购买设备",
+      "validation": "仅DISPLAYS的三个组合在原生RC核验，缺设备只阻断这些组合；浏览器模拟不抵补",
+      "current_evidence": "实际显示组合与设备可用性尚未复验",
+      "applies_to": [
+        {
+          "variant_ids": [
+            "DISPLAYS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-17",
+      "title": "随包词法和中文辞书资源",
+      "provider": "team",
+      "owners": [
+        "JA",
+        "PL",
+        "QA"
+      ],
+      "status": "team_preparation_pending",
+      "required_by_gates": [
+        "B0",
+        "B4"
+      ],
+      "deliverable": "实际MeCab/UniDic/中文基础释义/JMdict补充的字节、版本、hash、覆盖与license、随包manifest及离线查询路径",
+      "user_action": "无需用户自行找词典；团队准备候选与许可/覆盖报告，产品Owner评审选型",
+      "validation": "使用真实包内资源离线首启分词与中文释义；纯span/DTO/配置规则可先用合成语料独立验证，不能借fixture标资源通过",
+      "current_evidence": "完整中文资源、覆盖语料与分发许可仍待B0冻结；设计样例不是实际资源",
+      "applies_to": [
+        {
+          "module_ids": [
+            "M07",
+            "M08"
+          ],
+          "layer_ids": [
+            "L3",
+            "L6",
+            "L7",
+            "L8"
+          ]
+        },
+        {
+          "case_ids": [
+            "TP-31"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PRE-18",
+      "title": "多凭据池专项测试身份",
+      "provider": "shared",
+      "owners": [
+        "AI",
+        "PL"
+      ],
+      "status": "team_preparation_pending",
+      "required_by_gates": [
+        "B3"
+      ],
+      "deliverable": "MC-04池策略需至少两个可区分的专用测试凭据身份；受控服务可用团队合成身份，不要求每个真实provider购买两把Key",
+      "user_action": "仅在需验证真实池时授权专用测试凭据引用；默认故障/撤销验证由团队可控服务完成",
+      "validation": "在实际客户端区分池成员/版本和认证失败撤销；禁止读取或撤销生产秘密，不能把该专项设为所有服务前置",
+      "current_evidence": "多凭据测试样本与实际池harness尚待准备",
+      "applies_to": [
+        {
+          "case_ids": [
+            "MC-04"
+          ]
+        }
+      ]
+    }
+  ],
+  "maintenance_areas": [
+    {
+      "id": "MA-01",
+      "title": "工程守卫",
+      "path": "scripts/quality/",
+      "state": "existing",
+      "owners": [
+        "QA"
+      ],
+      "layer_ids": [
+        "L0"
+      ],
+      "responsibility": "计划/来源/技术/边界/编译守卫和自身负例；不是产品功能测试",
+      "trigger": "每次变更；CI复用同一入口",
+      "command_status": "existing: npm run verify / npm run verify:test-plan"
+    },
+    {
+      "id": "MA-02",
+      "title": "Rust领域单元",
+      "path": "crates/<crate>/src/ 内 #[cfg(test)]",
+      "state": "mixed",
+      "owners": [
+        "AP",
+        "AI",
+        "HK",
+        "JA"
+      ],
+      "layer_ids": [
+        "L1"
+      ],
+      "responsibility": "规则贴近实现；app-core不通过dev-dependency反向依赖app-infra",
+      "trigger": "所属规则/状态机变化时",
+      "command_status": "planned per slice; cargo test hooks into actual targets"
+    },
+    {
+      "id": "MA-03",
+      "title": "Rust公开边界/FFI",
+      "path": "crates/{hook-contracts,hook-client,lunahook-host,language-worker}/tests/",
+      "state": "planned",
+      "owners": [
+        "HK",
+        "JA",
+        "AP"
+      ],
+      "layer_ids": [
+        "L2"
+      ],
+      "responsibility": "本crate公开API、Core消费双架构、字符串所有权和worker/DTO；不同目标独立回执",
+      "trigger": "ABI/协议/DTO/资源版本变化及B1/B4",
+      "command_status": "planned via TE-02/03/08; no empty test crate"
+    },
+    {
+      "id": "MA-04",
+      "title": "共享跨进程契约",
+      "path": "tests/contracts/",
+      "state": "planned",
+      "owners": [
+        "HK",
+        "JA",
+        "AP"
+      ],
+      "layer_ids": [
+        "L2"
+      ],
+      "responsibility": "协议版本、兼容、错序/损坏拒绝；引用授权fixtures",
+      "trigger": "共享契约变化；消费侧同步回归",
+      "command_status": "planned via TE-02/03/08"
+    },
+    {
+      "id": "MA-05",
+      "title": "真实适配器集成",
+      "path": "crates/app-infra/tests/",
+      "state": "planned",
+      "owners": [
+        "AP",
+        "PL",
+        "AI",
+        "JA"
+      ],
+      "layer_ids": [
+        "L3"
+      ],
+      "responsibility": "真实SQLite/WAL/Keychain/HTTP/文件锁/worker，使用隔离命名空间",
+      "trigger": "相关I/O、schema、provider或资源变化",
+      "command_status": "planned via TE-04/06/08"
+    },
+    {
+      "id": "MA-06",
+      "title": "应用黑盒编排",
+      "path": "tests/integration/application/",
+      "state": "planned",
+      "owners": [
+        "AP",
+        "AI"
+      ],
+      "layer_ids": [
+        "L4"
+      ],
+      "responsibility": "通过公开端口验证多窗投影、用例协调和取消竞争；不复制业务实现",
+      "trigger": "用例/投影/公共端口变化",
+      "command_status": "planned via TE-04/06/09; any new harness crate requires architecture registration"
+    },
+    {
+      "id": "MA-07",
+      "title": "组件行为与可访问性",
+      "path": "apps/desktop/tests/components/",
+      "state": "planned",
+      "owners": [
+        "UI"
+      ],
+      "layer_ids": [
+        "L5"
+      ],
+      "responsibility": "实际产品组件的空态、失败态、交互/键盘，不引入UI直连后端旁路",
+      "trigger": "组件/状态/可访问交互变化",
+      "command_status": "planned via TE-05; existing report QA is not this harness"
+    },
+    {
+      "id": "MA-08",
+      "title": "产品视觉基准与Playwright",
+      "path": "apps/desktop/tests/visual/",
+      "state": "planned",
+      "owners": [
+        "UI",
+        "PL"
+      ],
+      "layer_ids": [
+        "L5"
+      ],
+      "responsibility": "唯一产品截图基准/候选比较和旅程；当前设计规范仍在docs/design/first-product-v1",
+      "trigger": "UI/字体/token/状态变化；批准后变更基准",
+      "command_status": "planned via TE-05; baseline update needs design/Owner review"
+    },
+    {
+      "id": "MA-09",
+      "title": "正式包用户旅程",
+      "path": "tests/integration/desktop/",
+      "state": "planned",
+      "owners": [
+        "QA",
+        "AP",
+        "UI",
+        "PL"
+      ],
+      "layer_ids": [
+        "L6"
+      ],
+      "responsibility": "运行最终安装包而不是dev server；四窗口、手动来源和真实服务闭环",
+      "trigger": "阶段正式包及每个最终RC",
+      "command_status": "planned via TE-10; runtime adapter not implemented"
+    },
+    {
+      "id": "MA-10",
+      "title": "原生与安装恢复",
+      "path": "tests/integration/native/",
+      "state": "planned",
+      "owners": [
+        "PL",
+        "QA"
+      ],
+      "layer_ids": [
+        "L6",
+        "L8"
+      ],
+      "responsibility": "原生焦点/权限/多屏、签名冷启、迁移与回退脚本和人工操作说明",
+      "trigger": "平台/打包/签名/权限/显示变化，每个RC",
+      "command_status": "planned via TE-05/10/12; browser cannot substitute"
+    },
+    {
+      "id": "MA-11",
+      "title": "四游戏运行规程/校验器",
+      "path": "tests/integration/games/",
+      "state": "planned",
+      "owners": [
+        "HK",
+        "QA"
+      ],
+      "layer_ids": [
+        "L7"
+      ],
+      "responsibility": "逐款操作说明、目标/正文核对及证据解析；不提交游戏资源或完整台词",
+      "trigger": "Hook/资源/阅读/翻译变更的影响游戏；每个最终RC四款全部",
+      "command_status": "planned via TE-11; user interaction may be required"
+    },
+    {
+      "id": "MA-12",
+      "title": "稳定性与质量验证",
+      "path": "tests/integration/quality/",
+      "state": "planned",
+      "owners": [
+        "QA",
+        "JA",
+        "AI",
+        "PL"
+      ],
+      "layer_ids": [
+        "L8"
+      ],
+      "responsibility": "预冻结压力/性能、词典质量、模型人工审阅rubric及复核工具",
+      "trigger": "资源/provider/prompt/性能变化；每个RC",
+      "command_status": "planned via TE-09/12; human review is required"
+    },
+    {
+      "id": "MA-13",
+      "title": "共享授权样本",
+      "path": "tests/fixtures/{contracts,providers,storage,language}/",
+      "state": "planned",
+      "owners": [
+        "AP",
+        "HK",
+        "JA",
+        "AI",
+        "QA"
+      ],
+      "layer_ids": [
+        "L1",
+        "L2",
+        "L3",
+        "L4",
+        "L5",
+        "L8"
+      ],
+      "responsibility": "合成/授权版本化数据、许可、种子和manifest；非生产fallback，不存凭据或游戏资产",
+      "trigger": "契约/语料变化，经Owner语义审阅",
+      "command_status": "planned per suite; release bundle must exclude fixtures"
+    },
+    {
+      "id": "MA-14",
+      "title": "计划/供给/映射",
+      "path": "docs/development/first-product-test-{plan,operations}.json",
+      "state": "existing",
+      "owners": [
+        "QA"
+      ],
+      "layer_ids": [
+        "L0"
+      ],
+      "responsibility": "JSON登记为单一源，CSV/HTML生成；测试源码由对应模块Owner维护",
+      "trigger": "需求/设计/架构/支持环境/前置变化时",
+      "command_status": "existing planning guards plus this operations guard"
+    },
+    {
+      "id": "MA-15",
+      "title": "报告工具",
+      "path": "scripts/report/",
+      "state": "existing",
+      "owners": [
+        "QA",
+        "UI"
+      ],
+      "layer_ids": [
+        "L0"
+      ],
+      "responsibility": "长期维护报告生成与交互QA脚本；生成报告不充当测试源码",
+      "trigger": "登记/供给/报告样式变化",
+      "command_status": "existing build_test_case_report.py; report QA checked separately"
+    },
+    {
+      "id": "MA-16",
+      "title": "运行证据与脱敏副本",
+      "path": ".build/client-regression/<run_id>/ → 受控制品存储；reports/ 为脱敏副本",
+      "state": "generated",
+      "owners": [
+        "QA",
+        "PL"
+      ],
+      "layer_ids": [
+        "L6",
+        "L7",
+        "L8"
+      ],
+      "responsibility": "原始证据生成后独立归档，不只保存在可清理缓存；diagnostics/私有，守卫回执.build/quality另存",
+      "trigger": "每个run/attempt结束即归档，失败也保留",
+      "command_status": "product artifact archiver planned TE-10; retention/access policy PRE-15"
+    },
+    {
+      "id": "MA-17",
+      "title": "独立Core内部测试",
+      "path": "独立 luna-hooks-core 仓库的 tests/ 与构建CI",
+      "state": "external",
+      "owners": [
+        "HK"
+      ],
+      "layer_ids": [
+        "L2",
+        "L7"
+      ],
+      "responsibility": "Core内部C++/导出/构建/许可由独立仓维护；客户端仍验消费兼容和四游戏",
+      "trigger": "Core版本/产物变化；客户端锁定升级前",
+      "command_status": "external maintenance; not implemented or verified by this documentation"
+    }
+  ],
+  "case_maintenance": [
+    {
+      "case_id": "CR-01-INSTALL",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "PL",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-01-REPRODUCE",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "QA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-02-ABI32",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "HK",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-02-ABI64",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "HK",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-02-MANAGED",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-02-PHASES",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-02-IDENTITY",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-03-SR",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-03-MO",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-03-N7",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-03-SAKURA",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-SR",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-MO",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-N7",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-SAKURA",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-04-IDENTITY",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-04-SAVE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-04-RAW",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-04-SEGMENT",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-04-UNICODE",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-LIVE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-LATE",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-05-ERROR",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-06-SEMANTICS",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-06-BACKGROUND",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "PL",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-07-LIFECYCLE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-07-CRASH",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "HK",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-07-BACKPRESSURE",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-07-SOAK",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-07-INTEGRITY",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-08-CONFIG",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-08-HISTORY",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-08-DIAGNOSTICS",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "QA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-09-RESOURCE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "HK",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-09-UPGRADE",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "HK",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-10-VISUAL",
+      "area_ids": [
+        "MA-07",
+        "MA-08"
+      ],
+      "module_owners": "UI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-10-NATIVE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "PL",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-RESOURCE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-TOKEN",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-RUBY",
+      "area_ids": [
+        "MA-07",
+        "MA-08"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-WORDCARD",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-PERSIST",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-REVISION",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-NATIVE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "PL",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-12-OFFLINE",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-PROVIDERS",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-CONTEXT",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-STREAM-REVISION",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-GRAMMAR",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-PRIVACY-BUDGET",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-EXPLAIN-UI",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-FINAL-SR",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-FINAL-MO",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-FINAL-N7",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "CR-13-FINAL-SAKURA",
+      "area_ids": [
+        "MA-11"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-01",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-02",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-03",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-04",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-05",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-06",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-07",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-08",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-09",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-10",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-11",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-12",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-13",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-14",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-15",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-16",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-17",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-18",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-19",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-20",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-21",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "MC-22",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-01",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-02",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-03",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-04",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-05",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-06",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-07",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-08",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-09",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-10",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-11",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-12",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-13",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-14",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-15",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-16",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-17",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-18",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-19",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "GL-20",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-01",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-02",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-03",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-04",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-05",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-06",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-07",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-08",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-09",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-10",
+      "area_ids": [
+        "MA-02"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-11",
+      "area_ids": [
+        "MA-02"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-12",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-13",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-14",
+      "area_ids": [
+        "MA-06"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-15",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-16",
+      "area_ids": [
+        "MA-02"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-17",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-18",
+      "area_ids": [
+        "MA-03",
+        "MA-04"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-19",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-20",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "AI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-21",
+      "area_ids": [
+        "MA-09",
+        "MA-10"
+      ],
+      "module_owners": "PL",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-22",
+      "area_ids": [
+        "MA-07",
+        "MA-08"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-23",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "UI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-24",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "PL",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-25",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-26",
+      "area_ids": [
+        "MA-05"
+      ],
+      "module_owners": "JA",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-27",
+      "area_ids": [
+        "MA-02"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-28",
+      "area_ids": [
+        "MA-07",
+        "MA-08"
+      ],
+      "module_owners": "UI",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-29",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-30",
+      "area_ids": [
+        "MA-10",
+        "MA-12"
+      ],
+      "module_owners": "AP",
+      "implementation_status": "planned"
+    },
+    {
+      "case_id": "TP-31",
+      "area_ids": [
+        "MA-01",
+        "MA-14"
+      ],
+      "module_owners": "QA",
+      "implementation_status": "planned"
+    }
+  ],
+  "rules": {
+    "applicability": "OR between applies_to rules, AND between fields within a rule; any value in each field matches",
+    "status_semantics": "Statuses record planning readiness only; do not convert dependency records or product cases to passed. Actual availability is checked per run. Missing external prerequisites block only affected attempts.",
+    "secrets": "Store only non-secret metadata and credential references; no raw keys/passwords/certificates in this registry, source, CSV or HTML.",
+    "retention": "Raw run evidence is copied from temporary output into access-controlled artifact storage with a stable run_id and hashes. Access/retention/deletion policy must be frozen in PRE-15; no numeric period or cloud upload is authorized here.",
+    "baseline_updates": "Requirement/design change first, candidate/diff and independent review next, then explicit baseline approval. Never update expected results or screenshots merely to pass."
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "schema_version": 1,
+  "kind": "R27_exact_delta_review_candidate",
+  "status": "independently_reviewed_source_and_governance_adoption_authorized",
+  "captured_at": "2026-10-20T11:56:29.475128+00:00",
+  "parent_baseline": {
+    "id": "FP1-20261020-R26",
+    "path": "docs/development/iteration-baseline.json",
+    "sha256": "8ffb17b94e8d1087c287b7c1251b6c8e99891a6d84fecd97cc810d7fdcd2c8f9",
+    "entries": 721
+  },
+  "scope": "Six product/test files (five business changes plus one equivalent Clippy assertion fix); R27 specification wiring, technical documentation, manually re-audited status source identities and deterministic exports; exact R26 archive/new review records/card. No product/UI/schema/Core/DTO/dependency expansion.",
+  "source_deltas": [
+    {
+      "path": "crates/app-core/src/domain/capture.rs",
+      "before_sha256": "74b19d3afb817b8b9ed9fd730444d98445d03158840ba592a10f1822ba52b2c8",
+      "after_sha256": "a1d4bda758f8447d14f2de51b477ba41ae39bec85dc3b7436e7fb5a9605ddbcf"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/capture.rs",
+      "before_sha256": "8ecdc2b7547f6034120fa929be7a98ff0f2dac7b1685a839bd9db39ac13bfcdc",
+      "after_sha256": "579236a602186888d299edcd6379229ccd941cb5e7b4275a06a85573e394df6a"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_product.rs",
+      "before_sha256": "8b7f430d1fcc8e5d6bbc46fa6de39f2b2ede12f129a08dd4c996d2da4bbac464",
+      "after_sha256": "9c136072b55cd4e7f48bc450529808d994d17b2a8be1055d8b28281e037faef8"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "before_sha256": "447c780c7352b8863b277a3dfb0c3e695439de7d9bf6beed745f435d06410d70",
+      "after_sha256": "5a5dfa1ed37d3f1dfd46f8f2359a438ea2faf6b0b5ef6f5d228c59705156644f"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+      "before_sha256": "e51464d87a432112394af9ace3ce9141e6494a8479e2d65333c120937c9c2542",
+      "after_sha256": "153fcb6962792150d38b3f2a09377f16e3512521e2d0c98fc564869745bcbfa3"
+    },
+    {
+      "path": "crates/app-infra/tests/scoped_preferences.rs",
+      "before_sha256": "3f5a5ea68c846c05636e9f3b957d1031f10095395f1cb31f2134cd98001f028e",
+      "after_sha256": "2bdb5023bbee98e20ba9480f8e754bd65b98b2171a55fbd8fbcc162b6f532b3f"
+    }
+  ],
+  "exact_existing_file_changes": [
+    {
+      "path": "crates/app-core/src/domain/capture.rs",
+      "before_sha256": "74b19d3afb817b8b9ed9fd730444d98445d03158840ba592a10f1822ba52b2c8",
+      "after_sha256": "a1d4bda758f8447d14f2de51b477ba41ae39bec85dc3b7436e7fb5a9605ddbcf",
+      "bytes": 12612,
+      "candidate": "crates/app-core/src/domain/capture.rs"
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/capture.rs",
+      "before_sha256": "8ecdc2b7547f6034120fa929be7a98ff0f2dac7b1685a839bd9db39ac13bfcdc",
+      "after_sha256": "579236a602186888d299edcd6379229ccd941cb5e7b4275a06a85573e394df6a",
+      "bytes": 26059,
+      "candidate": "crates/app-infra/src/storage/queries/capture.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_product.rs",
+      "before_sha256": "8b7f430d1fcc8e5d6bbc46fa6de39f2b2ede12f129a08dd4c996d2da4bbac464",
+      "after_sha256": "9c136072b55cd4e7f48bc450529808d994d17b2a8be1055d8b28281e037faef8",
+      "bytes": 95798,
+      "candidate": "crates/app-infra/tests/storage_product.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "before_sha256": "447c780c7352b8863b277a3dfb0c3e695439de7d9bf6beed745f435d06410d70",
+      "after_sha256": "5a5dfa1ed37d3f1dfd46f8f2359a438ea2faf6b0b5ef6f5d228c59705156644f",
+      "bytes": 88691,
+      "candidate": "crates/app-infra/tests/application_runtime.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+      "before_sha256": "e51464d87a432112394af9ace3ce9141e6494a8479e2d65333c120937c9c2542",
+      "after_sha256": "153fcb6962792150d38b3f2a09377f16e3512521e2d0c98fc564869745bcbfa3",
+      "bytes": 101054,
+      "candidate": "crates/app-infra/tests/storage_acceptance_support/fields.rs"
+    },
+    {
+      "path": "crates/app-infra/tests/scoped_preferences.rs",
+      "before_sha256": "3f5a5ea68c846c05636e9f3b957d1031f10095395f1cb31f2134cd98001f028e",
+      "after_sha256": "2bdb5023bbee98e20ba9480f8e754bd65b98b2171a55fbd8fbcc162b6f532b3f",
+      "bytes": 15732,
+      "candidate": "crates/app-infra/tests/scoped_preferences.rs"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md",
+      "before_sha256": "ca286dbdaca44ca4bafe8e3b6e40d0cada3cd1d2d704e004d5cd21424e788284",
+      "after_sha256": "6ba5a24cda01b0efe18a29e0c159d29c49c3d8a25b03218465d65ec6f87bd079",
+      "bytes": 1759,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/design.md",
+      "before_sha256": "5be4eac19af91ed7a050812bafe75bdce340c73fc6ff6df74e568e6e4c7b386c",
+      "after_sha256": "ecf1aaa3d1ab05602efe9af87113989301fdbb267c29f329cf756d2cf7150338",
+      "bytes": 5463,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/design.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md",
+      "before_sha256": "3547c7870b353fc89121b34bd0e629690ff395dde243a6e131172c5dcc57f206",
+      "after_sha256": "3965a012a018c1aea3d95066cb03d55331841b68a84cb0a358abd5512682358f",
+      "bytes": 2740,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md",
+      "before_sha256": "bfd8aa542ffd8405a77ce91caa670b962d51e13ccff0d7bc26fbf8cc377730df",
+      "after_sha256": "50d2c3eb43b5dd840c9adac7f608dfe6018c4e42b8cd25660764cafd225c4772",
+      "bytes": 16174,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md"
+    },
+    {
+      "path": "openspec/changes/implement-reviewed-reading-session-batch/verification.json",
+      "before_sha256": "525370a87f0dcb389b6d707bddb1ab2461ce3248c4b37e66f1c15668bd3f54fd",
+      "after_sha256": "f7fea3a78303f7e934db1fd5dfff0c631e5abb1806df2bc88ee1a7c43239e917",
+      "bytes": 42058,
+      "candidate": "openspec/changes/implement-reviewed-reading-session-batch/verification.json"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before_sha256": "c6a57281ec414516af383308fd9c1625f839e4a1fac2e1511dd95265576e052c",
+      "after_sha256": "a0fecad4c8ebba4c76da9f3c519791c1668800a181e89349b9ce3815967ed59d",
+      "bytes": 57111,
+      "candidate": "docs/architecture/reading-window-session-technical-design.md"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before_sha256": "4643428c31303176ac40f38eadc551880929fafc83fb15623b6ad9fb40fc79bd",
+      "after_sha256": "84288da9fce44c732eaa2878fafb0a20ed9b7a22a4772ebb3cf2144f6cfcaa7a",
+      "bytes": 520200,
+      "candidate": ".build/next-batch-20261020/aggregation-fix/governance-review/candidates/docs/architecture/implementation-status.json"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before_sha256": "6ebb0a96dc7cd4f1f32b930c2ddefc22c4cbc37c7dd6a2fe5e4cbc0ca0d48c60",
+      "after_sha256": "6717ad347b3e23aacbb58e3ba020a0432487c6071dff3726188d40c067b39173",
+      "bytes": 137274,
+      "candidate": ".build/next-batch-20261020/aggregation-fix/governance-review/candidates/docs/architecture/implementation-status.md"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before_sha256": "bcc1549ed79313c7d57c10b002fc10f0f54b6a99e0d3b0d713f8a230fbb99faa",
+      "after_sha256": "5efb5e3fa084bbf4ba2b0f585aba3b8efd5adf08c0aab8921cccf497ca4a84f3",
+      "bytes": 36137,
+      "candidate": ".build/next-batch-20261020/aggregation-fix/governance-review/candidates/docs/architecture/engineering-modules.csv"
+    }
+  ],
+  "new_workcard": {
+    "path": "openspec/changes/implement-reviewed-reading-session-batch/r27-capture-continuation-work-item.md",
+    "sha256": "e01312c5af953d11173fb2195cb618e4a428174255fdd0cbcf84ba1f9ad3d39f",
+    "bytes": 6524
+  },
+  "R26_archive": {
+    "path": "docs/development/baselines/FP1-20261020-R26.json",
+    "sha256": "8ffb17b94e8d1087c287b7c1251b6c8e99891a6d84fecd97cc810d7fdcd2c8f9",
+    "bytes": 155470,
+    "byte_exact": true
+  },
+  "complete_R26_inverse": {
+    "kind": "R26_complete_source_tree_inverse_reconstruction",
+    "target_signed_candidate06_source_tree_sha256": "b5672011f056f7e7689515e5df6aa2d1ea118435c14f23326629f527563197c9",
+    "current_source_tree_sha256": "5b49b764e0c08970352bce70e8c4eb2672a52d9fcc299aa4a71333b1409e4e90",
+    "current_entry_count": 1594,
+    "inverse_entry_count": 1593,
+    "inverse_match": true,
+    "scope": "Derived pre-R27 metadata bytes are not called originals until the complete inverse tree matches the sealed candidate06 identity. All pinned authority/old product hashes taken from reviewed existing originals.",
+    "reconstructed_files": [
+      {
+        "path": "openspec/changes/implement-reviewed-reading-session-batch/proposal.md",
+        "trailing_newlines": 1,
+        "sha256": "ca286dbdaca44ca4bafe8e3b6e40d0cada3cd1d2d704e004d5cd21424e788284",
+        "bytes": 1488,
+        "verified_by": "exact full-tree inverse SHA equals signed candidate06 source identity"
+      },
+      {
+        "path": "openspec/changes/implement-reviewed-reading-session-batch/design.md",
+        "trailing_newlines": 1,
+        "sha256": "5be4eac19af91ed7a050812bafe75bdce340c73fc6ff6df74e568e6e4c7b386c",
+        "bytes": 4915,
+        "verified_by": "exact full-tree inverse SHA equals signed candidate06 source identity"
+      },
+      {
+        "path": "openspec/changes/implement-reviewed-reading-session-batch/tasks.md",
+        "trailing_newlines": 1,
+        "sha256": "3547c7870b353fc89121b34bd0e629690ff395dde243a6e131172c5dcc57f206",
+        "bytes": 2377,
+        "verified_by": "exact full-tree inverse SHA equals signed candidate06 source identity"
+      },
+      {
+        "path": "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md",
+        "trailing_newlines": 2,
+        "sha256": "bfd8aa542ffd8405a77ce91caa670b962d51e13ccff0d7bc26fbf8cc377730df",
+        "bytes": 14541,
+        "verified_by": "exact full-tree inverse SHA equals signed candidate06 source identity"
+      }
+    ],
+    "inverse_sha256": "b5672011f056f7e7689515e5df6aa2d1ea118435c14f23326629f527563197c9",
+    "captured_at": "2026-10-20T11:56:19.531739+00:00",
+    "exact_current_delta_paths": [
+      "crates/app-core/src/domain/capture.rs",
+      "crates/app-infra/src/storage/queries/capture.rs",
+      "crates/app-infra/tests/application_runtime.rs",
+      "crates/app-infra/tests/scoped_preferences.rs",
+      "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+      "crates/app-infra/tests/storage_product.rs",
+      "docs/architecture/reading-window-session-technical-design.md",
+      "openspec/changes/implement-reviewed-reading-session-batch/design.md",
+      "openspec/changes/implement-reviewed-reading-session-batch/proposal.md",
+      "openspec/changes/implement-reviewed-reading-session-batch/r27-capture-continuation-work-item.md",
+      "openspec/changes/implement-reviewed-reading-session-batch/specs/reviewed-reading/spec.md",
+      "openspec/changes/implement-reviewed-reading-session-batch/tasks.md",
+      "openspec/changes/implement-reviewed-reading-session-batch/verification.json"
+    ],
+    "product_source_deltas": [
+      {
+        "path": "crates/app-core/src/domain/capture.rs",
+        "before_sha256": "74b19d3afb817b8b9ed9fd730444d98445d03158840ba592a10f1822ba52b2c8",
+        "after_sha256": "a1d4bda758f8447d14f2de51b477ba41ae39bec85dc3b7436e7fb5a9605ddbcf"
+      },
+      {
+        "path": "crates/app-infra/src/storage/queries/capture.rs",
+        "before_sha256": "8ecdc2b7547f6034120fa929be7a98ff0f2dac7b1685a839bd9db39ac13bfcdc",
+        "after_sha256": "579236a602186888d299edcd6379229ccd941cb5e7b4275a06a85573e394df6a"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_product.rs",
+        "before_sha256": "8b7f430d1fcc8e5d6bbc46fa6de39f2b2ede12f129a08dd4c996d2da4bbac464",
+        "after_sha256": "9c136072b55cd4e7f48bc450529808d994d17b2a8be1055d8b28281e037faef8"
+      },
+      {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "before_sha256": "447c780c7352b8863b277a3dfb0c3e695439de7d9bf6beed745f435d06410d70",
+        "after_sha256": "5a5dfa1ed37d3f1dfd46f8f2359a438ea2faf6b0b5ef6f5d228c59705156644f"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+        "before_sha256": "e51464d87a432112394af9ace3ce9141e6494a8479e2d65333c120937c9c2542",
+        "after_sha256": "153fcb6962792150d38b3f2a09377f16e3512521e2d0c98fc564869745bcbfa3"
+      },
+      {
+        "path": "crates/app-infra/tests/scoped_preferences.rs",
+        "before_sha256": "3f5a5ea68c846c05636e9f3b957d1031f10095395f1cb31f2134cd98001f028e",
+        "after_sha256": "2bdb5023bbee98e20ba9480f8e754bd65b98b2171a55fbd8fbcc162b6f532b3f"
+      }
+    ],
+    "additional_lint_assertion_equivalent": true,
+    "updated_R27_card_sha256": "e01312c5af953d11173fb2195cb618e4a428174255fdd0cbcf84ba1f9ad3d39f"
+  },
+  "status_candidate_manifest": {
+    "path": ".build/next-batch-20261020/aggregation-fix/governance-review/status-candidate-review-manifest.json",
+    "sha256": "5a6a189671eec110b2a94239b3ac5c5f385120eef0c434b825206e2f666df9ba"
+  },
+  "protected": {
+    "seed": ".build/next-batch-20261020/context/protected-before.json",
+    "actual_420_unchanged": 420,
+    "groups": {
+      "original_prd": 101,
+      "license": 36,
+      "approved_design_sources": 16,
+      "approved_design_png": 37,
+      "approval_and_visual_inputs": 206,
+      "tokens": 2,
+      "database_design": 12,
+      "baseline_archive_and_retained_old_candidate": 6,
+      "historical_evidence": 5
+    },
+    "catalogue_306_inputs_unchanged": 306,
+    "pixel_policy": {
+      "threshold": 0.1,
+      "includeAA": true,
+      "maxRatio": 0
+    },
+    "pins": [
+      {
+        "path": "docs/development/storage-acceptance.json",
+        "sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+        "bytes": 14220,
+        "unchanged": true
+      },
+      {
+        "path": "docs/architecture/database/v2/storage-acceptance.json",
+        "sha256": "dfd2b0577ed5523f0e7ee618adddad2060886f3bd7cc9362b8a39f60017fa8ad",
+        "bytes": 14807,
+        "unchanged": true
+      },
+      {
+        "path": "openspec/legacy-debt.json",
+        "sha256": "fb0021504423bd16c24d023f9d84e48ad511a518b353b4a3dd499ad22ab7ae07",
+        "bytes": 8683,
+        "unchanged": true
+      },
+      {
+        "path": "openspec/technology-lock.json",
+        "sha256": "b8bfd585c9376242bdafe681778641aabe7a32fe43a291308a46b1a3057c9c70",
+        "bytes": 7482,
+        "unchanged": true
+      }
+    ]
+  },
+  "semantics": {
+    "new_policy": "hook-bounded-continuation-v2",
+    "legacy_V1_proofs_retained": true,
+    "raw_first_and_immutable_revisions_preserved": true,
+    "unreliable_page_boundaries_explicit": true,
+    "automatic_model_tasks_still_finalized_only": true,
+    "unpunctuated_translation_may_wait_until_absolute_6000ms": true,
+    "no_new_DDL_DTO_or_UI": "source scope and exact proof independently reviewed before adoption"
+  },
+  "required_independent_reviews": [
+    "Exact six-file implementation/test diff and no weakened assertions, including explicit old idle-to-hard-age premise migration.",
+    "Every changed/added status quote and all 448 source identities; unchanged current runtime false/release false/visual not_assessed.",
+    "Exact requirement/scenario wiring preserving 34 originals, all checks and only R26 archive allowed-path addition.",
+    "Four changed old authority entries and four new exact entries; root-created baseline-review must bind completed independent review before adoption.",
+    "Full inverse source tree against signed candidate06 identity plus all protected 420/306 source hashes."
+  ],
+  "approvals_and_enforcement_unchanged": true,
+  "runtime_verified_this_audit": false,
+  "current_release_approved": false,
+  "new_canonical_and_package_and_games": "not_run",
+  "commit_or_push": false,
+  "finalized_at": "2026-10-20T12:07:39.457287+00:00",
+  "independent_six_source_review": {
+    "path": ".build/next-batch-20261020/aggregation-fix/code-review/final-review-addendum.json",
+    "sha256": "daace51ea5d4d16c4cd277ad789e3cad6c7c7e14e8da3ad5ba56de990bbabbaf",
+    "bytes": 4686
+  },
+  "independent_governance_review": {
+    "path": ".build/next-batch-20261020/aggregation-fix/code-review/governance-candidate-independent-review.json",
+    "sha256": "e47cf024d9471c9d0468e9688ea6997832951ac39ecd01138e0814fee9ed849e",
+    "bytes": 5514
+  },
+  "root_adoption_authorization": "Adopt reviewed six-source R27 authority only; no current canonical/package/game/runtime/release approval. Exact finalization limited to completed review binding and its derived hashes.",
+  "review_binding_finalization_only": true
+}

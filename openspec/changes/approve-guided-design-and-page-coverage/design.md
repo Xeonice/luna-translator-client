@@ -1,0 +1,27 @@
+# guided 源版批准与全页覆盖的权威合同
+
+## 源快照、有效批准与实际验证
+
+57份 reviewed guided 源文件的原字节及固定闭包定义本次获批的完整源版本。候选manifest、registry和presentation中的pending_review是捕获时状态，不能为了显示当前批准而重写它们、生成新catalog或刷新闭包。独立批准记录及共享只读权威解析器验证精确target、记录身份、用户明确语句、whole_reviewed_guided_source_version范围、57源map与实际hash后，权威文档和运行门禁才显示approved_by_user。
+
+用户批准的对象是整套源版本，不以旧29状态作为确认上限；全页状态矩阵是后续覆盖合同，不能据新增映射自行批准新源。原20261019批准记录及其固定PNG/source-version继续只覆盖原范围。独立参照审阅/catalogue、真实adapter、同包证据与产品执行各自记录，源版批准只解除真实用户批准缺口，不补出参照或产品通过。
+
+## 全页与适用层的闭合
+
+全页合同独立对照当前设计入口、页面/scenario及真实产品源码AST surface。每个清单对象须有明确归属、需求/组件/Owner、目标状态、适用真实层和证据前置；合法来源沿既有权威ID集合，不把新页面硬塞旧70/576或修改旧CSV。实际surface中的退役导航显式登记其目标与当前差异，不因退役标签宣称产品已经移除。
+
+设计存在但缺执行recipe必须准确表现为执行能力缺口。没有实际页面/状态来源才属于设计覆盖缺口；不适用必须有明确理由与范围依据，不能把unknown、missing recipe或待实现条件改为不适用缩小必测集合。统计从闭合代码/登记与实际清单推导，拒绝遗漏、重复、未知surface、缺状态、错误分类和伪造数量，不硬编码临时汇总。
+
+## 执行、准出和保留义务
+
+工程静态合同、来源批准、独立参考图、真实React、正式包原生及四游戏分别判断。全页readiness以适用状态/层/recipe与证据实际给出缺口；源码改动影响不能由tooling kind、requested checks或JSON所填数量抑制，release无条件检查全页及既有闭包。
+
+缺真实adapter时不得安装“成功fixture”；缺参照、正式包、nonce/命令/独立inspect/recompute和同包证据时不准出。全页计划的未执行项保留not_run，外部条件不足保留blocked。原153、RW、存储与当前70来源/576继续累计独立，Windows4项资格独立保留。已批准PNG、阈值与原始来源不改。
+
+## 精确R77治理事务
+
+来源许可来自编辑前ownership.json闭合48个唯一精确path：root_docs23、page_coverage5、approval_and_existing_contracts10、verify1、remap2、change7。文档独审24项=root_docs23+全页md；工具独审15项=全页其余4+批准与既有合同10+verify1；治理独审8项=本change7件+helper。M15 remap只允许verify.py唯一hash替换及确定性modulesCSV，其他catalog/导出状态不变。
+
+prepare验证R76原字节、2142源完整冻结树、1269pins和Main未漂移；校验最终48源差异、三类独立最终hash审阅、批准记录及未变57源后，只在candidate生成R76原字节归档、新exact-delta、baseline-review与R77 baseline。新baseline保留旧approvals全部键值，仅新增guided_design_source_version：target_id、approved_by_user、record path/sha256和既有design_closure_sha256。其他非revision元数据保持，不笼统声称本轮approval完全未变。
+
+独立packet审阅绑定manifest/generator；Root采用前再次核完整Main与候选身份，持久化回滚前像和恢复清单后才写入。采用后完整树、scope、baseline、spec和catalog验证及真实receipt共同成功；异常尝试逐项恢复并记录回滚完整性。正式用户源版批准据本轮明确授权记录，工程审阅和采用本身不授予独立参照、产品或发布批准。

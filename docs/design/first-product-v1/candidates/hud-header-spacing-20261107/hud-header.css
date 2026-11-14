@@ -1,0 +1,2 @@
+/* User-requested HUD spacing delta. Inherited source, controls and material remain unchanged. */
+#hud-window .hud-header{height:38px;min-height:38px;box-sizing:border-box;padding:6px 7px}

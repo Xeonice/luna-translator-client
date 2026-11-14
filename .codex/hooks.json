@@ -1,0 +1,9 @@
+{
+  "description": "Luna shared engineering gate lifecycle adapter; manual visual approval remains a required gate.",
+  "hooks": {
+    "SessionStart": [{"matcher": "startup|resume|clear|compact|fork", "hooks": [{"type": "command", "command": "/usr/bin/env python3 \"$(git rev-parse --show-toplevel)/scripts/quality/codex_hooks.py\" --root \"$(git rev-parse --show-toplevel)\"", "timeout": 30, "statusMessage": "Loading Luna gate context", "additionalContextLimit": 1000}]}],
+    "PreToolUse": [{"matcher": "Bash|apply_patch|Edit|Write|mcp__.*", "hooks": [{"type": "command", "command": "/usr/bin/env python3 \"$(git rev-parse --show-toplevel)/scripts/quality/codex_hooks.py\" --root \"$(git rev-parse --show-toplevel)\"", "timeout": 60, "statusMessage": "Checking Luna write scope", "additionalContextLimit": 1000}]}],
+    "PostToolUse": [{"matcher": "Bash|apply_patch|Edit|Write|mcp__.*", "hooks": [{"type": "command", "command": "/usr/bin/env python3 \"$(git rev-parse --show-toplevel)/scripts/quality/codex_hooks.py\" --root \"$(git rev-parse --show-toplevel)\"", "timeout": 60, "statusMessage": "Recording Luna affected checks", "additionalContextLimit": 1000}]}],
+    "Stop": [{"hooks": [{"type": "command", "command": "/usr/bin/env python3 \"$(git rev-parse --show-toplevel)/scripts/quality/codex_hooks.py\" --root \"$(git rev-parse --show-toplevel)\"", "timeout": 60, "statusMessage": "Checking Luna delivery verification"}]}]
+  }
+}

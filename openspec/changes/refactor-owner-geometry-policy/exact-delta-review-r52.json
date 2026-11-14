@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-owner-geometry-policy",
+  "parent_baseline_sha256": "f1c3cdb0648b04a79846581c285d2f21fb5323b3301ffef992848375bde01e92",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/owner_geometry.rs",
+      "before": null,
+      "after": "e68f1a236eee1e9c09b1f5793ef76c5701b01643d02c5aae67640438aa527693"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+      "before": "98687ae0acadfef7bb57936b474483ef9193445dc827f7e460dc282c2069596c",
+      "after": "05e161995386bf30c082393e293c16657e0fbcb4a2695e3ec09bdc2de35a1de9"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/design.md",
+      "before": null,
+      "after": "f3f5012f55e5f8ff63a8be9b05c3576b53ca60f238af5b69fc36f20ea1b3d8bd"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/iteration-card.md",
+      "before": null,
+      "after": "2bd6c4adee6cbce01df89f87f0ba807f88c7e7ca0618b50fef8627c7f7b8d4ae"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/proposal.md",
+      "before": null,
+      "after": "d40d44e3b7a65dc9bde92b1171328257ca99989f2a6c79a7b2932e0d55246cca"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/source-snapshot.json",
+      "before": null,
+      "after": "560206736814e16cb0b43f663abd521d183b02c7828e3c455d63adbd0052f1eb"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/specs/owner-geometry/spec.md",
+      "before": null,
+      "after": "e438d2486fe0887ea26007d775f49b93caead5299817ee4c44ca854e661043dd"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/tasks.md",
+      "before": null,
+      "after": "1ca7b0b47deec79f8f95519d4a2ab4719293d84b371858da1bbdc2c095d8037c"
+    },
+    {
+      "path": "openspec/changes/refactor-owner-geometry-policy/verification.json",
+      "before": null,
+      "after": "0c29cf5cb9f9d662c4fe3903f6566900077cad360b4753c0bbd3da0dd736dcf2"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/platform/owner_geometry.rs",
+    "apps/desktop/src-tauri/src/platform/window_manager.rs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr5-sandbox/independent-code-review.json",
+    "sha256": "ed042dc5167fe720997c8df8ed1ef8e47b879b49c9bd26df6750f191f92846d3",
+    "bytes": 15844
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "line": 1641,
+        "quote": "pub fn begin_hud_drag(&self, caller_label: &str) -> AppResult<()> {",
+        "symbol": "pub fn begin_hud_drag(",
+        "sha256": "98687ae0acadfef7bb57936b474483ef9193445dc827f7e460dc282c2069596c"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "line": 1008,
+        "quote": "pub fn begin_hud_drag(&self, caller_label: &str) -> AppResult<()> {",
+        "symbol": "pub fn begin_hud_drag(",
+        "sha256": "05e161995386bf30c082393e293c16657e0fbcb4a2695e3ec09bdc2de35a1de9"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HUD-DRAG",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "line": 1641,
+        "quote": "pub fn begin_hud_drag(&self, caller_label: &str) -> AppResult<()> {",
+        "symbol": "pub fn begin_hud_drag(",
+        "sha256": "98687ae0acadfef7bb57936b474483ef9193445dc827f7e460dc282c2069596c"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "line": 1008,
+        "quote": "pub fn begin_hud_drag(&self, caller_label: &str) -> AppResult<()> {",
+        "symbol": "pub fn begin_hud_drag(",
+        "sha256": "05e161995386bf30c082393e293c16657e0fbcb4a2695e3ec09bdc2de35a1de9"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

@@ -1,0 +1,5 @@
+# SR-4技术设计
+
+新增hook_backend/window_association.rs、preview_identity.rs、journal.rs，原类型/函数按最小可见性从父facade re-export或薄委托；associate_traced、with_associated_session_commit、finish_disconnected_session以及subscribe线程/FIFO/relay/barrier整段留facade，不以拆文件分裂事务。原25个Hook backend测试断言保持，只补FrozenPreviewTarget/Candidate实际serde wire兼容表征。native/README按当前core-runtime.lock与build_desktop→prepare_core_runtime真实链路更正七回调与旧工具历史profile，不改旧工具/锁/License或运行fallback。
+
+遵循R47技术合同、单writer/身份/许可/预算/代次/CAS和真实释放确认；不改变公共ApplicationPort、DTO/IPC、Core ABI/JSONL2或数据库schema。文档与测试伴随本片，结果不继承旧包。

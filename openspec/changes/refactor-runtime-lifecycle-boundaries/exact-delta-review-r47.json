@@ -1,0 +1,130 @@
+{
+  "kind": "R47_stability_priority_and_contract_documents_only",
+  "status": "candidate_pending_independent_exact_review_and_Root_adoption",
+  "reason": "User prioritizes stability refactor and its documentation before remaining features; SR0 only, no product write grants.",
+  "parent_baseline_sha256": "974f47af8acfaa5517be371082dc22814e8f2f6ed434ada8edb4cf8bc424b0ff",
+  "original_snapshot_sha256": "506d0e4236bc44d94dc40a64b377ec257f304947022ac9ef2d35d2a1bf7aa13f",
+  "document_review": {
+    "path": ".build/stability-refactor-20261026/independent-review/document-review-02.json",
+    "sha256": "f3c9f1bcc52e5b3fe44ed6eac77d7a6234db06d57c4330113ef9a9aeb0fc47ed"
+  },
+  "source_delta_before_generated_authority": [
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "1a987f4a5f402d6a31c4281edecefe08f8085a2bb555801b472122cedabb51e0",
+      "after": "79aeba6e18c116e548eef1725f1b37a50ce915b5093a938fed7f71bb70a2ae46"
+    },
+    {
+      "path": "docs/architecture/runtime-lifecycle-contracts.json",
+      "before": null,
+      "after": "be1e93cee9a2f6d0c6baec55e231334f5a81005b90e47452295d484281bbdc3c"
+    },
+    {
+      "path": "docs/architecture/runtime-lifecycle-refactor.md",
+      "before": null,
+      "after": "a287c31fefc7fc39808088f6a1421867caf45c54792067e622cc70cf6c4ce5d2"
+    },
+    {
+      "path": "docs/development/current-phase.json",
+      "before": null,
+      "after": "4597d66176c055d98df54cde333ab747744744fc067fa4e3961b9c3370fd7f89"
+    },
+    {
+      "path": "docs/development/iteration-governance.md",
+      "before": "d2160a86bfefb3691fc83293f0321056bf2b8563a0bbff213af8747244007850",
+      "after": "a8b640a7e28bd91b10895fc94b35e6f5b41076d385bd21814a29b3a214d09d49"
+    },
+    {
+      "path": "docs/development/plan.md",
+      "before": "0391a7967b7cfc5e17f25d86f3070a8e2d6aa520f628270bdcefd4f42f9209b5",
+      "after": "22aeed4a1d2564c6b14562d7a7ac1e5174d5325d9170dc180d0453db9cc1d144"
+    },
+    {
+      "path": "docs/development/refactor-impact-matrix.json",
+      "before": null,
+      "after": "99ddbbcce773adebe4e692e9557399d7e0d1902e13182d84a2077288bb93e530"
+    },
+    {
+      "path": "docs/development/stability-refactor-plan.json",
+      "before": null,
+      "after": "be0698e38ca62bcd1b667301bf1422f42f6c6513e4504433cfab54069ec4c0a0"
+    },
+    {
+      "path": "docs/development/stability-refactor-plan.md",
+      "before": null,
+      "after": "8d41626bef46b3f4354d31b84a3dbaee9cef5178272f79141c5bf62c7acca8a8"
+    },
+    {
+      "path": "openspec/active-change.json",
+      "before": "e844db44f562d3c03fe3d4347549e96149b133d7b644f0a385c8d05894cb0461",
+      "after": "2e3725c7300de72ad24fc18c1ad92cad97f82a80fa082e5a4608a558b733da93"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/design.md",
+      "before": null,
+      "after": "e1c640a17988136cacfc085c829c3fa4eb4db211efef8fe4374204212b887c6e"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/iteration-card.md",
+      "before": null,
+      "after": "2b31e81c278169bfa34c5ef12fc5af7a936b06b27f4868d49ee9472db13494c2"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/proposal.md",
+      "before": null,
+      "after": "79b5b921998f58b7e6480b9ce98b8fb828be9b21a6b10a293aafc6f6fd4cdc06"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/source-snapshot.json",
+      "before": null,
+      "after": "506d0e4236bc44d94dc40a64b377ec257f304947022ac9ef2d35d2a1bf7aa13f"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/specs/stability-refactor/spec.md",
+      "before": null,
+      "after": "715c0a71d1b9bfdb65d2e5f9a737d307e4ca7a72cba8c14a35a96f71750448ab"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/tasks.md",
+      "before": null,
+      "after": "0a74d9f248c8fa862279ddf85c0ea944599868871bd190d6032511d30c2ac051"
+    },
+    {
+      "path": "openspec/changes/refactor-runtime-lifecycle-boundaries/verification.json",
+      "before": null,
+      "after": "87903a0ea98300f8bd9e55fab900dfe33de0c2dc658fb8ff76a90c1312cff121"
+    }
+  ],
+  "old_controlled_updates": [
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/development/iteration-governance.md",
+    "docs/development/plan.md"
+  ],
+  "new_controlled_paths": [
+    "docs/architecture/runtime-lifecycle-contracts.json",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/baselines/FP1-20261026-R46.json",
+    "docs/development/current-phase.json",
+    "docs/development/refactor-impact-matrix.json",
+    "docs/development/stability-refactor-plan.json",
+    "docs/development/stability-refactor-plan.md",
+    "openspec/active-change.json",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/baseline-review-r47.json",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/design.md",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/exact-delta-review-r47.json",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/iteration-card.md",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/proposal.md",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/source-snapshot.json",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/specs/stability-refactor/spec.md",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/tasks.md",
+    "openspec/changes/refactor-runtime-lifecycle-boundaries/verification.json"
+  ],
+  "review_corrections": [
+    "consumer hash resolution scoped separately from Rust authoritative identity",
+    "immutable image observation separated from fenced Pause delivery envelope",
+    "legacy storage guard mapping does not rename M14",
+    "SR0 required check IDs match current registry"
+  ],
+  "product_sources_changed": false,
+  "product_runtime_visual_release_promoted": false
+}

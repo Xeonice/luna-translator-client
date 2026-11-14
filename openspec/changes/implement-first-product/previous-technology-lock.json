@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "purpose": "Reviewed technology identity for this PoC; frozen historical dependencies are not acceptance of the target architecture. Product architecture findings remain separately enforced.",
+  "approved_stack": {
+    "packages": {
+      "react": "19",
+      "typescript": "5.9",
+      "@tauri-apps/api": "2",
+      "@tauri-apps/cli": "2",
+      "react-dom": "19",
+      "vite": "8"
+    },
+    "cargo": {
+      "tauri": "2"
+    },
+    "rust": {
+      "edition": "2024",
+      "rust-version": "1.89"
+    }
+  },
+  "manifests": [
+    {
+      "path": "Cargo.lock",
+      "sha256": "51e5078f39485ea5d812342dd2bb0552f34f9eb2349dc7171cea65559cbef3c5"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "6bbdda2b63f4b58a69f895d1ce1dcf9a47915a6347161436cb320f554987bb4c"
+    },
+    {
+      "path": "apps/desktop/package-lock.json",
+      "sha256": "bd888952093bea9b7e5301325d015a950bf613f65003204cd4dc5c998bbd9e14"
+    },
+    {
+      "path": "apps/desktop/package.json",
+      "sha256": "00bc29847e6453e8b9c05712d14f162a78960d46f48fd9b87e8731e199a08898"
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "sha256": "e1e6555b1a19edf0894f16ba24ca3f4047cdb8dcdfb4ebe45dd695c1f95e9c25"
+    },
+    {
+      "path": "apps/desktop/src-tauri/tauri.conf.json",
+      "sha256": "89542089ea09ae2382b85369a88634d2391aa2f49edc8e7bf7ad6b41d17e79f5"
+    },
+    {
+      "path": "apps/desktop/tsconfig.json",
+      "sha256": "954da1b2bd90ef309404729e44d790d863f42be585e3a28cdb4159e06421d6d9"
+    },
+    {
+      "path": "apps/desktop/vite.config.ts",
+      "sha256": "0792349c0770924d43c2eb0dee4d07d321ddbb6e04a09ea3b59ff83647c63cc2"
+    },
+    {
+      "path": "crates/hook-client/Cargo.toml",
+      "sha256": "acd835ab56449ccba0907090447f6eeabe4526b89a5cc1e1bbea7ec3f2ed2cdb"
+    },
+    {
+      "path": "crates/hook-contracts/Cargo.toml",
+      "sha256": "5ec8a675247c6c5d97040a840d4abf916fc9de8037ae3bc2c28cf6a78a5f318b"
+    },
+    {
+      "path": "crates/lunahook-host/Cargo.toml",
+      "sha256": "6c21b6929bd89c9e2daad56ed4ac61d9ac19122cc812e913f6257c159a0281b1"
+    }
+  ],
+  "design_sources": [
+    {
+      "path": "docs/design/macos-material-case-v1/index.html",
+      "sha256": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.css",
+      "sha256": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.js",
+      "sha256": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/style-guide.md",
+      "sha256": "fd143b5ca2bc79fcaa31c026ca6602daf357de49a2f4a89b7b8ec2b1125ee492"
+    }
+  ]
+}

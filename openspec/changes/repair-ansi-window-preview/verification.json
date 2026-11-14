@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "id": "repair-ansi-window-preview",
+  "kind": "product",
+  "status": "implemented",
+  "allowed_paths": [
+    "openspec/changes/repair-ansi-window-preview/**",
+    "apps/desktop/src/features/capture/WindowPreview.tsx",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "scripts/quality/reading_components.py",
+    "scripts/quality/test_reading_components.py",
+    "crates/lunahook-host/examples/target_probe.rs",
+    "crates/hook-client/src/window_capture.rs",
+    "crates/hook-client/src/window_binding.rs",
+    "crates/hook-client/src/lib.rs",
+    "crates/app-infra/src/hook_backend.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/src-tauri/src/main.rs",
+    "docs/product/reading-window-session-prd.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/design/first-product-v1/ansi-preview-recovery.html",
+    "crates/app-infra/src/platform/game_launch.rs",
+    "apps/desktop/src-tauri/src/platform/macos/window_capture.rs",
+    "docs/development/iteration-baseline.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/baselines/FP1-20261023-R35.json",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "docs/development/baselines/FP1-20261023-R36.json",
+    "docs/development/baselines/FP1-20261023-R37.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-ansi-window-preview/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "requirements": [
+    {
+      "id": "FP-03",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "ansi-window-preview-preserves-identity-and-title",
+      "source_requirement_ids": [
+        "FP-03"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "preview-start-failure-has-one-typed-terminal-state",
+      "source_requirement_ids": [
+        "FP-03"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-12",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "capture-is-bounded-cancellable-and-rejects-stale-target",
+      "source_requirement_ids": [
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "same-package-real-game-frame-and-reading-regression",
+      "source_requirement_ids": [
+        "FP-04"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-hook-association-boundaries",
+  "parent_baseline_sha256": "c7f25df115dff8391985ccc462ece335e681a8a07322bfb1b045293fbc1fd188",
+  "exact_delta_sha256": "54e847c8f261f92e81ac9b731aae64a0ac7e9630d9915b4d875ae1cdb4f8cbce",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr4-sandbox/independent-code-review.json",
+    "sha256": "8618a6cd34cedede06e1aee7d21344b30b573772d9f5413db30f24f109a96736",
+    "bytes": 13518
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

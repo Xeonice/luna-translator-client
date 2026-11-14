@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": 3,
+  "status": "proposal_pending_independent_review",
+  "states": [
+    {
+      "id": "empty-library",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "add-game",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 828
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 339,
+              "clientHeight": 489,
+              "scrollHeight": 828
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "target-review",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 56.796875,
+            "width": 760,
+            "height": 606.40625
+          },
+          "expectedSize": [
+            760,
+            608
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 447,
+              "scrollHeight": 447
+            }
+          ],
+          "details": [
+            {
+              "summary": "高级运行身份",
+              "open": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings-connections",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 609,
+              "scrollHeight": 1101
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 492,
+              "clientHeight": 609,
+              "scrollHeight": 1101
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "reading-hud",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 560,
+            "height": 147
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 147
+          },
+          "expectedSize": [
+            560,
+            147
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 0,
+              "clientHeight": 113,
+              "scrollHeight": 113
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "learning-fixed",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 600,
+            "height": 670
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 600,
+            "height": 670
+          },
+          "expectedSize": [
+            600,
+            670
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 0,
+              "clientHeight": 503,
+              "scrollHeight": 577
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 600,
+            "height": 670
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 600,
+            "height": 670
+          },
+          "expectedSize": [
+            600,
+            670
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 74,
+              "clientHeight": 503,
+              "scrollHeight": 577
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "library-batch",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 872
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "[data-ui-surface=\"sheet\"]",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "expectedSize": [
+            760,
+            648
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"sheet-body\"]",
+              "top": 383,
+              "clientHeight": 489,
+              "scrollHeight": 872
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "display-preferences",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 560,
+            "height": 344
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 344
+          },
+          "expectedSize": [
+            560,
+            344
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 0,
+              "clientHeight": 310,
+              "scrollHeight": 341
+            },
+            {
+              "selector": "[role=\"menu\"]",
+              "top": 0,
+              "clientHeight": 294,
+              "scrollHeight": 434
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 560,
+            "height": 344
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 344
+          },
+          "expectedSize": [
+            560,
+            344
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 31,
+              "clientHeight": 310,
+              "scrollHeight": 341
+            },
+            {
+              "selector": "[role=\"menu\"]",
+              "top": 0,
+              "clientHeight": 294,
+              "scrollHeight": 434
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "region-1-bottom",
+          "viewport": {
+            "width": 560,
+            "height": 344
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 344
+          },
+          "expectedSize": [
+            560,
+            344
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"reading\"]",
+              "top": 0,
+              "clientHeight": 310,
+              "scrollHeight": 341
+            },
+            {
+              "selector": "[role=\"menu\"]",
+              "top": 140,
+              "clientHeight": 294,
+              "scrollHeight": 434
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "model-scheduling",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 609,
+              "scrollHeight": 787
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 178,
+              "clientHeight": 609,
+              "scrollHeight": 787
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "connection-proxy",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 609,
+              "scrollHeight": 916
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "bottom",
+          "viewport": {
+            "width": 1000,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "expectedSize": [
+            1000,
+            720
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 307,
+              "clientHeight": 609,
+              "scrollHeight": 916
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "history-earlier",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 1040,
+            "height": 720
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "expectedSize": [
+            1040,
+            720
+          ],
+          "scrollTop": [],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "wordcard-native-size",
+      "variants": [
+        {
+          "variantId": "constrained-workarea",
+          "viewport": {
+            "width": 560,
+            "height": 290
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 290
+          },
+          "expectedSize": [
+            560,
+            290
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 159,
+              "scrollHeight": 224
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "resource-footer",
+          "viewport": {
+            "width": 560,
+            "height": 290
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 290
+          },
+          "expectedSize": [
+            560,
+            290
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 65,
+              "clientHeight": 159,
+              "scrollHeight": 224
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "variants": [
+        {
+          "variantId": "top",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "source-a-attribution",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 130,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "second-headword-source",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 438,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-0",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-1",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 125,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-2",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 250,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-3",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 375,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "coverage-4",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 500,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "closed-license-bottom",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 536,
+              "clientHeight": 149,
+              "scrollHeight": 685
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": false
+            }
+          ]
+        },
+        {
+          "variantId": "source-b-attribution-footer",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 583,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-0",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 0,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-1",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 125,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-2",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 250,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-3",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 375,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-4",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 500,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        },
+        {
+          "variantId": "expanded-coverage-bottom",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "expectedSize": [
+            660,
+            280
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"dictionary\"]",
+              "top": 583,
+              "clientHeight": 149,
+              "scrollHeight": 732
+            }
+          ],
+          "details": [
+            {
+              "label": "许可与署名",
+              "open": true
+            },
+            {
+              "label": "许可与署名",
+              "open": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary-editing",
+      "variants": [
+        {
+          "variantId": "saved-global",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 785
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "terms-and-footer",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 136,
+              "clientHeight": 649,
+              "scrollHeight": 785
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "save-failure-draft-retained",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 785
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "save-failure-draft-retained-bottom",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"configuration\"]",
+              "top": 136,
+              "clientHeight": 649,
+              "scrollHeight": 785
+            }
+          ],
+          "details": []
+        }
+      ]
+    },
+    {
+      "id": "learning-japanese-linebreak",
+      "variants": [
+        {
+          "variantId": "wide18",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "expectedSize": [
+            1040,
+            760
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 0,
+              "clientHeight": 587,
+              "scrollHeight": 587
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "narrow200percent",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 900
+          },
+          "expectedSize": [
+            390,
+            900
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 0,
+              "clientHeight": 733,
+              "scrollHeight": 769
+            }
+          ],
+          "details": []
+        },
+        {
+          "variantId": "narrow200percent-bottom",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "selector": "#root",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 900
+          },
+          "expectedSize": [
+            390,
+            900
+          ],
+          "scrollTop": [
+            {
+              "selector": "[data-ui-scroll=\"learning\"]",
+              "top": 36,
+              "clientHeight": 733,
+              "scrollHeight": 769
+            }
+          ],
+          "details": []
+        }
+      ]
+    }
+  ]
+}

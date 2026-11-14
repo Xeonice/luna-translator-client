@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "candidate_id": "translation-service-selection-20261030",
+  "status": "pending_review",
+  "scope": "Complete HTML design candidate only; no production application, database or runtime changes.",
+  "entry": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/index.html",
+  "runtime_base_href": "../../",
+  "previous_complete_entry_unchanged": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957",
+  "parent_candidate_id": "local-offline-20261030",
+  "parent_sources_unchanged": {
+    "index.html": "023a95ab3d808ff43540b099d7f15ecb5370fdc82a32e1888a6fb22303022a0b",
+    "local-translation-design.css": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143",
+    "local-translation-design.js": "09aac33ff00266e51f0156eb8d2fb9d77edb080a6ee637edbfbabd6b30a04c23",
+    "manifest.json": "19a59eab2b067b18ca002fee821eca43c212d191accaefe279374ae78a6cf6a3",
+    "settings.js": "3757962a7c8f977007eb58ac040c2a18f617f6718b2eecd297578e477552f24e"
+  },
+  "simulation_boundary": "Checks, translations and additional comparisons are page-local design samples. No HTTP requests, downloads, filesystem probes, native translation or DLL calls.",
+  "selection_boundary": "One shared picker in session and HUD. Only saved translation-purpose resources enter the daily list. Never list unadded built-in templates or unsaved drafts.",
+  "configuration_boundary": "Configuration editors add, edit, save and test resources. Saving never chooses a service or enables automatic translation. Each explicit selection freezes that saved resource version.",
+  "purpose_boundary": "Explicit templatePurpose translation and compatible capability; grammar and contextual word configurations remain separate. Native offline engines are translation-only.",
+  "availability_boundary": "Incomplete fields, matching known test failure, disabled connection and unsupported capability block selection. Valid untested HTTP configurations remain explicitly unverified and selectable. Native engines require matching configuration/resource/route and current health; unknown defaults block.",
+  "scope_boundary": "Global default and per-game override are separate selections. Per-game changes do not overwrite global. Restore inheritance is explicit. Selection preserves automatic translation state and affects subsequent lines; current-line retranslation remains independent and keeps original history.",
+  "comparison_boundary": "Each record captures independent per-engine status, result and reason; the page-external comparison tool simulates one engine response. Primary failure does not derive comparison status. Pending invalid identities reject late responses. No production scheduler is implemented.",
+  "approval": "Pending review; no product/runtime/native/offline/storage/game/release acceptance is raised.",
+  "owned_sources": {
+    "index.html": "e837fa0a01a370ba77d3afb4c7492e0b9104a9379e51f2f5a0d065824d684982",
+    "local-translation-design.css": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143",
+    "local-translation-design.js": "54c6d2fdd80e8affa00c44fc4a2e46c64a242e8d9dbd6bb92e7ce5c216a035fd",
+    "service-picker.css": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e",
+    "service-picker.js": "0c19283b5e75b3dfcb28aee76cd835a4aaf3c22fd23d8e2fe18ca21ffadb43dc",
+    "settings.js": "5734536e722a7ee03c0dfef2deff8f2a3c302dd24122e37193d809bcc47cb815"
+  },
+  "shared_dependencies": {
+    "index.html": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "data.js": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9",
+    "game-library.js": "ec58d3d4e365b07bd9324525163374275c9966fbd8cf558fa14a5459b5ac8c42",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "controls.js": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17",
+    "controls.css": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+    "review-gaps.js": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e",
+    "review-gaps.css": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd",
+    "app.js": "bc1112ca97c308f4dd4c89833c1b78a689079ab77534d2b34ad894389b435e6e",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "assets/manifest.json": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9"
+  },
+  "lifecycle_boundary": "Deletion confirmation immediately revokes the deleted model and dependent connections, even before editor save; frozen historical provenance remains. Explicit automatic translation stop updates scoped enablement separately from selected resources. Configuration return uses the captured game context, even if the active session changes.",
+  "explicit_request_boundary": "With automatic translation disabled, an explicit current/history sentence request is a narrowly scoped page-local mock. It captures a unique record, game and selected version, leaves effective and automatic enablement disabled, preserves the parent record and never overwrites a different current sentence. Automatic-on requests still reuse the canonical prototype flow."
+}

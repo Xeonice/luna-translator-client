@@ -1,0 +1,1848 @@
+{
+  "clock": 1792319048000,
+  "session": {
+    "gameId": "sakura",
+    "status": "connected",
+    "runtimeTarget": {
+      "id": "sample-window-sakura",
+      "title": "サクラノ詩 10th Anniversary edition",
+      "hostWindowId": "design-window-101",
+      "hostPid": 41000,
+      "windowsPid": 6200,
+      "processStartedAt": "design-start-sakura",
+      "bottle": "Sakura-no-Uta-10th",
+      "targetPath": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+      "launchPath": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+      "cwd": "C:\\Games\\SakuraNoUta10th",
+      "args": "",
+      "recordId": "sakura",
+      "environment": "crossover",
+      "arch": "x64",
+      "exe": "sakuranouta10th.exe",
+      "scene": "assets/sakura-01.png"
+    },
+    "selectedStreams": [
+      "sakura-body"
+    ],
+    "paused": false,
+    "translationEnabled": true,
+    "generation": 2,
+    "integrityLost": false,
+    "lineIndex": 0,
+    "sessionId": "sakura-session-1",
+    "gameSnapshot": {
+      "id": "sakura",
+      "title": "サクラノ詩 10th Anniversary edition",
+      "subtitle": "サクラノ詩",
+      "exe": "sakuranouta10th.exe",
+      "arch": "x64",
+      "bottle": "Sakura-no-Uta-10th",
+      "accent": "#ae648c",
+      "cover": "assets/sakura-01.png",
+      "scene": "assets/sakura-01.png",
+      "language": "ja",
+      "hook": "Artemis",
+      "streams": [
+        {
+          "id": "sakura-body",
+          "label": "Artemis",
+          "hook": "Artemis",
+          "preview": "その風景には、悲しさも、痛みも、なかった。",
+          "address": "5370399856",
+          "context": "0",
+          "context2": "0",
+          "kind": "正文候选"
+        },
+        {
+          "id": "sakura-secondary",
+          "label": "Artemis",
+          "hook": "Artemis",
+          "preview": "セーブ　ロード　設定",
+          "address": "5370399888",
+          "context": "1",
+          "context2": "0",
+          "kind": "界面文本候选"
+        }
+      ],
+      "lines": [
+        {
+          "id": "sakura-001",
+          "gameId": "sakura",
+          "source": "その風景には、悲しさも、痛みも、なかった。",
+          "rawSource": "その風景には、悲しさも、痛みも、なかった。",
+          "translation": "那片景色中，没有悲伤，也没有痛楚。",
+          "tokens": [
+            {
+              "surface": "その",
+              "reading": "",
+              "lemma": "その",
+              "pos": "连体词",
+              "meaning": "那个；用于指代前文或双方已知的对象。"
+            },
+            {
+              "surface": "風景",
+              "reading": "ふうけい",
+              "lemma": "風景",
+              "pos": "名词",
+              "meaning": "风景；景色。"
+            },
+            {
+              "surface": "には",
+              "reading": "",
+              "lemma": "には",
+              "pos": "助词",
+              "meaning": "场所或对象「に」与主题「は」的组合，依语境理解。"
+            },
+            {
+              "surface": "、",
+              "reading": "",
+              "lemma": "、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "悲しさ",
+              "reading": "かなしさ",
+              "lemma": "悲しい",
+              "pos": "名词",
+              "meaning": "悲伤；悲伤的程度。由形容词「悲しい」加「さ」名词化。"
+            },
+            {
+              "surface": "も",
+              "reading": "",
+              "lemma": "も",
+              "pos": "助词",
+              "meaning": "也；与否定呼应时表示都不。"
+            },
+            {
+              "surface": "、",
+              "reading": "",
+              "lemma": "、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "痛み",
+              "reading": "いたみ",
+              "lemma": "痛み",
+              "pos": "名词",
+              "meaning": "疼痛；痛楚。"
+            },
+            {
+              "surface": "も",
+              "reading": "",
+              "lemma": "も",
+              "pos": "助词",
+              "meaning": "也；与否定呼应时表示都不。"
+            },
+            {
+              "surface": "、",
+              "reading": "",
+              "lemma": "、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "なかった",
+              "reading": "",
+              "lemma": "ない",
+              "pos": "助动词",
+              "meaning": "「ない」的过去形式；没有。"
+            },
+            {
+              "surface": "。",
+              "reading": "",
+              "lemma": "。",
+              "pos": "原文",
+              "meaning": ""
+            }
+          ],
+          "language": "ja",
+          "scene": "assets/sakura-01.png",
+          "pageGroup": 1,
+          "explanation": {
+            "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+          }
+        },
+        {
+          "id": "sakura-002",
+          "gameId": "sakura",
+          "source": "だから、俺は泣かなかったのだろうか？",
+          "rawSource": "だから、俺は泣かなかったのだろうか？",
+          "translation": "所以，我才没有哭出来吗？",
+          "tokens": [
+            {
+              "surface": "だから",
+              "reading": "",
+              "lemma": "だから",
+              "pos": "接续词",
+              "meaning": "因此；所以。"
+            },
+            {
+              "surface": "、",
+              "reading": "",
+              "lemma": "、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "俺",
+              "reading": "おれ",
+              "lemma": "俺",
+              "pos": "代词",
+              "meaning": "我。较随意的男性自称，语气依人物而定。"
+            },
+            {
+              "surface": "は",
+              "reading": "",
+              "lemma": "は",
+              "pos": "助词",
+              "meaning": "提示主题，也可表示对比。"
+            },
+            {
+              "surface": "泣かなかった",
+              "reading": "なかなかった",
+              "lemma": "泣く",
+              "pos": "动词",
+              "meaning": "没有哭。「泣く」的否定过去形。"
+            },
+            {
+              "surface": "のだろうか",
+              "reading": "",
+              "lemma": "のだろうか",
+              "pos": "表达",
+              "meaning": "表示推测性的疑问或自问。"
+            },
+            {
+              "surface": "？",
+              "reading": "",
+              "lemma": "？",
+              "pos": "原文",
+              "meaning": ""
+            }
+          ],
+          "language": "ja",
+          "scene": "assets/sakura-02.png",
+          "pageGroup": 2,
+          "explanation": {
+            "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+          }
+        },
+        {
+          "id": "sakura-003",
+          "gameId": "sakura",
+          "source": "風に舞う薄紅は、たしかに美しくはあったが、俺にはただそれだけの事としか感じられない。",
+          "rawSource": "風に舞う薄紅は、たしかに美しくはあったが、俺にはただそれだけの事としか感じられない。",
+          "translation": "随风起舞的淡红花瓣确实很美，可对我来说，也仅此而已。",
+          "tokens": [
+            {
+              "surface": "風",
+              "reading": "かぜ",
+              "lemma": "風",
+              "pos": "名词",
+              "meaning": "风。"
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "舞う",
+              "reading": "まう",
+              "lemma": "舞う",
+              "pos": "动词",
+              "meaning": "飘舞；飞舞。"
+            },
+            {
+              "surface": "薄紅",
+              "reading": "うすべに",
+              "lemma": "薄紅",
+              "pos": "名词",
+              "meaning": "浅红色；淡红色。语境中可指淡红色的花瓣。"
+            },
+            {
+              "surface": "は",
+              "reading": "",
+              "lemma": "は",
+              "pos": "助词",
+              "meaning": "提示主题，也可表示对比。"
+            },
+            {
+              "surface": "、たしか",
+              "reading": "",
+              "lemma": "、たしか",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "美しく",
+              "reading": "うつくしく",
+              "lemma": "美しい",
+              "pos": "形容词",
+              "meaning": "美丽地；「美しい」的连用形。"
+            },
+            {
+              "surface": "は",
+              "reading": "",
+              "lemma": "は",
+              "pos": "助词",
+              "meaning": "提示主题，也可表示对比。"
+            },
+            {
+              "surface": "あった",
+              "reading": "",
+              "lemma": "あった",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "が",
+              "reading": "",
+              "lemma": "が",
+              "pos": "助词",
+              "meaning": "标记主语，或作为接续表示转折。"
+            },
+            {
+              "surface": "、",
+              "reading": "",
+              "lemma": "、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "俺",
+              "reading": "おれ",
+              "lemma": "俺",
+              "pos": "代词",
+              "meaning": "我。较随意的男性自称，语气依人物而定。"
+            },
+            {
+              "surface": "には",
+              "reading": "",
+              "lemma": "には",
+              "pos": "助词",
+              "meaning": "场所或对象「に」与主题「は」的组合，依语境理解。"
+            },
+            {
+              "surface": "ただそれだけ",
+              "reading": "",
+              "lemma": "ただそれだけ",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "事",
+              "reading": "こと",
+              "lemma": "事",
+              "pos": "名词",
+              "meaning": "事情；事态。"
+            },
+            {
+              "surface": "と",
+              "reading": "",
+              "lemma": "と",
+              "pos": "助词",
+              "meaning": "可表示共同对象、引用等，需结合语境。"
+            },
+            {
+              "surface": "しか",
+              "reading": "",
+              "lemma": "しか",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "感じられない",
+              "reading": "かんじられない",
+              "lemma": "感じる",
+              "pos": "动词",
+              "meaning": "无法感到；也可随语境理解为感受不到。"
+            },
+            {
+              "surface": "。",
+              "reading": "",
+              "lemma": "。",
+              "pos": "原文",
+              "meaning": ""
+            }
+          ],
+          "language": "ja",
+          "scene": "assets/sakura-03.png",
+          "pageGroup": 3,
+          "explanation": {
+            "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+          }
+        },
+        {
+          "id": "sakura-004",
+          "gameId": "sakura",
+          "source": "鼻につくような桜の香り――いや、桜にそんな強い芳香などない――の中を人々の手によって大事に運ばれる棺。",
+          "rawSource": "鼻につくような桜の香り――いや、桜にそんな強い芳香などない――の中を人々の手によって大事に運ばれる棺。",
+          "translation": "在那仿佛刺鼻的樱花香气——不，樱花其实并没有如此浓郁的芳香——之中，一口棺木被众人小心地抬着。",
+          "tokens": [
+            {
+              "surface": "鼻",
+              "reading": "",
+              "lemma": "鼻",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "つくような",
+              "reading": "",
+              "lemma": "つくような",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "桜",
+              "reading": "さくら",
+              "lemma": "桜",
+              "pos": "名词",
+              "meaning": "樱花；樱树。"
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "香り",
+              "reading": "かおり",
+              "lemma": "香り",
+              "pos": "名词",
+              "meaning": "香气；气味。"
+            },
+            {
+              "surface": "――いや、",
+              "reading": "",
+              "lemma": "――いや、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "桜",
+              "reading": "さくら",
+              "lemma": "桜",
+              "pos": "名词",
+              "meaning": "樱花；樱树。"
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "そんな強い",
+              "reading": "",
+              "lemma": "そんな強い",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "芳香",
+              "reading": "ほうこう",
+              "lemma": "芳香",
+              "pos": "名词",
+              "meaning": "芳香；香味。"
+            },
+            {
+              "surface": "などない――",
+              "reading": "",
+              "lemma": "などない――",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "中",
+              "reading": "",
+              "lemma": "中",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "を",
+              "reading": "",
+              "lemma": "を",
+              "pos": "助词",
+              "meaning": "通常标记动作直接涉及的对象。"
+            },
+            {
+              "surface": "人々",
+              "reading": "ひとびと",
+              "lemma": "人々",
+              "pos": "名词",
+              "meaning": "人们；众人。"
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "手",
+              "reading": "",
+              "lemma": "手",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "よって",
+              "reading": "",
+              "lemma": "よって",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "大事",
+              "reading": "だいじ",
+              "lemma": "大事",
+              "pos": "名词",
+              "meaning": "重要；珍重。在「大事に」中表示小心地、珍重地。"
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "運ばれる",
+              "reading": "はこばれる",
+              "lemma": "運ぶ",
+              "pos": "动词",
+              "meaning": "被搬运；「運ぶ」的被动形。"
+            },
+            {
+              "surface": "棺",
+              "reading": "ひつぎ",
+              "lemma": "棺",
+              "pos": "名词",
+              "meaning": "棺木。"
+            },
+            {
+              "surface": "。",
+              "reading": "",
+              "lemma": "。",
+              "pos": "原文",
+              "meaning": ""
+            }
+          ],
+          "language": "ja",
+          "scene": "assets/sakura-04.png",
+          "pageGroup": 4,
+          "explanation": {
+            "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+          }
+        },
+        {
+          "id": "sakura-005",
+          "gameId": "sakura",
+          "source": "桜の美しさの中にいる親父の死骸は、ただ、醜いだけだった。",
+          "rawSource": "桜の美しさの中にいる親父の死骸は、ただ、醜いだけだった。",
+          "translation": "置身樱花之美中的父亲遗体，只有丑陋而已。",
+          "tokens": [
+            {
+              "surface": "桜",
+              "reading": "さくら",
+              "lemma": "桜",
+              "pos": "名词",
+              "meaning": "樱花；樱树。"
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "美しさ",
+              "reading": "うつくしさ",
+              "lemma": "美しい",
+              "pos": "名词",
+              "meaning": "美丽；「美しい」加「さ」名词化。"
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "中",
+              "reading": "",
+              "lemma": "中",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "に",
+              "reading": "",
+              "lemma": "に",
+              "pos": "助词",
+              "meaning": "标记时间、对象、归着点等，需结合句子。"
+            },
+            {
+              "surface": "いる",
+              "reading": "",
+              "lemma": "いる",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "親父",
+              "reading": "おやじ",
+              "lemma": "親父",
+              "pos": "名词",
+              "meaning": "老爸；父亲。较随意的称呼。"
+            },
+            {
+              "surface": "の",
+              "reading": "",
+              "lemma": "の",
+              "pos": "助词",
+              "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+            },
+            {
+              "surface": "死骸",
+              "reading": "しがい",
+              "lemma": "死骸",
+              "pos": "名词",
+              "meaning": "尸体；遗体。"
+            },
+            {
+              "surface": "は",
+              "reading": "",
+              "lemma": "は",
+              "pos": "助词",
+              "meaning": "提示主题，也可表示对比。"
+            },
+            {
+              "surface": "、ただ、",
+              "reading": "",
+              "lemma": "、ただ、",
+              "pos": "原文",
+              "meaning": ""
+            },
+            {
+              "surface": "醜い",
+              "reading": "みにくい",
+              "lemma": "醜い",
+              "pos": "形容词",
+              "meaning": "丑陋的。"
+            },
+            {
+              "surface": "だけだった。",
+              "reading": "",
+              "lemma": "だけだった。",
+              "pos": "原文",
+              "meaning": ""
+            }
+          ],
+          "language": "ja",
+          "scene": "assets/sakura-05.png",
+          "pageGroup": 5,
+          "explanation": {
+            "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+          }
+        }
+      ],
+      "path": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+      "environment": "crossover",
+      "launchPath": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+      "targetPath": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+      "args": "",
+      "cwd": "C:\\Games\\SakuraNoUta10th",
+      "fixtureSampleId": "sakura"
+    }
+  },
+  "current": {
+    "id": "sakura-session-1:event:0",
+    "gameId": "sakura",
+    "source": "その風景には、悲しさも、痛みも、なかった。",
+    "rawSource": "その風景には、悲しさも、痛みも、なかった。",
+    "translation": "那片景色中，没有悲伤，也没有痛楚。",
+    "tokens": [
+      {
+        "surface": "その",
+        "reading": "",
+        "lemma": "その",
+        "pos": "连体词",
+        "meaning": "那个；用于指代前文或双方已知的对象。"
+      },
+      {
+        "surface": "風景",
+        "reading": "ふうけい",
+        "lemma": "風景",
+        "pos": "名词",
+        "meaning": "风景；景色。"
+      },
+      {
+        "surface": "には",
+        "reading": "",
+        "lemma": "には",
+        "pos": "助词",
+        "meaning": "场所或对象「に」与主题「は」的组合，依语境理解。"
+      },
+      {
+        "surface": "、",
+        "reading": "",
+        "lemma": "、",
+        "pos": "原文",
+        "meaning": ""
+      },
+      {
+        "surface": "悲しさ",
+        "reading": "かなしさ",
+        "lemma": "悲しい",
+        "pos": "名词",
+        "meaning": "悲伤；悲伤的程度。由形容词「悲しい」加「さ」名词化。"
+      },
+      {
+        "surface": "も",
+        "reading": "",
+        "lemma": "も",
+        "pos": "助词",
+        "meaning": "也；与否定呼应时表示都不。"
+      },
+      {
+        "surface": "、",
+        "reading": "",
+        "lemma": "、",
+        "pos": "原文",
+        "meaning": ""
+      },
+      {
+        "surface": "痛み",
+        "reading": "いたみ",
+        "lemma": "痛み",
+        "pos": "名词",
+        "meaning": "疼痛；痛楚。"
+      },
+      {
+        "surface": "も",
+        "reading": "",
+        "lemma": "も",
+        "pos": "助词",
+        "meaning": "也；与否定呼应时表示都不。"
+      },
+      {
+        "surface": "、",
+        "reading": "",
+        "lemma": "、",
+        "pos": "原文",
+        "meaning": ""
+      },
+      {
+        "surface": "なかった",
+        "reading": "",
+        "lemma": "ない",
+        "pos": "助动词",
+        "meaning": "「ない」的过去形式；没有。"
+      },
+      {
+        "surface": "。",
+        "reading": "",
+        "lemma": "。",
+        "pos": "原文",
+        "meaning": ""
+      }
+    ],
+    "language": "ja",
+    "scene": "assets/sakura-01.png",
+    "pageGroup": 1,
+    "explanation": {
+      "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+    },
+    "sourceSampleId": "sakura-001",
+    "sessionId": "sakura-session-1",
+    "revision": 1,
+    "time": "18:24",
+    "translationStatus": "complete",
+    "expectedTranslation": "那片景色中，没有悲伤，也没有痛楚。",
+    "recordId": "sakura-session-1:sakura-001:0",
+    "provider": "Microsoft · 日中翻译",
+    "configRevision": 1,
+    "origin": "game"
+  },
+  "history": [
+    {
+      "id": "sakura-session-1:event:0",
+      "gameId": "sakura",
+      "source": "その風景には、悲しさも、痛みも、なかった。",
+      "rawSource": "その風景には、悲しさも、痛みも、なかった。",
+      "translation": "那片景色中，没有悲伤，也没有痛楚。",
+      "tokens": [
+        {
+          "surface": "その",
+          "reading": "",
+          "lemma": "その",
+          "pos": "连体词",
+          "meaning": "那个；用于指代前文或双方已知的对象。"
+        },
+        {
+          "surface": "風景",
+          "reading": "ふうけい",
+          "lemma": "風景",
+          "pos": "名词",
+          "meaning": "风景；景色。"
+        },
+        {
+          "surface": "には",
+          "reading": "",
+          "lemma": "には",
+          "pos": "助词",
+          "meaning": "场所或对象「に」与主题「は」的组合，依语境理解。"
+        },
+        {
+          "surface": "、",
+          "reading": "",
+          "lemma": "、",
+          "pos": "原文",
+          "meaning": ""
+        },
+        {
+          "surface": "悲しさ",
+          "reading": "かなしさ",
+          "lemma": "悲しい",
+          "pos": "名词",
+          "meaning": "悲伤；悲伤的程度。由形容词「悲しい」加「さ」名词化。"
+        },
+        {
+          "surface": "も",
+          "reading": "",
+          "lemma": "も",
+          "pos": "助词",
+          "meaning": "也；与否定呼应时表示都不。"
+        },
+        {
+          "surface": "、",
+          "reading": "",
+          "lemma": "、",
+          "pos": "原文",
+          "meaning": ""
+        },
+        {
+          "surface": "痛み",
+          "reading": "いたみ",
+          "lemma": "痛み",
+          "pos": "名词",
+          "meaning": "疼痛；痛楚。"
+        },
+        {
+          "surface": "も",
+          "reading": "",
+          "lemma": "も",
+          "pos": "助词",
+          "meaning": "也；与否定呼应时表示都不。"
+        },
+        {
+          "surface": "、",
+          "reading": "",
+          "lemma": "、",
+          "pos": "原文",
+          "meaning": ""
+        },
+        {
+          "surface": "なかった",
+          "reading": "",
+          "lemma": "ない",
+          "pos": "助动词",
+          "meaning": "「ない」的过去形式；没有。"
+        },
+        {
+          "surface": "。",
+          "reading": "",
+          "lemma": "。",
+          "pos": "原文",
+          "meaning": ""
+        }
+      ],
+      "language": "ja",
+      "scene": "assets/sakura-01.png",
+      "pageGroup": 1,
+      "explanation": {
+        "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+      },
+      "sourceSampleId": "sakura-001",
+      "sessionId": "sakura-session-1",
+      "revision": 1,
+      "time": "18:24",
+      "translationStatus": "complete",
+      "expectedTranslation": "那片景色中，没有悲伤，也没有痛楚。",
+      "recordId": "sakura-session-1:sakura-001:0",
+      "provider": "Microsoft · 日中翻译",
+      "configRevision": 1,
+      "origin": "game"
+    }
+  ],
+  "game": {
+    "id": "sakura",
+    "title": "サクラノ詩 10th Anniversary edition",
+    "subtitle": "サクラノ詩",
+    "exe": "sakuranouta10th.exe",
+    "arch": "x64",
+    "bottle": "Sakura-no-Uta-10th",
+    "accent": "#ae648c",
+    "cover": "assets/sakura-01.png",
+    "scene": "assets/sakura-01.png",
+    "language": "ja",
+    "hook": "Artemis",
+    "streams": [
+      {
+        "id": "sakura-body",
+        "label": "Artemis",
+        "hook": "Artemis",
+        "preview": "その風景には、悲しさも、痛みも、なかった。",
+        "address": "5370399856",
+        "context": "0",
+        "context2": "0",
+        "kind": "正文候选"
+      },
+      {
+        "id": "sakura-secondary",
+        "label": "Artemis",
+        "hook": "Artemis",
+        "preview": "セーブ　ロード　設定",
+        "address": "5370399888",
+        "context": "1",
+        "context2": "0",
+        "kind": "界面文本候选"
+      }
+    ],
+    "lines": [
+      {
+        "id": "sakura-001",
+        "gameId": "sakura",
+        "source": "その風景には、悲しさも、痛みも、なかった。",
+        "rawSource": "その風景には、悲しさも、痛みも、なかった。",
+        "translation": "那片景色中，没有悲伤，也没有痛楚。",
+        "tokens": [
+          {
+            "surface": "その",
+            "reading": "",
+            "lemma": "その",
+            "pos": "连体词",
+            "meaning": "那个；用于指代前文或双方已知的对象。"
+          },
+          {
+            "surface": "風景",
+            "reading": "ふうけい",
+            "lemma": "風景",
+            "pos": "名词",
+            "meaning": "风景；景色。"
+          },
+          {
+            "surface": "には",
+            "reading": "",
+            "lemma": "には",
+            "pos": "助词",
+            "meaning": "场所或对象「に」与主题「は」的组合，依语境理解。"
+          },
+          {
+            "surface": "、",
+            "reading": "",
+            "lemma": "、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "悲しさ",
+            "reading": "かなしさ",
+            "lemma": "悲しい",
+            "pos": "名词",
+            "meaning": "悲伤；悲伤的程度。由形容词「悲しい」加「さ」名词化。"
+          },
+          {
+            "surface": "も",
+            "reading": "",
+            "lemma": "も",
+            "pos": "助词",
+            "meaning": "也；与否定呼应时表示都不。"
+          },
+          {
+            "surface": "、",
+            "reading": "",
+            "lemma": "、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "痛み",
+            "reading": "いたみ",
+            "lemma": "痛み",
+            "pos": "名词",
+            "meaning": "疼痛；痛楚。"
+          },
+          {
+            "surface": "も",
+            "reading": "",
+            "lemma": "も",
+            "pos": "助词",
+            "meaning": "也；与否定呼应时表示都不。"
+          },
+          {
+            "surface": "、",
+            "reading": "",
+            "lemma": "、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "なかった",
+            "reading": "",
+            "lemma": "ない",
+            "pos": "助动词",
+            "meaning": "「ない」的过去形式；没有。"
+          },
+          {
+            "surface": "。",
+            "reading": "",
+            "lemma": "。",
+            "pos": "原文",
+            "meaning": ""
+          }
+        ],
+        "language": "ja",
+        "scene": "assets/sakura-01.png",
+        "pageGroup": 1,
+        "explanation": {
+          "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+        }
+      },
+      {
+        "id": "sakura-002",
+        "gameId": "sakura",
+        "source": "だから、俺は泣かなかったのだろうか？",
+        "rawSource": "だから、俺は泣かなかったのだろうか？",
+        "translation": "所以，我才没有哭出来吗？",
+        "tokens": [
+          {
+            "surface": "だから",
+            "reading": "",
+            "lemma": "だから",
+            "pos": "接续词",
+            "meaning": "因此；所以。"
+          },
+          {
+            "surface": "、",
+            "reading": "",
+            "lemma": "、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "俺",
+            "reading": "おれ",
+            "lemma": "俺",
+            "pos": "代词",
+            "meaning": "我。较随意的男性自称，语气依人物而定。"
+          },
+          {
+            "surface": "は",
+            "reading": "",
+            "lemma": "は",
+            "pos": "助词",
+            "meaning": "提示主题，也可表示对比。"
+          },
+          {
+            "surface": "泣かなかった",
+            "reading": "なかなかった",
+            "lemma": "泣く",
+            "pos": "动词",
+            "meaning": "没有哭。「泣く」的否定过去形。"
+          },
+          {
+            "surface": "のだろうか",
+            "reading": "",
+            "lemma": "のだろうか",
+            "pos": "表达",
+            "meaning": "表示推测性的疑问或自问。"
+          },
+          {
+            "surface": "？",
+            "reading": "",
+            "lemma": "？",
+            "pos": "原文",
+            "meaning": ""
+          }
+        ],
+        "language": "ja",
+        "scene": "assets/sakura-02.png",
+        "pageGroup": 2,
+        "explanation": {
+          "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+        }
+      },
+      {
+        "id": "sakura-003",
+        "gameId": "sakura",
+        "source": "風に舞う薄紅は、たしかに美しくはあったが、俺にはただそれだけの事としか感じられない。",
+        "rawSource": "風に舞う薄紅は、たしかに美しくはあったが、俺にはただそれだけの事としか感じられない。",
+        "translation": "随风起舞的淡红花瓣确实很美，可对我来说，也仅此而已。",
+        "tokens": [
+          {
+            "surface": "風",
+            "reading": "かぜ",
+            "lemma": "風",
+            "pos": "名词",
+            "meaning": "风。"
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "舞う",
+            "reading": "まう",
+            "lemma": "舞う",
+            "pos": "动词",
+            "meaning": "飘舞；飞舞。"
+          },
+          {
+            "surface": "薄紅",
+            "reading": "うすべに",
+            "lemma": "薄紅",
+            "pos": "名词",
+            "meaning": "浅红色；淡红色。语境中可指淡红色的花瓣。"
+          },
+          {
+            "surface": "は",
+            "reading": "",
+            "lemma": "は",
+            "pos": "助词",
+            "meaning": "提示主题，也可表示对比。"
+          },
+          {
+            "surface": "、たしか",
+            "reading": "",
+            "lemma": "、たしか",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "美しく",
+            "reading": "うつくしく",
+            "lemma": "美しい",
+            "pos": "形容词",
+            "meaning": "美丽地；「美しい」的连用形。"
+          },
+          {
+            "surface": "は",
+            "reading": "",
+            "lemma": "は",
+            "pos": "助词",
+            "meaning": "提示主题，也可表示对比。"
+          },
+          {
+            "surface": "あった",
+            "reading": "",
+            "lemma": "あった",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "が",
+            "reading": "",
+            "lemma": "が",
+            "pos": "助词",
+            "meaning": "标记主语，或作为接续表示转折。"
+          },
+          {
+            "surface": "、",
+            "reading": "",
+            "lemma": "、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "俺",
+            "reading": "おれ",
+            "lemma": "俺",
+            "pos": "代词",
+            "meaning": "我。较随意的男性自称，语气依人物而定。"
+          },
+          {
+            "surface": "には",
+            "reading": "",
+            "lemma": "には",
+            "pos": "助词",
+            "meaning": "场所或对象「に」与主题「は」的组合，依语境理解。"
+          },
+          {
+            "surface": "ただそれだけ",
+            "reading": "",
+            "lemma": "ただそれだけ",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "事",
+            "reading": "こと",
+            "lemma": "事",
+            "pos": "名词",
+            "meaning": "事情；事态。"
+          },
+          {
+            "surface": "と",
+            "reading": "",
+            "lemma": "と",
+            "pos": "助词",
+            "meaning": "可表示共同对象、引用等，需结合语境。"
+          },
+          {
+            "surface": "しか",
+            "reading": "",
+            "lemma": "しか",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "感じられない",
+            "reading": "かんじられない",
+            "lemma": "感じる",
+            "pos": "动词",
+            "meaning": "无法感到；也可随语境理解为感受不到。"
+          },
+          {
+            "surface": "。",
+            "reading": "",
+            "lemma": "。",
+            "pos": "原文",
+            "meaning": ""
+          }
+        ],
+        "language": "ja",
+        "scene": "assets/sakura-03.png",
+        "pageGroup": 3,
+        "explanation": {
+          "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+        }
+      },
+      {
+        "id": "sakura-004",
+        "gameId": "sakura",
+        "source": "鼻につくような桜の香り――いや、桜にそんな強い芳香などない――の中を人々の手によって大事に運ばれる棺。",
+        "rawSource": "鼻につくような桜の香り――いや、桜にそんな強い芳香などない――の中を人々の手によって大事に運ばれる棺。",
+        "translation": "在那仿佛刺鼻的樱花香气——不，樱花其实并没有如此浓郁的芳香——之中，一口棺木被众人小心地抬着。",
+        "tokens": [
+          {
+            "surface": "鼻",
+            "reading": "",
+            "lemma": "鼻",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "つくような",
+            "reading": "",
+            "lemma": "つくような",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "桜",
+            "reading": "さくら",
+            "lemma": "桜",
+            "pos": "名词",
+            "meaning": "樱花；樱树。"
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "香り",
+            "reading": "かおり",
+            "lemma": "香り",
+            "pos": "名词",
+            "meaning": "香气；气味。"
+          },
+          {
+            "surface": "――いや、",
+            "reading": "",
+            "lemma": "――いや、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "桜",
+            "reading": "さくら",
+            "lemma": "桜",
+            "pos": "名词",
+            "meaning": "樱花；樱树。"
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "そんな強い",
+            "reading": "",
+            "lemma": "そんな強い",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "芳香",
+            "reading": "ほうこう",
+            "lemma": "芳香",
+            "pos": "名词",
+            "meaning": "芳香；香味。"
+          },
+          {
+            "surface": "などない――",
+            "reading": "",
+            "lemma": "などない――",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "中",
+            "reading": "",
+            "lemma": "中",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "を",
+            "reading": "",
+            "lemma": "を",
+            "pos": "助词",
+            "meaning": "通常标记动作直接涉及的对象。"
+          },
+          {
+            "surface": "人々",
+            "reading": "ひとびと",
+            "lemma": "人々",
+            "pos": "名词",
+            "meaning": "人们；众人。"
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "手",
+            "reading": "",
+            "lemma": "手",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "よって",
+            "reading": "",
+            "lemma": "よって",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "大事",
+            "reading": "だいじ",
+            "lemma": "大事",
+            "pos": "名词",
+            "meaning": "重要；珍重。在「大事に」中表示小心地、珍重地。"
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "運ばれる",
+            "reading": "はこばれる",
+            "lemma": "運ぶ",
+            "pos": "动词",
+            "meaning": "被搬运；「運ぶ」的被动形。"
+          },
+          {
+            "surface": "棺",
+            "reading": "ひつぎ",
+            "lemma": "棺",
+            "pos": "名词",
+            "meaning": "棺木。"
+          },
+          {
+            "surface": "。",
+            "reading": "",
+            "lemma": "。",
+            "pos": "原文",
+            "meaning": ""
+          }
+        ],
+        "language": "ja",
+        "scene": "assets/sakura-04.png",
+        "pageGroup": 4,
+        "explanation": {
+          "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+        }
+      },
+      {
+        "id": "sakura-005",
+        "gameId": "sakura",
+        "source": "桜の美しさの中にいる親父の死骸は、ただ、醜いだけだった。",
+        "rawSource": "桜の美しさの中にいる親父の死骸は、ただ、醜いだけだった。",
+        "translation": "置身樱花之美中的父亲遗体，只有丑陋而已。",
+        "tokens": [
+          {
+            "surface": "桜",
+            "reading": "さくら",
+            "lemma": "桜",
+            "pos": "名词",
+            "meaning": "樱花；樱树。"
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "美しさ",
+            "reading": "うつくしさ",
+            "lemma": "美しい",
+            "pos": "名词",
+            "meaning": "美丽；「美しい」加「さ」名词化。"
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "中",
+            "reading": "",
+            "lemma": "中",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "に",
+            "reading": "",
+            "lemma": "に",
+            "pos": "助词",
+            "meaning": "标记时间、对象、归着点等，需结合句子。"
+          },
+          {
+            "surface": "いる",
+            "reading": "",
+            "lemma": "いる",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "親父",
+            "reading": "おやじ",
+            "lemma": "親父",
+            "pos": "名词",
+            "meaning": "老爸；父亲。较随意的称呼。"
+          },
+          {
+            "surface": "の",
+            "reading": "",
+            "lemma": "の",
+            "pos": "助词",
+            "meaning": "连接修饰关系，或用于名词化，需结合语境。"
+          },
+          {
+            "surface": "死骸",
+            "reading": "しがい",
+            "lemma": "死骸",
+            "pos": "名词",
+            "meaning": "尸体；遗体。"
+          },
+          {
+            "surface": "は",
+            "reading": "",
+            "lemma": "は",
+            "pos": "助词",
+            "meaning": "提示主题，也可表示对比。"
+          },
+          {
+            "surface": "、ただ、",
+            "reading": "",
+            "lemma": "、ただ、",
+            "pos": "原文",
+            "meaning": ""
+          },
+          {
+            "surface": "醜い",
+            "reading": "みにくい",
+            "lemma": "醜い",
+            "pos": "形容词",
+            "meaning": "丑陋的。"
+          },
+          {
+            "surface": "だけだった。",
+            "reading": "",
+            "lemma": "だけだった。",
+            "pos": "原文",
+            "meaning": ""
+          }
+        ],
+        "language": "ja",
+        "scene": "assets/sakura-05.png",
+        "pageGroup": 5,
+        "explanation": {
+          "summary": "模型解释需结合本句与允许的上下文核对。以下内容为人工编写的设计样本。"
+        }
+      }
+    ],
+    "path": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+    "environment": "crossover",
+    "launchPath": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+    "targetPath": "C:\\Games\\SakuraNoUta10th\\sakuranouta10th.exe",
+    "args": "",
+    "cwd": "C:\\Games\\SakuraNoUta10th",
+    "fixtureSampleId": "sakura"
+  },
+  "records": {
+    "records": [
+      {
+        "sequence": 1,
+        "id": "sakura-session-1:raw:1",
+        "time": "18:24",
+        "sessionId": "sakura-session-1",
+        "unitId": "sakura-session-1:event:0",
+        "streamId": "sakura-body",
+        "streamLabel": "Artemis",
+        "hook": "Artemis",
+        "address": "5370399856",
+        "context": "0",
+        "context2": "0",
+        "selected": true,
+        "source": "その風景には、悲しさも、痛みも、なかった。",
+        "scene": "assets/sakura-01.png",
+        "page": "sakura-001",
+        "kind": "正文",
+        "replay": true,
+        "stage": "选流后"
+      },
+      {
+        "sequence": 2,
+        "id": "sakura-session-1:raw:2",
+        "time": "18:24",
+        "sessionId": "sakura-session-1",
+        "unitId": null,
+        "streamId": "sakura-secondary",
+        "streamLabel": "Artemis",
+        "hook": "Artemis",
+        "address": "5370399888",
+        "context": "1",
+        "context2": "0",
+        "selected": false,
+        "source": "セーブ　ロード　設定",
+        "scene": "assets/sakura-01.png",
+        "page": "sakura-001",
+        "kind": "未选中来源",
+        "replay": true,
+        "stage": "选流后"
+      }
+    ],
+    "logs": [
+      {
+        "id": 1,
+        "time": "18:24:08.000",
+        "phase": "目标核对",
+        "message": "运行窗口与游戏进程身份已核对",
+        "code": "TARGET_VERIFIED",
+        "target": "sakuranouta10th.exe",
+        "level": "info",
+        "fixture": true
+      },
+      {
+        "id": 2,
+        "time": "18:24:08.000",
+        "phase": "资源检查",
+        "message": "取文组件已准备",
+        "code": "HOOK_RESOURCE_READY",
+        "target": "sakuranouta10th.exe",
+        "level": "info",
+        "fixture": true
+      },
+      {
+        "id": 3,
+        "time": "18:24:08.000",
+        "phase": "Hook 注入",
+        "message": "已向所选目标启动接入",
+        "code": "HOOK_ATTACH_STARTED",
+        "target": "sakuranouta10th.exe",
+        "level": "info",
+        "fixture": true
+      },
+      {
+        "id": 4,
+        "time": "18:24:08.000",
+        "phase": "回调握手",
+        "message": "采集端连接已建立",
+        "code": "HOOK_HANDSHAKE_READY",
+        "target": "sakuranouta10th.exe",
+        "level": "info",
+        "fixture": true
+      },
+      {
+        "id": 5,
+        "time": "18:24:08.000",
+        "phase": "发现文本流",
+        "message": "收到候选来源，保留每次提取事件",
+        "code": "STREAM_DISCOVERED",
+        "target": "sakuranouta10th.exe",
+        "level": "info",
+        "fixture": true
+      },
+      {
+        "id": 6,
+        "time": "18:24:08.000",
+        "level": "info",
+        "phase": "文本回调",
+        "code": "HOOK_TEXT_RECEIVED",
+        "streamId": "sakura-body",
+        "operationId": "sakura-session-1:event:0",
+        "target": "sakuranouta10th.exe",
+        "message": "收到文本事件 #1 · 正文来源"
+      },
+      {
+        "id": 7,
+        "time": "18:24:08.000",
+        "level": "info",
+        "phase": "文本回调",
+        "code": "HOOK_TEXT_RECEIVED",
+        "streamId": "sakura-secondary",
+        "operationId": "sakura-session-1:event:0",
+        "target": "sakuranouta10th.exe",
+        "message": "收到文本事件 #2 · 未选中来源"
+      },
+      {
+        "id": 8,
+        "time": "18:24:08.000",
+        "level": "info",
+        "phase": "文本来源",
+        "message": "已连接 sakuranouta10th.exe，正文流已选择"
+      }
+    ],
+    "continuity": []
+  },
+  "shortcuts": {
+    "hideShortcut": "⌥ ⌘ H",
+    "pauseShortcut": "⌥ ⌘ P",
+    "modeShortcut": ""
+  },
+  "settingsPreferences": {
+    "preset": "comfortable",
+    "fontScale": 1,
+    "appearance": "standard"
+  },
+  "settingsDisplay": {
+    "fontSize": 22,
+    "sourceSize": 18,
+    "opacity": 82,
+    "pin": true,
+    "hideShortcut": "⌥ ⌘ H",
+    "pauseShortcut": "⌥ ⌘ P",
+    "modeShortcut": ""
+  },
+  "supplement": {
+    "preferences": {
+      "scopeKey": "global",
+      "theme": "dark",
+      "transparencyMode": "material",
+      "segmentationEnabled": true,
+      "showRuby": true,
+      "showPos": false,
+      "readingDisplayMode": "both",
+      "hudBackgroundOpacity": 0.82,
+      "sourceFontPt": 18,
+      "translationFontPt": 24,
+      "hudWidthPt": 560,
+      "shortcuts": {
+        "toggleHud": "Alt+Super+H",
+        "togglePause": "Alt+Super+P",
+        "cycleDisplayMode": ""
+      },
+      "overrides": {
+        "hud.compact": false,
+        "hud.alwaysOnTop": true
+      }
+    },
+    "draft": {
+      "scopeKey": "global",
+      "theme": "dark",
+      "transparencyMode": "material",
+      "segmentationEnabled": true,
+      "showRuby": true,
+      "showPos": false,
+      "readingDisplayMode": "both",
+      "hudBackgroundOpacity": 0.82,
+      "sourceFontPt": 18,
+      "translationFontPt": 24,
+      "hudWidthPt": 560,
+      "shortcuts": {
+        "toggleHud": "Alt+Super+H",
+        "togglePause": "Alt+Super+H",
+        "cycleDisplayMode": ""
+      },
+      "overrides": {
+        "hud.compact": false,
+        "hud.alwaysOnTop": true
+      }
+    },
+    "game": {
+      "id": "sakura",
+      "title": "サクラノ詩 10th Anniversary edition"
+    },
+    "dirty": true,
+    "capabilities": {
+      "geometry": {
+        "state": "restored",
+        "logicalBounds": {
+          "x": 400,
+          "y": 600,
+          "width": 560,
+          "height": 172
+        },
+        "monitorId": "design-display",
+        "scaleFactor": 2,
+        "errorCode": null
+      },
+      "material": {
+        "requested": "material",
+        "effective": "native_material",
+        "systemReduceTransparency": false,
+        "effectiveReduceTransparency": false,
+        "errorCode": null
+      },
+      "shortcuts": {
+        "state": "failed",
+        "registrationGeneration": "4",
+        "dispatchSuppressed": false,
+        "bindings": [
+          {
+            "intent": "toggle_hud",
+            "desired": "Alt+Super+H",
+            "effective": "Alt+Super+H",
+            "scopeKey": "global",
+            "errorCode": null,
+            "errorMessage": null
+          },
+          {
+            "intent": "toggle_capture_pause",
+            "desired": "Alt+Super+H",
+            "effective": "Alt+Super+P",
+            "scopeKey": "global",
+            "errorCode": "shortcut_duplicate",
+            "errorMessage": "与“显示 / 隐藏浮窗”重复。应用失败，保留原生效组合。"
+          },
+          {
+            "intent": "cycle_reading_display_mode",
+            "desired": null,
+            "effective": null,
+            "scopeKey": "global",
+            "errorCode": null,
+            "errorMessage": null
+          }
+        ]
+      }
+    },
+    "saveError": "shortcut_duplicate: 与“显示 / 隐藏浮窗”重复。应用失败，保留原生效组合。",
+    "expectedActionOutcome": "save_scoped_preferences rejected; dirty draft and previous effective native bindings retained"
+  }
+}

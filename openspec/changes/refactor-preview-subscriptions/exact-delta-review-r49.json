@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-preview-subscriptions",
+  "parent_baseline_sha256": "cdeb59e40cb030390c77061e06070daecf1787c4e3d2be4de226f24d8d3cde57",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src/bridge/preview-subscriptions.ts",
+      "before": null,
+      "after": "aadf02eb103fe93b2fd9918bcdb2df0137a51d6f96cc5069da423b28922c40f8"
+    },
+    {
+      "path": "apps/desktop/src/bridge/tauri-port.ts",
+      "before": "415144e023fb2e05942cf7d02d81f4ca9445a3f018234fee603f755e3c26063c",
+      "after": "69950f8d16a3c4322e3acf248b6855446d5f9071ff74d84594a2eb6f3fdcbf5e"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "before": "d9a8c4bb934c2abc3a07e9dd3a2ae711bdf472887d4e0d0d44faf36dcb28da76",
+      "after": "ba6440448913d47e8f4479dd9dbc1f714605b3f2f77298176653f07c18630be0"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/design.md",
+      "before": null,
+      "after": "46f12081d2dc14a854a04973245ef109322e5e9d9f240eb0101be21ff3ead4ae"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/iteration-card.md",
+      "before": null,
+      "after": "d2ccfecc2dafafe3fc29c2cb60b330fe77c43a0c0dc16d998d65973dd7676798"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/proposal.md",
+      "before": null,
+      "after": "d8fd7b0e88d26d4493acc48868650d071b86da00ba296cffdb155b981b55afe1"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/source-snapshot.json",
+      "before": null,
+      "after": "e58b761e08f3792d6bb3cd00fe3d7f8c5386f6e9403fbd5d7cd7c7ba718bda1a"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/specs/preview-subscriptions/spec.md",
+      "before": null,
+      "after": "4e5442860d27ae5c43ebefde3fb879f815450f1fcfccad486c85a9d1bf3b9449"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/tasks.md",
+      "before": null,
+      "after": "4c29cb3195a6ca3987ef065cb998d4a24cfe5a5827cbeb9c756210118d5db614"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-subscriptions/verification.json",
+      "before": null,
+      "after": "8e1c50f478f8ec519f455ba926b316afdbc12840879220e0ce99fd9163a25996"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src/bridge/preview-subscriptions.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr2/independent-code-review.json",
+    "sha256": "8145e49f66bc0c1e4a96106d228082aa797aaf831c382406a131eb7743fe41dc",
+    "bytes": 30766
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

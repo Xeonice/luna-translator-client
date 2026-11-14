@@ -1,0 +1,252 @@
+{
+  "kind": "R45_native_window_wake_and_frame_decode_candidate",
+  "status": "candidate_pending_independent_exact_review_and_Root_adoption",
+  "reason": "针对candidate22真实首帧后sleep/wake预览失败，仅在原Native边界修三源的原filter offscreen早退、编码暂态恢复、有界选择保留与最终typed诊断。保留原现场失败及最终码未知，UI8/QA2/16锁和原R40snapshot不变；候选23仍需完整门禁及实机，不提升通过。",
+  "parent_baseline_sha256": "9c960df81d2eceb6cb3610c8769bde34a24f51309461762449297ea8cb3fdcf6",
+  "frozen_sources": {
+    "status": "Root_reviewed_frozen_source_and_authority_scope",
+    "reason": "针对candidate22真实首帧后sleep/wake预览失败，仅在原Native边界修三源的原filter offscreen早退、编码暂态恢复、有界选择保留与最终typed诊断。保留原现场失败及最终码未知，UI8/QA2/16锁和原R40snapshot不变；候选23仍需完整门禁及实机，不提升通过。",
+    "frozen_map": ".build/window-preview-sakura-20261024-r45-candidate/source-map-before-authority.json",
+    "frozen_map_sha256": "daad851d891676cbe32d991cb83224647d0cf06486fbf6b1f66e2e673fd8a7f0",
+    "allowed_old_controlled_updates": [
+      "docs/architecture/engineering-components.csv",
+      "docs/architecture/engineering-modules.csv",
+      "docs/architecture/first-product-engineering-baseline.md",
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/reading-window-session-technical-design.md",
+      "openspec/changes/integrate-window-preview-subscribers/design.md",
+      "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "openspec/changes/integrate-window-preview-subscribers/specs/window-preview/spec.md",
+      "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "openspec/changes/integrate-window-preview-subscribers/verification.json"
+    ],
+    "semantic_records": [
+      {
+        "group": "modules",
+        "id": "M12",
+        "append": {
+          "current_behavior": "R45源码保持自动窗口映射的onScreen强门槛，同时修正已持原filter捕获路径的过早offscreen拒绝及编码暂态恢复；只对既有有界调度保留编码失败及同窗口尺寸变化时的选择，不放松身份、许可和预算。",
+          "gap": "candidate22检查点记录曾观察到真实首帧，但睡醒后末帧不更新与回归失败保留；现场最终采集错误码尚未取得，不能据旧Native4猜定唯一根因。candidate23签名实机、两张真实变化帧与睡醒恢复均尚未执行，原视觉source drift仍失败。",
+          "next_step": "Root精确核对R45候选后采用，运行该源码完整verify与candidate23同证书同路径构建，再在原游戏真实选窗、连续变化画面及睡醒/Hook词法回归；原22有限通过不继承，未执行与发布状态不提升。"
+        }
+      },
+      {
+        "group": "modules",
+        "id": "M13",
+        "append": {
+          "current_behavior": "R45继续使用原私有worker/安全detail投影，当前typed最终结果与原Native reason/API分别保留；无新增公开DTO或新的控制入口，旧请求事实不能冒充当前采集。",
+          "gap": "candidate22检查点记录曾观察到真实首帧，但睡醒后末帧不更新与回归失败保留；现场最终采集错误码尚未取得，不能据旧Native4猜定唯一根因。candidate23签名实机、两张真实变化帧与睡醒恢复均尚未执行，原视觉source drift仍失败。",
+          "next_step": "Root精确核对R45候选后采用，运行该源码完整verify与candidate23同证书同路径构建，再在原游戏真实选窗、连续变化画面及睡醒/Hook词法回归；原22有限通过不继承，未执行与发布状态不提升。"
+        }
+      },
+      {
+        "group": "components",
+        "id": "C35",
+        "append": {
+          "current_behavior": "R45未改C35或其测试runner，沿用R44独立友好说明与安全detail呈现；Native固定最终错误可经既有订阅读取，界面不因源码修正被认定实机恢复。",
+          "gap": "candidate22检查点记录曾观察到真实首帧，但睡醒后末帧不更新与回归失败保留；现场最终采集错误码尚未取得，不能据旧Native4猜定唯一根因。candidate23签名实机、两张真实变化帧与睡醒恢复均尚未执行，原视觉source drift仍失败。",
+          "next_step": "Root精确核对R45候选后采用，运行该源码完整verify与candidate23同证书同路径构建，再在原游戏真实选窗、连续变化画面及睡醒/Hook词法回归；原22有限通过不继承，未执行与发布状态不提升。"
+        }
+      },
+      {
+        "group": "capabilities",
+        "id": "CAP-PREVIEW",
+        "append": {
+          "current_behavior": "R45针对22真实首帧后睡醒失败现场修正三处Native源并补当前结果诊断；已证代码早退不被当作排他现场根因，原filter、完整身份和资源边界保持。",
+          "gap": "candidate22检查点记录曾观察到真实首帧，但睡醒后末帧不更新与回归失败保留；现场最终采集错误码尚未取得，不能据旧Native4猜定唯一根因。candidate23签名实机、两张真实变化帧与睡醒恢复均尚未执行，原视觉source drift仍失败。",
+          "next_step": "Root精确核对R45候选后采用，运行该源码完整verify与candidate23同证书同路径构建，再在原游戏真实选窗、连续变化画面及睡醒/Hook词法回归；原22有限通过不继承，未执行与发布状态不提升。"
+        }
+      }
+    ],
+    "independent_evidence": [
+      {
+        "path": ".build/window-preview-sakura-20261024-wake-native-fix/handoff.json",
+        "sha256": "709e5725f32ebc2c15cdf0dc550e6ab219c9ecc13116c6f1ef03092352286a20",
+        "bytes": 4077
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-wake-native-fix/final-20261024T102341.425746Z/receipt.json",
+        "sha256": "76308c7e17990c32a75173aa6f464f2d92b8bb6efc00d05a84368a76066ef09a",
+        "bytes": 6754
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-wake-native-fix/red-receipt.json",
+        "sha256": "ea0c42c1fb2ad60b9818d4507791c9b0a479b997935bb905499ccac15cdfce17",
+        "bytes": 2355
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-wake-native-review/final-review-20261024T104757.197879Z/receipt.json",
+        "sha256": "f09469a1200b0b46ee1d5d246ec4f2a03a61cb759d761003434f0ab6dffbdd7e",
+        "bytes": 8816
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-r45-candidate/root-native-review.json",
+        "sha256": "6f4d8c00a6bca18311f0d665591c5f65394f6efdf8abf4982e78fa6fb21db8e7",
+        "bytes": 882
+      },
+      {
+        "path": ".build/game-regression-20261024-candidate22/live-preview/shared-regression/wake-failure-checkpoint.json",
+        "sha256": "694bbd555d0e0f9157ecf6c39751a9560f9a0bafd5a4ee690ed9894a8797c17f",
+        "bytes": 2973
+      },
+      {
+        "path": ".build/quality/20261024T061445.296988Z.json",
+        "sha256": "380b60a135ce95b5b56e54a3f574affb6527a5d94220356bbe85d3b56fc3eb30",
+        "bytes": 32010
+      }
+    ],
+    "evidence_scope_note": "输入分别是Owner有限检查/原红失败、独立Native mocked-boundary及Rust窄实跑、Root源码审阅、真实22失败现场及22旧57/58工程回执。各自绑定确切源码与范围，不能合并冒充candidate23 OS/签名游戏通过；该候选packet尚待Root精确审与明确授权生成。"
+  },
+  "source_delta_before_generated_authority": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "before": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0",
+      "after": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "before": "e0d8842fd79610cff046d494acb16034307dda701598961edecf4d092277ab5c",
+      "after": "72e5d1035ee867c4241052d5b4413f876a57e524670c41a24c6436580682fc56"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "before": "5e020a52a830236de09a5d0f80f7b4a2939a7288ca28227b8873132d02acc179",
+      "after": "53d243f02152d654125d6591943b71e6583d8070aa6fc6b4cb6b60c98408403a"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "5c783f75eb7878778d5822df92bc74dce1a3e7b0741d03feb48d0fb3c839933c",
+      "after": "60265eddec1e363885219bd5de5bd797045170a162e47768fb4e81abd1131400"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before": "56cc054625775d128861c171c699e9e3730cf3203aa3a38fc84a5eb7cc2fd02d",
+      "after": "d696ae17954b792d9f3900ad126860979b5e6757b2e681e4aabb1b2e004749ab"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/design.md",
+      "before": "a4b98723df936ca6c1c405a4dc4840e1dac33d32db6c3ad162ca6ea694b3c200",
+      "after": "25eb2046b76a94525a91cd053fe7e9335cf9221f431e610a73e373b9186969e8"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "before": "bfc77da38c5682abf75003ba30bf0d01dc61ead43c3d0cf44b5d8283bc98b0c7",
+      "after": "520895f743b302487e2c51a445e5a37976d52a6d08a9300169508969110cbeeb"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/specs/window-preview/spec.md",
+      "before": "c4b312397d476b9e19c13ab40ebd687639130795c342ba7b1bb3ee2752b14d12",
+      "after": "2bcd43439c675c70db37d2e6d1370f1608b81b8d59ec068d953e371415ebf557"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "before": "176105b08fcefded9c251006e7f701166a1c972e00394b57ce76912f2fc09b1c",
+      "after": "82358bae03664acdf24586b1982598ec0856c133a5df0c809847738f6b649218"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/verification.json",
+      "before": "d75ac412554446c84e1c5f6845c84ae9a0312b5dadbc4f5d431b9b03352a7003",
+      "after": "919bce8d67faa0b81ef160de5c69971fb6f501398c691ca8d1832f5367bb7333"
+    }
+  ],
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 208,
+        "sha256": "5e020a52a830236de09a5d0f80f7b4a2939a7288ca28227b8873132d02acc179"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 208,
+        "sha256": "53d243f02152d654125d6591943b71e6583d8070aa6fc6b4cb6b60c98408403a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+        "line": 242,
+        "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+        "symbol": "pub fn set_hud_material",
+        "sha256": "e0d8842fd79610cff046d494acb16034307dda701598961edecf4d092277ab5c"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+        "line": 242,
+        "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+        "symbol": "pub fn set_hud_material",
+        "sha256": "72e5d1035ee867c4241052d5b4413f876a57e524670c41a24c6436580682fc56"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "e9e6c66a9c112de1d5fe8d088c8bcb46eb2c2f56a0e4e080051eeab1c309976f"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    }
+  ],
+  "original_snapshot_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

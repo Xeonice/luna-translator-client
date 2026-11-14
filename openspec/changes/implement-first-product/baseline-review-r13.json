@@ -1,0 +1,25 @@
+{
+  "previous_baseline": "FP1-20261019-R12",
+  "previous_sha256": "90bbb291fe59f600d077b9be32adad4da6e2ae64f98df19cce8d67593fd32d8b",
+  "previous_manifest": "openspec/changes/implement-first-product/baseline-before-capture-source-r13.json",
+  "current_baseline": "FP1-20261019-R13",
+  "independent_review": ".build/capture-source-identity-review-20261019.json",
+  "independent_review_sha256": "d9267e222b38029e7c85e9209ee3d14453b7342f5727bda360a5bb1459029c58",
+  "previous_registry": "openspec/changes/implement-first-product/storage-acceptance-before-capture-source-r13.json",
+  "reviewed_fingerprints": {
+    "docs/development/storage-acceptance.json": "c0dc0c70146664a30de7e88f21346f13750a0a0b73444ada03d37177f2e9cb69"
+  },
+  "registry_change": {
+    "path": "docs/development/storage-acceptance.json",
+    "previous_sha256": "80267e790f3618aa5a7c20c3b39f74a3076a2f277454b95b4e8d074eb47043ad",
+    "current_sha256": "c0dc0c70146664a30de7e88f21346f13750a0a0b73444ada03d37177f2e9cb69",
+    "only_changed_value": "supported_upgrade_matrix.migration_chain[0].source_sha256",
+    "previous_source_sha256": "b6475f29b634d813b832f8617d68576dcac1818ad3c63b207cfb4911c8aee09d",
+    "current_source_sha256": "ebba0e5b3c90bc23f53d4f37ffb14e84c5b2fd8404b120ca691953b9cdd3ab7d"
+  },
+  "unchanged_protected_fingerprints": 185,
+  "migration_ddl_schema_versions_ledger_unchanged": true,
+  "restart_recovery_dml_changed": "finalize existing open reading units on recovery",
+  "approvals_unchanged": true,
+  "product_acceptance_promoted": false
+}

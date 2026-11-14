@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-19T11:04:51.671839+00:00",
+  "reviewer": "/root/acceptance_context",
+  "candidateDirectory": ".build/acceptance-closure-20261019/visual/registered-candidate-v3-review7",
+  "reviewScope": "Independent reference source/authority/state/geometry/coverage/replay registration audit. No product acceptance claim or product/reference changes.",
+  "catalogueSha256": "8736082d44f6b6abca14f50c89c7aea40040fefa736f1e28275e27048b5f13db",
+  "registrationRecommendation": "eligible_for_root_registration_as_independent_client_content_reference",
+  "registrationPerformed": false,
+  "blockingFindings": [],
+  "machineChecks": {
+    "states": 15,
+    "pixelVariants": 44,
+    "nativeIllustrationSeparate": 1,
+    "replayedImages": 45,
+    "allPixelmatchZero": true,
+    "frozenFiles": 202,
+    "originalSources": 51,
+    "frozenMismatches": [],
+    "originalMismatches": [],
+    "approvedV2InputMismatches": [],
+    "sourceDrift": [],
+    "browserErrors": [],
+    "geometryMismatches": [],
+    "invalidDeclaredScrollRegions": [],
+    "actualOverflowAncestorGroups": 13,
+    "allActualOverflowContinuouslyCovered": true,
+    "menuCount": 14,
+    "all14MenuActionsFullyVisible": true,
+    "previousSixFrozenRevisionsPreserved": true,
+    "copiedOriginalSources": 51,
+    "originalCopyMismatches": [],
+    "allHudControlsOriginalPrimary": true,
+    "explicitReducedMenuAndHudOpaqueWithoutBlur": true,
+    "pixelContract": {
+      "threshold": 0.1,
+      "includeAA": true,
+      "maxRatio": 0
+    }
+  },
+  "newSourceChangesReviewed": [
+    {
+      "change": "Shared supplemental HUD control color secondary to material-text.",
+      "basis": "Original styles.css ordinary button colorvar(--ink), html theme --ink maps material-text; no original HUD control override. Confirmed computed original/supplement controls now primary233/233/239. Shared rule, no card/game/fixture branch."
+    },
+    {
+      "change": "Explicit reduced comparison menu follows original accessibility solid/none fallback.",
+      "basis": [
+        "docs/product/original/docs/02-design-spec.md:125 reduced sidebar/toolbar/popover/HUD solid alternatives",
+        "docs/design/first-product-v1/style-guide.md:36 same-tone opaque fallback",
+        "docs/design/first-product-v1/styles.css:393-406 hud-menu+hud-window product-window-opaque and backdrop-filter none"
+      ],
+      "computed": {
+        "menuBackground": "rgb(36, 39, 49)",
+        "menuBackdropFilter": "none",
+        "hudBackground": "rgb(36, 39, 49)",
+        "hudBackdropFilter": "none",
+        "menuBounds": {
+          "x": 331,
+          "y": 11.5,
+          "width": 220,
+          "height": 296
+        },
+        "viewport": {
+          "width": 560,
+          "height": 344
+        },
+        "dpr": 1
+      },
+      "stateMeaning": "Independent reference uses explicit reduced role class and declared reduced condition; actual React uses data-transparency. Semantic state must match, DOM attributes need not be identical. No system media falsely claimed."
+    }
+  ],
+  "previousRemediationsRetained": {
+    "historyNeutralNullSession": true,
+    "noHiddenMenuDeclared": true,
+    "backIconCommonWrapper": true,
+    "fullControlledFailureText": true,
+    "dialogClientShadowRestored": true
+  },
+  "sourceIndependence": {
+    "rendering": "Original design DOM plus independent native-content adapter and authored missing states. No React/source/bundle/product CSS import or candidate-pixel feedback.",
+    "catalogueData": "Only test captureContract shared as declared semantic input; old receipt used for stable ID/selector/legacy reference. Independent PNG bounds/sizes/hashes come from design rendering.",
+    "underlay": "Original game-only desktop1:1 and original wallpaper center/cover remain independently frozen; no Luna UI screenshot as background.",
+    "noImageManipulation": "Locator screenshot at final viewport/DPR1, no scaling/masking/cropping of saved PNG and no relaxed metric.",
+    "copies": [
+      {
+        "file": "material-tokens.css",
+        "sameBytes": true
+      },
+      {
+        "file": "icons.js",
+        "sameBytes": true
+      },
+      {
+        "file": "coverage.csv",
+        "sameBytes": true
+      },
+      {
+        "file": "entry-flow.html",
+        "sameBytes": true
+      },
+      {
+        "file": "index.html",
+        "sameBytes": true
+      },
+      {
+        "file": "integration.md",
+        "sameBytes": true
+      },
+      {
+        "file": "styles.css",
+        "sameBytes": true
+      },
+      {
+        "file": "learning.css",
+        "sameBytes": true
+      },
+      {
+        "file": "settings.css",
+        "sameBytes": true
+      },
+      {
+        "file": "material-assets.json",
+        "sameBytes": true
+      },
+      {
+        "file": "comparison.html",
+        "sameBytes": true
+      },
+      {
+        "file": "game-library.css",
+        "sameBytes": true
+      },
+      {
+        "file": "README.md",
+        "sameBytes": true
+      },
+      {
+        "file": "gallery.html",
+        "sameBytes": true
+      },
+      {
+        "file": "learning.js",
+        "sameBytes": true
+      },
+      {
+        "file": "data.js",
+        "sameBytes": true
+      },
+      {
+        "file": "manifest.json",
+        "sameBytes": true
+      },
+      {
+        "file": "reference-manifest.json",
+        "sameBytes": true
+      },
+      {
+        "file": "game-library.js",
+        "sameBytes": true
+      },
+      {
+        "file": "style-guide.md",
+        "sameBytes": true
+      },
+      {
+        "file": "app.js",
+        "sameBytes": true
+      },
+      {
+        "file": "settings.js",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/never7-01.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/never7-02.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-SCR-08-light.jpg",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sakura-05.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sakura-04.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/never7-03.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sakura-01.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-approved-material.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/never7-04.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sakura-03.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sakura-02.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/never7-05.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sr-01.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-icons-color-before-settings.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/wallpaper-frame.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sr-03.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sr-02.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sr-05.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/sr-04.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-icons-color-before-library.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-SCR-15-light.jpg",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-SCR-01-light.jpg",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/manifest.json",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-material-before.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/reference-full-product-before-restyle.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/mo-01.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/mo-02.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/mo-03.png",
+        "sameBytes": true
+      },
+      {
+        "file": "assets/mo-04.png",
+        "sameBytes": true
+      }
+    ]
+  },
+  "registrationConditions": [
+    "Copy reviewed source/reference assets without editing them; preserve original previews/tokens and every old review directory.",
+    "Root records this exact reviewed proposal SHA and registers catalogue with explicit review provenance. If status or registration metadata changes, compute and review the new catalogue SHA separately; do not claim65b8 still hashes modified JSON.",
+    "Registered reference must remain pinned by reviewed protected identity; new candidate captures go to separate output and never refresh expected PNGs.",
+    "Actual React visual runner must independently pass every one of44 variants across15 states and all required behavior IDs against registered references before claiming product-ui-capture pass.",
+    "Native OS controls/focus, temporary window geometry/material and actual game/services remain separate evidence. One native relationship illustration is not a browser pixel variant or native proof."
+  ],
+  "nonBlockingNotes": [
+    {
+      "id": "original-hud-button-halfpixel-border",
+      "detail": "Derived original HUD pause/more32px outerbutton bounds touch/footer edge by0.5px. Actual glyphs remain visible and all14 menu actions fully visible in proper variants; no omitted content or new crop introduced."
+    },
+    {
+      "id": "historical-proposal-markers",
+      "detail": "Frozen generation metadata may retain historical proposal/not-product-acceptance markers. Registered catalogue and root registration provenance should distinguish current authority from generation-time metadata; do not silently rewrite frozen inputs."
+    }
+  ],
+  "receipts": {
+    "independent-visual-review.review7-replay.json": "8c6ea584585ff84f314b38f20f107d440180744ecb526aff8a9cc3ece268f1d6",
+    "independent-visual-review.review7-coverage.json": "4990e2c21d7c2c8140b43387ed84a0ab8c6f45ed55950b0a6a4359e95e114b40",
+    "independent-visual-review.registered-candidate-v3-review7-interaction-visibility.json": "063641d1e9a924371ee699ddf6f759ee7ea633cb93adc05c0f506f21345287c3",
+    "independent-visual-review.review7-reduced-state.json": "24bd70460cef3d2925b45b0a6102f5746b72f83bf22c192f969df701021865e6",
+    "independent-visual-review.review7-hud-control-color.json": "c60cb0840be46736779f69cf5e94e73099b9897452140475b6dd06c5910324bd",
+    "independent-visual-review.review7-older-revisions-preserved.json": "7bd868f5503fdbeda16722ce900910157eb31996a352110e2f101f23be2fc616"
+  },
+  "limits": [
+    "No reference registration/baseline mutation by this reviewer.",
+    "No actual React/native/product or storage execution claimed by pure design replay.",
+    "No full product/release signoff; existing EXE/LNK completeness gap remains outside these two engineering-gate changes."
+  ]
+}

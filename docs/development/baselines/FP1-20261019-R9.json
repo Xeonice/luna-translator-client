@@ -1,0 +1,964 @@
+{
+  "baseline_id": "FP1-20261019-R9",
+  "captured_date": "2026-10-19",
+  "purpose": "Content fingerprints and explicit review scope; not an implementation or test result.",
+  "phase": "first_product_implementation",
+  "product_implementation_authorized_by_this_turn": true,
+  "approvals": {
+    "first_product_scope": "confirmed_in_prior_conversation",
+    "material_style": "confirmed_in_prior_conversation",
+    "architecture": "confirmed_by_user_in_current_turn",
+    "architecture_confirmation": "目前看，架构方案没有问题了",
+    "complete_design_layout": "pending_final_review; preserve current design manifest status",
+    "detailed_requirements": "working_specifications; task-dependent review remains explicit",
+    "product_runtime_regression": "NOT_RUN",
+    "database_field_design": "new_candidate_design_pending_review; overall architecture confirmation does not approve these added field details",
+    "implementation_authorization": "2026-10-19 user: 开始动工，按照事先规定的架构和设计进行开发，完成后进行对应的测试"
+  },
+  "enforcement": {
+    "repository_agents_rules": "documented_with_executable_entry",
+    "iteration_template": "documented",
+    "baseline_fingerprints": "executable",
+    "spec_traceability": "executable_change_and_product_source_identity; full implementation task coverage still pending",
+    "code_dependency_checks": "TypeScript AST and Cargo declarations/local graph; exact legacy debt frozen",
+    "visual_diff_gate": "Registered actual production-component Playwright capture/diff runner; native rendering and full layout review remain separate; actual differences fail.",
+    "evidence_identity_checks": "executable; actual product runtime adapter missing => release blocked",
+    "ci_and_branch_protection": "workflow_file_created; no Git/remote run or branch protection configured",
+    "layered_test_plan": "executable static source/semantics/layer/environment/status checks and deterministic exports; 153 product execution combinations NOT_RUN; runtime adapters not implemented",
+    "test_prerequisites_and_maintenance": "static scoped prerequisite and source-ownership checks; readiness is not runtime success; real product adapters remain unimplemented",
+    "database_field_design": "Production profile/dictionary schema1 migrations and bounded writer implemented; exact acceptance status remains separate from frozen design checks.",
+    "storage_module_acceptance": "Real storage integration tests implemented; full22 adapter and per-field production mapping acceptance are not inferred from slice results."
+  },
+  "update_policy": "Create a new revision and reviewed change record when authority content changes. Hash equality proves identity only; it never grants approval or proves runtime behavior.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 3897,
+      "sha256": "7b37c55a4139d044c79ab66c77b1820869e7f95762543561e221515d80896474"
+    },
+    {
+      "path": "docs/architecture/ADR-004-first-product-engineering.md",
+      "bytes": 3294,
+      "sha256": "c650bf47762980f5d07a71e32e48964293254e78655a3720244cb568a89a9c09"
+    },
+    {
+      "path": "docs/architecture/database-design.md",
+      "bytes": 37151,
+      "sha256": "07aab596d67deb64b408391d76089a9b5218a2e43d7f6bcb99f38104a0f3d33e"
+    },
+    {
+      "path": "docs/architecture/database/boundary-fixtures.json",
+      "bytes": 26913,
+      "sha256": "a93d3cc7ac5ed6a8fdad71a1bdc427a851a76877991df12311e3cb81a8d3d9da"
+    },
+    {
+      "path": "docs/architecture/database/config.sql",
+      "bytes": 48679,
+      "sha256": "a75ec4c30a21939da02f80028ffa62c2d86e997a8bff415e2fcf97b3b78a3363"
+    },
+    {
+      "path": "docs/architecture/database/dictionary.sql",
+      "bytes": 4816,
+      "sha256": "8b02b054752fb35661d5c5990ae2c02abf512167f43c3bf1c174a773a4933624"
+    },
+    {
+      "path": "docs/architecture/database/field-boundaries.json",
+      "bytes": 8190045,
+      "sha256": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504"
+    },
+    {
+      "path": "docs/architecture/database/field-dictionary.csv",
+      "bytes": 125931,
+      "sha256": "d96623a36645448694b4f6879b36bc4ebb01db0deb0dc0deab59635afb7538f8"
+    },
+    {
+      "path": "docs/architecture/database/field-dictionary.md",
+      "bytes": 143695,
+      "sha256": "c475cb696fc61a2e6d81a40192104f3c8d6aa95199bb1bdf912a15706104a2ff"
+    },
+    {
+      "path": "docs/architecture/database/profile.sql",
+      "bytes": 48602,
+      "sha256": "7b349fcf0e0f93a61f91b23f6585dde8cd2684dd70255f84f889240263c75141"
+    },
+    {
+      "path": "docs/architecture/database/relationships.svg",
+      "bytes": 29168,
+      "sha256": "cfc72fdc779a75826f85699ea78e396c5735d2685b9fcdfd8535d951424fba06"
+    },
+    {
+      "path": "docs/architecture/database/schema-contract.json",
+      "bytes": 551104,
+      "sha256": "aee35d350ff080da4f595c69b8cc47f076a84dc0bea3cf811f5cb0c7a3ccdcd2"
+    },
+    {
+      "path": "docs/architecture/database/schema-metadata.json",
+      "bytes": 540560,
+      "sha256": "9e3c9f918f7ce7ad0f902f976e64cc115d9b1a8037227369acdc2c65465788e4"
+    },
+    {
+      "path": "docs/architecture/database/table-catalog.csv",
+      "bytes": 9602,
+      "sha256": "17e27dd8b699b27ea95b6a29ba209524576f7dbf03050f3357753ce789c474b6"
+    },
+    {
+      "path": "docs/architecture/engineering-components.csv",
+      "bytes": 5536,
+      "sha256": "2433934d2f026fa8c042c5c0b3783b5184480f9b5acdd226f6efcd2bcb280b8f"
+    },
+    {
+      "path": "docs/architecture/engineering-directory-map.svg",
+      "bytes": 9184,
+      "sha256": "9b3fbb67d3f2060bbde9a4c8f7d9f80ea4665fb789416be905cd0a72782c8250"
+    },
+    {
+      "path": "docs/architecture/engineering-layout.md",
+      "bytes": 13439,
+      "sha256": "8f030a047b2de5afb9c71ca57518eeb8d2e7ffd7802895d9cfb9ebac6945e4bb"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "bytes": 5249,
+      "sha256": "fb1211e6346201d2b023c7d74a0057d30a89cd351b83a3fa3f323ce7494ffe8a"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "bytes": 35125,
+      "sha256": "7b165239a2f37001fa3f7b3c9fc10abc9b676770e5558c2db30c28fbbfb51bc8"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "bytes": 19039,
+      "sha256": "3478f5a20b7d3c4b80253cdc901d9c6f490a316288ec470e93e3230cfc1c30f6"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "bytes": 7550,
+      "sha256": "461d3d01204f6cd780d1d528c701790a4b15fb866d2cbb959b194285de6357ff"
+    },
+    {
+      "path": "docs/design/first-product-v1/app.js",
+      "bytes": 64893,
+      "sha256": "6193d5d70ed9dd6034da3ec348419b95bf58a24d2575471b27a27953ae78aa67"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/manifest.json",
+      "bytes": 8500,
+      "sha256": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-01.png",
+      "bytes": 245974,
+      "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-02.png",
+      "bytes": 789017,
+      "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-03.png",
+      "bytes": 793847,
+      "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/mo-04.png",
+      "bytes": 786010,
+      "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-01.png",
+      "bytes": 677528,
+      "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-02.png",
+      "bytes": 692451,
+      "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-03.png",
+      "bytes": 691210,
+      "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-04.png",
+      "bytes": 673031,
+      "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/never7-05.png",
+      "bytes": 687454,
+      "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-SCR-01-light.jpg",
+      "bytes": 425061,
+      "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-SCR-08-light.jpg",
+      "bytes": 212757,
+      "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-SCR-15-light.jpg",
+      "bytes": 194918,
+      "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-approved-material.png",
+      "bytes": 157449,
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-full-product-before-restyle.png",
+      "bytes": 277742,
+      "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-icons-color-before-library.png",
+      "bytes": 375812,
+      "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-icons-color-before-settings.png",
+      "bytes": 187630,
+      "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/reference-material-before.png",
+      "bytes": 263734,
+      "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-01.png",
+      "bytes": 839932,
+      "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-02.png",
+      "bytes": 840360,
+      "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-03.png",
+      "bytes": 847137,
+      "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-04.png",
+      "bytes": 848248,
+      "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sakura-05.png",
+      "bytes": 845316,
+      "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-01.png",
+      "bytes": 674561,
+      "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-02.png",
+      "bytes": 894420,
+      "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-03.png",
+      "bytes": 674292,
+      "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-04.png",
+      "bytes": 898673,
+      "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/sr-05.png",
+      "bytes": 673439,
+      "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246"
+    },
+    {
+      "path": "docs/design/first-product-v1/assets/wallpaper-frame.png",
+      "bytes": 1616086,
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/comparison.html",
+      "bytes": 7280,
+      "sha256": "26a9d01377d810228d3d488867d70dfbd3050dfa8bdc1f6944bbfe5baf827914"
+    },
+    {
+      "path": "docs/design/first-product-v1/coverage.csv",
+      "bytes": 2066,
+      "sha256": "b52663d2c8c603e43fdd1b45dd4278bb65240032f1b63de1ecd346460460e641"
+    },
+    {
+      "path": "docs/design/first-product-v1/data.js",
+      "bytes": 67294,
+      "sha256": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e"
+    },
+    {
+      "path": "docs/design/first-product-v1/entry-flow.html",
+      "bytes": 8530,
+      "sha256": "dac93fd2150b22e3a8418994c5977ea5b7fa21003f77bcac4e445c0c9a03d7b1"
+    },
+    {
+      "path": "docs/design/first-product-v1/gallery.html",
+      "bytes": 16672,
+      "sha256": "3e7a1b35ed0219d13260feb9d7e9b18ecca2c69f103258d86e734172011815cb"
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.css",
+      "bytes": 11214,
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d"
+    },
+    {
+      "path": "docs/design/first-product-v1/game-library.js",
+      "bytes": 24064,
+      "sha256": "278b2995d1fff49e9998a416d8d447976e4b4cd19254fed83ea462443e81b958"
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "bytes": 3501,
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/index.html",
+      "bytes": 7718,
+      "sha256": "e03a20e2167fefc1e4599c50b687d83efd0a1054fda9565a4e8a95bdff7285b1"
+    },
+    {
+      "path": "docs/design/first-product-v1/integration.md",
+      "bytes": 5821,
+      "sha256": "948166a1bd642cb0daa33db832ad3b4e53b834d65e38fb7f9edf52e5a6a09b58"
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.css",
+      "bytes": 12086,
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74"
+    },
+    {
+      "path": "docs/design/first-product-v1/learning.js",
+      "bytes": 25027,
+      "sha256": "c1551dda2e791049b3d341d5db8a2a70acce62ca9d5701355cb4133f9f777cfe"
+    },
+    {
+      "path": "docs/design/first-product-v1/manifest.json",
+      "bytes": 16915,
+      "sha256": "ca09693afe422797374ca195705655f2fb052e1ba37e46392d7f4357e377007b"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-assets.json",
+      "bytes": 1713,
+      "sha256": "f85b93e9c7f1f7f0b37528f8a0ca5f8cdffe09412057400483a8848dc3374d79"
+    },
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "bytes": 2770,
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/01-first-open.png",
+      "bytes": 556763,
+      "sha256": "67e32f128ad621d7f067219159d2c1e8d08c4ee1fe108f2b2f315a29260b0bbc"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/02-configure-translation.png",
+      "bytes": 198576,
+      "sha256": "06f55765a1bc653a981843a2906ce0027fd9309d7f9edb8fd4f926e57562b0cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/03-connect-target.png",
+      "bytes": 214010,
+      "sha256": "5d144716a639155922f694abb8a1e490abde57f0a2aeb9f3092b1f566cea5173"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/04-connect-failure.png",
+      "bytes": 276640,
+      "sha256": "81c28639de533c536dafeb0d12de84910dc0872492b73cb6fa18f5a82e4db9f9"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/05-connect-check.png",
+      "bytes": 290533,
+      "sha256": "620f06c53c3e33413770f76d378670010d4e747095493488a9b504323f7ed2ef"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/06-stream-selection.png",
+      "bytes": 275408,
+      "sha256": "1a1935fefbb46ac70ebb56b5d8017b8eb9cbb18658adc30e4db1d1b6c5eee65b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/07-source-before-translation.png",
+      "bytes": 903491,
+      "sha256": "c72b5f8b2245ce75ea519fe577bf135fc7628f83a46aeb49da6ca00a860599f5"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/08-live-reading.png",
+      "bytes": 897301,
+      "sha256": "4050662a69a3239a331d36b6c5e9abc56dc7ec3142559f4e9dd8e5f07ef2e1cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/09-hud-detail.png",
+      "bytes": 48753,
+      "sha256": "f872f2107e2cde9541db5a9e3dc4592f8fe35c0bf6910b6f292d48e5467b959d"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/10-local-word-card.png",
+      "bytes": 846995,
+      "sha256": "2937ff324d579410e3f9aac10a02514764dea71f09e959ccfa3957f0d3041dd7"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/11-learning-unconfigured.png",
+      "bytes": 731156,
+      "sha256": "ec9d8e7eb95b304f5d4ae41e76c5fd49b0b51246cd34a27eeece293b7a6f5546"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/12-settings-over-reading.png",
+      "bytes": 402411,
+      "sha256": "2b1e33a7c59b172977c3d4c5ef4c94f196471ba73cf1b1d6d5f9a5f7f0f8e724"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/13-return-fixed-sentence.png",
+      "bytes": 734931,
+      "sha256": "9b5b4c502b76c2dd66090a7e9d8429af0fc7d5121401eb5ef9bc41692f1a8dcb"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/14-learning-loading.png",
+      "bytes": 726627,
+      "sha256": "d771630e927583410da301b0c8228cb243b9e2696bd7f52fb59dabdc82f1f328"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/15-learning-result.png",
+      "bytes": 745500,
+      "sha256": "22cbbaee13a834866d7804e8cc7529d9dc291d00e37f39d9ab29f9ec62f089c1"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/16-learning-reference.png",
+      "bytes": 168886,
+      "sha256": "a23e6cc722759ad6eae3d5a7a429df7dd9d7a659c8469bd958f34f96e368bbfb"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/17-learning-failure.png",
+      "bytes": 140475,
+      "sha256": "de9c32058c4644854e6237841e4244082119a09cb96fd3f04a5ed54e5bddd196"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/18-paused-input.png",
+      "bytes": 80297,
+      "sha256": "466e068e3680c77911961fa8b7b368b77c3953913c045cf1509c117cb1a564af"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/19-hud-menu.png",
+      "bytes": 80365,
+      "sha256": "db33cd011bc954b96d0f34c9f2b297d7c450c8b3de62f0da78e24d89c203e882"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/20-history.png",
+      "bytes": 290169,
+      "sha256": "f9b64d02c80746b6556ee2ea0b54fce73973b8436632064e6b93e889d3248537"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/21-history-save-failure.png",
+      "bytes": 280983,
+      "sha256": "d0147efe5fea224ab9390979b70298c874f64192ee54aeaf581f6b5d20c23d51"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/22-model-entities.png",
+      "bytes": 198456,
+      "sha256": "b18078345df87ef953faabed1fed99b178ffa3ef92264f9a885955670278283b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/23-connection-entities.png",
+      "bytes": 187233,
+      "sha256": "3910a607be04307b85e3c8527a9a54e5fed9700b52d266ef772c595abd3c27d5"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/24-scoped-test-results.png",
+      "bytes": 205341,
+      "sha256": "480abe589ee497eb175cedc6e575187c16fe61b6229366881edb7e4516477d18"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/25-manual-translation.png",
+      "bytes": 186916,
+      "sha256": "fa338c4447088ba979f706231fe756a12f896336f3676c9f9eba051cb8de3504"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/26-game-mo.png",
+      "bytes": 209394,
+      "sha256": "7e6c5414400bc6771ebe5ddd0da5be50ecde9a2cda7142a30f2680046d66cbad"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/26-game-never7.png",
+      "bytes": 541908,
+      "sha256": "ef937f85f866267fc4a83c46b2db20da9e6615c5f97413b681e76360903fa9f2"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/26-game-sr.png",
+      "bytes": 1006126,
+      "sha256": "2b9728aab90a9aaf393bd6616a19ec4b935012d66ede02a4df75d8237b64c184"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/27-never7-increment.png",
+      "bytes": 524512,
+      "sha256": "018e1925925e0ba58533c75d39f5f23b47e2d3ec7c8bee7ce138647f3b56043c"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/28-integrity-recovery.png",
+      "bytes": 215952,
+      "sha256": "af6c5bda403645ad85b55c87ef0e75e7666e303e471f7877e5e63a58adf038cf"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/29-game-exit.png",
+      "bytes": 216721,
+      "sha256": "3911cddc07ea39e4bcc73bc5befc84d213eace213d8e4418edfb2fe5132926d4"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/30-dark-reading.png",
+      "bytes": 897301,
+      "sha256": "4050662a69a3239a331d36b6c5e9abc56dc7ec3142559f4e9dd8e5f07ef2e1cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/31-dark-settings.png",
+      "bytes": 214245,
+      "sha256": "95461cc01da3da5f78aedbefd100fe75dd6c56f4b0d0dbdc25c5664e892d2558"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/32-large-opaque-hud.png",
+      "bytes": 50496,
+      "sha256": "feb07f7c030e0793c349f114ba0f8b857ac494e46a7d3e2cadc8bccf7af75327"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/33-small-desktop.png",
+      "bytes": 330701,
+      "sha256": "047fbd0c13df6e974255fc16251c1034b35e2d776ed586809327b5bd524938ce"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/34-library-material-light.png",
+      "bytes": 394150,
+      "sha256": "85fcc795add79e0c8079586babe38870f4c8f446450a4b419d799a34a299dafb"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/35-library-material-dark.png",
+      "bytes": 376046,
+      "sha256": "abf8e9dd4941e3b54f964049b69c1e78cee12e8d51ad1b30dc9e3ed7c2b3bf93"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/36-library-material-reduced.png",
+      "bytes": 267446,
+      "sha256": "7a67f63be9b51aa23f90206b75a9be4daea48f34a4da89c5c4dcadb41c29d64a"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/37-settings-return-main.png",
+      "bytes": 194261,
+      "sha256": "c34a770368ad1bfdf738256c041a4623f4bafeb85758d727232a9ba8e2ee4820"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/38-library-empty.png",
+      "bytes": 409521,
+      "sha256": "3d7cf25d60565096a0dc9afbd5c7eab88f92f106d09f6eb9c3ebaddcc8fe1f09"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/39-add-game-entry.png",
+      "bytes": 129503,
+      "sha256": "cf4e8ea39293c64146d8b2006c12cde9787095e11c76ec59dc433e96ade0b4b7"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/40-add-game-review.png",
+      "bytes": 185653,
+      "sha256": "283f6b23debcebe88d177e87f6ef6be606e96773edccc8feec56f9cb7f093c32"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/41-window-picker.png",
+      "bytes": 289471,
+      "sha256": "536c162cf7ced711a11be4dbaf07a1c0c118e3a4f8facb4767479be1d06e974b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/42-window-mapping.png",
+      "bytes": 187708,
+      "sha256": "dbc192efa78f7fc7b78d05061b5b43a9fbcc332e45ea264e6c37aac74e2e8db0"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/43-window-connected-reading.png",
+      "bytes": 900388,
+      "sha256": "7d8fd92a24c175e0a73ce4b0672be7e0b41b97cd111cc5b2ba8045b333ee0c82"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/44-window-binding.png",
+      "bytes": 205304,
+      "sha256": "5b72e329c0fe5e007fdb46ca24da57744aa91b14fb749f5655eb038d884311a6"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/45-window-unbound.png",
+      "bytes": 206442,
+      "sha256": "7790991e943e86f9f0d7191fdeb0046e489f0c52b768e14e0de268c30dc303a0"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/46-custom-batch-review.png",
+      "bytes": 194174,
+      "sha256": "a557123ebb5acb8336e79d5f90d5b1fe92907715e88ebfe774322576392cd58b"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/47-unknown-target-check.png",
+      "bytes": 121703,
+      "sha256": "663b7952461795c78c6d135bc37babd05af295e5dabe0f0202ec492b19e4f0d8"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/48-window-switch-confirm.png",
+      "bytes": 224211,
+      "sha256": "92e91223ef4144eac96ac7f6b521c1645eed8cf740e295175b83e15bc43dd0d1"
+    },
+    {
+      "path": "docs/design/first-product-v1/previews/verification.json",
+      "bytes": 13844,
+      "sha256": "7d7b2d8cfe7d527da45bea30ea3862f0a88dad11963fe996029e63e9958f82ad"
+    },
+    {
+      "path": "docs/design/first-product-v1/reference-manifest.json",
+      "bytes": 1499,
+      "sha256": "5dabca238bdb6c9821d1e2e26791034b80a5f92c7e9d03e9b8c985cf0d468e51"
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.css",
+      "bytes": 11331,
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/settings.js",
+      "bytes": 55921,
+      "sha256": "eac93d4a24989924c43c1b5bf9ae8baff4872a529744c941d08266c66cedcca4"
+    },
+    {
+      "path": "docs/design/first-product-v1/style-guide.md",
+      "bytes": 3382,
+      "sha256": "fd143b5ca2bc79fcaa31c026ca6602daf357de49a2f4a89b7b8ec2b1125ee492"
+    },
+    {
+      "path": "docs/design/first-product-v1/styles.css",
+      "bytes": 44786,
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/README.md",
+      "bytes": 3800,
+      "sha256": "5e70bec4a552d620d0aefc84ccf04c2f933889bdf58df531b563805c6d43f178"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/material-mask.svg",
+      "bytes": 278,
+      "sha256": "6088cbd118b5a170a9e9d9a88446bf3cc82ec283b895ceac771f055e05835903"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/provenance.json",
+      "bytes": 1206,
+      "sha256": "8620168776d78897d7ef82f99f89321473917ddf292334022d1f320489b9d34f"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/reference-desktop.png",
+      "bytes": 3156652,
+      "sha256": "5e55a763e78e22efb8e6b83fbfb262fbc1f5b51d3d1e7090b07c8d791006af3c"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/wallpaper-frame.png",
+      "bytes": 1616086,
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/assets/wallpaper-preview.png",
+      "bytes": 434883,
+      "sha256": "7d576f6f88035acca3d2462cbf3b0ad7cb37af2e294c1d45abfbd24de172aa5d"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.css",
+      "bytes": 7194,
+      "sha256": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/case.js",
+      "bytes": 2815,
+      "sha256": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/compare.css",
+      "bytes": 7998,
+      "sha256": "187349f87e8f288d721562e235edee449d7e9dc289fe7860ae8c52af8dc7f575"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/compare.js",
+      "bytes": 2508,
+      "sha256": "8333b2501425138381367dbe2e7e9fa54dc9f13fca3883e6b3169cb955ed27de"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/comparison.html",
+      "bytes": 8055,
+      "sha256": "a5b923c6d700a99bd70a95d4e6a133d69f0694675c964a86fa2b46e0f1a3d25c"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/index.html",
+      "bytes": 2553,
+      "sha256": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/manifest.json",
+      "bytes": 3112,
+      "sha256": "6378cfb4961121b56ba201e12f732ff6d0b900430666dfa775c2a9ca79995c9f"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/blur-off-window.png",
+      "bytes": 290418,
+      "sha256": "11e046106686727073c0625535f794f1fb50c1d6b252bdea821e72e12e4dbf19"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/case-desktop.png",
+      "bytes": 1125068,
+      "sha256": "e0148b33bb12e7d768fd2e9621819ccd125a80ff1ffa9409b4cdc5733ef34b6e"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/case-window.png",
+      "bytes": 157449,
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/comparison-page.png",
+      "bytes": 950149,
+      "sha256": "c40a9a13d8f8055b72c149f08645455bfa31ca564a8e4720aab8538d7ed7ccc5"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/moved-window.png",
+      "bytes": 191461,
+      "sha256": "fae96031a0d91edc4459f947ad323851b49e6bc576f7bbf99637ac6c8d63d0f7"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/reference-window.png",
+      "bytes": 169444,
+      "sha256": "0255e9ea8ce4e18ee5d0e573e58c6dee7c69921e4bfbadf6aa10c3cc98806141"
+    },
+    {
+      "path": "docs/design/macos-material-case-v1/previews/verification.json",
+      "bytes": 1116,
+      "sha256": "6583b79a0782f0d4d3e6921afd5ae99f4d754f37c4cc0d26df97204750cab6b0"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261018-R2.json",
+      "bytes": 30587,
+      "sha256": "4da853dd8d70e939188bb1e404aa6524e6ec02dd0ca7cd63e6a0ad46ca2e4917"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261018-R3.json",
+      "bytes": 32278,
+      "sha256": "f13143c9d8d28528a1f3c0fff53b598300694a7b1ece64beb1b66c7a0973b2d2"
+    },
+    {
+      "path": "docs/development/client-learning-extensions.csv",
+      "bytes": 1140,
+      "sha256": "6fe3858491a4f63443fe799deaccc6c38dcf15b780c160bcae9088eb120e1978"
+    },
+    {
+      "path": "docs/development/client-rebuild-tasks.csv",
+      "bytes": 31385,
+      "sha256": "554a0d61be4e49489cf67d5a580c98fecd697937e08ce5595f4136b5a315cff4"
+    },
+    {
+      "path": "docs/development/client-regression.csv",
+      "bytes": 79465,
+      "sha256": "106a55d73caf36dc3ca59f57f8d008477372e934ec227d128a3f5447943981ee"
+    },
+    {
+      "path": "docs/development/client-regression.md",
+      "bytes": 25960,
+      "sha256": "098f6c204bae2bc93dd7306968326817700edaa9892e80023702950f21962117"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "bytes": 8523,
+      "sha256": "5ee4973993e1ae8523dbb2048de140ed3d015452591e92f072df70c7ead80dc4"
+    },
+    {
+      "path": "docs/development/first-product-test-coverage.csv",
+      "bytes": 21878,
+      "sha256": "ad0dce993872aba88717952c77ff93f4fa1d20db229fe1bd499ef1e47a4f3694"
+    },
+    {
+      "path": "docs/development/first-product-test-enablement.csv",
+      "bytes": 3542,
+      "sha256": "47130471b7bc126496f1dc7818ce5d560bb71f44760a0ef12f728e3bb62d760e"
+    },
+    {
+      "path": "docs/development/first-product-test-execution-dependencies.csv",
+      "bytes": 12576,
+      "sha256": "93bc1c0f2cd4b50386f28c076d4f842bd74809a31afbcc8640d695c753f4a731"
+    },
+    {
+      "path": "docs/development/first-product-test-executions.csv",
+      "bytes": 144879,
+      "sha256": "67fd8c1c880cd5102f0ec4119309f3a5a9edf6a753a749cd0b67ebbd740c6c88"
+    },
+    {
+      "path": "docs/development/first-product-test-layers.svg",
+      "bytes": 6058,
+      "sha256": "26f1da25ae5d9e34e6a5036fc00915ef03fdce17912505a625c70b5a42cac370"
+    },
+    {
+      "path": "docs/development/first-product-test-maintenance.csv",
+      "bytes": 4731,
+      "sha256": "bba44583fcda23527cf3321e2bffbf7360f3cd9317a3a4ef16ff7a9d1762a2fc"
+    },
+    {
+      "path": "docs/development/first-product-test-matrix.csv",
+      "bytes": 9504,
+      "sha256": "51a18dc612b067abc2be1eef9ade3faf2f52125321c197025bc8ebd3177f8bfa"
+    },
+    {
+      "path": "docs/development/first-product-test-operations.json",
+      "bytes": 50120,
+      "sha256": "10b872df080b48f2d521253c115fc000013544de1b6a8beda2a0b3bcc79ef4fe"
+    },
+    {
+      "path": "docs/development/first-product-test-operations.md",
+      "bytes": 12037,
+      "sha256": "7fa65526d5851f2a6dafdb27e45ca4a7f1fcce88f2771383e55480dea8ae2cef"
+    },
+    {
+      "path": "docs/development/first-product-test-plan.json",
+      "bytes": 234392,
+      "sha256": "79b58cf9f6c1ab1e488d756cb7fbd49c4a44be023efb4d80b97c63bf9c8f44a7"
+    },
+    {
+      "path": "docs/development/first-product-test-plan.md",
+      "bytes": 21082,
+      "sha256": "2d2bc1b1b720c7d8cfd98a21b93a708a4955717c786c2738f481b8004742dbaa"
+    },
+    {
+      "path": "docs/development/first-product-test-prerequisites.csv",
+      "bytes": 19248,
+      "sha256": "3a6111b9e220b3e87e5e71fabbff25dc3fa807be93e2069f00f61aa713f16065"
+    },
+    {
+      "path": "docs/development/iteration-governance.md",
+      "bytes": 12135,
+      "sha256": "76b09281d576121027d3264a74799bb6b99bbd75f9cc8a65acb7b2142f9072aa"
+    },
+    {
+      "path": "docs/development/iteration-template.md",
+      "bytes": 3732,
+      "sha256": "7f9cedb285dbd91b8ca230c8eb2bb43a1113989e7e63f16cddc5da52b8285031"
+    },
+    {
+      "path": "docs/development/plan.md",
+      "bytes": 26656,
+      "sha256": "0391a7967b7cfc5e17f25d86f3070a8e2d6aa520f628270bdcefd4f42f9209b5"
+    },
+    {
+      "path": "docs/development/requirements.csv",
+      "bytes": 4390,
+      "sha256": "6611f9a024b500b01f319f4df1c34a0852d45726ef66c81a4c0cc291629fde91"
+    },
+    {
+      "path": "docs/development/storage-acceptance.json",
+      "bytes": 9675,
+      "sha256": "3331633531ca06d2856664a1acede3df4be1056b098535ff4a12b69bb93d1030"
+    },
+    {
+      "path": "docs/development/storage-acceptance.md",
+      "bytes": 10141,
+      "sha256": "2d52af414e80e6c051428cb81e37352a9cbb7d120324a8b51f4c8a4d32fedd43"
+    },
+    {
+      "path": "docs/product/README.md",
+      "bytes": 5095,
+      "sha256": "9abc7485fcd29a8f9c7d7a9487fe86e04f646c98afa4d1aacaf07a845166dade"
+    },
+    {
+      "path": "docs/product/ai-reading-prd.md",
+      "bytes": 12280,
+      "sha256": "a95bc5868f0d4f6dbddd616e5a9e90c9a482a2beef96bda3d73c8dbd09e72795"
+    },
+    {
+      "path": "docs/product/first-product-scope.md",
+      "bytes": 4916,
+      "sha256": "58f6be7161d522c7b90edaf807082e31d88431f8e0e1311eb14ca17f6ef5168a"
+    },
+    {
+      "path": "docs/product/game-library-window-acceptance.csv",
+      "bytes": 1998,
+      "sha256": "054d64c9a7f6e08248ac66e2f7895fbd0d3740ba46549e52fd3ad8e33f8a56c8"
+    },
+    {
+      "path": "docs/product/game-library-window-prd.md",
+      "bytes": 8119,
+      "sha256": "f84d6ee75218cf527f4c2b8ffca575f95d89c2a68ecb85e0de05931dc017e227"
+    },
+    {
+      "path": "docs/product/model-configuration-acceptance.csv",
+      "bytes": 8298,
+      "sha256": "d76dd831ebf99ca0f0c5cd9c95eb648ca2eedf4123cb65ed9c052fc8cd34270a"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "bytes": 24302,
+      "sha256": "e0faddae1fd54d121d1e4fb6a9208cfe431f9d4213524408d9eae7f724383862"
+    },
+    {
+      "path": "docs/product/original/docs/01-prd.md",
+      "bytes": 88203,
+      "sha256": "175471b9a44a40791d713cdaf3d96e3e099a4e22cba600b77da76be2f6e1ae06"
+    },
+    {
+      "path": "docs/product/original/docs/02-design-spec.md",
+      "bytes": 71524,
+      "sha256": "cbaeca245a6eeacf2875784ecfdbbd1d8d7f8e9601763f1424e75b9524cf585f"
+    },
+    {
+      "path": "docs/product/source-manifest.json",
+      "bytes": 89197,
+      "sha256": "8fb70a37eac27b5867671bb672e340117ac5f8feb5aa4d55a4d6c862183026ed"
+    },
+    {
+      "path": "openspec/legacy-debt.json",
+      "bytes": 8683,
+      "sha256": "fb0021504423bd16c24d023f9d84e48ad511a518b353b4a3dd499ad22ab7ae07"
+    },
+    {
+      "path": "openspec/technology-lock.json",
+      "bytes": 3073,
+      "sha256": "bd541b25d62f767beb17e93d1cf5f1d670da0504b2ee1bc9f2dd496ac10c8894"
+    },
+    {
+      "path": "docs/development/iterations/FP1-IMPLEMENT-20261019/technical-decisions.md",
+      "sha256": "d38458fc3d0c4ee4cd8e17546b1427bdfb2380d24757efb42d1e69b66343953c",
+      "bytes": 4135
+    },
+    {
+      "path": "native/core-runtime.lock.json",
+      "sha256": "f1b1cf61dabad747e2feab3ab21f2982f7fc8eb20a5c3d21286f19aa412e732a"
+    },
+    {
+      "path": "resources/language/manifest.json",
+      "sha256": "04e403be83c592419227b70383b349ad265b7f84900d78866b3227a6cfe48a4b"
+    },
+    {
+      "path": "resources/language/dictionary-provenance.json",
+      "sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b"
+    },
+    {
+      "path": "scripts/quality/product_execution.py",
+      "sha256": "3ddda06f5b5c9b99a24af793bb574359c1c485dd21f101ef6b7d9ffada345a55",
+      "bytes": 15608
+    },
+    {
+      "path": "scripts/contracts/verify_contracts.py",
+      "sha256": "e9655bb44b3452bc0ca907a8f07559201ffa81656658386944f96cc4538d5821"
+    },
+    {
+      "path": "scripts/contracts/compare_product_capture.mjs",
+      "sha256": "8bfab2b02e00fcc37b81545f8c99cafb71d08b3f24274cc5fff559adec902777"
+    }
+  ],
+  "parent_baseline": "FP1-20261019-R8",
+  "parent_manifest_sha256": "4ec4e6f7aaf6851ed37ab4a96620c0adf0dcf1cec1edb74123cac0a70faa8cd2",
+  "revision_reason": "Independently reviewed mandatory HUD and configuration-lifecycle behavior inventory UI29..35. Existing design, PRD, technology, legacy debt and all pending approvals remain unchanged. Scope includes shared immutable storage guard fixes; PRE14 authority is not adopted.",
+  "revision_finalization": "R9 records reviewed engineering-check strengthening only. No design layout, database-field, PRE14, full storage, native runtime or product release acceptance is promoted. Independent review: architecture_context and product_ui_impl, with .build/final-wave-independent-review.json and baseline-review-r9.json."
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "kind": "current-design-reference-catalogue/v1",
+  "target_id": "guided-service-reading-20261030",
+  "composition_id": "complete-guided-history-20261031",
+  "design_closure_sha256": "72e788d89b489eded79caafd836177b67fa04b463861bf96b110da05e0257ffd",
+  "design_sources": {
+    "docs/architecture/model-service-registry-design.json": "32d5c81aa3480a962c94fa59922a3faed9cee897ac2479430998e9d74a07a9f2",
+    "docs/architecture/service-configuration-presentation.json": "9ee94eae5975a0891c51db50b401130779d03b410203c7f95d20092d052ae3a6",
+    "docs/design/first-product-v1/app.js": "bc1112ca97c308f4dd4c89833c1b78a689079ab77534d2b34ad894389b435e6e",
+    "docs/design/first-product-v1/assets/manifest.json": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9",
+    "docs/design/first-product-v1/assets/mo-01.png": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a",
+    "docs/design/first-product-v1/assets/mo-02.png": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e",
+    "docs/design/first-product-v1/assets/mo-03.png": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053",
+    "docs/design/first-product-v1/assets/mo-04.png": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810",
+    "docs/design/first-product-v1/assets/never7-01.png": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8",
+    "docs/design/first-product-v1/assets/never7-02.png": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1",
+    "docs/design/first-product-v1/assets/never7-03.png": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d",
+    "docs/design/first-product-v1/assets/never7-04.png": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236",
+    "docs/design/first-product-v1/assets/never7-05.png": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64",
+    "docs/design/first-product-v1/assets/sakura-01.png": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+    "docs/design/first-product-v1/assets/sakura-02.png": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e",
+    "docs/design/first-product-v1/assets/sakura-03.png": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274",
+    "docs/design/first-product-v1/assets/sakura-04.png": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66",
+    "docs/design/first-product-v1/assets/sakura-05.png": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc",
+    "docs/design/first-product-v1/assets/sr-01.png": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697",
+    "docs/design/first-product-v1/assets/sr-02.png": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688",
+    "docs/design/first-product-v1/assets/sr-03.png": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a",
+    "docs/design/first-product-v1/assets/sr-04.png": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151",
+    "docs/design/first-product-v1/assets/sr-05.png": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/flat-layout.css": "e69a542178b507ad8470468fd0422bff6c421b4cb983dac5afc14ddc8a0a5a6c",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/flat-layout.js": "63588bb1b90c47a23c057df0471b8cdd66a306055b701c1f1709b831a4983736",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/index.html": "2e1e5e4db68cd1df5952c4fe02286a66f3e2f63a01dd31f37abd3e16c0ffd86a",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/local-translation-design.css": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/local-translation-design.js": "0a24585c3135706d65adb73f7d693cee20712d9800cff2bc3959e7fea19a33ed",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/manifest.json": "e89e788594dec5440b5e25273b5417bf2a64517d8df9fba253d35709372e897d",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/service-picker.css": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/service-picker.js": "0c19283b5e75b3dfcb28aee76cd835a4aaf3c22fd23d8e2fe18ca21ffadb43dc",
+    "docs/design/first-product-v1/candidates/flat-service-session-20261030/settings.js": "ea8b67fc78d90179e4928cd2877cc5701ba8a9fe76672431d9f742a73c2107c0",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/flat-layout.css": "adb603b38009ca5d329696a6cca3170eeaf1f86abeef5fcbc1099148ef1a7a66",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/flat-layout.js": "13ad561888ed4430629d228c0c9bbd5e2ac597f38ad3623c00b68f27fd35b5ee",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/guided-catalog.js": "649c986b6e8fa152abecc84adf9fdf8e58aa3cf503309da0b0ae9bd22b14da33",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/guided-config.js": "51aee0f8b2b8df252972c91cb47c0cc5c2b016dfdd51f5032d83f7187da87c76",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html": "1a8269771e23e2ecfb577e7666409947dd32ce50e135940d90b7d6e11d23ecaa",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/local-translation-design.css": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/local-translation-design.js": "0a24585c3135706d65adb73f7d693cee20712d9800cff2bc3959e7fea19a33ed",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/manifest.json": "3e1d23cc8486706ae4027d1766e0599a41c3b1eca4c06869a9a132803beb0233",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/service-picker.css": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/service-picker.js": "9ce3ca72a9690d2c5eb35fff9cd0f3e524bc10e71c92d1e19c44c507803ede48",
+    "docs/design/first-product-v1/candidates/guided-service-reading-20261030/settings.js": "92667203cc0d868361f0d2981757cbef240c0643db750deae7c79d90c964d981",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/history.css": "d9fc1490003359e745649904edb88b14e4f59b505ec63a27f85201523e9dfa6e",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/history.js": "928bf2981914a4953fc05fe5f5557c4ccc8246586120039a0c26084a2ca81dce",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html": "6c2cdfa3478822d8be6fed973b126cee82805b8a4a484af29e0df80155eab236",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/manifest.json": "135289b6204f5bcf178f340e9e3fdff3f1384a5b51e154cd4a9bd6e7cdccfc34",
+    "docs/design/first-product-v1/controls.css": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+    "docs/design/first-product-v1/controls.js": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17",
+    "docs/design/first-product-v1/data.js": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9",
+    "docs/design/first-product-v1/game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "docs/design/first-product-v1/game-library.js": "ec58d3d4e365b07bd9324525163374275c9966fbd8cf558fa14a5459b5ac8c42",
+    "docs/design/first-product-v1/icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "docs/design/first-product-v1/index.html": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957",
+    "docs/design/first-product-v1/learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "docs/design/first-product-v1/learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "docs/design/first-product-v1/material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "docs/design/first-product-v1/review-gaps.css": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd",
+    "docs/design/first-product-v1/review-gaps.js": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e",
+    "docs/design/first-product-v1/settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "docs/design/first-product-v1/styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+  },
+  "runtime_assets": {
+    "docs/design/first-product-v1/assets/wallpaper-frame.png": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+  },
+  "authors": [
+    "/root",
+    "/root/current_visual_tests"
+  ],
+  "pack_root": ".build/gate-closure-20261104/reference-candidates/smoke-01",
+  "generation": {
+    "path": "verification.json",
+    "sha256": "7886b933bc2370895b185bfa248d1cf6c12424252d49acc0960cc4f34b6effb3"
+  },
+  "entries": [
+    {
+      "state_id": "all-page-main-library-normal",
+      "descriptor_sha256": "b94e94114b492d27c7e3c34efaf458266cfa53b820a384b8432a30803d72c672",
+      "target_png": {
+        "path": "states/all-page-main-library-normal/target.png",
+        "sha256": "2472b6ff68caeb0b913b2e074ddff7ca48dce56290ce053f3f749547c5eed397",
+        "bytes": 248115
+      },
+      "full_png": {
+        "path": "states/all-page-main-library-normal/full.png",
+        "sha256": "c38022b3ec73e000a119719c07b24b95f107134c05969909e2899674ef45ebe0",
+        "bytes": 634722
+      },
+      "geometry": {
+        "path": "states/all-page-main-library-normal/geometry.json",
+        "sha256": "f8cc20826b7edd6dc6f474ac94c5c2f59e02cd103e483a1809c09ca221c9df59",
+        "bytes": 182813
+      },
+      "assertions": {
+        "path": "states/all-page-main-library-normal/assertions.json",
+        "sha256": "83f8420bacc14e7394880da9b847a2981087570245fa3426eaa4a228e4d15773",
+        "bytes": 332
+      }
+    },
+    {
+      "state_id": "all-page-settings-general-normal",
+      "descriptor_sha256": "1deda733017aeb5738dc9431b5297c68f5485b38c4ad6362c33a4b1fc61b1d17",
+      "target_png": {
+        "path": "states/all-page-settings-general-normal/target.png",
+        "sha256": "35709d1a989b2e3e9496128a2552134807e0d7e0989c5084b518f78797599cec",
+        "bytes": 218416
+      },
+      "full_png": {
+        "path": "states/all-page-settings-general-normal/full.png",
+        "sha256": "785eb3ba60f3667c6d04628b726d0abc1cd8984f9fa15c90b910e06432cfe269",
+        "bytes": 507332
+      },
+      "geometry": {
+        "path": "states/all-page-settings-general-normal/geometry.json",
+        "sha256": "2161951a80d07054efb875cf5ae67a1ec6556b5e2fccebdfffb88fd2fa0c7ef6",
+        "bytes": 249017
+      },
+      "assertions": {
+        "path": "states/all-page-settings-general-normal/assertions.json",
+        "sha256": "0be1c1b41e2e8b7fbd434b794d044316067a04aafbcbdeabb400557bd6f147c0",
+        "bytes": 337
+      }
+    },
+    {
+      "state_id": "all-page-main-session-normal",
+      "descriptor_sha256": "9be37aea09a3f56e484ae3d7416f2dddd8bd79d66f885ea3141f1e711d2c7bf9",
+      "target_png": {
+        "path": "states/all-page-main-session-normal/target.png",
+        "sha256": "b0953ca061096702649123c366eb308606086c60874d04ec2b3fa8298b66a13d",
+        "bytes": 46179
+      },
+      "full_png": {
+        "path": "states/all-page-main-session-normal/full.png",
+        "sha256": "7932dff5555ada0086e5fd8f1510f59ed01bf0e69004770efb432fdf40a20546",
+        "bytes": 620623
+      },
+      "geometry": {
+        "path": "states/all-page-main-session-normal/geometry.json",
+        "sha256": "161d0d54436463d58868dedde5da32242248c5622e20d646c9e31beb04d0a486",
+        "bytes": 250255
+      },
+      "assertions": {
+        "path": "states/all-page-main-session-normal/assertions.json",
+        "sha256": "da6173885d6b5c40659e5ae36027894b79321905c1217286a41c22cd6bb6324c",
+        "bytes": 335
+      }
+    },
+    {
+      "state_id": "all-page-subpage-readingpanel-dataset-body-retired-surface-absent",
+      "descriptor_sha256": "0b484881034473de254378933814367a0b5c555d584ce62ac1deb6630d572b97",
+      "target_png": {
+        "path": "states/all-page-subpage-readingpanel-dataset-body-retired-surface-absent/target.png",
+        "sha256": "14d617c3ea2e3e12f7d2ef8e1865f8c8855f9dd611f66f0f06ce3d2047fb260b",
+        "bytes": 76459
+      },
+      "full_png": {
+        "path": "states/all-page-subpage-readingpanel-dataset-body-retired-surface-absent/full.png",
+        "sha256": "f8aa3c92f308051b51c29a0ab21a470f66041a3607974604f9e1d1915f12a0b4",
+        "bytes": 592531
+      },
+      "geometry": {
+        "path": "states/all-page-subpage-readingpanel-dataset-body-retired-surface-absent/geometry.json",
+        "sha256": "5b22590de0095b189675a91a80312f9368150470252a147f04e03829d17b0fc6",
+        "bytes": 250211
+      },
+      "assertions": {
+        "path": "states/all-page-subpage-readingpanel-dataset-body-retired-surface-absent/assertions.json",
+        "sha256": "c51279cb0caf128fdf36a8d0bab3110bc193b7899f4e94bb099b78de185b0927",
+        "bytes": 348
+      }
+    },
+    {
+      "state_id": "all-page-subpage-modelconfigscreen-tab-connections-retired-surface-absent",
+      "descriptor_sha256": "2ec1ae9d34273be46d3ec8f68112495f48ae876f1ae6b765cd315dcacec783c0",
+      "target_png": {
+        "path": "states/all-page-subpage-modelconfigscreen-tab-connections-retired-surface-absent/target.png",
+        "sha256": "8ba7e76cc8493a584cbe7aa33a910649f2486858d2af8cadf991e7179a3ec846",
+        "bytes": 179874
+      },
+      "full_png": {
+        "path": "states/all-page-subpage-modelconfigscreen-tab-connections-retired-surface-absent/full.png",
+        "sha256": "dc3d69e10dcec029741107a5aa81470275b8b8d426800047a4ec765b6407eceb",
+        "bytes": 573602
+      },
+      "geometry": {
+        "path": "states/all-page-subpage-modelconfigscreen-tab-connections-retired-surface-absent/geometry.json",
+        "sha256": "63bb3f335564a08c09296b4fb28c6535be19be75e9ac698a155237b9c8ab9c21",
+        "bytes": 251647
+      },
+      "assertions": {
+        "path": "states/all-page-subpage-modelconfigscreen-tab-connections-retired-surface-absent/assertions.json",
+        "sha256": "eb48b50a2e92b3de11c702eb4c003bb671c29c6e8f6a9670d66e302728460fec",
+        "bytes": 316
+      }
+    }
+  ]
+}

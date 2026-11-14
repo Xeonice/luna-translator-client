@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "id": "activate-public-github-gates",
+  "kind": "tooling",
+  "engine": "effective-gates/v1",
+  "allowed_paths": [
+    "openspec/changes/activate-public-github-gates/**",
+    ".gitignore",
+    ".codex/hooks.json",
+    ".codex/gate-context.json",
+    "scripts/quality/gate_core.py",
+    "scripts/quality/gate_policy.py",
+    "scripts/quality/test_gate_policy.py",
+    "scripts/quality/codex_hooks.py",
+    "scripts/quality/test_codex_hooks.py",
+    "scripts/quality/gate_effectiveness.py",
+    "scripts/quality/test_gate_effectiveness.py",
+    "scripts/quality/gate_checks.py",
+    "scripts/quality/test_development_gates.py",
+    "scripts/quality/development_gates.py",
+    "scripts/quality/github_ci.py",
+    "scripts/quality/test_github_ci.py",
+    "scripts/quality/publication.py",
+    "scripts/quality/test_publication.py",
+    "scripts/quality/render_gate_report.py",
+    "docs/README.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/current-phase.json",
+    "docs/development/github-activation.md",
+    "README.md",
+    ".build/quality/**",
+    "reports/gates/**",
+    "reports/visual-comparison/**",
+    ".github/workflows/**",
+    ".github/ci-resource-lock.json",
+    ".github/ci-evidence.lock.json",
+    ".githooks/pre-commit",
+    ".githooks/pre-push"
+  ],
+  "source_snapshot": "openspec/changes/activate-public-github-gates/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ENG-GH-01",
+      "spec": "specs/github-gates/spec.md",
+      "scenario": "公开源码与资源可恢复",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GH-02",
+      "spec": "specs/github-gates/spec.md",
+      "scenario": "实际Git基线与范围",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GH-03",
+      "spec": "specs/github-gates/spec.md",
+      "scenario": "部署根与真实Hook身份",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GH-04",
+      "spec": "specs/github-gates/spec.md",
+      "scenario": "冷机完整门禁",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GH-05",
+      "spec": "specs/github-gates/spec.md",
+      "scenario": "必需检查真正阻断",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    }
+  ],
+  "design_source": "openspec/changes/activate-public-github-gates/design.md",
+  "review_evidence": {
+    "path": ".build/quality/github-activation-20261115/current-review.json",
+    "authors": [
+      "root",
+      "codex_hooks_impl",
+      "gate_effectiveness_impl"
+    ]
+  },
+  "scope_authority": {
+    "path": "openspec/changes/activate-public-github-gates/scope-authorization.json",
+    "sha256": "ab0fa55b02685df8a0eea96be670ff2cd57b8615c25e3bd83378e50e6ebf0eeb"
+  },
+  "effective_gate_external_evidence": ".build/quality/github-activation-20261115/production-external.json",
+  "product_source_modified": false,
+  "product_acceptance_promoted": false
+}

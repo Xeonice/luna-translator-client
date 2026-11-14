@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "refactor-owner-geometry-policy",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/refactor-owner-geometry-policy/**",
+    "apps/desktop/src-tauri/src/platform/window_manager.rs",
+    "apps/desktop/src-tauri/src/platform/owner_geometry.rs",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R51.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/refactor-owner-geometry-policy/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-07",
+      "spec": "specs/owner-geometry/spec.md",
+      "scenario": "content-fit-preserves-card-and-user-geometry-invalidates-exact-generation",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/gallery.html#10-local-word-card"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C18",
+        "C19",
+        "C34"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run"
+}

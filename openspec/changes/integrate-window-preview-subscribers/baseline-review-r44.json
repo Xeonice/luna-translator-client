@@ -1,0 +1,8 @@
+{
+  "kind": "R44_candidate_review",
+  "status": "pending_independent_exact_review_and_Root_adoption",
+  "parent_baseline_sha256": "0c6213267dc84e7db3dd6275b07f4221dd7886fd7bd817dde659ff6a040232f2",
+  "exact_delta_sha256": "817e473d03df3cf08087c7b2053d8d95df6cf30009289613174fcf58b3f14260",
+  "original_failures_retained": true,
+  "runtime_visual_release_promoted": false
+}

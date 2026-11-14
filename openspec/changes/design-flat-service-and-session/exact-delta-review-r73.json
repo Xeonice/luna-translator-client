@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_tool_delta_pending_packet_adoption",
+  "change_id": "design-flat-service-and-session",
+  "parent_baseline_sha256": "2ae180cdb2d3b04dce306e098aaa7a860c021d7fc13b2224f134347c865d5b85",
+  "source_delta": [
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "3ac7d62bcdb3741fa5a50316f8d3083c06e74b624f2cd29f82d7703b233c7b47",
+      "after": "d2a0b40a9f69ec99663b8da8b81a88629ef27c9f6932590a25d2174dc63c4019"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "a6cbd10ce98e1675b707ea4e6b7cbed3ca99eaf88748952ec3105fd898b67d65",
+      "after": "d3525598295811cdc1ea8f225968ebcb284c30d4ff3fe546cb8ab2f520c0fc31"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "595b2a330bd1eb3f3a5478882335582910fc55e3146ddca8c182184d128d9f0c",
+      "after": "015e7e84c18b17b4f3c0533f61418cc769f4874b019aef86bd832fe5a71725af"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "27be4060e5414d9d46623147de61a1a2a0e5332961c2e5658f462455613ae105",
+      "after": "87dc503544bbe825358b7e91bca1aa8ab7c0f74ba2ebd43ce693cd749a0d3c63"
+    },
+    {
+      "path": "docs/architecture/model-service-registry-design.json",
+      "before": "b814d5fc4fe1b1cbe1b6dd4f42eceec56ca4c8edbe7d29fb432c4d5d73e9cc25",
+      "after": "37a7fcc727b51ba1e45bcc07af732e8a26637ea482dbe6d38c5c49a1253935a0"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "0bda3376402a402990d5fa2f8a39f0666709af5e0d8ea0d172c75abee39e2d05",
+      "after": "976f7f70cd257674b1bf4e869451165cef75595deb1dfb9704d14adda67c03d8"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/flat-layout.css",
+      "before": null,
+      "after": "e69a542178b507ad8470468fd0422bff6c421b4cb983dac5afc14ddc8a0a5a6c"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/flat-layout.js",
+      "before": null,
+      "after": "63588bb1b90c47a23c057df0471b8cdd66a306055b701c1f1709b831a4983736"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/index.html",
+      "before": null,
+      "after": "2e1e5e4db68cd1df5952c4fe02286a66f3e2f63a01dd31f37abd3e16c0ffd86a"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/local-translation-design.css",
+      "before": null,
+      "after": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/local-translation-design.js",
+      "before": null,
+      "after": "0a24585c3135706d65adb73f7d693cee20712d9800cff2bc3959e7fea19a33ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/manifest.json",
+      "before": null,
+      "after": "e89e788594dec5440b5e25273b5417bf2a64517d8df9fba253d35709372e897d"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/service-picker.css",
+      "before": null,
+      "after": "d95b228ca91b1ad39e9862f8338012f3e5080f6e381dd5034d11ffc970c8094e"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/service-picker.js",
+      "before": null,
+      "after": "0c19283b5e75b3dfcb28aee76cd835a4aaf3c22fd23d8e2fe18ca21ffadb43dc"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/flat-service-session-20261030/settings.js",
+      "before": null,
+      "after": "ea8b67fc78d90179e4928cd2877cc5701ba8a9fe76672431d9f742a73c2107c0"
+    },
+    {
+      "path": "docs/development/flat-service-session-tests.md",
+      "before": null,
+      "after": "a02f09634d3bc4138740ee6126d95370fe8c28eab0f19735a79d8452d86e9762"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "3c9227bbbd0984476b983396a15c3566a251965928a8eca61bc61309c1dba971",
+      "after": "d0b55fb82150cd1fbe0c2ad2ea89064c1f7807fc281dd4503e42846ada916dbd"
+    },
+    {
+      "path": "docs/product/first-product-scope.md",
+      "before": "d9d2e2e4b2bc606119f86fb56fcd6b9b39289350600df5cfefb802742d300df0",
+      "after": "56f3444aec24486fd2548de1d6707c86e6c454b89e95045e5b31da0392b5b9cc"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "50dadea3762427b3246c439b674d728e714ae3453c69779b9ec541b33c8f9f78",
+      "after": "670e840a9fc6449d1e0251a42b96b3052c988a21b1366f1373b527a6855d58bb"
+    },
+    {
+      "path": "docs/product/reading-window-session-prd.md",
+      "before": "535511dfd0949d6ce2cf6d61711932d1ba38be67c8dc53594ff75c069331467a",
+      "after": "b35ee181d2d5f02ba39c747baa5a44af110b9a70c3a29b82f15af0094666c44d"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/design.md",
+      "before": null,
+      "after": "fcf20617d78cec133b774df8c40318f88662b201c8cf1f844dc76abb57b06b7d"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/iteration-card.md",
+      "before": null,
+      "after": "1867a7fbcbff0abaccb460745d797d214038a9de24a8624d300d0edd613cdd89"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/proposal.md",
+      "before": null,
+      "after": "2bf3ff0b93e0de2c531f15bc8af836d99c19396626e855d29d9b06f8e27f2424"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/source-snapshot.json",
+      "before": null,
+      "after": "17a2abeafbb1bb667cc2e11d5163a3ea3d897c46b19a30e8ffa8fb27f9a76381"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/specs/flat-service-session/spec.md",
+      "before": null,
+      "after": "d58d352e007cd1180f3f8e3c47390d08aa9c6e95f2585dcb022fc0fde9706511"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/tasks.md",
+      "before": null,
+      "after": "9b8512b84d4736e26d13869479fadb051e4f64ab4c92a1edd4dac3d781d88191"
+    },
+    {
+      "path": "openspec/changes/design-flat-service-and-session/verification.json",
+      "before": null,
+      "after": "0227b5ad97bcbca5c0bd5ae5ae247eb779f46db7fb37c06eab9d3fb02033efd1"
+    },
+    {
+      "path": "openspec/specs/first-product/spec.md",
+      "before": "ddfc7139b71e56a6dd489094b9e66c4c391f186357abb7507dccfe9e1fe5918c",
+      "after": "615b8fa1ed1215f7a46d3f9730c19ca3f87e95357918420129883e55bb5b2ad5"
+    },
+    {
+      "path": "scripts/quality/flat_service_session.py",
+      "before": null,
+      "after": "49123f647db6f1e3f6f9d76e180b00704a6f58f78469db49e983fbb012624cd0"
+    },
+    {
+      "path": "scripts/quality/test_flat_service_session.py",
+      "before": null,
+      "after": "7e0c34d0d14e6466e83bc28ef94f69d6461110807c44ec91d2a19f2055984759"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "93c44ff81f4255fe6d611bda94dadfb0820d5d76167dc55911a50f6d77af079b",
+      "after": "1e32b5e2dee65af11f0a2a76d1125484b2e6fb7420baf74341aea1755464225a"
+    },
+    {
+      "path": "scripts/report/verify_flat_service_session.cjs",
+      "before": null,
+      "after": "f5250a06fe07a4c313dff75ab6930858ad718dd72796871213e66b47e20568ba"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/flat-design-20261030/review/docs-review.json",
+    "bytes": 4994,
+    "sha256": "57832a443986548705e27581202c559e1ab9eadd85e44b7bbffe8d0333069a27"
+  },
+  "code_review": {
+    "path": ".build/flat-design-20261030/review/tooling-review.json",
+    "bytes": 7177,
+    "sha256": "e97118a232c69e00e7cff4b1504189b164b0cbac113dd35e2d200288814ab646"
+  },
+  "source_evidence_remaps": {
+    "scope": "M15 only unchanged quote hash and derived module CSV; no status or behavior changed"
+  },
+  "ui_review": {
+    "path": ".build/flat-design-20261030/review/ui-review.json",
+    "bytes": 8248,
+    "sha256": "53576fdd734c36e977f803f4c18a7e748b4d9c65ce046d80c82a8a45b1e05238"
+  },
+  "scope": "Flat service configuration and current-session design only; the sole first-product generated target exactly projects user-requested FP06/09 table layout changes; all other R72 sources, selection semantics and product/approval boundaries preserved."
+}

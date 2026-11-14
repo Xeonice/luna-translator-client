@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "stage-current-language-worker-r65",
+  "parent_baseline_sha256": "5e29853a84589b0a51a331fd40aad009b80bdd592567b9fbb33187196b1e2cbb",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/resources/language-worker",
+      "before": "18b588eda5d46b5c969ee234a89857a6623819b8bef03423b0056e595af36a53",
+      "after": "2f2a33778edd923be29241c65d60cb47d5457e0cb2231bc45520bf31e5cae639"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/design.md",
+      "before": null,
+      "after": "f6b0625665d726a3c1b64e8a9aba86acab5a5af64c2edc6e6672c465ddbce072"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/iteration-card.md",
+      "before": null,
+      "after": "735d49293edf78a5c62cbe969635a40c16cab146085a9dac884d9d11a852ab10"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/proposal.md",
+      "before": null,
+      "after": "59ee0f7cb5d4d388859e433c0b9d5a0ccf0d91891fe29a59c2421b8ab3064c01"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/source-snapshot.json",
+      "before": null,
+      "after": "3d157cd6d0cb2a01966d57f7d66107838906cbbd39e045d5ee7ebd9e3665bdb0"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/specs/derived-language-worker/spec.md",
+      "before": null,
+      "after": "f8adc0d24da02d0b7610d29c50334b357ae3161c52464b04ff6b2cc798232c34"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/tasks.md",
+      "before": null,
+      "after": "dee74876f5fbb5aa8fb6a4587740646d41fcb059086a50edf70b1b2e3c41d1a4"
+    },
+    {
+      "path": "openspec/changes/stage-current-language-worker-r65/verification.json",
+      "before": null,
+      "after": "6d166fcb62614bd4fa174ca2db413f909663586241d45c650c888f055a197f36"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/resources/language-worker"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/language-worker-staging-r65/independent-review/review.json",
+    "sha256": "e29174e7d5baad71bb732d9556057ff59636cdcc064c44e3a03b786a9ecfa23e",
+    "bytes": 19173
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "contract_delta": [],
+  "source_evidence_additions": [],
+  "runtime_visual_release_promoted": false
+}

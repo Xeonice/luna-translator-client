@@ -1,0 +1,36 @@
+{
+  "design_capture_passed": true,
+  "user_visual_confirmation": "style_approved",
+  "native_material_verified": false,
+  "source_sha256": {
+    "index.html": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32",
+    "case.css": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09",
+    "case.js": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a",
+    "comparison.html": "a5b923c6d700a99bd70a95d4e6a133d69f0694675c964a86fa2b46e0f1a3d25c",
+    "compare.css": "187349f87e8f288d721562e235edee449d7e9dc289fe7860ae8c52af8dc7f575",
+    "compare.js": "8333b2501425138381367dbe2e7e9fa54dc9f13fca3883e6b3169cb955ed27de"
+  },
+  "canvas_css": [
+    1462,
+    920
+  ],
+  "device_scale_factor": 2,
+  "reference_window_source_pixels": [
+    746,
+    262,
+    1460,
+    962
+  ],
+  "checks": [
+    "clean_wallpaper_real_backdrop_filter",
+    "blur_toggle",
+    "window_hide_show",
+    "drag_changes_backdrop",
+    "position_reset",
+    "offline_compare_images_decode",
+    "comparison_overlay_slider",
+    "comparison_reveal_slider"
+  ],
+  "console_errors": [],
+  "http_requests": []
+}

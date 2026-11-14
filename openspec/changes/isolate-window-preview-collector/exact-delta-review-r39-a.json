@@ -1,0 +1,596 @@
+{
+  "kind": "R39_A_collector_PoC_exact_candidate_review",
+  "status": "candidate_only_awaiting_Root_exact_authority_review",
+  "phase_scope": "A_PoC_not_B_product_integration",
+  "parent_baseline_sha256": "5a7ddf4c2202ed0a27d021b5f14d57b9080d0c3ab8e8da8891a2b5d02d2c22f7",
+  "original_R38_snapshot_sha256": "5eebc4d39774770026e12779ec183cb97185aa70db0db2c5c015793be704bbc8",
+  "source_freeze": {
+    "status": "root_authorized_final_source_and_architecture",
+    "phase_scope": "A_PoC_not_B_product_integration",
+    "at": "2026-10-23T17:53:52.583229+00:00",
+    "map": ".build/window-preview-sakura-20261023/r39-a-candidate/root-source-freeze-map.json",
+    "map_sha256": "d3e9bb755f0741d6b21320cc95da902d73e8abd3fad5a23a31e7552a32073f1b",
+    "source_tree_sha256": "c2ce95634ad00e3ef7912020b9fbfa2c4cf0b673c06641edd4041b375fd8a5c7",
+    "source_entries": 1682,
+    "reviewed_implementation_source": {
+      "apps/desktop/src-tauri/src/main.rs": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "apps/desktop/src-tauri/src/platform/mod.rs": "07db0bf02ecfc11dd5654df89dd03bd688df37229d88df372dfef41a615d010b",
+      "apps/desktop/src-tauri/src/platform/window_collector/mod.rs": "5b2e1b1ea334376dcbc330229c560cb617925201ea6f449db0947bac8437e49d",
+      "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs": "2953926df88864867db4dbd7d5f9c59dfedba7890979b2dcb6bc238cfad2b842",
+      "apps/desktop/src-tauri/src/platform/window_collector/worker.rs": "1d9bb08f84b1c560a9d365a0b3215c02d65f05a98d95710bd8b1f4c8552de048",
+      "apps/desktop/src-tauri/src/platform/macos/mod.rs": "a84190160c69f3c34ebec606b2d84b8cfd2aad6b47564565dd24553d8575118f",
+      "apps/desktop/src-tauri/src/platform/macos/bridge.m": "b26194cb952cc5e28509620e567d52d6dad8b57d67f58cc576d32bc9687dac0b",
+      "crates/app-infra/src/hook_backend.rs": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03"
+    },
+    "independent_evidence": [
+      {
+        "path": ".build/window-preview-sakura-20261023/native-fix/collector-r39/final-02/run-01/receipt.json",
+        "sha256": "00580aa6b9f00a92258ae4ca2beb621c1c4801b538d651f45f1f7e67fe22a141"
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/independent-code-review/collector-r39-a/final-02-incremental/receipt.json",
+        "sha256": "d95f7db4da06cc02be0e93defd0d00f0cb386c9ea99b14365e36a56c47459a24"
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/independent-code-review/collector-r39-a/design-scope-review.json",
+        "sha256": "ce7b3d68567781eb75edd45fcc633e24b7dcac3d7330c9c071a61f85fc749013"
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/r39-a-candidate/scope-recovery/complete.json",
+        "sha256": "f7677d91a416ae4d71a3a157178668517645a99c9420c2c4081a6a3e5c985f45"
+      }
+    ]
+  },
+  "semantic_review_input": {
+    "path": ".build/window-preview-sakura-20261023/r39-a-candidate/root-semantic-review.json",
+    "sha256": "35748045aa7e38bef3ecb97aaf346edf48f994fbfc1ab84b8adf117a5fbc7645"
+  },
+  "source_evidence_updates": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "index": 5,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 859,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 967
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "index": 6,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn show_associated_game(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 874,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 982
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "index": 7,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "index": 6,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 859,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 967
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "index": 7,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn show_associated_game(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 874,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 982
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "index": 8,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 4,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "\"show_game\" => {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 96,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 109
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 5,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "let request = match runtime.game_window_activation_request() {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 100,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 113
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 9,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 859,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 967
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 10,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn show_associated_game(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 874,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 982
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 11,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 17,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 256,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 269
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 18,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "old_line": 26,
+      "new_sha256": "b26194cb952cc5e28509620e567d52d6dad8b57d67f58cc576d32bc9687dac0b",
+      "new_line": 26
+    },
+    {
+      "group": "modules",
+      "id": "M14",
+      "index": 0,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "modules",
+      "id": "M14",
+      "index": 2,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn subscribe(&self) -> AppResult<mpsc::Receiver<HookUpdate>> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1529,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1637
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "index": 0,
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+      "old_sha256": "c8f4f13fbc94f8d0e25d3e8c7f5cb10d781acfe48be76b18644ca2fc68b6c8cf",
+      "old_line": 242,
+      "new_sha256": "a84190160c69f3c34ebec606b2d84b8cfd2aad6b47564565dd24553d8575118f",
+      "new_line": 242
+    },
+    {
+      "group": "components",
+      "id": "C10",
+      "index": 2,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "if let tauri::WindowEvent::CloseRequested { api, .. } = event {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 169,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 182
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "index": 2,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 859,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 967
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "index": 3,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn show_associated_game(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 874,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 982
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "index": 4,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "index": 4,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "\"show_game\" => {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 96,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 109
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "index": 5,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "let request = match runtime.game_window_activation_request() {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 100,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 113
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "index": 8,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 256,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 269
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "index": 9,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "old_line": 26,
+      "new_sha256": "b26194cb952cc5e28509620e567d52d6dad8b57d67f58cc576d32bc9687dac0b",
+      "new_line": 26
+    },
+    {
+      "group": "components",
+      "id": "C36",
+      "index": 13,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "Some(NativeEvent::Log { kind, message }) => {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 2001,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 2109
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "index": 6,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "if let tauri::RunEvent::ExitRequested { api, .. } = event {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 256,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 269
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "index": 7,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "cb216c0ed37a4ab11ca72c31978d27070c558de6139f1399c2c614cde337ebc3",
+      "old_line": 26,
+      "new_sha256": "b26194cb952cc5e28509620e567d52d6dad8b57d67f58cc576d32bc9687dac0b",
+      "new_line": 26
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "index": 5,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 859,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 967
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "index": 6,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn show_associated_game(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 874,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 982
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "index": 7,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 2,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 859,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 967
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 3,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn show_associated_game(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 874,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 982
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 4,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn unlink_window(",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1476,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1584
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 11,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "\"show_game\" => {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 96,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 109
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "index": 12,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "let request = match runtime.game_window_activation_request() {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 100,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 113
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "index": 0,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "Some(NativeEvent::Log { kind, message }) => {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 2001,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 2109
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "index": 1,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn stop_and_drain(&self, acknowledged: mpsc::SyncSender<AppResult<()>>) -> AppResult<()> {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1472,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1580
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "index": 8,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "if matches!(kind, 1 | 2) {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 2011,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 2119
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "index": 9,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn diagnostic_text(input: &str, limit: usize) -> String {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1763,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1871
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "index": 4,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "\"show_game\" => {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 96,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 109
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "index": 5,
+      "path": "apps/desktop/src-tauri/src/main.rs",
+      "quote": "let request = match runtime.game_window_activation_request() {",
+      "old_sha256": "d83aba7d6f5f0f5b1b7e9dfca82cd228ef90f17aee9948b08db6a012a94b74fc",
+      "old_line": 100,
+      "new_sha256": "df60ded28b171886ed29c61e39cd5118afc692e3f45e30d639ea5d1e4f628766",
+      "new_line": 113
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HOOK-LOG",
+      "index": 0,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "Some(NativeEvent::Log { kind, message }) => {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 2001,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 2109
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HOOK-LOG",
+      "index": 3,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "if matches!(kind, 1 | 2) {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 2011,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 2119
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-HOOK-LOG",
+      "index": 4,
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "quote": "fn diagnostic_text(input: &str, limit: usize) -> String {",
+      "old_sha256": "d4b1def75b029177f84240a5a13ae07ea7c10afe8191c4ed07723d8e174d5bb4",
+      "old_line": 1763,
+      "new_sha256": "553660fe8581226ba186fc864dc9752e9fdb6a60ecad2552a3b02179b2d89b03",
+      "new_line": 1871
+    }
+  ],
+  "original_source_evidence_preserved": 494,
+  "new_source_evidence": [
+    {
+      "group": "modules",
+      "id": "M12",
+      "evidence": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorPoc {",
+        "symbol": "pub(crate) struct CollectorPoc",
+        "line": 310,
+        "sha256": "5b2e1b1ea334376dcbc330229c560cb617925201ea6f449db0947bac8437e49d"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "evidence": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+        "quote": "pub(super) fn read_json<T: DeserializeOwned>(reader: &mut impl Read) -> io::Result<T> {",
+        "symbol": "pub(super) fn read_json",
+        "line": 28,
+        "sha256": "2953926df88864867db4dbd7d5f9c59dfedba7890979b2dcb6bc238cfad2b842"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "evidence": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 59,
+        "sha256": "1d9bb08f84b1c560a9d365a0b3215c02d65f05a98d95710bd8b1f4c8552de048"
+      }
+    }
+  ],
+  "new_source_evidence_count": 3,
+  "source_quote_replacements": 0,
+  "reviewed_actual_product_paths": [
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+    "crates/app-infra/src/hook_backend.rs"
+  ],
+  "authorized_product_paths": [
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+    "crates/app-infra/src/hook_backend.rs"
+  ],
+  "snapshot_rewritten": false,
+  "canonical_authority_written": false,
+  "history_approval_artifact_runtime_release_promoted": false,
+  "new_dependencies_or_DB_changes": false
+}

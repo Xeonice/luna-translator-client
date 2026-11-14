@@ -1,0 +1,27 @@
+{
+  "kind": "R40_A_required_product_visual_execution_mapping_correction",
+  "phase_scope": "A_PoC_not_B_product_integration",
+  "parent_baseline_sha256": "fa327237ece1f2c8e9186b0d0f64f841bb2152069ab841583468058a6cdbef19",
+  "previous_failed_run": ".build/game-regression-20261024-candidate17/verify.log",
+  "actual_failure": "required-product-execution: native-window-source requires registered actual product visual capture/comparison",
+  "changed_existing_paths": [
+    "openspec/changes/isolate-window-preview-collector/verification.json",
+    "openspec/changes/isolate-window-preview-collector/iteration-card.md"
+  ],
+  "changes": {
+    "product_visual_checks": {
+      "before": [],
+      "after": [
+        "product-ui-capture-v4"
+      ]
+    },
+    "allowed_path_added": "docs/development/baselines/FP1-20261024-R39.json",
+    "iteration_card": "Append exact failure and limited correction scope only"
+  },
+  "product_sources_changed": false,
+  "catalog_and_all497_source_evidence_changed": false,
+  "original_source_snapshot_changed": false,
+  "visual_adapter_reference_token_threshold_changed": false,
+  "runtime_visual_release_promoted": false,
+  "root_adoption": "not_performed"
+}

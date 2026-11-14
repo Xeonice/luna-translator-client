@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "id": "repair-hud-translation-placeholder",
+  "kind": "product",
+  "status": "isolated_candidate_pending_independent_source_and_governance_review",
+  "allowed_paths": [
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/windows/hud/HudWindow.tsx",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "openspec/changes/repair-hud-translation-placeholder/**",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/stability-refactor-progress.md",
+    "openspec/active-change.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261028-R67.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-hud-translation-placeholder/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "HTP-001",
+      "spec": "specs/hud-translation-placeholder/spec.md",
+      "scenario": "hud-task-progress-replaces-generic-empty-placeholder",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/ai-reading-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/interaction-review.html#25-toolbar-560"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "baseline-integrity",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "rust-boundary-tests",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "HTP-002",
+      "spec": "specs/hud-translation-placeholder/spec.md",
+      "scenario": "hud-empty-and-recovery-state-remain-truthful",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/ai-reading-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/interaction-review.html#25-toolbar-560"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "baseline-integrity",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "rust-boundary-tests",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "HTP-003",
+      "spec": "specs/hud-translation-placeholder/spec.md",
+      "scenario": "single-query-owner-and-layout-stable-feedback-are-preserved",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/ai-reading-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-content",
+        "docs/design/first-product-v1/interaction-review.html#25-toolbar-560"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "typescript-compile",
+        "reading-component-guard-tests",
+        "product-reading-component-tests",
+        "baseline-integrity",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "rust-boundary-tests",
+        "rust-compile"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "parent_baseline_id": "FP1-20261028-R67",
+  "parent_baseline_sha256": "4040be8a7fcc017d2564d79580c5d709fe8ef0648a5bd21af3d72371a938ba59",
+  "product_acceptance_status": "not_run",
+  "scope_note": "Only isolated candidate. M03 real schema2 storage adapter declared before edits. Shared baseline/authority unchanged and subject to independent Root adoption."
+}

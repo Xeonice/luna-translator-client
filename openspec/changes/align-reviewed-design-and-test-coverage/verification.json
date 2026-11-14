@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "id": "align-reviewed-design-and-test-coverage",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/align-reviewed-design-and-test-coverage/**",
+    "scripts/quality/interaction_coverage.py",
+    "scripts/quality/test_interaction_coverage.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/spec_contract.py",
+    "scripts/quality/test_spec_contract.py",
+    "scripts/report/verify_interaction_gap_design.cjs",
+    "scripts/report/build_engineering_baseline_report.py",
+    "scripts/report/verify_engineering_baseline_report.cjs",
+    "scripts/report/engineering_directory_map.py",
+    "scripts/report/verify_interaction_coverage_report.cjs",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/engineering-layout.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/development/release-execution-evidence.md",
+    "docs/development/engineering-gates.md",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/first-product-test-operations.md",
+    "docs/development/iteration-governance.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261019-R16.json",
+    "docs/development/design-approval-20261019.json",
+    "docs/development/iterations/align-reviewed-design-and-test-coverage/**",
+    "docs/design/first-product-v1/README.md",
+    "docs/design/first-product-v1/manifest.json",
+    "docs/product/README.md",
+    "docs/product/first-product-scope.md",
+    "openspec/technology-lock.json",
+    "openspec/architecture/technology-lock.json",
+    "docs/development/reading-window-test-coverage.json",
+    "docs/development/reading-window-test-coverage.md",
+    "docs/development/baselines/FP1-20261019-R17.json",
+    "docs/development/baselines/FP1-20261019-R18.json"
+  ],
+  "source_snapshot": "openspec/changes/align-reviewed-design-and-test-coverage/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "TCOV-001",
+      "spec": "specs/reviewed-design-coverage/spec.md",
+      "scenario": "layered-coverage",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "interaction-coverage-contract",
+        "interaction-coverage-tests",
+        "interaction-design-execution",
+        "release-evidence-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "TCOV-002",
+      "spec": "specs/reviewed-design-coverage/spec.md",
+      "scenario": "design-execution",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "interaction-coverage-contract",
+        "interaction-coverage-tests",
+        "interaction-design-execution",
+        "release-evidence-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "TCOV-003",
+      "spec": "specs/reviewed-design-coverage/spec.md",
+      "scenario": "release-execution-closure",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "interaction-coverage-contract",
+        "interaction-coverage-tests",
+        "interaction-design-execution",
+        "release-evidence-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "TCOV-004",
+      "spec": "specs/reviewed-design-coverage/spec.md",
+      "scenario": "architecture-alignment",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "interaction-coverage-contract",
+        "interaction-coverage-tests",
+        "interaction-design-execution",
+        "release-evidence-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    },
+    {
+      "id": "TCOV-005",
+      "spec": "specs/reviewed-design-coverage/spec.md",
+      "scenario": "reviewed-baseline",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "interaction-coverage-contract",
+        "interaction-coverage-tests",
+        "interaction-design-execution",
+        "release-evidence-tests",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    }
+  ]
+}

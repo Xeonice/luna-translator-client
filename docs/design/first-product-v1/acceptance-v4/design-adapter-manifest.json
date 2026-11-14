@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "source": "Independent source-DOM extraction and prior reviewed adapter lineage only. No React, product CSS, actual candidate PNG, screenshot mask or relaxed threshold.",
+  "previousLineage": {
+    "docs/design/first-product-v1/acceptance-v3/render.mjs": "3701598979c1f27aa6878bf087ffb780eab669ac812a808fcae0ddce6a2fa5d0",
+    "docs/design/first-product-v1/acceptance-v3/native-content.css": "a8768daccfef7ef10816e32c780960003ab210e88617cec8ec649b511cbf7df1",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/index.html": "d565316d9c87770e274f9578c9b343a27c4268b355d57b0b7cd8ac9b4a978f22",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.css": "3bb0b325a6dad5834c9ad73fa2d0a9c6394eb69796f355592bcec9d4155f592b",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.js": "b333b709777c5515a8e2bdab7667bf26ffcdabe2a24e1dafe78561a4ac85a5b7",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/capture.mjs": "db9bbf4fa647056b1d3891e8bc430d87866c4c1b4da28071eb50fd423e8da8f8"
+  },
+  "files": {
+    "docs/design/first-product-v1/acceptance-v4/reviewed-full/native-full-client.css": "ca088aeb1ff28398871afce2c415e8b972e9279b97352bb796ddd2ce18f73763",
+    "docs/design/first-product-v1/acceptance-v4/render.mjs": "407bb8d67a895211d3f8378d9b55bbd85c0bda046d7ba41a0c67c404d96b70fb",
+    "docs/design/first-product-v1/acceptance-v4/native-content.css": "c235205e5f3600038814e66c131f42976ff82cf60731eae2eaa9c5d7311057e7",
+    "docs/design/first-product-v1/acceptance-v4/hand-authored/index.html": "3c298a9398800a20cff19f76d97842254629fe9a9b95c11fe841bc249e08fb10",
+    "docs/design/first-product-v1/acceptance-v4/hand-authored/supplement.css": "d0675956ff67b922f503b3dfd0dec25f4e905613f27a294254264739418f8b0a",
+    "docs/design/first-product-v1/acceptance-v4/hand-authored/supplement.js": "d37a8e54103882e22c449713630b1a51509e13a687685b60ffb467c440cf0354",
+    "docs/design/first-product-v1/acceptance-v4/hand-authored/capture.mjs": "b0755379f8135c0633f2e8b6af7a931bcd68f2a80406756b14b30568e0459fda",
+    "docs/design/first-product-v1/acceptance-v4/reviewed-gaps/native-component.css": "27d1f28141f2233895fb2de802408bfc39c7208b7f62fe258d1d24fd76c51e59",
+    "apps/desktop/tests/visual/prepare-reviewed-references.mjs": "118dfa5c725b3a1ce7547aa5f49ccc0a3a3ffe4fe98737c573e095da2e323ac7",
+    "apps/desktop/tests/visual/prepare-reviewed-gap-references.mjs": "bdcefe60b1b9761de5e1d4e6946262b5142a6b4282877af7657fc5b4576b74f4",
+    "apps/desktop/tests/visual/prepare-reviewed-full-references.mjs": "df38d384acf1f4071b9c08db1e604e2d014a197c70d28998829048d0b17f65b1",
+    "apps/desktop/tests/visual/build-reviewed-catalogue.mjs": "4dea510186485acb6c8370c22eb560e303eaa457fe831a46ec4be1ff66ae7f1d",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/provenance.json": "79b8e1be77e618509cd26d3a2a9203d0a44b5900aafd509ef961ed3ae256ceb9",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/session-current-body.input.json": "e93dbcf8b4e9e03a9a3356c5e9028bbfc18077d488ef5c673f9d89caacd0b9d3",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/session-current-extraction.input.json": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/session-current-hook-events.input.json": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/settings-shortcuts-active.input.json": "441d9bd76a415379bec56d2a9393190c1eba847cfd605f94d10ade67fd69c042",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/settings-shortcuts-conflict.input.json": "a7413e8648ae5a58e3b95bb3d372bed4d3f5748d80906a5e97a7cbb3f0c9e8fb",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/supplement.css": "be07e5e310bb433f23848d18ba95f88d121ab5a55aa77da5384a080cec27b4cf",
+    "apps/desktop/tests/visual/reviewed-reference-supplement/supplement.js": "64b31fd16c5f28ed2a7929e6b4bf495bdcc6d8b2cc2f0a7e0efc6709abca6f00"
+  }
+}

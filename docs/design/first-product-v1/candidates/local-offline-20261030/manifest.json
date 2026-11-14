@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "candidate_id": "local-offline-20261030",
+  "status": "pending_review",
+  "scope": "offline complete-design candidate only; no production application changes",
+  "entry": "docs/design/first-product-v1/candidates/local-offline-20261030/index.html",
+  "runtime_base_href": "../../",
+  "previous_complete_entry_unchanged": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957",
+  "simulation_boundary": "Checks and sample translations are page-local simulations. No HTTP requests, downloads, system translation, filesystem inspection or DLL invocation.",
+  "engine_ids": [
+    "apple_translation",
+    "argos_translate",
+    "jbeijing",
+    "kingsoft_fastait"
+  ],
+  "purpose_boundary": "translation only; grammar and contextual word explanation keep LLM configurations",
+  "export_boundary": "Local portable declarations only. No local paths, Bottle, authorization, readiness, tests, pivot confirmation or enabled native bindings; import requires rebinding and fresh checks.",
+  "owned_sources": {
+    "index.html": "023a95ab3d808ff43540b099d7f15ecb5370fdc82a32e1888a6fb22303022a0b",
+    "settings.js": "3757962a7c8f977007eb58ac040c2a18f617f6718b2eecd297578e477552f24e",
+    "local-translation-design.js": "09aac33ff00266e51f0156eb8d2fb9d77edb080a6ee637edbfbabd6b30a04c23",
+    "local-translation-design.css": "bf24a826f5039d939e43796861637cffa90dff7c5eba5faff36fc0f730002143"
+  },
+  "shared_dependencies": {
+    "index.html": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "data.js": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9",
+    "game-library.js": "ec58d3d4e365b07bd9324525163374275c9966fbd8cf558fa14a5459b5ac8c42",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "controls.js": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17",
+    "controls.css": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+    "review-gaps.js": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e",
+    "review-gaps.css": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd",
+    "app.js": "bc1112ca97c308f4dd4c89833c1b78a689079ab77534d2b34ad894389b435e6e",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "assets/manifest.json": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9"
+  },
+  "images": "Existing assets/manifest.json identifies shared historical images; no approved image or token copied or refreshed.",
+  "approval": "No new design approval or product/runtime acceptance is claimed.",
+  "scope_boundary": "Enablement is keyed by scope and engine. A replaced primary must be applied again before enablement. Grammar / word explanations reject native translation even when a malformed reference is injected.",
+  "capability_gates": "Apple OS/API/traditional strategy unknown, macOS 14, macOS 15, macOS 26, macOS26.4 unknown strategy, highFidelity exclusion, unknown/unsupported language pair; Argos unimplemented/pending route. Blocked branches cannot sample-test, apply as runnable, or enable. Success is an explicit page-external design condition.",
+  "health_boundary": "Latest availability result is retained by engine and configuration/capability identity. A failure matching an applied snapshot blocks enablement and effective dispatch; failures for a different unapplied draft do not affect the older applied identity."
+}

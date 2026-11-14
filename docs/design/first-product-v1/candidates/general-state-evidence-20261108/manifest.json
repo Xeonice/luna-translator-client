@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "kind": "independent-general-state-gap-design-candidate/v1",
+  "status": "pending_user_review",
+  "frozen_at": "2026-11-08T09:24:20.077638+00:00",
+  "entry": ".build/general-visual-closure-20261108/design-state-gap-candidate/index.html",
+  "canvas": ".build/general-visual-closure-20261108/design-state-gap-candidate/settings.html",
+  "candidate_payload_sha256": "dc6e9b9ccf8bc99292e9992f3e278035bf6c744f15477067821bd82c16696280",
+  "payload_hash_recipe": "SHA256 of sorted relative_path<TAB>sha256<TAB>bytes + LF for outputs; excludes outer manifest and HANDOFF.md to avoid self-reference",
+  "approval_request": {
+    "missing_visual_states": [
+      {
+        "state_id": "all-page-settings-general-loading",
+        "recipes": [
+          "loading",
+          "loading-initial"
+        ],
+        "meaning": "last-known refresh and initial read with no known preference values"
+      },
+      {
+        "state_id": "all-page-settings-general-error",
+        "recipes": [
+          "read-error"
+        ],
+        "meaning": "source read failure retains old draft, blocks save, offers reread"
+      },
+      {
+        "state_id": "all-page-settings-general-save-failed",
+        "recipes": [
+          "save-failed"
+        ],
+        "meaning": "failed save preserves edit and permits retry"
+      }
+    ],
+    "separate_context_proposal": {
+      "query": "context=native-proposal",
+      "change": [
+        "transparent HTML/body presentation backdrop",
+        "hide HTML simulated traffic lights; actual OS supplies window controls"
+      ],
+      "unchanged": [
+        "material tokens",
+        "window fill/alpha",
+        "blur",
+        "saturation",
+        "layout",
+        "typography"
+      ],
+      "actual_native_screenshot": false,
+      "approved": false
+    },
+    "existing_context_only": [
+      "normal",
+      "empty"
+    ],
+    "existing_eleven_states_reapproval_requested": false
+  },
+  "reference_approved": false,
+  "product_accepted": false,
+  "native_verified": false,
+  "source_snapshot": [
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+        "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+        "bytes": 6900
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/settings.html",
+        "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+        "bytes": 6900
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.css",
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/settings.css",
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.js",
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/settings.js",
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html",
+        "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+        "bytes": 4622
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/index.html",
+        "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+        "bytes": 4622
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/README.md",
+        "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+        "bytes": 3544
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/README.md",
+        "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+        "bytes": 3544
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/manifest.json",
+        "sha256": "efd9e1b52c908a60ddfaa3f4e66c4efb6a8cba494d744db67ea010574005398a",
+        "bytes": 5653
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/manifest.json",
+        "sha256": "efd9e1b52c908a60ddfaa3f4e66c4efb6a8cba494d744db67ea010574005398a",
+        "bytes": 5653
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/material-tokens.css",
+        "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+        "bytes": 2770
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/assets/material-tokens.css",
+        "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+        "bytes": 2770
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "original": {
+        "path": "docs/design/first-product-v1/icons.js",
+        "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+        "bytes": 3501
+      },
+      "copy": {
+        "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/assets/icons.js",
+        "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+        "bytes": 3501
+      },
+      "transformation": "verbatim"
+    }
+  ],
+  "derived_changes": {
+    "settings.html": "Relocate two approved dependency URLs and source CSS/JS paths; add state-gap.css/js; change standalone candidate title only.",
+    "state-gap.css": "State Notice styling from existing material token hierarchy; optional presentation backdrop and simulated control context flags only.",
+    "state-gap.js": "Independent in-memory state replay; no React, native, business service, persistent data or product fixture imports.",
+    "index.html": "Review controls outside the product canvas; all native samples explicitly browser-only."
+  },
+  "qa": {
+    "report": ".build/general-visual-closure-20261108/design-state-gap-candidate/qa/report.json",
+    "recorded_combinations": 50,
+    "checks": 544,
+    "failed_checks": 0,
+    "png_count": 60,
+    "viewports": [
+      [
+        1000,
+        720
+      ],
+      [
+        760,
+        560
+      ]
+    ],
+    "themes": [
+      "dark",
+      "light"
+    ],
+    "zoom": [
+      1,
+      2
+    ],
+    "device_scale_factor": 1,
+    "kind": "layout_and_replay_only_not_product_or_pixel_acceptance",
+    "manual_inspection": [
+      "read-error-dark-1000x720-z1.png",
+      "save-failed-light-760x560-z2.png",
+      "loading-initial-dark-1000x720-z1.png",
+      "save-failed-dark-1000x720-z1.png",
+      "read-error-dark-760x560-z2-scrolled.png"
+    ]
+  },
+  "outputs": {
+    "README.md": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/README.md",
+      "sha256": "c8d7def66db96470496dc062ac7a3d5db4c7bd8e9ec4ec2657165f8fe10bdac7",
+      "bytes": 4687
+    },
+    "assets/icons.js": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/assets/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+      "bytes": 3501
+    },
+    "assets/material-tokens.css": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/assets/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+      "bytes": 2770
+    },
+    "index.html": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/index.html",
+      "sha256": "8caf8e958f3dad0e4ffd2d922f103590b613d94ea6a855bcebb59f836f91b62a",
+      "bytes": 5871
+    },
+    "png/empty-dark-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-dark-1000x720-z1.png",
+      "sha256": "8a95423498cd1ac24b957b12c62cb68b945dfb1fd2e3102ab08d0b97b66b5503",
+      "bytes": 95065
+    },
+    "png/empty-dark-1000x720-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-dark-1000x720-z2-scrolled.png",
+      "sha256": "a94d59c0826b96d3adbd82a6cb3a26e3b21a8e7ed3bb8d1f16b9aa1c01eca1e6",
+      "bytes": 99154
+    },
+    "png/empty-dark-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-dark-1000x720-z2.png",
+      "sha256": "cb7c13389748f798d7e501a006ca0b5ab54633d19cb52871cb45772f66dabb44",
+      "bytes": 88784
+    },
+    "png/empty-dark-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-dark-760x560-z1.png",
+      "sha256": "48d214d741d184a4b5bdb879603098fe5074c37d8d90a3a7045425e628be0ff0",
+      "bytes": 77774
+    },
+    "png/empty-dark-760x560-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-dark-760x560-z2-scrolled.png",
+      "sha256": "a859af35f6fcbec38e07a96e5b4b32152fad10a8643146382e79d25aa38bb9e0",
+      "bytes": 66944
+    },
+    "png/empty-dark-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-dark-760x560-z2.png",
+      "sha256": "e409534a7d44566d953b790d59c0e3e3fde04e0b705814f9e02fb2d712f0541f",
+      "bytes": 56982
+    },
+    "png/empty-light-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-light-1000x720-z1.png",
+      "sha256": "6bf603d31002a5b5fabf43bd22218afa7e2a423cc8be2736aff107c6e1f0653d",
+      "bytes": 98700
+    },
+    "png/empty-light-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-light-1000x720-z2.png",
+      "sha256": "eadeee5e0e264c25751f3e495ef05d097e4541116cb57d2bb5656a7462fbd50b",
+      "bytes": 98450
+    },
+    "png/empty-light-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-light-760x560-z1.png",
+      "sha256": "73105673e9d32dd16ee631bcfa7115974236a24ec4c66a3fddc91d701032c129",
+      "bytes": 80884
+    },
+    "png/empty-light-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/empty-light-760x560-z2.png",
+      "sha256": "29fc7ceeea660cceb2623a81b28530be0c6f11c2f05971a276fb0ea91ddd6623",
+      "bytes": 65635
+    },
+    "png/loading-dark-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-dark-1000x720-z1.png",
+      "sha256": "75f48574580234af6de212f3a6bdbb96c6fbeb8a5be1c4cb3fdb6d5b5c36c87a",
+      "bytes": 94921
+    },
+    "png/loading-dark-1000x720-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-dark-1000x720-z2-scrolled.png",
+      "sha256": "76fa87a81304f02ccc4caa0f395fd4316702c54dc1203f6fd28684148ffe286c",
+      "bytes": 99994
+    },
+    "png/loading-dark-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-dark-1000x720-z2.png",
+      "sha256": "cdd914eaacd45a1b9950bcc14d9b6f28e297a315b8fe6dbc6db25c75be243e26",
+      "bytes": 84962
+    },
+    "png/loading-dark-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-dark-760x560-z1.png",
+      "sha256": "3ee8e126edf0836b131f08d007552ca45446852c6fdceff777798fb323825f3f",
+      "bytes": 73980
+    },
+    "png/loading-dark-760x560-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-dark-760x560-z2-scrolled.png",
+      "sha256": "126fae7783c421abe6907ff435c037c1c2117831daf4459eca726e3ce4f12190",
+      "bytes": 67748
+    },
+    "png/loading-dark-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-dark-760x560-z2.png",
+      "sha256": "67ee8782dd98845179d4900bb8231dd644fa78396b564e9107eb3000ccce1a00",
+      "bytes": 57501
+    },
+    "png/loading-initial-dark-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-dark-1000x720-z1.png",
+      "sha256": "a2f9f72d6577df008087b00f976c2e8b40fb4637c586977c3a8b511ac944e02c",
+      "bytes": 75079
+    },
+    "png/loading-initial-dark-1000x720-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-dark-1000x720-z2-scrolled.png",
+      "sha256": "60a5f4938835f5cd951ddfa73dd43c4c39f26c19e1da1a64d64d35e889839ecc",
+      "bytes": 100068
+    },
+    "png/loading-initial-dark-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-dark-1000x720-z2.png",
+      "sha256": "d76ffc04f584b2eafc0c0933a975705187ed2384799da7742c36094d9443a0b5",
+      "bytes": 83293
+    },
+    "png/loading-initial-dark-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-dark-760x560-z1.png",
+      "sha256": "4ee58dffadf5cfbdec6170d7a244e0f6e8f1aae21acb7f01c415dc67567d9c13",
+      "bytes": 68900
+    },
+    "png/loading-initial-dark-760x560-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-dark-760x560-z2-scrolled.png",
+      "sha256": "7b535da3e6fc5cd18d9dc31a77a1dd8fd569810059140520396c515189bdeace",
+      "bytes": 67741
+    },
+    "png/loading-initial-dark-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-dark-760x560-z2.png",
+      "sha256": "67ee8782dd98845179d4900bb8231dd644fa78396b564e9107eb3000ccce1a00",
+      "bytes": 57501
+    },
+    "png/loading-initial-light-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-light-1000x720-z1.png",
+      "sha256": "9b43c88d4b3b83a42a55253f57644ccbfbfd67928f4ba9e2adafcff240e76bde",
+      "bytes": 78735
+    },
+    "png/loading-initial-light-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-light-1000x720-z2.png",
+      "sha256": "add86fd170b93d27a69a84297e10ee2bb728a0f8182d6a5c4ae382d01194f81c",
+      "bytes": 93151
+    },
+    "png/loading-initial-light-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-light-760x560-z1.png",
+      "sha256": "86450525ec18af39cb2bac3581cfd8145e5a29cc54401fad66cf01eb3b3ab75c",
+      "bytes": 72182
+    },
+    "png/loading-initial-light-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-initial-light-760x560-z2.png",
+      "sha256": "5fcd9118c8301a93f7382dce5c77604ad4c30e5860d3339007f684bfb2467559",
+      "bytes": 66122
+    },
+    "png/loading-light-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-light-1000x720-z1.png",
+      "sha256": "d811e49305d5284bb241d998e347585c9fa5de89bee56fcf3dd460097eaf90d2",
+      "bytes": 98456
+    },
+    "png/loading-light-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-light-1000x720-z2.png",
+      "sha256": "fb9278d54c693dc922d4182dfdcbbe90ed640c77bab9fe3bd3fb7f0fe80f4b2c",
+      "bytes": 94789
+    },
+    "png/loading-light-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-light-760x560-z1.png",
+      "sha256": "96b741d3675281961418ede46131e72fad1c76414a85929dd6045a8658a699ce",
+      "bytes": 76897
+    },
+    "png/loading-light-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/loading-light-760x560-z2.png",
+      "sha256": "5fcd9118c8301a93f7382dce5c77604ad4c30e5860d3339007f684bfb2467559",
+      "bytes": 66122
+    },
+    "png/native-context-browser-only-dark.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/native-context-browser-only-dark.png",
+      "sha256": "9b5c3aed74f002516900ebd1359d5f2f88a25b589c3ea5ca3bd570ea6dbd36c3",
+      "bytes": 100582
+    },
+    "png/native-context-browser-only-light.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/native-context-browser-only-light.png",
+      "sha256": "017efedba756ee1930277423e8cc0774d8204c409485a23e727da18fefa3f4b0",
+      "bytes": 101245
+    },
+    "png/normal-dark-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-dark-1000x720-z1.png",
+      "sha256": "8a95423498cd1ac24b957b12c62cb68b945dfb1fd2e3102ab08d0b97b66b5503",
+      "bytes": 95065
+    },
+    "png/normal-dark-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-dark-1000x720-z2.png",
+      "sha256": "cb7c13389748f798d7e501a006ca0b5ab54633d19cb52871cb45772f66dabb44",
+      "bytes": 88784
+    },
+    "png/normal-dark-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-dark-760x560-z1.png",
+      "sha256": "48d214d741d184a4b5bdb879603098fe5074c37d8d90a3a7045425e628be0ff0",
+      "bytes": 77774
+    },
+    "png/normal-dark-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-dark-760x560-z2.png",
+      "sha256": "e409534a7d44566d953b790d59c0e3e3fde04e0b705814f9e02fb2d712f0541f",
+      "bytes": 56982
+    },
+    "png/normal-light-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-light-1000x720-z1.png",
+      "sha256": "6bf603d31002a5b5fabf43bd22218afa7e2a423cc8be2736aff107c6e1f0653d",
+      "bytes": 98700
+    },
+    "png/normal-light-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-light-1000x720-z2.png",
+      "sha256": "eadeee5e0e264c25751f3e495ef05d097e4541116cb57d2bb5656a7462fbd50b",
+      "bytes": 98450
+    },
+    "png/normal-light-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-light-760x560-z1.png",
+      "sha256": "73105673e9d32dd16ee631bcfa7115974236a24ec4c66a3fddc91d701032c129",
+      "bytes": 80884
+    },
+    "png/normal-light-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/normal-light-760x560-z2.png",
+      "sha256": "29fc7ceeea660cceb2623a81b28530be0c6f11c2f05971a276fb0ea91ddd6623",
+      "bytes": 65635
+    },
+    "png/read-error-dark-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-dark-1000x720-z1.png",
+      "sha256": "11e6b9ecf9345bbaa62ff54b248ab27eda556c54913251382a58cffee5b50079",
+      "bytes": 102133
+    },
+    "png/read-error-dark-1000x720-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-dark-1000x720-z2-scrolled.png",
+      "sha256": "e324904642b55fdf42ad713191e7d15aef002790d6bb2b6d514109122bbad720",
+      "bytes": 96468
+    },
+    "png/read-error-dark-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-dark-1000x720-z2.png",
+      "sha256": "06fee4ce9f45d2cc2546b6136ad9c977c7f01918289e9e8772d8f1df59b5b726",
+      "bytes": 88164
+    },
+    "png/read-error-dark-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-dark-760x560-z1.png",
+      "sha256": "49f393dd4851d5fc31f1c1bb61ca5c8b58a7b0286e17c555fa7a2bbe3774b6ac",
+      "bytes": 80625
+    },
+    "png/read-error-dark-760x560-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-dark-760x560-z2-scrolled.png",
+      "sha256": "2bbf789e3e92293ef55939feb3fa434e5f6e6de51505c45d196921fbf8a7bbcf",
+      "bytes": 70328
+    },
+    "png/read-error-dark-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-dark-760x560-z2.png",
+      "sha256": "bc0408cdf16549d4e8d5c1d62ea15cf0b908c3935be4d23591f9db411a912ade",
+      "bytes": 58916
+    },
+    "png/read-error-light-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-light-1000x720-z1.png",
+      "sha256": "d56cab369bc3a94569535951c72426502b05e1c9fe7b3957a4613e841074a4d7",
+      "bytes": 105670
+    },
+    "png/read-error-light-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-light-1000x720-z2.png",
+      "sha256": "c742335b325052d38421e4b4947cc3541d2412b1a579adbc5b6ee468294cb5f9",
+      "bytes": 97387
+    },
+    "png/read-error-light-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-light-760x560-z1.png",
+      "sha256": "10442aae9b153449858a6584c0ef5144cead24999114ae342245ec8fec960c7b",
+      "bytes": 83641
+    },
+    "png/read-error-light-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/read-error-light-760x560-z2.png",
+      "sha256": "f91c7bd49c59aa4c605616b576b08cc6d313e9bf8a7fde4d1666461794b3579c",
+      "bytes": 67557
+    },
+    "png/save-failed-dark-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-dark-1000x720-z1.png",
+      "sha256": "3bdefe04f7d9335bad8f3fd3c07344826fec6074fa77c2552c7045a91aaef3d6",
+      "bytes": 97345
+    },
+    "png/save-failed-dark-1000x720-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-dark-1000x720-z2-scrolled.png",
+      "sha256": "3ea1479d2774de58d41decdc486262aaa310445174b24089e897cdff613621ed",
+      "bytes": 94861
+    },
+    "png/save-failed-dark-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-dark-1000x720-z2.png",
+      "sha256": "a459982a8bba646df0c76ae0f4ae79ebee50601ec9989eb73d7647f7eed736d5",
+      "bytes": 88679
+    },
+    "png/save-failed-dark-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-dark-760x560-z1.png",
+      "sha256": "79395397d73b583c922c5434075b5a706c25bf752a53bf3fc8b9df468c649c0d",
+      "bytes": 76502
+    },
+    "png/save-failed-dark-760x560-z2-scrolled.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-dark-760x560-z2-scrolled.png",
+      "sha256": "afa1891aa3cc52778a54e7d8e9ef4cb17a3ddbaf98ad146c00b7d81d37d68f92",
+      "bytes": 69119
+    },
+    "png/save-failed-dark-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-dark-760x560-z2.png",
+      "sha256": "86ef1051c1496a5951b20c05c6aea2edf4e3e2b36e33d92c0a6afa9b9f4b79be",
+      "bytes": 58899
+    },
+    "png/save-failed-light-1000x720-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-light-1000x720-z1.png",
+      "sha256": "8eb34b2d4fab9279fd626307e0e6ecbe0b7e31beb5903a37a43c4d70889d9f67",
+      "bytes": 101474
+    },
+    "png/save-failed-light-1000x720-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-light-1000x720-z2.png",
+      "sha256": "f56e1ed32b78dbf7e98bbfc744df86bb6b1c739d583b56b0f8af68f2aa0bcd11",
+      "bytes": 98246
+    },
+    "png/save-failed-light-760x560-z1.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-light-760x560-z1.png",
+      "sha256": "fa7c826b079cca9f31f7d8265f9e57675533ee19c40179d5806c54581fe43ae3",
+      "bytes": 79776
+    },
+    "png/save-failed-light-760x560-z2.png": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/png/save-failed-light-760x560-z2.png",
+      "sha256": "df1ffc9ab562a9cb373d9cc286b41a99272aa3523e27cc692ba664e2006714ab",
+      "bytes": 68003
+    },
+    "qa/capture.mjs": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/qa/capture.mjs",
+      "sha256": "aacfcfbe66fb571f725761d9383a7c2cff399b0760a36739abccc6ff70a52fd0",
+      "bytes": 8564
+    },
+    "qa/report.json": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/qa/report.json",
+      "sha256": "ff38b8a126d182768ae7321aa8ad95d1dbfb3ee9719256130b817d9a1863182b",
+      "bytes": 151347
+    },
+    "settings.html": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/settings.html",
+      "sha256": "f94db4440019bc8d1bc84857de4092cb13ce4929eb8562a382e564597f63d489",
+      "bytes": 6999
+    },
+    "source/README.md": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/README.md",
+      "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+      "bytes": 3544
+    },
+    "source/index.html": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/index.html",
+      "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+      "bytes": 4622
+    },
+    "source/manifest.json": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/manifest.json",
+      "sha256": "efd9e1b52c908a60ddfaa3f4e66c4efb6a8cba494d744db67ea010574005398a",
+      "bytes": 5653
+    },
+    "source/settings.css": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/settings.css",
+      "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+      "bytes": 11112
+    },
+    "source/settings.html": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/settings.html",
+      "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+      "bytes": 6900
+    },
+    "source/settings.js": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/source/settings.js",
+      "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+      "bytes": 9570
+    },
+    "state-gap.css": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/state-gap.css",
+      "sha256": "e22566310cc5f2e2a0d13d5c00fab15ccf3f7d9671ea19bef317207c85cec07e",
+      "bytes": 1174
+    },
+    "state-gap.js": {
+      "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/state-gap.js",
+      "sha256": "152b52adc0645392be0c687c8d74e2ef40392ef3774d346a8f14d07b5c22fee0",
+      "bytes": 4620
+    }
+  },
+  "limitations": [
+    "pending user decision for three missing visual-state recipes",
+    "pending separate decision for proposed native reference environment",
+    "no actual native window, OS service, DB fault, product runtime or game validation",
+    "no pixel baseline replacement and no threshold change",
+    "not complete fourteen-state acceptance"
+  ]
+}

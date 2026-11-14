@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-27T03:05:42.173487+00:00",
+  "scope": "compact_preview_design_only",
+  "user_instruction": "采用此方案，更新完整设计稿",
+  "prior_choice": "保持紧凑，先重做预览设计",
+  "approved_reference": {
+    "path": ".build/stability-refactor-20261027/compact-preview-design-v1/index.html",
+    "sha256": "ed53777dbccf61d9e2ee584f823404ea0da337002874eb55db9720ad8636387c"
+  },
+  "independent_reference_review": {
+    "path": ".build/stability-refactor-20261027/compact-preview-independent-review.json",
+    "sha256": "e8fc28c259d82126205caa57634c4c6c48bb4aa570dd2cb7eebbf2b3cf4a6424"
+  },
+  "canonical_integration_status": "design_sources_integrated_actual_review_and_execution_recorded_externally",
+  "product_implementation_approved_by_this_record": false,
+  "product_runtime_acceptance": "not_run",
+  "original_approved_pngs_tokens_and_catalogue_changed": false,
+  "canonical_source_files_sha256": {
+    "docs/design/first-product-v1/review-gaps.js": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e",
+    "docs/design/first-product-v1/review-gaps.css": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd",
+    "docs/design/first-product-v1/index.html": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957",
+    "docs/design/first-product-v1/data.js": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9",
+    "docs/design/first-product-v1/README.md": "0dea9f5a2548e9acdc449f663554661dde616ddd531c85dd869e6aebbcf6e60b",
+    "docs/design/first-product-v1/style-guide.md": "128ae54ed8f8f87f091dfec4b2e7047320bc68fe803911e90219433656fa0b6d",
+    "docs/design/first-product-v1/integration.md": "811a312d5afce9afe5e71db6c1c3f12f292ef35027d38e79971e68b59a520573",
+    "docs/design/first-product-v1/coverage.csv": "0d2b071beb50d2527396b5e85ae183487bcd1c6a10eccc8bd070173ea2565e4f",
+    "docs/design/first-product-v1/manifest.json": "54297e6f4426a7e48458a653dc45d77b42f648c940fb028ede8f9c444bd5607a",
+    "scripts/report/verify_interaction_gap_design.cjs": "80e24194d298c6b5d894ec8fba252c373adc179be34fd5dd718d1d04089887af"
+  },
+  "canonical_design_execution": {
+    "actual_result_location": ".build/stability-refactor-20261027/compact-design-integration/owner-fix/registered-final-summary.json",
+    "result_recording": "external_receipt_required_no_pass_prefilled_no_recursive_hash",
+    "initial_pre_owner_fix_execution": {
+      "summary": ".build/stability-refactor-20261027/compact-design-integration/worker/registered-final-summary.json",
+      "sha256": "91d5fd34a3e0b964fa6b575300a7f6343f936eba85323d37d13b0934bc07247a",
+      "product_runtime_acceptance": "not_run"
+    },
+    "initial_changes_required_review": {
+      "path": ".build/stability-refactor-20261027/compact-design-integration/independent-design-integration-review.json",
+      "sha256": "87e7e6f81719402959327fa288a344e37a64f7fcde1125a38ffd3d0177f881fe"
+    },
+    "product_runtime_acceptance": "not_run"
+  }
+}

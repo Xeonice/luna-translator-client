@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "id": "repair-design-gate-selection-logic",
+  "kind": "product",
+  "allowed_paths": [
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "scripts/quality/test_current_design_alignment.py",
+    "scripts/quality/test_product_execution.py",
+    "scripts/quality/lifecycle_impact.py",
+    "scripts/quality/test_lifecycle_impact.py",
+    "scripts/quality/product_execution.py",
+    "scripts/quality/test_product_capture_v4.py",
+    "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+    "apps/desktop/tests/visual/capture-catalogue.mjs",
+    "docs/development/engineering-gates.md",
+    "docs/development/design-alignment-and-release.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/current-phase.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261104-R82.json",
+    "openspec/changes/repair-design-gate-selection-logic/proposal.md",
+    "openspec/changes/repair-design-gate-selection-logic/design.md",
+    "openspec/changes/repair-design-gate-selection-logic/tasks.md",
+    "openspec/changes/repair-design-gate-selection-logic/iteration-card.md",
+    "openspec/changes/repair-design-gate-selection-logic/source-snapshot.json",
+    "openspec/changes/repair-design-gate-selection-logic/verification.json",
+    "openspec/changes/repair-design-gate-selection-logic/specs/design-gate-logic/spec.md",
+    "apps/desktop/tests/visual/verify-ui.mjs",
+    "scripts/contracts/compare_product_capture.mjs",
+    "scripts/quality/page-inventory.mjs",
+    "scripts/quality/current_product_coverage.py",
+    "scripts/quality/test_current_product_coverage.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv"
+  ],
+  "source_snapshot": "openspec/changes/repair-design-gate-selection-logic/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "GLC-001",
+      "spec": "specs/design-gate-logic/spec.md",
+      "scenario": "actual-production-impact-controls-obligations",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "current-design-alignment-tests",
+        "product-execution-guard-tests",
+        "product-v4-execution-guard-tests",
+        "lifecycle-impact-guard-tests",
+        "all-page-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "current-product-coverage-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "id": "GLC-002",
+      "spec": "specs/design-gate-logic/spec.md",
+      "scenario": "current-authority-selects-real-execution-without-historical-substitution",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "current-design-alignment-tests",
+        "product-execution-guard-tests",
+        "product-v4-execution-guard-tests",
+        "lifecycle-impact-guard-tests",
+        "all-page-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "current-product-coverage-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C35",
+        "C36"
+      ]
+    },
+    {
+      "id": "GLC-003",
+      "spec": "specs/design-gate-logic/spec.md",
+      "scenario": "historical-capture-facts-remain-strict-and-diagnosable",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "current-design-alignment-tests",
+        "product-execution-guard-tests",
+        "product-v4-execution-guard-tests",
+        "lifecycle-impact-guard-tests",
+        "all-page-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "current-product-coverage-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C35",
+        "C36"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "review_evidence": {
+    "path": ".build/logic-correction-20261104/review/final-change-review.json",
+    "authors": [
+      "/root",
+      "/root/gate_selection_fix",
+      "/root/historical_capture_fix"
+    ]
+  },
+  "authorization": "用户2026-11-04要求进行逻辑修正；仅修门禁判断与测试执行，不修改产品UI、已批准设计、37历史义务、794现行义务和阈值。",
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ]
+}

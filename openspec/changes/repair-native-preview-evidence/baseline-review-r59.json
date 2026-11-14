@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-native-preview-evidence",
+  "parent_baseline_sha256": "267df69126b263000382b58066e0d398d03e33cfc7d7d6d3db500c724454608c",
+  "exact_delta_sha256": "b7c1a8ee5fbbd13bbd51d0578db12d5e2208b0a01ba9ff74cdc1da7845d643ee",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/runtime-observer-repair-review/code-review-02.json",
+    "sha256": "e60ff50f7318db8bf10862725d0a71bfab884c77431f2aaf53ca99d97d51d3be",
+    "bytes": 10465
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

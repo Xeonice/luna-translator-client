@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "source": "Independent design adapters only; no React/product CSS or candidate image import",
+  "files": {
+    "docs/design/first-product-v1/acceptance-v3/render.mjs": "3701598979c1f27aa6878bf087ffb780eab669ac812a808fcae0ddce6a2fa5d0",
+    "docs/design/first-product-v1/acceptance-v3/native-content.css": "a8768daccfef7ef10816e32c780960003ab210e88617cec8ec649b511cbf7df1",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/index.html": "d565316d9c87770e274f9578c9b343a27c4268b355d57b0b7cd8ac9b4a978f22",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.css": "3bb0b325a6dad5834c9ad73fa2d0a9c6394eb69796f355592bcec9d4155f592b",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.js": "b333b709777c5515a8e2bdab7667bf26ffcdabe2a24e1dafe78561a4ac85a5b7",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/capture.mjs": "db9bbf4fa647056b1d3891e8bc430d87866c4c1b4da28071eb50fd423e8da8f8",
+    "docs/design/first-product-v1/acceptance-v3/build-catalogue.mjs": "7eb6a36406d6cf688c62bca964831a78d19d511b1b024f2ba4794bcbdbc679b7"
+  }
+}

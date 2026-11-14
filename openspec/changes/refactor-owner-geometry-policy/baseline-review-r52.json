@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-owner-geometry-policy",
+  "parent_baseline_sha256": "f1c3cdb0648b04a79846581c285d2f21fb5323b3301ffef992848375bde01e92",
+  "exact_delta_sha256": "065514a7bf03457221d28c1bca7639ccb4dc08ecf277413dca42cc1e8dc68e99",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr5-sandbox/independent-code-review.json",
+    "sha256": "ed042dc5167fe720997c8df8ed1ef8e47b879b49c9bd26df6750f191f92846d3",
+    "bytes": 15844
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

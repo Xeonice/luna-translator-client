@@ -1,0 +1,37 @@
+{
+  "author": "/root/implementation_review",
+  "boundary_scope": "SQL projections plus reviewed-design FK/trigger probes; candidate schema is read-only compared, never treated as a real migration.",
+  "expanded_old_enums": [
+    "profile.connections.protocol",
+    "profile.connections.auth_mode",
+    "profile.credential_refs.auth_kind"
+  ],
+  "implementation_evidence_status": "actual_Rust_producers_migration_and_Vault_authority_reviewed_for_exact_slice",
+  "kind": "schema_three_http_independent_contract_review",
+  "new_contract_author_is_not_final_reviewer": true,
+  "prior_DDL_direction_review": ".build/current-client-execution-20261105/review/cp03-http-independent-review.json",
+  "prior_obligation_sources": {
+    "docs/architecture/database/field-boundaries.json": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504",
+    "docs/architecture/database/v2/field-dictionary.json": "fae0561b8cd9113dfeaf9b34a4d9557ed523737b1217d9998a8ce68c5a143f20",
+    "docs/architecture/database/v2/schema-contract.json": "eb3b0e78869119f98eac6d08954f5b91f1131a3edf2af85fcd16af85d6154713",
+    "docs/architecture/database/v2/storage-acceptance.json": "1ca95fec54ecb1af2f4f2a0791010605604bc5662a354e9ad1f2036bacc7de70"
+  },
+  "product_tests_executed": false,
+  "production_migration_verified": true,
+  "reviewed_design_sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2",
+  "schema_contract": "docs/architecture/database/v3/schema-contract.json",
+  "schema_contract_sha256": "90d3474fb23c4522845727307ea3b47b5a2ae0a5f0b6df40006516aa22fbe335",
+  "scope": "24 new HTTP fields; prior460 fields/old schema obligations retained; not offline/OAuth",
+  "status": "passed_with_scope_limits",
+  "production_source_tree_sha256": "ebd97ccedfd7e86fb6f0f2fe54347174e73d95a9aac43980819c25df53f3b820",
+  "production_evidence": ".build/current-client-execution-20261105/cp03/adapter-v3-runtime-02.json",
+  "independent_implementation_review": ".build/current-client-execution-20261105/review/storage-gateway-1793885204256181000/review.json",
+  "independent_reviewer": "/root/storage_gateway_independent_review",
+  "production_scope_limits": [
+    "exact schema3 slice and source epoch only",
+    "not schema4 or full client",
+    "not live provider accounts",
+    "not packaged Native or four games",
+    "not product or release acceptance"
+  ]
+}

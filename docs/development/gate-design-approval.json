@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "design_id": "GV-DESIGN-01",
+  "revision": "1.1",
+  "status": "approved_for_implementation_by_user",
+  "source": "docs/development/gate-validation-design.html",
+  "approved_source_sha256": "f394d98ba9c6d07f9d681da6af1c3514c49363e2a3108309d3b157083485d64d",
+  "user_instruction": "要求此实施，一步直接到完成态即可，确保所有门禁均生效",
+  "scope": [
+    "nine_gate_implementation",
+    "codex_project_hooks",
+    "32_positive_negative_scenarios",
+    "unified_gate_result_report",
+    "manual_visual_gate_enforcement"
+  ],
+  "product_visual_approval": false,
+  "product_runtime_acceptance": false,
+  "scope_snapshot": {
+    "path": "openspec/changes/implement-effective-development-gates/source-snapshot.json",
+    "sha256": "24c830ce2cbce34de60459b647db4a41d02ef6f2af097bec91fd7bce7eb6a159",
+    "authority": "user authorized implementation scope; snapshot captured before all three worker source files existed"
+  },
+  "approved_source_snapshot": "openspec/changes/implement-effective-development-gates/approved-design.html",
+  "original_source_path": "docs/development/gate-validation-design.html"
+}

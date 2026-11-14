@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "adopt-compact-preview-design",
+  "parent_baseline_sha256": "564e43ce5cd4817c77e9c1cd1447fe33788393ffc327f0578d45ae950c14300e",
+  "exact_delta_sha256": "6101c9e8e4e594e454e60ab62402c2d9e47936be4086062035550bc9745ff2e3",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/compact-design-integration/independent-design-integration-review-02.json",
+    "sha256": "6cc363a98cbf62b6eccce878e7b708935ac0fbcbe04ab9731838314f55f496ae",
+    "bytes": 22776
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

@@ -1,0 +1,6413 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-design-candidate-layout-review",
+  "status": "layout_review_passed_pending_user_review",
+  "referenceApproved": false,
+  "productAccepted": false,
+  "nativeVerified": false,
+  "browser": {
+    "playwright": "1.56.1",
+    "executable": "/Users/tanghehui/Library/Caches/ms-playwright/chromium-1194/chrome-mac/Chromium.app/Contents/MacOS/Chromium",
+    "binarySha256": "a01de8bb11d24acc6f91848415c9df9744965bea7fd58763f2930d4f280d5b84",
+    "version": "141.0.7390.37"
+  },
+  "sourceIdentity": {
+    "settings.html": "f94db4440019bc8d1bc84857de4092cb13ce4929eb8562a382e564597f63d489",
+    "source/settings.css": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+    "source/settings.js": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+    "assets/material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "assets/icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "state-gap.css": "e22566310cc5f2e2a0d13d5c00fab15ccf3f7d9671ea19bef317207c85cec07e",
+    "state-gap.js": "152b52adc0645392be0c687c8d74e2ef40392ef3774d346a8f14d07b5c22fee0"
+  },
+  "checks": 544,
+  "failedChecks": [],
+  "records": [
+    {
+      "name": "normal-dark-1000x720-z1",
+      "state": "normal",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-dark-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 138.390625,
+          "bottom": 156.390625,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 423.953125,
+          "bottom": 441.953125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 557.4375,
+          "bottom": 575.4375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-dark-1000x720-z2",
+      "state": "normal",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-dark-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 454.28125,
+          "bottom": 490.28125,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 325.46875,
+          "bottom": 361.46875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 366.25,
+          "bottom": 402.25,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-dark-760x560-z1",
+      "state": "normal",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-dark-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 137.390625,
+          "bottom": 155.390625,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 422.953125,
+          "bottom": 440.953125,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.4375,
+          "bottom": 403.4375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-dark-760x560-z2",
+      "state": "normal",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-dark-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.28125,
+          "bottom": 246.28125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.265625,
+          "bottom": 246.265625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.625,
+          "bottom": 246.625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-light-1000x720-z1",
+      "state": "normal",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-light-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 138.390625,
+          "bottom": 156.390625,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 423.953125,
+          "bottom": 441.953125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 557.4375,
+          "bottom": 575.4375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-light-1000x720-z2",
+      "state": "normal",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-light-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 454.28125,
+          "bottom": 490.28125,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 325.46875,
+          "bottom": 361.46875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 366.25,
+          "bottom": 402.25,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-light-760x560-z1",
+      "state": "normal",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-light-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 137.390625,
+          "bottom": 155.390625,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 422.953125,
+          "bottom": 440.953125,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.4375,
+          "bottom": 403.4375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "normal-light-760x560-z2",
+      "state": "normal",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/normal-light-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.28125,
+          "bottom": 246.28125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.265625,
+          "bottom": 246.265625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.625,
+          "bottom": 246.625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-dark-1000x720-z1",
+      "state": "empty",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-dark-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 138.390625,
+          "bottom": 156.390625,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 423.953125,
+          "bottom": 441.953125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 557.4375,
+          "bottom": 575.4375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-dark-1000x720-z2",
+      "state": "empty",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-dark-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 454.28125,
+          "bottom": 490.28125,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 325.46875,
+          "bottom": 361.46875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 366.25,
+          "bottom": 402.25,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-dark-760x560-z1",
+      "state": "empty",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-dark-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 137.390625,
+          "bottom": 155.390625,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 422.953125,
+          "bottom": 440.953125,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.4375,
+          "bottom": 403.4375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-dark-760x560-z2",
+      "state": "empty",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-dark-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.28125,
+          "bottom": 246.28125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.265625,
+          "bottom": 246.265625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.625,
+          "bottom": 246.625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-light-1000x720-z1",
+      "state": "empty",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-light-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 138.390625,
+          "bottom": 156.390625,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 423.953125,
+          "bottom": 441.953125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 557.4375,
+          "bottom": 575.4375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-light-1000x720-z2",
+      "state": "empty",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-light-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 454.28125,
+          "bottom": 490.28125,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 325.46875,
+          "bottom": 361.46875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 366.25,
+          "bottom": 402.25,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-light-760x560-z1",
+      "state": "empty",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-light-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 137.390625,
+          "bottom": 155.390625,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 422.953125,
+          "bottom": 440.953125,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.4375,
+          "bottom": 403.4375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "empty-light-760x560-z2",
+      "state": "empty",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/empty-light-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": false,
+        "scopeDisabled": false,
+        "dirty": false,
+        "gameOptions": 0,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.28125,
+          "bottom": 246.28125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.265625,
+          "bottom": 246.265625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.625,
+          "bottom": 246.625,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "empty_library_only_global_scope",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-dark-1000x720-z1",
+      "state": "loading",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-dark-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 198.1875,
+          "bottom": 216.1875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 483.75,
+          "bottom": 501.75,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 617.234375,
+          "bottom": 635.234375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-dark-1000x720-z2",
+      "state": "loading",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-dark-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 324.875,
+          "bottom": 360.875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 325.0625,
+          "bottom": 361.0625,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 365.84375,
+          "bottom": 401.84375,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-dark-760x560-z1",
+      "state": "loading",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-dark-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 197.1875,
+          "bottom": 215.1875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 479.75,
+          "bottom": 497.75,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.234375,
+          "bottom": 403.234375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-dark-760x560-z2",
+      "state": "loading",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-dark-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.46875,
+          "bottom": 246.46875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.453125,
+          "bottom": 246.453125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.8125,
+          "bottom": 246.8125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-light-1000x720-z1",
+      "state": "loading",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-light-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 198.1875,
+          "bottom": 216.1875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 483.75,
+          "bottom": 501.75,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 617.234375,
+          "bottom": 635.234375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-light-1000x720-z2",
+      "state": "loading",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-light-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 324.875,
+          "bottom": 360.875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 325.0625,
+          "bottom": 361.0625,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 365.84375,
+          "bottom": 401.84375,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-light-760x560-z1",
+      "state": "loading",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-light-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 197.1875,
+          "bottom": 215.1875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 479.75,
+          "bottom": 497.75,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.234375,
+          "bottom": 403.234375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-light-760x560-z2",
+      "state": "loading",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-light-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.46875,
+          "bottom": 246.46875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.453125,
+          "bottom": 246.453125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.8125,
+          "bottom": 246.8125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-dark-1000x720-z1",
+      "state": "loading-initial",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-dark-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 198.1875,
+          "bottom": 216.1875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 331.671875,
+          "bottom": 349.671875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-dark-1000x720-z2",
+      "state": "loading-initial",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-dark-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 324.875,
+          "bottom": 360.875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 366.65625,
+          "bottom": 402.65625,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-dark-760x560-z1",
+      "state": "loading-initial",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-dark-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 197.1875,
+          "bottom": 215.1875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 330.671875,
+          "bottom": 348.671875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-dark-760x560-z2",
+      "state": "loading-initial",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-dark-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 210.46875,
+          "bottom": 246.46875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.828125,
+          "bottom": 246.828125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-light-1000x720-z1",
+      "state": "loading-initial",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-light-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 198.1875,
+          "bottom": 216.1875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 331.671875,
+          "bottom": 349.671875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-light-1000x720-z2",
+      "state": "loading-initial",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-light-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 596,
+          "width": 600,
+          "height": 122,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 506,
+          "bottom": 596,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 324.875,
+          "bottom": 360.875,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 366.65625,
+          "bottom": 402.65625,
+          "contentTop": 90,
+          "contentBottom": 596,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-light-760x560-z1",
+      "state": "loading-initial",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-light-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 197.1875,
+          "bottom": 215.1875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 330.671875,
+          "bottom": 348.671875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "loading-initial-light-760x560-z2",
+      "state": "loading-initial",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/loading-initial-light-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": true,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": false,
+        "gameOptions": 1,
+        "posChecked": "false"
+      },
+      "reachable": [
+        {
+          "selector": "#records-title",
+          "top": 210.46875,
+          "bottom": 246.46875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.828125,
+          "bottom": 246.828125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "loading_controls_independent_and_disabled",
+          "pass": true
+        },
+        {
+          "key": "initial_read_never_claims_mock_defaults",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-dark-1000x720-z1",
+      "state": "read-error",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-dark-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 208.53125,
+          "bottom": 226.53125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 494.09375,
+          "bottom": 512.09375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 627.578125,
+          "bottom": 645.578125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 149.390625,
+          "bottom": 179.53125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-dark-1000x720-z2",
+      "state": "read-error",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-dark-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 526.8125,
+          "width": 600,
+          "height": 191.1875,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 436.8125,
+          "bottom": 526.8125,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 290.359375,
+          "bottom": 326.359375,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 290.546875,
+          "bottom": 326.546875,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 297.328125,
+          "bottom": 333.328125,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 278.0625,
+          "bottom": 338.359375,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-dark-760x560-z1",
+      "state": "read-error",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-dark-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 216.984375,
+          "bottom": 234.984375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 262.546875,
+          "bottom": 280.546875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 396.03125,
+          "bottom": 414.03125,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 153.109375,
+          "bottom": 183.25,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-dark-760x560-z2",
+      "state": "read-error",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-dark-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 209.953125,
+          "bottom": 245.953125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 209.9375,
+          "bottom": 245.9375,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.296875,
+          "bottom": 246.296875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 198.65625,
+          "bottom": 258.953125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-light-1000x720-z1",
+      "state": "read-error",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-light-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 208.53125,
+          "bottom": 226.53125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 494.09375,
+          "bottom": 512.09375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 627.578125,
+          "bottom": 645.578125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 149.390625,
+          "bottom": 179.53125,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-light-1000x720-z2",
+      "state": "read-error",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-light-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 526.8125,
+          "width": 600,
+          "height": 191.1875,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 436.8125,
+          "bottom": 526.8125,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 290.359375,
+          "bottom": 326.359375,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 290.546875,
+          "bottom": 326.546875,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 297.328125,
+          "bottom": 333.328125,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 278.0625,
+          "bottom": 338.359375,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-light-760x560-z1",
+      "state": "read-error",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-light-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 216.984375,
+          "bottom": 234.984375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 262.546875,
+          "bottom": 280.546875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 396.03125,
+          "bottom": 414.03125,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 153.109375,
+          "bottom": 183.25,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "read-error-light-760x560-z2",
+      "state": "read-error",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/read-error-light-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": true,
+        "discardDisabled": false,
+        "segmentationDisabled": true,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 209.953125,
+          "bottom": 245.953125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 209.9375,
+          "bottom": 245.9375,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.296875,
+          "bottom": 246.296875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#retry-source",
+          "top": 198.65625,
+          "bottom": 258.953125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "read_error_retains_unsaved_draft",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#retry-source",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "read_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-dark-1000x720-z1",
+      "state": "save-failed",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-dark-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 198.1875,
+          "bottom": 216.1875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 483.75,
+          "bottom": 501.75,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 617.234375,
+          "bottom": 635.234375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-dark-1000x720-z2",
+      "state": "save-failed",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-dark-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 526.8125,
+          "width": 600,
+          "height": 191.1875,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 436.8125,
+          "bottom": 526.8125,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 290.46875,
+          "bottom": 326.46875,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 290.65625,
+          "bottom": 326.65625,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 297.4375,
+          "bottom": 333.4375,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-dark-760x560-z1",
+      "state": "save-failed",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-dark-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 197.1875,
+          "bottom": 215.1875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 479.75,
+          "bottom": 497.75,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.234375,
+          "bottom": 403.234375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-dark-760x560-z2",
+      "state": "save-failed",
+      "theme": "dark",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-dark-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.46875,
+          "bottom": 246.46875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.453125,
+          "bottom": 246.453125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.8125,
+          "bottom": 246.8125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-light-1000x720-z1",
+      "state": "save-failed",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-light-1000x720-z1.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 199,
+          "y": 658,
+          "width": 800,
+          "height": 61,
+          "bottom": 719,
+          "right": 999
+        },
+        "content": {
+          "x": 199,
+          "y": 45,
+          "width": 800,
+          "height": 613,
+          "bottom": 658,
+          "right": 999
+        },
+        "contentClientWidth": 800,
+        "contentScrollWidth": 800,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 198.1875,
+          "bottom": 216.1875,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 483.75,
+          "bottom": 501.75,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 617.234375,
+          "bottom": 635.234375,
+          "contentTop": 45,
+          "contentBottom": 658,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 639.625,
+        "bottom": 701,
+        "parentTop": 45,
+        "parentBottom": 719
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-light-1000x720-z2",
+      "state": "save-failed",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-light-1000x720-z2.png",
+      "initial": {
+        "documentWidth": 1000,
+        "viewportWidth": 1000,
+        "viewportHeight": 720,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 720,
+          "bottom": 720,
+          "right": 1000
+        },
+        "footer": {
+          "x": 398,
+          "y": 526.8125,
+          "width": 600,
+          "height": 191.1875,
+          "bottom": 718,
+          "right": 998
+        },
+        "content": {
+          "x": 398,
+          "y": 90,
+          "width": 600,
+          "height": 436.8125,
+          "bottom": 526.8125,
+          "right": 998
+        },
+        "contentClientWidth": 300,
+        "contentScrollWidth": 300,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 290.46875,
+          "bottom": 326.46875,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 290.65625,
+          "bottom": 326.65625,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 297.4375,
+          "bottom": 333.4375,
+          "contentTop": 90,
+          "contentBottom": 526.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 559,
+        "bottom": 681.78125,
+        "parentTop": 90,
+        "parentBottom": 718
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-light-760x560-z1",
+      "state": "save-failed",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 1,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-light-760x560-z1.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 181,
+          "y": 498,
+          "width": 578,
+          "height": 61,
+          "bottom": 559,
+          "right": 759
+        },
+        "content": {
+          "x": 181,
+          "y": 45,
+          "width": 578,
+          "height": 453,
+          "bottom": 498,
+          "right": 759
+        },
+        "contentClientWidth": 578,
+        "contentScrollWidth": 578,
+        "fontWeight": "700",
+        "bodyZoom": "1",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 197.1875,
+          "bottom": 215.1875,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 479.75,
+          "bottom": 497.75,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 385.234375,
+          "bottom": 403.234375,
+          "contentTop": 45,
+          "contentBottom": 498,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 498,
+        "bottom": 559.375,
+        "parentTop": 45,
+        "parentBottom": 559
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "save-failed-light-760x560-z2",
+      "state": "save-failed",
+      "theme": "light",
+      "viewport": {
+        "width": 760,
+        "height": 560
+      },
+      "zoom": 2,
+      "deviceScaleFactor": 1,
+      "screenshot": "png/save-failed-light-760x560-z2.png",
+      "initial": {
+        "documentWidth": 760,
+        "viewportWidth": 760,
+        "viewportHeight": 560,
+        "window": {
+          "x": 0,
+          "y": 0,
+          "width": 760,
+          "height": 560,
+          "bottom": 560,
+          "right": 760
+        },
+        "footer": {
+          "x": 362,
+          "y": 366.8125,
+          "width": 396,
+          "height": 191.1875,
+          "bottom": 558,
+          "right": 758
+        },
+        "content": {
+          "x": 362,
+          "y": 90,
+          "width": 396,
+          "height": 276.8125,
+          "bottom": 366.8125,
+          "right": 758
+        },
+        "contentClientWidth": 198,
+        "contentScrollWidth": 198,
+        "fontWeight": "700",
+        "bodyZoom": "2",
+        "saveDisabled": false,
+        "discardDisabled": false,
+        "segmentationDisabled": false,
+        "scopeDisabled": true,
+        "dirty": true,
+        "gameOptions": 1,
+        "posChecked": "true"
+      },
+      "reachable": [
+        {
+          "selector": "#lexical-title",
+          "top": 210.46875,
+          "bottom": 246.46875,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#records-title",
+          "top": 210.453125,
+          "bottom": 246.453125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        },
+        {
+          "selector": "#local-title",
+          "top": 210.8125,
+          "bottom": 246.8125,
+          "contentTop": 90,
+          "contentBottom": 366.8125,
+          "pass": true
+        }
+      ],
+      "sidebar": {
+        "top": 399,
+        "bottom": 521.78125,
+        "parentTop": 90,
+        "parentBottom": 558
+      },
+      "checks": [
+        {
+          "key": "no_document_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "content_no_horizontal_overflow",
+          "pass": true
+        },
+        {
+          "key": "fixed_footer_in_viewport",
+          "pass": true
+        },
+        {
+          "key": "title_font_700",
+          "pass": true
+        },
+        {
+          "key": "window_physical_height",
+          "pass": true
+        },
+        {
+          "key": "no_page_errors",
+          "pass": true
+        },
+        {
+          "key": "save_error_retains_edit_and_retry",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#lexical-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#records-title",
+          "pass": true
+        },
+        {
+          "key": "scroll_reachable_#local-title",
+          "pass": true
+        },
+        {
+          "key": "sidebar_footer_reachable",
+          "pass": true
+        },
+        {
+          "key": "save_retry_keeps_draft_after_failure",
+          "pass": true
+        }
+      ],
+      "runtimeErrors": []
+    },
+    {
+      "name": "native-context-browser-only-dark",
+      "kind": "browser_simulation_not_native_capture",
+      "theme": "dark",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "context": {
+        "body": "rgba(0, 0, 0, 0)",
+        "traffic": "hidden",
+        "fill": "rgba(35, 38, 49, 0.898)",
+        "backdrop": "blur(25px) saturate(1.05)"
+      },
+      "screenshot": "png/native-context-browser-only-dark.png",
+      "nativeVerified": false
+    },
+    {
+      "name": "native-context-browser-only-light",
+      "kind": "browser_simulation_not_native_capture",
+      "theme": "light",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "context": {
+        "body": "rgba(0, 0, 0, 0)",
+        "traffic": "hidden",
+        "fill": "rgba(234, 236, 244, 0.88)",
+        "backdrop": "blur(25px) saturate(1.05)"
+      },
+      "screenshot": "png/native-context-browser-only-light.png",
+      "nativeVerified": false
+    }
+  ]
+}

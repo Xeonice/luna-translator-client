@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-hud-refresh-height-jitter",
+  "parent_baseline_sha256": "a9da49017d397d9afaf09caf6fd28012c8272b401cb72a09c29105a2ee96dc46",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+      "before": "2aaf5ea3e48c86358c61a4db4c82c8c7a26578ce29a39a0d20679d1b61dfea21",
+      "after": "a4af2e104b190816359a186b1044b35638302a06f3a1ab7a6333762bfb5d8551"
+    },
+    {
+      "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+      "before": "b0a771514d28c4acba1001c6e8966dec8a2e352993cc069a9975c32a694f60a4",
+      "after": "366408adeb805eb5fb092b16eda9bcdee0cea2f849ed02873d8d957d57b013b4"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "before": "bff8789d8a8414158afb007060bec517b46b3bf8815ab638a2d601d7f6ea12c0",
+      "after": "16f96fbc146898cc7a14be5aab49612eff7df57872e2834e5dd953a9c1fcefdb"
+    },
+    {
+      "path": "docs/architecture/engineering-components.csv",
+      "before": "95ad8fd590503b6c09f39abef41dca38ce68307ad5eef0040090bf4887159f7e",
+      "after": "b3d8f8e86d78accbd407a34c72c38ed84beaca3cdda744d113f4f40bfcb3d428"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "c6cb9d8616db44a07380f48e8ab80b9265bd63624e52cabf093c1fc8075f9dc9",
+      "after": "d4feab1bba24536960da8fd94c2922718113d0e0075ef6e4f21112a27a4abeb4"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "6f233c70bc7ad60319a425099260588c8dd3c20bed1c5523a33250c722b6cfa7",
+      "after": "ed391b73688ba7a3b7d9798998ac0e5543571fb1ea284922dd51f0b6cd4dba23"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before": "3603c35403b6fea88a52ea00c640bdc2f25821eec05ccbbaa3fb77b875cbc629",
+      "after": "207e8c80657648e30774d12d46b434f5a35b38945ca8021a5b007dc69babe47c"
+    },
+    {
+      "path": "docs/architecture/runtime-lifecycle-refactor.md",
+      "before": "ff9941910d67bb19915132de47ad408f3a0f7e1347af9b2e28b7fc5b0cb463ff",
+      "after": "26bb3d081826b9f209429250e1ebd3c76d296d40fee141934a594354b111c759"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261028-R65.json",
+      "before": null,
+      "after": "693da6d19024252692da9b920d28c9460d17afbf72c60b6052ab9236adb5b520"
+    },
+    {
+      "path": "docs/development/current-phase.json",
+      "before": "d6e90ad06a2fcd4ae334c5fcfe387b753c469e38fd1f31bd2d087d872122237a",
+      "after": "697f420ecf04a710f951c42899860901fbb5ebfed20532a3c20a5ab3bfaf643e"
+    },
+    {
+      "path": "docs/development/iteration-baseline.json",
+      "before": "693da6d19024252692da9b920d28c9460d17afbf72c60b6052ab9236adb5b520",
+      "after": "a9da49017d397d9afaf09caf6fd28012c8272b401cb72a09c29105a2ee96dc46"
+    },
+    {
+      "path": "docs/development/stability-refactor-progress.json",
+      "before": "20b32e75c41fe1432cb360fd06a62a76456a3a1cb957f830014bcf2d084e98f3",
+      "after": "f93aa9ab6c55ded6d1a5ffc1ef26bc53d8a6f94cdf527c55bdda941bb80af817"
+    },
+    {
+      "path": "docs/development/stability-refactor-progress.md",
+      "before": "c396f25e3ecfa0bb5785ab6ec2696d74d74ff1abddb285bbed5b65a656dbc8c8",
+      "after": "495f62a8011b889a6da5a9afa73682c8d35fca8b9ca5dc1b0c9a2a82015f8f97"
+    },
+    {
+      "path": "openspec/active-change.json",
+      "before": "4ea763b09258f00f735fa3e02f18c061d75094f33af64f2166935a583e515166",
+      "after": "824d7036ae2fb3521bcf4fa324cf4d08a40c8510c86e3ce40579816323438fca"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/baseline-review-r66.json",
+      "before": null,
+      "after": "7c8786cc00f510d207a08ac580685273ba21710a626b36979589dec6d14c2494"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/design.md",
+      "before": null,
+      "after": "6c74b2932a4a0cafbe2321fc18397094c92deb79762bdf7cdfe1fe296ccc72f8"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/exact-delta-review-r66.json",
+      "before": null,
+      "after": "de9730ec5b4d74a42d9a7c12a4ff836103b7c4c9b5d9715f8914c13f89d4600d"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/iteration-card.md",
+      "before": null,
+      "after": "32ad276c5063d9e312d4c343fffeb1739971bd1da66154c54e0aea76d6defb22"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/proposal.md",
+      "before": null,
+      "after": "8b4419864059121a32e6910dd4b4bc092098dee1bd71cbdc87030abd71bbf366"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/source-snapshot.json",
+      "before": null,
+      "after": "1bbcfed22c1ac307bd34e29041ff6fcb26e5110335b169bc6513a271da965f87"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/specs/hud-refresh-height/spec.md",
+      "before": null,
+      "after": "a70c85ca951d694bbce454230d0ca052cd75e1457af8bfc47685738d060a1690"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/tasks.md",
+      "before": null,
+      "after": "d697574e97ab59c0e71fcbcaa6459569146edcd7b3e8d01b00df4eac75c23700"
+    },
+    {
+      "path": "openspec/changes/repair-hud-refresh-height-jitter/verification.json",
+      "before": null,
+      "after": "b59b28141de117b4189ce1e342f83de1110db84b0df0d778e6f095e71cd65f14"
+    }
+  ],
+  "product_delta": [],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/hud-refresh-height-r66/governance-storage-supplement/reviews/source-governance-review.json",
+    "sha256": "6b05c5ecf8404648bbb71d6da12918c7bcd49ef6ac59ac734bcbc51053b877a3",
+    "bytes": 3932
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "contract_delta": [],
+  "source_evidence_additions": [],
+  "runtime_visual_release_promoted": false
+}

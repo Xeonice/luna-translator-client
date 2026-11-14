@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-natural-exit-operation-terminal",
+  "parent_baseline_sha256": "d1b1d55f80e7254220c2c1e5109ff53db8045824d88c44588509d83d418c509b",
+  "source_delta": [
+    {
+      "path": "crates/app-infra/src/storage/database.rs",
+      "before": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d",
+      "after": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+    },
+    {
+      "path": "crates/app-infra/tests/application_runtime.rs",
+      "before": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98",
+      "after": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+    },
+    {
+      "path": "docs/architecture/database/v2/storage-acceptance.json",
+      "before": "2c59c1af9aa4a12edf9bc52121e800be36a91dafa155109f42682b96f8d485a6",
+      "after": "0ec5c81740d61b0ccc4825c8010ae75f055f75f0be9fae29d5589c04b74b6881"
+    },
+    {
+      "path": "docs/architecture/database/v2/storage-review.json",
+      "before": "b7b1b41f160d17e26e0e52e06c014a5a405bd2ce32f933fd39717f88a01e2f36",
+      "after": "6e320379ce25fb3c77e7aef61f8e42cd9750474490330178b2c3e2c2f44a298f"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/design.md",
+      "before": null,
+      "after": "3076385094b41a2b806470548c36c6202224aee6984668677a2a692f53b04f6d"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/iteration-card.md",
+      "before": null,
+      "after": "d0d739015a15c8ecae6e3a37dd09270fa3520f2ebb40a14838bd2e96efcbec42"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/proposal.md",
+      "before": null,
+      "after": "c1b4aae04b93bbb500c6d638ead8d47cfe5890ea9a20258fd00d604430526578"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/source-snapshot.json",
+      "before": null,
+      "after": "5ca589767648daf35f324a025ec535f6855ab969c3f2019ad3bedd41aaab013f"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/specs/natural-operation-terminal/spec.md",
+      "before": null,
+      "after": "75160be222c133b4d472b335a9438ee962363af55c79760d3b315898d0f9b502"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/tasks.md",
+      "before": null,
+      "after": "79c5b9080096a211b4e58a321c3fd296764c78960415e3bac43860d75a80cfe8"
+    },
+    {
+      "path": "openspec/changes/repair-natural-exit-operation-terminal/verification.json",
+      "before": null,
+      "after": "6ce5d84a2adccff94c6a59a9cb104d06fbc4bed570bffadc6ec083595ff8b761"
+    },
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "before": "12c5cd828b883aecb105f1b96b4aee825caaa2ac563d9231f4478b3b16948f29",
+      "after": "182078a78d740d582d9a5a8f39e4637a5e14e8c3fd35b5efdc7f1042226c28a6"
+    }
+  ],
+  "product_delta": [
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/tests/application_runtime.rs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/durable-operation-stop-storage-carrier-review-r61/storage-carrier-review-r61.json",
+    "sha256": "c5ecfbae52644dd3628d77c0af357f6cf76a82c330c5df3a35aa2279c442cebb",
+    "bytes": 12304
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1547,
+        "quote": "async fn frozen_capture_timer_barrier(clock: &Clock) {",
+        "symbol": "Real runtime timer barrier without logical clock advance",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1547,
+        "quote": "async fn frozen_capture_timer_barrier(clock: &Clock) {",
+        "symbol": "Real runtime timer barrier without logical clock advance",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1560,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1560,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1649,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1649,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1740,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1740,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1560,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1560,
+        "quote": "async fn capture_v2_frozen_idle_then_slow_append_or_growth_translates_exact_revision_once() {",
+        "symbol": "Retained frozen slow-output runtime assertions under current production V3",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1649,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1649,
+        "quote": "async fn capture_v3_quoted_prefix_growth_uses_exact_final_revision_once_without_open_network() {",
+        "symbol": "Frozen real runtime open zero-network; exact completed rev3 once; late result history only",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-04",
+      "before": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1740,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "084e21e1ed8f606a56a9d6bb13c5b9082764eb11e81c30de98364dfb6a872f98"
+      },
+      "after": {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "line": 1740,
+        "quote": "async fn capture_v3_quoted_growth_does_not_extend_the_creation_hard_age() {",
+        "symbol": "Growth at5500 age does not defer hard-age6000; 5999 no request,6000 once,6001 no duplicate",
+        "sha256": "900e842c7c08d2542edb95a2703af312788495808e2da666700cd7bde2c59113"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-09",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 647,
+        "quote": "fn ingest_hook_text_with_policy(",
+        "symbol": "fn ingest_hook_text_with_policy(",
+        "sha256": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 647,
+        "quote": "fn ingest_hook_text_with_policy(",
+        "symbol": "fn ingest_hook_text_with_policy(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-RAW",
+      "before": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d"
+      },
+      "after": {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "line": 163,
+        "quote": "fn flush_store_integrity(&self, session: Option<&str>) -> AppResult<()> {",
+        "symbol": "fn flush_store_integrity(",
+        "sha256": "eb1d48ba5fdb72f826f0af1584f7810bd0a2ab6f0a63d7cab54c33ff0942b069"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

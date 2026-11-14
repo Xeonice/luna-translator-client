@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "kind": "relocated-user-reviewed-general-settings-source/v1",
+  "supplement_id": "general-settings-structure-20261107",
+  "entry": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html",
+  "canvas": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+  "sources": {
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html": {
+      "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+      "bytes": 4622
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html": {
+      "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+      "bytes": 6900
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.css": {
+      "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+      "bytes": 11112
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.js": {
+      "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+      "bytes": 9570
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/README.md": {
+      "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+      "bytes": 3544
+    },
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/reported-native-before.png": {
+      "sha256": "5302991f2187e6a92ab15eb3a66245a1add521e1b9024d6e704c2f5aeb3d3363",
+      "bytes": 412122
+    }
+  },
+  "promotion": [
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/index.html",
+        "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+        "bytes": 4622
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html",
+        "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+        "bytes": 4622
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.html",
+        "sha256": "6734155af5a9cd9251b21f665156c67a0c97bb473c162ddb9856e3efcd674b9a",
+        "bytes": 6970
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+        "sha256": "e02ecc6fcd4abca9951a79f4d6b4708107848a4e5d8a3430d8de3be1c7b6209c",
+        "bytes": 6900
+      },
+      "transformation": "two_dependency_relative_urls_only"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.css",
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.css",
+        "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+        "bytes": 11112
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.js",
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.js",
+        "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+        "bytes": 9570
+      },
+      "transformation": "verbatim"
+    },
+    {
+      "captured": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/README.md",
+        "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+        "bytes": 3544
+      },
+      "promoted": {
+        "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/README.md",
+        "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+        "bytes": 3544
+      },
+      "transformation": "verbatim"
+    }
+  ],
+  "captured_records": [
+    {
+      "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/capture-manifest.json",
+      "sha256": "8bf2b8a3eb51a055c4c9150bb280f8eb5bb6eb9c2795b430a0056bc08490bcc0",
+      "bytes": 5041
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/capture-freeze.json",
+      "sha256": "a2f576edd5b114a3b8312d70b0634b93af05909c97461deee8478317d8404703",
+      "bytes": 3866
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+      "bytes": 2770
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+      "bytes": 3501
+    }
+  ],
+  "viewports": {
+    "normal": [
+      1000,
+      720
+    ],
+    "narrow": [
+      760,
+      560
+    ]
+  },
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "zoom": [
+    1,
+    2
+  ],
+  "scope": "general settings information layout and existing field inheritance/navigation; no new business or system registration semantics",
+  "product_accepted": false
+}

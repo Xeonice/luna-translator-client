@@ -1,0 +1,897 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261019-R14",
+  "parent_baseline": "FP1-20261019-R13",
+  "parent_manifest_sha256": "01a6dd54469e3801372e6f7b513d7d24d074ed30b17337f1500696825288ceb7",
+  "authorization": "User explicitly requested both engineering acceptances and approved same-size/data/state independent client comparison, preserving original inputs and zero tolerance. No commit or push.",
+  "scope": "Ordinary reviewed authority/tooling revision for complete storage and independent visual client-content acceptance; not legacy-debt hash refresh or product release approval.",
+  "changed_authority": [
+    {
+      "path": "docs/development/engineering-gates.md",
+      "old_sha256": "5ee4973993e1ae8523dbb2048de140ed3d015452591e92f072df70c7ead80dc4",
+      "new_sha256": "8efb82790188807d2226e02a5a0e96c8ddfea90093b9308db1dc7ef0f7776c9c"
+    },
+    {
+      "path": "docs/development/storage-acceptance.json",
+      "old_sha256": "c0dc0c70146664a30de7e88f21346f13750a0a0b73444ada03d37177f2e9cb69",
+      "new_sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0"
+    },
+    {
+      "path": "docs/development/storage-acceptance.md",
+      "old_sha256": "90c9b4863adb480c1ca3f0e1e325bde5bf16e2a03999542120e28edb64020a96",
+      "new_sha256": "5fa18071fbb9d2fcb60ace11ed5f9a85f308052cb8117756cc5557978be7c27f"
+    },
+    {
+      "path": "scripts/quality/product_execution.py",
+      "old_sha256": "633eac4213aa6e1b7fbcae218602fcdb53034380c0b273bd39c849a426de3bd3",
+      "new_sha256": "838353032f76c9cd8776637baa2dc18521a3bac18e622567dd5e0a78a6ab9064"
+    },
+    {
+      "path": "scripts/contracts/compare_product_capture.mjs",
+      "old_sha256": "8bfab2b02e00fcc37b81545f8c99cafb71d08b3f24274cc5fff559adec902777",
+      "new_sha256": "b73ecc19f94f39c00e5cd8902b030d860b26aaf6d80f41a3e691963f4c34b652"
+    }
+  ],
+  "added_authority": [
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/add-game.bottom.png",
+      "bytes": 138197,
+      "sha256": "0a54cab25a62856b121cb04bc95aef20fc13b3b2cfb5e86d539989f9c4d4d24b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/add-game.design-source.html",
+      "bytes": 10066,
+      "sha256": "81edf8a31018c87d04874a6e3a5cf9cfcf51498ee6ccad48cc434126f8bed800"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/add-game.top.png",
+      "bytes": 136524,
+      "sha256": "3a06378147ea029b0d5a5e55af9f6ea0d6e1a732ddbdda595313f42318182c6a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/build-catalogue.mjs",
+      "bytes": 10096,
+      "sha256": "7eb6a36406d6cf688c62bca964831a78d19d511b1b024f2ba4794bcbdbc679b7"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/catalogue-schema.json",
+      "bytes": 2099,
+      "sha256": "5e95eeea96a3ec619069c4749370183c5d05326eead96f1dccd706a414a1e528"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/catalogue.json",
+      "bytes": 293159,
+      "sha256": "2d119672b5f43349f4ba4b2739736bf1d708b6c1f5b3370dac30047eddc93c19"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.bottom.png",
+      "bytes": 226472,
+      "sha256": "ddab334648dae0fe710ef1759df9a73476e51058f64fe3e290085e0c2089630c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.design-source.html",
+      "bytes": 11244,
+      "sha256": "319dab11abf3710af82dacfe2e76b5f69f0f99e0982f3e1eac9d87b82811022f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.top.png",
+      "bytes": 226616,
+      "sha256": "0b56bdfe72cc743f8c8236563a924e9cee4a6d8ad7f58c4775d47f7d404739ef"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/declared-inputs.json",
+      "bytes": 10774,
+      "sha256": "8c9f74293c7a00d53e7a48b3eadc85d00fe3e3826935d429657e017e1c2358fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-adapter-manifest.json",
+      "bytes": 1122,
+      "sha256": "8133ad6bc3f59e6aac7c46de168d802a9bcec9df13681577a2909339a86a7095"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/README.md",
+      "bytes": 7550,
+      "sha256": "461d3d01204f6cd780d1d528c701790a4b15fb866d2cbb959b194285de6357ff"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/app.js",
+      "bytes": 64893,
+      "sha256": "6193d5d70ed9dd6034da3ec348419b95bf58a24d2575471b27a27953ae78aa67"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/manifest.json",
+      "bytes": 8500,
+      "sha256": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-01.png",
+      "bytes": 245974,
+      "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-02.png",
+      "bytes": 789017,
+      "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-03.png",
+      "bytes": 793847,
+      "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-04.png",
+      "bytes": 786010,
+      "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-01.png",
+      "bytes": 677528,
+      "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-02.png",
+      "bytes": 692451,
+      "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-03.png",
+      "bytes": 691210,
+      "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-04.png",
+      "bytes": 673031,
+      "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-05.png",
+      "bytes": 687454,
+      "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-SCR-01-light.jpg",
+      "bytes": 425061,
+      "sha256": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-SCR-08-light.jpg",
+      "bytes": 212757,
+      "sha256": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-SCR-15-light.jpg",
+      "bytes": 194918,
+      "sha256": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-approved-material.png",
+      "bytes": 157449,
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-full-product-before-restyle.png",
+      "bytes": 277742,
+      "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-icons-color-before-library.png",
+      "bytes": 375812,
+      "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-icons-color-before-settings.png",
+      "bytes": 187630,
+      "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-material-before.png",
+      "bytes": 263734,
+      "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-01.png",
+      "bytes": 839932,
+      "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-02.png",
+      "bytes": 840360,
+      "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-03.png",
+      "bytes": 847137,
+      "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-04.png",
+      "bytes": 848248,
+      "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-05.png",
+      "bytes": 845316,
+      "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-01.png",
+      "bytes": 674561,
+      "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-02.png",
+      "bytes": 894420,
+      "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-03.png",
+      "bytes": 674292,
+      "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-04.png",
+      "bytes": 898673,
+      "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-05.png",
+      "bytes": 673439,
+      "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/wallpaper-frame.png",
+      "bytes": 1616086,
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/comparison.html",
+      "bytes": 7280,
+      "sha256": "26a9d01377d810228d3d488867d70dfbd3050dfa8bdc1f6944bbfe5baf827914"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/coverage.csv",
+      "bytes": 2066,
+      "sha256": "b52663d2c8c603e43fdd1b45dd4278bb65240032f1b63de1ecd346460460e641"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/data.js",
+      "bytes": 67294,
+      "sha256": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/entry-flow.html",
+      "bytes": 8530,
+      "sha256": "dac93fd2150b22e3a8418994c5977ea5b7fa21003f77bcac4e445c0c9a03d7b1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/gallery.html",
+      "bytes": 16672,
+      "sha256": "3e7a1b35ed0219d13260feb9d7e9b18ecca2c69f103258d86e734172011815cb"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/game-library.css",
+      "bytes": 11214,
+      "sha256": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/game-library.js",
+      "bytes": 24064,
+      "sha256": "278b2995d1fff49e9998a416d8d447976e4b4cd19254fed83ea462443e81b958"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/icons.js",
+      "bytes": 3501,
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/index.html",
+      "bytes": 7718,
+      "sha256": "e03a20e2167fefc1e4599c50b687d83efd0a1054fda9565a4e8a95bdff7285b1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/integration.md",
+      "bytes": 5821,
+      "sha256": "948166a1bd642cb0daa33db832ad3b4e53b834d65e38fb7f9edf52e5a6a09b58"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/learning.css",
+      "bytes": 12086,
+      "sha256": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/learning.js",
+      "bytes": 25027,
+      "sha256": "c1551dda2e791049b3d341d5db8a2a70acce62ca9d5701355cb4133f9f777cfe"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/manifest.json",
+      "bytes": 16915,
+      "sha256": "ca09693afe422797374ca195705655f2fb052e1ba37e46392d7f4357e377007b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/material-assets.json",
+      "bytes": 1713,
+      "sha256": "f85b93e9c7f1f7f0b37528f8a0ca5f8cdffe09412057400483a8848dc3374d79"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/material-tokens.css",
+      "bytes": 2770,
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/reference-manifest.json",
+      "bytes": 1499,
+      "sha256": "5dabca238bdb6c9821d1e2e26791034b80a5f92c7e9d03e9b8c985cf0d468e51"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/settings.css",
+      "bytes": 11331,
+      "sha256": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/settings.js",
+      "bytes": 55921,
+      "sha256": "eac93d4a24989924c43c1b5bf9ae8baff4872a529744c941d08266c66cedcca4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/style-guide.md",
+      "bytes": 3382,
+      "sha256": "fd143b5ca2bc79fcaa31c026ca6602daf357de49a2f4a89b7b8ec2b1125ee492"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/design-origin/styles.css",
+      "bytes": 44786,
+      "sha256": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.bottom.png",
+      "bytes": 47694,
+      "sha256": "8ef816b3e35f0893892f83380426622110adc9876ddb7ccc6250fe3270266de2"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.design-source.html",
+      "bytes": 6368,
+      "sha256": "89e14361ad6c7948af456449d3a68ff2ed6d68f7a254d3daf458d1922dcfec1c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.region-1-bottom.png",
+      "bytes": 48525,
+      "sha256": "e4e7d1037d87ad808f96b9766908ec5d3f474b98e2d31789a3b43b3d75e33d92"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.top.png",
+      "bytes": 46938,
+      "sha256": "36f88fb3fbb55859901dba267047ece4db7dbba32dbb90d7a3f9552227ca78cd"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/empty-library.design-source.html",
+      "bytes": 5813,
+      "sha256": "4d4c236a4096b20424a10fad7cd49d7125938e4cf8b52a1df8bc968b573c9eb4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/empty-library.top.png",
+      "bytes": 294074,
+      "sha256": "4cf158a2259e987659cfe41956da6fb20a1c855c1d31257a9990c48183251b94"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/geometry-inventory.json",
+      "bytes": 32801,
+      "sha256": "54e5f6504dafd6a36af999c718944877cb58843d4a58c0f049717bc209132054"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/geometry-inventory.proposal.json",
+      "bytes": 13197,
+      "sha256": "54760a113e7ad9b82c0d43d7fc47e5e5a277ce80a620f96cd07f8da530b3d8f3"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/capture.mjs",
+      "bytes": 16730,
+      "sha256": "db9bbf4fa647056b1d3891e8bc430d87866c4c1b4da28071eb50fd423e8da8f8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.closed-license-bottom.design.html",
+      "bytes": 4461,
+      "sha256": "ac5ad1141c66711080c42b2c0e6bc83012317461166a29d41b84e1d8aef2b086"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.closed-license-bottom.png",
+      "bytes": 39193,
+      "sha256": "e1a73f421e8436f03227b2a4442c11a86e73c10ef580dc5bc06f6d112b34e916"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-0.design.html",
+      "bytes": 4459,
+      "sha256": "cd04185f496135c4299afc031c94c1024e4b2aa6c51fbb2d39c1debc2023fa24"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-0.png",
+      "bytes": 35546,
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-1.design.html",
+      "bytes": 4461,
+      "sha256": "6086728e9d467f95d654a9e0d983dc15364af9ef461fca31a48e0dcf999e2b32"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-1.png",
+      "bytes": 36740,
+      "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-2.design.html",
+      "bytes": 4461,
+      "sha256": "b217c7649a1b0b8308e401acc45024916150b0dda70eb7c42dcb2ed23d037230"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-2.png",
+      "bytes": 39846,
+      "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-3.design.html",
+      "bytes": 4461,
+      "sha256": "59d559fd547e21033bccd02d810d0d5538a3a34dadc6cb5161568bc24e50fdfd"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-3.png",
+      "bytes": 35535,
+      "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-4.design.html",
+      "bytes": 4461,
+      "sha256": "47b3fcd627f1d936e2a5c9206a3a975a96eaff7975419bffafae2455bbd15b20"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-4.png",
+      "bytes": 37048,
+      "sha256": "b5c4b6ecf3cdb2c759796cc980cc937055b2e97ed2e62b4fa1d882109fe4d83a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.design.html",
+      "bytes": 4467,
+      "sha256": "d068fe5aa8ffac67dff583bf799b9d11c814238e455fcdf175ec77d0531fd6ce"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.png",
+      "bytes": 35546,
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.design.html",
+      "bytes": 4469,
+      "sha256": "e6b2adeb838501616597bd98f1722aa0610b922f9725b12df0b2c97b6d8f6ae0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.png",
+      "bytes": 36740,
+      "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.design.html",
+      "bytes": 4469,
+      "sha256": "08c2c22980025130f94ea3862a52aa3f4d778a49c0eb6aac504e7dc81377b2b2"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.png",
+      "bytes": 39846,
+      "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.design.html",
+      "bytes": 4469,
+      "sha256": "8f2d1deff0cf1d7fdf98b795e771a839fc9a8c8639b373eab4d49fe31612262c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.png",
+      "bytes": 35535,
+      "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.design.html",
+      "bytes": 4469,
+      "sha256": "82aeef3409a9c1ed746e27ea2f9cc71dbe6a111151cfbc3fd80ac28b13678857"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.png",
+      "bytes": 38737,
+      "sha256": "0e39b588f012adf302b612d875f2129a625f5d103f66ab535ad56f5fcc2e1ba1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.design.html",
+      "bytes": 4469,
+      "sha256": "1fe912d7a5551d8a7879c7b08bfe0a273e1b1aee87c646908999c295aedbba00"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.png",
+      "bytes": 40497,
+      "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.second-headword-source.design.html",
+      "bytes": 4461,
+      "sha256": "1387194ac881c3483438eeb33b996bcfd60dc5ac36fa2cda3a702558c30a6478"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.second-headword-source.png",
+      "bytes": 35555,
+      "sha256": "7edd827c1446bfa491886290a245914598a28294470de24c24e47a2d2b2ab8e3"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-a-attribution.design.html",
+      "bytes": 4461,
+      "sha256": "1089f0cfc27427571b1e3ff650db005783e9becf4f9ca5b9df881d4439d96d4f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-a-attribution.png",
+      "bytes": 37306,
+      "sha256": "507bc2eb825aa35dc20d6cf6605497a386d6b2f2e504285a2e1e81a5f624ed37"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.design.html",
+      "bytes": 4469,
+      "sha256": "1fe912d7a5551d8a7879c7b08bfe0a273e1b1aee87c646908999c295aedbba00"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.png",
+      "bytes": 40497,
+      "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.top.design.html",
+      "bytes": 4459,
+      "sha256": "cd04185f496135c4299afc031c94c1024e4b2aa6c51fbb2d39c1debc2023fa24"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.top.png",
+      "bytes": 35546,
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained-bottom.design.html",
+      "bytes": 10014,
+      "sha256": "dffadd19de059d3e405957f7f0cebc5dd93dd1a3eb924245be508efd26b11cf0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained-bottom.png",
+      "bytes": 267162,
+      "sha256": "c73090b7e50e517b62d997593f2bd07d02c1acdcf463d2d1e03d3d8d3cd68713"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained.design.html",
+      "bytes": 10012,
+      "sha256": "203f3e676dff8b8376dbd5b604b1ee85cc26fd23f5bba29930733b8f6a9f9000"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained.png",
+      "bytes": 273700,
+      "sha256": "c7587c41e04665ac467b9a3286afe957cb24b803e3b4b8973a9e5d3ef8221b1c"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.saved-global.design.html",
+      "bytes": 9944,
+      "sha256": "f313edb16d9079edad91a0b866f2524dd7c385e019070425695dd32720365174"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.saved-global.png",
+      "bytes": 270305,
+      "sha256": "4ec7556b2de201750dad809dc2cc68cddc940603cb258203fe1a33134a233575"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.terms-and-footer.design.html",
+      "bytes": 9946,
+      "sha256": "434e6bf8cbb51852a9b5a03eb0d73b901bea29bede2526ae12662ba9b527fb5d"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.terms-and-footer.png",
+      "bytes": 263450,
+      "sha256": "7619896312440e5dbf086755798647d90b3ceb1d7baadda5dfb6280f00abffb0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/index.html",
+      "bytes": 688,
+      "sha256": "d565316d9c87770e274f9578c9b343a27c4268b355d57b0b7cd8ac9b4a978f22"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.design.html",
+      "bytes": 4202,
+      "sha256": "38dcbd36cfb3a2d55bc707f657f9ba3c87ab2e8469245a70675fea4a1f6c368e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.png",
+      "bytes": 173031,
+      "sha256": "2d8add95da072fed0d2b19b98e9786574035c21f4eca6648e23a3f34db7c1635"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent.design.html",
+      "bytes": 4201,
+      "sha256": "33abb617359f07bfd24526962415b4e8839ffddeea2dd990c48e02e616a211e9"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent.png",
+      "bytes": 175325,
+      "sha256": "d522e43c478a980d04fb647992099eed0c8899035dbf95e54ded2c835fb0b4da"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.wide18.design.html",
+      "bytes": 4201,
+      "sha256": "8b2262b36ac7bdddfd9c744ec2beb3cb62db8fc2b31fc9d12eb4b649f1c04b21"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.wide18.png",
+      "bytes": 241672,
+      "sha256": "360ca8f08b06826cabca2c890fb17c830a215b2844ce1d863add4cd218d380da"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/metadata.json",
+      "bytes": 67469,
+      "sha256": "a57556c4086f443e36f772aefd533cf59d24f7e9ef959abc7e2c44acd4a1e8d6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.css",
+      "bytes": 7903,
+      "sha256": "3bb0b325a6dad5834c9ad73fa2d0a9c6394eb69796f355592bcec9d4155f592b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.js",
+      "bytes": 13754,
+      "sha256": "b333b709777c5515a8e2bdab7667bf26ffcdabe2a24e1dafe78561a4ac85a5b7"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.constrained-workarea.design.html",
+      "bytes": 3776,
+      "sha256": "49c8f4748d13e3c0b51cc1f5483686b8bd62341d0a8d82bf152e99c8e0a5cd88"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.constrained-workarea.png",
+      "bytes": 42433,
+      "sha256": "401bb5b38772aa2190a0a6d18ed976c4de3fcbd80fafbd84bfffd5c677eef09e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.native-window-context.design.html",
+      "bytes": 3772,
+      "sha256": "2e41aec0b9a1678728c6d9c375c0e880f741475a483e84332cf4684fb7613109"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.native-window-context.png",
+      "bytes": 601421,
+      "sha256": "53a274a4e87141106ce433cfe50630807ecb7b47c07953e31be720a6907e9373"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.resource-footer.design.html",
+      "bytes": 3777,
+      "sha256": "3d42e834096d2ad302e8195cc7ce84429ad45a9c57a3b8f9edb171e6b7ba92a5"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.resource-footer.png",
+      "bytes": 41623,
+      "sha256": "d17780d4a3d7d1192a5203aed2bc215439d1256957a2f1760ec484af8de84692"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.bottom.png",
+      "bytes": 293413,
+      "sha256": "38eca27d95d8665915ffeaba014b2b766a0642f28ebbc39dbafdb056b8a67244"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.design-source.html",
+      "bytes": 6155,
+      "sha256": "0171e0c2b6ecb5896685cc27313919bccae8b335775a223fb1c0b074698c6f8f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.top.png",
+      "bytes": 289271,
+      "sha256": "6b3141c78c12c37b97e164da571e1def3b893d2d1098299165a828c1892ca47f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/index.html",
+      "bytes": 12381,
+      "sha256": "bd1bacb7a363b2df22f27b510fe9aab9c13d3357b61df89f0409467890b9d5e6"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.bottom.png",
+      "bytes": 159601,
+      "sha256": "5ed4ac0aa1efda82ae9f9dfe58b1784691a213048122db59db73d1c3ecb8cc68"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.design-source.html",
+      "bytes": 4714,
+      "sha256": "835216699dc9001b175fe060acaeb573fd6a47aa6227f7fd6693acf5ba34f37a"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.top.png",
+      "bytes": 160094,
+      "sha256": "566a044599dbceb68903cae69334f770636f48673328cb34250c0c2000cb74b4"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/library-batch.bottom.png",
+      "bytes": 132265,
+      "sha256": "d11447de001dcc13da4007c507218ee3f1da3162c609a469f3aea714385a58d9"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/library-batch.design-source.html",
+      "bytes": 10943,
+      "sha256": "50332cfec23b1d2e87bdc3947c0c7342e4f5156e6e6364ec451084868550af5f"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/library-batch.top.png",
+      "bytes": 140794,
+      "sha256": "40c3a0f03aaf1d3f10b8cc7c9d60ad8236230ad82a0e74970faf36c91aae257b"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/metadata.json",
+      "bytes": 594141,
+      "sha256": "f775dd807beb55862f1c9d30b4016ba284e47c306991edf277989c7a7ed68a93"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.bottom.png",
+      "bytes": 215300,
+      "sha256": "359cfd28a8a06e2ac7152d59d9bc12f9873a1ff12fc8479e19f3b931819bfb61"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.design-source.html",
+      "bytes": 10550,
+      "sha256": "5ba695b4a1f549f4b14b67804b6d975d46740b3eca389e5bf961be62c5051dcf"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.top.png",
+      "bytes": 229876,
+      "sha256": "94284c82837493cc27821a9201c4c550dbe0a4d3a546a2ce95282091a548fc75"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/native-content.css",
+      "bytes": 4610,
+      "sha256": "a8768daccfef7ef10816e32c780960003ab210e88617cec8ec649b511cbf7df1"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/reading-hud.design-source.html",
+      "bytes": 6363,
+      "sha256": "25f6d3f057e6484ffe35355681705297ca95340fb0430844301c7fd6fdc9ffc8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/reading-hud.top.png",
+      "bytes": 60221,
+      "sha256": "c7220acb3f698fbf53e937b424e3167b462b53f1d31684588859f7e46aa0ff95"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/render.mjs",
+      "bytes": 40320,
+      "sha256": "3701598979c1f27aa6878bf087ffb780eab669ac812a808fcae0ddce6a2fa5d0"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.bottom.png",
+      "bytes": 245254,
+      "sha256": "2ce3d1b94548d336ccd03af9dc7cbc09b2b8cc854874327eb191295b97189a75"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.design-source.html",
+      "bytes": 12474,
+      "sha256": "ddf3347621fe0444f11bcb23a78d731293ebe4a5e93dcf4d5fef2415da9fa32e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.top.png",
+      "bytes": 255662,
+      "sha256": "92bd2ff759103e2cf4695c94c16338eb9b0f93676361496a264b7084b8072817"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/target-review.bottom.png",
+      "bytes": 185725,
+      "sha256": "4ed6e23c70ddcf4465e0692aecf22d8e440ceb0098935a88fad59337f9ae478e"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/target-review.design-source.html",
+      "bytes": 10858,
+      "sha256": "29c903ce5c9c9a207263897fb934c1b8a6225b4603cd9617d9fe2434307629e8"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/target-review.top.png",
+      "bytes": 142679,
+      "sha256": "33f87c46d71980c46b8905d9c9d586588811555e707628611d8f45c9cd05d858"
+    },
+    {
+      "path": "docs/design/first-product-v1/acceptance-v3/underlay-reading.png",
+      "bytes": 968640,
+      "sha256": "d72d04d3e6ba61a37f71ea57392a6fa9977a8b8451037134ec5719032c379cf3"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261019-R13.json",
+      "bytes": 38052,
+      "sha256": "01a6dd54469e3801372e6f7b513d7d24d074ed30b17337f1500696825288ceb7"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/protected-authority-review-r14.json",
+      "bytes": 11195,
+      "sha256": "3d48442ea20dda1db4e616dc55d846f0d9292663a69ef1c13a47ef6274a82d9f"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/protected-guard-review-r14.json",
+      "bytes": 2004,
+      "sha256": "17ff8360a677018e4589b97b92f154aee78155e4edbc05d9764f52f1d3a14cc4"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/storage-package-review-r14.json",
+      "bytes": 11859,
+      "sha256": "76c08ee77c630d05d340c8a75265b1a6cfce715e837f41271bfa036c6d0799b1"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/visual-reference-review-r14.json",
+      "bytes": 10964,
+      "sha256": "36245a57e8834dac87555647f208443a1a0ea8c45ea533568448eea44c0c85d1"
+    },
+    {
+      "path": "scripts/build_desktop.py",
+      "bytes": 6569,
+      "sha256": "71f78dbfbdf8754098e8f7cd5aa2f8a6603c4ef87db2d59b2e66cf5ea83a4a19"
+    },
+    {
+      "path": "scripts/quality/package_identity.py",
+      "bytes": 10368,
+      "sha256": "110fd89f00f81d3aa8b7b4c689d299384487271498f4c3e4d86b4ca8f541ff89"
+    },
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "bytes": 55256,
+      "sha256": "f83dcb7baf864b11edd77c55c1c40947c82591544de792a7bcacd6ae1babb04f"
+    },
+    {
+      "path": "scripts/quality/storage_product_adapter.py",
+      "bytes": 9711,
+      "sha256": "a14452ce1232104d8699f7642112c7a36011da1d114c406fde4ffd959d6088ef"
+    },
+    {
+      "path": "scripts/quality/storage_product_process.py",
+      "bytes": 6984,
+      "sha256": "729553b572d53bd2722c99842ae68a34613378430ccc1be7e7da8bae521c2a18"
+    },
+    {
+      "path": "scripts/quality/test_package_identity.py",
+      "bytes": 9893,
+      "sha256": "2b9422a32ae46d6dc10c0f27bdc370f7daf3a038a4d5a6570677f29cca80e4f5"
+    },
+    {
+      "path": "scripts/quality/test_product_execution.py",
+      "bytes": 33271,
+      "sha256": "4459b3f860c87d6486c2f1433512f35e53023cdd78b9fce56afcbf2d54ace62f"
+    },
+    {
+      "path": "scripts/quality/test_storage_acceptance.py",
+      "bytes": 43683,
+      "sha256": "fcfe3a3155c1bad6c0b129cabfc34efecfbe0ef8938e088d3ca3a4af0747b6d7"
+    }
+  ],
+  "reviews": {
+    "visual": {
+      "path": "openspec/changes/implement-first-product/visual-reference-review-r14.json",
+      "sha256": "36245a57e8834dac87555647f208443a1a0ea8c45ea533568448eea44c0c85d1"
+    },
+    "storage_package_window": {
+      "path": "openspec/changes/implement-first-product/storage-package-review-r14.json",
+      "sha256": "76c08ee77c630d05d340c8a75265b1a6cfce715e837f41271bfa036c6d0799b1"
+    },
+    "latest_guard": {
+      "path": "openspec/changes/implement-first-product/protected-guard-review-r14.json",
+      "sha256": "17ff8360a677018e4589b97b92f154aee78155e4edbc05d9764f52f1d3a14cc4"
+    },
+    "protected_authority": {
+      "path": "openspec/changes/implement-first-product/protected-authority-review-r14.json",
+      "sha256": "3d48442ea20dda1db4e616dc55d846f0d9292663a69ef1c13a47ef6274a82d9f"
+    }
+  },
+  "registered_catalogue": {
+    "path": "docs/design/first-product-v1/acceptance-v3/catalogue.json",
+    "sha256": "2d119672b5f43349f4ba4b2739736bf1d708b6c1f5b3370dac30047eddc93c19",
+    "proposal_sha256": "8736082d44f6b6abca14f50c89c7aea40040fefa736f1e28275e27048b5f13db"
+  },
+  "proof_limits": [
+    "Current replacement implementations independently reviewed in full; no claim that all five R13 file bodies were available for a line-by-line minimal diff. Exact R13 manifest and available matching original engineering text/storage registry retained.",
+    "Registered reference/guard/compile results do not promote packaged native tests, full first-product design approval or153 product combinations. Same-source/package actual storage execution and unified gate remain pending at registration."
+  ],
+  "unchanged": [
+    "Original design and PNG bytes",
+    "Original tokens and zero-difference tolerance",
+    "Migration DDL/schema/ledger/field/route inventories",
+    "Legacy-debt ledger and frozen violation source hashes",
+    "Original approvals and original License"
+  ],
+  "product_acceptance_promoted": false
+}

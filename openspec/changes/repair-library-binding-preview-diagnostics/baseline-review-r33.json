@@ -1,0 +1,18 @@
+{
+  "kind": "R33_baseline_candidate_review",
+  "status": "root_independently_reviewed_awaiting_exact_copy",
+  "parent_baseline_sha256": "3edece551291cb40ff7d8c433f76ec0dcd8ff933b5f8b608963947633a529422",
+  "exact_delta_record": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/exact-delta-review-r33.json",
+    "sha256": "8f4be9ce254f878459b9cd8b64ecaac337edea0551b23051dfdbc62cf2f96431"
+  },
+  "root_adoption": "authorized_awaiting_mechanical_exact_copy",
+  "runtime_visual_release_promoted": false,
+  "independent_exact_candidate_review": "approved_by_root_for_this_exact_delta",
+  "root_independent_review": {
+    "by": "/root",
+    "scope": "Root independently read manifest, three-pin-only storage diff, actual database method diff, semantic status changes; approved exact12 candidate scope and final pending-copy state; no runtime/release/visual promotion",
+    "message": "Root已读manifest/三storagepin diff、数据库新增方法实际diff及status语义，批准该精确范围。最后一次生成final，Root已独立核精确delta且采用等待copy。",
+    "adoption": "authorized_awaiting_mechanical_exact_copy"
+  }
+}

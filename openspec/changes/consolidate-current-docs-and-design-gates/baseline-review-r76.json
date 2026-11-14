@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "consolidate-current-docs-and-design-gates",
+  "parent_baseline_sha256": "c385bb1f06ae38ba83943fc4bd219768ecc71d5699f956c92b3c2eeedc0ec3bf",
+  "exact_delta_sha256": "68a951bd3511f2ed9ca99a33f898e57026c2aba07a9a5728f8d1e00585bc7e93",
+  "documentation_review": {
+    "path": ".build/documentation-alignment-20261031/review/docs-review.json",
+    "bytes": 15116,
+    "sha256": "9fe82e65cb0f27ee59b955e058f96eff24dc8c42ba50b54666826843241fb003"
+  },
+  "code_review": {
+    "path": ".build/documentation-alignment-20261031/review/tooling-review.json",
+    "bytes": 11294,
+    "sha256": "f30c86a9be47f1bd94495598a22c08c9f62116f266f09e0c543f91088ece495b"
+  },
+  "governance_review": {
+    "path": ".build/documentation-alignment-20261031/review/governance-review.json",
+    "bytes": 3188,
+    "sha256": "bf1c9d4f952d5684f0addbd068503247a5809dc422482e5088abb40ab90c55e0"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

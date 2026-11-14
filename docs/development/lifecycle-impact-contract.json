@@ -1,0 +1,2431 @@
+{
+  "schema_version": 2,
+  "kind": "executable_lifecycle_impact_contract",
+  "authority": {
+    "plan_sha256": "be0698e38ca62bcd1b667301bf1422f42f6c6513e4504433cfab54069ec4c0a0",
+    "scope": "new changes and final current-source cohort; exact historical slice selection retained",
+    "invariant_contract_sha256": "be1e93cee9a2f6d0c6baec55e231334f5a81005b90e47452295d484281bbdc3c"
+  },
+  "critical_roots": [
+    "apps/desktop/src/bridge",
+    "apps/desktop/src/features/capture",
+    "apps/desktop/src-tauri/src/platform/window_preview",
+    "apps/desktop/src-tauri/src/platform/window_collector",
+    "apps/desktop/src-tauri/src/platform/macos",
+    "crates/hook-client/src",
+    "crates/lunahook-host/examples",
+    "crates/app-infra/src/storage",
+    "crates/app-infra/src/hook_backend",
+    "apps/desktop/src-tauri/src/platform/owner_geometry.rs",
+    "apps/desktop/src-tauri/src/platform/window_manager.rs",
+    "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs",
+    "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+    "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+    "apps/desktop/src-tauri/src/platform",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "crates/lunahook-host/src",
+    "crates/hook-contracts/src",
+    "crates/app-core/src/application/runtime.rs",
+    "crates/app-core/src/domain/capture.rs",
+    "apps/desktop/src/windows/hud"
+  ],
+  "rules": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview/state.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/tauri-port.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/preview-subscriptions.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "module_ids": [
+        "M02",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/session_preview_coordinator.rs",
+      "module_ids": [
+        "M02",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/session_cover_coordinator.rs",
+      "module_ids": [
+        "M02",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C11",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+      "module_ids": [
+        "M02",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/runtime_paths.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C18",
+        "C19",
+        "C34",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/hook-client/src/lib.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/hook-client/src/window_binding.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/examples/target_probe.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C18",
+        "C19",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/owner_geometry.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C18",
+        "C19",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_geometry.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C18",
+        "C19",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/word_card.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C19",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/language/WordCard.tsx",
+      "module_ids": [
+        "M13",
+        "M07",
+        "M08"
+      ],
+      "component_ids": [
+        "C19"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/windows/hud/HudWindow.tsx",
+      "module_ids": [
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C18",
+        "C19",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/app-core/src/domain/capture.rs",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/database.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/closure_integrity_tests.rs",
+      "module_ids": [
+        "M10",
+        "M15"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/database_fault_tests.rs",
+      "module_ids": [
+        "M10",
+        "M15"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/migrations/001_config.sql",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/migrations/001_dictionary.sql",
+      "module_ids": [
+        "M10",
+        "M08"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/migrations/001_profile.sql",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/migrations/002_session_records.sql",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/mod.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/cache.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/capture.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/configuration.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/configuration_lifecycle.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/credentials.rs",
+      "module_ids": [
+        "M10",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/game_assets.rs",
+      "module_ids": [
+        "M10",
+        "M01"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/history.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/mod.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/model_tests.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M15"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/retention.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/retries.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/session_records.rs",
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/tasks.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/capture/CaptureSheet.tsx",
+      "module_ids": [
+        "M13",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/capture/index.ts",
+      "module_ids": [
+        "M13",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/window_capture.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/window_association.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/preview_identity.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/journal.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C36"
+      ],
+      "obligations": [
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-WORDCARD-GEOMETRY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/application-port.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/contracts.generated.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/projections/application-store.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/projections/index.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/bridge/use-action.ts",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/capture/styles.module.css",
+      "module_ids": [
+        "M13",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/examples/core_fixture_probe.rs",
+      "module_ids": [
+        "M02",
+        "M14",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/word_card.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C19",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/menus.rs",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/mod.rs",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/shortcuts.rs",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/windows/hud/styles.module.css",
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-core/src/application/runtime.rs",
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/hook-contracts/src/lib.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/abi.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/framing.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/lib.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/main.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/queue.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/runtime.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/windows/callbacks.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/windows/identity.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/windows/mod.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/lunahook-host/src/windows/native.rs",
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/translation_status.rs",
+      "module_ids": [
+        "M10",
+        "M05"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-core/src/domain/translation_status.rs",
+      "module_ids": [
+        "M05"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/reading/useReadingUnitProjection.ts",
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/queries.rs",
+      "module_ids": [
+        "M12",
+        "M02"
+      ],
+      "component_ids": [
+        "C17",
+        "C13",
+        "C14",
+        "C15",
+        "C35"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-DISCOVERY"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/reading/ReadingPanel.tsx",
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src/features/capture/PreviewDetails.tsx",
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/login_startup.rs",
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C34"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/configuration_codec.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/google_authorization.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/google_authorization/authority.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/google_authorization/interactive.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/google_authorization/lifecycle.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources/authority.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources/facts.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources/observations.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources/preparation.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources/retention.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/offline_resources/source.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/provider_presets.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M06"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/saved_service_source.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_discovery.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_graph.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_graph/provenance.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_selection.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_selection/activation.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_selection/catalog.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_selection/draft.rs",
+      "module_ids": [
+        "M10",
+        "M04"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tasks.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M05"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tasks/admission.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M05"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tasks/authority.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M05"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tests.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tests/prepare.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tests/qualification.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/service_tests/terminal.rs",
+      "module_ids": [
+        "M10",
+        "M04",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/queries/source_selection.rs",
+      "module_ids": [
+        "M10",
+        "M02"
+      ],
+      "component_ids": [
+        "C15"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    {
+      "path": "crates/app-infra/src/storage/migrations/005_source_selection_sets.sql",
+      "module_ids": [
+        "M10",
+        "M02"
+      ],
+      "component_ids": [
+        "C15"
+      ],
+      "obligations": [
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    }
+  ],
+  "obligations": [
+    "SRF-PV-IDENTITY",
+    "SRF-PV-CONTEXT",
+    "SRF-PV-FRAME-TRUTH",
+    "SRF-PV-ISOLATION",
+    "SRF-DISCOVERY",
+    "SRF-WORDCARD-GEOMETRY",
+    "SRF-SESSION-DRAIN",
+    "SRF-READING-VERSION",
+    "SRF-WRITER-BOUNDARY"
+  ],
+  "invariants": {
+    "INV-01": [
+      "SRF-PV-IDENTITY",
+      "SRF-PV-CONTEXT",
+      "SRF-WRITER-BOUNDARY"
+    ],
+    "INV-02": [
+      "SRF-DISCOVERY",
+      "SRF-SESSION-DRAIN"
+    ],
+    "INV-03": [
+      "SRF-PV-IDENTITY",
+      "SRF-PV-CONTEXT",
+      "SRF-DISCOVERY",
+      "SRF-SESSION-DRAIN"
+    ],
+    "INV-04": [
+      "SRF-PV-IDENTITY"
+    ],
+    "INV-05": [
+      "SRF-PV-CONTEXT",
+      "SRF-SESSION-DRAIN"
+    ],
+    "INV-06": [
+      "SRF-PV-IDENTITY",
+      "SRF-PV-ISOLATION"
+    ],
+    "INV-07": [
+      "SRF-PV-ISOLATION",
+      "SRF-WRITER-BOUNDARY"
+    ],
+    "INV-08": [
+      "SRF-PV-FRAME-TRUTH"
+    ],
+    "INV-09": [
+      "SRF-WORDCARD-GEOMETRY"
+    ],
+    "INV-10": [
+      "SRF-WORDCARD-GEOMETRY",
+      "SRF-READING-VERSION"
+    ],
+    "INV-11": [
+      "SRF-PV-ISOLATION",
+      "SRF-PV-FRAME-TRUTH"
+    ],
+    "INV-12": [
+      "SRF-SESSION-DRAIN"
+    ],
+    "INV-13": [
+      "SRF-WRITER-BOUNDARY"
+    ],
+    "INV-14": [
+      "SRF-PV-IDENTITY",
+      "SRF-PV-CONTEXT",
+      "SRF-PV-FRAME-TRUTH",
+      "SRF-PV-ISOLATION",
+      "SRF-DISCOVERY",
+      "SRF-WORDCARD-GEOMETRY",
+      "SRF-SESSION-DRAIN",
+      "SRF-READING-VERSION",
+      "SRF-WRITER-BOUNDARY"
+    ]
+  },
+  "phases": {
+    "SR-0": {
+      "change_id": "refactor-runtime-lifecycle-boundaries",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "visual": [],
+      "obligations": []
+    },
+    "SR-1": {
+      "change_id": "refactor-preview-state-policy",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4"
+      ],
+      "visual": [
+        "product-ui-capture-v4"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-FRAME-TRUTH"
+      ]
+    },
+    "SR-2": {
+      "change_id": "refactor-preview-subscriptions",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "visual": [
+        "product-ui-capture-v4"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION"
+      ]
+    },
+    "SR-3": {
+      "change_id": "refactor-session-preview-coordination",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "visual": [
+        "product-ui-capture-v4"
+      ],
+      "obligations": [
+        "SRF-PV-ISOLATION",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-SESSION-DRAIN",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    "SR-4": {
+      "change_id": "refactor-hook-association-boundaries",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "visual": [
+        "product-ui-capture-v4"
+      ],
+      "obligations": [
+        "SRF-DISCOVERY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    },
+    "SR-5": {
+      "change_id": "refactor-owner-geometry-policy",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "visual": [
+        "product-ui-capture-v4"
+      ],
+      "obligations": [
+        "SRF-WORDCARD-GEOMETRY"
+      ]
+    },
+    "SR-6": {
+      "change_id": "verify-refactor-stability-rc",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-ui-capture-v4"
+      ],
+      "visual": [
+        "product-ui-capture-v4"
+      ],
+      "obligations": [
+        "SRF-PV-IDENTITY",
+        "SRF-PV-CONTEXT",
+        "SRF-PV-FRAME-TRUTH",
+        "SRF-PV-ISOLATION",
+        "SRF-DISCOVERY",
+        "SRF-WORDCARD-GEOMETRY",
+        "SRF-SESSION-DRAIN",
+        "SRF-READING-VERSION",
+        "SRF-WRITER-BOUNDARY"
+      ]
+    }
+  },
+  "historical_selection_sha256": {
+    "refactor-preview-state-policy": "93780f4f149b3c7dbd8973a3a175b5a2367d6c51da27b17b3f1420892ffd245d",
+    "refactor-preview-subscriptions": "8e1c50f478f8ec519f455ba926b316afdbc12840879220e0ce99fd9163a25996",
+    "refactor-session-preview-coordination": "83988a925e765ec8d02a9152e476518c0cc840846d71f0b9e80db84009d0f82f"
+  },
+  "cases": [
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-IDENTITY",
+      "source": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "function": "same_capture_cannot_replace_native_identity_but_new_capture_keeps_existing_resolution_path",
+      "test_name": "platform::window_preview::tests::same_capture_cannot_replace_native_identity_but_new_capture_keeps_existing_resolution_path",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-IDENTITY",
+      "source": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "function": "first_frame_commit_rechecks_native_lease_generation_consumer_and_identity_after_preparation",
+      "test_name": "platform::window_preview::tests::first_frame_commit_rechecks_native_lease_generation_consumer_and_identity_after_preparation",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-IDENTITY",
+      "source": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "function": "frame_identity_epoch_sequence_time_and_payload_are_checked_before_cache",
+      "test_name": "platform::window_collector::tests::frame_identity_epoch_sequence_time_and_payload_are_checked_before_cache",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "function": "remote_diagnostics_are_visible_without_promoting_metadata_into_a_first_frame",
+      "test_name": "platform::window_preview::tests::remote_diagnostics_are_visible_without_promoting_metadata_into_a_first_frame",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "function": "old_generation_and_paused_capture_cannot_replace_current_frame_or_time",
+      "test_name": "platform::window_preview::tests::old_generation_and_paused_capture_cannot_replace_current_frame_or_time",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "function": "paused_last_successful_frame_survives_reattach_without_accepting_stale_captures",
+      "test_name": "platform::window_preview::tests::paused_last_successful_frame_survives_reattach_without_accepting_stale_captures",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-ISOLATION",
+      "source": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "function": "candidate_pair_transfer_retains_resource_but_rejects_old_candidate_stop_and_frames",
+      "test_name": "platform::window_preview::tests::candidate_pair_transfer_retains_resource_but_rejects_old_candidate_stop_and_frames",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-PV-ISOLATION",
+      "source": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "function": "full_pipeline_control_queue_still_fences_release_without_stopping_other_sources",
+      "test_name": "platform::window_collector::worker::tests::full_pipeline_control_queue_still_fences_release_without_stopping_other_sources",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-DISCOVERY",
+      "source": "crates/lunahook-host/examples/target_probe.rs",
+      "function": "successful_query_uses_physical_pixels_and_restores_exact_context",
+      "test_name": "window_query::tests::successful_query_uses_physical_pixels_and_restores_exact_context",
+      "package": "lunahook-host",
+      "target": "unittests examples/target_probe.rs",
+      "check_id": "product-target-probe-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-DISCOVERY",
+      "source": "crates/lunahook-host/examples/target_probe.rs",
+      "function": "geometry_guard_accepts_negative_coordinates_but_not_empty_or_inverted_rects",
+      "test_name": "window_query::tests::geometry_guard_accepts_negative_coordinates_but_not_empty_or_inverted_rects",
+      "package": "lunahook-host",
+      "target": "unittests examples/target_probe.rs",
+      "check_id": "product-target-probe-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-DISCOVERY",
+      "source": "crates/hook-client/src/lib.rs",
+      "function": "reused_pid_is_not_a_matching_identity",
+      "test_name": "tests::reused_pid_is_not_a_matching_identity",
+      "package": "hook-client",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-hook-client-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-DISCOVERY",
+      "source": "crates/hook-client/src/lib.rs",
+      "function": "discovery_requires_a_complete_connectable_identity",
+      "test_name": "tests::discovery_requires_a_complete_connectable_identity",
+      "package": "hook-client",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-hook-client-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-DISCOVERY",
+      "source": "crates/app-infra/src/hook_backend.rs",
+      "function": "process_only_candidate_does_not_claim_window_identity_and_refresh_discards_old_candidates",
+      "test_name": "hook_backend::candidate_projection_tests::process_only_candidate_does_not_claim_window_identity_and_refresh_discards_old_candidates",
+      "package": "app-infra",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+      "function": "stale_physical_read_after_a_same_epoch_fit_cannot_invalidate_the_confirmed_card",
+      "test_name": "platform::window_manager::content_fit_policy::tests::stale_physical_read_after_a_same_epoch_fit_cannot_invalidate_the_confirmed_card",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests",
+      "source_candidates": [
+        "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "apps/desktop/src-tauri/src/platform/owner_geometry.rs"
+      ]
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+      "function": "same_label_new_instance_rejects_old_completion_edge_and_close_event",
+      "test_name": "platform::window_manager::content_fit_policy::tests::same_label_new_instance_rejects_old_completion_edge_and_close_event",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests",
+      "source_candidates": [
+        "apps/desktop/src-tauri/src/platform/window_manager.rs",
+        "apps/desktop/src-tauri/src/platform/owner_geometry.rs"
+      ]
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/src-tauri/src/platform/word_card.rs",
+      "function": "queued_native_invalidation_does_not_wait_for_an_explicit_action_holding_the_card_lock",
+      "test_name": "platform::word_card::tests::queued_native_invalidation_does_not_wait_for_an_explicit_action_holding_the_card_lock",
+      "package": "luna-reader",
+      "target": "unittests src/main.rs",
+      "check_id": "product-native-ipc-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-SESSION-DRAIN",
+      "source": "crates/app-infra/src/hook_backend.rs",
+      "function": "owned_process_eof_and_native_relay_deliver_shutdown_text_and_control_before_barrier",
+      "test_name": "hook_backend::session_event_projection_tests::owned_process_eof_and_native_relay_deliver_shutdown_text_and_control_before_barrier",
+      "package": "app-infra",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-SESSION-DRAIN",
+      "source": "crates/hook-client/src/lib.rs",
+      "function": "natural_disconnect_only_requests_shutdown_for_the_current_full_target",
+      "test_name": "tests::natural_disconnect_only_requests_shutdown_for_the_current_full_target",
+      "package": "hook-client",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-hook-client-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-SESSION-DRAIN",
+      "source": "crates/app-infra/tests/application_runtime.rs",
+      "function": "natural_exit_consumer_keeps_tail_facts_and_acks_without_waiting_on_itself",
+      "test_name": "natural_exit_consumer_keeps_tail_facts_and_acks_without_waiting_on_itself",
+      "package": "app-infra",
+      "target": "tests/application_runtime.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-SESSION-DRAIN",
+      "source": "crates/app-infra/tests/application_runtime.rs",
+      "function": "natural_exit_terminal_write_failure_is_not_acknowledged_or_reauthorized",
+      "test_name": "natural_exit_terminal_write_failure_is_not_acknowledged_or_reauthorized",
+      "package": "app-infra",
+      "target": "tests/application_runtime.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-SESSION-DRAIN",
+      "source": "crates/app-infra/tests/application_runtime.rs",
+      "function": "late_old_lifecycle_and_session_barrier_never_stop_or_seal_the_new_session",
+      "test_name": "late_old_lifecycle_and_session_barrier_never_stop_or_seal_the_new_session",
+      "package": "app-infra",
+      "target": "tests/application_runtime.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-READING-VERSION",
+      "source": "crates/app-core/src/domain/capture.rs",
+      "function": "capture_limits_include_age_revision_refs_and_utf8_bytes",
+      "test_name": "domain::capture::aggregation_tests::capture_limits_include_age_revision_refs_and_utf8_bytes",
+      "package": "app-core",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-core-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-READING-VERSION",
+      "source": "crates/app-core/src/domain/capture.rs",
+      "function": "v3_quoted_snapshot_uses_result_bytes_and_preserves_ref_revision_and_age_caps",
+      "test_name": "domain::capture::aggregation_tests::v3_quoted_snapshot_uses_result_bytes_and_preserves_ref_revision_and_age_caps",
+      "package": "app-core",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-core-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-READING-VERSION",
+      "source": "crates/app-infra/tests/storage_product.rs",
+      "function": "capture_v3_rejects_missing_or_invalid_utf8_provenance_and_records_unknown_integrity",
+      "test_name": "capture_v3_rejects_missing_or_invalid_utf8_provenance_and_records_unknown_integrity",
+      "package": "app-infra",
+      "target": "tests/storage_product.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-READING-VERSION",
+      "source": "crates/app-infra/tests/application_runtime.rs",
+      "function": "committed_source_is_visible_before_model_completion_and_result_stays_with_old_sentence",
+      "test_name": "committed_source_is_visible_before_model_completion_and_result_stays_with_old_sentence",
+      "package": "app-infra",
+      "target": "tests/application_runtime.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-READING-VERSION",
+      "source": "crates/app-infra/tests/application_runtime.rs",
+      "function": "frozen_learning_object_survives_new_dialogue_and_preferences_changes",
+      "test_name": "frozen_learning_object_survives_new_dialogue_and_preferences_changes",
+      "package": "app-infra",
+      "target": "tests/application_runtime.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-WRITER-BOUNDARY",
+      "source": "crates/app-infra/src/storage/database_fault_tests.rs",
+      "function": "writer_queue_rejects_the_129th_pending_job_and_recovers_without_losing_accepted_jobs",
+      "test_name": "storage::database::fault_tests::writer_queue_rejects_the_129th_pending_job_and_recovers_without_losing_accepted_jobs",
+      "package": "app-infra",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-WRITER-BOUNDARY",
+      "source": "crates/app-infra/src/storage/database_fault_tests.rs",
+      "function": "process_kill_before_sqlite_actor_commit_rolls_back_all_related_rows_and_revision",
+      "test_name": "storage::database::fault_tests::process_kill_before_sqlite_actor_commit_rolls_back_all_related_rows_and_revision",
+      "package": "app-infra",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "rust",
+      "obligation_id": "SRF-WRITER-BOUNDARY",
+      "source": "crates/app-infra/src/storage/database_fault_tests.rs",
+      "function": "process_kill_after_actual_business_commit_keeps_unit_receipt_and_revision_together",
+      "test_name": "storage::database::fault_tests::process_kill_after_actual_business_commit_keeps_unit_receipt_and_revision_together",
+      "package": "app-infra",
+      "target": "unittests src/lib.rs",
+      "check_id": "product-infra-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-IDENTITY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-98-real-adapter-unresolved-target-first-frame-binds-once",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-IDENTITY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-99-real-component-unresolved-candidate-and-session-decode-first-frame",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-IDENTITY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-100-no-successful-frame-timeout-never-claims-an-expired-image",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-CONTEXT",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-87-late-old-session-binding-errors-and-frames-cannot-enter-new-session",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-CONTEXT",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-91-single-flight-pull-and-late-finally-do-not-delete-new-context",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-CONTEXT",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-97-natural-binding-metadata-and-frame-poll-overlap-preserves-context",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-92-subscription-transport-failure-is-not-authoritative-target-loss-or-live",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-93-paused-retained-frame-survives-metadata-errors-and-own-remount",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-94-permission-revocation-selection-expiry-and-target-loss-never-stay-live",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-96-real-component-navigation-and-old-cleanup-preserve-another-subscriber",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-FRAME-TRUTH",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-97-natural-binding-metadata-and-frame-poll-overlap-preserves-context",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-ISOLATION",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-89-real-adapter-same-context-two-subscribers-both-receive-later-frames",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-ISOLATION",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-90-unique-unsubscribe-is-idempotent-and-never-cancels-new-subscriber",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-ISOLATION",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-95-listener-exception-and-unresolved-consumer-do-not-own-producer",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-PV-ISOLATION",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-96-real-component-navigation-and-old-cleanup-preserve-another-subscriber",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-61-wordcard-content-updates-and-owner-resize-preserve-frozen-object",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-62-exact-native-closed-event-isolates-new-card",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-63-escape-and-owner-outside-pointer-close-without-blur-close",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-64-owner-scroll-closes-but-surface-and-unrelated-scroll-do-not",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-65-owner-unmount-and-late-open-close-exact-card",
+      "check_id": "product-reading-component-tests"
+    },
+    {
+      "kind": "component",
+      "obligation_id": "SRF-WORDCARD-GEOMETRY",
+      "source": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "case_id": "RBC-66-native-close-before-open-reply-and-frozen-new-card-isolation",
+      "check_id": "product-reading-component-tests"
+    }
+  ],
+  "runtime_check": "product-packaged-stability-tests",
+  "automatic_checks": [
+    "five-scenario-execution"
+  ],
+  "final_change_id": "verify-refactor-stability-rc",
+  "additional_final_change_ids": [
+    "verify-refactor-stability-r62",
+    "verify-refactor-stability-r63"
+  ]
+}

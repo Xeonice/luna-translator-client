@@ -1,0 +1,7 @@
+# SR-DESIGN-LOCK 登记已确认紧凑设计的现行源身份
+
+用户已授权执行整个既定重构计划，本片范围为：只将技术合同design_sources中5个旧SHA登记为已获用户确认且经独审冻结的当前同路径设计源；保留R56完整失败，不改任何产品实现或检查算法
+
+approved_stack、全部依赖manifests、其余15项design_sources、原design_review_adoption/native_increment_review、旧批准PNG/token/阈值、历史v4的306源与原SHA保持原样。新设计确认只用于当前设计源，不提升产品视觉/游戏验收。
+
+不混入剩余产品能力，旧视觉失败、正式包和四游戏实测独立记录。

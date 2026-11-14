@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "design-translation-service-selection",
+  "parent_baseline_sha256": "a9b8eb71ab09a282bfd826c3306796d181e596c5517185d85fa31fb160fb46b7",
+  "exact_delta_sha256": "5df295cb5965285d142236da056d7fe25e9f8c062a8b301a61a3112a706058b4",
+  "documentation_review": {
+    "path": ".build/translation-service-selection-20261030/review/docs-review.json",
+    "bytes": 3671,
+    "sha256": "cba961179fba804a37fedaeb299417c2daa569fb13fcabaecf1cc7d9daa1ad48"
+  },
+  "code_review": {
+    "path": ".build/translation-service-selection-20261030/review/tooling-review.json",
+    "bytes": 5033,
+    "sha256": "e054d41ac45c856a973461ba466871f392d9a7758bf0db03fdb011b329786c37"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

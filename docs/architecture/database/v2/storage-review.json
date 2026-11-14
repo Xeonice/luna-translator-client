@@ -1,0 +1,101 @@
+{
+  "kind": "independent_schema_two_storage_implementation_review",
+  "scope": "same 22 storage obligations and old 431 fields plus exact 29 fields and schema2 migration; no release approval",
+  "schema_contract": "docs/architecture/database/v2/schema-contract.json",
+  "schema_contract_sha256": "eb3b0e78869119f98eac6d08954f5b91f1131a3edf2af85fcd16af85d6154713",
+  "reviewed_design_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+  "prior_registry_sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+  "production_migration_source": "crates/app-infra/src/storage/database.rs",
+  "production_migration_source_sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848",
+  "old_field_count": 431,
+  "new_field_count": 29,
+  "status": "independent_qa_reviewed",
+  "cr_integrity_review": {
+    "author": "session_backend_batch",
+    "reviewer": "reading_storage_qa",
+    "scope": "producer FIFO drain and durable unknown marker, no schema or dependency change",
+    "source_plan": ".build/next-batch-20261020/backend/closure-integrity-fix-plan.md",
+    "source_plan_sha256": "052ad2a842cafd8c6f6a8b4ceef469fce2d93a6162e18724cec1dfaea6e893ea",
+    "actual_fault_tests": "crates/app-infra/src/storage/closure_integrity_tests.rs",
+    "actual_fault_tests_sha256": "3bd3e088162cc662123a1009d246cc26bba6b0ec9984d909230c9120e8d48faa",
+    "prior_frozen_source_hashes": [
+      "cc8faac2dd6970c37910a5d3ed5f1b428037b34c18a17577e2bd2b9bf19cc396",
+      "cc8faac2dd6970c37910a5d3ed5f1b428037b34c18a17577e2bd2b9bf19cc396"
+    ],
+    "design_delta_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+    "product_delta_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+    "reason": "CR-IMPL-01/02 independently scoped repair persists storage_unconfirmed before full-range query/export/clean close; final source reviewed after the real failed-shutdown regression was fixed without changing its assertion",
+    "product_tests_status": "final_same_source_adapter_not_run"
+  },
+  "scope_preferences_review": {
+    "reviewer": "reading_storage_qa",
+    "approved_contract": "openspec/changes/implement-reviewed-reading-session-batch/scope-and-activation-review.md",
+    "scope": "ScopedPreferences query + inheritedDraft + SaveScopedPreferences head CAS; no DDL or old guarantee change",
+    "sources": {
+      "crates/app-infra/src/storage/database.rs": "910fee50daf05d14a50caa31dffc8ce8c45699c529a3e1fbf213272822ff0b25",
+      "crates/app-infra/src/storage/queries/mod.rs": "597c7a19343d91b6bc29f3d2057aeabeaab8fb232a4c2dcb0539950b9b7c3468",
+      "crates/app-core/src/contracts/scoped_preferences.rs": "68ee9a5ff9896daf4ed3b461a59e9a8aed49e20f65a9fa0490ced300dadf6547",
+      "crates/app-infra/tests/scoped_preferences.rs": "3f5a5ea68c846c05636e9f3b957d1031f10095395f1cb31f2134cd98001f028e",
+      "crates/app-infra/tests/storage_product_acceptance_v2.rs": "850b240a2b074b773554df605c3dc6fd97ae4b2f8ce89e15ff66862253854e57"
+    },
+    "independent_mechanisms_reviewed": [
+      "Explicit validated requested global/game scope queries saved/head from SQLite; does not rename active effective preferences",
+      "Effective uses existing global/preferences_for_scope/merge; inheritedDraft clones global, replaces requested scope and clears entire mask; original saved revision retained",
+      "Immediate single-writer transaction replays operation identity before CAS; only new command compares scoped head rather than unrelated whole-profile revision",
+      "None expected head means truly absent; conflicts rollback; old SavePreferences branch and immutable version insertion remain compatible",
+      "Five real SQLite tests retain all original assertions; QA adds only post-assertion nonce-bound evidence and a v2-only unfiltered aggregate target"
+    ],
+    "preserved": {
+      "original_registry_sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+      "001_profile_sha256": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5",
+      "001_config_sha256": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293",
+      "002_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+    },
+    "focal_execution_evidence": ".build/next-batch-20261020/storage-qa/scope-preferences-review/focal-execution.json",
+    "final_same_package_full_adapter_status": "not_run",
+    "activation_review": "Root/backend-owned; separate ongoing proof-guard review, not accepted by this storage review",
+    "historical_review_note": "The sources and focal receipt identify the prior scope-only review; current production source is independently re-reviewed by unbind_transaction_review and the top-level pinned source."
+  },
+  "unbind_transaction_review": {
+    "reviewer": "reading_storage_qa",
+    "finding": "CR-SCOPE-04",
+    "approved_contract": "openspec/changes/implement-reviewed-reading-session-batch/scope-and-activation-review.md",
+    "author_handoff_sha256": "32622323f50a03a24b67728ae92c9de593612091429a560978073c03bf25487e",
+    "sources": {
+      "crates/app-core/src/contracts/game_window.rs": "ec481bdb4ff1ab68824390cea148bf1940cb86332a9515bf8a83338e2c62b6d4",
+      "crates/app-core/src/contracts/mod.rs": "89eb3fbff3e6675ff5ad2cfa656bf7289ca7abda194f5a1191b25fa1ae948853",
+      "crates/app-core/src/application/runtime.rs": "bdd5fb72fba3a4acce54a4d2b61d817d94afd2f7d5fa495cd5c7c33e363875e6",
+      "crates/app-core/src/ports/mod.rs": "10225333eb996342efaf4eabafb158d40ae0b1c47fa34b914fd7bb56e64c51df",
+      "crates/app-core/src/ports/runtime.rs": "6d3e881f6a3ef6bc9dcdab0d121952f2e4747cfcabb47a5205cfd7de27ae31b3",
+      "crates/app-infra/src/storage/database.rs": "aba58b066eccf57644aa04a19f97e2d3af37858a6b374db532c0b26dbf2b3540",
+      "crates/app-infra/src/storage/queries/mod.rs": "5002a5ec20f5d32182036a2453c2980990a18b4a39ed02ffc240466797e41faf",
+      "crates/app-infra/src/storage/queries/session_records.rs": "96f5dd0e454b35b83ba9a02ea70bf7ea3cd672a68756aeb9388e59c844a65689",
+      "crates/app-infra/src/hook_backend.rs": "ec1c3532ccbe99ba64c218fcbe15b3525e627b893c018cf00993bf7aa9f011b4",
+      "crates/hook-client/src/window_binding.rs": "ae7b4d7ccc22de78b5a7705898e01d671ebd4e018bb455b2c9215f6f3ed439ae",
+      "crates/app-infra/tests/application_runtime.rs": "46d9614df4469e7c0a948f5d13ad58b8d9c53c3be814f25730c5845babcdd476",
+      "crates/app-infra/tests/session_export_delivery.rs": "84c8e25d4bea66df287d6909e37dbe79f6ed2c0b7282fe67f71cc89312fcae4c",
+      "crates/app-infra/tests/storage_credential_crash.rs": "d2a0a063ae74963b52817f30d90e041f165d7a422cc0526b6d52ee70a93465f6"
+    },
+    "reviewed_mechanisms": [
+      "Typed request freezes expected session and full window identity; ordinary SQL dispatch explicitly rejects unbind without native effect",
+      "Runtime capture lock is shared with association; Core lease encloses read-only operation replay, complete identity check, reversible local effect and SQL-only durable callback",
+      "Preflight performs SELECT-only validation; replay precedes current identity so an old successful operation never clears a later binding",
+      "Client session/binding locks and preview guard retain exact snapshots for Result failure compensation without rolling cancellation epochs backward; callbacks do not reenter native/Client/AppKit",
+      "Dedicated immediate SQL commit rechecks operation identity/session, writes expected-session Hook journal and receipt atomically, returns full window identity, and ignores unrelated raw-text commit revisions",
+      "Same-current-window unbind does not require an active Hook session: stopped/failed Hook sessions can retain actual window association; current identity remains lease-authoritative",
+      "The three unchanged-behavior real Runtime+SQLite tests append same-nonce semantic assertion records only after all prior assertions; actual native/Core/Client faults remain separately tested by backend"
+    ],
+    "required_semantic_assertions": {
+      "schema-two-unbind-serialization-replay": "V2-UNBIND-SERIALIZATION",
+      "schema-two-unbind-stale-identity": "V2-UNBIND-IDENTITY",
+      "schema-two-unbind-commit-compensation": "V2-UNBIND-COMPENSATION"
+    },
+    "fixture_preservation": ".build/next-batch-20261020/storage-qa/unbind-transaction-review/source-preservation.json",
+    "focal_execution_evidence": ".build/next-batch-20261020/storage-qa/unbind-transaction-review/focal-execution.json",
+    "ddl_changed": false,
+    "old_22_obligations_and_431_fields_preserved": true,
+    "new_fields_remain": 29,
+    "final_same_package_full_adapter_status": "not_run",
+    "native_games_executed_by_qa": false
+  }
+}

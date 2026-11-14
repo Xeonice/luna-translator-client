@@ -1,0 +1,13 @@
+{
+  "kind": "R37_baseline_candidate_review",
+  "status": "independent_sources_reviewed_candidate_only_awaiting_Root_exact_authority_review",
+  "parent_baseline_sha256": "782776a30b7f940a9c5a9d8479cfdb3e60010229db7df81fc92c5b923416b43e",
+  "exact_delta_record": {
+    "path": "openspec/changes/repair-ansi-window-preview/exact-delta-review-r37.json",
+    "sha256": "1b1c568635c5b7799644d66c45c27c9fa3139b734c2a851370371f223db4ce93"
+  },
+  "root_adoption": "not_performed",
+  "runtime_visual_release_promoted": false,
+  "R36_original_archived_exact": true,
+  "snapshot_rewritten": false
+}

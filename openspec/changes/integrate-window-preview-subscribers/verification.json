@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "id": "integrate-window-preview-subscribers",
+  "kind": "product",
+  "status": "proposed",
+  "allowed_paths": [
+    "openspec/changes/integrate-window-preview-subscribers/**",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview.rs",
+    "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+    "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "crates/app-infra/src/hook_backend.rs",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/features/capture/CaptureSheet.tsx",
+    "apps/desktop/src/features/capture/WindowPreview.tsx",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/support/ReviewedReadingProbe.tsx",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "scripts/quality/reading_components.py",
+    "scripts/quality/test_reading_components.py",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261024-R40.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/baselines/FP1-20261024-R41.json",
+    "docs/development/baselines/FP1-20261024-R42.json",
+    "docs/development/baselines/FP1-20261024-R43.json",
+    "docs/development/baselines/FP1-20261024-R44.json"
+  ],
+  "source_snapshot": "openspec/changes/integrate-window-preview-subscribers/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "requirements": [
+    {
+      "id": "FP-12",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "independent-producer-survives-ui-and-hook-consumers",
+      "source_requirement_ids": [
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-12",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "exact-listener-cancellation-and-context-isolation",
+      "source_requirement_ids": [
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "unified-window-selection-transfer-and-retry",
+      "source_requirement_ids": [
+        "FP-03"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-03",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "signed-real-frames-precede-product-acceptance",
+      "source_requirement_ids": [
+        "FP-03"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "transient-read-preserves-binding-without-false-live",
+      "source_requirement_ids": [
+        "FP-04"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "unresolved-target-establishes-on-first-validated-frame",
+      "source_requirement_ids": [
+        "FP-04"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "failed-first-frame-exposes-bounded-stage-evidence",
+      "source_requirement_ids": [
+        "FP-04"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    },
+    {
+      "id": "FP-04",
+      "spec": "specs/window-preview/spec.md",
+      "scenario": "selected-window-recovers-after-transient-wake-capture",
+      "source_requirement_ids": [
+        "FP-04"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/ansi-preview-recovery.html#native-pairing"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-target-probe-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests"
+      ]
+    }
+  ]
+}

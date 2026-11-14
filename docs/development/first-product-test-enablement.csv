@@ -1,0 +1,13 @@
+task_id,gate,owners,depends_on,title,case_refs,deliverable,acceptance,status
+TE-01,B0,QA;UI;JA;PL,,冻结测试前置与政策,TP-31,完整设计评审范围、资源hash/许可/中文覆盖语料、支持OS/设备/渠道、性能与语言质量政策签定；未知项保持blocked,静态计划检查不能代替实际批准；审批对象版本可核对,planned
+TE-02,B1,AP;HK,TE-01,领域/协议受控测试设施,TP-27;CR-04-SEGMENT;CR-04-UNICODE,受控时钟、事件生成/重放、进程协议fragment/overflow故障工具,身份/分段/合法重复/取消/乱序边界断言实际执行；不为测试硬编码,planned
+TE-03,B1,HK;PL,TE-02,真实Rust双架构新Core harness,CR-02-ABI32;CR-02-ABI64;CR-02-MANAGED,受控x86/x64 Windows目标、对应Rust PE和ABI1七回调、资源manifest,两目标实际callback/字段宽度/复制寿命证据；旧GUI/C++探针不替代,planned
+TE-04,B2,AP;PL,TE-01,真实持久化与多窗编排设施,TP-01;TP-02;TP-03;TP-06;TP-07;TP-08;TP-09;TP-25,隔离SQLite/WAL、跨进程租约、提交故障点、snapshot barrier、revision冲突,真实DB/锁/崩溃恢复与应用权威投影断言，不是全mock,planned
+TE-05,B2,UI;PL,TE-01;TE-02,产品组件截图与原生窗口设施,CR-10-VISUAL;CR-10-NATIVE;TP-28,实际组件Playwright入口、批准基准/状态/mask、原生窗口操作与可访问核对,注册真实capture adapter；比较候选/基准/diff，原生材质/焦点另验,planned
+TE-06,B3,AI;AP;PL,TE-01;TE-04,配置秘密与可控HTTP故障设施,TP-04;TP-05;TP-10;TP-11;TP-13;TP-14;TP-15;TP-16,隔离Keychain命名空间、协议server、受控分片/timeout/cancel barriers,三态/语义hash/实际body/撤销与持久化竞争按真实I/O验证,planned
+TE-07,B3,AI;QA,TE-06,真实服务与模型配置用户验收,MC-01..22;CR-05-LIVE;CR-13-PROVIDERS,四服务变体授权凭据、实际模型/用途能力及脱敏回执,传统/两LLM协议/本机分别完成；草稿测试应用启用分离，不为Azure授AI能力,planned
+TE-08,B4,JA;PL,TE-01;TE-04,真实内置语言资源与worker设施,CR-12-RESOURCE;TP-12;TP-17;TP-18;TP-19;TP-26,包内MeCab/UniDic/中文辞书、span语料、worker损坏/挂起/kill工具,离线首启真分词与中文释义；span可逆，真实worker终止并有限恢复,planned
+TE-09,B4,AI;JA;UI,TE-07;TE-08;TE-05,按需学习与人工内容质量复核,CR-13-GRAMMAR;CR-13-EXPLAIN-UI;TP-20;TP-22,固定旧句/未配置往返/结构化降级场景与批准语言审阅语料,请求/对象/上下文可追溯，结构正确与人工内容质量分别结论,planned
+TE-10,B5,QA;PL,TE-03;TE-04;TE-05;TE-07;TE-08;TE-09,正式RC与真实执行/发布证据接入,TP-21;TP-23;TP-24;TP-30,最终签名分发RC、实际bundle清单、case@variant运行回执、expanded release adapter,现有97平面证据接口升级到冻结153组合；同RC、实际运行、设计/政策批准与证据共同检查；不靠hash放行,planned
+TE-11,B5,QA;HK;AI;JA,TE-10,四游戏逐款端到端回归,CR-03-*;CR-05-*;CR-13-FINAL-*;CR-07-SOAK,SR/MO/Never7/サクラノ詩逐款运行现场与配对证据,每款至少5状态、N7至少3页及预选连续样本；SR中文，登录阻塞不跳过，不测Ever17,planned
+TE-12,B5,QA;PL;JA;AI,TE-10;TE-11,稳定性、分发恢复与最终发布评审,CR-07-BACKPRESSURE;TP-19;TP-20;TP-29;TP-30,十分钟压力、指标统计、内容复核、干净安装、受支持升级/回退和缺陷复验,所有必需组合passed，无发布阻断缺陷，所有批准齐全；任一not_run/blocked/failed不放行,planned

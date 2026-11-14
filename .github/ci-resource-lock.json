@@ -1,0 +1,20 @@
+{
+  "files": {
+    "resources/language/dictionary.sqlite3": {
+      "sha256": "a8aecc9c303ba7c61f4f2e50fa5863b9fd61b3f3f81dd5d2e7c9cb94dbfef0e7",
+      "size": 809832448
+    },
+    "resources/language/unidic/matrix.bin": {
+      "sha256": "89d66ff216f5f9a00764cff2ec3e31818ac06c2f80c72050feb15d8fcf84a623",
+      "size": 1029505504
+    },
+    "resources/language/unidic/sys.dic": {
+      "sha256": "9a512d20024f2fdcffe9922948f020c710e78083c163e7c6be48c2a2a401153a",
+      "size": 283854185
+    }
+  },
+  "kind": "pinned-ci-language-transport/v1",
+  "sha256": "62ab2cbd4a85ee17d358d977d14f3bff5e05eef5d8c61169538eef815c24f8b6",
+  "size": 998231907,
+  "url": "https://github.com/Xeonice/luna-translator-client/releases/download/ci-dependencies-20261115/language-resources.zip"
+}

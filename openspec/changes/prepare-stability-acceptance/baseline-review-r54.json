@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "prepare-stability-acceptance",
+  "parent_baseline_sha256": "48205f4249ed5d8e6e366c8de86d47747f021908dc16ecdd932e3505d4ab6cae",
+  "exact_delta_sha256": "037f8f17c2246609d9fa0ad19dd90cbd88d09fc61afae9f369aef89ad9ee4704",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/acceptance-preparation/independent-integration-code-review.json",
+    "sha256": "ffd6e0633d419c611fdf7d2b6e0f97dfe40c24c1f48bd01e163188a9d850b317",
+    "bytes": 22327
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

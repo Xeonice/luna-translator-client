@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "align-compact-preview-design-lock",
+  "parent_baseline_sha256": "e814bcfe6822150d0729d28ac7c41a5d7456661fe2018f36d4855a36dad2dd46",
+  "source_delta": [
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "936ea3fac02a268d808c59e81ef309c573f936489a286f203f19d14f2760ef33",
+      "after": "abb352b665a16eb4223425ed8f8d6c55b42316b8302ccd735ec84cc3d8353722"
+    },
+    {
+      "path": "docs/architecture/runtime-lifecycle-refactor.md",
+      "before": "1fc6adb55ff117b4ff1fe085e2d3b37109aae8e0574803ca1c16303ae7db8e85",
+      "after": "fc06320a61c330dfbfa740c09d7c7e185e3a2bf774f1b82a527b6b43a18fa1a2"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261027-R56.json",
+      "before": null,
+      "after": "5755cce7ed3defab1986d718b5b6802cf62426d04e9e5ad58e17923bfbbce9a9"
+    },
+    {
+      "path": "docs/development/current-phase.json",
+      "before": "031a3d5f4f9244d9aa88091b66165572edc09df1961949f14c6f4e93cb96a86f",
+      "after": "38a43ec266399e694f337988610bb2cd2c4b4552c311925dd089c0359926b6b9"
+    },
+    {
+      "path": "docs/development/iteration-baseline.json",
+      "before": "5755cce7ed3defab1986d718b5b6802cf62426d04e9e5ad58e17923bfbbce9a9",
+      "after": "e814bcfe6822150d0729d28ac7c41a5d7456661fe2018f36d4855a36dad2dd46"
+    },
+    {
+      "path": "docs/development/stability-refactor-progress.json",
+      "before": "ac148c3b4e5e68270b924b47d4230c4740f8b5c902186c27b71e214f92582863",
+      "after": "56fc2e0630ef05c0c14ae20bb7e4602fa14f356dcd2469968b19fb07ebae8524"
+    },
+    {
+      "path": "docs/development/stability-refactor-progress.md",
+      "before": "21f24612c059148a13f083b2e80dd43d27db0a350fb4eb268526cb47f80880c3",
+      "after": "c2b98beed29fb5fa962cb2068cbdae7c70ece81cf6d6b65ba2395ac2456a6875"
+    },
+    {
+      "path": "openspec/active-change.json",
+      "before": "d4f978e7905980664eadb29b3ff4211d57d79cf42468210070098776a9453f82",
+      "after": "1e780ad609829227898b54ef797ce6860935df5a333789a818a3e65fa40d4583"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/baseline-review-r57.json",
+      "before": null,
+      "after": "4783020e18ca8b31705477aef83a183de1931bb9345446197b770e7bc099c0ab"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/design.md",
+      "before": null,
+      "after": "6ab9a4a7eb1486e1a9966494c0d383c82cbe709cbd1f33ced894e7d812518c9d"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/exact-delta-review-r57.json",
+      "before": null,
+      "after": "c0b6ddc9cf50fe7e562a67deacb1a82780a00cd6f62aede5df8183a3f11200bd"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/iteration-card.md",
+      "before": null,
+      "after": "7e1a2b68cdc260895d24f7b8ec80ed738555fd337065b9178298319d074785b9"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/proposal.md",
+      "before": null,
+      "after": "c4803822708e103beca4625fada752eb6817c7c171aad9489b8cddaf77469eaf"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/source-snapshot.json",
+      "before": null,
+      "after": "f91d533d93a550d73da1c23a8fde02f1f85403b0e7426a0059eb07fec451a89c"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/specs/approved-design-source-lock/spec.md",
+      "before": null,
+      "after": "3f93f452b01f9ccd8e1f3b60f9e4b796bb4001678237a0471602de0d43495415"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/tasks.md",
+      "before": null,
+      "after": "dd2a125e61013c61b2f09dacd1b2ba6f1b561d83350792b7a7e8ad0e46e2d496"
+    },
+    {
+      "path": "openspec/changes/align-compact-preview-design-lock/verification.json",
+      "before": null,
+      "after": "7c5a04b8021fd1a36015115093e1ce0b19e61bad3151c04405b686cbcb95106b"
+    },
+    {
+      "path": "openspec/technology-lock.json",
+      "before": "5d6494c09dfbf3fe39f2fb4aad47f56b4ea5eeeae31e056be06e1f7d1a030c3a",
+      "after": "dae67de6f8dd0b88e543524a78963ccfa97a1050e9cb8156ce56dd771dde2e46"
+    }
+  ],
+  "product_delta": [],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/compact-design-lock-alignment/spec-format-fix/independent-code-review.json",
+    "sha256": "dcdfbd5a22c03d66d8781a620b919e3d47cbdd6b1eb5ce856c91debc5a234651",
+    "bytes": 8707
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "specify-full-provider-registry-design",
+  "kind": "tooling",
+  "status": "documentation_candidate_pending_review_and_actual_unified_checks",
+  "allowed_paths": [
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/product/model-configuration-prd.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/database-design.md",
+    "docs/product/README.md",
+    "docs/development/engineering-gates.md",
+    "docs/architecture/model-service-registry-design.json",
+    "scripts/report/build_model_service_design_report.py",
+    "scripts/quality/test_model_service_design_docs.py",
+    "scripts/quality/verify.py",
+    "openspec/changes/specify-full-provider-registry-design/**",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261029-R68.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/development/baselines/FP1-20261029-R69.json"
+  ],
+  "source_snapshot": "openspec/changes/specify-full-provider-registry-design/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "MSD-001",
+      "spec": "specs/model-service-design/spec.md",
+      "scenario": "explicit-full-protocol-scope",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests"
+      ]
+    },
+    {
+      "id": "MSD-002",
+      "spec": "specs/model-service-design/spec.md",
+      "scenario": "versioned-extension-and-auth-boundaries",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests"
+      ]
+    },
+    {
+      "id": "MSD-003",
+      "spec": "specs/model-service-design/spec.md",
+      "scenario": "same-source-html-and-drift-rejection",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "model-service-design-docs",
+        "model-service-design-docs-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "parent_baseline_id": "FP1-20261029-R68",
+  "parent_baseline_sha256": "9144294e684e8c6db2944d1ed492f0fbefcac7097d7006ca8370fe3bf79eb3c4",
+  "product_acceptance_status": "not_run",
+  "scope_note": "Documentation only. New field/DDL and UI states remain separately reviewable candidates. Existing active product work item, runtime package and historical results preserved."
+}

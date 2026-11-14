@@ -1,0 +1,12 @@
+{
+  "source": "Approved reading DOM with independent native-content adapter, first C16 token border box",
+  "sourceFile": "reading-hud.design-source.html",
+  "anchor": {
+    "x": 20,
+    "y": 43,
+    "width": 38,
+    "height": 39.59375
+  },
+  "oldStaticAnchor": 19,
+  "reason": "Reviewed token margin-left1 now participates in the real source-token boundary; no product position or pixel consulted."
+}

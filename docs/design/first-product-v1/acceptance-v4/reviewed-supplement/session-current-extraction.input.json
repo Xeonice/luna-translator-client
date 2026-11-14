@@ -1,0 +1,105 @@
+{
+  "dataset": "extraction",
+  "query": {
+    "sessionId": "sakura-session-1",
+    "dataset": "extraction",
+    "order": "newest_first",
+    "filter": {
+      "search": null,
+      "sourceId": null,
+      "level": null,
+      "stage": null
+    },
+    "cursor": null,
+    "pageSize": 50
+  },
+  "page": {
+    "records": [
+      {
+        "kind": "extraction",
+        "sequence": "1",
+        "eventId": "sakura-session-1:raw:1",
+        "sourceId": "sakura-body",
+        "wireSequence": "1",
+        "text": "その風景には、悲しさも、痛みも、なかった。",
+        "observedAtMs": 1792319048000,
+        "reason": "正文",
+        "bodyRefs": [
+          {
+            "unitId": "sakura-session-1:event:0",
+            "textRevision": 1
+          }
+        ],
+        "payloadRetained": true
+      },
+      {
+        "kind": "extraction",
+        "sequence": "2",
+        "eventId": "sakura-session-1:raw:2",
+        "sourceId": "sakura-secondary",
+        "wireSequence": "2",
+        "text": "セーブ　ロード　設定",
+        "observedAtMs": 1792319048000,
+        "reason": "未选中来源",
+        "bodyRefs": [],
+        "payloadRetained": true
+      }
+    ],
+    "nextCursor": null,
+    "snapshot": {
+      "snapshotId": "design-extraction-snapshot",
+      "refreshCursor": "opaque-design-refresh-extraction",
+      "highWatermark": "2",
+      "firstAvailable": "1",
+      "lastReceived": "2",
+      "lastPersisted": "2",
+      "retainedFrom": "1",
+      "matchingCount": "2",
+      "newerCount": "0",
+      "databaseRevision": "12"
+    },
+    "loadedRange": {
+      "first": "1",
+      "last": "2"
+    },
+    "completeness": {
+      "status": "complete_received_range",
+      "scope": "received_range_only",
+      "knownLoss": false,
+      "unknownRange": false,
+      "cleanedPayloadCount": "0",
+      "notes": []
+    }
+  },
+  "sources": [
+    {
+      "sourceId": "sakura-body",
+      "label": "Artemis",
+      "hook": "Artemis",
+      "address": "5370399856",
+      "context": "0",
+      "context2": "0",
+      "selected": true
+    },
+    {
+      "sourceId": "sakura-secondary",
+      "label": "Artemis",
+      "hook": "Artemis",
+      "address": "5370399888",
+      "context": "1",
+      "context2": "0",
+      "selected": false
+    }
+  ],
+  "stages": [
+    "目标核对",
+    "资源检查",
+    "Hook 注入",
+    "回调握手",
+    "发现文本流",
+    "文本回调",
+    "文本来源"
+  ],
+  "follow": true,
+  "loadError": false
+}

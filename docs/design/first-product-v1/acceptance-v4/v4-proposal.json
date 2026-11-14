@@ -1,0 +1,3636 @@
+{
+  "schemaVersion": 4,
+  "status": "proposal_pending_independent_review",
+  "notProductAcceptance": true,
+  "notRegisteredReference": true,
+  "productSourceImported": false,
+  "productCandidateImageImported": false,
+  "originalApprovedImagesOverwritten": false,
+  "zeroDifferencePolicyUnchanged": true,
+  "pixelmatch": {
+    "threshold": 0.1,
+    "includeAA": true,
+    "maxRatio": 0
+  },
+  "reviewedSourceIdentities": {
+    "docs/design/first-product-v1/app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "docs/design/first-product-v1/controls.css": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+    "docs/design/first-product-v1/controls.js": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17",
+    "docs/design/first-product-v1/data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "docs/design/first-product-v1/game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "docs/design/first-product-v1/game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "docs/design/first-product-v1/icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "docs/design/first-product-v1/index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "docs/design/first-product-v1/learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "docs/design/first-product-v1/learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "docs/design/first-product-v1/material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "docs/design/first-product-v1/review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f",
+    "docs/design/first-product-v1/review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "docs/design/first-product-v1/settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "docs/design/first-product-v1/settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "docs/design/first-product-v1/styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+  },
+  "previousIndependentAdapterLineage": {
+    "docs/design/first-product-v1/acceptance-v3/render.mjs": "3701598979c1f27aa6878bf087ffb780eab669ac812a808fcae0ddce6a2fa5d0",
+    "docs/design/first-product-v1/acceptance-v3/native-content.css": "a8768daccfef7ef10816e32c780960003ab210e88617cec8ec649b511cbf7df1",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/index.html": "d565316d9c87770e274f9578c9b343a27c4268b355d57b0b7cd8ac9b4a978f22",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.css": "3bb0b325a6dad5834c9ad73fa2d0a9c6394eb69796f355592bcec9d4155f592b",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/supplement.js": "b333b709777c5515a8e2bdab7667bf26ffcdabe2a24e1dafe78561a4ac85a5b7",
+    "docs/design/first-product-v1/acceptance-v3/hand-authored/capture.mjs": "db9bbf4fa647056b1d3891e8bc430d87866c4c1b4da28071eb50fd423e8da8f8"
+  },
+  "sourceAdaptations": [
+    {
+      "id": "latest-reviewed-sources",
+      "basis": "User-approved exact16 source identities checked before generation; copied separately to design-origin."
+    },
+    {
+      "id": "natural-hud-height",
+      "basis": "Comfortable HUD height is Math.ceil of the approved live-design natural bounds, including26px header/source/translation/footer, never derived from actual React.200% uses the frozen366pt platform work-area cap with complete scroll variants."
+    },
+    {
+      "id": "authored-select-sync",
+      "basis": "Review now requires shared custom Select. Independent DOM options retain values and are upgraded by approved controls.js before serialization; no product component imported."
+    },
+    {
+      "id": "supplemental-hud-common-actions",
+      "basis": "Root approved source-DOM initialization: old independently authored word-card data retained. Surrounding HUD header/footer are extracted only from approved reading scene after renderHUD with default segmentation/ruby/POS/pin true. Earlier raw index HTML omitted these state attributes. No product style/class/color or pixels used; requiredConditions fix each displayed preference."
+    },
+    {
+      "id": "authored-history-label-flow",
+      "basis": "Root independently compared v3/history-earlier.top.png and source render.mjs64 authored label>select; styles.css native select width100%/displayblock originally kept each labelled field in its own row. controls upgrade inserted an inline span inside each label and bypassed the direct-child controls.css21 selector. Native adapter only restores label:block and descendant wrapper width100%; no original source or PNG edited."
+    },
+    {
+      "id": "supplemental-hud-source-runtime",
+      "basis": "Root approved same-unit surrounding HUD source initialization via approved app.render/renderHUD/Learning.sourceHTML: dictionary current source箸 with independent existing dictionary fixture readingはし/名词/筷子; wordcard source新しい原文 with no tokens retains the original independent hand plain1.85 flow: approved renderHUD fallback lp-ruby styling would otherwise add unsupported annotation height. No lexical error or rt is manufactured.72% hand HUD input/card geometries/definitions preserved. No product position/style/PNG consulted; exact input/rendered DOM recorded separately."
+    },
+    {
+      "id": "compact-approved-font-specificity",
+      "basis": "Root independently confirmed approved styles.css compact source16/translation22. The old native-content adapter unconditional #hud-source18/#hud-translation24 had greater specificity; restore only compact16/22 in the independent adapter, without consulting actual pixels or changing approved source."
+    },
+    {
+      "id": "target-preview-contract-identity",
+      "basis": "Root approved projection of the existing registered target-contract-data candidateId design-sample-sakura-window/PID384 into newly added C35 preview metadata. This corrects contradictory offline replay identity without removing any user field or altering original source/v3/PNG."
+    },
+    {
+      "id": "native-content-viewport",
+      "basis": "Prior independently reviewed native client boundary adapter retained. OS traffic lights unpainted; client header/frame/user fields retained. Real compositor/window positions remain separately required."
+    }
+  ],
+  "reviewedFullStateIds": [
+    "session-current-body",
+    "session-current-extraction",
+    "session-current-hook-events",
+    "library-populated",
+    "target-review-preview-off",
+    "target-review-preview-live",
+    "settings-shortcuts-active",
+    "settings-shortcuts-conflict"
+  ],
+  "reviewedFullStates": [
+    {
+      "id": "session-current-body",
+      "kind": "full-window",
+      "windowRole": "main",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "tab": "reading",
+        "follow": true,
+        "supplement": {
+          "dataset": "body",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "body",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "body",
+                "sequence": "1",
+                "unit": {
+                  "sourceSummary": {
+                    "sessionId": "sakura-session-1",
+                    "gameId": "sakura",
+                    "sourceKind": "hook",
+                    "state": "active",
+                    "startedAtMs": 1792319048000,
+                    "endedAtMs": null
+                  },
+                  "unitId": "sakura-session-1:event:0",
+                  "sessionId": "sakura-session-1",
+                  "gameId": "sakura",
+                  "textRevision": 1,
+                  "sourceText": "その風景には、悲しさも、痛みも、なかった。",
+                  "sourceHash": "f7d2690f72c8a38a5aaa370a1f43deac68f4c52de359ec8fd431da41dc9895e5",
+                  "sourceLanguage": "ja",
+                  "createdAtMs": 1792319048000,
+                  "translations": [
+                    {
+                      "translationId": "design-translation-1",
+                      "taskId": "design-task-1",
+                      "text": "那片景色中，没有悲伤，也没有痛楚。",
+                      "providerLabel": "Microsoft · 日中翻译",
+                      "targetLanguage": "zh-CN",
+                      "correction": null
+                    }
+                  ],
+                  "tokens": []
+                },
+                "sourceRefs": [
+                  {
+                    "eventId": "sakura-session-1:raw:1",
+                    "byteStart": 0,
+                    "byteEnd": 63
+                  }
+                ]
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-body-snapshot",
+              "refreshCursor": "opaque-design-refresh-body",
+              "highWatermark": "1",
+              "firstAvailable": "1",
+              "lastReceived": "1",
+              "lastPersisted": "1",
+              "retainedFrom": "1",
+              "matchingCount": "1",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "1"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        },
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "sourceFile": "session-current-body.design.html",
+      "sourceSha256": "2f03038b2da297a71f0c515c10449e7b341b3c4b9a2d22a37c3c7c06fa9ab86c",
+      "inputFile": "session-current-body.input.json",
+      "inputSha256": "24cd52b2dc01a533d011c6c7fbb8f1e4500d2e05deb722bf0d768f384b9c4143",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "session-current-body.top.png",
+          "variant": "top",
+          "sessionFollow": true,
+          "sha256": "5be5c2d8cb1d8dbb74af4b726a2c9e02fa914da5fb3554a9a38ea2c1901de685",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 1436
+            },
+            {
+              "className": "rw-records",
+              "top": 0,
+              "clientHeight": 145,
+              "scrollHeight": 145
+            }
+          ]
+        },
+        {
+          "file": "session-current-body.region0-page1.png",
+          "variant": "region0-page1",
+          "sessionFollow": true,
+          "sha256": "fdea5f54e2dffd9eed347c1150484a47faefa422ab329be561f400f5b4f7e3fd",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 650,
+              "clientHeight": 674,
+              "scrollHeight": 1436
+            },
+            {
+              "className": "rw-records",
+              "top": 0,
+              "clientHeight": 145,
+              "scrollHeight": 145
+            }
+          ]
+        },
+        {
+          "file": "session-current-body.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": true,
+          "sha256": "7802ea1fde00fd13046132f7ccfb28225f64df5c326d2c7cd91e681c58a43e9f",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 762,
+              "clientHeight": 674,
+              "scrollHeight": 1436
+            },
+            {
+              "className": "rw-records",
+              "top": 0,
+              "clientHeight": 145,
+              "scrollHeight": 145
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "reviewed-c36-and-scoped-preferences-supplement",
+          "basis": "Root reviewed independent candidate05, with canonical shortcut contract, full-stage text search and save-rejection phase corrections. No product source or pixels feed expected.",
+          "provenance": {
+            "sourceCandidate": "candidate-05",
+            "originalSources": {
+              "supplement.js": "c2c331ea4d28c8af012f40750231e280194ebb63bf73b0b960042f9d487e6aaa",
+              "supplement.css": "041ec3f02a4a23ea4bba7180720f9f67ebe3fe0ebef6b2e610706de99c7862a8",
+              "README.md": "dd806efd0c12005616661ba80b63355115b310cdb703014836c9b36128366bf7"
+            },
+            "sourceInputs": {
+              "session-current-body": "e1274bfd7b61a4ce975ac35971e051e439ee9f28ee0528a11db8f97eef256981",
+              "session-current-extraction": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+              "session-current-hook-events": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+              "settings-shortcuts-active": "d1acb1a3da65dc2c59b9f47b84221c67a4aa5ff6135511589eb4f760d711502d",
+              "settings-shortcuts-conflict": "341f4574aed33bb0e16dee133c59ea59a09f23a647042421aaf3677e64739ce1"
+            },
+            "adaptations": [
+              {
+                "id": "canonical-shortcut-contract",
+                "basis": "Root reviewed correction: typed desired/effective and draft use canonical Alt+Super+H/P; only presentation formatter renders Apple glyphs."
+              },
+              {
+                "id": "all-stage-server-search",
+                "basis": "Root reviewed correction: event stage is free text against full server dataset, never finite options inferred from loaded records."
+              },
+              {
+                "id": "scoped-field-mask-contract",
+                "basis": "Rust ScopedPreferences supports true scalar field masks plus hud.compact/hud.alwaysOnTop values; candidate05 README only described original demonstration keys. No merge authority moved to UI."
+              },
+              {
+                "id": "shortcut-save-rejection-stage",
+                "basis": "Root explicitly selected failed saveError plus failed native receipt/effective old, preserving dirty draft and action error; source uses approved ls-boundary/ls-error-text styles, not product CSS."
+              },
+              {
+                "id": "compact-base-effective-help",
+                "basis": "Root approved explicit distinction between base fields and compact effective text sizes; same semantic explanatory sentence shown independently."
+              },
+              {
+                "id": "dirty-scope-no-switch",
+                "basis": "Root approved scope disabled until user saves/discards dirty draft; presentation follows typed dirty and prevents scope contamination."
+              },
+              {
+                "id": "fixed-unit-copy-and-origin",
+                "basis": "Root approved preservation of existing immutable unit copy and visible sourceSummary-derived origin; not inferred from gameId."
+              },
+              {
+                "id": "follow-latest-initial-anchor",
+                "basis": "Root approved correction: typed follow=true places original sorted received records at their independently measured latest extent; no product scroll number or PNG consulted. follow=false preserves fixed viewport."
+              },
+              {
+                "id": "active-caption-semantics",
+                "basis": "Root approved independent receiving-caption mapping, retaining active/paused/opening/terminal distinctions; this fixture explicitly represents active selected-source receiving."
+              },
+              {
+                "id": "settings-actions-reuse-c02",
+                "basis": "Root independently corrected candidate05 missing ls-button primitive. New settings actions reuse approved C02 ls-button12px/28px/4x11 and apply disabled is derived from typed dirty. Original bare-button candidate retained, no styling taken from product pixels."
+              },
+              {
+                "id": "session-preview-identity-projection",
+                "basis": "Root approved session consumer displays typed session identity, not the offline candidate/PID replay. Candidate consumer keeps complete CID/PID, title/Bottle/EXE/frame/time/identity metadata remain."
+              },
+              {
+                "id": "shortcut-failure-cascade-priority",
+                "basis": "Root independently approved RW11 error semantic priority: candidate05 ls-boundary secondary color overrode earlier ls-error-text. Explicit combined selector restores failure color using approved token, never product pixels. Original candidate05 and previous PNG retained."
+              },
+              {
+                "id": "follow-scroll-pauses-at-older-range",
+                "basis": "Root approved shared policy: more than32 logical pixels above independently measured latest pauses follow and exposes return-to-latest; typed follow=true still anchors first load at latest. Reference listens only to its own design DOM scroll and records each variant follow condition; no actual scrollTop or PNG used."
+              }
+            ],
+            "productPixelsOrStylesUsed": false,
+            "notProductAcceptance": true,
+            "corrections": [
+              {
+                "id": "range-cascade-attribution-correction",
+                "evidence": "Direct Playwright of approved index.html?scenario=settings&theme=dark at display category: native range height28,padding5px8px,minHeight0. styles.css generic input cascade supplies padding/border; native-content.css contains no claimed selector. Earlier proposed exclusion did not match and was never applied to expected output. Root withdrew it and approved matching product to complete original cascade."
+              },
+              {
+                "id": "follow-clone-approved-icons-initialization",
+                "evidence": "Candidate21 static native clone intentionally stripped scripts, so follow render had no LunaIcons and omitted check/pause SVG. Producer now loads the already approved independent icons.js before binding, never imports product icons. Candidate21 failed images retained."
+              }
+            ]
+          }
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "session-current-extraction",
+      "kind": "full-window",
+      "windowRole": "main",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "tab": "texts",
+        "follow": true,
+        "supplement": {
+          "dataset": "extraction",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "extraction",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "extraction",
+                "sequence": "1",
+                "eventId": "sakura-session-1:raw:1",
+                "sourceId": "sakura-body",
+                "wireSequence": "1",
+                "text": "その風景には、悲しさも、痛みも、なかった。",
+                "observedAtMs": 1792319048000,
+                "reason": "正文",
+                "bodyRefs": [
+                  {
+                    "unitId": "sakura-session-1:event:0",
+                    "textRevision": 1
+                  }
+                ],
+                "payloadRetained": true
+              },
+              {
+                "kind": "extraction",
+                "sequence": "2",
+                "eventId": "sakura-session-1:raw:2",
+                "sourceId": "sakura-secondary",
+                "wireSequence": "2",
+                "text": "セーブ　ロード　設定",
+                "observedAtMs": 1792319048000,
+                "reason": "未选中来源",
+                "bodyRefs": [],
+                "payloadRetained": true
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-extraction-snapshot",
+              "refreshCursor": "opaque-design-refresh-extraction",
+              "highWatermark": "2",
+              "firstAvailable": "1",
+              "lastReceived": "2",
+              "lastPersisted": "2",
+              "retainedFrom": "1",
+              "matchingCount": "2",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "2"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        },
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "sourceFile": "session-current-extraction.design.html",
+      "sourceSha256": "9a01e18f53fcf6f74b60236bdbb9c32c959c8eabda4531177959ababee6589cc",
+      "inputFile": "session-current-extraction.input.json",
+      "inputSha256": "8da27abc582bf73cb34f0cfa0569800703059e7f317c46922069cc59038c8386",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "session-current-extraction.top.png",
+          "variant": "top",
+          "sessionFollow": true,
+          "sha256": "1db13066af49ccc9a2459f2a792ac4ea4a6567bc98d64d62fd5c7d7f51669882",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 674
+            },
+            {
+              "className": "rw-records",
+              "top": 0,
+              "clientHeight": 233,
+              "scrollHeight": 233
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "reviewed-c36-and-scoped-preferences-supplement",
+          "basis": "Root reviewed independent candidate05, with canonical shortcut contract, full-stage text search and save-rejection phase corrections. No product source or pixels feed expected.",
+          "provenance": {
+            "sourceCandidate": "candidate-05",
+            "originalSources": {
+              "supplement.js": "c2c331ea4d28c8af012f40750231e280194ebb63bf73b0b960042f9d487e6aaa",
+              "supplement.css": "041ec3f02a4a23ea4bba7180720f9f67ebe3fe0ebef6b2e610706de99c7862a8",
+              "README.md": "dd806efd0c12005616661ba80b63355115b310cdb703014836c9b36128366bf7"
+            },
+            "sourceInputs": {
+              "session-current-body": "e1274bfd7b61a4ce975ac35971e051e439ee9f28ee0528a11db8f97eef256981",
+              "session-current-extraction": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+              "session-current-hook-events": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+              "settings-shortcuts-active": "d1acb1a3da65dc2c59b9f47b84221c67a4aa5ff6135511589eb4f760d711502d",
+              "settings-shortcuts-conflict": "341f4574aed33bb0e16dee133c59ea59a09f23a647042421aaf3677e64739ce1"
+            },
+            "adaptations": [
+              {
+                "id": "canonical-shortcut-contract",
+                "basis": "Root reviewed correction: typed desired/effective and draft use canonical Alt+Super+H/P; only presentation formatter renders Apple glyphs."
+              },
+              {
+                "id": "all-stage-server-search",
+                "basis": "Root reviewed correction: event stage is free text against full server dataset, never finite options inferred from loaded records."
+              },
+              {
+                "id": "scoped-field-mask-contract",
+                "basis": "Rust ScopedPreferences supports true scalar field masks plus hud.compact/hud.alwaysOnTop values; candidate05 README only described original demonstration keys. No merge authority moved to UI."
+              },
+              {
+                "id": "shortcut-save-rejection-stage",
+                "basis": "Root explicitly selected failed saveError plus failed native receipt/effective old, preserving dirty draft and action error; source uses approved ls-boundary/ls-error-text styles, not product CSS."
+              },
+              {
+                "id": "compact-base-effective-help",
+                "basis": "Root approved explicit distinction between base fields and compact effective text sizes; same semantic explanatory sentence shown independently."
+              },
+              {
+                "id": "dirty-scope-no-switch",
+                "basis": "Root approved scope disabled until user saves/discards dirty draft; presentation follows typed dirty and prevents scope contamination."
+              },
+              {
+                "id": "fixed-unit-copy-and-origin",
+                "basis": "Root approved preservation of existing immutable unit copy and visible sourceSummary-derived origin; not inferred from gameId."
+              },
+              {
+                "id": "follow-latest-initial-anchor",
+                "basis": "Root approved correction: typed follow=true places original sorted received records at their independently measured latest extent; no product scroll number or PNG consulted. follow=false preserves fixed viewport."
+              },
+              {
+                "id": "active-caption-semantics",
+                "basis": "Root approved independent receiving-caption mapping, retaining active/paused/opening/terminal distinctions; this fixture explicitly represents active selected-source receiving."
+              },
+              {
+                "id": "settings-actions-reuse-c02",
+                "basis": "Root independently corrected candidate05 missing ls-button primitive. New settings actions reuse approved C02 ls-button12px/28px/4x11 and apply disabled is derived from typed dirty. Original bare-button candidate retained, no styling taken from product pixels."
+              },
+              {
+                "id": "session-preview-identity-projection",
+                "basis": "Root approved session consumer displays typed session identity, not the offline candidate/PID replay. Candidate consumer keeps complete CID/PID, title/Bottle/EXE/frame/time/identity metadata remain."
+              },
+              {
+                "id": "shortcut-failure-cascade-priority",
+                "basis": "Root independently approved RW11 error semantic priority: candidate05 ls-boundary secondary color overrode earlier ls-error-text. Explicit combined selector restores failure color using approved token, never product pixels. Original candidate05 and previous PNG retained."
+              },
+              {
+                "id": "follow-scroll-pauses-at-older-range",
+                "basis": "Root approved shared policy: more than32 logical pixels above independently measured latest pauses follow and exposes return-to-latest; typed follow=true still anchors first load at latest. Reference listens only to its own design DOM scroll and records each variant follow condition; no actual scrollTop or PNG used."
+              }
+            ],
+            "productPixelsOrStylesUsed": false,
+            "notProductAcceptance": true,
+            "corrections": [
+              {
+                "id": "range-cascade-attribution-correction",
+                "evidence": "Direct Playwright of approved index.html?scenario=settings&theme=dark at display category: native range height28,padding5px8px,minHeight0. styles.css generic input cascade supplies padding/border; native-content.css contains no claimed selector. Earlier proposed exclusion did not match and was never applied to expected output. Root withdrew it and approved matching product to complete original cascade."
+              },
+              {
+                "id": "follow-clone-approved-icons-initialization",
+                "evidence": "Candidate21 static native clone intentionally stripped scripts, so follow render had no LunaIcons and omitted check/pause SVG. Producer now loads the already approved independent icons.js before binding, never imports product icons. Candidate21 failed images retained."
+              }
+            ]
+          }
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "session-current-hook-events",
+      "kind": "full-window",
+      "windowRole": "main",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "tab": "logs",
+        "follow": true,
+        "supplement": {
+          "dataset": "hook_events",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "hook_events",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "hook_event",
+                "sequence": "1",
+                "eventId": "design-hook-1",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "目标核对",
+                "code": "TARGET_VERIFIED",
+                "message": "运行窗口与游戏进程身份已核对",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "2",
+                "eventId": "design-hook-2",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "资源检查",
+                "code": "HOOK_RESOURCE_READY",
+                "message": "取文组件已准备",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "3",
+                "eventId": "design-hook-3",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "Hook 注入",
+                "code": "HOOK_ATTACH_STARTED",
+                "message": "已向所选目标启动接入",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "4",
+                "eventId": "design-hook-4",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "回调握手",
+                "code": "HOOK_HANDSHAKE_READY",
+                "message": "采集端连接已建立",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "5",
+                "eventId": "design-hook-5",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "发现文本流",
+                "code": "STREAM_DISCOVERED",
+                "message": "收到候选来源，保留每次提取事件",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "6",
+                "eventId": "design-hook-6",
+                "operationId": "sakura-session-1:event:0",
+                "sessionId": "sakura-session-1",
+                "sourceId": "sakura-body",
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本回调",
+                "code": "HOOK_TEXT_RECEIVED",
+                "message": "收到文本事件 #1 · 正文来源",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "7",
+                "eventId": "design-hook-7",
+                "operationId": "sakura-session-1:event:0",
+                "sessionId": "sakura-session-1",
+                "sourceId": "sakura-secondary",
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本回调",
+                "code": "HOOK_TEXT_RECEIVED",
+                "message": "收到文本事件 #2 · 未选中来源",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "8",
+                "eventId": "design-hook-8",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本来源",
+                "code": "HOOK_LIFECYCLE_EVENT",
+                "message": "已连接 sakuranouta10th.exe，正文流已选择",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-hook_events-snapshot",
+              "refreshCursor": "opaque-design-refresh-hook_events",
+              "highWatermark": "8",
+              "firstAvailable": "1",
+              "lastReceived": "8",
+              "lastPersisted": "8",
+              "retainedFrom": "1",
+              "matchingCount": "8",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "8"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        },
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "sourceFile": "session-current-hook-events.design.html",
+      "sourceSha256": "41deeeb014aa42e225aa17de18939fb7c05399e78f61ec7191c9089952b674d8",
+      "inputFile": "session-current-hook-events.input.json",
+      "inputSha256": "695938b3b3ace2fdd3d83e3ec57a3336c02a67e3a61aca0e101837c8567ce069",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "session-current-hook-events.top.png",
+          "variant": "top",
+          "sessionFollow": true,
+          "sha256": "c5a3b1d15f155005cb666482bfc149b971c20399e4db1376cf45b0f50c4d3717",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 873
+            },
+            {
+              "className": "rw-records",
+              "top": 407,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        },
+        {
+          "file": "session-current-hook-events.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": false,
+          "sha256": "1af93af4c2f91226a3ab9b8ae9e6d54720bbb9d46a85522c16cf434214d444ae",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 199,
+              "clientHeight": 674,
+              "scrollHeight": 873
+            },
+            {
+              "className": "rw-records",
+              "top": 0,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        },
+        {
+          "file": "session-current-hook-events.region1-bottom.png",
+          "variant": "region1-bottom",
+          "sessionFollow": false,
+          "sha256": "bbfa6d920607eda320bb92e33b8bf45bae93e13822537f08624a802d5c2e1ce7",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 873
+            },
+            {
+              "className": "rw-records",
+              "top": 407,
+              "clientHeight": 478,
+              "scrollHeight": 885
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "reviewed-c36-and-scoped-preferences-supplement",
+          "basis": "Root reviewed independent candidate05, with canonical shortcut contract, full-stage text search and save-rejection phase corrections. No product source or pixels feed expected.",
+          "provenance": {
+            "sourceCandidate": "candidate-05",
+            "originalSources": {
+              "supplement.js": "c2c331ea4d28c8af012f40750231e280194ebb63bf73b0b960042f9d487e6aaa",
+              "supplement.css": "041ec3f02a4a23ea4bba7180720f9f67ebe3fe0ebef6b2e610706de99c7862a8",
+              "README.md": "dd806efd0c12005616661ba80b63355115b310cdb703014836c9b36128366bf7"
+            },
+            "sourceInputs": {
+              "session-current-body": "e1274bfd7b61a4ce975ac35971e051e439ee9f28ee0528a11db8f97eef256981",
+              "session-current-extraction": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+              "session-current-hook-events": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+              "settings-shortcuts-active": "d1acb1a3da65dc2c59b9f47b84221c67a4aa5ff6135511589eb4f760d711502d",
+              "settings-shortcuts-conflict": "341f4574aed33bb0e16dee133c59ea59a09f23a647042421aaf3677e64739ce1"
+            },
+            "adaptations": [
+              {
+                "id": "canonical-shortcut-contract",
+                "basis": "Root reviewed correction: typed desired/effective and draft use canonical Alt+Super+H/P; only presentation formatter renders Apple glyphs."
+              },
+              {
+                "id": "all-stage-server-search",
+                "basis": "Root reviewed correction: event stage is free text against full server dataset, never finite options inferred from loaded records."
+              },
+              {
+                "id": "scoped-field-mask-contract",
+                "basis": "Rust ScopedPreferences supports true scalar field masks plus hud.compact/hud.alwaysOnTop values; candidate05 README only described original demonstration keys. No merge authority moved to UI."
+              },
+              {
+                "id": "shortcut-save-rejection-stage",
+                "basis": "Root explicitly selected failed saveError plus failed native receipt/effective old, preserving dirty draft and action error; source uses approved ls-boundary/ls-error-text styles, not product CSS."
+              },
+              {
+                "id": "compact-base-effective-help",
+                "basis": "Root approved explicit distinction between base fields and compact effective text sizes; same semantic explanatory sentence shown independently."
+              },
+              {
+                "id": "dirty-scope-no-switch",
+                "basis": "Root approved scope disabled until user saves/discards dirty draft; presentation follows typed dirty and prevents scope contamination."
+              },
+              {
+                "id": "fixed-unit-copy-and-origin",
+                "basis": "Root approved preservation of existing immutable unit copy and visible sourceSummary-derived origin; not inferred from gameId."
+              },
+              {
+                "id": "follow-latest-initial-anchor",
+                "basis": "Root approved correction: typed follow=true places original sorted received records at their independently measured latest extent; no product scroll number or PNG consulted. follow=false preserves fixed viewport."
+              },
+              {
+                "id": "active-caption-semantics",
+                "basis": "Root approved independent receiving-caption mapping, retaining active/paused/opening/terminal distinctions; this fixture explicitly represents active selected-source receiving."
+              },
+              {
+                "id": "settings-actions-reuse-c02",
+                "basis": "Root independently corrected candidate05 missing ls-button primitive. New settings actions reuse approved C02 ls-button12px/28px/4x11 and apply disabled is derived from typed dirty. Original bare-button candidate retained, no styling taken from product pixels."
+              },
+              {
+                "id": "session-preview-identity-projection",
+                "basis": "Root approved session consumer displays typed session identity, not the offline candidate/PID replay. Candidate consumer keeps complete CID/PID, title/Bottle/EXE/frame/time/identity metadata remain."
+              },
+              {
+                "id": "shortcut-failure-cascade-priority",
+                "basis": "Root independently approved RW11 error semantic priority: candidate05 ls-boundary secondary color overrode earlier ls-error-text. Explicit combined selector restores failure color using approved token, never product pixels. Original candidate05 and previous PNG retained."
+              },
+              {
+                "id": "follow-scroll-pauses-at-older-range",
+                "basis": "Root approved shared policy: more than32 logical pixels above independently measured latest pauses follow and exposes return-to-latest; typed follow=true still anchors first load at latest. Reference listens only to its own design DOM scroll and records each variant follow condition; no actual scrollTop or PNG used."
+              }
+            ],
+            "productPixelsOrStylesUsed": false,
+            "notProductAcceptance": true,
+            "corrections": [
+              {
+                "id": "range-cascade-attribution-correction",
+                "evidence": "Direct Playwright of approved index.html?scenario=settings&theme=dark at display category: native range height28,padding5px8px,minHeight0. styles.css generic input cascade supplies padding/border; native-content.css contains no claimed selector. Earlier proposed exclusion did not match and was never applied to expected output. Root withdrew it and approved matching product to complete original cascade."
+              },
+              {
+                "id": "follow-clone-approved-icons-initialization",
+                "evidence": "Candidate21 static native clone intentionally stripped scripts, so follow render had no LunaIcons and omitted check/pause SVG. Producer now loads the already approved independent icons.js before binding, never imports product icons. Candidate21 failed images retained."
+              }
+            ]
+          }
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "library-populated",
+      "kind": "full-window",
+      "windowRole": "main",
+      "requirements": [
+        "RW-01",
+        "RW-34"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "libraryContract": {
+          "coverAssetRef": null,
+          "canonicalExePath": "C:\\Program Files\\Sakura-no-Uta-10th\\sakuranouta10th.exe",
+          "launchPath": "C:\\Program Files\\Sakura-no-Uta-10th\\sakuranouta10th.exe",
+          "workingDirectory": null,
+          "arguments": []
+        },
+        "coverageReason": "Root approved full populated library state after modal-background comparison exposed missing detail coverage; all reachable scrolls remain.",
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "sourceFile": "library-populated.design.html",
+      "sourceSha256": "67101f25b18b12e901088e224dc1701c6c1ba79437023f64246ef9ba16fe9f9b",
+      "inputFile": "library-populated.input.json",
+      "inputSha256": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "library-populated.top.png",
+          "variant": "top",
+          "sessionFollow": null,
+          "sha256": "af3104951b996c6f2a932662fcc28e41482214aada044817fa17f729a64cff59",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 0,
+              "clientHeight": 674,
+              "scrollHeight": 883
+            }
+          ]
+        },
+        {
+          "file": "library-populated.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": null,
+          "sha256": "f272ddd9cf733a2c695d045221378bbd9a130917b35a3a598be7c51dbd7bba93",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "main-content",
+              "top": 209,
+              "clientHeight": 674,
+              "scrollHeight": 883
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "target-review-preview-off",
+      "kind": "full-window",
+      "windowRole": "main",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "preview": "off",
+        "candidate": "sample-window-sakura",
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "sourceFile": "target-review-preview-off.design.html",
+      "sourceSha256": "c1f9800ebba60c2553d1d664c05cc00bbca6946c3a9aec83e0c30541c9261958",
+      "inputFile": "target-review-preview-off.input.json",
+      "inputSha256": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "target-review-preview-off.top.png",
+          "variant": "top",
+          "sessionFollow": null,
+          "sha256": "641e031924947e017cdfcc00f28e42d062acbf062e8d307f4b16b6e2db12feec",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        },
+        {
+          "file": "target-review-preview-off.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": null,
+          "sha256": "c43e4cf97f30b34631c1f6468ab3a7b2a292ce0e96ee984dc7f5a8d6fc669412",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "top": 357,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "target-contract-data",
+          "basis": "Root approved exact reuse of registered v3 typed-data adapter: cover=null, one candidate, PID384/creation133000000000000000/ProgramFiles canonical path, no HWND/macOS host mapping. User target fields and errors retained."
+        },
+        {
+          "id": "reviewed-native-dialog-boundary",
+          "basis": "Root approved reuse of old v3 native-content.css selector #reference-surface.native-design-surface setting16px material-window-radius on native modal client; new outer reference-surface now wraps the complete main, so the same independent boundary is explicitly applied to reference-dialog. Approved original13px prototype/PNG unchanged."
+        },
+        {
+          "id": "modal-accessible-scroll-only",
+          "basis": "The native modal blocks parent interactions. Only dialog-body reachable scroll variants emitted; parent full client pixels remain visible throughout, never masked."
+        },
+        {
+          "id": "typed-jpeg-input",
+          "basis": "Independent approved PNG encoded once as JPEG quality0.9; actual/reference share identical bytes and sha. Replay-only label maps to live preview, retaining time/identity/failure."
+        },
+        {
+          "id": "prototype-only-replay-controls",
+          "removed": [
+            ".gl-design-note",
+            ".gl-chooser-row",
+            ".gl-fixture-list",
+            ".gl-identity-note",
+            ".rw-replay-badge"
+          ],
+          "basis": "Offline prototype replay explanation and fixture selectors only. User preview controls, all target fields, errors and modal footer remain."
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "target-review-preview-live",
+      "kind": "full-window",
+      "windowRole": "main",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "preview": "live",
+        "candidate": "sample-window-sakura",
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "sourceFile": "target-review-preview-live.design.html",
+      "sourceSha256": "8d60721869ae7a6567312ca9d1af19786b586f2a7909d5641a538adc901a1caf",
+      "inputFile": "target-review-preview-live.input.json",
+      "inputSha256": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "target-review-preview-live.top.png",
+          "variant": "top",
+          "sessionFollow": null,
+          "sha256": "d790891a78c74701dbd996b200d87a13cdd1dde086121b33316f4577fac110c1",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "top": 0,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        },
+        {
+          "file": "target-review-preview-live.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": null,
+          "sha256": "ed28a6cec616e9053a434dc0e9d072581c1e285ff52572359371565bef48b1d0",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "top": 357,
+              "clientHeight": 489,
+              "scrollHeight": 846
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "target-contract-data",
+          "basis": "Root approved exact reuse of registered v3 typed-data adapter: cover=null, one candidate, PID384/creation133000000000000000/ProgramFiles canonical path, no HWND/macOS host mapping. User target fields and errors retained."
+        },
+        {
+          "id": "reviewed-native-dialog-boundary",
+          "basis": "Root approved reuse of old v3 native-content.css selector #reference-surface.native-design-surface setting16px material-window-radius on native modal client; new outer reference-surface now wraps the complete main, so the same independent boundary is explicitly applied to reference-dialog. Approved original13px prototype/PNG unchanged."
+        },
+        {
+          "id": "modal-accessible-scroll-only",
+          "basis": "The native modal blocks parent interactions. Only dialog-body reachable scroll variants emitted; parent full client pixels remain visible throughout, never masked."
+        },
+        {
+          "id": "typed-jpeg-input",
+          "basis": "Independent approved PNG encoded once as JPEG quality0.9; actual/reference share identical bytes and sha. Replay-only label maps to live preview, retaining time/identity/failure."
+        },
+        {
+          "id": "prototype-only-replay-controls",
+          "removed": [
+            ".gl-design-note",
+            ".gl-chooser-row",
+            ".gl-fixture-list",
+            ".gl-identity-note",
+            ".rw-replay-badge"
+          ],
+          "basis": "Offline prototype replay explanation and fixture selectors only. User preview controls, all target fields, errors and modal footer remain."
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "settings-shortcuts-active",
+      "kind": "full-window",
+      "windowRole": "settings",
+      "requirements": [
+        "RW-08",
+        "RW-09",
+        "RW-10",
+        "RW-11",
+        "RW-12"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "draftConflict": false,
+        "effectiveHide": "Alt+Super+H",
+        "effectivePause": "Alt+Super+P",
+        "effectiveMode": "",
+        "supplement": {
+          "preferences": {
+            "scopeKey": "global",
+            "theme": "dark",
+            "transparencyMode": "material",
+            "segmentationEnabled": true,
+            "showRuby": true,
+            "showPos": false,
+            "readingDisplayMode": "both",
+            "hudBackgroundOpacity": 0.82,
+            "sourceFontPt": 18,
+            "translationFontPt": 24,
+            "hudWidthPt": 560,
+            "shortcuts": {
+              "toggleHud": "Alt+Super+H",
+              "togglePause": "Alt+Super+P",
+              "cycleDisplayMode": ""
+            },
+            "overrides": {
+              "hud.compact": false,
+              "hud.alwaysOnTop": true
+            }
+          },
+          "draft": {
+            "scopeKey": "global",
+            "theme": "dark",
+            "transparencyMode": "material",
+            "segmentationEnabled": true,
+            "showRuby": true,
+            "showPos": false,
+            "readingDisplayMode": "both",
+            "hudBackgroundOpacity": 0.82,
+            "sourceFontPt": 18,
+            "translationFontPt": 24,
+            "hudWidthPt": 560,
+            "shortcuts": {
+              "toggleHud": "Alt+Super+H",
+              "togglePause": "Alt+Super+P",
+              "cycleDisplayMode": ""
+            },
+            "overrides": {
+              "hud.compact": false,
+              "hud.alwaysOnTop": true
+            }
+          },
+          "game": {
+            "id": "sakura",
+            "title": "サクラノ詩 10th Anniversary edition"
+          },
+          "dirty": false,
+          "capabilities": {
+            "geometry": {
+              "state": "restored",
+              "logicalBounds": {
+                "x": 400,
+                "y": 600,
+                "width": 560,
+                "height": 172
+              },
+              "monitorId": "design-display",
+              "scaleFactor": 2,
+              "errorCode": null
+            },
+            "material": {
+              "requested": "material",
+              "effective": "native_material",
+              "systemReduceTransparency": false,
+              "effectiveReduceTransparency": false,
+              "errorCode": null
+            },
+            "shortcuts": {
+              "state": "active",
+              "registrationGeneration": "4",
+              "dispatchSuppressed": false,
+              "bindings": [
+                {
+                  "intent": "toggle_hud",
+                  "desired": "Alt+Super+H",
+                  "effective": "Alt+Super+H",
+                  "scopeKey": "global",
+                  "errorCode": null,
+                  "errorMessage": null
+                },
+                {
+                  "intent": "toggle_capture_pause",
+                  "desired": "Alt+Super+P",
+                  "effective": "Alt+Super+P",
+                  "scopeKey": "global",
+                  "errorCode": null,
+                  "errorMessage": null
+                },
+                {
+                  "intent": "cycle_reading_display_mode",
+                  "desired": null,
+                  "effective": null,
+                  "scopeKey": "global",
+                  "errorCode": null,
+                  "errorMessage": null
+                }
+              ]
+            }
+          }
+        },
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "sourceFile": "settings-shortcuts-active.design.html",
+      "sourceSha256": "1a20a4a79ebfa92d6c6b9bbb1448cf61c91fb0e5a21dedc8e6176af1b3dfb4fd",
+      "inputFile": "settings-shortcuts-active.input.json",
+      "inputSha256": "da0def711f673a6b8345acab713f747a8e02cd4401fdd7b86e03656c59bea6f1",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "settings-shortcuts-active.top.png",
+          "variant": "top",
+          "sessionFollow": null,
+          "sha256": "5f74e0ed463ab72d3ef0a5449419c423405e436de3e36a521477f13a505a97c7",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 1377
+            }
+          ]
+        },
+        {
+          "file": "settings-shortcuts-active.region0-page1.png",
+          "variant": "region0-page1",
+          "sessionFollow": null,
+          "sha256": "f5e7ffa5a0f2f917d8d01c2eb7f215e0609af6bf4f49713cc79b4c7d75a38e76",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "top": 625,
+              "clientHeight": 649,
+              "scrollHeight": 1377
+            }
+          ]
+        },
+        {
+          "file": "settings-shortcuts-active.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": null,
+          "sha256": "4647b09e1a73ed38ba861fd9ed53cabed7be04e6c8716a17a040e6a51419dc33",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "top": 728,
+              "clientHeight": 649,
+              "scrollHeight": 1377
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "reviewed-c36-and-scoped-preferences-supplement",
+          "basis": "Root reviewed independent candidate05, with canonical shortcut contract, full-stage text search and save-rejection phase corrections. No product source or pixels feed expected.",
+          "provenance": {
+            "sourceCandidate": "candidate-05",
+            "originalSources": {
+              "supplement.js": "c2c331ea4d28c8af012f40750231e280194ebb63bf73b0b960042f9d487e6aaa",
+              "supplement.css": "041ec3f02a4a23ea4bba7180720f9f67ebe3fe0ebef6b2e610706de99c7862a8",
+              "README.md": "dd806efd0c12005616661ba80b63355115b310cdb703014836c9b36128366bf7"
+            },
+            "sourceInputs": {
+              "session-current-body": "e1274bfd7b61a4ce975ac35971e051e439ee9f28ee0528a11db8f97eef256981",
+              "session-current-extraction": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+              "session-current-hook-events": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+              "settings-shortcuts-active": "d1acb1a3da65dc2c59b9f47b84221c67a4aa5ff6135511589eb4f760d711502d",
+              "settings-shortcuts-conflict": "341f4574aed33bb0e16dee133c59ea59a09f23a647042421aaf3677e64739ce1"
+            },
+            "adaptations": [
+              {
+                "id": "canonical-shortcut-contract",
+                "basis": "Root reviewed correction: typed desired/effective and draft use canonical Alt+Super+H/P; only presentation formatter renders Apple glyphs."
+              },
+              {
+                "id": "all-stage-server-search",
+                "basis": "Root reviewed correction: event stage is free text against full server dataset, never finite options inferred from loaded records."
+              },
+              {
+                "id": "scoped-field-mask-contract",
+                "basis": "Rust ScopedPreferences supports true scalar field masks plus hud.compact/hud.alwaysOnTop values; candidate05 README only described original demonstration keys. No merge authority moved to UI."
+              },
+              {
+                "id": "shortcut-save-rejection-stage",
+                "basis": "Root explicitly selected failed saveError plus failed native receipt/effective old, preserving dirty draft and action error; source uses approved ls-boundary/ls-error-text styles, not product CSS."
+              },
+              {
+                "id": "compact-base-effective-help",
+                "basis": "Root approved explicit distinction between base fields and compact effective text sizes; same semantic explanatory sentence shown independently."
+              },
+              {
+                "id": "dirty-scope-no-switch",
+                "basis": "Root approved scope disabled until user saves/discards dirty draft; presentation follows typed dirty and prevents scope contamination."
+              },
+              {
+                "id": "fixed-unit-copy-and-origin",
+                "basis": "Root approved preservation of existing immutable unit copy and visible sourceSummary-derived origin; not inferred from gameId."
+              },
+              {
+                "id": "follow-latest-initial-anchor",
+                "basis": "Root approved correction: typed follow=true places original sorted received records at their independently measured latest extent; no product scroll number or PNG consulted. follow=false preserves fixed viewport."
+              },
+              {
+                "id": "active-caption-semantics",
+                "basis": "Root approved independent receiving-caption mapping, retaining active/paused/opening/terminal distinctions; this fixture explicitly represents active selected-source receiving."
+              },
+              {
+                "id": "settings-actions-reuse-c02",
+                "basis": "Root independently corrected candidate05 missing ls-button primitive. New settings actions reuse approved C02 ls-button12px/28px/4x11 and apply disabled is derived from typed dirty. Original bare-button candidate retained, no styling taken from product pixels."
+              },
+              {
+                "id": "session-preview-identity-projection",
+                "basis": "Root approved session consumer displays typed session identity, not the offline candidate/PID replay. Candidate consumer keeps complete CID/PID, title/Bottle/EXE/frame/time/identity metadata remain."
+              },
+              {
+                "id": "shortcut-failure-cascade-priority",
+                "basis": "Root independently approved RW11 error semantic priority: candidate05 ls-boundary secondary color overrode earlier ls-error-text. Explicit combined selector restores failure color using approved token, never product pixels. Original candidate05 and previous PNG retained."
+              },
+              {
+                "id": "follow-scroll-pauses-at-older-range",
+                "basis": "Root approved shared policy: more than32 logical pixels above independently measured latest pauses follow and exposes return-to-latest; typed follow=true still anchors first load at latest. Reference listens only to its own design DOM scroll and records each variant follow condition; no actual scrollTop or PNG used."
+              }
+            ],
+            "productPixelsOrStylesUsed": false,
+            "notProductAcceptance": true,
+            "corrections": [
+              {
+                "id": "range-cascade-attribution-correction",
+                "evidence": "Direct Playwright of approved index.html?scenario=settings&theme=dark at display category: native range height28,padding5px8px,minHeight0. styles.css generic input cascade supplies padding/border; native-content.css contains no claimed selector. Earlier proposed exclusion did not match and was never applied to expected output. Root withdrew it and approved matching product to complete original cascade."
+              },
+              {
+                "id": "follow-clone-approved-icons-initialization",
+                "evidence": "Candidate21 static native clone intentionally stripped scripts, so follow render had no LunaIcons and omitted check/pause SVG. Producer now loads the already approved independent icons.js before binding, never imports product icons. Candidate21 failed images retained."
+              }
+            ]
+          }
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "settings-shortcuts-conflict",
+      "kind": "full-window",
+      "windowRole": "settings",
+      "requirements": [
+        "RW-08",
+        "RW-09",
+        "RW-10",
+        "RW-11",
+        "RW-12"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "draftConflict": true,
+        "effectiveHide": "Alt+Super+H",
+        "effectivePause": "Alt+Super+P",
+        "effectiveMode": "",
+        "supplement": {
+          "preferences": {
+            "scopeKey": "global",
+            "theme": "dark",
+            "transparencyMode": "material",
+            "segmentationEnabled": true,
+            "showRuby": true,
+            "showPos": false,
+            "readingDisplayMode": "both",
+            "hudBackgroundOpacity": 0.82,
+            "sourceFontPt": 18,
+            "translationFontPt": 24,
+            "hudWidthPt": 560,
+            "shortcuts": {
+              "toggleHud": "Alt+Super+H",
+              "togglePause": "Alt+Super+P",
+              "cycleDisplayMode": ""
+            },
+            "overrides": {
+              "hud.compact": false,
+              "hud.alwaysOnTop": true
+            }
+          },
+          "draft": {
+            "scopeKey": "global",
+            "theme": "dark",
+            "transparencyMode": "material",
+            "segmentationEnabled": true,
+            "showRuby": true,
+            "showPos": false,
+            "readingDisplayMode": "both",
+            "hudBackgroundOpacity": 0.82,
+            "sourceFontPt": 18,
+            "translationFontPt": 24,
+            "hudWidthPt": 560,
+            "shortcuts": {
+              "toggleHud": "Alt+Super+H",
+              "togglePause": "Alt+Super+H",
+              "cycleDisplayMode": ""
+            },
+            "overrides": {
+              "hud.compact": false,
+              "hud.alwaysOnTop": true
+            }
+          },
+          "game": {
+            "id": "sakura",
+            "title": "サクラノ詩 10th Anniversary edition"
+          },
+          "dirty": true,
+          "capabilities": {
+            "geometry": {
+              "state": "restored",
+              "logicalBounds": {
+                "x": 400,
+                "y": 600,
+                "width": 560,
+                "height": 172
+              },
+              "monitorId": "design-display",
+              "scaleFactor": 2,
+              "errorCode": null
+            },
+            "material": {
+              "requested": "material",
+              "effective": "native_material",
+              "systemReduceTransparency": false,
+              "effectiveReduceTransparency": false,
+              "errorCode": null
+            },
+            "shortcuts": {
+              "state": "failed",
+              "registrationGeneration": "4",
+              "dispatchSuppressed": false,
+              "bindings": [
+                {
+                  "intent": "toggle_hud",
+                  "desired": "Alt+Super+H",
+                  "effective": "Alt+Super+H",
+                  "scopeKey": "global",
+                  "errorCode": null,
+                  "errorMessage": null
+                },
+                {
+                  "intent": "toggle_capture_pause",
+                  "desired": "Alt+Super+H",
+                  "effective": "Alt+Super+P",
+                  "scopeKey": "global",
+                  "errorCode": "shortcut_duplicate",
+                  "errorMessage": "与“显示 / 隐藏浮窗”重复。应用失败，保留原生效组合。"
+                },
+                {
+                  "intent": "cycle_reading_display_mode",
+                  "desired": null,
+                  "effective": null,
+                  "scopeKey": "global",
+                  "errorCode": null,
+                  "errorMessage": null
+                }
+              ]
+            }
+          },
+          "saveError": "shortcut_duplicate: 与“显示 / 隐藏浮窗”重复。应用失败，保留原生效组合。",
+          "expectedActionOutcome": "save_scoped_preferences rejected; dirty draft and previous effective native bindings retained"
+        },
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        }
+      },
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "sourceFile": "settings-shortcuts-conflict.design.html",
+      "sourceSha256": "bbb4be70572a74f5358a857cce2cef8db4fbea6e663af91d03b90a20e557992d",
+      "inputFile": "settings-shortcuts-conflict.input.json",
+      "inputSha256": "dfe985acbae90fd073eef13683a88def7eacf67bb44c2115083293a72f476880",
+      "underlay": {
+        "file": "../underlay-reading.png",
+        "sampleOrigin": [
+          280,
+          86
+        ],
+        "size": [
+          1600,
+          925
+        ],
+        "scale": 1
+      },
+      "files": [
+        {
+          "file": "settings-shortcuts-conflict.top.png",
+          "variant": "top",
+          "sessionFollow": null,
+          "sha256": "c789779c1bea7c53f97447e537dc8f8a846a51ca0785adb4499365173d62f7e6",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "top": 0,
+              "clientHeight": 649,
+              "scrollHeight": 1439
+            }
+          ]
+        },
+        {
+          "file": "settings-shortcuts-conflict.region0-page1.png",
+          "variant": "region0-page1",
+          "sessionFollow": null,
+          "sha256": "082cbaab79d8613a3812182fe37e2f669d29d2793a8b4cb6848a2fab95aa0223",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "top": 625,
+              "clientHeight": 649,
+              "scrollHeight": 1439
+            }
+          ]
+        },
+        {
+          "file": "settings-shortcuts-conflict.region0-bottom.png",
+          "variant": "region0-bottom",
+          "sessionFollow": null,
+          "sha256": "a0b22528011f7abd87145f746f139b25dba9c623cf5309581e4473d03253d89b",
+          "bounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "top": 790,
+              "clientHeight": 649,
+              "scrollHeight": 1439
+            }
+          ]
+        }
+      ],
+      "sourceAdaptations": [
+        {
+          "id": "reviewed-c36-and-scoped-preferences-supplement",
+          "basis": "Root reviewed independent candidate05, with canonical shortcut contract, full-stage text search and save-rejection phase corrections. No product source or pixels feed expected.",
+          "provenance": {
+            "sourceCandidate": "candidate-05",
+            "originalSources": {
+              "supplement.js": "c2c331ea4d28c8af012f40750231e280194ebb63bf73b0b960042f9d487e6aaa",
+              "supplement.css": "041ec3f02a4a23ea4bba7180720f9f67ebe3fe0ebef6b2e610706de99c7862a8",
+              "README.md": "dd806efd0c12005616661ba80b63355115b310cdb703014836c9b36128366bf7"
+            },
+            "sourceInputs": {
+              "session-current-body": "e1274bfd7b61a4ce975ac35971e051e439ee9f28ee0528a11db8f97eef256981",
+              "session-current-extraction": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+              "session-current-hook-events": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+              "settings-shortcuts-active": "d1acb1a3da65dc2c59b9f47b84221c67a4aa5ff6135511589eb4f760d711502d",
+              "settings-shortcuts-conflict": "341f4574aed33bb0e16dee133c59ea59a09f23a647042421aaf3677e64739ce1"
+            },
+            "adaptations": [
+              {
+                "id": "canonical-shortcut-contract",
+                "basis": "Root reviewed correction: typed desired/effective and draft use canonical Alt+Super+H/P; only presentation formatter renders Apple glyphs."
+              },
+              {
+                "id": "all-stage-server-search",
+                "basis": "Root reviewed correction: event stage is free text against full server dataset, never finite options inferred from loaded records."
+              },
+              {
+                "id": "scoped-field-mask-contract",
+                "basis": "Rust ScopedPreferences supports true scalar field masks plus hud.compact/hud.alwaysOnTop values; candidate05 README only described original demonstration keys. No merge authority moved to UI."
+              },
+              {
+                "id": "shortcut-save-rejection-stage",
+                "basis": "Root explicitly selected failed saveError plus failed native receipt/effective old, preserving dirty draft and action error; source uses approved ls-boundary/ls-error-text styles, not product CSS."
+              },
+              {
+                "id": "compact-base-effective-help",
+                "basis": "Root approved explicit distinction between base fields and compact effective text sizes; same semantic explanatory sentence shown independently."
+              },
+              {
+                "id": "dirty-scope-no-switch",
+                "basis": "Root approved scope disabled until user saves/discards dirty draft; presentation follows typed dirty and prevents scope contamination."
+              },
+              {
+                "id": "fixed-unit-copy-and-origin",
+                "basis": "Root approved preservation of existing immutable unit copy and visible sourceSummary-derived origin; not inferred from gameId."
+              },
+              {
+                "id": "follow-latest-initial-anchor",
+                "basis": "Root approved correction: typed follow=true places original sorted received records at their independently measured latest extent; no product scroll number or PNG consulted. follow=false preserves fixed viewport."
+              },
+              {
+                "id": "active-caption-semantics",
+                "basis": "Root approved independent receiving-caption mapping, retaining active/paused/opening/terminal distinctions; this fixture explicitly represents active selected-source receiving."
+              },
+              {
+                "id": "settings-actions-reuse-c02",
+                "basis": "Root independently corrected candidate05 missing ls-button primitive. New settings actions reuse approved C02 ls-button12px/28px/4x11 and apply disabled is derived from typed dirty. Original bare-button candidate retained, no styling taken from product pixels."
+              },
+              {
+                "id": "session-preview-identity-projection",
+                "basis": "Root approved session consumer displays typed session identity, not the offline candidate/PID replay. Candidate consumer keeps complete CID/PID, title/Bottle/EXE/frame/time/identity metadata remain."
+              },
+              {
+                "id": "shortcut-failure-cascade-priority",
+                "basis": "Root independently approved RW11 error semantic priority: candidate05 ls-boundary secondary color overrode earlier ls-error-text. Explicit combined selector restores failure color using approved token, never product pixels. Original candidate05 and previous PNG retained."
+              },
+              {
+                "id": "follow-scroll-pauses-at-older-range",
+                "basis": "Root approved shared policy: more than32 logical pixels above independently measured latest pauses follow and exposes return-to-latest; typed follow=true still anchors first load at latest. Reference listens only to its own design DOM scroll and records each variant follow condition; no actual scrollTop or PNG used."
+              }
+            ],
+            "productPixelsOrStylesUsed": false,
+            "notProductAcceptance": true,
+            "corrections": [
+              {
+                "id": "range-cascade-attribution-correction",
+                "evidence": "Direct Playwright of approved index.html?scenario=settings&theme=dark at display category: native range height28,padding5px8px,minHeight0. styles.css generic input cascade supplies padding/border; native-content.css contains no claimed selector. Earlier proposed exclusion did not match and was never applied to expected output. Root withdrew it and approved matching product to complete original cascade."
+              },
+              {
+                "id": "follow-clone-approved-icons-initialization",
+                "evidence": "Candidate21 static native clone intentionally stripped scripts, so follow render had no LunaIcons and omitted check/pause SVG. Producer now loads the already approved independent icons.js before binding, never imports product icons. Candidate21 failed images retained."
+              }
+            ]
+          }
+        }
+      ],
+      "notProductRuntime": true
+    }
+  ],
+  "reviewedGapStateIds": [
+    "hud-toolbar-560",
+    "hud-toolbar-500",
+    "hud-ruby-only",
+    "hud-lexical-error",
+    "select-normal",
+    "select-long-list",
+    "preview-off",
+    "preview-live",
+    "preview-paused",
+    "preview-permission",
+    "preview-unavailable",
+    "preview-exited",
+    "session-extraction",
+    "session-hook-events"
+  ],
+  "reviewedGapStates": [
+    {
+      "id": "hud-toolbar-560",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-07",
+        "RW-25",
+        "RW-33"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "width": 560,
+        "segmentation": true,
+        "ruby": true,
+        "pos": true,
+        "hud": {
+          "segmentation": true,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 560,
+        "height": 172
+      },
+      "sourceFile": "hud-toolbar-560.design.html",
+      "sourceSha256": "50ee610df9de68814532c97619a3cd635f94311646e905237750aa8fe7df6c1c",
+      "file": "hud-toolbar-560.png",
+      "sha256": "6d06848e47c4012a5cdaabc66b3688e0f59c6d94fd717b2d99e46ebcdb7a3125",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 172
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 560,
+        "height": 171.59375
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 560,
+        "height": 172
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 560,
+          "height": 172
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景ふうけいには、悲しさかなしさも、痛みいたみも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "hud-toolbar-500",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-07",
+        "RW-25",
+        "RW-33"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "width": 500,
+        "preset": "compact",
+        "hud": {
+          "segmentation": true,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 500,
+        "height": 165
+      },
+      "sourceFile": "hud-toolbar-500.design.html",
+      "sourceSha256": "79f0e82380ec55d4633b341023eda1e70742dbfaa26d30efaad6d5513cdbc260",
+      "file": "hud-toolbar-500.png",
+      "sha256": "4edc846022dc247c27f1d19d13066a4e06c9ef3e7603b2739d8a51f20dc4a333",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 500,
+        "height": 165
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 500,
+        "height": 164.1875
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 500,
+        "height": 165
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 500,
+          "height": 165
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景ふうけいには、悲しさかなしさも、痛みいたみも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "hud-ruby-only",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-27",
+        "RW-28"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "segmentation": false,
+        "ruby": true,
+        "pos": false,
+        "hud": {
+          "segmentation": false,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 560,
+        "height": 172
+      },
+      "sourceFile": "hud-ruby-only.design.html",
+      "sourceSha256": "1f7860ce0d961d56531258310032c00f1e0e73f5d9d2e1b97e0caf4b13c8aefd",
+      "file": "hud-ruby-only.png",
+      "sha256": "5e7f14fb476a89d48ce582b203d225215ff0bd4e916afc51309a5653137046d7",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 172
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 560,
+        "height": 171.59375
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 560,
+        "height": 172
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 560,
+          "height": 172
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景ふうけいには、悲しさかなしさも、痛みいたみも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "hud-lexical-error",
+      "state": "default",
+      "kind": "hud",
+      "requirements": [
+        "RW-28"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "lexical": "worker_failed",
+        "preserveOriginal": true,
+        "hud": {
+          "segmentation": true,
+          "ruby": true,
+          "pos": true,
+          "pin": true,
+          "hudBackgroundOpacity": 0.82
+        }
+      },
+      "selector": "#hud-window",
+      "viewport": {
+        "width": 560,
+        "height": 193
+      },
+      "sourceFile": "hud-lexical-error.design.html",
+      "sourceSha256": "b666b0b8cec129b05b5c26c450b939601f4f62755f422359d16ebd15db46bb4e",
+      "file": "hud-lexical-error.png",
+      "sha256": "8c8bcac24844dae9a3827c6030d577dd233b13e4255e06c7408f7c31a5ccc95d",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 193
+      },
+      "originalBounds": {
+        "x": 320,
+        "y": 509,
+        "width": 560,
+        "height": 192.296875
+      },
+      "underlayOrigin": [
+        320,
+        451
+      ],
+      "surfaceSize": {
+        "width": 560,
+        "height": 193
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 560,
+          "height": 193
+        },
+        "placement": {
+          "x": 0,
+          "y": 0
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "その風景には、悲しさも、痛みも、なかった。\n那片景色中，没有悲伤，也没有痛楚。\n词法暂不可用，原文已保留。注音与词性待恢复后显示。重试分词\n分词\n注音\n词性\n原文＋译文",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "select-normal",
+      "state": "default",
+      "kind": "select",
+      "requirements": [
+        "RW-13",
+        "RW-14",
+        "RW-31",
+        "RW-32"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "selected": "body",
+        "rows": 4
+      },
+      "selector": ".luna-select-panel",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "select-normal.design.html",
+      "sourceSha256": "76941fcfd97299d5ae832cf4e0f4a32a94e58cbc204309b4e81825491d3656df",
+      "file": "select-normal.png",
+      "sha256": "7595ee68f8a22dcdae667446029b44fcc736a04a7e15e36559af559c9df24492",
+      "bounds": {
+        "x": 24,
+        "y": 59,
+        "width": 340,
+        "height": 156
+      },
+      "originalBounds": {
+        "x": 518,
+        "y": 441.546875,
+        "width": 340,
+        "height": 156
+      },
+      "underlayOrigin": [
+        494,
+        324.546875
+      ],
+      "surfaceSize": {
+        "width": 340,
+        "height": 156
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 59
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "Artemis · 正文\nArtemis · 界面文本\nGameN7_Steam.exe · Steam · MAGES2 · 长文本来源名称完整显示\n已退出来源 · 不可选择",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "select-long-list",
+      "state": "default",
+      "kind": "select",
+      "requirements": [
+        "RW-13",
+        "RW-14",
+        "RW-31",
+        "RW-32"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "selected": "body",
+        "rows": 44
+      },
+      "selector": ".luna-select-panel",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "select-long-list.design.html",
+      "sourceSha256": "c3d841030bb40e2f92e71454357352c7b2e0d930ce9e098a2db5221ce6f539fd",
+      "file": "select-long-list.png",
+      "sha256": "8064599679becdf89d6c17ec0d947926e2b2eb1666cd516eee1c419516f8c5ab",
+      "bounds": {
+        "x": 24,
+        "y": 59,
+        "width": 340,
+        "height": 286
+      },
+      "originalBounds": {
+        "x": 518,
+        "y": 441.546875,
+        "width": 340,
+        "height": 286
+      },
+      "underlayOrigin": [
+        494,
+        324.546875
+      ],
+      "surfaceSize": {
+        "width": 340,
+        "height": 286
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 59
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "Artemis · 正文\nArtemis · 界面文本\nGameN7_Steam.exe · Steam · MAGES2 · 长文本来源名称完整显示\n已退出来源 · 不可选择\n完整会话来源 1\n完整会话来源 2\n完整会话来源 3\n完整会话来源 4\n完整会话来源 5\n完整会话来源 6\n完整会话来源 7\n完整会话来源 8\n完整会话来源 9\n完整会话来源 10\n完整会话来源 11\n完整会话来源 12\n完整会话来源 13\n完整会话来源 14\n完整会话来源 15\n完整会话来源 16\n完整会话来源 17\n完整会话来源 18\n完整会话来源 19\n完整会话来源 20\n完整会话来源 21\n完整会话来源 22\n完整会话来源 23\n完整会话来源 24\n完整会话来源 25\n完整会话来源 26\n完整会话来源 27\n完整会话来源 28\n完整会话来源 29\n完整会话来源 30\n完整会话来源 31\n完整会话来源 32\n完整会话来源 33\n完整会话来源 34\n完整会话来源 35\n完整会话来源 36\n完整会话来源 37\n完整会话来源 38\n完整会话来源 39\n完整会话来源 40",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "preview-off",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "off",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "只预览所选窗口，画面不保存、不发送到模型。开启时按平台需要请求屏幕录制权限。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-off.design.html",
+      "sourceSha256": "2f478c5a9811c0a93e2ef741e68bc4bc62e93aa31606c717de9d45654d6a0fd4",
+      "file": "preview-off.png",
+      "sha256": "ef52f7b3d869cb4d0c8ee776c9c5effee115457f14891607077e57cb6f232a16",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n未开启\n查看运行窗口的当前画面\n\n只预览所选窗口，画面不保存、不发送到模型。开启时按平台需要请求屏幕录制权限。\n\n开启窗口预览\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 尚无成功画面\n刷新\n暂停预览",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "preview-live",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "available",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": null,
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-live.design.html",
+      "sourceSha256": "22767a88b21fab7a75fd8de74d2966d1fb8e1561871c9cf2663ac2ac884f80e5",
+      "file": "preview-live.png",
+      "sha256": "0eb72d801f2c056c87cd2b0e67183a723f0abdb2b615dcf59f1e38f4826031d5",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n画面回放\n离线采集回放\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "preview-paused",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "paused",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": null,
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-paused.design.html",
+      "sourceSha256": "155e4b099990ca024444aee4668b5bee3430773c2d8055abdfefd1f8ecd1374a",
+      "file": "preview-paused.png",
+      "sha256": "009416feca6a5c00a0982aadc2048adc118825a4f23d9036531e21659459075a",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n已暂停\n离线采集回放\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n继续预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "preview-permission",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "permission",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "授权后可刷新画面；当前窗口关联与取文不会因此中断。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-permission.design.html",
+      "sourceSha256": "8cc7b1d4a29e2ef12dda5a165e8e08439958b1e15a8b1eecf9ced8b92fa026cd",
+      "file": "preview-permission.png",
+      "sha256": "b4b3b7ab24ad414625df758320a6793a1f6eead0e324bade46a436b3a92d837c",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n预览不可用\n最后画面 · 离线采集回放\n需要屏幕录制权限\n\n授权后可刷新画面；当前窗口关联与取文不会因此中断。\n\n查看授权说明…\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "preview-unavailable",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "unavailable",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "保留窗口身份，可手动刷新或继续核对进程。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-unavailable.design.html",
+      "sourceSha256": "070efddf9425aa2c6d7e113ebd1ce18a5aa42c32611fb7391c9fbc21957b7c08",
+      "file": "preview-unavailable.png",
+      "sha256": "d63ca99aa7d2ed355f5faa11485daa6c54d595d6b680f7472feb565d7ee5e1ab",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n预览不可用\n最后画面 · 离线采集回放\n暂时无法预览这个窗口\n\n保留窗口身份，可手动刷新或继续核对进程。\n\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "preview-exited",
+      "state": "default",
+      "kind": "preview",
+      "requirements": [
+        "RW-01",
+        "RW-02",
+        "RW-03",
+        "RW-04",
+        "RW-05",
+        "RW-06"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "previewMode": "exited",
+        "replayedFrame": true,
+        "frameInput": {
+          "file": "preview-frame.jpg",
+          "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+          "encoding": "jpeg",
+          "width": 924,
+          "height": 629,
+          "source": "docs/design/first-product-v1/assets/sakura-01.png",
+          "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+          "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+          "notRealCapture": true
+        },
+        "previewDescription": "已停止刷新并保留会话记录。重新选择运行窗口后继续。",
+        "sourceAdaptations": [
+          {
+            "id": "typed-jpeg-input",
+            "basis": "Root approved independent JPEG encoding from approved PNG, exact same bytes supplied to production component; replay-only labels map to real live/last-successful state, identity/time/failure retained."
+          }
+        ]
+      },
+      "selector": "#window-preview",
+      "viewport": {
+        "width": 800,
+        "height": 900
+      },
+      "sourceFile": "preview-exited.design.html",
+      "sourceSha256": "a1e38388ca90897a43c8ac06cfde289b3287351aa57a9b40dd14d2f6b644a8d9",
+      "file": "preview-exited.png",
+      "sha256": "bbe19c539c358671ec9d42bb4b982aa4ea5be44f9d56657dc680225a81fc568c",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 282,
+        "height": 346
+      },
+      "originalBounds": {
+        "x": 1019,
+        "y": 353.234375,
+        "width": 282,
+        "height": 346
+      },
+      "underlayOrigin": [
+        995,
+        271.234375
+      ],
+      "surfaceSize": {
+        "width": 282,
+        "height": 346
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 800,
+          "height": 900
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "运行窗口预览\nサクラノ詩 10th Anniversary edition\n预览不可用\n最后画面 · 离线采集回放\n目标窗口已关闭\n\n已停止刷新并保留会话记录。重新选择运行窗口后继续。\n\nSakura-no-Uta-10th · sakuranouta10th.exe\ndesign-window-101 · PID 6200\n画面时间 18:24:08.000\n刷新\n暂停预览\n关闭",
+      "recordScroll": [],
+      "notProductRuntime": true
+    },
+    {
+      "id": "session-extraction",
+      "state": "default",
+      "kind": "session",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "dataset": "extraction",
+        "source": "Root-reviewed independent candidate05 typed supplement, canonical-contract corrections",
+        "supplement": {
+          "dataset": "extraction",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "extraction",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "extraction",
+                "sequence": "1",
+                "eventId": "sakura-session-1:raw:1",
+                "sourceId": "sakura-body",
+                "wireSequence": "1",
+                "text": "その風景には、悲しさも、痛みも、なかった。",
+                "observedAtMs": 1792319048000,
+                "reason": "正文",
+                "bodyRefs": [
+                  {
+                    "unitId": "sakura-session-1:event:0",
+                    "textRevision": 1
+                  }
+                ],
+                "payloadRetained": true
+              },
+              {
+                "kind": "extraction",
+                "sequence": "2",
+                "eventId": "sakura-session-1:raw:2",
+                "sourceId": "sakura-secondary",
+                "wireSequence": "2",
+                "text": "セーブ　ロード　設定",
+                "observedAtMs": 1792319048000,
+                "reason": "未选中来源",
+                "bodyRefs": [],
+                "payloadRetained": true
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-extraction-snapshot",
+              "refreshCursor": "opaque-design-refresh-extraction",
+              "highWatermark": "2",
+              "firstAvailable": "1",
+              "lastReceived": "2",
+              "lastPersisted": "2",
+              "retainedFrom": "1",
+              "matchingCount": "2",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "2"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        }
+      },
+      "selector": "#session-history",
+      "viewport": {
+        "width": 1040,
+        "height": 1200
+      },
+      "sourceFile": "session-extraction.design.html",
+      "sourceSha256": "05e2d6a8ff525098700633517f3e2fbd81adbbbcf1cbc0240b405668ee6d4082",
+      "file": "session-extraction.png",
+      "sha256": "ef60fd693f8bbaec2dfe315e2f5586f75f7fdf1bd2d3652d1ba0c4be7f0adcbd",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 848,
+        "height": 484.140625
+      },
+      "originalBounds": {
+        "x": 471,
+        "y": 333.234375,
+        "width": 848,
+        "height": 484.140625
+      },
+      "underlayOrigin": [
+        447,
+        251.234375
+      ],
+      "surfaceSize": {
+        "width": 848,
+        "height": 485
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 1040,
+          "height": 1200
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "本次会话的全部提取文本\n\n所有已接收来源均可查看；未选中的流不进入阅读字幕。\n\n共 2 条\n全部文本来源\n跟随新内容\n导出…\n本次已接收范围均已保存\n本次查看范围固定，晚到内容单独提示\n查看保存范围与接收详情\n#1\nArtemis\n正文\n已形成 1 条正文关联\n18:24:08\n\nその風景には、悲しさも、痛みも、なかった。\n\n查看完整来源\n#2\nArtemis\n未选中来源\n未进入字幕\n18:24:08\n\nセーブ　ロード　設定\n\n查看完整来源\n已显示 2 / 2 条 · 记录 1～2\n已到记录起点",
+      "recordScroll": [
+        {
+          "top": 0,
+          "clientHeight": 233,
+          "scrollHeight": 233
+        }
+      ],
+      "notProductRuntime": true
+    },
+    {
+      "id": "session-hook-events",
+      "state": "default",
+      "kind": "session",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "inputs": {
+        "clock": 1792319048000,
+        "dataset": "hook_events",
+        "source": "Root-reviewed independent candidate05 typed supplement, canonical-contract corrections",
+        "supplement": {
+          "dataset": "hook_events",
+          "query": {
+            "sessionId": "sakura-session-1",
+            "dataset": "hook_events",
+            "order": "newest_first",
+            "filter": {
+              "search": null,
+              "sourceId": null,
+              "level": null,
+              "stage": null
+            },
+            "cursor": null,
+            "pageSize": 50
+          },
+          "page": {
+            "records": [
+              {
+                "kind": "hook_event",
+                "sequence": "1",
+                "eventId": "design-hook-1",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "目标核对",
+                "code": "TARGET_VERIFIED",
+                "message": "运行窗口与游戏进程身份已核对",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "2",
+                "eventId": "design-hook-2",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "资源检查",
+                "code": "HOOK_RESOURCE_READY",
+                "message": "取文组件已准备",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "3",
+                "eventId": "design-hook-3",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "Hook 注入",
+                "code": "HOOK_ATTACH_STARTED",
+                "message": "已向所选目标启动接入",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "4",
+                "eventId": "design-hook-4",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "回调握手",
+                "code": "HOOK_HANDSHAKE_READY",
+                "message": "采集端连接已建立",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "5",
+                "eventId": "design-hook-5",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "发现文本流",
+                "code": "STREAM_DISCOVERED",
+                "message": "收到候选来源，保留每次提取事件",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "6",
+                "eventId": "design-hook-6",
+                "operationId": "sakura-session-1:event:0",
+                "sessionId": "sakura-session-1",
+                "sourceId": "sakura-body",
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本回调",
+                "code": "HOOK_TEXT_RECEIVED",
+                "message": "收到文本事件 #1 · 正文来源",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "7",
+                "eventId": "design-hook-7",
+                "operationId": "sakura-session-1:event:0",
+                "sessionId": "sakura-session-1",
+                "sourceId": "sakura-secondary",
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本回调",
+                "code": "HOOK_TEXT_RECEIVED",
+                "message": "收到文本事件 #2 · 未选中来源",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              },
+              {
+                "kind": "hook_event",
+                "sequence": "8",
+                "eventId": "design-hook-8",
+                "operationId": "design-operation-sakura",
+                "sessionId": "sakura-session-1",
+                "sourceId": null,
+                "wireSequence": null,
+                "observedAtMs": 1792319048000,
+                "level": "info",
+                "stage": "文本来源",
+                "code": "HOOK_LIFECYCLE_EVENT",
+                "message": "已连接 sakuranouta10th.exe，正文流已选择",
+                "lostCount": null,
+                "integrity": "complete_received_range"
+              }
+            ],
+            "nextCursor": null,
+            "snapshot": {
+              "snapshotId": "design-hook_events-snapshot",
+              "refreshCursor": "opaque-design-refresh-hook_events",
+              "highWatermark": "8",
+              "firstAvailable": "1",
+              "lastReceived": "8",
+              "lastPersisted": "8",
+              "retainedFrom": "1",
+              "matchingCount": "8",
+              "newerCount": "0",
+              "databaseRevision": "12"
+            },
+            "loadedRange": {
+              "first": "1",
+              "last": "8"
+            },
+            "completeness": {
+              "status": "complete_received_range",
+              "scope": "received_range_only",
+              "knownLoss": false,
+              "unknownRange": false,
+              "cleanedPayloadCount": "0",
+              "notes": []
+            }
+          },
+          "sources": [
+            {
+              "sourceId": "sakura-body",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399856",
+              "context": "0",
+              "context2": "0",
+              "selected": true
+            },
+            {
+              "sourceId": "sakura-secondary",
+              "label": "Artemis",
+              "hook": "Artemis",
+              "address": "5370399888",
+              "context": "1",
+              "context2": "0",
+              "selected": false
+            }
+          ],
+          "stages": [
+            "目标核对",
+            "资源检查",
+            "Hook 注入",
+            "回调握手",
+            "发现文本流",
+            "文本回调",
+            "文本来源"
+          ],
+          "follow": true,
+          "loadError": false
+        }
+      },
+      "selector": "#hook-events",
+      "viewport": {
+        "width": 1040,
+        "height": 1200
+      },
+      "sourceFile": "session-hook-events.design.html",
+      "sourceSha256": "f6e703ae5850994f7180f8f3da2f4d300d3075d4d65080f6c4d8ff69251c0eb4",
+      "file": "session-hook-events.png",
+      "sha256": "8e62fe5e33f7396cd08f6507adbd7e65e87e4a3da3171dbd7dd1702f67497100",
+      "bounds": {
+        "x": 24,
+        "y": 24,
+        "width": 848,
+        "height": 728.765625
+      },
+      "originalBounds": {
+        "x": 471,
+        "y": 333.234375,
+        "width": 848,
+        "height": 728.765625
+      },
+      "underlayOrigin": [
+        447,
+        251.234375
+      ],
+      "surfaceSize": {
+        "width": 848,
+        "height": 729
+      },
+      "componentHost": {
+        "viewport": {
+          "width": 1040,
+          "height": 1200
+        },
+        "placement": {
+          "x": 24,
+          "y": 24
+        },
+        "completeComponentSurface": true
+      },
+      "designTexts": "Hook 接入日志\n\n从目标核对、接入到恢复的事件，按发生顺序保留。\n\n共 8 条\n所有级别\n跟随新内容\n导出…\n本次已接收范围均已保存\n本次查看范围固定，晚到内容单独提示\n查看保存范围与接收详情\n#1\n目标核对\n信息\n18:24:08\n\n运行窗口与游戏进程身份已核对\n\n查看事件详情\n#2\n资源检查\n信息\n18:24:08\n\n取文组件已准备\n\n查看事件详情\n#3\nHook 注入\n信息\n18:24:08\n\n已向所选目标启动接入\n\n查看事件详情\n#4\n回调握手\n信息\n18:24:08\n\n采集端连接已建立\n\n查看事件详情\n#5\n发现文本流\n信息\n18:24:08\n\n收到候选来源，保留每次提取事件\n\n查看事件详情\n#6\n文本回调\n信息\n18:24:08\n\n收到文本事件 #1 · 正文来源\n\n查看事件详情\n#7\n文本回调\n信息\n18:24:08\n\n收到文本事件 #2 · 未选中来源\n\n查看事件详情\n#8\n文本来源\n信息\n18:24:08\n\n已连接 sakuranouta10th.exe，正文流已选择\n\n查看事件详情\n已显示 8 / 8 条 · 记录 1～8\n已到记录起点",
+      "recordScroll": [
+        {
+          "top": 407,
+          "clientHeight": 478,
+          "scrollHeight": 885
+        }
+      ],
+      "notProductRuntime": true
+    }
+  ],
+  "existingWindowStateIds": [
+    "empty-library",
+    "add-game",
+    "target-review",
+    "settings-connections",
+    "reading-hud",
+    "learning-fixed",
+    "library-batch",
+    "display-preferences",
+    "model-scheduling",
+    "connection-proxy",
+    "history-earlier",
+    "wordcard-native-size",
+    "dictionary-distinct-headwords",
+    "glossary-editing",
+    "learning-japanese-linebreak"
+  ],
+  "existingVariantCount": 44,
+  "files": {
+    "add-game.bottom.png": "5330c46f035aab6b7712a81a08db26f287eee36d2101e7671d8f1d4f1cd5a2f1",
+    "add-game.design-source.html": "40a0c15f029943821ba1348252eb1648b5bf1fcdc2c25d285513d1596e6ec832",
+    "add-game.top.png": "87f14c3eef3e3e54edcd6a00d2f1d8544fdd9e4cba49b57c64b667bd0bcf6fa5",
+    "component-common-underlay.png": "45a41ec01e9fc0de0e6f4f66843c0466e9e85b23680121d9f08c1f98acd5fc08",
+    "component-underlay-provenance.json": "d18ccb1d274ef9f7f68771b963212270cf65480f1e2a9b3792dd20503a9b3726",
+    "connection-proxy.bottom.png": "b226bf69c30e6b7ccc9f8e5e339555928db98f23dfcc75fa8035ba92ab0dd8e0",
+    "connection-proxy.design-source.html": "3cb3a61c3c848db7a0ea8c3a8cca4efce94444ba30164d6ed960d10e04af0773",
+    "connection-proxy.top.png": "6fc0a9e002e265ec20df04024fa189c8311f89b38253d84ef5d1cadbcbcc3b09",
+    "declared-inputs.json": "4d305c4cd5d447ebbb285a90f0a6a775997e1f4cc5d03c088aceb65b399ae13e",
+    "design-adapter-manifest.json": "35a366345aaea65f8c7187eeecf5341dda5076d6164abd8a996cd2a8b4726982",
+    "design-origin/README.md": "bf6d155483c3b357ab49295dc0b596712e5340ecf85e48bd6b48a9982e8e9ff7",
+    "design-origin/app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "design-origin/assets/manifest.json": "46525874239a21d1e597d059d349031d13a26a6cb2821f487cf2a5e7978702b9",
+    "design-origin/assets/mo-01.png": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a",
+    "design-origin/assets/mo-02.png": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e",
+    "design-origin/assets/mo-03.png": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053",
+    "design-origin/assets/mo-04.png": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810",
+    "design-origin/assets/never7-01.png": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8",
+    "design-origin/assets/never7-02.png": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1",
+    "design-origin/assets/never7-03.png": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d",
+    "design-origin/assets/never7-04.png": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236",
+    "design-origin/assets/never7-05.png": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64",
+    "design-origin/assets/reference-SCR-01-light.jpg": "5ab6d6dc0d25338ca415ee6be115862e1c47a6b769a3da8d4d4d73076a6129f6",
+    "design-origin/assets/reference-SCR-08-light.jpg": "80d0af0ff25573c995ea9cdff4a403144c0adec77ee476b67dcc86adbaebd0ea",
+    "design-origin/assets/reference-SCR-15-light.jpg": "111453b69c9505ccfb524cd3ae1298ba95050505bfaa2338b9cd8e98e2bedc4b",
+    "design-origin/assets/reference-approved-material.png": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+    "design-origin/assets/reference-full-product-before-restyle.png": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60",
+    "design-origin/assets/reference-icons-color-before-library.png": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82",
+    "design-origin/assets/reference-icons-color-before-settings.png": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce",
+    "design-origin/assets/reference-material-before.png": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921",
+    "design-origin/assets/sakura-01.png": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+    "design-origin/assets/sakura-02.png": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e",
+    "design-origin/assets/sakura-03.png": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274",
+    "design-origin/assets/sakura-04.png": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66",
+    "design-origin/assets/sakura-05.png": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc",
+    "design-origin/assets/sr-01.png": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697",
+    "design-origin/assets/sr-02.png": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688",
+    "design-origin/assets/sr-03.png": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a",
+    "design-origin/assets/sr-04.png": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151",
+    "design-origin/assets/sr-05.png": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246",
+    "design-origin/assets/wallpaper-frame.png": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+    "design-origin/comparison.html": "ccfd57e6fd9d6c201f97f69bf0687a8b93233c6bfce129ad2d69b2299aad9c10",
+    "design-origin/controls.css": "5fe9a124ef79694d7bdf9a4c337aa65097f422b795abc4881e11160690796480",
+    "design-origin/controls.js": "9ce3926e2e81e5200a1842fb4cbe78dd770683ccec8bd5f773e21c03c06dee17",
+    "design-origin/coverage.csv": "fd0343ad5230c879a36628df0d17ba5b64ef66276d55491b9807344b3a1af16c",
+    "design-origin/data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "design-origin/entry-flow.html": "43427ce499739b844ae7a2687689573034ecb5090912110bf29b1b126b82b636",
+    "design-origin/gallery.html": "7af89e459cdbe82794fe7fecc515266d51da780d387e8dd4e35d96f3af39737e",
+    "design-origin/game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "design-origin/game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "design-origin/icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "design-origin/index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "design-origin/integration.md": "505a509d97ad56cf5ea16036771c8f8f137172143f6e14dfd00bae97caec987a",
+    "design-origin/interaction-review.html": "512172c4aae94036935e75bb6a82d6bb67d47711774ddafbdaac192729fc2f0e",
+    "design-origin/learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "design-origin/learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "design-origin/manifest.json": "6e34932317f0ba35016d0d26708a95466f5da24a3ee66f27a6ba7f254ce095fc",
+    "design-origin/material-assets.json": "f85b93e9c7f1f7f0b37528f8a0ca5f8cdffe09412057400483a8848dc3374d79",
+    "design-origin/material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "design-origin/reference-manifest.json": "5dabca238bdb6c9821d1e2e26791034b80a5f92c7e9d03e9b8c985cf0d468e51",
+    "design-origin/review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f",
+    "design-origin/review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "design-origin/settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "design-origin/settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "design-origin/style-guide.md": "72a3531c59b8318eb9ac5477e05e41d97de48f23342f8c7635c458222c4428cc",
+    "design-origin/styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+    "design-source-render.log": "c3a3aa55fa5aa83693b423b34a0bb2ef6334e604f67c35a9698dd5bd67a67edc",
+    "display-preferences.bottom.png": "cbda53818ed84f1bd202f2a0d97141c5a5cde580874ebeb9aa4ddde0cf74c4c5",
+    "display-preferences.design-source.html": "0002585ef7d8b354104806215d0652d5f21f822ac09e4615e03bec8f0d3293b6",
+    "display-preferences.top.png": "508c9b9706fb55a562a60fd431542cb1739d66d5f852fab468dd6a14765c1204",
+    "empty-library.design-source.html": "07416de5727d9ec52d48097df2ff05b2b6f64faf005e6d422c6bc71ab3902182",
+    "empty-library.top.png": "4cf158a2259e987659cfe41956da6fb20a1c855c1d31257a9990c48183251b94",
+    "geometry-inventory.json": "b8c6a4929c6e4514b8eda4428579880a8f26631ba6893e0a561ffaf4266d1d53",
+    "hand-authored/capture.mjs": "b0755379f8135c0633f2e8b6af7a931bcd68f2a80406756b14b30568e0459fda",
+    "hand-authored/dictionary-distinct-headwords.closed-license-bottom.design.html": "b7e7b0aaf29a793667c1aa3eb1f8ca63a61f8e183a8a6a1d47e4d68527a91be2",
+    "hand-authored/dictionary-distinct-headwords.closed-license-bottom.png": "b81f979b44356bc6a6cb49d2d919eeb7ed89bf2d4f23fa95981518f085dc39b8",
+    "hand-authored/dictionary-distinct-headwords.coverage-0.design.html": "a8361c19236c7ecedba938cf0ba2a877a7a8ab0e0170dc06e9538cdbf19fefd9",
+    "hand-authored/dictionary-distinct-headwords.coverage-0.png": "8c4de9940ac3beb21f7ab6b006974b23136565620b714cb67ff00a18eb6b0bf0",
+    "hand-authored/dictionary-distinct-headwords.coverage-1.design.html": "06630870f39d0f7e4dbade537e05c477a0db4e1e958e23c58f2a62f904bd08ee",
+    "hand-authored/dictionary-distinct-headwords.coverage-1.png": "c1ce3c3aed601626807c21f5d27039faa96a15320db270188c40f90060b8d99b",
+    "hand-authored/dictionary-distinct-headwords.coverage-2.design.html": "67adb5c0c46a88d6f62b64e3092f605f3511c1dec88dc4747f7a5642462ba0ad",
+    "hand-authored/dictionary-distinct-headwords.coverage-2.png": "8703cccd82a9b316a9dc77350b300a1008a2cf4d6ded064c28552ee7e6824455",
+    "hand-authored/dictionary-distinct-headwords.coverage-3.design.html": "f113c94ca220a8597d4a02bea88d91ac69b36caa46fc35ca82bec429e0f3217b",
+    "hand-authored/dictionary-distinct-headwords.coverage-3.png": "59f3433e90651ea2dab79bce02e6650175d5008abcb9f4738ec0d743b1680f63",
+    "hand-authored/dictionary-distinct-headwords.coverage-4.design.html": "3eab92e8856812dd15f804bb96ac38e881b0a7d8435fadad23d46b99ace69bf3",
+    "hand-authored/dictionary-distinct-headwords.coverage-4.png": "5a25e4a7745b7073c5b071a58988e1a9d4ecf8c7f58fe5fea16af44445268805",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-0.design.html": "1313cc93e3d2a1f582d6b1ba653fe8dbb91f832203b5ee8ce5813268adc7678e",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-0.png": "8c4de9940ac3beb21f7ab6b006974b23136565620b714cb67ff00a18eb6b0bf0",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-1.design.html": "8822cdd1f2b49d932b74f211a87611f6b1b9842030fa67820a8fc9b46d05c303",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-1.png": "c1ce3c3aed601626807c21f5d27039faa96a15320db270188c40f90060b8d99b",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-2.design.html": "bd9079d1a005828f0575890b2a97864352b57572ab35e0be5c484345d750eeb1",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-2.png": "8703cccd82a9b316a9dc77350b300a1008a2cf4d6ded064c28552ee7e6824455",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-3.design.html": "66d6d4d557596b6b72743f96bac1549654a06d1602a70d33cf5eb37b25f15c22",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-3.png": "59f3433e90651ea2dab79bce02e6650175d5008abcb9f4738ec0d743b1680f63",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-4.design.html": "cff0357a84eaa0054d2be82a1322aab6a30ae51939bc848991c60abc50847ad9",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-4.png": "a1feaa7b63db95f597a517721a8a4b423981a4bb1d5e390ee39e9cf885d214a5",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.design.html": "0512e08092f61343e91a1c3ca6f34fb55f7de8ced7c002aab81d0886c59241e7",
+    "hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.png": "69105a2c24d4a55a16976466cf88da61328dc6f9daf9d786b97109bd43068a2d",
+    "hand-authored/dictionary-distinct-headwords.second-headword-source.design.html": "1d0d86b9d34f4c00c4a8c14764314b69af67472d91de9ff4238c6747c211d3d2",
+    "hand-authored/dictionary-distinct-headwords.second-headword-source.png": "3c7f853cc40ffd5dd766e9811eee1351acca7ffc38dfd6b412f6cb1bd58172b1",
+    "hand-authored/dictionary-distinct-headwords.source-a-attribution.design.html": "de920c9e1782beb419fa19c798479c93285248d2a5cf0bac375fbe8da2c9dbce",
+    "hand-authored/dictionary-distinct-headwords.source-a-attribution.png": "f2b854921f579daa38e9cc0d68a3583eb872a18f6f6591161727da93fa74781c",
+    "hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.design.html": "0512e08092f61343e91a1c3ca6f34fb55f7de8ced7c002aab81d0886c59241e7",
+    "hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.png": "69105a2c24d4a55a16976466cf88da61328dc6f9daf9d786b97109bd43068a2d",
+    "hand-authored/dictionary-distinct-headwords.top.design.html": "a8361c19236c7ecedba938cf0ba2a877a7a8ab0e0170dc06e9538cdbf19fefd9",
+    "hand-authored/dictionary-distinct-headwords.top.png": "8c4de9940ac3beb21f7ab6b006974b23136565620b714cb67ff00a18eb6b0bf0",
+    "hand-authored/glossary-editing.save-failure-draft-retained-bottom.design.html": "05de0e574ff3b0f46e62bca8217ea0d00af5f7e12041b3deb85870bc6f1cc04c",
+    "hand-authored/glossary-editing.save-failure-draft-retained-bottom.png": "fd0a5d404bc49f1cbd763a9e839cc01108561888f303cadd39eab0a5f45a984a",
+    "hand-authored/glossary-editing.save-failure-draft-retained.design.html": "f1ac06fddfa5db6bb3f3668486a9e9c48a0c505ecbce5df976fef52174ca10ca",
+    "hand-authored/glossary-editing.save-failure-draft-retained.png": "f73eb37173318908927a34fa6333c17378e038743bbbde3db069cc091324e484",
+    "hand-authored/glossary-editing.saved-global.design.html": "fc45df4c043b03b31d0d42c7c8e01e3c83795e960479249ad0f48baf0523de9e",
+    "hand-authored/glossary-editing.saved-global.png": "a773577eca15c6ebf4cf218345452667ab2216469a67a0540968679363efc1df",
+    "hand-authored/glossary-editing.terms-and-footer.design.html": "5329a386cb3f278a71e8ae820c53d70b8171e9f32070812eaa97d802f0f53e4d",
+    "hand-authored/glossary-editing.terms-and-footer.png": "23e4ff3fd0dd51122e0aaec822edb877496072a7a9d2d4afe13296fa1cd7872f",
+    "hand-authored/index.html": "3c298a9398800a20cff19f76d97842254629fe9a9b95c11fe841bc249e08fb10",
+    "hand-authored/learning-japanese-linebreak.narrow200percent-bottom.design.html": "ef5db6e81b42a08862bc377302c7331c21de94540d781fd75a951b6059c2f0d1",
+    "hand-authored/learning-japanese-linebreak.narrow200percent-bottom.png": "9421e4492d99a98449aad3d8a09cfd85a9b8e8871de91c5f46258ede4adc13c6",
+    "hand-authored/learning-japanese-linebreak.narrow200percent.design.html": "15558a2f741c91dddda1a92fc71d8923a3c711c4c768ad9f4d599fd82c065a58",
+    "hand-authored/learning-japanese-linebreak.narrow200percent.png": "073c2920c72e6ce39a5c4a9ac131e19b439ef4f3d8854c9bd016f9114ad67ba7",
+    "hand-authored/learning-japanese-linebreak.wide18.design.html": "510bc9bb71ababa0096f4224e9dda7ac3ce11969c24696eebfa48b28f5342532",
+    "hand-authored/learning-japanese-linebreak.wide18.png": "e20ce3bd5930615e41d40ac26fdca53940a028423a3b84fc0370415fe9636a3d",
+    "hand-authored/metadata.json": "6d9e67385f5943c3648f5c0dc845ac129543a0096994993fff98acb290a72cfd",
+    "hand-authored/supplement.css": "d0675956ff67b922f503b3dfd0dec25f4e905613f27a294254264739418f8b0a",
+    "hand-authored/supplement.js": "d37a8e54103882e22c449713630b1a51509e13a687685b60ffb467c440cf0354",
+    "hand-authored/wordcard-native-size.constrained-workarea.design.html": "d7911456d16c1086ce251aad62591b4feae7c8a2df2e70a6888e07367107a487",
+    "hand-authored/wordcard-native-size.constrained-workarea.png": "5f8782cecf9ca761014dd8f9b3720a89a4c44fc2b23f217928e425f5d43bac21",
+    "hand-authored/wordcard-native-size.native-window-context.design.html": "bf5e429e4b26574e61d2aab8bc62f8c21765cc176bad6f8fa29ab397898676f6",
+    "hand-authored/wordcard-native-size.native-window-context.png": "5232077ec859c1de431b9c518e9974ed4ac5a29744fc9c21f069b767681b3996",
+    "hand-authored/wordcard-native-size.resource-footer.design.html": "80b9686411f45f543f045b1d3f6e3e040904b0dec4573dadbc747cb21259dc85",
+    "hand-authored/wordcard-native-size.resource-footer.png": "9d03e1dd28d30d888605a772eb595f4a4fe8e2cbda40361e074b85f99e1c9d71",
+    "history-earlier.design-source.html": "489de60ad46b2898cee3b76f2eec19d17153cfa8d656e959d0c0e02d385d7bf1",
+    "history-earlier.top.png": "73ba632593fccb67aec8134acc6483f9d8d073ca22663bf018e2298dbf156519",
+    "index.html": "3f8e1280aa255a55f5844c294f55e5735f9d2f4d3cb9ea2870ebafe212c2c2f0",
+    "learning-fixed.bottom.png": "207d56e5a1dca9d8c8623a4c50a3571c852179aee729f0e27c33b21ce3cfaac0",
+    "learning-fixed.design-source.html": "139c7a7226c84f83aa76c6e07f793fb151acb9ab63e453bdac9c77e401b23da0",
+    "learning-fixed.top.png": "a93819e052e52d2eb9c7dedaab3550359cce860f57c9fbf276646525606ecfd2",
+    "library-batch.bottom.png": "4236286642011afac53e2ad5ee79ef2159cdf7d4d4441800a75c183a8bf9d777",
+    "library-batch.design-source.html": "4539c2bb99347a6952509206b5bf191a57e8032899735810a415b13df5897f22",
+    "library-batch.top.png": "f4c67a4fb38b41c999dce42acd29b184a555527282226a181926ede44244d53e",
+    "metadata.json": "99e3eda1ef51028c16bae3502d099e859ac479118fdd587d7e342064d629891d",
+    "model-scheduling.bottom.png": "44cf906525b3d0c49880d0962166dc797004a56136e6c08e2aa293e10fa10cb6",
+    "model-scheduling.design-source.html": "e881c64217c5025e825eee7bc681f229140f3ee1c3f31531d3b93c93c3017ab0",
+    "model-scheduling.top.png": "3a3485fa038b770998833421d38100a1e7fc78209efc9513ab5ee3d1346927a9",
+    "native-content.css": "c235205e5f3600038814e66c131f42976ff82cf60731eae2eaa9c5d7311057e7",
+    "preview-frame-input.json": "602489486a7b91060a41f73201fa25271206bcaec1f6c42a26b500c56a2036dd",
+    "preview-frame.jpg": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+    "reading-hud.design-source.html": "6b539253367bcb56fa26b11d34e2cf1806c4e97fe410b12225c0665543f83a9c",
+    "reading-hud.top.png": "9a80e0b9b8fc4273a0f00e2f58b85411cfbed02caa1d478f2e38739609d19367",
+    "render.mjs": "407bb8d67a895211d3f8378d9b55bbd85c0bda046d7ba41a0c67c404d96b70fb",
+    "reviewed-full/library-populated.design.html": "67101f25b18b12e901088e224dc1701c6c1ba79437023f64246ef9ba16fe9f9b",
+    "reviewed-full/library-populated.input.json": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+    "reviewed-full/library-populated.region0-bottom.png": "f272ddd9cf733a2c695d045221378bbd9a130917b35a3a598be7c51dbd7bba93",
+    "reviewed-full/library-populated.top.png": "af3104951b996c6f2a932662fcc28e41482214aada044817fa17f729a64cff59",
+    "reviewed-full/metadata.json": "3ee82e8fb75dba116b91e085bbb5b05dcb6b42287519dbb5bad5d5cb6491ba3f",
+    "reviewed-full/native-full-client.css": "ca088aeb1ff28398871afce2c415e8b972e9279b97352bb796ddd2ce18f73763",
+    "reviewed-full/session-current-body.design.html": "2f03038b2da297a71f0c515c10449e7b341b3c4b9a2d22a37c3c7c06fa9ab86c",
+    "reviewed-full/session-current-body.input.json": "24cd52b2dc01a533d011c6c7fbb8f1e4500d2e05deb722bf0d768f384b9c4143",
+    "reviewed-full/session-current-body.region0-bottom.png": "7802ea1fde00fd13046132f7ccfb28225f64df5c326d2c7cd91e681c58a43e9f",
+    "reviewed-full/session-current-body.region0-page1.png": "fdea5f54e2dffd9eed347c1150484a47faefa422ab329be561f400f5b4f7e3fd",
+    "reviewed-full/session-current-body.top.png": "5be5c2d8cb1d8dbb74af4b726a2c9e02fa914da5fb3554a9a38ea2c1901de685",
+    "reviewed-full/session-current-extraction.design.html": "9a01e18f53fcf6f74b60236bdbb9c32c959c8eabda4531177959ababee6589cc",
+    "reviewed-full/session-current-extraction.input.json": "8da27abc582bf73cb34f0cfa0569800703059e7f317c46922069cc59038c8386",
+    "reviewed-full/session-current-extraction.top.png": "1db13066af49ccc9a2459f2a792ac4ea4a6567bc98d64d62fd5c7d7f51669882",
+    "reviewed-full/session-current-hook-events.design.html": "41deeeb014aa42e225aa17de18939fb7c05399e78f61ec7191c9089952b674d8",
+    "reviewed-full/session-current-hook-events.input.json": "695938b3b3ace2fdd3d83e3ec57a3336c02a67e3a61aca0e101837c8567ce069",
+    "reviewed-full/session-current-hook-events.region0-bottom.png": "1af93af4c2f91226a3ab9b8ae9e6d54720bbb9d46a85522c16cf434214d444ae",
+    "reviewed-full/session-current-hook-events.region1-bottom.png": "bbfa6d920607eda320bb92e33b8bf45bae93e13822537f08624a802d5c2e1ce7",
+    "reviewed-full/session-current-hook-events.top.png": "c5a3b1d15f155005cb666482bfc149b971c20399e4db1376cf45b0f50c4d3717",
+    "reviewed-full/settings-shortcuts-active.design.html": "1a20a4a79ebfa92d6c6b9bbb1448cf61c91fb0e5a21dedc8e6176af1b3dfb4fd",
+    "reviewed-full/settings-shortcuts-active.input.json": "da0def711f673a6b8345acab713f747a8e02cd4401fdd7b86e03656c59bea6f1",
+    "reviewed-full/settings-shortcuts-active.region0-bottom.png": "4647b09e1a73ed38ba861fd9ed53cabed7be04e6c8716a17a040e6a51419dc33",
+    "reviewed-full/settings-shortcuts-active.region0-page1.png": "f5e7ffa5a0f2f917d8d01c2eb7f215e0609af6bf4f49713cc79b4c7d75a38e76",
+    "reviewed-full/settings-shortcuts-active.top.png": "5f74e0ed463ab72d3ef0a5449419c423405e436de3e36a521477f13a505a97c7",
+    "reviewed-full/settings-shortcuts-conflict.design.html": "bbb4be70572a74f5358a857cce2cef8db4fbea6e663af91d03b90a20e557992d",
+    "reviewed-full/settings-shortcuts-conflict.input.json": "dfe985acbae90fd073eef13683a88def7eacf67bb44c2115083293a72f476880",
+    "reviewed-full/settings-shortcuts-conflict.region0-bottom.png": "a0b22528011f7abd87145f746f139b25dba9c623cf5309581e4473d03253d89b",
+    "reviewed-full/settings-shortcuts-conflict.region0-page1.png": "082cbaab79d8613a3812182fe37e2f669d29d2793a8b4cb6848a2fab95aa0223",
+    "reviewed-full/settings-shortcuts-conflict.top.png": "c789779c1bea7c53f97447e537dc8f8a846a51ca0785adb4499365173d62f7e6",
+    "reviewed-full/target-review-preview-live.design.html": "8d60721869ae7a6567312ca9d1af19786b586f2a7909d5641a538adc901a1caf",
+    "reviewed-full/target-review-preview-live.input.json": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+    "reviewed-full/target-review-preview-live.region0-bottom.png": "ed28a6cec616e9053a434dc0e9d072581c1e285ff52572359371565bef48b1d0",
+    "reviewed-full/target-review-preview-live.top.png": "d790891a78c74701dbd996b200d87a13cdd1dde086121b33316f4577fac110c1",
+    "reviewed-full/target-review-preview-off.design.html": "c1f9800ebba60c2553d1d664c05cc00bbca6946c3a9aec83e0c30541c9261958",
+    "reviewed-full/target-review-preview-off.input.json": "c222fa4222b3f09f2588dd48697f800bc32437bfae176e4fb26f718c8ec23757",
+    "reviewed-full/target-review-preview-off.region0-bottom.png": "c43e4cf97f30b34631c1f6468ab3a7b2a292ce0e96ee984dc7f5a8d6fc669412",
+    "reviewed-full/target-review-preview-off.top.png": "641e031924947e017cdfcc00f28e42d062acbf062e8d307f4b16b6e2db12feec",
+    "reviewed-full-render.log": "21294ea860ab745de0e913e5440a59753bae8f8109512ca1acffd45c83252e94",
+    "reviewed-gaps/hud-lexical-error.design.html": "b666b0b8cec129b05b5c26c450b939601f4f62755f422359d16ebd15db46bb4e",
+    "reviewed-gaps/hud-lexical-error.png": "8c8bcac24844dae9a3827c6030d577dd233b13e4255e06c7408f7c31a5ccc95d",
+    "reviewed-gaps/hud-ruby-only.design.html": "1f7860ce0d961d56531258310032c00f1e0e73f5d9d2e1b97e0caf4b13c8aefd",
+    "reviewed-gaps/hud-ruby-only.png": "5e7f14fb476a89d48ce582b203d225215ff0bd4e916afc51309a5653137046d7",
+    "reviewed-gaps/hud-toolbar-500.design.html": "79f0e82380ec55d4633b341023eda1e70742dbfaa26d30efaad6d5513cdbc260",
+    "reviewed-gaps/hud-toolbar-500.png": "4edc846022dc247c27f1d19d13066a4e06c9ef3e7603b2739d8a51f20dc4a333",
+    "reviewed-gaps/hud-toolbar-560.design.html": "50ee610df9de68814532c97619a3cd635f94311646e905237750aa8fe7df6c1c",
+    "reviewed-gaps/hud-toolbar-560.png": "6d06848e47c4012a5cdaabc66b3688e0f59c6d94fd717b2d99e46ebcdb7a3125",
+    "reviewed-gaps/metadata.json": "908db87ad7b80da92f154ba16c7aef7f33eb187c0f7961c666f5388993a3840b",
+    "reviewed-gaps/native-component.css": "27d1f28141f2233895fb2de802408bfc39c7208b7f62fe258d1d24fd76c51e59",
+    "reviewed-gaps/preview-exited.design.html": "a1e38388ca90897a43c8ac06cfde289b3287351aa57a9b40dd14d2f6b644a8d9",
+    "reviewed-gaps/preview-exited.png": "bbe19c539c358671ec9d42bb4b982aa4ea5be44f9d56657dc680225a81fc568c",
+    "reviewed-gaps/preview-live.design.html": "22767a88b21fab7a75fd8de74d2966d1fb8e1561871c9cf2663ac2ac884f80e5",
+    "reviewed-gaps/preview-live.png": "0eb72d801f2c056c87cd2b0e67183a723f0abdb2b615dcf59f1e38f4826031d5",
+    "reviewed-gaps/preview-off.design.html": "2f478c5a9811c0a93e2ef741e68bc4bc62e93aa31606c717de9d45654d6a0fd4",
+    "reviewed-gaps/preview-off.png": "ef52f7b3d869cb4d0c8ee776c9c5effee115457f14891607077e57cb6f232a16",
+    "reviewed-gaps/preview-paused.design.html": "155e4b099990ca024444aee4668b5bee3430773c2d8055abdfefd1f8ecd1374a",
+    "reviewed-gaps/preview-paused.png": "009416feca6a5c00a0982aadc2048adc118825a4f23d9036531e21659459075a",
+    "reviewed-gaps/preview-permission.design.html": "8cc7b1d4a29e2ef12dda5a165e8e08439958b1e15a8b1eecf9ced8b92fa026cd",
+    "reviewed-gaps/preview-permission.png": "b4b3b7ab24ad414625df758320a6793a1f6eead0e324bade46a436b3a92d837c",
+    "reviewed-gaps/preview-unavailable.design.html": "070efddf9425aa2c6d7e113ebd1ce18a5aa42c32611fb7391c9fbc21957b7c08",
+    "reviewed-gaps/preview-unavailable.png": "d63ca99aa7d2ed355f5faa11485daa6c54d595d6b680f7472feb565d7ee5e1ab",
+    "reviewed-gaps/select-long-list.design.html": "c3d841030bb40e2f92e71454357352c7b2e0d930ce9e098a2db5221ce6f539fd",
+    "reviewed-gaps/select-long-list.png": "8064599679becdf89d6c17ec0d947926e2b2eb1666cd516eee1c419516f8c5ab",
+    "reviewed-gaps/select-normal.design.html": "76941fcfd97299d5ae832cf4e0f4a32a94e58cbc204309b4e81825491d3656df",
+    "reviewed-gaps/select-normal.png": "7595ee68f8a22dcdae667446029b44fcc736a04a7e15e36559af559c9df24492",
+    "reviewed-gaps/session-extraction.design.html": "05e2d6a8ff525098700633517f3e2fbd81adbbbcf1cbc0240b405668ee6d4082",
+    "reviewed-gaps/session-extraction.png": "ef60fd693f8bbaec2dfe315e2f5586f75f7fdf1bd2d3652d1ba0c4be7f0adcbd",
+    "reviewed-gaps/session-hook-events.design.html": "f6e703ae5850994f7180f8f3da2f4d300d3075d4d65080f6c4d8ff69251c0eb4",
+    "reviewed-gaps/session-hook-events.png": "8e62fe5e33f7396cd08f6507adbd7e65e87e4a3da3171dbd7dd1702f67497100",
+    "reviewed-gaps-render.log": "53e8596a07a896d8ca27c061d55ce56b1a33b003289467e9b5e667895c0f6864",
+    "reviewed-hud-chrome.json": "6cb89152219098c80eafad9ac06a8bc82379700c545b0d95cadb99780472b146",
+    "reviewed-supplement/provenance.json": "79b8e1be77e618509cd26d3a2a9203d0a44b5900aafd509ef961ed3ae256ceb9",
+    "reviewed-supplement/session-current-body.input.json": "e93dbcf8b4e9e03a9a3356c5e9028bbfc18077d488ef5c673f9d89caacd0b9d3",
+    "reviewed-supplement/session-current-extraction.input.json": "00f15012b96246bf0fa80a74f0e1a20b5fd0850feb83d64e875824461b16b34f",
+    "reviewed-supplement/session-current-hook-events.input.json": "aac7b5dcbabc3927574eb07674fcf4291c66047efed3c23236b1e7d304ef6ce3",
+    "reviewed-supplement/settings-shortcuts-active.input.json": "441d9bd76a415379bec56d2a9393190c1eba847cfd605f94d10ade67fd69c042",
+    "reviewed-supplement/settings-shortcuts-conflict.input.json": "a7413e8648ae5a58e3b95bb3d372bed4d3f5748d80906a5e97a7cbb3f0c9e8fb",
+    "reviewed-supplement/supplement.css": "be07e5e310bb433f23848d18ba95f88d121ab5a55aa77da5384a080cec27b4cf",
+    "reviewed-supplement/supplement.js": "64b31fd16c5f28ed2a7929e6b4bf495bdcc6d8b2cc2f0a7e0efc6709abca6f00",
+    "reviewed-supplement-hud-sources.json": "4d1c8c01a1e9b6b5fee131d9a2c1c0d8ae683fd71f382ff51dc5a79a698ede7c",
+    "reviewed-word-card-anchor.json": "fe622fb1d0077c65a0251ab8e9753f1fd9d7bb1b5c1dd876f45a06aa2c73b317",
+    "settings-connections.bottom.png": "0556a6c15f845f010dbd1a767781c842f9d4af87d0d33f68febaa5c8d054aa84",
+    "settings-connections.design-source.html": "186b71f3a0e70f2990d38f8efbf0519f3ecbbc2302d9a8ea5c17afd2ae435ede",
+    "settings-connections.top.png": "8c864868924b63dc12288643400ed0f06925a7f4035b6cec8ab5d0233393bd91",
+    "supplement-render.log": "a9476f8507af8a1fac7828b58d9428cf87035b509f33e331e9df8d1bf309311d",
+    "target-review.bottom.png": "4b11dee650ce75e623b4778949f9188165ea3e9f3dafa6ea9b0ca45865346f1b",
+    "target-review.design-source.html": "c8abde8e279e059bbc0a28cda4f327ed53d29227f99184cc6631bcd9248572bc",
+    "target-review.top.png": "3ce02eb871afb15ed18b90ee9154ff01a46d9d09221a1d2f31f7738c13e6e6c2",
+    "underlay-reading.png": "d72d04d3e6ba61a37f71ea57392a6fa9977a8b8451037134ec5719032c379cf3"
+  },
+  "producerStage": "catalogue-completed"
+}

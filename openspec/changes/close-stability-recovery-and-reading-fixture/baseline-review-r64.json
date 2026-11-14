@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "close-stability-recovery-and-reading-fixture",
+  "parent_baseline_sha256": "aae00b78b178b70cf0d43ef7da5f7ac2307325d3786410488ba160899f76fac8",
+  "exact_delta_sha256": "5ca51dce8f5f7cc08dc0494fbab693ab52edef1d1abd5e5d9038b8aa4b2c4120",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/recovery-fixture-batch-r64/independent-review/review.json",
+    "sha256": "b550ccdbf07063fa6b5e879469aba8e8ed7148d6229f4febe4e31abec48cd081",
+    "bytes": 23900
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

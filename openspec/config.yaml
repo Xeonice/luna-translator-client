@@ -1,0 +1,20 @@
+schema: spec-driven
+context: |
+  Chinese macOS-first Tauri/Rust client, with Windows games under CrossOver.
+  Product behavior: docs/product/README.md and first-product-scope.md.
+  Current design: docs/design/first-product-v1; full layout review remains pending.
+  Architecture: docs/architecture/first-product-engineering-baseline.md and matrices.
+  Independent luna-hooks-core is consumed as fixed artifacts by Windows brokers.
+  First-product implementation was authorized by the user on 2026-10-19 under implement-first-product.
+  Tooling-only changes still cannot authorize product implementation; pending approvals remain explicit.
+  Source, compiler, scenario and evidence checks are required in addition to this CLI.
+rules:
+  proposal:
+    - State whether this is engineering tooling or a product behavior change.
+    - Reference exact PRD/design/architecture IDs and retain pending review states.
+  specs:
+    - Every requirement title must contain a stable requirement ID.
+    - Every scenario must be linked in verification.json to an executable check.
+  tasks:
+    - Separate tooling checks, compilation and real product acceptance.
+    - Never mark product scenarios passed based on a tooling check or old probe.

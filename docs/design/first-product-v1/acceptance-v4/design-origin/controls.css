@@ -1,0 +1,25 @@
+/* One neutral control family, using the existing confirmed material tokens. */
+.luna-select{display:inline-flex;min-width:0;max-width:100%;vertical-align:middle;position:relative}
+.luna-select>select[hidden]{display:none!important}
+.luna-select-trigger{display:flex;align-items:center;justify-content:space-between;gap:16px;min-width:0;width:100%;max-width:100%;min-height:30px;padding:5px 9px;text-align:left;font:inherit;color:var(--material-text);border:1px solid var(--material-line);border-radius:var(--material-control-radius);background:var(--material-field-fill);box-shadow:inset 0 1px 0 var(--material-glint),0 1px 2px rgba(0,0,0,.09)}
+.luna-select-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.luna-select-chevron{display:grid;place-items:center;flex-shrink:0;color:var(--material-text-secondary)}
+.luna-select-chevron .luna-icon{width:12px;height:12px}
+.luna-select-trigger:hover:not(:disabled){background:var(--material-control-hover)}
+.luna-select-trigger[aria-expanded=true]{background:var(--material-selected-fill);border-color:var(--material-outline)}
+.luna-select-trigger:disabled{opacity:.44;cursor:default}
+.luna-select-trigger[data-select-state=loading] .luna-select-chevron:after{content:"";display:block;width:10px;height:10px;border:1.5px solid var(--material-line);border-top-color:var(--material-text-secondary);border-radius:50%;animation:select-loading .9s linear infinite}.luna-select-trigger[data-select-state=loading] .luna-select-chevron>.luna-icon{display:none}.luna-select-trigger[aria-invalid=true]{border-color:var(--material-error)}
+@keyframes select-loading{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.luna-select-trigger[data-select-state=loading] .luna-select-chevron:after{animation:none}}
+.luna-select-panel{position:fixed;z-index:10010;display:flex;flex-direction:column;gap:2px;max-height:286px;overflow-y:auto;overscroll-behavior:contain;padding:5px;border-radius:var(--material-panel-radius);border:1px solid var(--material-outline);outline:1px solid var(--material-glint);outline-offset:-2px;background:var(--material-menu-fill);color:var(--material-text);backdrop-filter:blur(var(--material-blur)) saturate(var(--material-saturation));-webkit-backdrop-filter:blur(var(--material-blur)) saturate(var(--material-saturation));box-shadow:var(--material-window-shadow),inset 0 1px 0 var(--material-glint);font-size:12px}
+.luna-select-panel [role=option]{display:flex;flex-shrink:0;align-items:flex-start;gap:8px;width:100%;min-height:30px;margin:0;padding:6px 8px;border:0;border-radius:5px;box-shadow:none;text-align:left;line-height:1.5;background:transparent;color:inherit;white-space:normal;overflow-wrap:anywhere}
+.luna-select-panel [role=option]:hover{background:transparent}
+.luna-select-panel [role=option].is-active:not([aria-disabled=true]){background:var(--material-selected-fill)}
+.luna-select-panel [role=option][aria-disabled=true]{opacity:.4;cursor:default}
+.luna-option-check{display:inline-flex;width:14px;min-width:14px;height:18px;align-items:center}.luna-option-check .luna-icon{width:12px;height:12px}
+.luna-select-empty{padding:14px 10px;color:var(--material-text-secondary);font-size:12px}
+.ls-control>.luna-select,.ls-resource-bar>.luna-select,.history-filter>.luna-select,.gl-field .luna-select{width:100%;flex:1}
+.ls-control .luna-select-trigger,.ls-resource-bar .luna-select-trigger{font-size:12px}
+.ls-row .luna-select{min-width:130px}.ls-resource-bar .luna-select{min-width:180px}
+@media(prefers-reduced-transparency:reduce){.luna-select-panel{background:var(--material-solid-shell);backdrop-filter:none;-webkit-backdrop-filter:none}}
+@supports not (backdrop-filter:blur(1px)){.luna-select-panel{background:var(--material-solid-shell)}}

@@ -1,0 +1,425 @@
+{
+  "revision": "first-product-v1-six-gaps-existing-journeys",
+  "artifact_qa_passed": true,
+  "scope": "user-confirmed first usable product; FP-01 through FP-12",
+  "material_baseline": "user-approved macos-material-case-v1",
+  "default_theme": "dark",
+  "user_review": "full_layout_pending_review",
+  "runtime_tests": "NOT_RUN",
+  "product_regression_executed": false,
+  "real_model_executed": false,
+  "live_game_executed": false,
+  "real_tokenizer_executed": false,
+  "game_assets": "19 paired screenshots and source texts from prior local Core probe evidence",
+  "browser": "155.0.8059.84",
+  "mode": "offline file:// high fidelity design",
+  "source_sha256": {
+    "index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+    "app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "controls.js": "5ee4aa3f43c9c94959e5e0fa7d496a65aaf6f1ddfc292c949aeb64f47dc865d8",
+    "controls.css": "d6039c5427ecf682786298a988818dd27a24af70ff355dc43f5e060e9e913e95",
+    "review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f"
+  },
+  "source_sha256_before": {
+    "index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+    "app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "controls.js": "5ee4aa3f43c9c94959e5e0fa7d496a65aaf6f1ddfc292c949aeb64f47dc865d8",
+    "controls.css": "d6039c5427ecf682786298a988818dd27a24af70ff355dc43f5e060e9e913e95",
+    "review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f"
+  },
+  "checks": [
+    "onboarding_empty_library_adds_metadata_without_connecting_or_binding_and_reuses_duplicate_target",
+    "onboarding_window_picker_separates_host_and_windows_identities_and_requires_hook_stream_confirmation",
+    "single_confirmation_starts_hook_reuse_keeps_session_switch_requires_review_cancel_preserves_and_unbind_keeps_reading",
+    "editing_active_library_identity_preserves_source_language_snapshot_advance_and_translation_and_removal_keeps_session_history",
+    "library_edit_rejects_overwriting_another_owned_complete_target_identity",
+    "two_filename_only_files_require_identity_fields_and_different_bottles_remain_distinct_without_fixture_text_or_fake_connection",
+    "settings_return_main_restores_hidden_main_keeps_unsaved_draft_applied_configuration_and_reading",
+    "first_open_unconfigured_translation_explicit_apply_target_check_failure_retry_stream_selection_and_source_first",
+    "builtin_dictionary_wordcard_old_sentence_identity_independent_windows_configuration_roundtrip_and_precise_reference",
+    "analysis_failure_retry_cancel_without_late_result_or_replacing_unit",
+    "pause_translation_off_hidden_hud_main_close_and_recover_are_independent_history_edit_failure_preserves_draft",
+    "independent_connection_model_entities_copy_switch_and_object_specific_tests",
+    "manual_translation_uses_matching_sample_and_cancelled_request_cannot_overwrite_new_input",
+    "four_real_game_pairs_preserve_sr_chinese_and_never7_same_page_increment_semantics",
+    "integrity_lost_and_target_exit_have_distinct_persistent_recovery_states",
+    "light_dark_large_text_opaque_surface_fixed_control_row_and_small_desktop",
+    "material_light_dark_and_system_reduced_transparency_visual_captures"
+  ],
+  "captures": [
+    {
+      "file": "38-library-empty.png",
+      "title": "首次打开 · 真实空库与等待输入",
+      "selector": "#desktop",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "39-add-game-entry.png",
+      "title": "添加游戏 · 文件选择与明确标记的示例程序",
+      "selector": "#app-dialog",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "40-add-game-review.png",
+      "title": "核对游戏资料 · 启动程序与取文目标分别保存",
+      "selector": "#app-dialog",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "41-window-picker.png",
+      "title": "从运行窗口开始 · 点击目标缩略图",
+      "selector": "#app-dialog",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "42-window-mapping.png",
+      "title": "确认窗口映射 · 宿主、Windows 进程、容器与完整路径",
+      "selector": "#app-dialog",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "43-window-connected-reading.png",
+      "title": "关联确认自动接入 · 选择正文后原文先显示",
+      "selector": "#desktop",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "48-window-switch-confirm.png",
+      "title": "切换游戏目标 · 确认前原会话与历史保留",
+      "selector": "#app-dialog",
+      "group": "window-binding",
+      "description": ""
+    },
+    {
+      "file": "44-window-binding.png",
+      "title": "关联同一运行目标 · 复用取文且不重复注入",
+      "selector": "#app-dialog",
+      "group": "window-binding",
+      "description": ""
+    },
+    {
+      "file": "45-window-unbound.png",
+      "title": "解除窗口关联 · 当前取文与历史继续",
+      "selector": "#main-window",
+      "group": "window-binding",
+      "description": ""
+    },
+    {
+      "file": "46-custom-batch-review.png",
+      "title": "两个同名程序 · 必须补齐路径与不同容器",
+      "selector": "#app-dialog",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "47-unknown-target-check.png",
+      "title": "未知程序 · 先选择实际运行目标，不借用其他正文",
+      "selector": "#app-dialog",
+      "group": "onboarding",
+      "description": ""
+    },
+    {
+      "file": "37-settings-return-main.png",
+      "title": "设置左上返回主界面 · 未保存编辑保留",
+      "selector": "#settings-window",
+      "group": "navigation",
+      "description": ""
+    },
+    {
+      "file": "01-first-open.png",
+      "title": "恢复已有游戏库 · 等待输入与未启用的在线用途",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "02-configure-translation.png",
+      "title": "先配置翻译用途 · 保存、应用与启用分开",
+      "selector": "#settings-window",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "03-connect-target.png",
+      "title": "核对运行窗口 · 一次确认关联并接入",
+      "selector": "#app-dialog",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "04-connect-failure.png",
+      "title": "窗口已关联，取文接入失败 · 保留目标并重试",
+      "selector": "#main-window",
+      "group": "recovery",
+      "description": ""
+    },
+    {
+      "file": "05-connect-check.png",
+      "title": "重试后自动接入 · 不再要求第二次连接确认",
+      "selector": "#main-window",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "06-stream-selection.png",
+      "title": "选择正文流 · 同名候选保留独立身份",
+      "selector": "#main-window",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "07-source-before-translation.png",
+      "title": "原文先到 · 译文异步到达",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "08-live-reading.png",
+      "title": "游戏前台阅读 · 独立HUD与真实配对原文",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "09-hud-detail.png",
+      "title": "字幕细节 · 注音、词性与安静操作行",
+      "selector": "#hud-window",
+      "group": "detail",
+      "description": ""
+    },
+    {
+      "file": "10-local-word-card.png",
+      "title": "点击词语 · 内置词典贴近原文",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "11-learning-unconfigured.png",
+      "title": "独立精读窗口 · 未配模型仍保留词卡原句",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "12-settings-over-reading.png",
+      "title": "设置与阅读同时存在 · 配置精读用途",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "13-return-fixed-sentence.png",
+      "title": "配置返回原句 · 用户主动开始",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "14-learning-loading.png",
+      "title": "按需精读处理中 · 游戏仍可推进",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "15-learning-result.png",
+      "title": "文法结构与来源 · 与当前字幕独立",
+      "selector": "#desktop",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "16-learning-reference.png",
+      "title": "结构引用 · 精确回到冻结原文",
+      "selector": "#learning-window",
+      "group": "detail",
+      "description": ""
+    },
+    {
+      "file": "17-learning-failure.png",
+      "title": "精读失败 · 原句和本地查词保留",
+      "selector": "#learning-window",
+      "group": "recovery",
+      "description": ""
+    },
+    {
+      "file": "18-paused-input.png",
+      "title": "暂停输入 · 原句与连接保留",
+      "selector": "#hud-window",
+      "group": "reading-controls",
+      "description": ""
+    },
+    {
+      "file": "19-hud-menu.png",
+      "title": "阅读更多菜单 · 显隐、翻译和断开各自独立",
+      "selector": "#hud-window",
+      "group": "reading-controls",
+      "description": ""
+    },
+    {
+      "file": "20-history.png",
+      "title": "阅读历史 · 原文译文与模型来源",
+      "selector": "#main-window",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "21-history-save-failure.png",
+      "title": "人工修正保存失败 · 编辑内容保留",
+      "selector": "#main-window",
+      "group": "recovery",
+      "description": ""
+    },
+    {
+      "file": "22-model-entities.png",
+      "title": "独立模型实体 · 副本和原件互不覆盖",
+      "selector": "#settings-window",
+      "group": "configuration",
+      "description": ""
+    },
+    {
+      "file": "23-connection-entities.png",
+      "title": "独立服务连接 · 地址、认证及动态引用",
+      "selector": "#settings-window",
+      "group": "configuration",
+      "description": ""
+    },
+    {
+      "file": "24-scoped-test-results.png",
+      "title": "测试按对象记录 · 连接通过不代表精读通过",
+      "selector": "#settings-window",
+      "group": "configuration",
+      "description": ""
+    },
+    {
+      "file": "25-manual-translation.png",
+      "title": "无游戏也能使用 · 手动翻译进入同一历史",
+      "selector": "#main-window",
+      "group": "journey",
+      "description": ""
+    },
+    {
+      "file": "26-game-sr.png",
+      "title": "SR · 中文原文不伪装成日语取文",
+      "selector": "#desktop",
+      "group": "games",
+      "description": ""
+    },
+    {
+      "file": "26-game-mo.png",
+      "title": "Memories Off · 日语正文与原画面对照",
+      "selector": "#desktop",
+      "group": "games",
+      "description": ""
+    },
+    {
+      "file": "26-game-never7.png",
+      "title": "Never7 · 同页增量与完整原文",
+      "selector": "#desktop",
+      "group": "games",
+      "description": ""
+    },
+    {
+      "file": "27-never7-increment.png",
+      "title": "Never7 · 第二状态仍属同一对白页",
+      "selector": "#desktop",
+      "group": "games",
+      "description": ""
+    },
+    {
+      "file": "28-integrity-recovery.png",
+      "title": "接收中断 · 连续性未知与恢复入口",
+      "selector": "#main-window",
+      "group": "recovery",
+      "description": ""
+    },
+    {
+      "file": "29-game-exit.png",
+      "title": "游戏退出 · 最后原句与历史保留",
+      "selector": "#main-window",
+      "group": "recovery",
+      "description": ""
+    },
+    {
+      "file": "30-dark-reading.png",
+      "title": "深色外观 · 同一真实游戏背景",
+      "selector": "#desktop",
+      "group": "appearance",
+      "description": ""
+    },
+    {
+      "file": "31-dark-settings.png",
+      "title": "深色设置 · 独立窗口与层次",
+      "selector": "#settings-window",
+      "group": "appearance",
+      "description": ""
+    },
+    {
+      "file": "32-large-opaque-hud.png",
+      "title": "200%阅读字号与减少透明度",
+      "selector": "#hud-window",
+      "group": "appearance",
+      "description": ""
+    },
+    {
+      "file": "33-small-desktop.png",
+      "title": "小屏桌面 · 设置表单保留滚动和动作",
+      "selector": "#desktop",
+      "group": "appearance",
+      "description": ""
+    },
+    {
+      "file": "34-library-material-light.png",
+      "title": "游戏库 · 浅色毛玻璃导航与页头",
+      "selector": "#main-window",
+      "group": "material",
+      "description": ""
+    },
+    {
+      "file": "35-library-material-dark.png",
+      "title": "游戏库 · 深色毛玻璃与可读内容层",
+      "selector": "#main-window",
+      "group": "material",
+      "description": ""
+    },
+    {
+      "file": "36-library-material-reduced.png",
+      "title": "系统减少透明度 · 导航回到实色",
+      "selector": "#main-window",
+      "group": "material",
+      "description": ""
+    }
+  ],
+  "console_errors": [],
+  "http_requests": []
+}

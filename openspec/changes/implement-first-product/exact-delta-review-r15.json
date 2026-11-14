@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-19T11:33:20.718392+00:00",
+  "status": "eligible_for_explicit_r15_registration",
+  "scope": "Independent read-only complete diff and static source-closure inventory; no tests/compilation/product execution/source edits performed.",
+  "checks": {
+    "current_r14_exact": true,
+    "r14_archive_exact": true,
+    "three_parent_preimages_match_independent_preimages": true,
+    "producer_only_adds_actual_top_level_sha": true,
+    "consumer_remains_exact": true,
+    "storage_only_adds_real_source_registration": true,
+    "verification_only_adds_exact_archive": true,
+    "old_closure_missing_only_game_launch": true,
+    "new_closure_complete": true,
+    "game_launch_real_source_unchanged": true,
+    "existing352_protected_only_expected_storage_delta": true,
+    "registered_catalogue_unchanged": true,
+    "all202_reference_inputs_unchanged": true,
+    "old_failed_run_retained": true
+  },
+  "before_after": [
+    {
+      "path": "apps/desktop/tests/visual/verify-ui.mjs",
+      "before_sha256": "89d1a2a5a1d016a958e77b9d1f4b7441a69cf38500c061dd3b1252954d7b1e56",
+      "after_sha256": "a792a1c8dead96fca3550b9409f0206ef49b5d63931e6d054705481af6b66178",
+      "parent_before_matches_independent_preimage": true,
+      "diff": ".build/acceptance-closure-20261019/context/independent-r15-delta.verify-ui.mjs.diff",
+      "diff_sha256": "26e6f43e6e31d159fd19cd2bc09a58360dde6afc83ab0f7d21a6616c89682e79"
+    },
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "before_sha256": "f83dcb7baf864b11edd77c55c1c40947c82591544de792a7bcacd6ae1babb04f",
+      "after_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891",
+      "parent_before_matches_independent_preimage": true,
+      "diff": ".build/acceptance-closure-20261019/context/independent-r15-delta.storage_acceptance.py.diff",
+      "diff_sha256": "a5df8d3469e9ef8bcc5c879c097a9dcaf9edda4a6861cef32a383defe50eba86"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/verification.json",
+      "before_sha256": "dc6c4a5042fa57e641f53bd1d6e549492393ddfb0b2d159ca27c1cc318782d88",
+      "after_sha256": "2c8ea4ceab622c6a9ec821f02afe227de214a3a2fb65c77ada3e76d3cbc76123",
+      "parent_before_matches_independent_preimage": true,
+      "diff": ".build/acceptance-closure-20261019/context/independent-r15-delta.verification.json.diff",
+      "diff_sha256": "ff9620c9990820538b5bdd1a7330a4c2127658249c36b52e358f36d323a61470"
+    }
+  ],
+  "source_closure": {
+    "method": "Read-only reconstruction of unchanged dynamic closure algorithm from current source; not execution of any test or guard suite.",
+    "closed_argv": [
+      "cargo",
+      "test",
+      "--locked",
+      "--package",
+      "app-infra",
+      "--lib",
+      "--test",
+      "storage_product_acceptance",
+      "--",
+      "--nocapture",
+      "--test-threads=1"
+    ],
+    "closure_count": 26,
+    "registered_count": 26,
+    "old_missing": [
+      "crates/app-infra/src/platform/game_launch.rs"
+    ],
+    "new_missing": [],
+    "registered_extra": [],
+    "sources": [
+      {
+        "path": "crates/app-infra/src/dictionary/mod.rs",
+        "sha256": "790df9bda6cea21eff909924b23c7bd43f35c970199c86fd454cdd09b6138991"
+      },
+      {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "sha256": "f05ecf1229472755bb5c47b467cdc45566971bfcd5b9c2b26585188b3e0c3bd7"
+      },
+      {
+        "path": "crates/app-infra/src/language/mod.rs",
+        "sha256": "25e7ceb0727b1731cf8519b52da9fe59867132c302e900a11178c0bad60420ea"
+      },
+      {
+        "path": "crates/app-infra/src/language/tests.rs",
+        "sha256": "08a42ecd5a21ad210e632afd7a62aa83d63dd91d064281886ba952043a70c593"
+      },
+      {
+        "path": "crates/app-infra/src/platform/game_launch.rs",
+        "sha256": "de03a16a42759a30d4a8905e115e586a94021f746ca412ce267a56a5973e18ce"
+      },
+      {
+        "path": "crates/app-infra/src/providers/mod.rs",
+        "sha256": "e99617128007f974361278a4ff26054dbfc9cbb3e7f4266700388dc82c5511b5"
+      },
+      {
+        "path": "crates/app-infra/src/storage/database.rs",
+        "sha256": "74a23acbca781cdbcd2ed61ce99d8c31a1b8401f983ae1cede152207ebf537ed"
+      },
+      {
+        "path": "crates/app-infra/src/storage/database_fault_tests.rs",
+        "sha256": "d0c04f2c4d9e2f8e269a6b164ba46025a413a9d1b30a06cccd1edd1b20d107fb"
+      },
+      {
+        "path": "crates/app-infra/tests/application_runtime.rs",
+        "sha256": "8b3b61c20303d0332a1853fabf4aedd50ff48b80b2d6363a8886e14c4fae54f6"
+      },
+      {
+        "path": "crates/app-infra/tests/configuration_lifecycle.rs",
+        "sha256": "0e1a2dc8c8631f1096f909a941036b9ccbf2210927d0c4511a1b8d1b11cd21a5"
+      },
+      {
+        "path": "crates/app-infra/tests/history_queries.rs",
+        "sha256": "06ff7da0fb32b0bb3fedfa7810de7c0cafccf927885986066e44fbe578519f5d"
+      },
+      {
+        "path": "crates/app-infra/tests/model_default_templates.rs",
+        "sha256": "7841de3ece3649f905414d59346ba8bae34b9c5566668677587970447e8fc986"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_routes.rs",
+        "sha256": "314df532b8eb88ead48afe6fe68d34231a87fc5000dded272c425594280964c0"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_support/dictionary.rs",
+        "sha256": "59c70304765601068ca9f0af200ea21a94269af10eb8a8f5b551dd9711783422"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_support/evidence.rs",
+        "sha256": "5e03adf41d7c3d0cf2e7d978b56b137bb8d9b699767051c73c17c8567ccc4ec2"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+        "sha256": "4405733c54ca4d86f521193211d967f0e75ffc9f3a22ccc4353c1841026d9f39"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_support/receipt.rs",
+        "sha256": "09c636693efdb3005df9ff0b72e55f4eb6b2f6fcace5dac5f70df05140194747"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_acceptance_support/resource_rejections.rs",
+        "sha256": "145e5503535377c391727e67c3c8e06349987afcc1b3cb9165fed15bed1d52ae"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_cache_semantics.rs",
+        "sha256": "f0ebcc8a5e535a84b53b238bb161660a838089350be81a2a6831d092d7716b96"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_credential_crash.rs",
+        "sha256": "d28542fd5397f116039e0a54b5b6003450e3939341df8ed2482d1fc431edf37f"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_disk_full.rs",
+        "sha256": "54abaf2398103031ab9c80050e3a739f1b1ea0e2368c1b00b8dd54ea716a4591"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_field_boundaries.rs",
+        "sha256": "93a1b332d16b7f5489a40377267f9f1b163ee8a863a69b5130b316b88ffd71dc"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_field_mapping.rs",
+        "sha256": "28f634b7af8bec9b4bb95ad59421eb6360e15da402742c0483647f9fabafaff9"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_product.rs",
+        "sha256": "9c7ef4c59435102aa53d892e8e7530b945b1d833aec14c7ef51a041fbae2ecc2"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_product_acceptance.rs",
+        "sha256": "c75ad5771ded4ced3899c21a3d6a0db0d8dab01df1d5507f03f5d0899c4614f0"
+      },
+      {
+        "path": "crates/app-infra/tests/storage_schema_contract.rs",
+        "sha256": "906e7b4471129b46e0e8633468235d196be02ed4f26fff274431cb803d096ae3"
+      }
+    ]
+  },
+  "protected_transition": {
+    "parent_r14_sha256": "969881c58a2d9ef9769efa015799c769fa76b7ad88d7fa59a8bb2deebe644323",
+    "archive_path": "docs/development/baselines/FP1-20261019-R14.json",
+    "archive_sha256": "969881c58a2d9ef9769efa015799c769fa76b7ad88d7fa59a8bb2deebe644323",
+    "existing_protected_deltas": [
+      {
+        "path": "scripts/quality/storage_acceptance.py",
+        "old_sha256": "f83dcb7baf864b11edd77c55c1c40947c82591544de792a7bcacd6ae1babb04f",
+        "current_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891"
+      }
+    ],
+    "new_records": "Root must separately list/identity archive, this review and R15 transition record; no self-hash recursion required.",
+    "approval_object_sha256": "52f35aeaaec9c5138b316f60553c8537276789d14fa65c2b1ab814e1683955c9",
+    "unchanged": "All other351 protected content hashes, including original approvals manifest,PNG/token/DDL/debt, are unchanged; all202 reference input hashes match."
+  },
+  "old_run": {
+    "path": ".build/quality/20261019T111716.813158Z.json",
+    "sha256": "71ee6fe68b5c32d170cba9e7cc3b89c5049ad09cbf3178545b70f0eb5686edb9",
+    "status": "failed",
+    "steps": 50,
+    "failed_steps": [
+      {
+        "id": "product-ui-capture",
+        "errors": [
+          "Product capture receipt differs from the independently registered catalogue"
+        ]
+      },
+      {
+        "id": "required-storage-execution",
+        "errors": [
+          "rust-storage-complete-v1: reviewed test_sources omits compiled test import closure: crates/app-infra/src/platform/game_launch.rs"
+        ]
+      },
+      {
+        "id": "storage-acceptance-tests",
+        "errors": [
+          "storage-acceptance-tests: command exited 1; see .build/quality/20261019T111716.813158Z-storage-acceptance-tests.log"
+        ]
+      }
+    ],
+    "product_storage_tests_executed": false,
+    "product_packaged_native_game_tests_executed": false
+  },
+  "required_followup": [
+    "Root explicit R15 baseline registration must preserve exact R14 and only this one old protected source update plus listed new records.",
+    "Fresh source/package-bound actual unified gate,57/44 visual receipts and complete22/33/10/431storage execution remain required.",
+    "Keep11:17 failure immutable; do not claim code review/static closure proves product or gate pass."
+  ],
+  "product_acceptance_promoted": false,
+  "blockers": []
+}

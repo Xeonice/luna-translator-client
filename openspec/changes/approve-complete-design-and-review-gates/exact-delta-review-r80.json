@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_complete_design_approval_and_review_gate_delta_pending_packet_adoption",
+  "change_id": "approve-complete-design-and-review-gates",
+  "parent_baseline_sha256": "b5754c102f3ba7c916385ed9128e1a6a1dcce139ab1b056d237bc12805a3cfcf",
+  "source_delta": [
+    {
+      "path": "docs/README.md",
+      "before": "34a443ff521d2b9a1d77845335b5a5ac48c1fbb21826da7e395b869653388194",
+      "after": "274913ffd455cc7981bf6566b68e3df086fb2ef2b8d54f5f16f5ceb97c0c7a00"
+    },
+    {
+      "path": "docs/architecture/client-rebuild-architecture.md",
+      "before": "a5bf0bbb9faebde898e6b37494a5a55956a82f892a5d240c00c5ce6165792332",
+      "after": "c0b112680d0bac27b8c4c7e37426afa5d1ea75948f5601c1382c7ae34983b3ec"
+    },
+    {
+      "path": "docs/architecture/engineering-components.csv",
+      "before": "01b70106f313f6ad181e846aed9d367f1c5f4acfd23fbf15e337b6e7b8f2e234",
+      "after": "d8c9f3801eaae78a5bb7d0ca0481e8c12114d774005bcdac113b198bd80951a2"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "f7dbe46acb34cbb02f3daebba626c125ca636b22a1e4ef846837804e6e2d84eb",
+      "after": "2ce3f5da09e7aedfbd36bed79319add4baa59741f4d84e924aa728b0c9ecf0ab"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "e322f8b431deb9141fc16bc9b2bd688bd3cbbaf97d298faffdd875aad98236ed",
+      "after": "ae0d36ffb80a997ce80887cbfa562af2b36f49def8799465b6e8fa141f7637d2"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "532d9a28ed14a55b912c795849388d860627b7f0378ff612cd01278ccd64eb8d",
+      "after": "3cd15393c21341c6289713ff0a4f1050565525c192c41195d7945ea9136d44b0"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before": "4d4a837245cf52288bed9cecf73cec341400e41a746fd89794ab3389b38d16eb",
+      "after": "59fc9836fc159dbc67a4fbe78f34baf5263cb58f9c0c0387c2083d1503229487"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "5e70666962e87e89b437bca64d74a822922f2822272dcf826500e6c5e4d0ae95",
+      "after": "5f10d1567dab33413ce74a893992851547f04b1560c0f5a8d083f953b3f8ad23"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before": "42100201c17f1c9227edb11e710cfe0300edfc65eae75371d9d5e440d186d60a",
+      "after": "53d6b4d97e63b6ff40184f5178d573f4501ce5d4ccd6ee26393f16de8395b1a1"
+    },
+    {
+      "path": "docs/current-documentation.json",
+      "before": "5ff9bc97265ee4fa720eb7985dfbcd6db87ee42c2917f20d172e1b42475d3897",
+      "after": "58c7cece53343c55526f76dbff4f076cd69787ad8ddf6ef778090474a0e1e8e5"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "7bfa62720698f0194f0f989fca0318e08e63d0fcf95a420e5103264f26d77069",
+      "after": "807589aec8210f265db2a5abe29461439eb04be63b9f6566a1d26770d4807895"
+    },
+    {
+      "path": "docs/development/all-page-design-coverage.json",
+      "before": "50a27387d5d49cf353e651cc48f547136747440b90132eb6664f22e35ae769c8",
+      "after": "b43d7eeeb1e0a6a7eadef7a6802f9e7156c9d8ba609e0052d0af8ce8d9fd896e"
+    },
+    {
+      "path": "docs/development/all-page-design-coverage.md",
+      "before": "5a2897cd52e0c74f8fc480c47849c342a7b8b16394b3933de2eee040fad83cdc",
+      "after": "b8d91bab76b129d0e3bc1d5e479c6eb94ef497781f3f338823774764367a996e"
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "before": "f22f7290fac2e2b26f1a9802e30b83a89c61c7e370d887d23e5939463c513954",
+      "after": "29332d19a5dda5b17b6197002343f1b261dcb8691e7b3e7eebb8ba17d34bd2ce"
+    },
+    {
+      "path": "docs/development/current-design-alignment.json",
+      "before": "8b40c0fa4966794e99db976992499ca7db180b1bcfd0136e9635998c4972e632",
+      "after": "87fa6e2efe2c676e52c8eab15f56ca6cd9a5cb3c39cc037924ee612f410b8333"
+    },
+    {
+      "path": "docs/development/design-alignment-and-release.md",
+      "before": "51a1ac82683da8e4fcccc2361dc26f5fab1e8e6bdefccfcd64d2c339aaf87f0d",
+      "after": "6168d315fd03410e9c87ed26995fbe91fab94a83dcd2ef03ac3090aaa89ff121"
+    },
+    {
+      "path": "docs/development/design-approval-complete-20261031.json",
+      "before": null,
+      "after": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc"
+    },
+    {
+      "path": "docs/development/desktop-client.md",
+      "before": "696178bf52631f7c05cbcccf68bbef30e0de9c7aef3a7a769273ffe7d64946ea",
+      "after": "f8e51f4cab113068ef3c1f5b578cdfcc7c58a95c7acd8d8bfd702c57857534d5"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "before": "1a1590c8a336d7eb9f84c40854c3fd507522e5ae9d2383827f95955b341cb480",
+      "after": "4bc36bf1a9209a73827de3d859078296af1c804094ed5b23bb5c1232b8c564c2"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "630d23d698e538357eef938509fd819f2c658bd2adb964dea4c93cb25cbcaf24",
+      "after": "59d8ea10cd9eb37e3274e9ca4d2dd6d39f17babd1aec5e51679f77a9648f6b9e"
+    },
+    {
+      "path": "docs/product/history-session-paging-prd.md",
+      "before": "a8546d2024d609ec48fe5002176ac26e0f04c2e633ca27d4d57afce88fcc578e",
+      "after": "95151d245db1cec41ec2194e90d20a64282f8b830a842e3c0e35381dc6c398da"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/design.md",
+      "before": null,
+      "after": "def8022aa150539392c49722f68bee393e325053fbfb5ab8fde4d14a8cc9a0d7"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/iteration-card.md",
+      "before": null,
+      "after": "616a9826a51f96b7fae11bb45309ae9e83d0413c5861a8b952dbea9095745e5b"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/proposal.md",
+      "before": null,
+      "after": "92081f2c394218bd26ff2338ec644d066fdebdfade3cc1663ae6d8f002674715"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/source-snapshot.json",
+      "before": null,
+      "after": "59706b0fb10468c8bd3e186128b7e9bfda5f61c6c285f1daba7e0b0e500072f8"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/specs/complete-design-review-gates/spec.md",
+      "before": null,
+      "after": "6ea08fa4f58a590193674ecd67d628eeb5b9498d75f0cb9050fd3318f0e0e374"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/tasks.md",
+      "before": null,
+      "after": "bb5d21a240ec71d5b458a503beae3b54fdd1303aefcace56cc316f8cd7cb87b8"
+    },
+    {
+      "path": "openspec/changes/approve-complete-design-and-review-gates/verification.json",
+      "before": null,
+      "after": "b0cf85757d79ca385845ddfa81c997421918834088c97957474d9ff62d134b86"
+    },
+    {
+      "path": "scripts/quality/all_page_design_coverage.py",
+      "before": "ce5bf92e985a7df7c72ee9a9be14ae6a4fc87f33ea63d22605b5c12c34f38086",
+      "after": "c5d989a7e723a777050e74a78d37ee01cfdd31a742a0a911ba5f5a684aefa46c"
+    },
+    {
+      "path": "scripts/quality/change_review.py",
+      "before": null,
+      "after": "51b0883c09d1c297d05a4471924539c4612547412013573ae5dab242a2f2a3f2"
+    },
+    {
+      "path": "scripts/quality/current_design_alignment.py",
+      "before": "3138eb4d56a613c55fde81e1c1ee428756ca0f4c6162bfff10abfd71a1453e48",
+      "after": "ae3fb737ef077ab88e92a84d23964f3ceca86f4cd4c01537c9e2b0ff1d3a99b6"
+    },
+    {
+      "path": "scripts/quality/current_product_coverage.py",
+      "before": "fd424143f67e2d5824e9112e21c73daecd51a7da04be7aee225e59b33a99ba72",
+      "after": "f1e4f274a2cf494716c75c15e75d0a75a267484c43746dc70ac23c029d4a1585"
+    },
+    {
+      "path": "scripts/quality/design_authority.py",
+      "before": "d87c2f5057b2b7d90d38c652db29198152ad2cdd9c41bfa7f1183033b5313a93",
+      "after": "4bf18e4083f6b87ffb0d46ba3959c2fe038e4402ad0c1c568e162aea08b7fee6"
+    },
+    {
+      "path": "scripts/quality/documentation_contract.py",
+      "before": "b4b3a9834d2bd5d2aa3725d0d6d99e9caf2c5a87b19828e1c70cab378c106888",
+      "after": "d1534459fdfb4c70108fde572a338323fd1e7291760681164d35c28dca55f3df"
+    },
+    {
+      "path": "scripts/quality/test_all_page_design_coverage.py",
+      "before": "b96936001dad4f8bd348c5974c9758c17da3143db5c2e08827ee70f419e090fb",
+      "after": "9212f865dc951665ae842d6c10a9856b472a6e99a4c503f495c2c66cb539af87"
+    },
+    {
+      "path": "scripts/quality/test_change_review.py",
+      "before": null,
+      "after": "d11b5c3c7ca87d1f2caec3cdab5dd0e05ee53d791ae18cde2f2e717b7bda1fa3"
+    },
+    {
+      "path": "scripts/quality/test_current_design_alignment.py",
+      "before": "f2321df773f7916a328cd541b354c07995f871de24c1c894a8bbb301b4f4f27d",
+      "after": "4ab8e04c570fa68baea7e606279079f3a3bbc6784e5a1fdc630c2de5aea1bd52"
+    },
+    {
+      "path": "scripts/quality/test_current_product_coverage.py",
+      "before": "94fda9b48ebb94b0cfb6e39a6706c6c157a9ed4280025e8798cfb765a5b826d5",
+      "after": "ad0e056b1d199c4efc103accc8b130d5d920c03ae6afba226bce6e5d2fda7f7b"
+    },
+    {
+      "path": "scripts/quality/test_design_authority.py",
+      "before": "dd62ae36b26d4462203ff3f8f899319da4e0b769a975f8342c7ca4e6e902dcbf",
+      "after": "cdbfc9500b4339d6cdbb91f19243855bfb0b802ad3d89d1684b365c5de827477"
+    },
+    {
+      "path": "scripts/quality/test_documentation_contract.py",
+      "before": "ca03598fd58c7b33c78ebf9d86080541482aaa6293f511a7cc1e03a5755d3daf",
+      "after": "10580b6c2acc5901e8fcdc1d31c4e4ae55666925f1bc449c0e6249bbf41adae3"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "762852c677c99648fe16e4f16a31c709815f43b08e7f0a52e7f8b556b3ebac9b",
+      "after": "4e3cd00768beb783f74d1a0f02a6cf6a5e2b59cb7a7919b9103579ca2aa61680"
+    }
+  ],
+  "product_delta": [],
+  "authority_review": {
+    "path": ".build/current-design-approval-20261031/review/authority-review.json",
+    "bytes": 4863,
+    "sha256": "47ac24a148e43b879a26d63d855afee81f27e0ebae48aaaf0b37398c957e2f95"
+  },
+  "mapping_documentation_review": {
+    "path": ".build/current-design-approval-20261031/review/mapping-docs-review.json",
+    "bytes": 4882,
+    "sha256": "847d9402d1df15553c136f6565f5f22aee8318e113652af50157c5a9f865ddec"
+  },
+  "review_gate_review": {
+    "path": ".build/current-design-approval-20261031/review/review-gate-review.json",
+    "bytes": 2630,
+    "sha256": "05c08aa035dfa8439231098cd101dd0808d2981ccde6e4ab51b8531cb27131f5"
+  },
+  "governance_review": {
+    "path": ".build/current-design-approval-20261031/review/governance-review.json",
+    "bytes": 3053,
+    "sha256": "6ad7404f2bceaac33423a15e747e2562545379fed52fd2e513be0d7263a5abc6"
+  },
+  "closed_owner_source_paths": [
+    "scripts/quality/design_authority.py",
+    "scripts/quality/test_design_authority.py",
+    "scripts/quality/current_design_alignment.py",
+    "scripts/quality/test_current_design_alignment.py",
+    "scripts/quality/documentation_contract.py",
+    "scripts/quality/test_documentation_contract.py",
+    "scripts/quality/current_product_coverage.py",
+    "scripts/quality/test_current_product_coverage.py",
+    "docs/development/design-approval-complete-20261031.json",
+    "docs/development/current-design-alignment.json",
+    "docs/current-documentation.json",
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "docs/README.md",
+    "docs/design/first-product-v1/README.md",
+    "docs/product/README.md",
+    "docs/product/history-session-paging-prd.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/architecture/client-rebuild-architecture.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/desktop-client.md",
+    "docs/development/design-alignment-and-release.md",
+    "docs/development/engineering-gates.md",
+    "scripts/quality/change_review.py",
+    "scripts/quality/test_change_review.py",
+    "scripts/quality/verify.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/implementation-status.md",
+    "openspec/changes/approve-complete-design-and-review-gates/proposal.md",
+    "openspec/changes/approve-complete-design-and-review-gates/design.md",
+    "openspec/changes/approve-complete-design-and-review-gates/tasks.md",
+    "openspec/changes/approve-complete-design-and-review-gates/iteration-card.md",
+    "openspec/changes/approve-complete-design-and-review-gates/source-snapshot.json",
+    "openspec/changes/approve-complete-design-and-review-gates/specs/complete-design-review-gates/spec.md",
+    "openspec/changes/approve-complete-design-and-review-gates/verification.json"
+  ],
+  "complete_design_source_version": {
+    "target_id": "guided-service-reading-20261030",
+    "composition_id": "complete-guided-history-20261031",
+    "status": "approved_by_user",
+    "record": {
+      "path": "docs/development/design-approval-complete-20261031.json",
+      "sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc"
+    },
+    "design_source_count": 61,
+    "design_closure_sha256": "72e788d89b489eded79caafd836177b67fa04b463861bf96b110da05e0257ffd"
+  },
+  "review_evidence": {
+    "path": ".build/current-design-approval-20261031/review/final-change-review.json",
+    "authors": [
+      "/root",
+      "/root/history_design_review",
+      "/root/complete_design_mapping_docs",
+      "/root/history_design_governance"
+    ]
+  },
+  "historical_approval_records_preserved": true,
+  "product_implementation_modified": false,
+  "product_tests_executed": false,
+  "independent_reference_acceptance_promoted": false,
+  "product_acceptance_promoted": false,
+  "scope": "Explicit complete61 source-composition approval, accurate history17existing/3unmapped/0missing mapping, mandatory actual-diff independent review and client technical-design synchronization only. Original61 source bytes/pending labels and old57 approval, PNG/token/zero-threshold/source-version, all execution/reference/adapter states, plans/CSV/product/DDL/phase/active/technology/history remain. M15 only existing verify SHA; C23/C24/C36 target/gap/next-step plus C24 aligned-to-partial; exact deterministic three exports. Only one new baseline approval key. Final independent packet and actual-change gate report bind wholeafter45 files without source/report hash cycle."
+}

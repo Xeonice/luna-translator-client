@@ -1,0 +1,11 @@
+{
+  "previous_baseline": "FP1-20261019-R7",
+  "previous_sha256": "cba8dcdbdb3dcf52e6ec444ce8a744d965b5eb6fa575a36e6e2a957fd26fa099",
+  "current_baseline": "FP1-20261019-R8",
+  "reviewed_changes": {
+    "docs/development/iterations/FP1-IMPLEMENT-20261019/technical-decisions.md": "Document actual reviewed integration corrections, explicit bounded retry and inherited parameter semantics; preserve full acceptance gaps.",
+    "scripts/quality/product_execution.py": "Expand actual infra execution from lib only to lib+tests; execute native IPC tests. No weakened assertions, references or thresholds."
+  },
+  "approvals_unchanged": true,
+  "product_acceptance_promoted": false
+}

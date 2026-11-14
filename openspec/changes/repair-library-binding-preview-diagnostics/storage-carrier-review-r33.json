@@ -1,0 +1,74 @@
+{
+  "kind": "R33_fresh_storage_carrier_candidate_review",
+  "status": "root_independently_reviewed_current_carrier_awaiting_exact_copy",
+  "source_freeze": {
+    "at": "2026-10-21T15:47:06.731391+00:00",
+    "authorization": "Root final stopped-owner message after staged worker18b588; candidate generation only, no adoption",
+    "map": ".build/governance-rf04-rf05-final/pre-authority-source-map.json",
+    "map_sha256": "9109a0d557d9edb95f72df9484cb298c2363f7753e0abf4f79ba5ed05b5b0492",
+    "tree_sha256": "31447de3dafb0352a53021c619464caf39924c5511f9555a3339603599981187",
+    "entries": 1635,
+    "parent_R32_sha256": "3edece551291cb40ff7d8c433f76ec0dcd8ff933b5f8b608963947633a529422"
+  },
+  "production_carrier": {
+    "path": "crates/app-infra/src/storage/database.rs",
+    "R32_sha256": "1a25214f3fcc86d12fff886de55fd338aa79f8d3115012214d691e095aab3395",
+    "final_sha256": "1f8e8e8fa437794113017e9b784a258cb299d6d5905a801c640f5295b0cf789d"
+  },
+  "independent_reviews": [
+    {
+      "path": ".build/natural-disconnect-independent-review/review-v3.json",
+      "sha256": "c8f114f342703d5a00ae0ac217fedd68371bc2fde032fc69d11952ca6d9ad850"
+    },
+    {
+      "path": ".build/natural-disconnect-independent-review/review-v4-lint.json",
+      "sha256": "a1cafc7713097beae501acdff862d1c044ce364d4fbb90e5af94d164b3474294"
+    },
+    {
+      "path": ".build/window-title-proof-cleanup-second-review/review-final-7640.json",
+      "sha256": "e58a80641bd2f27d45861f454e0cb72881d4de52226edc16108f1fb339041964"
+    },
+    {
+      "path": ".build/window-title-proof-repair-governance/actual-attempt03-readonly-inspection.json",
+      "sha256": "0cf1b8345b0be88bc4d42b0b973e21d167bdc9e2cfe0b73e8d6ecd91970cecc8"
+    },
+    {
+      "path": ".build/rf04-rf05-resource-preparation/root-stage-core.json",
+      "sha256": "270d1112d1c293be37d1a9afcd1cd0787a8655b6b51440163f17d0775426130a"
+    },
+    {
+      "path": ".build/rf04-rf05-resource-preparation/root-stage-worker.json",
+      "sha256": "6d17960befc271ce37ee7e167cbefa5c47c08f5b6d9e19fd92aaa8a548c2de33"
+    }
+  ],
+  "actual_delta": [
+    "database.rs仅新增record_hook_diagnostic方法；逆删除该方法精确复原R32原字节/原hash，原legacy record_diagnostic及其它代码未改。",
+    "新增按事件SID限定的运行SQL：scoped integrity flush、同SID seal与opening/active终态更新在writer事务内完成，再由consumer发布/ACK；不再用latest会话处理真实native回调。",
+    "RF05生命周期与自动资格撤销、stop/EOF/producers/relay/FIFO/持久ACK/compare-clear经独审；current carrier指针变更只表达新完整文件身份，不宣称DDL变化或游戏通过。"
+  ],
+  "SQL_DDL_fields_and_original_v1_unchanged": {
+    "crates/app-infra/src/storage/migrations/001_profile.sql": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5",
+    "crates/app-infra/src/storage/migrations/001_config.sql": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293",
+    "crates/app-infra/src/storage/migrations/002_session_records.sql": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+    "docs/development/storage-acceptance.json": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+    "docs/architecture/database/v2/schema-contract.json": "eb3b0e78869119f98eac6d08954f5b91f1131a3edf2af85fcd16af85d6154713",
+    "docs/architecture/database/schema-contract.json": "aee35d350ff080da4f595c69b8cc47f076a84dc0bea3cf811f5cb0c7a3ccdcd2",
+    "docs/architecture/database/field-boundaries.json": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504",
+    "docs/architecture/database/v2/field-dictionary.json": "fae0561b8cd9113dfeaf9b34a4d9557ed523737b1217d9998a8ce68c5a143f20",
+    "docs/architecture/database/v2/002_session_records.design.sql": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+  },
+  "exact_three_current_pin_paths": [
+    "docs/architecture/database/v2/storage-acceptance.json#/supported_upgrade_matrix/migration_chain/0/source_sha256",
+    "docs/architecture/database/v2/storage-acceptance.json#/supported_upgrade_matrix/migration_chain/1/source_sha256",
+    "docs/architecture/database/v2/storage-review.json#/production_migration_source_sha256"
+  ],
+  "nested_historical_reviews_unchanged": true,
+  "old_failed_and_visual_receipts_preserved": true,
+  "product_or_release_promoted": false,
+  "root_independent_review": {
+    "by": "/root",
+    "scope": "Root independently read manifest, three-pin-only storage diff, actual database method diff, semantic status changes; approved exact12 candidate scope and final pending-copy state; no runtime/release/visual promotion",
+    "message": "Root已读manifest/三storagepin diff、数据库新增方法实际diff及status语义，批准该精确范围。最后一次生成final，Root已独立核精确delta且采用等待copy。",
+    "adoption": "authorized_awaiting_mechanical_exact_copy"
+  }
+}

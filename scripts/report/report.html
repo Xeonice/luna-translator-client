@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Luna Translator 开发架构报告：无视图 LunaHook 后端、Rust 应用核心、Tauri 客户端与跨平台实施方案。">
+<title>Luna Translator · 开发架构报告</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23116e6b'/%3E%3Cpath d='M23 8A10 10 0 1 0 24 23 9 9 0 0 1 23 8' fill='white'/%3E%3C/svg%3E">
+<style>@@STYLE@@</style>
+</head>
+<body>
+<a class="skip" href="#report">跳到报告正文</a>
+<aside class="sidebar" aria-label="报告目录">
+  <div class="brand"><span class="brand-mark" aria-hidden="true"></span>LUNA / ARCHITECTURE</div>
+  <small>DEVELOPMENT REPORT · 2026.10</small>
+  <nav aria-label="章节导航">@@TOC@@</nav>
+  <div class="sidebar-foot"><strong>产品依据继承 · 工程重新建立</strong><p>原 PRD v1.2<br>架构基线 2026-10-18<br>报告版本 1.0</p><p>正文、图表与样式离线可用。<br>ZIP 内附原稿、契约与验证证据。</p></div>
+</aside>
+<div class="page">
+  <div class="topbar"><span>Luna Translator / Engineering Architecture</span><div class="topbar-actions"><button class="button" type="button" data-theme-toggle aria-pressed="false">深色阅读</button><button class="button" type="button" data-print>打印 / PDF</button><a class="button primary" href="gallery.html">原设计画廊 ↗</a></div></div>
+  <main id="report" class="content">
+    <header class="hero">
+      <p class="eyebrow">ARCHITECTURE BASELINE / V1.0</p>
+      <h1>保留 LunaHook，<br>建立可维护的跨平台翻译产品</h1>
+      <p class="lead">以原 PRD 与设计为产品依据，以无视图 Windows 宿主承接原生回调；由共享 Rust 核心管理输入、翻译和数据，再由 Tauri 客户端呈现。</p>
+      <div class="meta"><span>报告日期 <strong>2026-10-18</strong></span><span>上游原生基线 <strong>v12.1.2.3</strong></span><span>文档状态 <strong>实现事实 + 后续开发设计</strong></span></div>
+    </header>
+    <div class="metrics" aria-label="报告范围">
+      <div class="metric"><strong>56</strong><span>继承的产品需求</span><small>22 P0 / 27 P1 / 7 P2</small></div>
+      <div class="metric"><strong>22</strong><span>原设计页面</span><small>89 张原稿 · 完整保留</small></div>
+      <div class="metric"><strong>17</strong><span>重新拆分的工作包</span><small>职责、依赖与验收映射</small></div>
+      <div class="metric"><strong>2</strong><span>当前实际 Rust crate</span><small>协议契约 + 无视图宿主</small></div>
+    </div>
+    <div class="status-banner"><strong>当前证据：新宿主已通过 CrossOver 无目标初始化与命令验证。</strong><p>Windows x64 实际构建，ready / ping / status / shutdown 通过，退出码 0；未 attach、未触发游戏原文回调。Never7 与 SR 的新宿主真实取文归 H2 验收，不能沿用原版 Luna 的成功结果。</p></div>
+    <details class="toc-top"><summary>浏览报告目录</summary>@@TOC@@</details>
+    @@BODY@@
+    <footer class="footer"><p>Luna Translator · 开发架构报告 v1.0 · 2026-10-18</p><p>本报告不继承旧 Rust 实现或旧任务完成度。正文可独立离线阅读；原始文档、89 张设计图、源代码快照和无目标 smoke 证据见 ZIP 附件。</p><p>来源哈希与文件列表：<a href="package-manifest.json">package-manifest.json</a> · <a href="SHA256SUMS.txt">SHA256SUMS.txt</a> · <a href="references/docs/architecture/development-architecture.md">架构文档源稿</a></p></footer>
+  </main>
+</div>
+<script>@@SCRIPT@@</script>
+</body>
+</html>

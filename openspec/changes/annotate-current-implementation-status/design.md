@@ -1,0 +1,5 @@
+# 状态采用三维定义
+
+implementation_status=implemented/partial/not_implemented，表示代码覆盖目标职责的程度；alignment_status=aligned/partial/mismatch/not_assessed，表示人工核对的当前技术/设计源码语义；verification_status=source_only/historical_pass/historical_mixed/historical_failed/not_run/blocked，不把历史包记录称为本轮重新验证。视觉另轴visual_alignment_status本轮统一not_assessed，源码aligned不能提升为视觉或原生实效通过。每项提供当前行为、目标、差距、代码路径/行号/符号/hash、Owner及下一步。
+
+机器清单是状态来源，Markdown和M/C附加状态列由显式导出保持一致。校验身份全集、枚举、差距说明、引用实际文件与源码sha、无产品实测提升；它不能理解任意业务语义，独立源码审阅仍必需。HTML在开头提供状态与差距表、筛选及原文入口，保留旧证据/批准图/正式包身份。更新受保护文档后采用独立审阅的新基线revision，不静默刷新。

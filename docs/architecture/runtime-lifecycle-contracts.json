@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "phase": "SR-0",
+  "status": "design_contract_not_runtime_implementation",
+  "purpose": "分清事实权威与转换，防止重构继续制造跨功能生命周期影响",
+  "baseline_product_source": "FP1-20261026-R46",
+  "four_axes": [
+    {
+      "axis": "bindingTrust",
+      "authority": "M02: app-infra WindowAssociation（现为CoreHookBackend内部状态与方法）",
+      "current_locations": [
+        "crates/app-infra/src/hook_backend.rs::preview_binding/preview_bound_at",
+        "crates/app-core/src/ports/runtime.rs::HookBackend"
+      ],
+      "facts": [
+        "完整environment/Bottle、actual image path/架构、PID+creation、HWND+class、SID与关联身份",
+        "无WindowRef是合法未关联窗口事实，Hook可独立成功"
+      ],
+      "allowed_writers": [
+        "明确发现/关联/解除/目标真实身份失效的M02路径"
+      ],
+      "consumers_must_not": [
+        "以Native picker替代缺失Windows引用",
+        "把Native零帧或UI卸载解释成Windows身份失效"
+      ]
+    },
+    {
+      "axis": "captureTruth",
+      "authority": "M12: collector worker + Native filter实际执行事实；父端service仅核验并投影",
+      "current_locations": [
+        "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "apps/desktop/src-tauri/src/platform/window_preview.rs"
+      ],
+      "facts": [
+        "真实permission/filter/source epoch/capture操作、开始/暂停/暂态失败/撤销/关闭/释放",
+        "只有有完整合法图像的capture能构成新帧成功",
+        "parent可投影已接受并fence的Pause/Stop控制意图；该投影不充当worker/Native已停止或资源已释放证明。"
+      ],
+      "allowed_writers": [
+        "对应source/epoch的worker实际结果",
+        "父端按已核验结果进行有界投影"
+      ],
+      "consumers_must_not": [
+        "由mount/unmount、transport失败、metadata-only或空缓存重启/停止producer",
+        "把request已接受/子PID存在/系统回调已到当作图像已成功"
+      ]
+    },
+    {
+      "axis": "consumerTransport",
+      "authority": "M13: 每WebView私有PreviewSubscriptionClient（现为TauriApplicationPort.previewPulls）",
+      "current_locations": [
+        "apps/desktop/src/bridge/tauri-port.ts",
+        "apps/desktop/src/features/capture/WindowPreview.tsx"
+      ],
+      "facts": [
+        "本订阅是否active、等待中的invoke、监听token、本地transport/decode失败、已显示blob",
+        "每个listener的序号与已知目标hash"
+      ],
+      "allowed_writers": [
+        "当前订阅实例的请求完成/取消/读失败和渲染结果"
+      ],
+      "consumers_must_not": [
+        "改变全局producer truth或另一个listener",
+        "已知身份被metadata重绑",
+        "用局部transport恢复宣称Native采集恢复"
+      ]
+    },
+    {
+      "axis": "lastFrame",
+      "authority": "M12: 经worker和父端验证的不可变frame；M13只持已显示frame引用",
+      "current_locations": [
+        "apps/desktop/src-tauri/src/platform/window_preview.rs::Lease.frame/finish_capture",
+        "apps/desktop/src/bridge/tauri-port.ts::PreviewPull.latest",
+        "apps/desktop/src/features/capture/WindowPreview.tsx"
+      ],
+      "facts": [
+        "真实图像观测固定payload、contentHash、真实capturedAt和原始捕获归属；不得伪造新观测。",
+        "service对UI的projection sequence与worker帧sequence是不同命名空间，不能机械合并",
+        "区分图像观测与投递封套：payload/contentHash/真实capturedAt及原始捕获归属不变；delivery envelope的lease/generation仅可在明确Pause或同目标移交的完整CAS/fence下合法迁移，不能由普通metadata或缓存重挂任意重标，也不产生新图或Live。Paused是停止接纳/发布新帧的受控意图投影，不等于Native资源已释放；释放仍要真实ack。"
+      ],
+      "allowed_writers": [
+        "一张新合法帧构造时固定字段",
+        "明确终态按既定策略清引用",
+        "明确Pause/同目标移交控制可经完整CAS/fence迁移delivery envelope，不更改图像事实或目标归属。"
+      ],
+      "consumers_must_not": [
+        "metadata替旧图改时间",
+        "缓存重挂载把stale升live",
+        "仅状态变live就伪造首帧",
+        "封面从未核验或过期frame自动保存"
+      ]
+    }
+  ],
+  "invariants": [
+    {
+      "id": "INV-01",
+      "rule": "保留Rust业务权威、窄Tauri适配、UI只走ApplicationPort；不加入框架、HTTP/SQL/FFI直连或新进程。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-02",
+      "rule": "保留Core ABI1七回调/JSONL2、游戏同位数broker、资源/License锁；本次不重写Core或更换取文技术。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-03",
+      "rule": "每个跨进程边界继续核对其拥有的完整身份、source/epoch、lease/generation、capture/instance与序号；集中转换规则不代表删除独立核验。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-04",
+      "rule": "已建立且起始hash未知的consumer pull在异步帧更新中首次接纳hash时，必须同lease/generation/consumer/source，且新frame与projection完整一致、许可/编码/尺寸/payload有效；已知hash不得由metadata重绑。Rust权威完成窗口选择及完整proof后，可在首帧前形成合法身份投影或以明确控制结果初始化known context；这不证明Live、capturedAt或首帧。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-05",
+      "rule": "A请求永不完成时B仍能独立前进；旧A的finally/高序号帧/取消/退出不能清新B。取消对象必须精确到自身代次。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-06",
+      "rule": "candidate→session移交同filter必须CAS完整Windows对象与ownership epoch；旧候选卸载不能stop已移交session。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-07",
+      "rule": "单消费者取消不停止producer；global1采集、每lease监听上限4、现有帧/协议/时间预算和cleanup_pending真实drain语义不扩容或放宽。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-08",
+      "rule": "捕获事实/元数据/传输/已显示frame分开：metadata不刷新旧帧capturedAt，stale缓存不因重新订阅恢复Live，许可终态拒绝迟到帧。 区分图像观测与投递封套：payload/contentHash/真实capturedAt及原始捕获归属不变；delivery envelope的lease/generation仅可在明确Pause或同目标移交的完整CAS/fence下合法迁移，不能由普通metadata或缓存重挂任意重标，也不产生新图或Live。Paused是停止接纳/发布新帧的受控意图投影，不等于Native资源已释放；释放仍要真实ack。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-09",
+      "rule": "新台词、ruby或翻译引起的内容fit不是用户拖动/resize。只有Native已分类owner实例+geometry epoch可决定相应词卡失效；UI不得重建第二个resize关闭权威。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-10",
+      "rule": "词卡与精读固定ReadingUnit ID+textRevision+token；latest正文推进不替换固定对象。真实用户关闭行为和已规定owner失效仍须保留。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-11",
+      "rule": "封面是独立consumer：只在正式关联有效目标且无既有本机封面时保存首张fresh核验帧；不能让封面失败控制采集或Hook。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-12",
+      "rule": "自然退出/断开收尾以expected SID+full target compare-clear与broker/relay/应用ack完成边界为准；不以drop handle或固定sleep冒充释放。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-13",
+      "rule": "保留单SQLite writer和跨域事务；没有性能证据不直接拆数据库或改持久化语义。潜在排队风险先做有界观测与压力回归。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    },
+    {
+      "id": "INV-14",
+      "rule": "保持公开DTO、现有IPC名称、已确认产品流程和样式；任何确需演进的wire/交互变化单列影响，不借重构静默改变。",
+      "implementation_status": "existing_behavior_to_preserve_or_characterize",
+      "new_phase_verification_status": "not_run"
+    }
+  ],
+  "independent_review_requirements": [
+    "Each extraction owns exact paths and leaves other collaborators edits untouched",
+    "Before/after full source bytes and exact diff, not hashes only",
+    "No new strong Arc cycles across hook/service/collector proof objects",
+    "No side effect under shared state lock",
+    "Projection/transport timestamp and sequence namespaces explicit",
+    "True lifecycle release ack versus dropped request distinguished",
+    "Reusing old behavior receipts never substitutes final RC platform evidence"
+  ],
+  "decision_points": [
+    "If implementation needs public DTO/IPC/private protocol evolution, stop that dependent slice and record explicit impact/version/migration, not fold silently into refactor",
+    "If characterization reveals a pre-existing behavior contradicts reviewed contract, keep failure and use a named bugfix subtask before continuing; do not modify test expected value to accommodate code",
+    "Do not schedule storage actor split or concurrency tuning without queue/execution latency and contention evidence",
+    "Native/GUI prerequisites missing do not block pure extraction work, but do block declaring stability stage completed"
+  ],
+  "code_not_authorized_by_this_file": true,
+  "evidence": [
+    {
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "line": 412,
+      "quote": "pub struct CoreHookBackend {",
+      "sha256": "bc13be98a15b17225ec78c52ec404d19bf4cc6ad366ad5c5752e4c7784fbcc79",
+      "note": "现有Hook facade与preview绑定状态"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+      "line": 29,
+      "quote": "pub struct PreviewOwnership {",
+      "sha256": "e63a38e8102d4fffc9113158adfab7b445ce0adc15dd75b5a6ff5197f5e58eaa",
+      "note": "现有PreviewOwnership在组合根"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "line": 55,
+      "quote": "struct Lease {",
+      "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a",
+      "note": "service租约/投影/帧"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "line": 304,
+      "quote": "pub(crate) fn collector_frame(",
+      "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a",
+      "note": "worker图像到service接纳边界"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "line": 1114,
+      "quote": "fn finish_capture(",
+      "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a",
+      "note": "实际capture结果归约为投影"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "line": 723,
+      "quote": "pub fn spawn_session_preview_coordinator(app: AppHandle) {",
+      "sha256": "7c86655673a3eb1b9fd1a25e0361470f89f90d7f4f71fe4385283ba821af2923",
+      "note": "当前名为session preview的循环主要消费首帧保存封面"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "line": 332,
+      "quote": "struct ParentState {",
+      "sha256": "f7557475cc81d83951fbb30e575ccd0f1205316f7136997af8d29bceecdc2cb1",
+      "note": "parent监督source/握手"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "line": 127,
+      "quote": "struct State {",
+      "sha256": "53d243f02152d654125d6591943b71e6583d8070aa6fc6b4cb6b60c98408403a",
+      "note": "worker intents和latest frames"
+    },
+    {
+      "path": "apps/desktop/src/bridge/tauri-port.ts",
+      "line": 9,
+      "quote": "type PreviewPull = { projection: PreviewProjection; active: boolean; sequence: string | null; latest?: PreviewUpdate; pending?: Promise<PreviewUpdate>; timer?: ReturnType<typeof setTimeout>; listeners: Map<symbol, { listener: (update: PreviewUpdate) => void; sequence: string | null; targetIdentityHash: string | null }> };",
+      "sha256": "415144e023fb2e05942cf7d02d81f4ca9445a3f018234fee603f755e3c26063c",
+      "note": "每WebView consumer传输状态"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_manager.rs",
+      "line": 202,
+      "quote": "mod content_fit_policy {",
+      "sha256": "98687ae0acadfef7bb57936b474483ef9193445dc827f7e460dc282c2069596c",
+      "note": "现有纯content_fit_policy"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/word_card.rs",
+      "line": 16,
+      "quote": "pub struct ActiveCard {",
+      "sha256": "50db576eeaab8fd7027f98118687222eb288d0cc8f80e4da410838b24b353123",
+      "note": "词卡冻结对象与owner stamp"
+    },
+    {
+      "path": "apps/desktop/src/features/language/WordCard.tsx",
+      "line": 62,
+      "quote": "// Native owner geometry is classified by Rust. Browser resize also fires",
+      "sha256": "1891885c6d6646795ea1c13e9434ead3d8e259bd5ed03709c414e3e3aae6312e",
+      "note": "已有注释明确browser resize不能独立关闭冻结词卡"
+    },
+    {
+      "path": "crates/app-core/src/contracts/window_capabilities.rs",
+      "line": 136,
+      "quote": "pub struct PreviewProjection {",
+      "sha256": "d997fc0185fef717057f6bbae2f1999d3aad90811b77ed2d662eae1a5f71fc67",
+      "note": "现有公开PreviewProjection形状"
+    }
+  ],
+  "representation_notes": [
+    "四轴是职责分工，不是全局单一枚举或要求新增公开字段。",
+    "图像观测不可变不等于所有现有DTO封套字段永远不变；保留已存在的Pause/CAS/fence和同目标移交合同。"
+  ]
+}

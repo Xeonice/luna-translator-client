@@ -1,0 +1,627 @@
+{
+  "kind": "R43_first_frame_and_safe_native_diagnostics_candidate",
+  "status": "candidate_pending_independent_exact_review_and_Root_adoption",
+  "reason": "修复candidate20实机无首帧发现的未解析目标过滤错误，保留同目标多订阅与迟到隔离；原独立worker补可靠有界同操作诊断与两缓存读一致性。仅明确源审/控制字段更新，原A/R40snapshot/批准图token与旧失败保持，不提升产品或发布。",
+  "parent_baseline_sha256": "ca5c3faa19f6d84c8d8220e17e6e6afb1e2be28ce2bfa30723217b4ca485c36b",
+  "frozen_sources": {
+    "status": "Root_reviewed_frozen_source_and_authority_scope",
+    "reason": "修复candidate20实机无首帧发现的未解析目标过滤错误，保留同目标多订阅与迟到隔离；原独立worker补可靠有界同操作诊断与两缓存读一致性。仅明确源审/控制字段更新，原A/R40snapshot/批准图token与旧失败保持，不提升产品或发布。",
+    "frozen_map": ".build/window-preview-sakura-20261024-r43-candidate/source-map-before-authority-v2.json",
+    "frozen_map_sha256": "58fd889d132fb23cb30cc4a237635c32b7184d1cf32fb74c0b3bd66e309ead83",
+    "allowed_old_controlled_updates": [
+      "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "docs/architecture/first-product-engineering-baseline.md",
+      "docs/architecture/reading-window-session-technical-design.md",
+      "scripts/quality/reading_components.py",
+      "scripts/quality/test_reading_components.py",
+      "openspec/changes/integrate-window-preview-subscribers/design.md",
+      "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "openspec/changes/integrate-window-preview-subscribers/specs/window-preview/spec.md",
+      "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "openspec/changes/integrate-window-preview-subscribers/verification.json",
+      "docs/architecture/implementation-status.json",
+      "docs/architecture/implementation-status.md",
+      "docs/architecture/engineering-modules.csv",
+      "docs/architecture/engineering-components.csv"
+    ],
+    "semantic_records": [
+      {
+        "group": "modules",
+        "id": "M12",
+        "append": {
+          "current_behavior": "R43源码在原独立采集器内增加同操作有界typed诊断，经私有Status和同一安全缓存投影返回；未改变身份、许可、采集预算或后备条件。",
+          "gap": "candidate20实机仍零首帧；本R43新签名包的实际系统共享、两变化帧与订阅隔离尚待执行。",
+          "next_step": "按同一最终R43签名包验证真实窗口，保留旧失败与视觉来源漂移；未执行项不提升。"
+        }
+      },
+      {
+        "group": "modules",
+        "id": "M13",
+        "append": {
+          "current_behavior": "R43源码修复合法首帧null目标单向解析与多listener共读、迟到null不回退，并保持C35原布局与安全故障信息可见。",
+          "gap": "candidate20实机仍零首帧；本R43新签名包的实际系统共享、两变化帧与订阅隔离尚待执行。",
+          "next_step": "按同一最终R43签名包验证真实窗口，保留旧失败与视觉来源漂移；未执行项不提升。"
+        }
+      },
+      {
+        "group": "components",
+        "id": "C35",
+        "append": {
+          "current_behavior": "R43首帧链路以同lease/generation/consumer及frame/projection一致建立真实hash；无首帧不称画面过期，系统选窗失败仍显示安全诊断。",
+          "gap": "candidate20实机仍零首帧；本R43新签名包的实际系统共享、两变化帧与订阅隔离尚待执行。",
+          "next_step": "按同一最终R43签名包验证真实窗口，保留旧失败与视觉来源漂移；未执行项不提升。"
+        }
+      },
+      {
+        "group": "capabilities",
+        "id": "CAP-PREVIEW",
+        "append": {
+          "current_behavior": "R43已针对20无首帧现场修复生产adapter初始空身份过滤，并补采集系统回调/阶段/错误码/尺寸的有界诊断；受控测试与实机结论分离。",
+          "gap": "candidate20实机仍零首帧；本R43新签名包的实际系统共享、两变化帧与订阅隔离尚待执行。",
+          "next_step": "按同一最终R43签名包验证真实窗口，保留旧失败与视觉来源漂移；未执行项不提升。"
+        }
+      }
+    ],
+    "independent_evidence": [
+      {
+        "path": ".build/window-preview-sakura-20261024-first-frame-review/candidate02-exact-review/receipt.json",
+        "sha256": "f3f4930c561d459586f8b303e91086c69abe2732e89b8b56128782bdff7daa9e",
+        "bytes": 9034
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-first-frame-review/native-diagnostics/exact-review-20261024T044053/receipt.json",
+        "sha256": "26363a1437f92c766793f0ed5904fc9efd0c874a0741d7c5be73afefbddf1fc7",
+        "bytes": 8039
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/native-fix/candidate21-final02/handoff.json",
+        "sha256": "f9f3c0f1a366231188899511e49883383dd9d891c77dd4ac87b9a247e16dfbeb",
+        "bytes": 2598
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/native-fix/candidate21-final02/final-20261024T045148.548969Z/receipt.json",
+        "sha256": "214a3eb3c7467c49230424def45362c373a3c1d614d0f9e55d511045747c07f0",
+        "bytes": 3800
+      },
+      {
+        "path": ".build/window-preview-sakura-20261024-first-frame-review/native-diagnostics/final02-review-20261024T045834.930847Z/receipt.json",
+        "sha256": "dedf915d29db3957a512f8e8036bd79e6588b4b59004d02a0a7b1eb99518d5c9",
+        "bytes": 7842
+      }
+    ],
+    "evidence_scope_note": "UI02精确独审、Native21原5源独审与final02安全formatter增量独审均已有真实回执；Owner有限检查单独保留来源。整个R43 packet采用前另做精确独审，实机与完整100不继承。"
+  },
+  "source_delta_before_generated_authority": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "before": "70d1ccd309197ef04af75a3fbafa298cbe345bf43de871aff6b0a35f06a0091c",
+      "after": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "before": "a84190160c69f3c34ebec606b2d84b8cfd2aad6b47564565dd24553d8575118f",
+      "after": "e0d8842fd79610cff046d494acb16034307dda701598961edecf4d092277ab5c"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "before": "9919ab44e2acc7ebcf146f91340436fd6bfc6a87601db1e2b91419d82265dec2",
+      "after": "f7557475cc81d83951fbb30e575ccd0f1205316f7136997af8d29bceecdc2cb1"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+      "before": "b3ff9f757bf93af8a2381ca7bf466b2497ad1301d51d49f4113cf32c13dc4f97",
+      "after": "5e020a52a830236de09a5d0f80f7b4a2939a7288ca28227b8873132d02acc179"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "before": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d",
+      "after": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+    },
+    {
+      "path": "apps/desktop/src/bridge/tauri-port.ts",
+      "before": "7ecf8de0e9204b4dfd97b2877541ca090736e4cbce67780ba03d0855c754a5d7",
+      "after": "415144e023fb2e05942cf7d02d81f4ca9445a3f018234fee603f755e3c26063c"
+    },
+    {
+      "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+      "before": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944",
+      "after": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+    },
+    {
+      "path": "apps/desktop/tests/support/ReviewedReadingProbe.tsx",
+      "before": "850fc19c90dce3587252f8a9f69b1fc665d1ef78d4e4ea5b96556042ffb30921",
+      "after": "546818757ac11caadb72b137c046c028f9501e2e6f3de9826b86774730ebb793"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+      "before": "8e64f4534c30960e2dcf85371de4c2e039baa8f2c7138f92b97f794324fed38a",
+      "after": "d9a8c4bb934c2abc3a07e9dd3a2ae711bdf472887d4e0d0d44faf36dcb28da76"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "0c428add05a539987270b260219c23f17146f6596748be62e9c97c8960100fb4",
+      "after": "a739626b6adbeb710ccbeeb79217fa0ad81bbd899d0568e258be5e982594eeed"
+    },
+    {
+      "path": "docs/architecture/reading-window-session-technical-design.md",
+      "before": "c7c09ddf2e9e3bf0acb57558eba545c49bf67feffcaca0e8fbc5a92d5e1ecdfd",
+      "after": "e1fcf2a5ea2b9946b81ae7434d164ca02a798ed32b0bdb99a5cf952f14a154cb"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/design.md",
+      "before": "659a4f8fa68feb6723f1025aae984292f802da7ea7214086675ce13b7c00440a",
+      "after": "a4b98723df936ca6c1c405a4dc4840e1dac33d32db6c3ad162ca6ea694b3c200"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/iteration-card.md",
+      "before": "97a4be580f4bc5e1d4315fe05c973800d28aea7a160950933941bea155b8036f",
+      "after": "216491ddf7c79e97b0957e553989dfecbf91db4d9e6df4102d13fd788aa33531"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/specs/window-preview/spec.md",
+      "before": "560297be0302a64d9dd06e5adb501c7845b218fda088489d5d2c5738ae068381",
+      "after": "c4b312397d476b9e19c13ab40ebd687639130795c342ba7b1bb3ee2752b14d12"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/tasks.md",
+      "before": "9d09822c5db2769164a08c9048516c51d4376414ce1785a6996ca1e53f6ed6e4",
+      "after": "9c28ace14d836f49a7f151e70b8851afebb7b31f92b30b8392cabce2d97e7908"
+    },
+    {
+      "path": "openspec/changes/integrate-window-preview-subscribers/verification.json",
+      "before": "614fb6ec8853bc5aea133589706c3c789f309bdb7ecf07532f1da11752c5c744",
+      "after": "ff26deba0f6962b5ddfaab602056604073aedd8333cdd978523b4878704edfae"
+    },
+    {
+      "path": "scripts/quality/reading_components.py",
+      "before": "9ea6fd3e80c3eefaaa639b382d69b0a0144138dee24bf64eb2b8a73392a05036",
+      "after": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+    },
+    {
+      "path": "scripts/quality/test_reading_components.py",
+      "before": "ddf73f82457a6fa22cbee1035a8e24981651d737b22fc31c76fe75fc19ede279",
+      "after": "67c9e7b7a893db6ec4406b62764b3d0030b1bcb45d70dbebd5d057dbca1493bb"
+    }
+  ],
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "70d1ccd309197ef04af75a3fbafa298cbe345bf43de871aff6b0a35f06a0091c"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 337,
+        "sha256": "9919ab44e2acc7ebcf146f91340436fd6bfc6a87601db1e2b91419d82265dec2"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 340,
+        "sha256": "f7557475cc81d83951fbb30e575ccd0f1205316f7136997af8d29bceecdc2cb1"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 208,
+        "sha256": "b3ff9f757bf93af8a2381ca7bf466b2497ad1301d51d49f4113cf32c13dc4f97"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/worker.rs",
+        "quote": "pub(super) fn run(mut control: UnixStream, mut frames: UnixStream) -> AppResult<()> {",
+        "symbol": "pub(super) fn run",
+        "line": 208,
+        "sha256": "5e020a52a830236de09a5d0f80f7b4a2939a7288ca28227b8873132d02acc179"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 16,
+        "quote": "CHECK_ID = 'product-reading-component-tests'",
+        "symbol": "CHECK_ID =",
+        "sha256": "9ea6fd3e80c3eefaaa639b382d69b0a0144138dee24bf64eb2b8a73392a05036"
+      },
+      "after": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 16,
+        "quote": "CHECK_ID = 'product-reading-component-tests'",
+        "symbol": "CHECK_ID =",
+        "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 143,
+        "quote": "FIXTURE_COMMAND = ['cargo', 'test', '--locked', '--offline', '-p', 'app-infra',",
+        "symbol": "fixed actual Rust/SQLite producer before Node",
+        "sha256": "9ea6fd3e80c3eefaaa639b382d69b0a0144138dee24bf64eb2b8a73392a05036"
+      },
+      "after": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 149,
+        "quote": "FIXTURE_COMMAND = ['cargo', 'test', '--locked', '--offline', '-p', 'app-infra',",
+        "symbol": "fixed actual Rust/SQLite producer before Node",
+        "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 118,
+        "quote": "'RBC-38-body-retranslation-and-correction-refresh-only-matching-history-object',",
+        "symbol": "six new independently required row-content obligations; no receipt-derived inventory",
+        "sha256": "9ea6fd3e80c3eefaaa639b382d69b0a0144138dee24bf64eb2b8a73392a05036"
+      },
+      "after": {
+        "path": "scripts/quality/reading_components.py",
+        "line": 124,
+        "quote": "'RBC-38-body-retranslation-and-correction-refresh-only-matching-history-object',",
+        "symbol": "six new independently required row-content obligations; no receipt-derived inventory",
+        "sha256": "34cf7d686386d444ef9843315681121f5ac0823c0e6425cd3032a999a2c4e683"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+        "line": 242,
+        "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+        "symbol": "pub fn set_hud_material",
+        "sha256": "a84190160c69f3c34ebec606b2d84b8cfd2aad6b47564565dd24553d8575118f"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+        "line": 242,
+        "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+        "symbol": "pub fn set_hud_material",
+        "sha256": "e0d8842fd79610cff046d494acb16034307dda701598961edecf4d092277ab5c"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "70d1ccd309197ef04af75a3fbafa298cbe345bf43de871aff6b0a35f06a0091c"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "70d1ccd309197ef04af75a3fbafa298cbe345bf43de871aff6b0a35f06a0091c"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+        "line": 26,
+        "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+        "symbol": "AppKit NSTerminateLater and deferred Rust cleanup",
+        "sha256": "264e694156b4b6cfb6253b19043130a84b656b64ed61b085df122cfa5afa9ed0"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "c78729c3676b0cf1dc6ea903aa8f6c923534561eb1c00e0e4c71a04fb8bdf944"
+      },
+      "after": {
+        "path": "apps/desktop/src/features/capture/WindowPreview.tsx",
+        "line": 16,
+        "quote": "export function WindowPreview({ port, candidateId, title, detail, identityDetail, consumer = 'candidate', consumerId: requestedConsumerId, candidateProjection, onProjection, onPreviewIntent }: { port: ApplicationPort; candidateId: string | null; title: string; detail: string; identityDetail?: string; consumer?: PreviewConsumer; consumerId?: string; candidateProjection?: PreviewProjection | null; onProjection?: (projection: PreviewProjection) => void; onPreviewIntent?: (intent: 'retry' | 'select' | 'pause' | 'resume') => Promise<PreviewProjection> }) {",
+        "symbol": "WindowPreview",
+        "sha256": "8dc696e9ffb34515ec4d49b82cf2fb7ace48b45adfcfd0dc4f12210d0c9f0e39"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 660,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "626da146e38b49c99950592446b904bf62911bd487fa8697e806bdac137ec33d"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "reason": "Exact existing quote preserved; source identity and line relocation remain pending independent exact packet review"
+    }
+  ],
+  "original_snapshot_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

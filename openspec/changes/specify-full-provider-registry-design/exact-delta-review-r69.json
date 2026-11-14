@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_document_and_tool_delta_pending_packet_adoption",
+  "change_id": "specify-full-provider-registry-design",
+  "parent_baseline_sha256": "9144294e684e8c6db2944d1ed492f0fbefcac7097d7006ca8370fe3bf79eb3c4",
+  "source_delta": [
+    {
+      "path": "docs/architecture/database-design.md",
+      "before": "07aab596d67deb64b408391d76089a9b5218a2e43d7f6bcb99f38104a0f3d33e",
+      "after": "317e75dce84cb09e1ca0c73d1b49d6dbad7e7c91108b5ee0b4177b519a6a9452"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "d217003701ac17a6e4a3b68a25ec6487f9706778c3adde4b361570933338af9f",
+      "after": "ee2aa210a44c3e55f7251db05e9f9601f7fc8e255a8d8bbdac14bb306de076ab"
+    },
+    {
+      "path": "docs/architecture/first-product-engineering-baseline.md",
+      "before": "79aeba6e18c116e548eef1725f1b37a50ce915b5093a938fed7f71bb70a2ae46",
+      "after": "51d9df949d22d8cba24213e335a64f351078a2bcee82716e04b5bb76126e2ddb"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "9d9ed52abb837bedabad9e0683f718f7d9d4a3e1ca168de98d6e3312b596b595",
+      "after": "b76697dff2181ae33ce1375afe7974ee636efd202d6b00f7c8f9a9f741f43a13"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before": "3478f5a20b7d3c4b80253cdc901d9c6f490a316288ec470e93e3230cfc1c30f6",
+      "after": "c1770fc4fca17ce0b7fa8236f8bf4da545b71e20dbdfa9c22188730e5238b2d5"
+    },
+    {
+      "path": "docs/architecture/model-service-registry-design.json",
+      "before": null,
+      "after": "e3bf6879007cb09d777f6242d024f13498f0cac101363c7665a2b69280c68428"
+    },
+    {
+      "path": "docs/development/engineering-gates.md",
+      "before": "37fd003e352b9a55001a3e61f8204a59e80c9cf435a009b7c9fab3124912fae3",
+      "after": "bada27910d2043a4239687808fb53773aa3f1eb1016cbe7e3ac13adaf8439307"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "db69927cedd68d95582b44a2d1689f499bc89dc3763c2b4ede51e8834e127806",
+      "after": "6dec677c29fde6c39133ebedcb6577a3d836fac92c0b4460dedb006e4743e72e"
+    },
+    {
+      "path": "docs/product/model-configuration-prd.md",
+      "before": "e0faddae1fd54d121d1e4fb6a9208cfe431f9d4213524408d9eae7f724383862",
+      "after": "87c387c608f929aa80e73806ea99d7fdedbcf2bf84099cd7307831ba08fa786f"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/design.md",
+      "before": null,
+      "after": "ca86ee3f5235e77a21c61fbc7ac361086f263e4560afe796e95977a63fc84530"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/iteration-card.md",
+      "before": null,
+      "after": "a2e79453b5713e2ba2adccd7e26f4517343794bdaa2dd0dd6a126912497a4c00"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/proposal.md",
+      "before": null,
+      "after": "42b14b3192ff89c864dd697423d9cdcb9e50a1c78271044c14dcfd2b416cd6c3"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/source-snapshot.json",
+      "before": null,
+      "after": "2ecd3b861d4df3b29c4c256d3f4760a7147191872a4f696e5a84850d1d5ba910"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/specs/model-service-design/spec.md",
+      "before": null,
+      "after": "eb7b4d3337fa98b407ad86b43c5aaac74f79349750c2f6e9a4527864a7ff0d76"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/tasks.md",
+      "before": null,
+      "after": "4e4b51e0837941f1d3f2558b54decf04351aec23e80b81cb7eca93e17850b082"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/verification.json",
+      "before": null,
+      "after": "33cd7348628073836dcd6e5f9cde7fb1d1a7f726f37355cbcb7c5ff864794bdd"
+    },
+    {
+      "path": "scripts/quality/test_model_service_design_docs.py",
+      "before": null,
+      "after": "698146a47d00e700b751d990e2f2a2d9d5c2e2100b25b9997805a43232fc93f3"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "1289aa104b178ca41c5d7551e0f55dc2ace5d49125fab24033843b73833c06ef",
+      "after": "ae05159be861c24e1264aa9be91369969f81b443ec83c260e3e6c3734ea2631e"
+    },
+    {
+      "path": "scripts/report/build_model_service_design_report.py",
+      "before": null,
+      "after": "6b14c173ca096d34e7d11c0139b72943e8bf3f1d6cb5dec7ea10ea38e2626e7b"
+    }
+  ],
+  "product_delta": [],
+  "documentation_review": {
+    "path": ".build/provider-docs-update-20261030/review/architecture-review.json",
+    "bytes": 11511,
+    "sha256": "425ac5087f13f2010d64a909faaff53d04dc0812be24c4a7a553e83c4c30e9a2"
+  },
+  "code_review": {
+    "path": ".build/provider-docs-update-20261030/governance/tooling-implementation/review/review02.json",
+    "bytes": 4343,
+    "sha256": "3ce4b90cdd412d080fc3e08b15e94d7dcbee8d22a7ac8a776481410dcc399c6b"
+  },
+  "source_evidence_remaps": {
+    "schema_version": 1,
+    "id": "M15",
+    "before": {
+      "path": "scripts/quality/verify.py",
+      "line": 19,
+      "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+      "symbol": "READING_COMPONENT_CHECK",
+      "sha256": "1289aa104b178ca41c5d7551e0f55dc2ace5d49125fab24033843b73833c06ef"
+    },
+    "after": {
+      "path": "scripts/quality/verify.py",
+      "line": 19,
+      "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+      "symbol": "READING_COMPONENT_CHECK",
+      "sha256": "ae05159be861c24e1264aa9be91369969f81b443ec83c260e3e6c3734ea2631e"
+    },
+    "catalog_bytes": 723018,
+    "catalog_sha256": "b76697dff2181ae33ce1375afe7974ee636efd202d6b00f7c8f9a9f741f43a13",
+    "derived_changed": [
+      "docs/architecture/engineering-modules.csv"
+    ],
+    "semantics_or_status_promoted": false
+  },
+  "scope": "Existing documentation updated; registered documentation tooling only; candidate fields, implementations and runtime acceptance not promoted."
+}

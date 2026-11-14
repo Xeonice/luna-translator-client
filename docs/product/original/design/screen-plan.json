@@ -1,0 +1,1068 @@
+{
+  "version": "aligned-v1.0",
+  "scope": {
+    "screens": 22,
+    "platform": "macOS client: native games/emulator hosts and compat_windows games via CrossOver/Wine",
+    "excluded": [],
+    "productScope": "all REQ-001 through REQ-056; priorities do not remove features",
+    "executionEnvironments": [
+      "native",
+      "compat_windows"
+    ]
+  },
+  "basis": {
+    "approval": "aligned-v1 native visual baseline accepted on 2026-10-13; ocr-selection-v2 six captures visually accepted on 2026-10-13; source-v1 and compat_windows not reviewed",
+    "designStatus": "native_default_light_dark_visual_checked",
+    "delivery": "local_design",
+    "references": [
+      "docs/01-prd.md",
+      "docs/02-design-spec.md",
+      "design/README.md",
+      "design/manifest.json"
+    ],
+    "unit": "pt",
+    "overlay": {
+      "material": "standard hudWindow; no Liquid Glass content",
+      "regularSize": [
+        500,
+        132
+      ],
+      "minimumWidth": 360,
+      "sourceType": 16,
+      "translationType": 22,
+      "statusType": 13,
+      "fixedControlsHeight": 32,
+      "symbolSize": 16,
+      "symbolWeight": "medium",
+      "hitTarget": [
+        32,
+        32
+      ],
+      "controlGap": 8,
+      "idleEnclosure": false,
+      "hoverPrimaryOpacity": 0.12,
+      "pressedPrimaryOpacity": 0.22,
+      "feedbackRadius": 8,
+      "pinLocation": "native more menu",
+      "pausedStatus": "persistent text",
+      "configurableToolbarPreserved": true,
+      "pressedOpacityScope": "custom pause/quiet symbol buttons; native More Menu retains system press feedback"
+    },
+    "settings": {
+      "regularSize": [
+        1000,
+        720
+      ],
+      "minimumSize": [
+        900,
+        600
+      ],
+      "sidebarWidthRange": [
+        190,
+        220
+      ],
+      "semanticIconTileSize": 24,
+      "selection": "neutral semantic gray",
+      "headingType": 23,
+      "bodyType": 13,
+      "grouping": "native Form sections",
+      "switches": "native controls",
+      "layoutPolicy": "adapt to information density; no universal cards or dashboard"
+    },
+    "core": {
+      "layout": "native List/Table with split detail",
+      "toolbar": "quiet icon actions with menus and labels",
+      "colorPolicy": "light/dark system semantic colors; reduced-transparency and increased-contrast variants"
+    },
+    "productionUIFramework": "not_selected; SwiftUI/AppKit are editable design-preview carriers only",
+    "visualCheckPolicy": "Only the coordinator may set visual_checked after capture and review; not runtime verification",
+    "variantPolicy": "variants remain planned contracts; only actualPreviews are captured; no runtime PASS inferred",
+    "designAcceptance": "accepted",
+    "designAcceptedAt": "2026-10-13",
+    "prdVersion": "1.1",
+    "currentPrdVersion": "1.2",
+    "acceptedVisualPrdVersion": "1.1"
+  },
+  "screens": [
+    {
+      "id": "SCR-01",
+      "title": "翻译浮窗",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "bright_game",
+        "dark_game",
+        "compact_360",
+        "long_text",
+        "large_type_200",
+        "paused",
+        "pin_menu",
+        "partial_failure",
+        "reduced_transparency",
+        "hover",
+        "pressed",
+        "ocr-reading-light",
+        "ocr-reading-dark",
+        "ocr-paused-light"
+      ],
+      "requirements": [
+        "REQ-001",
+        "REQ-015",
+        "REQ-017",
+        "REQ-018",
+        "REQ-024",
+        "REQ-029",
+        "REQ-031",
+        "REQ-034",
+        "REQ-041",
+        "REQ-042",
+        "REQ-043",
+        "REQ-044",
+        "REQ-045",
+        "REQ-046",
+        "REQ-053"
+      ],
+      "layoutFamily": "readingHUD",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-01-ocr-reading-light.png",
+        "previews/SCR-01-ocr-reading-dark.png",
+        "previews/SCR-01-ocr-paused-light.png",
+        "previews/SCR-01-light.jpg",
+        "previews/SCR-01-dark.jpg",
+        "previews/SCR-01-error.jpg",
+        "previews/SCR-01-large.jpg",
+        "previews/SCR-01-long-end.jpg",
+        "previews/SCR-01-long.jpg",
+        "previews/SCR-01-restricted.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN",
+      "ocrPreviewStatus": "captured / visual_checked / not_reviewed"
+    },
+    {
+      "id": "SCR-02",
+      "title": "游戏库",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "empty_library",
+        "missing_path"
+      ],
+      "requirements": [
+        "REQ-002",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-049"
+      ],
+      "layoutFamily": "librarySplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-02-light.jpg",
+        "previews/SCR-02-dark.jpg",
+        "previews/SCR-02-empty.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-03",
+      "title": "游戏详情",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "inherited",
+        "game_override",
+        "metadata_conflict",
+        "compat_launcher_binding",
+        "compat_bottle_unresolved",
+        "compat_runtime_missing",
+        "compat-x86-config-light"
+      ],
+      "requirements": [
+        "REQ-005",
+        "REQ-006",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-022",
+        "REQ-025",
+        "REQ-027",
+        "REQ-028",
+        "REQ-035",
+        "REQ-037",
+        "REQ-038",
+        "REQ-039",
+        "REQ-040",
+        "REQ-043"
+      ],
+      "layoutFamily": "gameDetailSplitForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-03-light.jpg",
+        "previews/SCR-03-dark.jpg",
+        "previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png"
+      ],
+      "runtimeStatus": "NOT_RUN",
+      "plannedCompatVariants": {
+        "status": "planned",
+        "designAcceptance": "not_reviewed",
+        "keys": [
+          "compat_launcher_binding",
+          "compat_bottle_unresolved",
+          "compat_runtime_missing"
+        ]
+      },
+      "capturedCompatVariants": {
+        "version": "compat-x86-v1",
+        "status": "captured",
+        "designAcceptance": "not_reviewed",
+        "runtimeTests": "NOT_RUN",
+        "keys": [
+          "compat-x86-config-light"
+        ]
+      }
+    },
+    {
+      "id": "SCR-04",
+      "title": "连接游戏",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "entry_blocked",
+        "target_exited",
+        "compat_bottle_picker",
+        "compat_helper_preparing",
+        "compat_helper_starting",
+        "compat_target_list",
+        "compat_helper_failed",
+        "compat_waiting_target",
+        "compat_waiting_text",
+        "compat-x86-check-light",
+        "compat-x86-check-dark",
+        "compat-x86-missing-light",
+        "compat-x86-mismatch-light",
+        "compat-x86-cancelled-light"
+      ],
+      "requirements": [
+        "REQ-002",
+        "REQ-003",
+        "REQ-007",
+        "REQ-010",
+        "REQ-037",
+        "REQ-043",
+        "REQ-052",
+        "REQ-055"
+      ],
+      "layoutFamily": "processTableSheet",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-04-light.jpg",
+        "previews/SCR-04-dark.jpg",
+        "previews/SCR-04-restricted.jpg",
+        "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+        "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+        "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+        "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+        "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png"
+      ],
+      "runtimeStatus": "NOT_RUN",
+      "plannedCompatVariants": {
+        "status": "planned",
+        "designAcceptance": "not_reviewed",
+        "keys": [
+          "compat_bottle_picker",
+          "compat_helper_preparing",
+          "compat_helper_starting",
+          "compat_target_list",
+          "compat_helper_failed",
+          "compat_waiting_target",
+          "compat_waiting_text"
+        ]
+      },
+      "capturedCompatVariants": {
+        "version": "compat-x86-v1",
+        "status": "captured",
+        "designAcceptance": "not_reviewed",
+        "runtimeTests": "NOT_RUN",
+        "keys": [
+          "compat-x86-check-light",
+          "compat-x86-check-dark",
+          "compat-x86-missing-light",
+          "compat-x86-mismatch-light",
+          "compat-x86-cancelled-light"
+        ]
+      }
+    },
+    {
+      "id": "SCR-05",
+      "title": "选择文本",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "empty_streams",
+        "multi_stream",
+        "embed_unavailable"
+      ],
+      "requirements": [
+        "REQ-003",
+        "REQ-004",
+        "REQ-005",
+        "REQ-006",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-025",
+        "REQ-035",
+        "REQ-055"
+      ],
+      "layoutFamily": "streamTableSplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-05-light.jpg",
+        "previews/SCR-05-dark.jpg",
+        "previews/SCR-05-empty.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-06",
+      "title": "实时 OCR",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "multiple_regions",
+        "capture_denied",
+        "in_place_translation",
+        "ocr-window-light",
+        "ocr-window-dark",
+        "ocr-screen-light",
+        "ocr-running-light",
+        "ocr-paused-light",
+        "ocr-editing-light",
+        "ocr-permission-light",
+        "ocr-target-missing-light",
+        "ocr-empty-light",
+        "ocr-compact-light",
+        "ocr-selection-idle-light",
+        "ocr-selection-dragging-light",
+        "ocr-selection-adjusting-light",
+        "ocr-selection-reading-light",
+        "ocr-task-light",
+        "ocr-task-dark"
+      ],
+      "requirements": [
+        "REQ-011",
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015",
+        "REQ-016",
+        "REQ-043"
+      ],
+      "layoutFamily": "ocrRegionOverlay",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-06-ocr-selection-idle-light.png",
+        "previews/SCR-06-ocr-selection-dragging-light.png",
+        "previews/SCR-06-ocr-selection-adjusting-light.png",
+        "previews/SCR-06-ocr-selection-reading-light.png",
+        "previews/SCR-06-ocr-task-light.png",
+        "previews/SCR-06-ocr-task-dark.png",
+        "previews/SCR-06-ocr-window-light.png",
+        "previews/SCR-06-ocr-window-dark.png",
+        "previews/SCR-06-ocr-screen-light.png",
+        "previews/SCR-06-ocr-running-light.png",
+        "previews/SCR-06-ocr-paused-light.png",
+        "previews/SCR-06-ocr-editing-light.png",
+        "previews/SCR-06-ocr-permission-light.png",
+        "previews/SCR-06-ocr-target-missing-light.png",
+        "previews/SCR-06-ocr-empty-light.png",
+        "previews/SCR-06-ocr-compact-light.png",
+        "previews/SCR-06-light.jpg",
+        "previews/SCR-06-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN",
+      "ocrPreviewStatus": "selection-v2 captured / visual_checked / accepted; runtime NOT_RUN"
+    },
+    {
+      "id": "SCR-07",
+      "title": "编辑与文件翻译",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "file_running",
+        "file_partial_failure",
+        "output_conflict"
+      ],
+      "requirements": [
+        "REQ-017",
+        "REQ-018",
+        "REQ-019",
+        "REQ-024",
+        "REQ-046"
+      ],
+      "layoutFamily": "textFileSplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-07-light.jpg",
+        "previews/SCR-07-dark.jpg",
+        "previews/SCR-07-busy.jpg",
+        "previews/SCR-07-error.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-08",
+      "title": "翻译历史",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "empty_history",
+        "editing_translation",
+        "not_following_latest"
+      ],
+      "requirements": [
+        "REQ-019",
+        "REQ-024",
+        "REQ-027",
+        "REQ-031",
+        "REQ-045",
+        "REQ-050",
+        "REQ-053"
+      ],
+      "layoutFamily": "historySplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-08-light.jpg",
+        "previews/SCR-08-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-09",
+      "title": "查词与注音",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "dictionary_loading",
+        "dictionary_missing",
+        "long_definition"
+      ],
+      "requirements": [
+        "REQ-018",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-032",
+        "REQ-034",
+        "REQ-053"
+      ],
+      "layoutFamily": "dictionarySplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-09-light.jpg",
+        "previews/SCR-09-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-10",
+      "title": "Anki 卡片",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "anki_disconnected",
+        "field_invalid",
+        "duplicate_note"
+      ],
+      "requirements": [
+        "REQ-031",
+        "REQ-032",
+        "REQ-033",
+        "REQ-043",
+        "REQ-054"
+      ],
+      "layoutFamily": "ankiFormPreview",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-10-light.jpg",
+        "previews/SCR-10-dark.jpg",
+        "previews/SCR-10-error.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-11",
+      "title": "备忘录",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "empty_notes",
+        "save_failed",
+        "edit_conflict"
+      ],
+      "requirements": [
+        "REQ-040",
+        "REQ-049",
+        "REQ-050"
+      ],
+      "layoutFamily": "noteEditorSplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-11-light.jpg",
+        "previews/SCR-11-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-12",
+      "title": "通用",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "search_empty",
+        "configuration_read_only"
+      ],
+      "requirements": [
+        "REQ-001",
+        "REQ-029",
+        "REQ-049",
+        "REQ-053",
+        "REQ-054",
+        "REQ-056"
+      ],
+      "layoutFamily": "settingsForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-12-light.jpg",
+        "previews/SCR-12-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-13",
+      "title": "输入与 HOOK",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "encoding_not_applicable",
+        "embed_unavailable"
+      ],
+      "requirements": [
+        "REQ-001",
+        "REQ-003",
+        "REQ-005",
+        "REQ-006",
+        "REQ-007",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-017",
+        "REQ-018",
+        "REQ-036",
+        "REQ-048",
+        "REQ-055"
+      ],
+      "layoutFamily": "settingsForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-13-light.jpg",
+        "previews/SCR-13-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-14",
+      "title": "OCR 引擎",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "periodic",
+        "image_stability",
+        "input_trigger",
+        "resource_missing",
+        "ocr-settings-light",
+        "ocr-settings-dark"
+      ],
+      "requirements": [
+        "REQ-011",
+        "REQ-012",
+        "REQ-013",
+        "REQ-014",
+        "REQ-015",
+        "REQ-016",
+        "REQ-054"
+      ],
+      "layoutFamily": "settingsForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-14-ocr-settings-light.png",
+        "previews/SCR-14-ocr-settings-dark.png",
+        "previews/SCR-14-light.jpg",
+        "previews/SCR-14-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN",
+      "ocrPreviewStatus": "captured / visual_checked / not_reviewed"
+    },
+    {
+      "id": "SCR-15",
+      "title": "翻译服务",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "connection_tested",
+        "invalid_parameter",
+        "provider_timeout",
+        "credential_missing"
+      ],
+      "requirements": [
+        "REQ-020",
+        "REQ-021",
+        "REQ-022",
+        "REQ-023",
+        "REQ-024",
+        "REQ-027",
+        "REQ-054",
+        "REQ-055"
+      ],
+      "layoutFamily": "settingsServicesSplitForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-15-light.jpg",
+        "previews/SCR-15-dark.jpg",
+        "previews/SCR-15-compact.jpg",
+        "previews/SCR-15-error.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-16",
+      "title": "文本处理",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "regex_invalid",
+        "script_failed",
+        "embed_processing_restricted"
+      ],
+      "requirements": [
+        "REQ-009",
+        "REQ-022",
+        "REQ-025",
+        "REQ-026",
+        "REQ-027",
+        "REQ-028",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "layoutFamily": "pipelineTableSplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-16-light.jpg",
+        "previews/SCR-16-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-17",
+      "title": "语音",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "voice_missing",
+        "audio_input_denied",
+        "device_disconnected"
+      ],
+      "requirements": [
+        "REQ-028",
+        "REQ-034",
+        "REQ-035",
+        "REQ-036",
+        "REQ-053",
+        "REQ-054",
+        "REQ-055"
+      ],
+      "layoutFamily": "settingsForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-17-light.jpg",
+        "previews/SCR-17-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-18",
+      "title": "显示与快捷键",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "toolbar_configurable",
+        "hotkey_conflict",
+        "recover_overlay"
+      ],
+      "requirements": [
+        "REQ-014",
+        "REQ-029",
+        "REQ-030",
+        "REQ-031",
+        "REQ-041",
+        "REQ-042",
+        "REQ-043",
+        "REQ-044",
+        "REQ-046",
+        "REQ-053"
+      ],
+      "layoutFamily": "settingsForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-18-light.jpg",
+        "previews/SCR-18-dark.jpg",
+        "previews/SCR-18-error.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-19",
+      "title": "网络服务",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "port_in_use",
+        "remote_access_disabled"
+      ],
+      "requirements": [
+        "REQ-033",
+        "REQ-047",
+        "REQ-048",
+        "REQ-054"
+      ],
+      "layoutFamily": "settingsForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-19-light.jpg",
+        "previews/SCR-19-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-20",
+      "title": "配置与数据",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "migration_preview",
+        "path_mapping",
+        "migration_conflict",
+        "rollback"
+      ],
+      "requirements": [
+        "REQ-049",
+        "REQ-050",
+        "REQ-051",
+        "REQ-054",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "layoutFamily": "profileMigrationSplitForm",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-20-light.jpg",
+        "previews/SCR-20-dark.jpg",
+        "previews/SCR-20-error.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-21",
+      "title": "更新与诊断",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "update_incompatible",
+        "diagnostic_redacted"
+      ],
+      "requirements": [
+        "REQ-002",
+        "REQ-007",
+        "REQ-016",
+        "REQ-020",
+        "REQ-023",
+        "REQ-026",
+        "REQ-029",
+        "REQ-032",
+        "REQ-033",
+        "REQ-036",
+        "REQ-050",
+        "REQ-051",
+        "REQ-052",
+        "REQ-054",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "layoutFamily": "diagnosticTableSplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-21-light.jpg",
+        "previews/SCR-21-dark.jpg"
+      ],
+      "runtimeStatus": "NOT_RUN"
+    },
+    {
+      "id": "SCR-22",
+      "title": "原生游戏兼容性",
+      "variants": [
+        "light",
+        "dark",
+        "text_scale_200",
+        "minimum_900x600",
+        "not_verified",
+        "partial_capability",
+        "entry_blocked",
+        "evidence_scope",
+        "compat_environment_report",
+        "compat_helper_ready_no_text",
+        "compat_environment_mismatch",
+        "compat-x86-report-light",
+        "compat-x86-report-dark"
+      ],
+      "requirements": [
+        "REQ-002",
+        "REQ-003",
+        "REQ-007",
+        "REQ-008",
+        "REQ-009",
+        "REQ-010",
+        "REQ-044",
+        "REQ-052",
+        "REQ-055",
+        "REQ-056"
+      ],
+      "layoutFamily": "capabilityTableSplit",
+      "nativePreviewStatus": "default_light_dark_visual_checked",
+      "actualPreviews": [
+        "previews/SCR-22-light.jpg",
+        "previews/SCR-22-dark.jpg",
+        "previews/SCR-22-restricted.jpg",
+        "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+        "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+      ],
+      "runtimeStatus": "NOT_RUN",
+      "plannedCompatVariants": {
+        "status": "planned",
+        "designAcceptance": "not_reviewed",
+        "keys": [
+          "compat_environment_report",
+          "compat_helper_ready_no_text",
+          "compat_environment_mismatch"
+        ]
+      },
+      "compatDisplayTitle": "Windows游戏兼容性",
+      "capturedCompatVariants": {
+        "version": "compat-x86-v1",
+        "status": "captured",
+        "designAcceptance": "not_reviewed",
+        "runtimeTests": "NOT_RUN",
+        "keys": [
+          "compat-x86-report-light",
+          "compat-x86-report-dark"
+        ]
+      }
+    }
+  ],
+  "runtimeTestsNotRun": true,
+  "compatDesignExtension": {
+    "version": "compat-x86-v1",
+    "date": "2026-10-16",
+    "executionEnvironment": "compat_windows",
+    "prdVersion": "1.2",
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "not_reviewed",
+    "runtimeTests": "NOT_RUN",
+    "screens": [
+      "SCR-03",
+      "SCR-04",
+      "SCR-22"
+    ],
+    "captures": [
+      "previews/compat-x86-v1-final-r3/SCR-03-compat-x86-config-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-check-dark.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-missing-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-mismatch-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-04-compat-x86-cancelled-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-light.png",
+      "previews/compat-x86-v1-final-r3/SCR-22-compat-x86-report-dark.png"
+    ],
+    "captureCount": 8,
+    "primaryFlow": "Select game and bottle; automatically route x86/x64 target components to the x64 receiver; report launch, component readiness, connection, extraction, HUD and embedding independently",
+    "renderer": "actual AppKit/SwiftUI window capture of authored fixture data; ASCII temporary output copied unchanged into guarded publication",
+    "sourceHashes": {
+      "OverlaySample.swift": "2e5b09675d7f9c88aaf37227f8f9817f488b41233378a72ace5da59b92d91e23",
+      "DesignSystem.swift": "0e32edca9cc926243b335d480ade9dca4654f0507810565de07f084263245c85",
+      "CoreScreens.swift": "c83a93759b3ec9a8404537ac1fd7aa48e1d504d21846897ef4178dc30ca94c57",
+      "SettingsScreens.swift": "6811b329f12270f48f411e070238086cdbefd010a790ba981b704d5ac53ca971",
+      "OCRSourcePreview.swift": "1b8d6169658f5e4911b69555c0c0fd37b8bd772a46d94fc4947f92b2dcbc018a",
+      "OCRSelectionPreview.swift": "27f818f6ce0d5840f1d430d08d33b551e931d2bd707071352c17702641198576",
+      "CompatConnectionPreview.swift": "cd594a5df8378ffc7d6d53fb612b84a32b8bfdbc54b4e2804e619d3f0d47bb3d",
+      "main.swift": "dbf0684d00d4f63228c5c7042ed0211004ac1c7beb22d04f38fae21d01e7dde7",
+      "build.sh": "15fb6459c9bd99ac59b3f4dd2fa501c9262b5dfb2d8c522cfffd2aa1c587faf7",
+      "capture-ocr-previews.py": "8715d7d75229c05f15dfc37589de1d799335624e10c3373fe30aece9351caae3",
+      "capture-compat-previews.py": "325847a86ce63bef2bb9b509710644e972ab3fe90cd0c1720e50540f6770a693"
+    },
+    "exampleTarget": "memo01/Game.exe PE32 I386; design fixture only; no real-game compatibility result",
+    "notCaptured": [
+      "unresolved bottle confirmation",
+      "resource repair progress",
+      "injection-stage cancellation and unknown cleanup detail",
+      "target exit",
+      "advanced disclosure expanded",
+      "200% text and full keyboard/VoiceOver audit"
+    ]
+  },
+  "ocrSourceDesignExtension": {
+    "version": "ocr-source-v1",
+    "date": "2026-10-13",
+    "prdVersion": "1.2",
+    "userStory": "US-10",
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "not_reviewed",
+    "screens": [
+      "SCR-01",
+      "SCR-06",
+      "SCR-14"
+    ],
+    "captures": [
+      "previews/SCR-01-ocr-reading-light.png",
+      "previews/SCR-01-ocr-reading-dark.png",
+      "previews/SCR-01-ocr-paused-light.png",
+      "previews/SCR-06-ocr-window-light.png",
+      "previews/SCR-06-ocr-window-dark.png",
+      "previews/SCR-06-ocr-screen-light.png",
+      "previews/SCR-06-ocr-running-light.png",
+      "previews/SCR-06-ocr-paused-light.png",
+      "previews/SCR-06-ocr-editing-light.png",
+      "previews/SCR-06-ocr-permission-light.png",
+      "previews/SCR-06-ocr-target-missing-light.png",
+      "previews/SCR-06-ocr-empty-light.png",
+      "previews/SCR-06-ocr-compact-light.png",
+      "previews/SCR-14-ocr-settings-light.png",
+      "previews/SCR-14-ocr-settings-dark.png"
+    ],
+    "captureCount": 15,
+    "renderer": "actual AppKit/SwiftUI native window captures of authored fixture content",
+    "workflow": "ordinary application window or screen rectangle → continuous OCR → original and translation in resident HUD",
+    "runtimeTests": "NOT_RUN",
+    "notCaptured": [
+      "multiple independent regions",
+      "online OCR credentials and upload disclosure",
+      "image stability / input-event detailed settings",
+      "recognition/translation in-flight and failure variants",
+      "in-place translation",
+      "HUD more menu open, hidden/restored, 200% OCR text",
+      "multiple displays, fullscreen/Spaces, minimized/occluded windows"
+    ],
+    "rating": "Good",
+    "reviewScope": "coordinator inspected actual native captures and source; no production-runtime or user acceptance inferred",
+    "reviewDate": "2026-10-13",
+    "revisionStatus": "previous draft; screen selection superseded by ocr-selection-v2"
+  },
+  "currentOcrDesignRevision": "ocr-selection-v2",
+  "ocrSelectionDesignExtension": {
+    "version": "ocr-selection-v2",
+    "date": "2026-10-13",
+    "prdVersion": "1.2",
+    "userStory": "US-10",
+    "screens": [
+      "SCR-06"
+    ],
+    "captures": [
+      "previews/SCR-06-ocr-selection-idle-light.png",
+      "previews/SCR-06-ocr-selection-dragging-light.png",
+      "previews/SCR-06-ocr-selection-adjusting-light.png",
+      "previews/SCR-06-ocr-selection-reading-light.png",
+      "previews/SCR-06-ocr-task-light.png",
+      "previews/SCR-06-ocr-task-dark.png"
+    ],
+    "captureCount": 6,
+    "status": "captured",
+    "visualReview": "visual_checked",
+    "designAcceptance": "accepted",
+    "runtimeTests": "NOT_RUN",
+    "primaryFlow": "shortcut → display selection layer → rectangle drag → release starts OCR and translation in resident HUD",
+    "secondaryFlow": "existing-range edit → Return applies / Esc restores previous region, source and run state",
+    "units": "pt in authored design scene; production pixel mapping by display scale/DPI remains unverified",
+    "renderer": "actual AppKit/SwiftUI design window captures; self-authored desktop artwork",
+    "reviewScope": "visual and source review only; no user acceptance or production runtime inferred",
+    "notExecuted": [
+      "production global shortcut / display overlays / foreground focus restoration",
+      "real screen capture, OCR and translation",
+      "all display sizes/DPI/Spaces/fullscreen cases",
+      "full keyboard and VoiceOver audit",
+      "200% text and auxiliary appearances"
+    ],
+    "designAcceptedAt": "2026-10-13",
+    "designAcceptanceScope": "visual design of the six ocr-selection-v2 captures only",
+    "approvalSource": "user feedback in current session",
+    "approvalQuote": "目前设计上看着没问题了",
+    "approvedCaptures": [
+      "previews/SCR-06-ocr-selection-idle-light.png",
+      "previews/SCR-06-ocr-selection-dragging-light.png",
+      "previews/SCR-06-ocr-selection-adjusting-light.png",
+      "previews/SCR-06-ocr-selection-reading-light.png",
+      "previews/SCR-06-ocr-task-light.png",
+      "previews/SCR-06-ocr-task-dark.png"
+    ],
+    "approvedCaptureHashes": {
+      "previews/SCR-06-ocr-selection-idle-light.png": "fd5f9491ffb5ec5540a68f19c737b0cacdbf1d9dfb4594c33139e94ad78a2737",
+      "previews/SCR-06-ocr-selection-dragging-light.png": "757582e37626a6236415931993ea1991aea69f1b750726ce301a4efa5e973143",
+      "previews/SCR-06-ocr-selection-adjusting-light.png": "b30b50a8874a6cc70c9fcc87b40bc02eb846cbb776e31ad92028ca9a545bb5dc",
+      "previews/SCR-06-ocr-selection-reading-light.png": "ec4a73a337e1dfccc5c1d813ca9ee189dce026b48bbcfabc4e25995555a5760d",
+      "previews/SCR-06-ocr-task-light.png": "9b371a231be6655e44896b7e2ef38cf8492f8fcf023d895e3362e81e010f00f5",
+      "previews/SCR-06-ocr-task-dark.png": "f8955ffcbe977c4d89f39a5422bc6be0a3615cbde0d8faaec50c937b4a719b4a"
+    }
+  },
+  "currentCompatDesignRevision": "compat-x86-v1"
+}

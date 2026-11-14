@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "source": "Explicit controlled test input contracts, shared only as data; expected pixels remain independently authored design sources",
+  "states": {
+    "history-earlier": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "main",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "gameCount": 0,
+      "session": null,
+      "sourceTexts": [
+        "以前の原文。"
+      ]
+    },
+    "wordcard-native-size": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "hud",
+      "viewport": {
+        "width": 560,
+        "height": 290
+      },
+      "sourceTexts": [
+        "新しい原文。"
+      ],
+      "current": {
+        "sourceText": "新しい原文。"
+      },
+      "dictionaryHeadwords": []
+    },
+    "glossary-editing": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "settings",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "settingsCategory": "翻译服务",
+      "selectedEntityTab": "术语表",
+      "configuration": {
+        "draftHeadRevision": 5,
+        "appliedHeadRevision": 0,
+        "draftEnabled": [
+          {
+            "purpose": "translation",
+            "enabled": false
+          }
+        ],
+        "appliedPresent": false
+      },
+      "fields": [
+        {
+          "role": "textbox",
+          "name": "术语表名称",
+          "value": "UI scope glossary"
+        },
+        {
+          "role": "combobox",
+          "name": "术语作用范围",
+          "value": "global",
+          "options": [
+            {
+              "value": "global",
+              "label": "全局默认"
+            },
+            {
+              "value": "game:ui-term-game",
+              "label": "UI glossary scope · 仅此游戏"
+            }
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "原词 1",
+          "value": "放課後"
+        },
+        {
+          "role": "textbox",
+          "name": "译法 1",
+          "value": "放学后"
+        }
+      ]
+    },
+    "dictionary-distinct-headwords": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "hud",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "sourceTexts": [
+        "箸"
+      ],
+      "current": {
+        "sourceText": "箸"
+      },
+      "dictionaryHeadwords": [
+        "箸",
+        "橋"
+      ]
+    },
+    "learning-japanese-linebreak": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "learning",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "sourceTexts": [
+        "放課後、図書館で彼女と待ち合わせをした。"
+      ],
+      "sourceFont": "18px",
+      "frozen": {
+        "sourceText": "放課後、図書館で彼女と待ち合わせをした。",
+        "tokenIndex": null
+      }
+    },
+    "empty-library": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "main",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "gameCount": 0,
+      "current": null,
+      "sourceTexts": []
+    },
+    "add-game": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "main",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "gameCount": 0,
+      "fields": [
+        {
+          "role": "textbox",
+          "name": "游戏名称",
+          "value": "サクラノ詩 10th Anniversary edition",
+          "exact": false
+        },
+        {
+          "role": "textbox",
+          "name": "原名",
+          "value": "サクラノ詩"
+        },
+        {
+          "role": "combobox",
+          "name": "原文语言",
+          "value": "ja"
+        },
+        {
+          "role": "textbox",
+          "name": "目标进程路径",
+          "value": "C:\\Program Files\\Sakura-no-Uta-10th\\sakuranouta10th.exe"
+        }
+      ]
+    },
+    "target-review": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "main",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "gameCount": 1,
+      "sourceTexts": []
+    },
+    "settings-connections": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "settings",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "settingsCategory": "翻译服务",
+      "selectedEntityTab": "用途",
+      "configuration": {
+        "draftHeadRevision": 0,
+        "appliedHeadRevision": 0,
+        "draftEnabled": [
+          {
+            "purpose": "translation",
+            "enabled": true
+          }
+        ],
+        "appliedPresent": true
+      },
+      "fields": [
+        {
+          "role": "combobox",
+          "name": "主模型配置",
+          "value": "design-traditional"
+        }
+      ]
+    },
+    "reading-hud": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "hud",
+      "viewport": {
+        "width": 560,
+        "height": 147
+      },
+      "hudMenu": "closed",
+      "sourceTexts": [
+        "その風景には、悲しさも、痛みも、なかった。"
+      ],
+      "sourceFont": "18px",
+      "current": {
+        "sourceText": "その風景には、悲しさも、痛みも、なかった。",
+        "translations": [
+          {
+            "text": "那片景色中，没有悲伤，也没有痛楚。",
+            "providerLabel": "Microsoft · 日中翻译"
+          }
+        ]
+      }
+    },
+    "learning-fixed": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "learning",
+      "viewport": {
+        "width": 600,
+        "height": 670
+      },
+      "sourceTexts": [
+        "その風景には、悲しさも、痛みも、なかった。"
+      ],
+      "current": {
+        "sourceText": "だから、俺は泣かなかったのだろうか？"
+      },
+      "frozen": {
+        "sourceText": "その風景には、悲しさも、痛みも、なかった。",
+        "tokenIndex": null
+      }
+    },
+    "library-batch": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "main",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "gameCount": 0,
+      "fields": [
+        {
+          "role": "textbox",
+          "name": "游戏名称",
+          "value": "同名程序 · 1",
+          "exact": false
+        },
+        {
+          "role": "combobox",
+          "name": "原文语言",
+          "value": "ja"
+        }
+      ]
+    },
+    "display-preferences": {
+      "theme": "dark",
+      "transparency": "reduced",
+      "preferences": {
+        "sourceFontPt": 36,
+        "translationFontPt": 48,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "hud",
+      "viewport": {
+        "width": 560,
+        "height": 344
+      },
+      "hudMenu": "open",
+      "sourceTexts": [
+        "その風景には、悲しさも、痛みも、なかった。"
+      ],
+      "sourceFont": "36px"
+    },
+    "model-scheduling": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "settings",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "settingsCategory": "翻译服务",
+      "selectedEntityTab": "模型",
+      "configuration": {
+        "draftHeadRevision": 0,
+        "appliedHeadRevision": 0,
+        "draftEnabled": [
+          {
+            "purpose": "translation",
+            "enabled": false
+          }
+        ],
+        "appliedPresent": false
+      },
+      "fields": [
+        {
+          "role": "textbox",
+          "name": "模型配置名称",
+          "value": "UI model A"
+        },
+        {
+          "role": "textbox",
+          "name": "实际模型 ID",
+          "value": "ui-entered-A"
+        }
+      ]
+    },
+    "connection-proxy": {
+      "theme": "dark",
+      "transparency": "material",
+      "preferences": {
+        "sourceFontPt": 18,
+        "translationFontPt": 24,
+        "showRuby": true,
+        "showPos": true
+      },
+      "windowRole": "settings",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "settingsCategory": "翻译服务",
+      "selectedEntityTab": "连接",
+      "configuration": {
+        "draftHeadRevision": 0,
+        "appliedHeadRevision": 0,
+        "draftEnabled": [
+          {
+            "purpose": "translation",
+            "enabled": false
+          }
+        ],
+        "appliedPresent": false
+      },
+      "fields": [
+        {
+          "role": "textbox",
+          "name": "连接名称",
+          "value": "UI configured service"
+        },
+        {
+          "role": "textbox",
+          "name": "服务地址",
+          "value": "http://127.0.0.1:1234/v1"
+        }
+      ]
+    }
+  }
+}

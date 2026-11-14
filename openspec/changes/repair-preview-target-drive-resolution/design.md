@@ -1,0 +1,11 @@
+# 目标盘符解析设计
+
+在app-infra现有Windows路径与DriveMapping工具中增加窄入口，先复用现有规范路径校验确定所请求盘符，再只解析其真实映射及目标文件。预览上下文和其运行实例验证复用该入口，避免无关可移动卷成为当前目标的依赖。原全盘drive_mappings函数及原调用语义保持，不用全局忽略canonicalize错误来规避失败。
+
+目标盘映射缺失或失效、目标文件缺失、不规范/相对/不受支持路径必须拒绝。冻结后目标盘重映射仍必须被原运行实例证明拒绝；不按标题、文件名或可用窗口猜测身份。继续核对环境、完整路径、创建时间、架构与实际窗口。
+
+复用现有路径规范化：已接受的大小写、分隔符及可规范化别名继续规范化后解析；相对路径、盘符相对路径、越界及不受支持语法仍拒绝，不另造更宽松解析器。
+
+独立契约审阅要求闭合freeze到worker open及inventory返回后的路径证明：私有FrozenPreviewTarget增加必需的canonical image_path，和现有file stamp一起核验；同inode的另一个硬链接路径也不能替换已冻结路径。依据engineering-layout.md的schema版本规则，私有window_collector协议VERSION由2升3，旧版、缺字段、未知字段继续严格拒绝，保留同可执行文件认证，不加default或兼容fallback。这是同包Rust私有wire的明确变更，与Core ABI1和Hook JSONL2是不同协议；公开ApplicationPort、DTO/IPC、生成契约及数据库不变。
+
+精确五路径为game_launch.rs、preview_identity.rs、hook_backend.rs（既有wire fixture与拒绝测试）、window_collector/mod.rs（既有transport fixture）、window_collector/protocol.rs（私有版本及严格拒绝测试）。不新增模块、依赖、公开协议或DDL。Rust为业务权威，Tauri不复制解析；M02/AP负责目标与证明，M12/PL负责同包私有worker契约，M15负责证据。已确认设计、错误文案、生产者/消费者租约或预算不变。新增测试走真实生产入口及临时文件系统，保留原测试/预期；正式包后续独立冻结重建并复测。

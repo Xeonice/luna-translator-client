@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "refactor-preview-state-policy",
+  "parent_baseline_sha256": "df3259ff6974b3dc49987b9bafbcfd9389a745cfb5b8d53a3b62a1683880943f",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "before": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a",
+      "after": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview/state.rs",
+      "before": null,
+      "after": "4591ca91e23b38fbdaf69fe8ccf9d61f9d2afbdd308fb6ef9ba4525908464203"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/design.md",
+      "before": null,
+      "after": "ee08c1315ad759296d9a729e4223bc25bcae98b0fa39dabf9e6d6d7ef8d22e76"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/iteration-card.md",
+      "before": null,
+      "after": "11f5d886bdc898d74f3f15a1138a57af606e5dcf131be40b849f1201ee57c0e8"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/proposal.md",
+      "before": null,
+      "after": "a6a86ba181be06d903f804161c555dad580e56f01a96c3071a3b630a3780239a"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/source-snapshot.json",
+      "before": null,
+      "after": "a77f58fde4075b4965c34ebf21f7ea2924e7b78a9b482b80c10efd57c82580ec"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/specs/preview-state/spec.md",
+      "before": null,
+      "after": "80a9a9d51d62d2ac8466f5d262bcada55626f255f3cc9c98112bfc3b090673e9"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/tasks.md",
+      "before": null,
+      "after": "bd9f352344df4937d018259134b1d10c9306201d758f235f2d717a797a411970"
+    },
+    {
+      "path": "openspec/changes/refactor-preview-state-policy/verification.json",
+      "before": null,
+      "after": "93780f4f149b3c7dbd8973a3a175b5a2367d6c51da27b17b3f1420892ffd245d"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/platform/window_preview.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview/state.rs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/sr1/independent-code-review.json",
+    "sha256": "686e45fd75e075e180377efc9d76d0eaaea3f52ab046e617c71ef6ee5694b7f1",
+    "bytes": 10061
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 721,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "104a41e27d78072ae3390daac57be0e6208b1c665531453636f58d326307670a"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261020-R20",
+  "parent": "FP1-20261019-R19",
+  "parent_sha256": "e0350caebc6d6f71db0d21186683a76c86e4b8c6bf7a3890facf09e514765b9e",
+  "reason": "Annotate already implemented and mismatched technical capabilities using human source audit, separate historical/current scope, synchronize docs and report with machine source/package identity checks. No product behavior/design/DB/source/approval promotion.",
+  "independent_review": {
+    "path": ".build/implementation-status-20261020/context/review-r20-exact-delta.json",
+    "sha256": "adf5e571af83627939117f43fdf08b21ea14bcbbc9ecdb6ec150e7dd980022ef",
+    "attestation": {
+      "schema_version": 1,
+      "status": "passed",
+      "reviewer": "/root/coverage_context_review",
+      "captured_at": "2026-10-19T17:19:40.401543+00:00",
+      "candidate": {
+        "path": ".build/implementation-status-20261020/baseline-r20-candidate.json",
+        "sha256": "4560f99fa462050decd64af078944b1729ccbfce8cdbb73de3a07235c71bdbe8"
+      },
+      "parent": {
+        "baseline_id": "FP1-20261019-R19",
+        "sha256": "e0350caebc6d6f71db0d21186683a76c86e4b8c6bf7a3890facf09e514765b9e",
+        "entries": 425
+      },
+      "approved_exact_delta": {
+        "changed": [
+          {
+            "path": "docs/architecture/engineering-components.csv",
+            "before_sha256": "ca9ca670a0fba0855f6b1a12844142bdfed2724627cf8d7e01b4f679d4caaa56",
+            "after_sha256": "abf4e12c5a5d23e4402ed242f88b5e96572e732973272aeb57b6dc9c4f86e9a7",
+            "bytes": 28452
+          },
+          {
+            "path": "docs/architecture/engineering-layout.md",
+            "before_sha256": "b79ea7743c293e12be8a3871abe3c227f195745e884e20ffd79fbe16a4ce193e",
+            "after_sha256": "823efc8f2967a6a1164914ef21a520a702aa333de8266711b79fa8db3a489325",
+            "bytes": 17715
+          },
+          {
+            "path": "docs/architecture/engineering-modules.csv",
+            "before_sha256": "1da4f2dc298ec309a6625bcfc6b68e585c3fcce64177adb9e2031316afd720ac",
+            "after_sha256": "545ceb3907bcbf8e1e0a128ce78592d306707931a43f210dfe39810c46cbebff",
+            "bytes": 18941
+          },
+          {
+            "path": "docs/architecture/first-product-engineering-baseline.md",
+            "before_sha256": "66de5230b9797f3c7c42588445c81302363a3f74371ee13116a8c508bc152606",
+            "after_sha256": "95d1ea0b8613a3d068bc055f8b2a764d665bca8b33790424d99cc983fba7fc36",
+            "bytes": 40808
+          },
+          {
+            "path": "docs/architecture/reading-window-session-technical-design.md",
+            "before_sha256": "b35d192149840b693b4020e80f33f9bcaad2d9cf1f1c0553866a05f7be667934",
+            "after_sha256": "99645e6f12c5f4ad9c731eafafacdf9db0354a3219627d22ab996a57167c3e25",
+            "bytes": 45160
+          },
+          {
+            "path": "scripts/quality/verify.py",
+            "before_sha256": "6167bcb81bc62775a7cfbbfaedae5c12c78d5b4dab04b292154b54f63166ba1b",
+            "after_sha256": "0fde7e80b6c3d72a48b7bed44babc6796025fdbc2bf576458cc467b7db2cd204",
+            "bytes": 20511
+          },
+          {
+            "path": "scripts/report/build_engineering_baseline_report.py",
+            "before_sha256": "43b5ff737983cb73fc3f907d616f23038e2e5eb1e1c65c7c7325481190e6e85d",
+            "after_sha256": "3cb6173465be2e6b9d669398f41f7298730da650b7e22a5203538db647aff73a",
+            "bytes": 55525
+          },
+          {
+            "path": "scripts/report/verify_interaction_coverage_report.cjs",
+            "before_sha256": "b0569b5d3a29dd8e41b08509736cac98c060810802216db9b7f690c227e4d2c1",
+            "after_sha256": "1cd0d76bdef7aead2109f48fa507c1e2856b3589d0074c68bc3c80e46ac5461b",
+            "bytes": 7883
+          }
+        ],
+        "additions": [
+          {
+            "path": "docs/architecture/implementation-status.json",
+            "sha256": "0c0e3b423313fc6423b9d3c997755cb2864d08d951a5477d1f48566d3739d618",
+            "bytes": 355617
+          },
+          {
+            "path": "docs/architecture/implementation-status.md",
+            "sha256": "c9f742087412a686d2267c88680a0c5150f01021b9b02a88d96cbf86797904f3",
+            "bytes": 98392
+          },
+          {
+            "path": "scripts/quality/implementation_status.py",
+            "sha256": "0bc5dbbcd59acd1e96d76818e5fbccf8b1e625237b200ddb235829ce074e7f16",
+            "bytes": 32110
+          },
+          {
+            "path": "scripts/quality/test_implementation_status.py",
+            "sha256": "463335050778de530768acfbe7b8c025aa97043966a1e9438556ecac5ec9bc74",
+            "bytes": 18644
+          },
+          {
+            "path": "docs/development/baselines/FP1-20261019-R19.json",
+            "sha256": "e0350caebc6d6f71db0d21186683a76c86e4b8c6bf7a3890facf09e514765b9e",
+            "bytes": 91056
+          }
+        ],
+        "unchanged_parent_entries": 417,
+        "pre_derived_entries": 430,
+        "derived_record": "openspec/changes/annotate-current-implementation-status/baseline-review-r20.json",
+        "final_entries_after_single_derived_record": 431
+      },
+      "checks": [
+        {
+          "name": "candidate_identity",
+          "status": "passed",
+          "details": "4560f99fa462050decd64af078944b1729ccbfce8cdbb73de3a07235c71bdbe8"
+        },
+        {
+          "name": "parent_R19_identity",
+          "status": "passed",
+          "details": null
+        },
+        {
+          "name": "parent_R19_archived_original_bytes",
+          "status": "passed",
+          "details": null
+        },
+        {
+          "name": "eight_exact_existing_authority_changes",
+          "status": "passed",
+          "details": [
+            {
+              "path": "docs/architecture/engineering-components.csv",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "docs/architecture/engineering-layout.md",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "docs/architecture/engineering-modules.csv",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "docs/architecture/first-product-engineering-baseline.md",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "docs/architecture/reading-window-session-technical-design.md",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "scripts/quality/verify.py",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "scripts/report/build_engineering_baseline_report.py",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "scripts/report/verify_interaction_coverage_report.cjs",
+              "parent_before_matches": true,
+              "before_copy_matches": true,
+              "actual_after_matches": true,
+              "actual_bytes_match": true
+            }
+          ]
+        },
+        {
+          "name": "417_other_parent_authorities_unchanged",
+          "status": "passed",
+          "details": []
+        },
+        {
+          "name": "five_exact_new_authorities",
+          "status": "passed",
+          "details": [
+            {
+              "path": "docs/architecture/implementation-status.json",
+              "absent_from_parent": true,
+              "actual_hash_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "docs/architecture/implementation-status.md",
+              "absent_from_parent": true,
+              "actual_hash_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "scripts/quality/implementation_status.py",
+              "absent_from_parent": true,
+              "actual_hash_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "scripts/quality/test_implementation_status.py",
+              "absent_from_parent": true,
+              "actual_hash_matches": true,
+              "actual_bytes_match": true
+            },
+            {
+              "path": "docs/development/baselines/FP1-20261019-R19.json",
+              "absent_from_parent": true,
+              "actual_hash_matches": true,
+              "actual_bytes_match": true
+            }
+          ]
+        },
+        {
+          "name": "complete_twenty_source_delta_exact",
+          "status": "passed",
+          "details": {
+            "actual_only": [],
+            "expected_only": [],
+            "hash_drift": []
+          }
+        },
+        {
+          "name": "twenty_changes_authorized_doc_tooling_paths",
+          "status": "passed",
+          "details": []
+        },
+        {
+          "name": "frozen_semantic_review_identity",
+          "status": "passed",
+          "details": []
+        },
+        {
+          "name": "original_MC_ids_responsibilities_and_target_contracts_preserved",
+          "status": "passed",
+          "details": [
+            {
+              "path": "docs/architecture/engineering-modules.csv",
+              "target_contracts_preserved": true
+            },
+            {
+              "path": "docs/architecture/engineering-components.csv",
+              "target_contracts_preserved": true
+            }
+          ]
+        },
+        {
+          "name": "openspec_enum_and_visual_scope_match_catalog",
+          "status": "passed",
+          "details": null
+        },
+        {
+          "name": "new_gate_and_delivery_not_preclaimed",
+          "status": "passed",
+          "details": null
+        },
+        {
+          "name": "candidate_no_runtime_or_approval_promotion",
+          "status": "passed",
+          "details": null
+        },
+        {
+          "name": "protected_snapshot_still_clean",
+          "status": "passed",
+          "details": {
+            "files": 12386,
+            "source": ".build/implementation-status-20261020/context/protected-final.json"
+          }
+        }
+      ],
+      "approval_scope": "Adopt this exact documentation/status/tooling delta as R20; preserve R19 approvals, references and all product/PRD/license/token/approved-design/DB identities. No runtime/release or new architecture-field approval. Only baseline metadata plus a single derived review record may be written at adoption.",
+      "future_tasks_completion_allowance": {
+        "path": "openspec/changes/annotate-current-implementation-status/tasks.md",
+        "allowed_change": "Only existing3.2/3.3 unchecked checkboxes to checked after actual scoped gate/report-QA/protected evidence and deliverable availability; retain exact task text and prior receipts.",
+        "evidence_condition": "Root must preserve actual completion receipts, then rerun final gate after checkbox update and export/QA fresh report against that final same-source receipt; previous source identity cannot be reused.",
+        "authority_change_allowed": false,
+        "product_claim_promotion_allowed": false
+      },
+      "next_required": [
+        "Adopt R20 only after exact delta review",
+        "Execute complete development gate with actual TS/Rust compile",
+        "Export fresh HTML and ZIP with same-source passed receipt",
+        "Execute final actual report Playwright and protected-source check"
+      ],
+      "limits": [
+        "This record is an exact-delta and source-documentation review, not the future full engineering gate.",
+        "No current native game/model or product runtime tests were executed by this audit.",
+        "Historical package outcomes and current product runtime not_run remain distinct."
+      ]
+    }
+  },
+  "product_code_changed": false,
+  "approvals_changed": false,
+  "legacy_debt_expanded": false,
+  "runtime_success_promoted": false,
+  "current_product_runtime_tests_executed": false,
+  "source_semantic_audit_only": true
+}

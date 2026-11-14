@@ -1,0 +1,11 @@
+{
+  "file": "preview-frame.jpg",
+  "sha256": "c6a9095587557037bd0c2a186ed69e85f85555a0ad69bbf5ba0dbfe010c849c4",
+  "encoding": "jpeg",
+  "width": 924,
+  "height": 629,
+  "source": "docs/design/first-product-v1/assets/sakura-01.png",
+  "sourceSha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+  "encoder": "Chromium canvas image/jpeg quality0.9; independent of React or product capture",
+  "notRealCapture": true
+}

@@ -1,0 +1,649 @@
+{
+  "revision": "six-product-gaps-design-candidate",
+  "run_id": "2026-10-19T14-23-19-999Z",
+  "scope": "offline design interaction QA only",
+  "status": "passed",
+  "artifact_qa_passed": true,
+  "design_only": true,
+  "user_review": "design_candidate_pending_review",
+  "product_regression_executed": false,
+  "real_game": false,
+  "native": false,
+  "global_hotkey": false,
+  "tokenizer": false,
+  "live_capture": false,
+  "source_scope": "index.html plus all top-level JS/CSS; excludes derived gallery, entry-flow, comparison and review reports",
+  "source_sha256": {
+    "app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "controls.css": "d6039c5427ecf682786298a988818dd27a24af70ff355dc43f5e060e9e913e95",
+    "controls.js": "5ee4aa3f43c9c94959e5e0fa7d496a65aaf6f1ddfc292c949aeb64f47dc865d8",
+    "data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f",
+    "review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+  },
+  "source_top_level_sha256": {
+    "app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "controls.css": "d6039c5427ecf682786298a988818dd27a24af70ff355dc43f5e060e9e913e95",
+    "controls.js": "5ee4aa3f43c9c94959e5e0fa7d496a65aaf6f1ddfc292c949aeb64f47dc865d8",
+    "data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f",
+    "review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+  },
+  "source_top_level_sha256_after": {
+    "app.js": "d3d738d9bfaf73f84e84e13e5036f0f0a0f830a81e9f3d1e69596c5a7629387a",
+    "controls.css": "d6039c5427ecf682786298a988818dd27a24af70ff355dc43f5e060e9e913e95",
+    "controls.js": "5ee4aa3f43c9c94959e5e0fa7d496a65aaf6f1ddfc292c949aeb64f47dc865d8",
+    "data.js": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+    "game-library.css": "02be90b679a29aecc7416081fac3fdabc7b034392cff7267de00b6d82e1c1e0d",
+    "game-library.js": "bc28d6568f0cf5eaeb3e9872a9848060f59d6e3ff12e124342b29f0c8f12b690",
+    "icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "index.html": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+    "learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "learning.js": "f4ac11986b695ee4be6e868a7cc006b7bc67e7ac5a907c0a79baf2f7dccc8304",
+    "material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "review-gaps.css": "b8842fe3d74c26f897623c09e3c15da9dadfd66ea12947a78aabc996641fdd1f",
+    "review-gaps.js": "1da2fff518156d20af23a9d74d3576b75c59341b3ad380025e2aab36b627fe25",
+    "settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "settings.js": "5493fa335f5efb2bf915a9628946abfb196f9332af3f84473682feffa1b62fbd",
+    "styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6"
+  },
+  "browser": "155.0.8059.84",
+  "mode": "offline file:// Chrome headless",
+  "viewport": {
+    "width": 1600,
+    "height": 1100
+  },
+  "command": [
+    "node",
+    "scripts/report/verify_interaction_gap_design.cjs",
+    "/Users/tanghehui/ExploreProject/luna-translator/.build/design-six-gaps-20261019/qa"
+  ],
+  "checks": [
+    {
+      "id": "preview_identity_and_source_label",
+      "requirements": [
+        "RW-01",
+        "RW-06"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:20.437Z",
+      "completed": "2026-10-19T14:23:20.708Z"
+    },
+    {
+      "id": "preview_explicit_enable",
+      "requirements": [
+        "RW-03"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:20.708Z",
+      "completed": "2026-10-19T14:23:20.888Z"
+    },
+    {
+      "id": "preview_pause_freezes_frame_then_resume",
+      "requirements": [
+        "RW-02",
+        "RW-04"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:20.888Z",
+      "completed": "2026-10-19T14:23:21.133Z"
+    },
+    {
+      "id": "preview_permission_unavailable_exit",
+      "requirements": [
+        "RW-03",
+        "RW-04"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:21.133Z",
+      "completed": "2026-10-19T14:23:21.538Z"
+    },
+    {
+      "id": "hud_pointer_drag_and_control_exclusion",
+      "requirements": [
+        "RW-07"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:21.538Z",
+      "completed": "2026-10-19T14:23:21.974Z"
+    },
+    {
+      "id": "hud_reset_position_and_desktop_bounds",
+      "requirements": [
+        "RW-08"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:21.974Z",
+      "completed": "2026-10-19T14:23:22.420Z"
+    },
+    {
+      "id": "hud_shortcuts_match_configuration_and_restore_position",
+      "requirements": [
+        "RW-08",
+        "RW-09"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:22.420Z",
+      "completed": "2026-10-19T14:23:22.559Z"
+    },
+    {
+      "id": "hud_shortcut_edit_does_not_trigger",
+      "requirements": [
+        "RW-10",
+        "RW-11"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:22.559Z",
+      "completed": "2026-10-19T14:23:22.719Z"
+    },
+    {
+      "id": "hud_shortcut_conflict_retains_effective_binding",
+      "requirements": [
+        "RW-10",
+        "RW-11"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:22.719Z",
+      "completed": "2026-10-19T14:23:22.934Z"
+    },
+    {
+      "id": "hud_more_menu_persists_after_pointer_release",
+      "requirements": [
+        "RW-07",
+        "RW-32"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:22.934Z",
+      "completed": "2026-10-19T14:23:23.254Z"
+    },
+    {
+      "id": "hud_only_reading_region_scrolls",
+      "requirements": [
+        "RW-30"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:23.254Z",
+      "completed": "2026-10-19T14:23:23.597Z"
+    },
+    {
+      "id": "custom_select_keyboard_cancel_commit_disabled_long",
+      "requirements": [
+        "RW-13",
+        "RW-14",
+        "RW-15"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:23.597Z",
+      "completed": "2026-10-19T14:23:23.983Z"
+    },
+    {
+      "id": "all_product_selects_are_authored",
+      "requirements": [
+        "RW-16"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:23.983Z",
+      "completed": "2026-10-19T14:23:24.160Z"
+    },
+    {
+      "id": "select_empty_loading_error_states",
+      "requirements": [
+        "RW-14"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:24.160Z",
+      "completed": "2026-10-19T14:23:24.384Z"
+    },
+    {
+      "id": "session_all_streams_search_full_source_and_follow",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-21"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:24.384Z",
+      "completed": "2026-10-19T14:23:24.734Z"
+    },
+    {
+      "id": "session_texts_more_than_two_pages_preserve_sequence",
+      "requirements": [
+        "RW-19",
+        "RW-20",
+        "RW-23"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:24.734Z",
+      "completed": "2026-10-19T14:23:27.126Z"
+    },
+    {
+      "id": "session_browsing_stops_follow_and_counts_new",
+      "requirements": [
+        "RW-21"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:27.126Z",
+      "completed": "2026-10-19T14:23:28.152Z"
+    },
+    {
+      "id": "session_export_scope_preview",
+      "requirements": [
+        "RW-22"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:28.152Z",
+      "completed": "2026-10-19T14:23:28.315Z"
+    },
+    {
+      "id": "hook_logs_stage_search_filter_and_pagination",
+      "requirements": [
+        "RW-17",
+        "RW-18",
+        "RW-19"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:28.315Z",
+      "completed": "2026-10-19T14:23:29.185Z"
+    },
+    {
+      "id": "hook_only_events_preserve_browsing_and_count_new",
+      "requirements": [
+        "RW-18",
+        "RW-21"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:29.185Z",
+      "completed": "2026-10-19T14:23:29.900Z"
+    },
+    {
+      "id": "session_identity_isolation",
+      "requirements": [
+        "RW-18",
+        "RW-23"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:29.900Z",
+      "completed": "2026-10-19T14:23:31.554Z"
+    },
+    {
+      "id": "ruby_independent_of_segmentation_and_original_reconstruction",
+      "requirements": [
+        "RW-26",
+        "RW-27",
+        "RW-28"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:31.554Z",
+      "completed": "2026-10-19T14:23:31.850Z"
+    },
+    {
+      "id": "ruby_unknown_and_lexical_failure_keep_original",
+      "requirements": [
+        "RW-27",
+        "RW-29"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:31.850Z",
+      "completed": "2026-10-19T14:23:32.057Z"
+    },
+    {
+      "id": "hud_translucency_and_reduced_transparency",
+      "requirements": [
+        "RW-24",
+        "RW-25"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:32.057Z",
+      "completed": "2026-10-19T14:23:32.434Z"
+    },
+    {
+      "id": "component_buttons_icons_and_visible_state_list",
+      "requirements": [
+        "RW-31",
+        "RW-32"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:32.434Z",
+      "completed": "2026-10-19T14:23:32.559Z"
+    },
+    {
+      "id": "hud_toolbar_reachable_at_560_and_500_without_menu_duplicates",
+      "requirements": [
+        "RW-09",
+        "RW-32"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:32.559Z",
+      "completed": "2026-10-19T14:23:33.072Z"
+    },
+    {
+      "id": "hud_direct_actions_operate_on_current_sentence",
+      "requirements": [
+        "RW-09",
+        "RW-32"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:33.072Z",
+      "completed": "2026-10-19T14:23:34.457Z"
+    },
+    {
+      "id": "no_console_errors_or_network",
+      "requirements": [
+        "RW-33"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:34.457Z",
+      "completed": "2026-10-19T14:23:34.457Z"
+    },
+    {
+      "id": "source_stable_during_run",
+      "requirements": [
+        "RW-34"
+      ],
+      "status": "passed",
+      "started": "2026-10-19T14:23:34.457Z",
+      "completed": "2026-10-19T14:23:34.458Z"
+    }
+  ],
+  "captures": [
+    {
+      "file": "01-window-preview.png",
+      "title": "窗口身份、帧时间与离线来源标记；不是本机实时截图",
+      "selector": "#main-window",
+      "description": "窗口身份、帧时间与离线来源标记；不是本机实时截图",
+      "sha256": "dd15a7fd8988452b49871fcbf45687372340f48b4b71103ee9b5173365a863aa"
+    },
+    {
+      "file": "02-preview-enabled.png",
+      "title": "用户主动开启的离线窗口回放",
+      "selector": "#main-window",
+      "description": "用户主动开启的离线窗口回放",
+      "sha256": "d1d1aa58fcbae05784fbb8722fb96b5c6867f2e7f632fca99f92c481cbe138e6"
+    },
+    {
+      "file": "03-preview-paused.png",
+      "title": "游戏回放推进后暂停帧和时间保持",
+      "selector": "#main-window",
+      "description": "游戏回放推进后暂停帧和时间保持",
+      "sha256": "6e3c23ce1e1daf4fcdc49d9681fe622221d8070192c26a17117469ee1ec058b3"
+    },
+    {
+      "file": "04-preview-permission.png",
+      "title": "未授权不会阻断Hook会话的设计状态",
+      "selector": "#main-window",
+      "description": "未授权不会阻断Hook会话的设计状态",
+      "sha256": "f5054e678b9670d2f055c32685bc8ef9bc0395bd99f09fbb5217f6143f379248"
+    },
+    {
+      "file": "05-preview-unavailable.png",
+      "title": "无法采集的独立降级状态",
+      "selector": "#main-window",
+      "description": "无法采集的独立降级状态",
+      "sha256": "362b8c08a2a55b3aeca95b1a8d990b9281c0f1788afd10def820bd965c3e9679"
+    },
+    {
+      "file": "06-preview-exited.png",
+      "title": "退出状态停止刷新",
+      "selector": "#main-window",
+      "description": "退出状态停止刷新",
+      "sha256": "cd9389b3be8639da20965390fed0fec987edaaf3f3d8ce6affe4e65a7c919763"
+    },
+    {
+      "file": "07-hud-dragged.png",
+      "title": "真实浏览器pointer拖动；按钮排除拖动区域",
+      "selector": "#desktop",
+      "description": "真实浏览器pointer拖动；按钮排除拖动区域",
+      "sha256": "0a82dc8fdb1d5e8153c6306eeceee1ed8275fa67d9d07f52b04506cc9d72f3b0"
+    },
+    {
+      "file": "07b-hud-position-reset.png",
+      "title": "拖动受页面工作区约束，显式重置恢复字幕位置",
+      "selector": "#desktop",
+      "description": "拖动受页面工作区约束，显式重置恢复字幕位置",
+      "sha256": "a8b1031fbf89a653105827289fd04c91d4b7e66f9ee7db2834596f47dba54d8f"
+    },
+    {
+      "file": "08-hud-shortcuts.png",
+      "title": "页面快捷键与状态一致；不证明系统全局注册",
+      "selector": "#hud-window",
+      "description": "页面快捷键与状态一致；不证明系统全局注册",
+      "sha256": "5c188cc5a879b1e214cc2c623b8a9fb3aa520e4bdf5be4fe8a33e0a1538b544e"
+    },
+    {
+      "file": "09-shortcut-settings.png",
+      "title": "编辑快捷键时不触发产品动作",
+      "selector": "#settings-window",
+      "description": "编辑快捷键时不触发产品动作",
+      "sha256": "ab7c54865ebe0ab68110119a13678a38938e977e0e85ce570b9008644fc0bac0"
+    },
+    {
+      "file": "09b-shortcut-conflict.png",
+      "title": "快捷键草稿冲突，原生效项保留",
+      "selector": "#settings-window",
+      "description": "快捷键草稿冲突，原生效项保留",
+      "sha256": "9cb761b8301ff62bf7ef106ea1b5d747a24b7de090b0a6866d06af59618f9849"
+    },
+    {
+      "file": "10-hud-more-menu.png",
+      "title": "点击松开后更多菜单保持展开",
+      "selector": "#desktop",
+      "description": "点击松开后更多菜单保持展开",
+      "sha256": "2409a23dd35a1a171ff45217a6132a22437c93f959e52228c044e65545394677"
+    },
+    {
+      "file": "10b-hud-internal-scroll.png",
+      "title": "200%注音长文只在正文区滚动，操作区和窗口保持位置",
+      "selector": "#hud-window",
+      "description": "200%注音长文只在正文区滚动，操作区和窗口保持位置",
+      "sha256": "4a54ef4faca3b822f1e2e4f94c4d25a8cfa7caec87505fe4099ed30a0bcf1297"
+    },
+    {
+      "file": "11-custom-select-expanded.png",
+      "title": "专用磨砂列表、选中勾记、长项与禁用项",
+      "selector": "body",
+      "description": "专用磨砂列表、选中勾记、长项与禁用项",
+      "sha256": "9a4bbc7837f23191723bf9d7fc7d13160040323b509a3281bbd1021280d406cf"
+    },
+    {
+      "file": "12-select-long-selected.png",
+      "title": "完整长值可访问名称与禁用选择器",
+      "selector": "#main-window",
+      "description": "完整长值可访问名称与禁用选择器",
+      "sha256": "af9ad407b4a47e3710baf668102ce429960c6cd634007120a1c72348d8689dd0"
+    },
+    {
+      "file": "12b-select-empty.png",
+      "title": "空列表的Enter/Space/方向键不报错、不伪造选项",
+      "selector": "body",
+      "description": "空列表的Enter/Space/方向键不报错、不伪造选项",
+      "sha256": "a6be56ddfd75459cd5ad109b6f94f0606635a22dce13116c25af7cc6ea12ad4f"
+    },
+    {
+      "file": "13-session-unselected-source.png",
+      "title": "未选中来源和完整会话/流身份",
+      "selector": "#main-window",
+      "description": "未选中来源和完整会话/流身份",
+      "sha256": "4d49cda367223741037d6e5ebb923e9438cda5744a9a18c33b3eaa1216e81b42"
+    },
+    {
+      "file": "14-session-paginated.png",
+      "title": "超过两页的会话提取可完整加载，序号单调且无重复",
+      "selector": "#main-window",
+      "description": "超过两页的会话提取可完整加载，序号单调且无重复",
+      "sha256": "3afe4af5663d14d5a9a8d42c7222ae7b8a292efe9510d2860703ac1ab38a362c"
+    },
+    {
+      "file": "14b-session-new-content.png",
+      "title": "上翻停止自动跟随，新提取只增加提示数量",
+      "selector": "#main-window",
+      "description": "上翻停止自动跟随，新提取只增加提示数量",
+      "sha256": "a2b02d4757b1be47ec82706cd6e66d4f47f1727b53d9188e37b0edc21f249d84"
+    },
+    {
+      "file": "14c-session-export.png",
+      "title": "导出范围和台词隐私提示；不写真实游戏文件",
+      "selector": "#app-dialog",
+      "description": "导出范围和台词隐私提示；不写真实游戏文件",
+      "sha256": "40c821d9d962ea5965f0255324ef1218661fd7b6dedd221b9616879c589a594f"
+    },
+    {
+      "file": "15-hook-warning-events.png",
+      "title": "Hook阶段事件与警告筛选",
+      "selector": "#main-window",
+      "description": "Hook阶段事件与警告筛选",
+      "sha256": "8d0dbaa8cdf4a153f53e3fe306a6a7c046cb09b25bf9c71565510ce442fee30b"
+    },
+    {
+      "file": "15b-hook-only-new-count.png",
+      "title": "只有新Hook事件时也显示新到数量，旧序列与阅读位置保持",
+      "selector": "#main-window",
+      "description": "只有新Hook事件时也显示新到数量，旧序列与阅读位置保持",
+      "sha256": "5a49814faff735e8fba6fdd8c9fc660cdb554ea78f11f1254ff9eaf6299ce6a0"
+    },
+    {
+      "file": "16-session-isolation.png",
+      "title": "切换目标后按新会话显示，旧会话数据保留",
+      "selector": "#main-window",
+      "description": "切换目标后按新会话显示，旧会话数据保留",
+      "sha256": "d639ffd1ecc4a4e3d9c0facb1fdd49fde449867ea9bce417e96f68659a370d81"
+    },
+    {
+      "file": "17-hud-ruby-only.png",
+      "title": "同一句仅开启注音，不隐式开启可点分词或POS",
+      "selector": "#hud-window",
+      "description": "同一句仅开启注音，不隐式开启可点分词或POS",
+      "sha256": "72541f64017a206b8467c82e490fe6cb98f362cbbdb310a5305e4739b3c597ff"
+    },
+    {
+      "file": "18-hud-ruby-segmentation-pos.png",
+      "title": "分词、ruby及词性组合的同句对照",
+      "selector": "#hud-window",
+      "description": "分词、ruby及词性组合的同句对照",
+      "sha256": "d6e020052876cade7c705ab7f3ca1fc922bee5ece34b12f927a4d27dc1ae790e"
+    },
+    {
+      "file": "19-hud-unknown-reading.png",
+      "title": "未知读音不编造注音",
+      "selector": "#hud-window",
+      "description": "未知读音不编造注音",
+      "sha256": "d610b8b8b9ee68c11fbc555c87f359dadb2230526041114998ae6ac32f14aeff"
+    },
+    {
+      "file": "20-hud-lexical-failure.png",
+      "title": "词法失败保留原文及恢复提示",
+      "selector": "#hud-window",
+      "description": "词法失败保留原文及恢复提示",
+      "sha256": "effcf4b4ce87e7e3f38a89476e37aa598410ebe339f9b1cae1248c2fb5c62403"
+    },
+    {
+      "file": "21-hud-translucent.png",
+      "title": "半透明磨砂设计；不是原生系统材质实测",
+      "selector": "#desktop",
+      "description": "半透明磨砂设计；不是原生系统材质实测",
+      "sha256": "d100aba618a629bff2c67444e5e9ddcd3dc5f59dd2889e26d3f27789192a3351"
+    },
+    {
+      "file": "22-hud-reduced.png",
+      "title": "应用减少透明度的实色回退",
+      "selector": "#hud-window",
+      "description": "应用减少透明度的实色回退",
+      "sha256": "5b593f0bfde76d85306de0f63e372cd31fbfffade87f2bf0f86afc0cafaf15b8"
+    },
+    {
+      "file": "23-system-reduced.png",
+      "title": "系统媒体偏好仿真的实色回退",
+      "selector": "#hud-window",
+      "description": "系统媒体偏好仿真的实色回退",
+      "sha256": "92c32d44bfacfc5a49230964b11324891ff4e079a7349386220febd540e82694"
+    },
+    {
+      "file": "24-components.png",
+      "title": "统一Select、按钮、图标、语言与移动入口状态",
+      "selector": "#main-window",
+      "description": "统一Select、按钮、图标、语言与移动入口状态",
+      "sha256": "0b3707219aa2c7c71d16d353068528bce161cad0e90dd1230d84330175fcdd38"
+    },
+    {
+      "file": "25-toolbar-560.png",
+      "title": "560宽常用操作直接可见，顶部轻量窗口操作与正文分离",
+      "selector": "#hud-window",
+      "description": "560宽常用操作直接可见，顶部轻量窗口操作与正文分离",
+      "sha256": "9662b4cde3e002eee28932fbf29cfa0e758e7fdba670d19beac6b9c536793fe6"
+    },
+    {
+      "file": "26-toolbar-500.png",
+      "title": "500紧凑宽度同样保留所有常用动作，不截断或横向滚动",
+      "selector": "#hud-window",
+      "description": "500紧凑宽度同样保留所有常用动作，不截断或横向滚动",
+      "sha256": "9a4dd49b9122c317bfea4680631bb15ef51afd7d73a979b1d550fa151d8b911c"
+    },
+    {
+      "file": "27-toolbar-low-frequency-menu.png",
+      "title": "更多仅保留低频设置、关联、位置和断开，无常用动作重复",
+      "selector": "#desktop",
+      "description": "更多仅保留低频设置、关联、位置和断开，无常用动作重复",
+      "sha256": "5b1680abdaf96d0f0d0aad2e168a2065f2f0ae589022ffa90d8df6662308df85"
+    },
+    {
+      "file": "28-toolbar-direct-actions.png",
+      "title": "常用动作直接生效，复制与精读固定原句，显隐不暂停取文",
+      "selector": "#hud-window",
+      "description": "常用动作直接生效，复制与精读固定原句，显隐不暂停取文",
+      "sha256": "92c7957c60d500634e125668e52bed833ad839130bc39ce9970fa5eaed57ea85"
+    }
+  ],
+  "excluded_runtime_checks": [
+    {
+      "id": "real_game",
+      "status": "not_run",
+      "reason": "本轮只运行离线交互设计，未连接真实游戏。"
+    },
+    {
+      "id": "native",
+      "status": "not_run",
+      "reason": "未运行正式包或操作系统窗口材质/移动。"
+    },
+    {
+      "id": "global_hotkey",
+      "status": "not_run",
+      "reason": "浏览器按键事件不证明系统全局注册、焦点和冲突。"
+    },
+    {
+      "id": "tokenizer",
+      "status": "not_run",
+      "reason": "注音来自明确设计词法样例，没有运行真实worker/内置资源。"
+    },
+    {
+      "id": "live_capture",
+      "status": "not_run",
+      "reason": "窗口画面是标记的离线采集回放，没有录屏权限调用。"
+    },
+    {
+      "id": "product_regression",
+      "status": "not_run",
+      "reason": "未执行新增34项正式产品验收，旧结果不继承。"
+    }
+  ],
+  "console_errors": [],
+  "http_requests": []
+}

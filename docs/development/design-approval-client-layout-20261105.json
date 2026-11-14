@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "kind": "user-approved-client-container-supplement/v1",
+  "approval_id": "client-layout-c1-user-approval-20261105",
+  "status": "approved_by_user",
+  "decision_date": "2026-11-05",
+  "decision_basis": "explicit_user_message",
+  "target_id": "guided-service-reading-20261030",
+  "composition_id": "complete-guided-history-20261031",
+  "parent_approval": {
+    "path": "docs/development/design-approval-complete-20261031.json",
+    "sha256": "2aefa59a3edf6adc9fa1287378702b026f7a4029660bf2c23f4780abac9beacc",
+    "bytes": 10791,
+    "source_count": 61
+  },
+  "user_confirmation": {
+    "question": "请审阅[客户端尺寸对照候选](/Users/tanghehui/ExploreProject/luna-translator/.build/current-client-execution-20261105/cp00-layout-candidate-v1/index.html)：是否采用 Main／历史1040×720保留原双列、设置B1040×760，以及760×560时预览顺延到正文下方？这只确认客户端容器适配，原配色、材质和功能不变。",
+    "answer": "设置改用A1000×720，其余采用"
+  },
+  "approved_sources": {
+    "docs/design/first-product-v1/client-layout-20261105/client-c1.css": {
+      "sha256": "a6044ee7fc69a88e21a4f65f23e2a7927d377b50b9b241768cf24ae3836d83d8",
+      "bytes": 4278
+    },
+    "docs/design/first-product-v1/client-layout-20261105/client-c1.js": {
+      "sha256": "8743623fa8dc3f9162356be37352d391d6ba18aaf0996acb69d9589facce9f5c",
+      "bytes": 747
+    },
+    "docs/design/first-product-v1/client-layout-20261105/contract.json": {
+      "sha256": "d7fc21dcc6beda45e826b3de00948d6c7e11b61084513d82acee8417f02e92a0",
+      "bytes": 2337
+    }
+  },
+  "reviewed_candidate": {
+    ".build/current-client-execution-20261105/cp00-layout-candidate-v1/index.html": {
+      "sha256": "a31142076e5ab0817a9db0eb04f3a287f49bfd355d8a8d8187ecb8d07923fa1c",
+      "bytes": 13889
+    },
+    ".build/current-client-execution-20261105/cp00-layout-candidate-v1/verification.json": {
+      "sha256": "78e9738bf8bc64f4b5d8430f2a4bba1feafae123ae9f0b95b66415ebd4c5b5e4",
+      "bytes": 36743
+    },
+    ".build/current-client-execution-20261105/cp00-layout-candidate-v1/normal-geometry-comparison.json": {
+      "sha256": "ecc2f85c82e5c3dc2acc07e82cc733c7be5efed6e8f19b943367757255a61946",
+      "bytes": 9190
+    },
+    ".build/current-client-execution-20261105/cp00-layout-candidate-v1/artifact-manifest.json": {
+      "sha256": "a60acf3cccca177c5c28ae71abc3873fc9b0c0c2326e00fa5d3abd53fff89479",
+      "bytes": 24993
+    }
+  },
+  "approved_variants": [
+    "main_normal_1040x720",
+    "history_normal_1040x720",
+    "settings_A_normal_1000x720",
+    "main_narrow_760x560",
+    "history_narrow_760x560",
+    "settings_narrow_760x560"
+  ],
+  "excluded_variants": [
+    "settings_B_normal_1040x760"
+  ],
+  "source_preservation": "Original61, approved PNGs, material tokens, zero thresholds and prior capture evidence unchanged. Exact reviewed candidate CSS/JS bytes retained; contract restricts approved variants.",
+  "not_granted": [
+    "per_state_reference_approval",
+    "real_react_alignment",
+    "C35_supplement_automatic_full_main_composition",
+    "packaged_native_acceptance",
+    "game_regression",
+    "release_acceptance"
+  ]
+}

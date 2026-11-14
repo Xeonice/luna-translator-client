@@ -1,0 +1,1770 @@
+{
+  "schema_version": 1,
+  "id": "implement-reviewed-reading-session-batch",
+  "kind": "product",
+  "allowed_paths": [
+    "openspec/changes/implement-reviewed-reading-session-batch/**",
+    "docs/development/iterations/implement-reviewed-reading-session-batch/**",
+    "apps/desktop/src/**",
+    "apps/desktop/tests/**",
+    "apps/desktop/src-tauri/src/**",
+    "apps/desktop/src-tauri/Cargo.toml",
+    "apps/desktop/src-tauri/build.rs",
+    "apps/desktop/src-tauri/tauri.conf.json",
+    "apps/desktop/src-tauri/capabilities/**",
+    "apps/desktop/src-tauri/permissions/**",
+    "apps/desktop/src-tauri/resources/**",
+    "apps/desktop/src-tauri/gen/schemas/**",
+    "crates/app-core/src/**",
+    "crates/app-core/tests/**",
+    "crates/app-infra/src/**",
+    "crates/app-infra/tests/**",
+    "crates/hook-client/src/**",
+    "Cargo.lock",
+    "openspec/technology-lock.json",
+    "scripts/contracts/**",
+    "scripts/build_desktop.py",
+    "scripts/quality/**",
+    "scripts/report/build_reading_batch_report.py",
+    "scripts/resources/**",
+    "tests/contracts/**",
+    "tests/integration/**",
+    "tests/fixtures/**",
+    "docs/design/first-product-v1/acceptance-v4/**",
+    "docs/architecture/database/v2/**",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261020-R20.json",
+    "docs/development/baselines/FP1-20261020-R21.json",
+    "docs/development/baselines/FP1-20261020-R22.json",
+    "docs/development/baselines/FP1-20261020-R23.json",
+    "docs/development/baselines/FP1-20261020-R24.json",
+    "docs/development/baselines/FP1-20261020-R25.json",
+    "docs/development/storage-acceptance.json",
+    "docs/development/storage-acceptance.md",
+    "docs/development/reading-window-test-coverage.json",
+    "docs/development/reading-window-test-coverage.md",
+    "crates/lunahook-host/examples/target_probe.rs",
+    "crates/hook-client/tests/**",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/development/baselines/FP1-20261020-R26.json",
+    "docs/development/baselines/FP1-20261020-R27.json",
+    "docs/development/baselines/FP1-20261020-R28.json",
+    "docs/development/baselines/FP1-20261020-R29.json"
+  ],
+  "source_snapshot": "openspec/changes/implement-reviewed-reading-session-batch/source-snapshot.json",
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "product_runtime_checks": [],
+  "requirements": [
+    {
+      "id": "RW-01",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-01",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ]
+    },
+    {
+      "id": "RW-02",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-02",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ]
+    },
+    {
+      "id": "RW-03",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-03",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ]
+    },
+    {
+      "id": "RW-04",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-04",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ]
+    },
+    {
+      "id": "RW-05",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-05",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ]
+    },
+    {
+      "id": "RW-06",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-06",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35"
+      ]
+    },
+    {
+      "id": "RW-07",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-07",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-08",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-08",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-09",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-09",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-10",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-10",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-11",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-11",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-12",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-12",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-13",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-13",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04"
+      ]
+    },
+    {
+      "id": "RW-14",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-14",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04"
+      ]
+    },
+    {
+      "id": "RW-15",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-15",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04"
+      ]
+    },
+    {
+      "id": "RW-16",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-16",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04"
+      ]
+    },
+    {
+      "id": "RW-17",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-17",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-18",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-18",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-19",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-19",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-20",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-20",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-21",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-21",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-22",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-22",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-23",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-23",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C23",
+        "C36"
+      ]
+    },
+    {
+      "id": "RW-24",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-24",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-25",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-25",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-26",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-26",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-27",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-27",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-28",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-28",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-29",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-29",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-30",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-30",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ]
+    },
+    {
+      "id": "RW-31",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-31",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-32",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-32",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-33",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-33",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-34",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "reviewed-reading-34",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M07",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C18",
+        "C34"
+      ]
+    },
+    {
+      "id": "RW-20",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Unfinished source continues after legacy idle",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C36"
+      ],
+      "source_requirement_ids": [
+        "RW-20",
+        "RW-23",
+        "RW-29",
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ]
+    },
+    {
+      "id": "RW-23",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Policy limits remain explicit",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C36"
+      ],
+      "source_requirement_ids": [
+        "RW-20",
+        "RW-23",
+        "RW-29",
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ]
+    },
+    {
+      "id": "RW-20",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Quoted suffix snapshot growth preserves a balanced prefix",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C36"
+      ],
+      "source_requirement_ids": [
+        "RW-20",
+        "RW-23",
+        "RW-29",
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ]
+    },
+    {
+      "id": "RW-23",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Quoted growth rejects ambiguous input and invalid provenance",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C36"
+      ],
+      "source_requirement_ids": [
+        "RW-20",
+        "RW-23",
+        "RW-29",
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ]
+    },
+    {
+      "id": "RW-33",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Development signer selection and packaged identity are real",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "package-identity-tests"
+      ],
+      "source_refs": [
+        "docs/development/requirements.csv",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C34"
+      ],
+      "source_requirement_ids": [
+        "REQ-056",
+        "RW-33",
+        "RW-34",
+        "FP-12"
+      ]
+    },
+    {
+      "id": "RW-34",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Signing contract cannot be downgraded and legacy proofs remain strict",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "package-identity-tests"
+      ],
+      "source_refs": [
+        "docs/development/requirements.csv",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C34"
+      ],
+      "source_requirement_ids": [
+        "REQ-056",
+        "RW-33",
+        "RW-34",
+        "FP-12"
+      ]
+    },
+    {
+      "id": "RW-34",
+      "spec": "specs/reviewed-reading/spec.md",
+      "scenario": "Reviewed generated worker matches the closed product source set",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "generated-contract-drift",
+        "product-native-ipc-tests",
+        "product-ui-capture-v4",
+        "interaction-coverage-contract",
+        "interaction-design-execution",
+        "product-v4-execution-guard-tests",
+        "storage-schema-v2-tests",
+        "storage-acceptance-v2-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "package-identity-tests",
+        "implementation-status-contract"
+      ],
+      "source_refs": [
+        "docs/development/requirements.csv",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/first-product-scope.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window",
+        "docs/design/first-product-v1/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C34"
+      ],
+      "source_requirement_ids": [
+        "REQ-056",
+        "RW-33",
+        "RW-34",
+        "FP-07"
+      ]
+    }
+  ],
+  "status": "in_progress"
+}

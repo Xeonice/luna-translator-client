@@ -1,0 +1,1327 @@
+{
+  "schema_version": 1,
+  "id": "implement-approved-client-plan",
+  "kind": "product",
+  "allowed_paths": [
+    "docs/README.md",
+    "docs/development/current-phase.json",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261105-R90.json",
+    "docs/architecture/engineering-layout.md",
+    "openspec/active-change.json",
+    "crates/app-core/src/domain/model_config/catalog.rs",
+    "crates/app-core/src/domain/model_config/mod.rs",
+    "crates/app-core/src/contracts/service_catalog.rs",
+    "crates/app-core/src/contracts/mod.rs",
+    "crates/app-core/src/contracts/desktop.rs",
+    "crates/app-infra/src/providers/mod.rs",
+    "crates/app-infra/src/providers/registry.rs",
+    "crates/app-infra/src/providers/profiles.rs",
+    "crates/app-infra/src/providers/presets.rs",
+    "crates/app-infra/src/providers/register.rs",
+    "crates/app-infra/tests/provider_registry.rs",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/ipc/queries.rs",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/src/bridge/contracts.generated.ts",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/src/features/history/HistoryScreen.tsx",
+    "apps/desktop/src/features/history/styles.module.css",
+    "apps/desktop/src/features/history/useHistoryQueries.ts",
+    "apps/desktop/tests/visual/verify-history.mjs",
+    "apps/desktop/tests/support/history-fixture-port.ts",
+    "scripts/quality/current_reference_catalogue.py",
+    "scripts/quality/test_current_reference_catalogue.py",
+    "scripts/report/capture_current_references.mjs",
+    "scripts/quality/current_design_render_qualification.py",
+    "scripts/quality/test_current_design_render_qualification.py",
+    "scripts/quality/current_design_react_adapter.py",
+    "scripts/quality/current_design_react_inspect.py",
+    "scripts/quality/current_design_react_recompute.py",
+    "scripts/quality/test_current_design_react_adapter.py",
+    "scripts/quality/verify.py",
+    "openspec/changes/implement-approved-client-plan/proposal.md",
+    "openspec/changes/implement-approved-client-plan/design.md",
+    "openspec/changes/implement-approved-client-plan/tasks.md",
+    "openspec/changes/implement-approved-client-plan/iteration-card.md",
+    "openspec/changes/implement-approved-client-plan/verification.json",
+    "openspec/changes/implement-approved-client-plan/source-snapshot.json",
+    "openspec/changes/implement-approved-client-plan/specs/approved-client-delivery/spec.md",
+    "scripts/report/capture_current_client_references.mjs",
+    "crates/app-infra/src/providers/adapters/mod.rs",
+    "crates/app-infra/src/providers/adapters/llm.rs",
+    "crates/app-infra/src/providers/adapters/stream.rs",
+    "crates/app-infra/tests/provider_native_llm.rs",
+    "crates/app-infra/src/providers/gateway.rs",
+    "crates/app-infra/tests/provider_gateway_admission.rs",
+    "crates/app-core/src/domain/model_config/credentials.rs",
+    "crates/app-core/src/domain/model_config/codec.rs",
+    "crates/app-core/tests/service_credential_codec.rs",
+    "crates/app-infra/src/providers/adapters/translation.rs",
+    "crates/app-infra/tests/provider_translation_protocols.rs",
+    "crates/app-infra/Cargo.toml",
+    "Cargo.lock",
+    "openspec/technology-lock.json",
+    "apps/desktop/src-tauri/resources/licenses/md5/LICENSE.md",
+    "apps/desktop/src-tauri/resources/licenses/md5/NOTICE.md",
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/features/reading/styles.module.css",
+    "apps/desktop/tests/visual/verify-session-layout.mjs",
+    "scripts/quality/spec_contract.py",
+    "scripts/quality/test_spec_contract.py",
+    "apps/desktop/src-tauri/resources/licenses/serde_urlencoded-0.7.1/LICENSE-MIT",
+    "apps/desktop/src-tauri/resources/licenses/serde_urlencoded-0.7.1/LICENSE-APACHE",
+    "apps/desktop/src-tauri/resources/licenses/ryu-1.0.23/LICENSE-BOOST",
+    "apps/desktop/src-tauri/resources/licenses/ryu-1.0.23/LICENSE-APACHE",
+    "crates/app-core/src/application/credential_storage.rs",
+    "crates/app-core/src/application/mod.rs",
+    "crates/app-core/src/application/model_tests.rs",
+    "crates/app-core/src/application/request_plan.rs",
+    "crates/app-core/src/application/runtime.rs",
+    "crates/app-core/src/domain/credentials.rs",
+    "crates/app-core/src/domain/model_config/testing.rs",
+    "crates/app-core/src/ports/mod.rs",
+    "crates/app-infra/examples/real_model_probe.rs",
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/src/storage/migrations/003_http_service_identity.sql",
+    "crates/app-infra/src/storage/queries/configuration.rs",
+    "crates/app-infra/src/storage/queries/configuration_codec.rs",
+    "crates/app-infra/src/storage/queries/configuration_lifecycle.rs",
+    "crates/app-infra/src/storage/queries/credentials.rs",
+    "crates/app-infra/src/storage/queries/mod.rs",
+    "crates/app-infra/src/storage/queries/model_tests.rs",
+    "crates/app-infra/src/storage/queries/provider_presets.rs",
+    "crates/app-infra/src/storage/queries/tasks.rs",
+    "crates/app-infra/tests/application_runtime.rs",
+    "crates/app-infra/tests/configuration_lifecycle.rs",
+    "crates/app-infra/tests/provider_credential_envelopes.rs",
+    "crates/app-infra/tests/provider_gateway_identity.rs",
+    "crates/app-infra/tests/provider_protocol.rs",
+    "crates/app-infra/tests/runtime_review_regressions.rs",
+    "crates/app-infra/tests/storage_acceptance_routes.rs",
+    "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+    "crates/app-infra/tests/storage_field_boundaries.rs",
+    "crates/app-infra/tests/storage_field_mapping.rs",
+    "crates/app-infra/tests/storage_http_identity_crash.rs",
+    "crates/app-infra/tests/storage_http_identity_v3.rs",
+    "crates/app-infra/tests/storage_product.rs",
+    "crates/app-infra/tests/storage_product_acceptance_v3.rs",
+    "crates/app-infra/tests/storage_schema_contract.rs",
+    "crates/app-infra/tests/storage_session_v2.rs",
+    "docs/architecture/database/v3/003_http_service_identity.design.sql",
+    "docs/architecture/database/v3/README.md",
+    "docs/architecture/database/v3/boundary-fixtures.json",
+    "docs/architecture/database/v3/field-boundaries.json",
+    "docs/architecture/database/v3/field-dictionary.csv",
+    "docs/architecture/database/v3/field-dictionary.json",
+    "docs/architecture/database/v3/schema-contract.json",
+    "docs/architecture/database/v3/storage-acceptance.json",
+    "docs/architecture/database/v3/storage-review.json",
+    "scripts/quality/storage_acceptance.py",
+    "scripts/quality/storage_boundaries_v3.py",
+    "scripts/quality/storage_product_adapter.py",
+    "scripts/quality/storage_product_process.py",
+    "scripts/quality/storage_schema_v3.py",
+    "scripts/quality/test_storage_acceptance_v3.py",
+    "scripts/quality/test_storage_boundaries_v3.py",
+    "scripts/quality/test_storage_schema_v3.py",
+    "scripts/quality/legacy_product_references.json",
+    "crates/app-infra/src/storage/mod.rs",
+    "crates/app-infra/src/providers/adapters/dispatch.rs",
+    "crates/app-infra/tests/fixtures/http-schema2-original.sql",
+    "crates/app-infra/tests/fixtures/http-schema2-original-input.json",
+    "crates/app-infra/tests/fixtures/http-schema2-original-loaded.json",
+    "crates/app-infra/tests/fixtures/http-schema2-original-manifest.json",
+    "crates/app-infra/tests/storage_acceptance_support/receipt.rs",
+    "apps/desktop/tests/visual/locked-browser.mjs",
+    "scripts/quality/test_storage_acceptance.py",
+    "crates/app-infra/tests/session_records_batch.rs",
+    "crates/app-infra/src/providers/google_auth.rs",
+    "crates/app-infra/tests/google_service_account.rs",
+    "crates/app-infra/tests/fixtures/google-synthetic-only-private.pem",
+    "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/LICENSE",
+    "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/LICENSE-other-bits",
+    "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/LICENSE-BoringSSL",
+    "apps/desktop/src-tauri/resources/licenses/base64-0.22.1/LICENSE-MIT",
+    "apps/desktop/src-tauri/resources/licenses/base64-0.22.1/LICENSE-APACHE",
+    "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/once_cell/LICENSE-APACHE",
+    "apps/desktop/src-tauri/resources/licenses/ring-0.17.14/once_cell/LICENSE-MIT",
+    "scripts/quality/technology_contract.py",
+    "scripts/quality/test_technology_contract.py",
+    "docs/design/first-product-v1/client-layout-20261105/client-c1.css",
+    "docs/design/first-product-v1/client-layout-20261105/client-c1.js",
+    "docs/design/first-product-v1/client-layout-20261105/contract.json",
+    "docs/design/first-product-v1/client-layout-20261105/README.md",
+    "docs/development/design-approval-client-layout-20261105.json",
+    "docs/design/first-product-v1/README.md",
+    "crates/app-core/src/contracts/service_form.rs",
+    "crates/app-core/src/domain/model_config/form.rs",
+    "crates/app-core/tests/service_form.rs",
+    "crates/app-infra/tests/provider_form_projection.rs",
+    "crates/app-core/src/domain/model_config/service_graph.rs",
+    "crates/app-core/src/domain/model_config/service_codec.rs",
+    "crates/app-core/tests/service_graph_codec.rs",
+    "crates/app-core/tests/offline_targets.rs",
+    "docs/architecture/database/v4/004_service_graph.design.sql",
+    "docs/architecture/database/v4/schema-contract.json",
+    "docs/architecture/database/v4/field-dictionary.json",
+    "docs/architecture/database/v4/field-dictionary.csv",
+    "docs/architecture/database/v4/field-boundaries.json",
+    "docs/architecture/database/v4/boundary-fixtures.json",
+    "docs/architecture/database/v4/storage-review.json",
+    "docs/architecture/database/v4/storage-acceptance.json",
+    "docs/architecture/database/v4/README.md",
+    "scripts/quality/storage_schema_v4.py",
+    "scripts/quality/storage_boundaries_v4.py",
+    "scripts/quality/test_storage_schema_v4.py",
+    "scripts/quality/test_storage_boundaries_v4.py",
+    "scripts/quality/test_storage_acceptance_v4.py",
+    "crates/app-infra/src/storage/migrations/004_service_graph.sql",
+    "crates/app-infra/src/storage/queries/service_graph.rs",
+    "crates/app-infra/src/storage/queries/service_selection.rs",
+    "crates/app-infra/src/storage/queries/offline_services.rs",
+    "crates/app-infra/src/storage/queries/google_authorization.rs",
+    "crates/app-infra/tests/storage_service_graph_v4.rs",
+    "crates/app-infra/tests/storage_service_graph_crash.rs",
+    "crates/app-infra/tests/service_selection_v4.rs",
+    "crates/app-core/src/ports/service_configuration.rs",
+    "crates/app-core/src/contracts/service_configuration.rs",
+    "apps/desktop/src/features/model-config/ServiceCatalogPicker.tsx",
+    "apps/desktop/src/features/model-config/GuidedServiceEditor.tsx",
+    "apps/desktop/src/features/model-config/guided.module.css",
+    "apps/desktop/tests/visual/verify-guided-services.mjs",
+    "crates/app-infra/examples/service_form_fixture.rs",
+    "apps/desktop/tests/support/service-form-runtime.mjs",
+    "crates/app-core/tests/service_configuration_contract.rs",
+    "apps/desktop/src/ui/primitives/Controls.tsx",
+    "apps/desktop/src/ui/primitives/controls.module.css",
+    "crates/app-core/src/domain/model_config/service_draft.rs",
+    "crates/app-core/tests/service_draft.rs",
+    "crates/app-infra/tests/service_draft_catalog.rs",
+    "crates/app-core/src/application/configuration_controls.rs",
+    "crates/app-core/src/application/service_request_plan.rs",
+    "crates/app-core/src/domain/service_execution.rs",
+    "crates/app-core/src/domain/mod.rs",
+    "crates/app-core/tests/service_request_plan.rs",
+    "crates/app-core/src/application/service_configuration.rs",
+    "crates/app-infra/src/storage/queries/translation_status.rs",
+    "apps/desktop/src/features/model-config/ModelConfigScreen.tsx",
+    "apps/desktop/src/features/model-config/styles.module.css",
+    "apps/desktop/src/features/model-config/ServiceSelector.tsx",
+    "apps/desktop/src/features/model-config/service-selector.module.css",
+    "apps/desktop/src/features/model-config/RuntimeConfigurationPanel.tsx",
+    "apps/desktop/src/features/model-config/CredentialRevocationPanel.tsx",
+    "apps/desktop/src/features/model-config/ConfigurationLifecycleActions.tsx",
+    "apps/desktop/src/windows/settings/SettingsWindow.tsx",
+    "apps/desktop/tests/visual/verify-guided-service-page.mjs",
+    "crates/app-infra/tests/model_default_templates.rs",
+    "crates/app-core/src/domain/model_config/wire_parameters.rs",
+    "crates/app-infra/src/storage/queries/service_selection/catalog.rs",
+    "crates/app-infra/src/storage/queries/service_selection/draft.rs",
+    "crates/app-infra/src/storage/queries/service_selection/activation.rs",
+    "apps/desktop/src-tauri/src/ipc/service_configuration.rs",
+    "apps/desktop/src-tauri/src/ipc/mod.rs",
+    "crates/app-core/src/domain/model_config/service_editor.rs",
+    "crates/app-core/tests/service_editor.rs",
+    "crates/app-infra/tests/service_editor_catalog.rs",
+    "apps/desktop/src-tauri/src/platform/window_manager.rs",
+    "crates/app-infra/tests/service_connection_sources_v4.rs",
+    "apps/desktop/src/features/model-config/index.ts",
+    "apps/desktop/src/features/model-config/service-refresh-key.ts",
+    "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+    "apps/desktop/src/windows/hud/HudWindow.tsx",
+    "crates/app-infra/src/offline_translation/mod.rs",
+    "crates/app-infra/src/offline_translation/protocol.rs",
+    "crates/app-infra/src/offline_translation/supervisor.rs",
+    "crates/app-infra/src/offline_translation/resources.rs",
+    "crates/app-infra/src/offline_translation/apple.rs",
+    "crates/app-infra/src/offline_translation/argos.rs",
+    "crates/app-infra/src/offline_translation/windows.rs",
+    "crates/app-infra/tests/offline_translation_protocol.rs",
+    "crates/app-infra/tests/offline_translation_supervisor.rs",
+    "crates/app-infra/tests/offline_translation_resources.rs",
+    "native/offline-translation/apple_translation.swift",
+    "native/offline-translation/argos_worker.py",
+    "native/offline-translation/windows_worker.rs",
+    "native/offline-translation/README.md",
+    "crates/app-core/src/domain/service_dispatch.rs",
+    "crates/app-core/tests/service_dispatch.rs",
+    "crates/app-infra/src/storage/queries/service_tasks.rs",
+    "crates/app-infra/tests/service_task_admission_v4.rs",
+    "crates/app-infra/src/providers/typed_http.rs",
+    "crates/app-infra/tests/runtime_retry.rs",
+    "Cargo.toml",
+    "crates/offline-translation-worker/Cargo.toml",
+    "crates/app-core/src/ports/google_authorization.rs",
+    "crates/app-infra/src/providers/google_token.rs",
+    "crates/app-infra/src/providers/google_authorization.rs",
+    "crates/app-infra/src/providers/google_oauth.rs",
+    "crates/app-infra/tests/google_token_exchange.rs",
+    "crates/app-infra/tests/google_authority.rs",
+    "crates/app-infra/tests/google_oauth_flow.rs",
+    "crates/app-infra/src/providers/typed_http_tests.rs",
+    "scripts/quality/rust-boundaries.py",
+    "scripts/quality/test_rust_boundaries.py",
+    "crates/app-core/src/ports/runtime.rs",
+    "crates/app-infra/src/lib.rs",
+    "crates/app-infra/src/storage/queries/cache.rs",
+    "crates/app-infra/src/storage/queries/service_tasks/admission.rs",
+    "crates/app-infra/src/storage/queries/service_tasks/authority.rs",
+    "scripts/quality/test_offline_translation_worker.py",
+    "crates/app-infra/src/storage/queries/retention.rs",
+    "crates/app-infra/tests/storage_cache_semantics.rs",
+    "crates/app-infra/src/storage/queries/service_graph/provenance.rs",
+    "crates/app-infra/src/offline_translation/inspection.rs",
+    "crates/app-infra/tests/offline_translation_inspection.rs",
+    "crates/app-infra/src/providers/google_execution.rs",
+    "crates/app-infra/src/storage/queries/google_authorization/authority.rs",
+    "crates/app-infra/src/storage/queries/google_authorization/lifecycle.rs",
+    "crates/app-infra/tests/google_authorization_storage.rs",
+    "docs/architecture/japanese-study-and-llm.md",
+    "crates/app-infra/src/storage/queries/retries.rs",
+    "crates/app-core/src/application/google_test_operations.rs",
+    "crates/app-core/tests/google_test_operations.rs",
+    "crates/app-core/src/domain/service_testing.rs",
+    "crates/app-core/src/application/service_request_plan/test_plan.rs",
+    "crates/app-core/tests/service_test_plan.rs",
+    "crates/app-core/src/ports/service_testing.rs",
+    "crates/app-infra/src/storage/queries/service_tests.rs",
+    "crates/app-infra/tests/service_testing_v4.rs",
+    "crates/app-core/src/ports/operation_budget.rs",
+    "crates/app-core/tests/operation_budget.rs",
+    "crates/app-core/src/ports/service_test_execution.rs",
+    "crates/app-core/src/application/service_testing.rs",
+    "crates/app-core/tests/service_testing_controller.rs",
+    "crates/app-infra/src/providers/service_testing.rs",
+    "crates/app-infra/tests/saved_service_gateway.rs",
+    "crates/app-infra/src/storage/queries/service_tests/prepare.rs",
+    "crates/app-infra/src/storage/queries/service_tests/terminal.rs",
+    "crates/app-infra/src/storage/queries/service_tests/qualification.rs",
+    "crates/app-infra/tests/service_test_controller.rs",
+    "docs/product/model-configuration-prd.md",
+    "crates/app-infra/tests/google_handler_installation.rs",
+    "crates/app-core/src/domain/offline_runtime.rs",
+    "crates/app-core/src/ports/offline_resources.rs",
+    "crates/app-core/tests/offline_runtime_contracts.rs",
+    "crates/app-core/src/domain/offline_runtime/metadata.rs",
+    "crates/app-core/src/domain/offline_runtime/references.rs",
+    "crates/app-core/src/domain/offline_runtime/coverage.rs",
+    "crates/app-core/src/contracts/google_authorization_ui.rs",
+    "crates/app-core/src/ports/google_interactive.rs",
+    "crates/app-core/src/application/google_interactive.rs",
+    "crates/app-core/tests/google_interactive.rs",
+    "crates/app-infra/src/providers/google_interactive.rs",
+    "crates/app-infra/src/storage/queries/google_authorization/interactive.rs",
+    "crates/app-infra/tests/google_interactive_flow.rs",
+    "apps/desktop/src-tauri/src/ipc/google_authorization.rs",
+    "apps/desktop/src-tauri/src/platform/system_browser.rs",
+    "apps/desktop/src/features/model-config/useGoogleAuthorization.ts",
+    "crates/app-core/tests/service_test_diagnostics.rs",
+    "apps/desktop/tests/visual/verify-google-authorization-ui.mjs",
+    "crates/app-infra/src/offline_translation/closure.rs",
+    "crates/app-infra/src/offline_translation/runtime_policy.rs",
+    "crates/app-infra/src/offline_translation/resolver.rs",
+    "crates/app-infra/tests/offline_runtime_closure.rs",
+    "crates/app-infra/tests/offline_runtime_policy.rs",
+    "crates/app-infra/tests/offline_runtime_resolver.rs",
+    "crates/app-infra/src/providers/adapters/model_discovery.rs",
+    "crates/app-infra/tests/provider_model_discovery.rs",
+    "crates/app-infra/tests/translation_current_status.rs",
+    "crates/app-infra/src/storage/queries/offline_resources.rs",
+    "crates/app-infra/src/storage/queries/offline_resources/facts.rs",
+    "crates/app-infra/src/storage/queries/offline_resources/preparation.rs",
+    "crates/app-infra/src/storage/queries/offline_resources/observations.rs",
+    "crates/app-infra/src/storage/queries/offline_resources/authority.rs",
+    "crates/app-infra/src/storage/queries/offline_resources/retention.rs",
+    "crates/app-infra/tests/storage_offline_resources.rs",
+    "crates/app-infra/tests/storage_offline_observations.rs",
+    "crates/app-infra/tests/storage_offline_retention.rs",
+    "crates/app-infra/src/storage/queries/offline_resources/source.rs",
+    "crates/app-infra/tests/offline_resource_support/mod.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "crates/app-core/tests/google_interactive_lifecycle.rs",
+    "crates/app-infra/tests/google_interactive_compatibility.rs",
+    "crates/app-infra/tests/provider_model_discovery_authority.rs",
+    "docs/development/first-product-test-plan.md",
+    "docs/development/engineering-gates.md",
+    "crates/app-infra/tests/storage_acceptance_support/frozen_hosts.rs",
+    "crates/app-core/src/contracts/service_discovery.rs",
+    "crates/app-core/src/ports/service_discovery.rs",
+    "crates/app-core/src/ports/physical_jobs.rs",
+    "crates/app-core/src/application/service_discovery.rs",
+    "crates/app-infra/src/storage/queries/saved_service_source.rs",
+    "crates/app-infra/src/storage/queries/service_discovery.rs",
+    "crates/app-infra/src/providers/operation_io.rs",
+    "crates/app-infra/src/providers/service_discovery.rs",
+    "crates/app-core/tests/service_model_discovery.rs",
+    "crates/app-core/tests/physical_jobs.rs",
+    "crates/app-infra/tests/service_model_discovery_source.rs",
+    "crates/app-infra/tests/service_model_discovery_execution.rs",
+    "crates/app-infra/tests/service_model_discovery_lifecycle.rs",
+    "crates/app-core/src/domain/offline_runtime/worker_v2.rs",
+    "crates/app-infra/src/offline_translation/v2_protocol.rs",
+    "crates/app-infra/src/offline_translation/v2_supervisor.rs",
+    "crates/app-core/tests/offline_worker_v2.rs",
+    "crates/app-infra/tests/offline_translation_v2_protocol.rs",
+    "crates/app-infra/tests/offline_translation_v2_supervisor.rs",
+    "crates/app-infra/tests/support/service_model_discovery.rs",
+    "apps/desktop/tests/live-preview/index.html",
+    "apps/desktop/tests/live-preview/preview.ts",
+    "apps/desktop/tests/live-preview/preview.css",
+    "apps/desktop/tests/live-preview/client.html",
+    "apps/desktop/tests/live-preview/client.tsx",
+    "apps/desktop/tests/live-preview/vite.config.ts",
+    "apps/desktop/tests/live-preview/tsconfig.json",
+    "apps/desktop/tests/live-preview/README.md",
+    "apps/desktop/tests/live-preview/verify-live-preview.mjs",
+    "scripts/dev/live-ui-preview.mjs",
+    "docs/development/desktop-client.md",
+    "docs/development/design-alignment-and-release.md",
+    "apps/desktop/src/windows/main/styles.module.css",
+    "apps/desktop/src/ui/patterns/patterns.module.css",
+    "apps/desktop/src/windows/main/MainWindow.tsx",
+    "apps/desktop/tests/live-preview/verify-reading-ui-alignment.mjs",
+    "apps/desktop/src/features/reading/reading-typography.ts",
+    "apps/desktop/tests/live-preview/reading-typography.test.mjs",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/product/reading-window-session-prd.md",
+    "apps/desktop/tests/live-preview/design-reading-sample.ts",
+    "apps/desktop/src/features/manual-input/styles.module.css",
+    "apps/desktop/tests/live-preview/verify-manual-ui-alignment.mjs",
+    "apps/desktop/src-tauri/src/ipc/commands.rs",
+    "apps/desktop/tests/live-preview/verify-settings-navigation.mjs",
+    "crates/app-core/tests/settings_navigation_contract.rs",
+    "apps/desktop/src/features/reading/index.ts",
+    "apps/desktop/src/windows/hud/styles.module.css",
+    "apps/desktop/tests/live-preview/verify-hud-header-spacing.mjs",
+    "docs/design/first-product-v1/candidates/hud-header-spacing-20261107/index.html",
+    "docs/design/first-product-v1/candidates/hud-header-spacing-20261107/hud-header.css",
+    "docs/development/hud-header-spacing-request-20261107.json",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/index.html",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/history.html",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/settings.html",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/session.html",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/history-settings.css",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/session.css",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/refinement.js",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/review.css",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/review.js",
+    "docs/design/first-product-v1/candidates/layout-refinements-20261107/manifest.json",
+    "docs/development/layout-refinements-request-20261107.json",
+    "scripts/check_layout_refinements.mjs",
+    "apps/desktop/tests/live-preview/verify-history-layout-refinement.mjs",
+    "apps/desktop/src/features/preferences/PreferencesScreen.tsx",
+    "apps/desktop/src/features/preferences/styles.module.css",
+    "apps/desktop/src/windows/settings/styles.module.css",
+    "apps/desktop/tests/live-preview/verify-settings-layout-refinement.mjs",
+    "apps/desktop/tests/live-preview/verify-stopped-session-layout.mjs",
+    "docs/development/design-approval-layout-refinements-20261107.json",
+    "docs/product/history-session-paging-prd.md",
+    "apps/desktop/src/features/preferences/GeneralSettings.tsx",
+    "apps/desktop/src/features/reading/session-presentation.ts",
+    "scripts/quality/current_layout_refinements_authority.py",
+    "scripts/quality/test_current_layout_refinements_authority.py",
+    "apps/desktop/src/ui/primitives/Select.tsx",
+    "apps/desktop/tests/live-preview/verify-select-zoom-containment.mjs",
+    "apps/desktop/tests/live-preview/verify-general-settings-structure.mjs",
+    "docs/development/design-approval-general-settings-20261107.json",
+    "docs/product/README.md",
+    "scripts/quality/current_general_settings_authority.py",
+    "scripts/quality/test_current_general_settings_authority.py",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/index.html",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.css",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.js",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/README.md",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/reported-native-before.png",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/manifest.json",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/index.html",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.html",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.css",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/settings.js",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/README.md",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/capture-manifest.json",
+    "docs/design/first-product-v1/candidates/general-settings-structure-20261107/captured/capture-freeze.json",
+    "scripts/quality/test_verify_general_settings_supersession.py",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "apps/desktop/tests/support/general-settings-before/PreferencesScreen.tsx.capture",
+    "apps/desktop/tests/support/general-settings-before/GeneralSettings.tsx.capture",
+    "apps/desktop/tests/support/general-settings-before/styles.module.css.capture",
+    "apps/desktop/tests/support/general-settings-before/manifest.json",
+    "apps/desktop/src-tauri/resources/language-worker"
+  ],
+  "source_snapshot": "openspec/changes/implement-approved-client-plan/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ACD-001",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "plan-approval-and-current-state",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "current-reference-catalogue-tests",
+        "current-design-alignment-tests",
+        "current-product-coverage-tests",
+        "product-completion-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-04"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md",
+        "docs/product/history-session-paging-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-content",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-002",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "typed-catalog-and-exact-registration",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "current-reference-catalogue-tests",
+        "current-design-alignment-tests",
+        "current-product-coverage-tests",
+        "product-completion-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md",
+        "docs/product/history-session-paging-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-content",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M06"
+      ],
+      "component_ids": [
+        "C26"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "whole-client-reference-is-independent",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "current-reference-catalogue-tests",
+        "current-design-alignment-tests",
+        "current-product-coverage-tests",
+        "product-completion-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md",
+        "docs/product/history-session-paging-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-content",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-004",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "history-queries-and-r79-composition",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "technology-contract-tests",
+        "frontend-boundary-tests",
+        "rust-boundary-tests",
+        "current-reference-catalogue-tests",
+        "current-design-alignment-tests",
+        "current-product-coverage-tests",
+        "product-completion-tests",
+        "typescript-compile",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-09"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md",
+        "docs/product/history-session-paging-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-content",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M10"
+      ],
+      "component_ids": [
+        "C18"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-005",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "native-wire-protocols-remain-distinct",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M06"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-006",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "typed-secret-contract-preserves-legacy-key-identity",
+      "checks": [
+        "source-scope",
+        "rust-boundary-tests",
+        "rust-compile",
+        "spec-contract-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M16"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-007",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "versioned-http-identity-and-typed-vault",
+      "checks": [
+        "source-scope",
+        "rust-boundary-tests",
+        "rust-compile",
+        "spec-contract-tests",
+        "storage-schema-v3-tests",
+        "storage-boundaries-v3-tests",
+        "storage-acceptance-v3-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-008",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "bounded-service-account-import-and-fixed-assertion",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M06"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-009",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "explicit-service-graph-codec-and-local-targets",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-010",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "rust-authoritative-guided-form-projection",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-011",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "reviewed-service-storage-and-atomic-selection",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "storage-schema-v4-tests",
+        "storage-boundaries-v4-tests",
+        "storage-acceptance-v4-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06",
+        "M10",
+        "M16"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-010",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "source-bound-model-discovery-keeps-original-lifetime",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "rust-tests-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06",
+        "M10",
+        "M16"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-011",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "v2-observation-transport-preserves-real-child-lifetime",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "rust-compile",
+        "rust-tests-compile"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M04",
+        "M06",
+        "M12"
+      ],
+      "component_ids": [
+        "C26"
+      ]
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "live-ui-review-on-production-components",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "live-ui-preview-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/development/design-alignment-and-release.md",
+        "docs/design/first-product-v1/client-layout-20261105/README.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C01",
+        "C04",
+        "C16",
+        "C35"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "main-reading-role-typography-and-action-hierarchy",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "reading-ui-alignment-tests",
+        "reading-typography-tests",
+        "live-ui-preview-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/architecture/reading-window-session-technical-design.md",
+        "docs/development/first-product-test-plan.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C01",
+        "C04",
+        "C16"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "manual-layout-and-source-isolation",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "manual-ui-alignment-tests",
+        "reading-ui-alignment-tests",
+        "live-ui-preview-tests",
+        "reading-typography-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-07",
+        "FP-10",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/architecture/reading-window-session-technical-design.md",
+        "docs/development/first-product-test-plan.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C03",
+        "C04",
+        "C16",
+        "C17",
+        "C25"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "targeted-settings-navigation-retains-drafts",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "typescript-compile",
+        "rust-compile",
+        "settings-navigation-tests",
+        "manual-ui-alignment-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-10",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/architecture/reading-window-session-technical-design.md",
+        "docs/development/first-product-test-plan.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M12",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C10",
+        "C25",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "hud-service-selector-header-inset",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "hud-header-spacing-tests",
+        "reading-ui-alignment-tests",
+        "manual-ui-alignment-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/architecture/reading-window-session-technical-design.md",
+        "docs/development/first-product-test-plan.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#hud-window"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C18"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "three-page-layout-design-review",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "layout-refinements-design-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-09",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/history-session-paging-prd.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html#main-window",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C23",
+        "C32",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading"
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "approved-layout-client-implementation",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "layout-supplement-source-authority",
+        "layout-supplement-authority-tests",
+        "history-layout-refinement-tests",
+        "stopped-session-layout-tests",
+        "select-zoom-containment-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-09",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/history-session-paging-prd.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/architecture/reading-window-session-technical-design.md",
+        "docs/development/first-product-test-plan.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html#main-window",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window",
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#main-window"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C18",
+        "C23",
+        "C32",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading",
+      "design_supplement": {
+        "supplement_id": "layout-refinements-20261107",
+        "approval_record": {
+          "path": "docs/development/design-approval-layout-refinements-20261107.json",
+          "sha256": "08b61a71a685f73e2bd2f7dd8f3917ba212bb7c437509ab797b74b446e68cb54",
+          "bytes": 4811
+        },
+        "manifest": {
+          "path": "docs/design/first-product-v1/candidates/layout-refinements-20261107/manifest.json",
+          "sha256": "0af63c192e7777fe98bb23a472c59b18ec7718541a2cbbcffba8953c2148baf6",
+          "bytes": 3963
+        },
+        "source_entries": {
+          "history": "docs/design/first-product-v1/candidates/layout-refinements-20261107/history.html",
+          "settings": "docs/design/first-product-v1/candidates/layout-refinements-20261107/settings.html",
+          "session": "docs/design/first-product-v1/candidates/layout-refinements-20261107/session.html"
+        },
+        "source_count": 9
+      }
+    },
+    {
+      "id": "ACD-003",
+      "spec": "specs/approved-client-delivery/spec.md",
+      "scenario": "approved-general-settings-structure-implementation",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "frontend-boundary-tests",
+        "typescript-compile",
+        "general-settings-source-authority",
+        "general-settings-authority-tests",
+        "general-settings-structure-tests",
+        "general-settings-test-version-tests",
+        "generated-contract-drift",
+        "rust-compile",
+        "settings-navigation-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-05",
+        "FP-09",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/reading-window-session-prd.md",
+        "docs/architecture/reading-window-session-technical-design.md",
+        "docs/development/first-product-test-plan.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M14"
+      ],
+      "component_ids": [
+        "C04",
+        "C23",
+        "C32",
+        "C34"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=settings",
+      "design_supplement": {
+        "supplement_id": "general-settings-structure-20261107",
+        "approval_record": {
+          "path": "docs/development/design-approval-general-settings-20261107.json",
+          "bytes": 9455,
+          "sha256": "4e5fc7f285de9d58d585fb0e0f46df39631ea38a1cfa261b4cb60114969b9989"
+        },
+        "manifest": {
+          "path": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/manifest.json",
+          "bytes": 5653,
+          "sha256": "efd9e1b52c908a60ddfaa3f4e66c4efb6a8cba494d744db67ea010574005398a"
+        },
+        "entry": "docs/design/first-product-v1/candidates/general-settings-structure-20261107/settings.html",
+        "source_count": 6,
+        "viewports": {
+          "narrow": [
+            760,
+            560
+          ],
+          "normal": [
+            1000,
+            720
+          ]
+        },
+        "themes": [
+          "dark",
+          "light"
+        ],
+        "zoom": [
+          1,
+          2
+        ],
+        "evidence_role": "design_source_only"
+      },
+      "test_supersession": {
+        "kind": "approved-general-settings-test-definition-migration/v1",
+        "supplement_id": "general-settings-structure-20261107",
+        "approval_record": {
+          "path": "docs/development/design-approval-general-settings-20261107.json",
+          "bytes": 9455,
+          "sha256": "4e5fc7f285de9d58d585fb0e0f46df39631ea38a1cfa261b4cb60114969b9989"
+        },
+        "authority_check": "general-settings-source-authority",
+        "authority_script": "scripts/quality/current_general_settings_authority.py",
+        "superseded_check": {
+          "id": "settings-layout-refinement-tests",
+          "test": {
+            "path": "apps/desktop/tests/live-preview/verify-settings-layout-refinement.mjs",
+            "sha256": "202f60b66744c93051d47f3bd362d76d9e464d942e5ad181f1faaccf17de1d65",
+            "bytes": 25683
+          },
+          "case_count": 5
+        },
+        "replacement_check": {
+          "id": "general-settings-structure-tests",
+          "test": "apps/desktop/tests/live-preview/verify-general-settings-structure.mjs"
+        },
+        "preserved_obligations": [
+          "Actual WindowRoot components at normal/narrow, dark/light and200 percent with approved source comparison, safe rows and reachable footer",
+          "Exact admitted before-image and source/browser/runtime-preview epochs; retained original red artifacts",
+          "POS disabled while segmentation is off retains its preference, ruby remains independent, save and discard retain real preference semantics",
+          "Failed save, dirty scope lock, per-field game inheritance, restore-draft/save/discard, CAS and stale request isolation",
+          "Always-saved history and real typed history/session navigation; session immediate controls remain in current session, not a duplicate general switch",
+          "OS startup states, unavailable/error/last-known/pending and write-then-confirm remain independent from preference saving"
+        ],
+        "prior_geometry_supplement": "layout-refinements-20261107",
+        "replacement_geometry_supplement": "general-settings-structure-20261107",
+        "replacement_execution_required": true,
+        "evidence_role": "test_definition_migration_only",
+        "acceptance_granted": false
+      }
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/current-client-execution-20261105/review/final-source-review.json",
+    "authors": [
+      "/root",
+      "/root/service_contract_explorer",
+      "/root/page_contract_explorer",
+      "/root/history_delivery",
+      "/root/translation_wire",
+      "/root/reading_delivery",
+      "/root/implementation_review",
+      "/root/ui_delivery_review",
+      "/root/font_evidence_worker",
+      "/root/client_layout_candidate",
+      "/root/google_signing_review",
+      "/root/guided_service_ui",
+      "/root/service_draft_compiler",
+      "/root/storage_gateway_independent_review",
+      "/root/ai_models_backend",
+      "/root/offline_runtime_owner",
+      "/root/source_materialization_fix",
+      "/root/google_handler_installation",
+      "/root/offline_closure_design",
+      "/root/google_interactive_flow",
+      "/root/google_interactive_flow/google_ui",
+      "/root/offline_sql_resources",
+      "/root/offline_o2_review",
+      "/root/terminal_authority_review",
+      "/root/storage_runtime_adaptation",
+      "/root/ui_live_preview_worker",
+      "/root/reading_ui_alignment",
+      "/root/manual_translation_ui",
+      "/root/settings_navigation_contract"
+    ]
+  },
+  "authorization": "用户已确认R90计划及三页布局实施，并明确确认通用结构V3“判断设计稿没问题，进行修正，然后重新升级客户端”。授权精确通用设计的实施、现行PRD/技术/测试覆盖更新、仅两依赖URL的可审计设计迁移与同证书本机升级；字段继承/草稿/CAS/历史全量/系统登录权威保留，不增加业务或原生注册策略。原61/C1/C35/三页9源/PNG/tokens/基线与旧失败原件保持；设计批准不授组件、Native、整体产品或发布通过，未授权Git提交/推送。"
+}

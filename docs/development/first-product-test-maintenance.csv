@@ -1,0 +1,18 @@
+id,title,path,state,owners,layer_ids,responsibility,trigger,command_status
+MA-01,工程守卫,scripts/quality/,existing,QA,L0,计划/来源/技术/边界/编译守卫和自身负例；不是产品功能测试,每次变更；CI复用同一入口,existing: npm run verify / npm run verify:test-plan
+MA-02,Rust领域单元,crates/<crate>/src/ 内 #[cfg(test)],mixed,AP;AI;HK;JA,L1,规则贴近实现；app-core不通过dev-dependency反向依赖app-infra,所属规则/状态机变化时,planned per slice; cargo test hooks into actual targets
+MA-03,Rust公开边界/FFI,"crates/{hook-contracts,hook-client,lunahook-host,language-worker}/tests/",planned,HK;JA;AP,L2,本crate公开API、Core消费双架构、字符串所有权和worker/DTO；不同目标独立回执,ABI/协议/DTO/资源版本变化及B1/B4,planned via TE-02/03/08; no empty test crate
+MA-04,共享跨进程契约,tests/contracts/,planned,HK;JA;AP,L2,协议版本、兼容、错序/损坏拒绝；引用授权fixtures,共享契约变化；消费侧同步回归,planned via TE-02/03/08
+MA-05,真实适配器集成,crates/app-infra/tests/,planned,AP;PL;AI;JA,L3,真实SQLite/WAL/Keychain/HTTP/文件锁/worker，使用隔离命名空间,相关I/O、schema、provider或资源变化,planned via TE-04/06/08
+MA-06,应用黑盒编排,tests/integration/application/,planned,AP;AI,L4,通过公开端口验证多窗投影、用例协调和取消竞争；不复制业务实现,用例/投影/公共端口变化,planned via TE-04/06/09; any new harness crate requires architecture registration
+MA-07,组件行为与可访问性,apps/desktop/tests/components/,planned,UI,L5,实际产品组件的空态、失败态、交互/键盘，不引入UI直连后端旁路,组件/状态/可访问交互变化,planned via TE-05; existing report QA is not this harness
+MA-08,产品视觉基准与Playwright,apps/desktop/tests/visual/,planned,UI;PL,L5,唯一产品截图基准/候选比较和旅程；当前设计规范仍在docs/design/first-product-v1,UI/字体/token/状态变化；批准后变更基准,planned via TE-05; baseline update needs design/Owner review
+MA-09,正式包用户旅程,tests/integration/desktop/,planned,QA;AP;UI;PL,L6,运行最终安装包而不是dev server；四窗口、手动来源和真实服务闭环,阶段正式包及每个最终RC,planned via TE-10; runtime adapter not implemented
+MA-10,原生与安装恢复,tests/integration/native/,planned,PL;QA,L6;L8,原生焦点/权限/多屏、签名冷启、迁移与回退脚本和人工操作说明,平台/打包/签名/权限/显示变化，每个RC,planned via TE-05/10/12; browser cannot substitute
+MA-11,四游戏运行规程/校验器,tests/integration/games/,planned,HK;QA,L7,逐款操作说明、目标/正文核对及证据解析；不提交游戏资源或完整台词,Hook/资源/阅读/翻译变更的影响游戏；每个最终RC四款全部,planned via TE-11; user interaction may be required
+MA-12,稳定性与质量验证,tests/integration/quality/,planned,QA;JA;AI;PL,L8,预冻结压力/性能、词典质量、模型人工审阅rubric及复核工具,资源/provider/prompt/性能变化；每个RC,planned via TE-09/12; human review is required
+MA-13,共享授权样本,"tests/fixtures/{contracts,providers,storage,language}/",planned,AP;HK;JA;AI;QA,L1;L2;L3;L4;L5;L8,合成/授权版本化数据、许可、种子和manifest；非生产fallback，不存凭据或游戏资产,契约/语料变化，经Owner语义审阅,planned per suite; release bundle must exclude fixtures
+MA-14,计划/供给/映射,"docs/development/first-product-test-{plan,operations}.json",existing,QA,L0,JSON登记为单一源，CSV/HTML生成；测试源码由对应模块Owner维护,需求/设计/架构/支持环境/前置变化时,existing planning guards plus this operations guard
+MA-15,报告工具,scripts/report/,existing,QA;UI,L0,长期维护报告生成与交互QA脚本；生成报告不充当测试源码,登记/供给/报告样式变化,existing build_test_case_report.py; report QA checked separately
+MA-16,运行证据与脱敏副本,.build/client-regression/<run_id>/ → 受控制品存储；reports/ 为脱敏副本,generated,QA;PL,L6;L7;L8,原始证据生成后独立归档，不只保存在可清理缓存；diagnostics/私有，守卫回执.build/quality另存,每个run/attempt结束即归档，失败也保留,product artifact archiver planned TE-10; retention/access policy PRE-15
+MA-17,独立Core内部测试,独立 luna-hooks-core 仓库的 tests/ 与构建CI,external,HK,L2;L7,Core内部C++/导出/构建/许可由独立仓维护；客户端仍验消费兼容和四游戏,Core版本/产物变化；客户端锁定升级前,external maintenance; not implemented or verified by this documentation

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "design-local-offline-translation",
+  "parent_baseline_sha256": "39f2f6b5f38c3805c6fb90633ace18d1cc5a177e54a9672b023594983010b16d",
+  "exact_delta_sha256": "2494b2bca3336d236cf6649cea52806553eb46e6dc461133cbe2fbf7d731d760",
+  "documentation_review": {
+    "path": ".build/offline-translation-design-20261030/review/architecture-review02.json",
+    "bytes": 8319,
+    "sha256": "643dc953fbfcd6fdda7f141e0bf900bf467609bb4196a2f614ac01a5504a4f24"
+  },
+  "code_review": {
+    "path": ".build/offline-translation-design-20261030/review/tooling-review.json",
+    "bytes": 2412,
+    "sha256": "2ee1ddbe5cdc23856c69b5db57b35fd70c95f5b13acc18dacb0af48a1af3f50a"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

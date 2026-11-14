@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "explicit-user-general-state-source-approval/v1",
+  "status": "approved_by_user",
+  "approved_at": "2026-11-08T09:54:38.145328+00:00",
+  "supplement_id": "general-state-evidence-20261108",
+  "parent_approval": {
+    "path": "docs/development/design-approval-general-settings-20261107.json",
+    "sha256": "4e5fc7f285de9d58d585fb0e0f46df39631ea38a1cfa261b4cb60114969b9989"
+  },
+  "user_confirmation": [
+    {
+      "answer": "采用三类补充状态（推荐）",
+      "question_item_id": "[\"request_user_input_async\",\"call_890831ecd21544e1a944134163c7d4e9\",0]",
+      "scope": [
+        "loading-initial",
+        "loading-refresh",
+        "read-error",
+        "save-failed"
+      ]
+    },
+    {
+      "answer": "采用 Native 参照环境（推荐）",
+      "question_item_id": "[\"request_user_input_async\",\"call_890831ecd21544e1a944134163c7d4e9\",1]",
+      "scope": [
+        "transparent HTML/body presentation backdrop",
+        "omit simulated HTML window buttons; actual OS supplies chrome"
+      ],
+      "unchanged": [
+        "material tokens",
+        "fill/alpha",
+        "blur/saturation",
+        "layout/typography"
+      ]
+    }
+  ],
+  "approved_candidate_manifest": {
+    "path": ".build/general-visual-closure-20261108/design-state-gap-candidate/manifest.json",
+    "sha256": "1473575429ba0a35ea93e90f5efbfa2acb988602e0728bdcac85883b7bf1b9ab",
+    "bytes": 28141
+  },
+  "approved_payload_sha256": "dc6e9b9ccf8bc99292e9992f3e278035bf6c744f15477067821bd82c16696280",
+  "promotion": {
+    "path": "docs/design/first-product-v1/candidates/general-state-evidence-20261108/promotion.json",
+    "sha256": "345205c37d1b77df870b429efbd84c6811c34f1416bbd0b1cc8cac1e81547b84",
+    "bytes": 43453
+  },
+  "approved_source_count": 75,
+  "not_granted": [
+    "reference PNG approval",
+    "real React verification",
+    "packaged Native verification",
+    "OS/DB runtime verification",
+    "product/release acceptance"
+  ],
+  "product_accepted": false,
+  "native_verified": false
+}

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261019-R18",
+  "parent": "FP1-20261019-R17",
+  "parent_sha256": "5556bf32c7d9a0a0bd1ac659e53fe20947ca9b5a7e721e4d019792b15f9787ce",
+  "reason": "Report generator used case_id for coverage registry whose canonical key is id; actual export failed with KeyError before any passed report existed. Repair only report field projection, preserve failed output, rerun frozen gate.",
+  "independent_review": {
+    "path": ".build/coverage-architecture-20261019/context/review-r18-repair.json",
+    "sha256": "1f1f7ca15dd02b63d1bd662ccbc1ec50ed3b08ef3ee8963d2638d2218b69a56d",
+    "attestation": {
+      "schema_version": 1,
+      "review_type": "independent_narrow_report_schema_repair",
+      "status": "passed",
+      "reviewed_at": "2026-10-19T15:25:00.530466+00:00",
+      "candidate": ".build/coverage-architecture-20261019/report-repair-r18-candidate.json",
+      "candidate_sha256": "0f7d530535d36b483093e006c3f374128fc27420760901db42d46bd5aaebec27",
+      "parent_baseline": "FP1-20261019-R17",
+      "parent_sha256": "5556bf32c7d9a0a0bd1ac659e53fe20947ca9b5a7e721e4d019792b15f9787ce",
+      "reviewed_changes": [
+        {
+          "path": "scripts/report/build_engineering_baseline_report.py",
+          "before_sha256": "45ce6bf2b48f61756edc06f82f5e6b16d7b6ca8c09376637972f6df4b49c3e80",
+          "after_sha256": "43b5ff737983cb73fc3f907d616f23038e2e5eb1e1c65c7c7325481190e6e85d"
+        },
+        {
+          "path": "openspec/changes/align-reviewed-design-and-test-coverage/verification.json",
+          "after_sha256": "3d6f3ef244b6a51ba80c6d40d3ac75dbbb3adb99a3fd1f1fe3f344130cc4e718",
+          "reason": "allow exact immutable parent archive only"
+        }
+      ],
+      "checks": [
+        {
+          "id": "exact2fieldrepair",
+          "passed": true,
+          "details": "Reconstructing only the two coverage-row id lookups exactly reproduces prior frozen45ce6bf2 hash; gaps retain case_id."
+        },
+        {
+          "id": "actualoldfailure-reproduced",
+          "passed": true,
+          "details": "'case_id'"
+        },
+        {
+          "id": "canonical-realregistry-projection",
+          "passed": true,
+          "details": {
+            "rows": 34,
+            "rendered_rows": 34,
+            "columns": 7,
+            "actual_unverified_gap_count": 123,
+            "assertion": "No design pass rendered when actual current-source summary has not yet run."
+          }
+        },
+        {
+          "id": "allowedpathonlyappend",
+          "passed": true,
+          "details": {
+            "reconstructed_before_sha256": "1eb11996329a2f26663c0f76de99bf427963dce8b45925b64a08b6611c9e58df",
+            "prior_actual_run_sha256": "1eb11996329a2f26663c0f76de99bf427963dce8b45925b64a08b6611c9e58df"
+          }
+        },
+        {
+          "id": "R17archiveexact",
+          "passed": true,
+          "details": "5556bf32c7d9a0a0bd1ac659e53fe20947ca9b5a7e721e4d019792b15f9787ce"
+        },
+        {
+          "id": "other420R17identitiesunchanged",
+          "passed": true,
+          "details": [
+            "scripts/report/build_engineering_baseline_report.py"
+          ]
+        },
+        {
+          "id": "protectedproductrefsunchanged",
+          "passed": true,
+          "details": {
+            "files": 12303,
+            "changed": [],
+            "added": [],
+            "deleted": []
+          }
+        },
+        {
+          "id": "source-sensitive-no-old-resultreuse",
+          "passed": true,
+          "details": "Current source identity guard still rejects old gate; fresh output required and failed partial directory preserved."
+        }
+      ],
+      "approval_scope": "Only two coverage-row projection key repairs plus exact parent archive allowlist append. R18 may replace builder hash and add exact immutable R17 archive and one derived repair record; all other420 parent entries unchanged.",
+      "not_claimed": [
+        "Full report generation passed",
+        "New final engineering gate passed",
+        "Product runtime or release passed"
+      ],
+      "required_after_adoption": [
+        "New frozen full engineering receipt for repaired current sources",
+        "Fresh reviewed-v2 report output, preserve failed partial output",
+        "Actual report rendering and file integrity verification"
+      ],
+      "blocking_findings": []
+    }
+  },
+  "product_code_changed": false,
+  "approvals_changed": false,
+  "legacy_debt_expanded": false,
+  "failed_report_preserved": true
+}

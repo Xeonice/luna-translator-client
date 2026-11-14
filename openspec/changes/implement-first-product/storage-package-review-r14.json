@@ -1,0 +1,243 @@
+{
+  "kind": "independent_closure_code_review",
+  "reviewed_at": "2026-10-19T08:17:23.128280+00:00",
+  "status": "accepted_code_corrections_pending_formal_package_and_complete_run",
+  "scope": [
+    "packaged_build_identity",
+    "LC-OUT-01",
+    "R13_database_source_registration",
+    "SR-01_to_SR-05_storage_corrections"
+  ],
+  "full_new_package_execution": "not_run",
+  "complete_storage_adapter_execution": "not_run",
+  "full_engineering_gate": "not_run_by_this_reviewer",
+  "product_release_claim": "not_issued",
+  "unresolved_blocking_findings": [],
+  "findings": [
+    {
+      "id": "PKG-H01",
+      "maps_to": "SR-01",
+      "severity": "high",
+      "status": "resolved",
+      "file": "scripts/quality/package_identity.py",
+      "lines": "132-152",
+      "title": "Old signed executable could be relabelled by external JSON only",
+      "negative_probe": "package-relabel-probe/result.json",
+      "fixed_probe": "package-relabel-probe/fixed-inspector-rejection.json"
+    },
+    {
+      "id": "SR-02",
+      "severity": "high",
+      "status": "resolved",
+      "file": "scripts/quality/storage_acceptance.py",
+      "lines": "497-508",
+      "title": "Production argv is now closed independently of mutable adapter registration"
+    },
+    {
+      "id": "SR-03",
+      "severity": "high",
+      "status": "resolved_code_and_local_cases_pending_complete_adapter",
+      "file": "crates/app-infra/src/storage/queries/cache.rs",
+      "lines": "4-29",
+      "title": "Versioned immutable input semantics, real cache matrix and explicit uncached retranslation"
+    },
+    {
+      "id": "SR-04",
+      "severity": "high",
+      "status": "resolved_code_and_local_cases_pending_complete_adapter",
+      "file": "crates/app-infra/tests/storage_acceptance_support/resource_rejections.rs",
+      "lines": "45-120,164-274",
+      "title": "Real dictionary identity rejection, recovery and old reference preservation"
+    },
+    {
+      "id": "SR-05",
+      "severity": "high",
+      "status": "resolved_on_macos",
+      "file": "scripts/quality/storage_product_process.py",
+      "lines": "32-65,99-137",
+      "title": "Owned process group termination and persistent partial failure evidence"
+    },
+    {
+      "id": "PKG-M02",
+      "severity": "medium",
+      "status": "resolved",
+      "file": "scripts/quality/package_identity.py",
+      "lines": "55-57,79-83,136-138",
+      "title": "Reject malformed JSON types and missing version explicitly"
+    },
+    {
+      "id": "PKG-M03",
+      "severity": "medium",
+      "status": "resolved",
+      "file": "scripts/build_desktop.py",
+      "lines": "36-54,103-104",
+      "title": "Source identity freeze spans all compilation and final archive"
+    }
+  ],
+  "commands": [
+    {
+      "command": "git diff --stat",
+      "result": "not_a_git_repository",
+      "exit_code": 129
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts/quality -p test_package_identity.py -v",
+      "result": "passed",
+      "tests": 13,
+      "kind": "guard_only_synthetic_zip_signature_mock",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/package-identity-independent-units-r2.log",
+        "sha256": "88348081bde341378e72058baef65a60fa2f0ca6e87913b0c9834f440f4e8b86"
+      }
+    },
+    {
+      "command": "python3 .build/acceptance-closure-20261019/review/probe_package_relabel.py",
+      "result": "old_checker_incorrectly_accepted_stale_executable",
+      "kind": "actual_old_zip_attack_with_real_codesign_no_mock",
+      "original_archive_unchanged": true
+    },
+    {
+      "command": "package_identity.inspect_package(ROOT, relabeled_history_zip, recorded_relabeled_source, output)",
+      "result": "fixed_checker_rejected_missing_sealed_source_identity",
+      "kind": "actual_old_zip_negative_probe_no_mock"
+    },
+    {
+      "command": "/usr/bin/codesign --verify --deep --strict .build/acceptance-closure-20261019/review/unsealed-source-injection.app",
+      "exit_code": 1,
+      "result": "rejected_sealed_resource_missing_or_invalid",
+      "kind": "actual_os_negative_probe"
+    },
+    {
+      "command": "cargo test --locked --offline -p app-infra --lib candidate_projection_tests",
+      "result": "passed",
+      "tests": 5,
+      "filtered": 16,
+      "kind": "projection_unit_scope_not_native_game",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/window-candidate-independent.log",
+        "sha256": "a1329ed5f929d492bc242f6e3d6f9134ed8c807bfc137839564595e1e5151f49"
+      }
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts/quality -p test_storage_acceptance.py -v",
+      "result": "failed_then_preserved",
+      "tests": 64,
+      "failed": 1,
+      "reason": "reviewed_database_source_registration_not_yet_applied",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/storage-guards-independent-r2.log",
+        "sha256": "9475d3c63d54bc5deafa721568e1500758c0c7e55ad79ae7ef5d9e254a5edd34"
+      }
+    },
+    {
+      "command": "python3 -m unittest discover -s scripts/quality -p test_storage_acceptance.py -v",
+      "result": "passed_after_reviewed_source_registration",
+      "tests": 64,
+      "elapsed_seconds": 99.34,
+      "kind": "guard_not_product_storage",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/storage-guards-independent-r3.log",
+        "sha256": "690e582ced1a395625f08f05d39a0e2ae72116fff8d3c1fe0800c577371516fd"
+      }
+    },
+    {
+      "command": "cargo test --locked --offline -p app-infra --test storage_cache_semantics",
+      "result": "passed",
+      "tests": 1,
+      "filtered": 0,
+      "dimensions": 18,
+      "elapsed_seconds": 1.83,
+      "kind": "real_repository_local_scope_not_complete_adapter",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/cache-matrix-independent.log",
+        "sha256": "91f548c53553527cbe0c3618b1dbd3903eb14a516dff0f98f46b22c643248b51"
+      }
+    },
+    {
+      "command": "cargo test --locked --offline -p app-infra --test application_runtime explicit_retranslation_bypasses_real_cache_replays_once_and_preserves_correction -- --nocapture --test-threads=1",
+      "result": "passed",
+      "tests": 1,
+      "filtered": 18,
+      "elapsed_seconds": 0.36,
+      "kind": "real_runtime_local_scope_not_complete_adapter",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/explicit-retranslate-independent.log",
+        "sha256": "12437b6b85a992ed1602c7111c217d72aeb6dfac1b0b2f160cd3c0b668a822db"
+      }
+    },
+    {
+      "command": "cargo test --locked --offline -p app-infra --test storage_product_acceptance y_resource_mismatch_rejects_and_preserves_historical_references -- --nocapture --test-threads=1",
+      "result": "passed",
+      "tests": 1,
+      "filtered": 115,
+      "rejection_cases": 13,
+      "elapsed_seconds": 140.21,
+      "kind": "real_dictionary_local_scope_not_complete_adapter",
+      "log": {
+        "path": ".build/acceptance-closure-20261019/review/resource-rejections-independent.log",
+        "sha256": "0efdd7989640b81709cdd595186f8f27a07bf8b29045986dde41676bc0e6e594"
+      }
+    }
+  ],
+  "files": {
+    "scripts/quality/package_identity.py": "110fd89f00f81d3aa8b7b4c689d299384487271498f4c3e4d86b4ca8f541ff89",
+    "scripts/quality/test_package_identity.py": "2b9422a32ae46d6dc10c0f27bdc370f7daf3a038a4d5a6570677f29cca80e4f5",
+    "scripts/build_desktop.py": "71f78dbfbdf8754098e8f7cd5aa2f8a6603c4ef87db2d59b2e66cf5ea83a4a19",
+    "scripts/quality/storage_acceptance.py": "f83dcb7baf864b11edd77c55c1c40947c82591544de792a7bcacd6ae1babb04f",
+    "scripts/quality/test_storage_acceptance.py": "fcfe3a3155c1bad6c0b129cabfc34efecfbe0ef8938e088d3ca3a4af0747b6d7",
+    "scripts/quality/verify.py": "7c47b58f8f1c1514d9bd7fcea1a0e83cb9ce9119b8049fe13b0bc19622b48a1e",
+    "crates/app-infra/src/hook_backend.rs": "3784388d7fa8f483535dd1dc0cc4775439f6a7eef3743cffc34550b3c35606db",
+    "crates/app-infra/src/storage/database.rs": "74a23acbca781cdbcd2ed61ce99d8c31a1b8401f983ae1cede152207ebf537ed",
+    "crates/app-infra/src/storage/queries/cache.rs": "33af413ae37c3dc90a1496d00ff39c23532cecefc2b8ff6fe7c67b282ff1ba0e",
+    "crates/app-infra/src/storage/queries/tasks.rs": "11c1711f3eb700a3836b7ec547ac3d46b611737d47d36b0f994499a1e26278e6",
+    "crates/app-infra/src/storage/queries/capture.rs": "d5942852c20cc7dd3091320d25ce7ad120ae3bea2b700fb6de4dd341475410ad",
+    "crates/app-core/src/domain/mod.rs": "62e53b12b89021d77c81333faff3e2ce6ad41b2d00aa75250b95d9cd5a0604d8",
+    "crates/app-core/src/ports/mod.rs": "7a0c2ef5ad628c1f1f8312a20febfe96ba2fddb55594aaeea6616827f3498d78",
+    "crates/app-core/src/application/runtime.rs": "9a60bb3589f2720fb403a2fd8e50e2561b900df66874725903aa4eb1dc6e7a33",
+    "crates/app-infra/tests/storage_cache_semantics.rs": "f0ebcc8a5e535a84b53b238bb161660a838089350be81a2a6831d092d7716b96",
+    "crates/app-infra/tests/storage_acceptance_support/resource_rejections.rs": "145e5503535377c391727e67c3c8e06349987afcc1b3cb9165fed15bed1d52ae",
+    "scripts/quality/storage_product_process.py": "729553b572d53bd2722c99842ae68a34613378430ccc1be7e7da8bae521c2a18",
+    "crates/app-infra/tests/storage_product_acceptance.rs": "c75ad5771ded4ced3899c21a3d6a0db0d8dab01df1d5507f03f5d0899c4614f0",
+    "crates/app-infra/tests/storage_acceptance_support/receipt.rs": "09c636693efdb3005df9ff0b72e55f4eb6b2f6fcace5dac5f70df05140194747",
+    "crates/app-infra/tests/storage_acceptance_support/fields.rs": "4405733c54ca4d86f521193211d967f0e75ffc9f3a22ccc4353c1841026d9f39",
+    "crates/app-infra/tests/storage_acceptance_support/dictionary.rs": "59c70304765601068ca9f0af200ea21a94269af10eb8a8f5b551dd9711783422",
+    "crates/app-infra/tests/configuration_lifecycle.rs": "0e1a2dc8c8631f1096f909a941036b9ccbf2210927d0c4511a1b8d1b11cd21a5",
+    "crates/app-infra/tests/application_runtime.rs": "79d95f9aea29dd6d76b95efe522eb49b23d9586d2b8959fd9a25d8d0625f7e23",
+    "docs/development/storage-acceptance.json": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0"
+  },
+  "database_source_registration": {
+    "kind": "independent_exact_hash_reconstruction",
+    "expected_pinned_source_sha256": "ebba0e5b3c90bc23f53d4f37ffb14e84c5b2fd8404b120ca691953b9cdd3ab7d",
+    "reconstructed_before_sha256": "ebba0e5b3c90bc23f53d4f37ffb14e84c5b2fd8404b120ca691953b9cdd3ab7d",
+    "exact_pinned_match": true,
+    "current_source_sha256": "74a23acbca781cdbcd2ed61ce99d8c31a1b8401f983ae1cede152207ebf537ed",
+    "removed_range_current_lines": [
+      371,
+      383
+    ],
+    "reason": "Only forwarding method removed; reconstructed bytes must exactly match immutable R13 digest, not assumed from older unrelated snapshot."
+  },
+  "window_identity_sha256": "3784388d7fa8f483535dd1dc0cc4775439f6a7eef3743cffc34550b3c35606db",
+  "production_config_changes": false,
+  "tool_limits_review": {
+    "compile_seconds": 600,
+    "run_seconds": 1800,
+    "expanded_zip_bytes": 4294967296,
+    "identity_bytes": 131072,
+    "codesign_seconds": 60,
+    "production_load_test": "not_applicable_to_connection_pool_or_request_config; actual_new_complete_acceptance_still_required",
+    "evidence": "Dictionary prior build 379s plus independently observed resource rejection 140.21s; owned tree 1s timeout negative actually passed; historical ZIP real extraction/signature inspected",
+    "on_limit": "fail_closed_with_evidence; no_product_runtime_timeout_relaxed"
+  },
+  "suggestions": [
+    {
+      "file": "crates/app-infra/tests/configuration_lifecycle.rs",
+      "lines": "551-590",
+      "title": "Six barrier races do not exhaust writer interleavings; keep report scoped or add deterministic schedules"
+    }
+  ],
+  "report": {
+    "path": ".build/acceptance-closure-20261019/review/package-window-storage-independent-review.md",
+    "sha256": "0f6702319688c81ee0bf0e9e8d545e94995962c24890829a4fed609ce279b24a"
+  }
+}

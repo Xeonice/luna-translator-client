@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "candidate_manifest": "docs/design/first-product-v1/candidates/history-session-paging-20261031/manifest.json",
+  "candidate_id": "history-session-paging-20261031",
+  "design_review_status": "pending_review",
+  "parent_design_approval": "approved_source_version_only",
+  "scope": "History design increment only; no production/client/DDL or inherited product acceptance",
+  "rows": [
+    {
+      "id": "HP-01",
+      "title": "延续父完整稿和默认历史页",
+      "acceptance": "默认入口、壳/侧栏/标题尺寸及材质继承；游戏/会话均为现有专用Select；增量待审不继承父批准",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-02",
+      "title": "游戏与会话范围",
+      "acceptance": "从真实可见Select及键盘选游戏/手动输入/全部，切会话范围正确；标签以时间、游戏及状态可读区分，切游戏清会话",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-03",
+      "title": "加载更早记录",
+      "acceptance": "首批50，追加至100/末批，真实DOM记录ID去重且已有前缀保留、当前选择和列表位置保留，结束不可继续",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-04",
+      "title": "加载更早会话",
+      "acceptance": "独立会话目录首批50、后续目录追加及结束；不替换原正文记录页、选中会话或重置另一个分页",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-05",
+      "title": "记录加载和失败恢复",
+      "acceptance": "首次加载/追加加载各有状态；失败保留已读内容/选择/编辑及位置，重试同一正确范围；跨范围失败明确旧内容所属范围",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-06",
+      "title": "会话目录加载与请求失效",
+      "acceptance": "加载/失败/重试/无会话各独立，切游戏快速重选时旧timer不覆盖新目录或抹掉新held回放",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-07",
+      "title": "游戏推进与历史隔离",
+      "acceptance": "真实滚动后父完整render及推进台词均保留筛选/页/选中/滚动；已打开词卡固定旧词，主游戏新句不抢历史",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-08",
+      "title": "编辑事务与焦点",
+      "acceptance": "编辑中禁用筛选/选择/分页/刷新/定位；草稿及caret跨父render保留，保存失败可恢复，取消直接还原退出无额外确认",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-09",
+      "title": "当前句定位与译文迟到",
+      "acceptance": "明确定位重置全部游戏/会话并固定正确当前句；原文先到与译文稍后状态可辨，迟到只回写所属原句不抢其他记录；当前句位于首批之外时，定位后继续加载至末页，完整ID集合无遗漏无重复",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-10",
+      "title": "设计状态直达与恢复",
+      "acceptance": "initial/records-loading/records-error/records-end/sessions-loading/sessions-error/sessions-empty/empty/long九种深链及完成回放；清楚仅评审工具",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-11",
+      "title": "视觉与局部滚动",
+      "acceptance": "深浅色、长会话名/长路径/日文长行、窄窗和真实200%布局缩放；选择器菜单/按钮完整可达，仅记录列表和详情各自滚动",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    },
+    {
+      "id": "HP-12",
+      "title": "证据及产品边界",
+      "acceptance": "真实Chrome零pageerror/外网请求，回执nonce/源码/原父资源/截图身份及正断言零skip；设计通过不登记正式客户端/原生/游戏通过",
+      "product_status": "not_run",
+      "design_status": "planned",
+      "source_case_ids": [
+        "FP-09",
+        "MC-20"
+      ],
+      "owners": [
+        "UI",
+        "QA"
+      ],
+      "required_evidence": [
+        "actual_browser_actions",
+        "assertions",
+        "independent_candidate_pngs",
+        "source_and_nonce_identity"
+      ]
+    }
+  ]
+}

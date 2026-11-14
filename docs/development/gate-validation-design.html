@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Luna · 门禁正反例与触发设计</title>
+<style>
+:root{--ink:#192536;--muted:#617085;--line:#dce3ec;--paper:#fff;--bg:#f3f6fa;--blue:#235acf;--nav:#152335;--soft:#eaf0fd;--amber:#925509;--green:#17644c;--red:#a33343;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:28px}body{margin:0;color:var(--ink);background:var(--bg);font:15px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}a{color:var(--blue);text-underline-offset:4px}button,input{font:inherit}button{cursor:pointer}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8bb1ff;outline-offset:4px}code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}code{font-size:.86em;background:#edf1f7;border-radius:5px;padding:2px 5px;overflow-wrap:anywhere}pre{background:#152335;color:#dce7fa;padding:22px;border-radius:12px;overflow:auto;line-height:1.8;font-size:12px}pre code{background:none;padding:0;color:inherit;overflow-wrap:normal}.skip{position:fixed;top:-100px;left:20px;z-index:20;background:white;padding:12px}.skip:focus{top:12px}
+.sidebar{position:fixed;inset:0 auto 0 0;width:236px;background:var(--nav);color:#d6e0ef;padding:32px 22px;overflow:auto}.brand{font-size:21px;font-weight:700;letter-spacing:2px;color:#fff}.brand small{display:block;font-size:11px;font-weight:500;letter-spacing:1.2px;color:#9fb0c8;margin-top:3px}.nav-label{font-size:11px;letter-spacing:2px;color:#8498b4;margin:35px 10px 12px}.sidebar nav a{display:block;color:#c8d5e8;text-decoration:none;padding:10px 12px;border-radius:9px;font-size:13px;margin:3px 0}.sidebar nav a:hover{background:#223751;color:#fff}.sidebar nav a span{display:inline-block;width:29px;color:#7e9cc6;font-size:11px}.side-note{border-top:1px solid #32435b;margin-top:28px;padding:20px 10px 0;font-size:12px;color:#a6b6cc}.side-note strong{color:#fff;display:block;margin-bottom:5px}main{margin-left:236px;max-width:1510px;padding:48px 56px 80px}.eyebrow{font-size:12px;color:var(--blue);font-weight:650;letter-spacing:1px}.hero h1{font-size:38px;line-height:1.35;letter-spacing:-1px;margin:12px 0 16px}.lead{font-size:17px;max-width:840px;color:#536279;margin:0 0 20px}.meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--muted)}.badge{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:2px 8px;background:#fff;font-size:11px;white-space:nowrap;line-height:1.8}.badge.draft{color:var(--amber);background:#fff6e7;border-color:#f0ddba}.badge.plan{color:var(--blue);background:var(--soft);border-color:#d4e0fc}.badge.none{color:#67758a;background:#f1f4f8}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.stat{border:1px solid var(--line);background:var(--paper);border-radius:13px;padding:19px 21px}.stat b{font-size:30px;letter-spacing:-1px;font-weight:650}.stat span{display:block;font-size:12px;color:var(--muted)}.stat small{color:#6d7c92;font-size:11px}section{margin-top:52px}section>.section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:17px}.section-no{color:#8797ae;font-size:12px;font-family:ui-monospace,monospace}.section-head h2{font-size:23px;line-height:1.5;margin:0;letter-spacing:-.4px}h3{font-size:16px;margin:0 0 10px}p{margin:9px 0 16px}.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:25px}.note{padding:17px 20px;background:#eaf0fd;border-left:3px solid var(--blue);border-radius:0 10px 10px 0;margin:18px 0;font-size:13px}.note.warn{background:#fff6e9;border-color:#bc7a26}.note strong{display:block;margin-bottom:4px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:17px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.small{font-size:12px;color:var(--muted)}.subtle{color:var(--muted)}ul,ol{margin:10px 0;padding-left:21px}li{margin:6px 0}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:13px;background:#fff}table{width:100%;border-collapse:collapse;font-size:13px;min-width:650px;text-align:left}th{background:#edf2f8;font-size:12px;color:#56677f;font-weight:650}th,td{padding:14px 17px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}td:first-child{font-weight:550}td p{margin:0}.gate-id{font-family:ui-monospace,monospace;color:var(--blue);font-size:11px;display:block}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;counter-reset:flow}.flow>div{position:relative;padding:19px;background:#fff;border:1px solid var(--line);border-radius:12px}.flow>div:before{counter-increment:flow;content:"0" counter(flow);display:block;color:#90a3bf;font:12px ui-monospace,monospace;margin-bottom:9px}.flow b{display:block;font-size:14px}.flow p{font-size:12px;margin:7px 0 0;color:var(--muted)}.pill{border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 12px;font-size:12px;color:var(--muted)}.pill[aria-pressed="true"]{border-color:#bed0f6;background:var(--soft);color:var(--blue)}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:20px 0 12px}.search-label{display:block;font-size:12px;font-weight:600;margin:20px 0 7px}.search{width:100%;border:1px solid #cbd5e3;background:#fff;border-radius:10px;padding:12px 15px;outline:none}.case-count{font-size:12px;color:var(--muted);margin:10px 0 15px}.cases{display:grid;gap:10px}.case{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}.case summary{list-style:none;display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer}.case summary::-webkit-details-marker{display:none}.case summary:before{content:"+";color:#788da9;font-size:18px;width:13px;flex:none}.case[open] summary:before{content:"−"}.case[open] summary{border-bottom:1px solid var(--line)}.case-id{font:11px ui-monospace,monospace;color:var(--blue);width:43px;flex:none}.case-title{font-size:14px;font-weight:600;flex:1}.case-group{font-size:11px;color:var(--muted)}.case-body{padding:18px 22px 21px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:17px}.pair>div{background:#f6f8fb;border-radius:9px;padding:14px 16px;font-size:13px}.pair strong{display:block;margin-bottom:7px;font-size:12px;color:var(--green)}.pair .negative strong{color:var(--red)}.oracle{font-size:12px;margin-top:14px;color:#53657e}.oracle b{color:var(--ink)}.case-foot{display:flex;gap:8px;flex-wrap:wrap;font-size:11px;margin-top:13px}.case-foot span{background:#edf2f7;padding:3px 7px;border-radius:5px;color:#5f7088}.empty{padding:24px;background:#fff;border:1px dashed var(--line);border-radius:12px;color:var(--muted);text-align:center}[hidden]{display:none!important}.step{display:flex;gap:16px;border-top:1px solid var(--line);padding:18px 0}.step:first-child{border-top:0;padding-top:0}.step:last-child{padding-bottom:0}.step-num{flex:none;color:var(--blue);background:var(--soft);width:30px;height:30px;text-align:center;border-radius:8px;font-size:12px;line-height:30px}.step h3{margin:0;font-size:14px}.step p{font-size:13px;color:var(--muted);margin:5px 0 0}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;font-size:13px}.source-list a{overflow-wrap:anywhere}footer{margin-top:45px;border-top:1px solid var(--line);padding-top:23px;font-size:12px;color:var(--muted)}.print{background:#fff;border:1px solid var(--line);border-radius:7px;font-size:12px;padding:6px 12px;margin-left:auto}.legend{font-size:12px;color:var(--muted);margin:11px 0}.mono{font-family:ui-monospace,monospace;font-size:12px}
+@media(min-width:1800px){main{margin-right:auto;margin-left:max(236px,calc((100vw - 1470px)/2 + 180px))}}@media(max-width:1150px){.sidebar{width:200px;padding:27px 16px}main{margin-left:200px;padding:34px 30px 65px}.flow{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}.stats{gap:10px}.stat{padding:15px}.hero h1{font-size:32px}}@media(max-width:760px){.sidebar{position:relative;width:auto;padding:20px 22px}.sidebar nav{display:flex;overflow:auto;gap:4px;margin-top:14px}.sidebar nav a{white-space:nowrap;padding:7px 10px}.sidebar .nav-label,.side-note,.sidebar nav a span{display:none}.brand small{display:inline;font-size:10px;margin-left:12px}main{margin:0;padding:27px 20px 50px}.hero h1{font-size:28px}.lead{font-size:15px}.stats{grid-template-columns:1fr 1fr}.grid2,.pair,.source-list{grid-template-columns:1fr}.panel{padding:20px}.case-group{display:none}.case summary{gap:9px;padding:14px}.case-body{padding:15px}.section-head h2{font-size:21px}.meta .print{margin-left:0}.flow{grid-template-columns:1fr 1fr}section{margin-top:36px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{.sidebar,.toolbar,.search-label,.search,.print,.case-count{display:none}body{background:#fff;font-size:11px}main{margin:0;max-width:none;padding:0}section{margin-top:23px;break-inside:auto}.hero h1{font-size:28px}.panel,.case,.stat{break-inside:avoid}.case[hidden]{display:block!important}.case-body{display:block!important}.case summary{border-bottom:1px solid var(--line)}table{min-width:0;font-size:10px}th,td{padding:8px}a{color:inherit}pre{white-space:pre-wrap;font-size:10px}.stats{margin-top:15px}footer{margin-top:20px}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<aside class="sidebar" aria-label="文档导航">
+  <div class="brand">LUNA<small>ENGINEERING / DESIGN</small></div>
+  <div class="nav-label">门禁有效性设计</div>
+  <nav>
+    <a href="#scope"><span>01</span>范围与判定</a><a href="#current"><span>02</span>现状与缺口</a>
+    <a href="#gates"><span>03</span>九类门禁</a><a href="#visual-gate"><span>03A</span>视觉确认与阻断</a><a href="#hooks"><span>04</span>触发与阻断</a>
+    <a href="#cases"><span>05</span>正反例目录</a><a href="#execution"><span>06</span>怎样证明有效</a>
+    <a href="#results"><span>07</span>结果与准出</a><a href="#ownership"><span>08</span>目录与职责</a>
+    <a href="#rollout"><span>09</span>实施顺序</a><a href="#sources"><span>10</span>依据与追踪</a>
+  </nav>
+  <div class="side-note"><strong>已授权实施 · 结果另记</strong>本页保留用例定义；实际执行见统一门禁结果。计划条目不充当产品验收。</div>
+</aside>
+<main id="main">
+<header class="hero">
+  <p><a href="../../reports/gates/index.html">查看当前统一门禁结果 →</a></p>
+  <div class="eyebrow">LUNA / QUALITY GATES / GV-DESIGN-01</div>
+  <h1>门禁正反例与触发设计</h1>
+  <p class="lead">用合法修改证明不会误拦，用故意违规证明能够拦住；再从真实 Codex 入口验证，确保检查确实发生。</p>
+  <div class="meta"><span class="badge draft">已批准实施</span><span>版本 1.1 · 实施说明已同步</span><span>范围：工程与验收机制设计</span><button class="print" type="button" id="print">打印 / 存为 PDF</button></div>
+  <div class="stats"><div class="stat"><b>9</b><span>门禁类别 · 含视觉</span><small>5 类自动，4 类含人工或实机判定</small></div><div class="stat"><b>4</b><span>Codex 主要触发点</span><small>与统一项目检查共用逻辑</small></div><div class="stat"><b>32</b><span>正反例组</span><small>至少 64 个样本，边界另参数化</small></div><div class="stat"><b>另行记录</b><span>实际执行结果</span><small>用例计划与运行回执分开</small></div></div>
+</header>
+
+<section id="scope">
+  <div class="section-head"><span class="section-no">01</span><h2>先明确：这次要证明什么</h2></div>
+  <div class="grid2"><div class="panel"><h3>门禁有效的四个条件</h3><ol><li>合法修改能够正常通过。</li><li>约定违规由正确规则拒绝。</li><li>实际入口确实触发检查，不能只调用模拟脚本。</li><li>漏跑、过期和检查器故障不能被算成通过。</li></ol></div><div class="panel"><h3>保留简单的审核方式</h3><ul><li>门禁执行只给一张结果表。</li><li>视觉只给一份设计稿与真实实现并排的统一报告。</li><li>原始日志由工具留存，按需查看。</li><li>不新增多轮像素评分、叠图或参照审批流程。</li></ul></div></div>
+  <div class="note"><strong>本页已获用户明确批准并授权实施。</strong>本轮实施门禁程序、Codex hooks与有效性验证；不修改客户端、不替换应用、不重启游戏、不提交代码。本页不覆盖已有设计批准或历史失败记录。后续实施须建立 OpenSpec 变更、明确修改路径，并覆盖更新受影响的现行规范。</div>
+  <p class="small">用户最近明确要求的简化视觉流程优先于旧文档中的复杂流程；旧批准源、截图和原始执行记录保持历史身份，不用于自动补成本轮通过。</p>
+</section>
+
+<section id="current">
+  <div class="section-head"><span class="section-no">02</span><h2>已有基础与本次要补的缺口</h2></div>
+  <p class="subtle">下表保留实施前核对与改进目标；当前接线、执行和限制统一见门禁结果页，不从原计划推定通过。</p>
+  <div class="table-wrap"><table><thead><tr><th style="width:22%">对象</th><th style="width:39%">当前可确认</th><th>本设计的补充</th></tr></thead><tbody>
+    <tr><td>统一检查入口</td><td><code>npm run verify -- --change &lt;id&gt;</code> 已存在，另有门禁自测、发布和存储入口。</td><td>所有入口共用规则、实际影响范围和结果判定；增加有效性场景与可读结果表。</td></tr>
+    <tr><td>五类 CLI 正反例</td><td><a href="../../scripts/quality/verify_five_scenarios.py">verify_five_scenarios.py</a> 已有临时样本和真实子进程调用，目前主要核对退出码 0 / 1。</td><td>增加预期规则、失败阶段和副作用断言，防止检查器崩溃被误当“成功拒绝”。本轮未重跑。</td></tr>
+    <tr><td>“设计不一致”旧反例</td><td>现有负例改变设计源文件，验证的是冻结源漂移。</td><td><strong>源未漂移 ≠ 实现画面一致。</strong>实际排布、缺控件和漏状态，改由统一对照报告与明确审核结论验证。</td></tr>
+    <tr><td>结构与存储检查</td><td>已有 TS AST、Cargo 依赖、技术锁、schema 与真实存储执行入口。</td><td>复用原检查器，补齐语义、漏检、误报、故障及真实派发测试，不复制业务逻辑。</td></tr>
+    <tr><td>Codex / 项目 hooks</td><td>本机 CLI 0.167.2，hooks 功能开启；已有用户级通用 hooks。项目 <code>.codex/</code> 当前不存在。</td><td>新增项目薄适配，验证与现有全局 hooks 共存；当前宿主实际触发能力须实测，不能由 CLI 开关推定。</td></tr>
+    <tr><td>Git / CI</td><td>当前目录无 <code>.git</code>；workflow 仅声明 PR 与手动触发，未证明远端执行或分支保护。</td><td>本机不依赖提交触发。恢复版本管理后，再验证 Git hooks 与远端必需检查，不虚构提交身份。</td></tr>
+    <tr><td>历史结果</td><td>当前 <code>.build/</code> 不存在，旧文档中的部分原件链接无法在此工作区复核；源码基线仍为 R93。</td><td>历史运行是否发生与当前原件是否可取分开记录。恢复原件或重新执行，不根据摘要生成通过结果。</td></tr>
+  </tbody></table></div>
+</section>
+
+<section id="gates">
+  <div class="section-head"><span class="section-no">03</span><h2>九类门禁，手工确认也参与准出</h2></div>
+  <div class="table-wrap"><table><thead><tr><th style="width:18%">门禁</th><th style="width:34%">读取什么 / 检查什么</th><th style="width:28%">拒绝交付的依据</th><th>Codex 接入方式</th></tr></thead><tbody>
+    <tr><td><span class="gate-id">G01</span>需求与产品范围</td><td>PRD、OpenSpec 与真实新增入口、命令、配置的双向映射；核对可观察行为。</td><td>未批准能力、漏映射、ID 正确但行为不符。</td><td><span class="badge draft">辅助核对</span><br>机器结构检查 + 独立语义审阅。</td></tr>
+    <tr><td><span class="gate-id">G02</span>模块边界</td><td>TypeScript 导入图、Cargo 依赖；Rust 业务权威、窄 Tauri、独立 Core / worker。</td><td>UI 直接或间接越层访问 HTTP / SQL / FFI；不允许的依赖链。</td><td><span class="badge plan">自动检查</span><br>写入后增量，交付前完整复核。</td></tr>
+    <tr><td><span class="gate-id">G03</span>目录与修改范围</td><td>实际新增、修改、删除和重命名；路径规范化、未跟踪文件与模块归属。</td><td>范围外修改、无归属文件、路径逃逸。</td><td><span class="badge plan">自动检查</span><br>明确目标操作前拒绝，实际变化操作后复查。</td></tr>
+    <tr><td><span class="gate-id">G04</span>技术栈与资源</td><td>批准依赖、锁文件、构建设置、Core ABI、平台、位数与资源清单。</td><td>未批准框架、依赖漂移、错误架构或缺失资源。</td><td><span class="badge plan">自动检查</span><br>相关文件变化时触发。</td></tr>
+    <tr><td><span class="gate-id">G05</span>真实编译</td><td>真实 TS、Rust workspace 及单元 / 集成测试编译，不以 lint 替代。</td><td>生产或测试编译失败，依赖未准备导致无法执行。</td><td><span class="badge plan">自动检查</span><br>一批修改完成后执行，不逐次全量编译。</td></tr>
+    <tr><td><span class="gate-id">G06</span>功能与交互</td><td>真实组件经正式端口完成操作；取消、切换、失败恢复和迟到结果。</td><td>按钮无操作、重复提交、跨会话污染、承诺流程缺项。</td><td><span class="badge draft">辅助核对</span><br>自动用例 + 实际流程；UI 附统一对照报告。</td></tr>
+    <tr><td><span class="gate-id">G07</span>数据库与存储</td><td>独立字段 / 关系合同、实际迁移 / DB 与 Repository；边界、事务、备份恢复。</td><td>schema 漂移、孤儿 / 重复记录、错误删除策略、失败半写。</td><td><span class="badge plan">自动检查</span><br>存储相关变化批量运行真实测试。</td></tr>
+    <tr><td><span class="gate-id">G08</span>正式包与实机</td><td>包、源码、签名、资源、环境与实际运行记录；同一最终包的四游戏与真实翻译。</td><td>旧包 / 混包、未执行、缺真实资源、运行能力不符。</td><td><span class="badge draft">辅助核对</span><br>包检查自动化；实际游戏和服务单独执行。</td></tr>
+    <tr><td><span class="gate-id">G09</span>视觉对照与人工确认</td><td>同一份统一对照报告中的设计与真实实现、页面 / 状态覆盖、尺寸 / 数据 / 主题及明确审核结论。</td><td>缺图、不可比较、未确认、审核拒绝、未解决差异，或确认后相关实现变化。</td><td><span class="badge draft">人工裁决 · 程序放行</span><br>采集和完整性检查自动化；人工确认后由统一门禁消费结果。</td></tr>
+  </tbody></table></div>
+  <div class="note" id="visual-gate"><strong>G09 是独立必需门禁；手工只指裁决方式，不降低阻断效力。</strong>UI 变更完成真实捕获后进入视觉待审。你或你指定的审阅人，在同一份设计 / 实现对照报告中确认排布与视觉。机器检查报告完整性、审核来源及对应实现身份，再决定能否放行。生成报告、截图齐全、编译通过或其他八类通过，都不能替代视觉确认。</div>
+  <div class="table-wrap"><table><thead><tr><th>视觉阶段</th><th>G09 状态</th><th>阻断与下一步</th></tr></thead><tbody>
+    <tr><td>尚未采集 / 未生成报告</td><td><code>not_run</code></td><td>补真实实现图与设计对照；不能宣布页面已对齐或视觉验收完成。</td></tr>
+    <tr><td>已有报告，但缺图、不可比或内容错误</td><td><code>failed</code></td><td>修复捕获和报告内容，再审阅；不能以现有报告入口存在作通过依据。</td></tr>
+    <tr><td>报告完整，等待人工确认</td><td><code>blocked</code> · awaiting_visual_review</td><td>阻断受影响页面 / 工作项完成、阶段准出与发布；允许继续独立修复，Stop 不为等待人工而反复续跑。</td></tr>
+    <tr><td>人工拒绝 / 有未解决差异</td><td><code>failed</code></td><td>修复受影响部分，更新同一报告并重新确认；不得自行降低要求或标记通过。</td></tr>
+    <tr><td>报告完整，人工明确确认当前候选</td><td><code>passed</code></td><td>只放行确认范围内的页面与状态；其他门禁仍独立判断，不能扩大为整产品通过。</td></tr>
+    <tr><td>确认后相关 UI、设计或报告内容变化</td><td>旧确认失效，保持未完成</td><td>重新采集受影响状态并确认；当前实现保守绑定完整执行源码，报告不能自选依赖子集；完整输入变化后重新核对。</td></tr>
+  </tbody></table></div>
+  <p class="small">报告仍只有一份，按页面 / 状态并排展示，附差异与审核结论。审核记录最少绑定报告内容身份、设计版本、候选源码 / 包、页面状态、视口和确认来源；不能由实现者自行生成 approved。无 UI 影响时，由实际影响分析记录不适用理由，不默认制造一次视觉通过。包替换须重新核对对应实现图；影响视觉的变化不得自动沿用旧确认。</p>
+</section>
+
+<section id="hooks">
+  <div class="section-head"><span class="section-no">04</span><h2>触发、检查与放行是三件事</h2></div>
+  <div class="flow" aria-label="门禁处理流程"><div><b>实际事件</b><p>Codex 工具调用、工作项交付、Git 或候选包验收。</p></div><div><b>统一调度</b><p>按真实改动与依赖图，选择必要规则和测试。</p></div><div><b>执行与核对</b><p>同一规则执行器检查，核对结果身份与观察点。</p></div><div><b>可见结果</b><p>一张结果表；决定能否操作、交付或发布。</p></div></div>
+  <div class="table-wrap" style="margin-top:20px"><table><thead><tr><th>触发点</th><th>要做的事</th><th>真正阻断什么</th><th>避免误用</th></tr></thead><tbody>
+    <tr><td><code>SessionStart</code></td><td>加载当前工作项、批准范围与待验证状态；恢复会话时读回。</td><td>本身只提供上下文；缺少合同由写入前和交付检查拒绝。</td><td>不在会话启动时编译或回归游戏。</td></tr>
+    <tr><td><code>PreToolUse</code></td><td>对可解析的文件操作、依赖变更及打包替换前置条件进行检查。</td><td>明确返回拒绝时，阻止对应受支持的工具调用；核对文件未变化。</td><td>不依赖命令字符串猜测任意 shell 行为；无法预判则记录覆盖限制，事后查真实改动。</td></tr>
+    <tr><td><code>PostToolUse</code></td><td>读取实际变更；快速边界检查；登记需重跑项。</td><td>反馈违规、标记当前修改未通过；交付检查独立拒绝。</td><td>已执行的写入不会被 hook 撤销；异步检查不能作为即时操作阻断。</td></tr>
+    <tr><td><code>Stop</code></td><td>根据实际改动与工作项状态检查验证结果；必要时批量执行。</td><td>缺少可补的检查时要求继续；正式交付由项目命令再次判定。</td><td>每轮结束都会触发。只读问答直接结束，不因历史待办反复全测。</td></tr>
+    <tr><td>UI 捕获完成 / 人工视觉确认</td><td>更新同一报告，将 G09 标为待审；明确确认后核对当前身份并重算门禁。</td><td>未确认、拒绝、缺项或过期时，统一交付命令拒绝页面完成和产品准出。</td><td>等待人工只报告 blocked，不无限重跑截图；允许安装待验候选供检查，但不能宣布验收通过。</td></tr>
+    <tr><td>提交 / 推送 / PR</td><td>恢复 Git 后：提交前快检，推送及 PR 跑工程与受影响测试。</td><td>Git hook 拒绝提交 / 推送；远端必需检查拒绝合并。</td><td>目前未接入远端保护；本地 hook 可被绕过，不作为唯一依据。</td></tr>
+    <tr><td>打包替换 / 阶段准出</td><td>打包核对工程与包体，安装后验基本流程；阶段准出核对全部承诺。</td><td>不合格候选拒绝替换；未完成产品拒绝进入下一阶段 / 发布。</td><td>允许安装待验候选不等于产品通过；实机回归不挂在每次提交。</td></tr>
+  </tbody></table></div>
+  <div class="grid2" style="margin-top:18px"><div class="panel"><h3>Stop 的有界执行规则 <span class="badge plan">拟定</span></h3><ol><li>无实际修改且未请求验收：直接结束。</li><li>有修改：读取实际影响与当前结果，不靠回答里的“完成”二字判定。</li><li>可执行但缺失的检查：要求补跑；同一失败指纹最多自动续跑两次。</li><li>源码或错误变化才重新计算；外部 blocked 或次数用尽时停止重复调度，交付状态仍 incomplete。</li><li>用户中断立即让出控制；子代理只报告自己范围，不能关闭父工作项。</li></ol></div><div class="panel"><h3>Hook 故障不等于操作被拦住</h3><p>官方机制中，未信任配置会跳过；部分错误或不支持的返回格式可能让工具继续。不能声称异常总会自动阻断。</p><p>项目 <code>verify</code>、打包包装入口与后续 CI 必须独立重算必要检查，拒绝缺结果、错误结果和过期结果。它们保障交付判定，不能倒推此前没有副作用。</p><p class="small">所有匹配的全局与项目 hooks 会共同运行，不能假设自己的 hook 能阻止其他 hook 启动。必须验证真实宿主与全局配置共存。</p></div></div>
+  <p class="small">本节平台行为依据：<a href="https://learn.chatgpt.com/docs/hooks#pretooluse">PreToolUse</a>、<a href="https://learn.chatgpt.com/docs/hooks#posttooluse">PostToolUse</a>、<a href="https://learn.chatgpt.com/docs/hooks#stop">Stop</a>、<a href="https://learn.chatgpt.com/docs/hooks#review-and-trust-hooks">信任机制</a>。项目配置加载与信任需要实施后实际核对，本页不预先授予信任。</p>
+</section>
+
+<section id="cases">
+  <div class="section-head"><span class="section-no">05</span><h2>32 组正反例：具体怎么验证</h2></div>
+  <p class="subtle">每组至少一个正例、一个反例。字段边界、平台、工具路径等需参数化执行，不能把 32 组当作固定测试总数。展开查看观察点。</p>
+  <div class="note warn"><strong>被测门禁的结果与外部验证的结果必须分开。</strong>普通违规样本应被预期规则在预期阶段拒绝；变异场景则要证明外部测试能发现门禁失效。每个分支分别定义 expected_gate_result、expected_verification_result 和副作用观察点。任意非零退出、依赖缺失或检查器崩溃都不算正确拦截。视觉反例验证报告准确呈现差异、未获确认时拒绝准出，不承诺自动理解视觉。</div>
+  <label class="search-label" for="case-search">搜索场景、门禁、预期原因</label><input class="search" id="case-search" type="search" placeholder="例如：数据库、Stop、旧结果、GV-23" autocomplete="off">
+  <div class="toolbar" role="group" aria-label="按验证类别筛选"><button class="pill" data-filter="all" aria-pressed="true" type="button">全部</button><button class="pill" data-filter="rule" aria-pressed="false" type="button">规则与行为</button><button class="pill" data-filter="visual" aria-pressed="false" type="button">视觉</button><button class="pill" data-filter="hook" aria-pressed="false" type="button">Hook 接线</button><button class="pill" data-filter="fault" aria-pressed="false" type="button">故障与失效</button><button class="pill" data-filter="mutation" aria-pressed="false" type="button">门禁变异</button><button class="pill" id="expand" type="button">展开全部</button></div>
+  <p class="case-count" id="case-count" role="status" aria-live="polite">共 32 组，全部 not_run。</p>
+  <div class="cases" id="case-list">
+  <details class="case" data-group="rule" id="GV-01" open>
+<summary><span class="case-id">GV-01</span><span class="case-title">产品范围与入口双向映射</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>新增已批准的服务配置入口，PRD、OpenSpec、实际路由和用例彼此对应。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>在同一修改中增加未批准的 OCR 可操作入口，或遗漏新增命令的映射。</div></div>
+<div class="oracle"><b>观察点：</b>核对真实新增入口与合同差异，命中范围 / 映射规则；不能只验证声明过的文件。</div><div class="case-foot"><span>归属：G01</span><span>验证层：L1 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-02">
+<summary><span class="case-id">GV-02</span><span class="case-title">ID 正确，业务语义也必须正确</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>配置服务只保存草稿，不自动更换当前翻译服务。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>填写正确 FP-06 编号，但实现保存后直接切换服务。</div></div>
+<div class="oracle"><b>观察点：</b>真实生产端口行为断言或独立语义审阅明确失败；结构检查成功不能替代此结果。</div><div class="case-foot"><span>归属：G01 / G06</span><span>验证层：L2 + 独立审阅</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="visual" id="GV-03">
+<summary><span class="case-id">GV-03</span><span class="case-title">真实实现与设计的统一对照</span><span class="case-group">视觉</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>以相同尺寸、主题、数据和状态，展示当前阅读卡、预览和后置折叠区，审核结论绑定本次候选。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>实现缺按钮、错排布、漏状态，或使用错误尺寸 / 旧截图冒充本次实现。</div></div>
+<div class="oracle"><b>观察点：</b>已知差异在同一报告中可见；缺图 / 不可比 / 未确认不能视觉通过。人工确认语义，不声称自动识别任意像素差异。</div><div class="case-foot"><span>归属：G09</span><span>验证层：真实捕获 + 人工确认</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-04">
+<summary><span class="case-id">GV-04</span><span class="case-title">前后端模块边界</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>UI 经 application-port 调用业务；app-core 只依赖允许的领域 / 端口契约。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>UI 直接或间接引入 HTTP / SQL / FFI，或让业务核心依赖 Tauri / 具体数据库实现。</div></div>
+<div class="oracle"><b>观察点：</b>正式 AST / Cargo 检查定位真实导入链；覆盖别名、再导出和本地传递依赖。</div><div class="case-foot"><span>归属：G02</span><span>验证层：L1 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-05">
+<summary><span class="case-id">GV-05</span><span class="case-title">修改范围与真实路径</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>在允许目录修改已有文件，新增文件具有明确模块归属。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>新建 / 重命名到未批准目录，或通过 ..、相似前缀、符号链接越界。</div></div>
+<div class="oracle"><b>观察点：</b>路径规范化并核对 realpath、未跟踪和删除文件；明确越界操作前拒绝，实际差异再复核。</div><div class="case-foot"><span>归属：G03</span><span>验证层：L1 + L2 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-06">
+<summary><span class="case-id">GV-06</span><span class="case-title">依赖与技术栈</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>使用批准框架及版本，manifest 与锁文件一致。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>增加未批准框架、依赖链或构建插件；只改锁文件隐藏变更。</div></div>
+<div class="oracle"><b>观察点：</b>实际依赖及锁一致性检查拒绝；名称 / 范围 / 版本均需定位。传递依赖只按批准策略判断，不一概禁止。</div><div class="case-foot"><span>归属：G04</span><span>验证层：L1 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-07">
+<summary><span class="case-id">GV-07</span><span class="case-title">Core、架构与语言资源</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>Core ABI、目标位数、平台和资源清单匹配，内置语言资源完整。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>注入错误位数 DLL、旧 ABI、缺失词典或 manifest 与资源不符。</div></div>
+<div class="oracle"><b>观察点：</b>打包检查发现具体不匹配，不启动真实注入；包资源与 manifest 同时观察。</div><div class="case-foot"><span>归属：G04 / G08</span><span>验证层：L1 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-08">
+<summary><span class="case-id">GV-08</span><span class="case-title">真实生产编译</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>生产 TS / Rust 源码可实际编译，锁定工具链和依赖已准备。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>在隔离副本注入类型 / 语法错误，但 lint 或结构检查仍可运行。</div></div>
+<div class="oracle"><b>观察点：</b>实际编译返回失败并定位错误；依赖缺失属于环境问题，不能作为本反例正确拒绝。</div><div class="case-foot"><span>归属：G05</span><span>验证层：L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-09">
+<summary><span class="case-id">GV-09</span><span class="case-title">测试代码同样必须编译</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>单元 / 集成测试使用当前 DTO、端口和 schema。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>生产库可编译，但测试仍消费已经移除的旧字段或旧接口。</div></div>
+<div class="oracle"><b>观察点：</b>实际编译测试目标失败；不能只 cargo check 库后宣布工程可用。</div><div class="case-foot"><span>归属：G05</span><span>验证层：L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-10">
+<summary><span class="case-id">GV-10</span><span class="case-title">功能实际发生且只发生一次</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>一次关联确认只发起一次正式接入；服务保存生成应有记录，取消不提交。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>按钮无实际动作、只更新假状态、双击导致重复服务 / 重复连接。</div></div>
+<div class="oracle"><b>观察点：</b>从真实组件经过正式端口检查调用与结果，核对正确业务状态 / DB；仅按钮可点不够。</div><div class="case-foot"><span>归属：G06</span><span>验证层：真实组件 / 正式端口</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-11">
+<summary><span class="case-id">GV-11</span><span class="case-title">取消、切换与迟到结果隔离</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>切换或取消后旧请求结果被丢弃，原工作对象保留；新请求归属正确。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>旧预览 / 翻译 / Hook 回调覆盖新会话或在取消后写入。</div></div>
+<div class="oracle"><b>观察点：</b>可控时序稳定触发旧回调，观察 generation / session 归属、DB 与屏幕状态；不能只测顺序成功路径。</div><div class="case-foot"><span>归属：G06</span><span>验证层：受控时序 + 正式端口</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-12">
+<summary><span class="case-id">GV-12</span><span class="case-title">字段类型、空值与值边界</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>按合同逐字段测试合法空值、Unicode、长度和数值上下界，可正确保存并读回。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>非法 NULL、错误类型、越界值或非法枚举通过 Repository 混入数据。</div></div>
+<div class="oracle"><b>观察点：</b>比较独立合同、实际迁移和 DB，检查校验 / 存储规则及无半写；SQLite 宽松类型不能被当作强类型保证。</div><div class="case-foot"><span>归属：G07</span><span>验证层：L1 + 真实存储 L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-13">
+<summary><span class="case-id">GV-13</span><span class="case-title">关系、唯一性与删除策略</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>合法外键、唯一约束及约定删除 / 保留行为正确。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>创建孤儿、重复唯一键、关闭外键或错误级联删除历史。</div></div>
+<div class="oracle"><b>观察点：</b>在真实数据库与 Repository 观察 FK 设置、约束和删除后关系；DDL 字符串匹配不足以证明有效。</div><div class="case-foot"><span>归属：G07</span><span>验证层：L1 + 真实存储 L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-14">
+<summary><span class="case-id">GV-14</span><span class="case-title">迁移与回滚</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>受支持旧版本迁到当前版本，数据、关联和原始文本保留。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>迁移中途失败、重复执行、旧脏数据或 schema 与版本号不符。</div></div>
+<div class="oracle"><b>观察点：</b>逐支持版本执行并注入故障，检查约定回滚 / 明确恢复和数据完整性；禁止吞错后升版本。</div><div class="case-foot"><span>归属：G07</span><span>验证层：真实临时数据库</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-15">
+<summary><span class="case-id">GV-15</span><span class="case-title">写入、备份与恢复故障</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>完成写入、备份与恢复，恢复后的值和关系一致。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>锁库、受控写失败、损坏备份或恢复途中中断。</div></div>
+<div class="oracle"><b>观察点：</b>核对实际错误分类、事务和原数据保护；不触碰用户正式库，不在真实磁盘填满空间。</div><div class="case-foot"><span>归属：G07</span><span>验证层：真实存储 / 隔离故障</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="rule" id="GV-16">
+<summary><span class="case-id">GV-16</span><span class="case-title">包身份与回归记录的汇总判定</span><span class="case-group">规则与行为</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>隔离测试中，用明确标为 gate_fixture 的完整合成记录调用正式汇总校验器的只读判断，不写入产品准出状态。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>在同一测试合同内注入旧包、混包、缺失游戏 / 服务记录；或尝试将 gate_fixture 传入正式产品准出。</div></div>
+<div class="oracle"><b>观察点：</b>完整样本符合测试预期，身份不符 / 缺项按规则拒绝；正式准出始终拒绝测试标记。该组只验证汇总器，真实四游戏 / 服务另外执行，不以前置产品通过作为门禁启用条件。</div><div class="case-foot"><span>归属：G08</span><span>验证层：L1 + L2 · 隔离汇总样本</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-17">
+<summary><span class="case-id">GV-17</span><span class="case-title">SessionStart 加载当前上下文</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>新建 / 恢复会话只读取正确工作项、范围与待验证结果。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>合同缺失 / 过期时仍声称已加载，或会话启动便全量编译、操作游戏。</div></div>
+<div class="oracle"><b>观察点：</b>观察真实会话的加载摘要；合同缺失不阻止问答，依赖该合同的写入 / 交付必须拒绝。</div><div class="case-foot"><span>归属：G01 / H</span><span>验证层：L1 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-18">
+<summary><span class="case-id">GV-18</span><span class="case-title">PreToolUse 的拒绝真能阻止写入</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>范围内修改经真实工具成功执行，目标变化与预期相符。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>对有明确目标的越界 patch / shell / MCP 操作返回明确拒绝。</div></div>
+<div class="oracle"><b>观察点：</b>由外部观察进程比较前后文件 hash 和目标是否存在，确认工具未执行；不可只看 hook 打印 deny。</div><div class="case-foot"><span>归属：G03 / H</span><span>验证层：L1 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-19">
+<summary><span class="case-id">GV-19</span><span class="case-title">PostToolUse 发现实际违规</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>真实写入后只运行必要快检，并记录正确影响范围。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>通过事前无法静态预判的操作写入违规，事后仍被忽略。</div></div>
+<div class="oracle"><b>观察点：</b>确认写入已发生、错误反馈生效、交付命令拒绝；不得将反馈或 promise 拒绝描述为文件已回滚。</div><div class="case-foot"><span>归属：G02 / G03 / H</span><span>验证层：L1 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-20">
+<summary><span class="case-id">GV-20</span><span class="case-title">正常问答不被 Stop 误拦</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>只读问答、状态查询正常结束，不触发编译或游戏测试。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>仅因历史有未完成任务，每一轮都被迫继续或全量测试。</div></div>
+<div class="oracle"><b>观察点：</b>核对实际结束事件与命令次数；不能通过扫描回复是否包含“完成”来判断。</div><div class="case-foot"><span>归属：H</span><span>验证层：L1 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-21">
+<summary><span class="case-id">GV-21</span><span class="case-title">修改交付前不能漏验</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>当前修改具有匹配的必要验证结果，交付可以结束。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>有实际代码修改但缺编译 / 必要功能用例，仍尝试关闭工作项。</div></div>
+<div class="oracle"><b>观察点：</b>Stop 要求补验；项目命令独立拒绝交付。普通进度回复可报告未完成，不把所有结束都强行视为交付。</div><div class="case-foot"><span>归属：G05 / G06 / H</span><span>验证层：L1 + L2 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-22">
+<summary><span class="case-id">GV-22</span><span class="case-title">Stop 有界续跑与外部阻塞</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>可修复错误处理后重新检查，正常结束；外部阻塞如实报告。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>同一失败重复续跑，或缺凭据 / 需手动选窗导致无限循环。</div></div>
+<div class="oracle"><b>观察点：</b>按同一源码 / 失败指纹计次，拟定最多两次自动续跑；用户中断立即退出，次数用尽仍 incomplete。</div><div class="case-foot"><span>归属：H</span><span>验证层：L1 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="fault" id="GV-23">
+<summary><span class="case-id">GV-23</span><span class="case-title">Hook 信任、异常与全局共存</span><span class="case-group">故障与失效</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>已信任项目配置与现有全局 hooks 共存，预期事件 / 阻断可观察。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>禁用、未信任、定义变更、超时、崩溃、非法输出或全局 hook 冲突。</div></div>
+<div class="oracle"><b>观察点：</b>真实事件验收不得通过；即使工具已继续，项目 verify 仍拒绝缺失检查。清楚记录可能已经发生的副作用。</div><div class="case-foot"><span>归属：H</span><span>验证层：L1 + L2 + L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="fault" id="GV-24">
+<summary><span class="case-id">GV-24</span><span class="case-title">旧结果必须按依赖失效</span><span class="case-group">故障与失效</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>源码、规则、测试和相关环境未变时，有效结果可以复用。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>修改相关源码、设计、规则 / 测试，或替换包后仍沿用旧通过记录。</div></div>
+<div class="oracle"><b>观察点：</b>独立计算输入与相关依赖身份，旧结果标记过期并要求重跑；不能只看时间或手填 passed。</div><div class="case-foot"><span>归属：全部</span><span>验证层：L1 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="fault" id="GV-25">
+<summary><span class="case-id">GV-25</span><span class="case-title">结果完整性与真实断言</span><span class="case-group">故障与失效</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>实际命令、退出码、必选测试、断言、日志和所需产物齐全。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>删结果、篡改 JSON、提前返回 0、零断言、必选 skip 或日志丢失。</div></div>
+<div class="oracle"><b>观察点：</b>由外部清单和观察核对；记录 hash 变化只是辅助，不能让测试自己填写自己的执行事实。</div><div class="case-foot"><span>归属：全部</span><span>验证层：L1 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="fault" id="GV-26">
+<summary><span class="case-id">GV-26</span><span class="case-title">并发工作项互不污染</span><span class="case-group">故障与失效</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>两个工作项使用独立 run_id、临时库和证据文件；输入稳定。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>并发覆盖同一结果、串用他人记录，或执行中源码被另一协作者修改。</div></div>
+<div class="oracle"><b>观察点：</b>前后源身份和运行归属匹配；原子发布结果、独立目录，输入变化不产生有效 passed。</div><div class="case-foot"><span>归属：全部</span><span>验证层：L1 + L2 / 并发实验</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="fault" id="GV-27">
+<summary><span class="case-id">GV-27</span><span class="case-title">影响派发不漏也不滥</span><span class="case-group">故障与失效</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>独立说明文档仅检查必要规则；共享组件覆盖实际消费者。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>修改 Core / 共享组件 / 迁移，却只跑单页测试；未知生产路径被当无影响。</div></div>
+<div class="oracle"><b>观察点：</b>在根调度器核对预期必选清单；缺派发失败，未知影响保守处理，不能靠任务元数据自行缩小。</div><div class="case-foot"><span>归属：全部</span><span>验证层：L1 + 根入口 L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="mutation" id="GV-28">
+<summary><span class="case-id">GV-28</span><span class="case-title">拒绝与时效条件变异</span><span class="case-group">门禁变异</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>原始规则能拒绝对应违规，并使相关变更后的旧结果失效。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>在隔离副本把拒绝改成放行，或让过期结果继续有效。</div></div>
+<div class="oracle"><b>观察点：</b>原有效性测试必须变红，指出未被正确拒绝 / 未失效；变异后全绿表示验证能力不足。</div><div class="case-foot"><span>归属：全部</span><span>验证层：隔离变异 + L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="mutation" id="GV-29">
+<summary><span class="case-id">GV-29</span><span class="case-title">必选派发与测试流程变异</span><span class="case-group">门禁变异</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>必要测试实际执行，外部清单核对覆盖与结果。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>隔离副本删除必选测试、设 skip、提前退出 0，或禁用关键派发。</div></div>
+<div class="oracle"><b>观察点：</b>独立覆盖检查必须捕捉缺项；不能读取被篡改的同一清单后自证齐全。</div><div class="case-foot"><span>归属：全部</span><span>验证层：隔离变异 + 根入口 L2</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="hook" id="GV-30">
+<summary><span class="case-id">GV-30</span><span class="case-title">真实事件与脚本模拟严格区分</span><span class="case-group">Hook 接线</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>实际 Codex 工具调用触发 hook，外部观察到期望副作用与结束 / 继续表现。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>只向脚本手写 JSON、只有事件日志，或在未核实宿主中宣称完成接入。</div></div>
+<div class="oracle"><b>观察点：</b>模拟只记 L1；缺真实 L3 则接入保持 not_run / blocked。覆盖 apply_patch、Bash、MCP / code mode 的实际使用路径；不支持项明确登记。</div><div class="case-foot"><span>归属：H</span><span>验证层：真实宿主 L3</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="visual" id="GV-31">
+<summary><span class="case-id">GV-31</span><span class="case-title">手工视觉确认必须真正影响放行</span><span class="case-group">视觉</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>隔离验证中，明确标为 gate_fixture 的完整报告和已授权审核样本匹配，正式判定器仅在只读测试上下文计算 G09 通过。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>其余八类均符合预期，但 G09 缺确认、待审、被拒绝、审核记录损坏，或仅由模型自行写 approved；再尝试关闭工作项或产品准出。</div></div>
+<div class="oracle"><b>观察点：</b>缺审核 / 待审为 blocked，拒绝 / 损坏为 failed；任一情况都保持整体 incomplete。Stop 可结束等待人工，交付命令仍拒绝关闭。正式准出拒绝 gate_fixture，测试样本不能成为真实产品批准，也不要求真实产品先通过才能验证判定器。</div><div class="case-foot"><span>归属：G09</span><span>验证层：L1 + 根入口 L2 · 隔离审核样本</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+<details class="case" data-group="visual" id="GV-32">
+<summary><span class="case-id">GV-32</span><span class="case-title">视觉确认按实际范围失效</span><span class="case-group">视觉</span><span class="badge none">not_run</span></summary>
+<div class="case-body"><div class="pair"><div><strong>正例 · 预期行为</strong>隔离审核样本对应的相关源码、设计、实现截图和页面状态未变，或经依赖核对只有无关说明修改，确认只在原范围继续有效。</div><div class="negative"><strong>反例 · 应按预期拒绝或暴露失效</strong>实际修改共享 UI 组件 / CSS、替换截图或设计，再沿用旧确认；或只批准一个状态却将整页 / 其他状态标为通过。</div></div>
+<div class="oracle"><b>观察点：</b>从真实文件与依赖重算影响，不只比较自填版本号。受影响确认失效、缺覆盖项拒绝准出；重新采集并确认后才恢复。保留原确认历史，不能自动重写 approved；测试样本不写入产品结果。</div><div class="case-foot"><span>归属：G09</span><span>验证层：L1 + L2 · 隔离变更 / 审核样本</span><span>状态：设计完成，正反分支均未执行</span></div></div></details>
+  </div><p class="empty" id="empty" hidden>没有匹配场景。请清空搜索或选择“全部”。</p>
+  <noscript><p class="small">当前未启用 JavaScript；所有场景仍可展开阅读，搜索与分类筛选不可用。</p></noscript>
+</section>
+
+<section id="execution">
+  <div class="section-head"><span class="section-no">06</span><h2>从规则到真实入口，分层证明</h2></div>
+  <div class="grid3"><div class="panel"><h3>L1 · 规则与协议</h3><p>在可丢弃样本中调用正式规则函数，验证正例、反例、边界和 hook 输入 / 输出协议。</p><p class="small">能证明判断逻辑；不能证明项目 CLI 或 Codex 实际触发。</p></div><div class="panel"><h3>L2 · 真实项目命令</h3><p>测试进程启动真实 <code>verify</code> / 子检查器，断言命令、退出码、原因和实际副作用。</p><p class="small">必须覆盖根调度器，防止子检查正确但根入口漏派发。</p></div><div class="panel"><h3>L3 · 真实 Codex 事件</h3><p>在已信任的隔离测试项目内，经实际 Codex 工具执行合法 / 越界操作与结束轮次。</p><p class="small">由外部测试进程核对文件前后值、真实事件及继续 / 结束表现。手写事件 JSON 不算此层。</p></div></div>
+  <div class="panel" style="margin-top:18px"><h3>每组运行的固定步骤</h3><ol><li><strong>准备：</strong>使用已审合同和有限测试样本；逐分支固定门禁预期、外部验证预期和观察点，记录工具 / 规则 / 样本身份。源目录与正式用户数据只读，数据库用临时库。复制只包含必要文件，不复制游戏或大资源。</li><li><strong>正例：</strong>执行真实入口，观察与预期一致。合法修改应放行；测试门禁拒绝能力时，正确拒绝违规本身也是验证正例。</li><li><strong>反例：</strong>只注入约定违规或门禁失效，使用相同入口；核对规则、阶段、定位与副作用。普通违规应被门禁拒绝；被损坏门禁若错误放行，外部有效性测试必须变红。其他错误属于测试失败或环境 blocked。</li><li><strong>修复恢复：</strong>撤销隔离注入后再执行，应恢复原来的正确判定；合法修改仍可放行，门禁不会永远卡住。</li><li><strong>交叉核验：</strong>独立测试进程读取实际结果；不让被测规则自行填写自己的验证结论。合成记录显式标为测试用途，永不写入产品通过。</li><li><strong>记录：</strong>每次运行独立目录，保留失败与重跑关系。基准和当前工作区不被自动替换。</li></ol></div>
+  <div class="grid2" style="margin-top:18px"><div class="panel"><h3>故障注入</h3><p>覆盖检查器异常、超时、非法返回、结果删除、必选测试跳过、源码途中变化、并发串用、hook 未信任 / 被禁用。</p><p class="small">内部错误记 failed；真实外部条件不足记 blocked；二者均不授予交付通过。</p></div><div class="panel"><h3>门禁变异</h3><p>在隔离副本把拒绝改成放行、跳过必要派发、绕过结果失效判断。原有效性测试必须发现，不能仍然全绿。</p><p class="small">只对已定义关键判定逐项变异，不追求没有解释价值的全项目百分比。</p></div></div>
+</section>
+
+<section id="results">
+  <div class="section-head"><span class="section-no">07</span><h2>一张结果表，两种完成判断</h2></div>
+  <p>实施后只给一个稳定门禁结果入口；每行可展开原始日志。<strong>G09 作为正式必需行参与整体判定。</strong>该行链接唯一的设计 / 实现对照报告，显示人工决定与机器核对结果，不额外输出多套视觉审核页。其余八类通过而 G09 待审或失败时，受影响工作项仍未完成。</p>
+  <div class="table-wrap"><table><thead><tr><th>结果字段</th><th>必须记录 / 校验</th></tr></thead><tbody>
+    <tr><td>运行与来源</td><td><code>run_id</code>、工作项、场景 / 正反分支、L1 / L2 / L3、触发事件、开始 / 结束时间；候选与基准身份。</td></tr>
+    <tr><td>预期与实际</td><td>预期规则 ID / 阶段 / 效果、实际规则和定位、真实命令 / 退出码 / 断言、文件或数据库前后状态；计数与必要用例列表一致。</td></tr>
+    <tr><td>时效与归属</td><td>相关源码、规范、设计、工具与测试输入指纹；必要运行记录绑定包 SHA / 签名、Core / 资源与环境。执行前后比较输入；变更期间产生的结果不签发有效通过。</td></tr>
+    <tr><td>证据和审核</td><td>原始日志及产物路径 / hash；实际报告身份与审核结论。Hash 只能发现漂移，不能证明业务语义、作者独立或结果真实，仍需外部观察和必要审阅。</td></tr>
+    <tr><td>视觉人工决定</td><td><code>review_decision=approved / rejected / pending</code>、授权审阅者、确认来源 / 时间、报告内容身份、设计与候选身份、明确页面 / 状态范围。只有当前报告完整可比、无未解决差异且明确获批，G09 才 passed；设计源批准不等于本次客户端对照获批。</td></tr>
+    <tr><td>状态</td><td><code>passed</code> 实际符合预期；<code>failed</code> 实际不符 / 内部故障；<code>blocked</code> 外部条件缺失；<code>not_run</code> 未执行。过期另设失效原因，不能继续作有效 passed 使用。</td></tr>
+  </tbody></table></div>
+  <div class="grid2" style="margin-top:18px"><div class="panel"><h3>门禁可启用：必须全部满足</h3><ul><li>所有必选正例符合各自预期；合法修改无误拦。</li><li>普通违规按预期规则拒绝；变异 / 故障按约定被外部验证识别，不接受“碰巧失败”。</li><li>拒绝、派发、时效三类关键变异都被识别。</li><li>适用 L1 / L2 / L3 全部执行；真实 hooks 与全局配置共存验证通过。</li><li>无必选 skip、无缺失结果；独立审阅通过。汇总与视觉判定器用隔离样本验规则，真实产品视觉批准和四游戏不是此处的前置。</li></ul></div><div class="panel"><h3>产品可准出：另行判断</h3><ul><li>对应工作项功能、异常 / 恢复完成；适用页面的 G09 当前明确通过。</li><li>同一最终签名包的窗口、权限与资源行为通过。</li><li>SR、MO、Never7、樱之诗逐款完成约定回归。</li><li>真实翻译服务、分词 / 注音 / 词典按适用范围验证；缺凭据如实 blocked。</li><li>门禁自测通过不能替代上述产品结果；手工门禁与自动门禁具有相同准出效力。</li></ul></div></div>
+  <div class="note"><strong>避免重复，也避免漏验。</strong>同一有效输入可复用结果；相关源码、合同、设计、检查器、测试或环境改变时，按依赖失效。共享组件、Core、迁移扩大回归；独立说明文档不默认触发全产品。无法归类的生产变更先按保守范围处理，不能默认为无影响。候选最终包身份变化时，包级验收必须重新核对。</div>
+</section>
+
+<section id="ownership">
+  <div class="section-head"><span class="section-no">08</span><h2>复用现有检查器，hook 只做薄适配</h2></div>
+  <p class="subtle">以下是拟定职责和路径，不表示已经创建。实施时根据实际复用点收敛；不新建产品业务模块或第二套校验规则。</p>
+  <pre><code>luna-translator/
+├── .codex/hooks.json                         [已新增] 项目触发配置
+├── scripts/quality/
+│   ├── verify.py                            [已有] 统一入口与派发
+│   ├── spec_contract.py                     [已有] 规范与范围
+│   ├── frontend-boundaries.mjs              [已有] 前端边界与目录
+│   ├── rust-boundaries.py                   [已有] Rust 依赖边界
+│   ├── technology_contract.py               [已有] 技术锁与资源
+│   ├── database_design.py / storage_*.py    [已有] 字段、关系与真实存储
+│   ├── codex_hooks.py                       [已新增] 事件薄适配、反馈
+│   ├── gate_effectiveness.py                [已新增] 隔离实验与结果汇总
+│   ├── test_codex_hooks.py                  [已新增] 协议与有界调度测试
+│   └── test_gate_effectiveness.py           [已新增] 正反例 / 故障 / 变异
+├── openspec/changes/&lt;实施变更 ID&gt;/           [实施前] 范围、规范与测试合同
+├── docs/development/gate-validation-design.html  [本页] 单一待审设计
+└── reports/
+    ├── gates/index.html                     [统一生成入口] 一张门禁结果表
+    └── visual-comparison/index.html         [统一生成入口] 一份视觉对照报告</code></pre>
+  <div class="table-wrap"><table><thead><tr><th>责任</th><th>归属与约束</th></tr></thead><tbody>
+    <tr><td>门禁维护 Owner</td><td>负责统一执行器、派发、结果失效和 hook 适配；不在 Codex 配置中复制校验逻辑。</td></tr>
+    <tr><td>模块 Owner</td><td>维护对应需求、端口与边界用例；数据库 / Core / 平台变更由相应 Owner 核对。</td></tr>
+    <tr><td>独立审阅 / QA</td><td>核对预期规则、实际 CLI 与外部副作用；门禁作者不能只凭自填结果宣布有效。</td></tr>
+    <tr><td>用户确认</td><td>确认本设计及必要产品语义、视觉结论；常规实现和重跑不增加逐次确认。</td></tr>
+    <tr><td>日志与回收</td><td>运行原件沿用 <code>.build/quality/</code> 并由结果表索引；候选、失败和被引用验收原件保留。临时样本结束即清理，历史大构建不复制到测试副本；回收不删除仍被引用的证据。</td></tr>
+  </tbody></table></div>
+  <p class="small">本页中的 <code>GV-xx</code> 是场景设计 ID，九类 <code>Gxx</code> 是本方案类别 ID，不能冒充既有 FP / M / C 或生产错误码。实施前将它们映射到现有规则实际标识；若缺少结构化原因，先补真实输出合同。不存在的拟定路径不作为当前可点击入口。</p>
+</section>
+
+<section id="rollout">
+  <div class="section-head"><span class="section-no">09</span><h2>实施按关口推进，每一步都有可见交付</h2></div>
+  <div class="panel">
+    <div class="step"><div class="step-num">1</div><div><h3>确认设计与用例定义 <span class="badge draft">设计已批准</span></h3><p>审核本页：九类规则、32 组样本、触发时机、拒绝条件及视觉简化方式。设计场景保持 not_run。</p></div></div>
+    <div class="step"><div class="step-num">2</div><div><h3>建立实施变更与机器合同 <span class="badge none">实际执行见结果页</span></h3><p>建立 OpenSpec proposal / delta specs / design / tasks / verification 和迭代卡；固定样本、真实规则 ID、允许路径及预期观察点。覆盖更新工程门禁、迭代规则、设计对齐、产品完成与测试文档的相关章节，不追加第二套“最新”规则。</p></div></div>
+    <div class="step"><div class="step-num">3</div><div><h3>补统一执行与 L1 / L2 验证 <span class="badge none">实际执行见结果页</span></h3><p>先修正只看退出码和设计源漂移的缺口，再补故障、时效、并发与变异；独立审阅。与产品源码修复分开，不提前标记产品通过。</p></div></div>
+    <div class="step"><div class="step-num">4</div><div><h3>接入 Codex 并实测 L3 <span class="badge none">实际执行见结果页</span></h3><p>检查当前宿主兼容性，在隔离项目先观察再启用阻断；按平台要求审核并信任配置。用真实工具调用证明拒绝、反馈、Stop 有界及全局共存；失败则保持未接入，不能把脚本模拟当成通过。</p></div></div>
+    <div class="step"><div class="step-num">5</div><div><h3>启用交付检查，再恢复产品改造 <span class="badge none">实际执行见结果页</span></h3><p>门禁有效性满足准入后，按原产品计划修复；UI 统一对照、同包实机与真实服务验收。Git / CI 待真实版本管理环境建立后单独证明，不能因此阻止本地已授权开发与验证。</p></div></div>
+  </div>
+  <p class="small">升级旧规则时显式记录替代关系和未完成义务，保留历史原件，不修改旧结果制造一致。新规则正式采用前，不通过删断言、扩大 legacy-debt 或刷新基线指纹绕过现有失败。</p>
+</section>
+
+<section id="sources">
+  <div class="section-head"><span class="section-no">10</span><h2>依据与追踪</h2></div>
+  <div class="panel"><div class="source-list">
+    <a href="../README.md">唯一现行文档入口</a><a href="../product/first-product-scope.md">PRD · 首版范围</a>
+    <a href="../design/first-product-v1/README.md">已确认设计入口</a><a href="../architecture/first-product-engineering-baseline.md">架构与技术基线</a>
+    <a href="engineering-gates.md">现行工程门禁</a><a href="iteration-governance.md">迭代执行规则</a>
+    <a href="product-acceptance-loop.md">产品完成与准出</a><a href="design-alignment-and-release.md">现行设计对齐机制</a>
+    <a href="../../scripts/quality/verify_five_scenarios.py">现有五类正反例 runner</a><a href="https://learn.chatgpt.com/docs/hooks">OpenAI 官方 Codex Hooks 文档</a>
+  </div><p class="small" style="margin-top:18px">本页依据用户本轮决定：视觉只交付统一对照报告；门禁以正反例、实际触发、故障与变异证明有效。OpenAI 平台行为已于编写时查阅官方文档；实施时仍需核对安装版本与真实宿主。现行源文档尚含旧视觉流程，本页已授权实施；是否实际生效以机器回执、真实hook和当前结果页为准。</p></div>
+</section>
+<footer>GV-DESIGN-01 · 已批准用例定义 · 本页不兼作执行证据，32组实际结果独立记录。后续修订覆盖本页，不生成多份并行“最新”设计。</footer>
+</main>
+<script>
+(()=>{
+  'use strict';
+  const input=document.querySelector('#case-search');
+  const cards=Array.from(document.querySelectorAll('.case'));
+  const filters=Array.from(document.querySelectorAll('[data-filter]'));
+  const counter=document.querySelector('#case-count');
+  const empty=document.querySelector('#empty');
+  const expand=document.querySelector('#expand');
+  let active='all';
+  function syncExpand(){
+    const visible=cards.filter(card=>!card.hidden);
+    expand.disabled=visible.length===0;
+    expand.textContent=visible.length===0||visible.some(card=>!card.open)?'展开全部':'收起全部';
+  }
+  function update(){
+    const query=input.value.trim().toLocaleLowerCase();let shown=0;
+    for(const card of cards){const match=(active==='all'||card.dataset.group===active)&&(!query||card.textContent.toLocaleLowerCase().includes(query));card.hidden=!match;if(match)shown++;}
+    counter.textContent=`显示 ${shown} / ${cards.length} 组 · 全部 not_run；正反分支各至少一个样本。`;
+    empty.hidden=shown!==0;
+    syncExpand();
+  }
+  for(const button of filters){button.addEventListener('click',()=>{active=button.dataset.filter;for(const b of filters)b.setAttribute('aria-pressed',String(b===button));update();});}
+  input.addEventListener('input',update);
+  expand.addEventListener('click',()=>{const visible=cards.filter(card=>!card.hidden);const open=visible.some(card=>!card.open);for(const card of visible)card.open=open;syncExpand();});
+  for(const card of cards)card.addEventListener('toggle',syncExpand);
+  document.querySelector('#print').addEventListener('click',()=>window.print());
+  let printState=[];
+  window.addEventListener('beforeprint',()=>{printState=cards.map(card=>({card,open:card.open,hidden:card.hidden}));for(const card of cards){card.open=true;card.hidden=false;}});
+  window.addEventListener('afterprint',()=>{for(const state of printState){state.card.open=state.open;state.card.hidden=state.hidden;}syncExpand();});
+  update();
+})();
+</script>
+</body>
+</html>

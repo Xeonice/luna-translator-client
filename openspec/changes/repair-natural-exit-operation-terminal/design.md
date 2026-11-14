@@ -1,0 +1,13 @@
+# 同SID退出终态的原子性
+
+复用现有ApplicationRuntime唯一FIFO消费者、SessionDrainBarrier、Repository writer actor和SQLite Immediate事务。Rust/Repository仍为持久权威；不在UI或Hook回调写数据库，不新增端口或状态机副本。record_hook_diagnostic先按精确SID把opening/active Hook session转为stopped或failed；仅在UPDATE实际改变session且state非active时，把同SID active operations更新为同一终态和同一now。已有stopped/failed/recovered和session=NULL opening行不变；operation ID/request hash/start/legacy marker不变。
+
+SQL继续使用参数绑定。operation UPDATE失败通过?返回，事务不commit；正文seal/session/operation/revision一起回滚。只有生产Repository成功和snapshot publish后Runtime才发成功ACK，Hook端既有等待/租约释放不改。重复或迟到barrier不改终态时间/revision，不终止新SID。
+
+测试复用现有Harness和真实SqliteStore。四个新增回归准确区分三个Runtime FIFO+SQLite与一个Repository/SQLite端口层测试；保留原124616字节测试前缀和所有原断言。临时SQLite trigger仅在测试隔离DB故障注入，产品没有故障开关。
+
+此补丁不改变表、列、类型、索引或约束，但改变真实持久化行为，因此必须声明并执行rust-storage-complete-v2，不能只跑DDL守卫。正式Main需正常Cargo重编；隔离红例后的旧target不能作为候选工件。最终同包四游戏退出仍须核对本次SID的全部operation终态、Host/ACK和租约释放。
+
+真实存储adapter仍编译app-infra --lib，其完整test source闭包因此包含R60已加入永久测试的hook_backend/preview_identity.rs。工具修复仅新增该现有真实输入到v1 base test_sources；现有v2继承，两个adapter都必须通过原闭包检查。禁止通过过滤测试、删目标或放宽闭包验证解决。迁移来源全文件身份核对仍启用；本次发现的R61旧来源hash不符必须独立处理，不能以这里的登记覆盖。
+
+迁移carrier身份是database.rs全文件hash，非DDL方法补丁仍改变该hash。按既有R32来源审阅做精确增量：独立确认迁移一/二SQL完全未变、8行事务修复已按真实分层回归审阅，然后仅更新当前schema2 registry内两条source_sha256和schema2 review内一条production_migration_source_sha256。旧schema1 registry与其引用hash不改，原固定SQL hash、版本、路线、字段及拒绝条件不变。检查逻辑继续拒绝任意未经采用的源码身份。

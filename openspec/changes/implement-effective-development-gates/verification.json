@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "id": "implement-effective-development-gates",
+  "kind": "tooling",
+  "engine": "effective-gates/v1",
+  "allowed_paths": [
+    "openspec/changes/implement-effective-development-gates/**",
+    ".codex/hooks.json",
+    ".codex/gate-context.json",
+    ".githooks/pre-commit",
+    ".githooks/pre-push",
+    "scripts/quality/gate_policy.py",
+    "scripts/quality/test_gate_policy.py",
+    "scripts/quality/codex_hooks.py",
+    "scripts/quality/test_codex_hooks.py",
+    "scripts/quality/gate_effectiveness.py",
+    "scripts/quality/test_gate_effectiveness.py",
+    "scripts/quality/fixtures/gate-effectiveness/**",
+    "scripts/quality/development_gates.py",
+    "scripts/quality/test_development_gates.py",
+    "scripts/quality/gate_checks.py",
+    "scripts/quality/test_gate_checks.py",
+    "scripts/quality/verify_five_scenarios.py",
+    "scripts/quality/render_gate_report.py",
+    "scripts/quality/visual_review.py",
+    "scripts/quality/test_visual_review.py",
+    "scripts/quality/install_git_hooks.py",
+    "package.json",
+    ".github/workflows/engineering-gates.yml",
+    "docs/README.md",
+    "docs/development/gate-validation-design.html",
+    "docs/development/gate-cases.json",
+    "docs/development/gate-design-approval.json",
+    "docs/development/engineering-gates.md",
+    "docs/development/design-alignment-and-release.md",
+    "docs/development/product-acceptance-loop.md",
+    "docs/development/iteration-governance.md",
+    "docs/development/current-phase.json",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/current-product-test-coverage.md",
+    ".build/quality/**",
+    "reports/gates/**",
+    "reports/visual-comparison/**"
+  ],
+  "source_snapshot": "openspec/changes/implement-effective-development-gates/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "ENG-GV-01",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-01 产品范围与入口双向映射",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-02",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-02 ID 正确，业务语义也必须正确",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-03",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-03 真实实现与设计的统一对照",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-04",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-04 前后端模块边界",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-05",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-05 修改范围与真实路径",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-06",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-06 依赖与技术栈",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-07",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-07 Core、架构与语言资源",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-08",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-08 真实生产编译",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-09",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-09 测试代码同样必须编译",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-10",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-10 功能实际发生且只发生一次",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-11",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-11 取消、切换与迟到结果隔离",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-12",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-12 字段类型、空值与值边界",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-13",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-13 关系、唯一性与删除策略",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-14",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-14 迁移与回滚",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-15",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-15 写入、备份与恢复故障",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-16",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-16 包身份与回归记录的汇总判定",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-17",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-17 SessionStart 加载当前上下文",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-18",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-18 PreToolUse 的拒绝真能阻止写入",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-19",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-19 PostToolUse 发现实际违规",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-20",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-20 正常问答不被 Stop 误拦",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-21",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-21 修改交付前不能漏验",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-22",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-22 Stop 有界续跑与外部阻塞",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-23",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-23 Hook 信任、异常与全局共存",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-24",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-24 旧结果必须按依赖失效",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-25",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-25 结果完整性与真实断言",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-26",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-26 并发工作项互不污染",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-27",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-27 影响派发不漏也不滥",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-28",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-28 拒绝与时效条件变异",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-29",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-29 必选派发与测试流程变异",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-30",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-30 真实事件与脚本模拟严格区分",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-31",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-31 手工视觉确认必须真正影响放行",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    },
+    {
+      "id": "ENG-GV-32",
+      "spec": "specs/effective-development-gates/spec.md",
+      "scenario": "GV-32 视觉确认按实际范围失效",
+      "checks": [
+        "gate-effectiveness-execution"
+      ]
+    }
+  ],
+  "design_source": "docs/development/gate-validation-design.html",
+  "review_evidence": {
+    "path": ".build/quality/effective-gates-implementation/final-independent-review.json",
+    "authors": [
+      "root",
+      "gate_policy_impl",
+      "codex_hooks_impl",
+      "gate_effectiveness_impl"
+    ]
+  },
+  "product_source_modified": false,
+  "product_acceptance_promoted": false,
+  "scope_authority": {
+    "path": "docs/development/gate-design-approval.json",
+    "sha256": "826eac4c6d05e5a200d4d7dd16a62fe7edee8e965d1da49c11293e59b96a8e38"
+  },
+  "effective_gate_external_evidence": ".build/quality/effective-gates-implementation/production-external.json"
+}

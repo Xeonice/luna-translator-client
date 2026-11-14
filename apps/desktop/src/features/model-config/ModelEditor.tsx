@@ -1,0 +1,17 @@
+import { ConfigurationRow as FormRow } from './ConfigurationFields';
+import type { Configuration, Model, Template } from '../../bridge/contracts.generated';
+import { Button, Select, TextField } from '../../ui/primitives/Controls';
+import { Group } from '../../ui/patterns/Patterns';
+import { ParameterEditor } from './ParameterEditor';
+import { ModelDefaultTemplateEditor } from './ModelDefaultTemplateEditor';
+
+export function ModelEditor({ model, configuration, onChange, onTemplate, availableModels = [], section = 'necessary', onRefreshModels, refreshing = false, canRefreshModels = false }: { model: Model; configuration: Configuration; onChange: (value: Model) => void; onTemplate: (value: Template) => void; availableModels?: string[]; section?: 'necessary' | 'advanced' | 'parameters'; onRefreshModels?: () => void; refreshing?: boolean; canRefreshModels?: boolean }) {
+  const patch = (value: Partial<Model>) => onChange({ ...model, ...value });
+  const connection = configuration.connections.find(item => item.connectionId === model.connectionId);
+  const protocol = connection ? ({ openai_compatible: 'OpenAI 兼容', anthropic: 'Anthropic Messages', azure_translator: 'Microsoft 文本翻译 v3' } as Record<string, string>)[connection.protocol] ?? connection.protocol : null;
+  return <>{section === 'necessary' ? <Group title="服务配置">
+    <FormRow label="显示名称" note="只改变可读名称，不替换实际请求 ID。"><TextField label="模型配置名称" value={model.displayName} onChange={displayName => patch({ displayName })}/></FormRow>
+    {connection?.protocol !== 'azure_translator' ? <FormRow label="实际模型 ID" note="模型枚举不等于用途能力验证。支持直接手填。"><TextField label="实际模型 ID" value={model.actualModelId ?? ''} onChange={actualModelId => patch({ actualModelId: actualModelId || null, selectionSource: 'manual' })}/>{onRefreshModels ? <Button disabled={!canRefreshModels} pending={refreshing} onPress={onRefreshModels}>刷新列表</Button> : null}</FormRow> : <FormRow label="模型 ID"><span>传统翻译接口，无需模型 ID</span></FormRow>}
+    {availableModels.length ? <FormRow label="发现的模型" note="来自实际连接测试；仍可手动填写其他 ID"><Select label="从实际模型列表选择" value={availableModels.includes(model.actualModelId ?? '') ? model.actualModelId! : ''} onChange={actualModelId => patch({ actualModelId: actualModelId || null, selectionSource: 'discovered' })}><option value="">保留手动填写</option>{availableModels.map(id => <option key={id} value={id}>{id}</option>)}</Select></FormRow> : null}
+  </Group> : null}{section === 'advanced' ? <Group title="模型关联与能力"><FormRow label="所属连接" note={connection ? `${protocol} · ${connection.endpoint ?? '尚未填写服务地址'}` : '选择服务连接。'}><Select label="关联服务连接" value={model.connectionId} onChange={connectionId => patch({ connectionId })}><option value="">选择连接…</option>{configuration.connections.map(item => <option key={item.connectionId} value={item.connectionId}>{item.displayName}</option>)}</Select></FormRow><FormRow label="能力声明" note="能力为手动声明；实际用途仍需测试。"><Select label="模型输出能力" value={model.capabilities.structured === true ? 'structured' : 'text'} onChange={value => patch({ capabilities: { ...model.capabilities, structured: value === 'structured' } })}><option value="text">文本解释</option><option value="structured">结构化解释</option></Select></FormRow></Group> : null}{section === 'parameters' ? <><Group title="模型默认参数"><ParameterEditor parameters={model.parameters} onChange={parameters => patch({ parameters })}/></Group><ModelDefaultTemplateEditor supportsTemplates={connection?.protocol !== 'azure_translator'} model={model} configuration={configuration} onChange={onChange} onTemplate={onTemplate}/></> : null}</>;
+}

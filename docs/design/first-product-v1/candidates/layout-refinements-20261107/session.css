@@ -1,0 +1,38 @@
+/* Proposed stopped-session presentation. Existing colors and actions are reused. */
+html[data-layout-refinement=session] .layout-stopped-heading{align-items:flex-start;gap:18px}
+html[data-layout-refinement=session] .layout-stopped-heading>div:first-child{min-width:0;flex:1}
+html[data-layout-refinement=session] .layout-stopped-heading p{max-width:560px;line-height:1.65}
+html[data-layout-refinement=session] .layout-recovery-actions{display:flex;align-items:center;gap:7px;flex:none;padding-top:3px}
+html[data-layout-refinement=session] .layout-recovery-actions button{white-space:nowrap}
+html[data-layout-refinement=session] .layout-stopped-reading{grid-template-columns:minmax(0,1fr);gap:0;margin-top:20px}
+html[data-layout-refinement=session] .layout-stopped-reading[data-verified-window=true]{grid-template-columns:minmax(0,1fr) 282px;gap:22px}
+html[data-layout-refinement=session] .layout-saved-status{margin:0 0 10px;font-size:11px;color:var(--material-text-secondary)}
+html[data-layout-refinement=session] .layout-saved-status small{font-size:10px;color:var(--material-text-tertiary)}
+html[data-layout-refinement=session] #main-content .layout-last-sentence{margin:0;background:var(--material-inset-fill);border:1px solid var(--material-line);border-radius:var(--material-panel-radius);box-shadow:inset 0 1px var(--material-glint);padding:20px 20px 14px}
+html[data-layout-refinement=session] .layout-last-sentence .source{margin-bottom:16px}
+html[data-layout-refinement=session] .layout-last-sentence .translation{margin-bottom:20px}
+html[data-layout-refinement=session] .layout-saved-actions{margin:12px 0 0;gap:7px}
+html[data-layout-refinement=session] .layout-session-empty{padding:28px 20px;min-height:180px;border-radius:var(--material-panel-radius);background:var(--material-inset-fill);color:var(--material-text-secondary)}
+html[data-layout-refinement=session] .layout-session-empty h2{font-size:16px;font-weight:550;margin:0 0 10px;color:var(--material-text)}
+html[data-layout-refinement=session] .layout-session-empty p{font-size:12px;line-height:1.8;margin:0;max-width:440px}
+html[data-layout-refinement=session] .layout-stopped-reading+.guided-record-sections{margin-top:26px}
+@media(max-width:899px){
+ html[data-layout-refinement=session] .layout-stopped-heading{gap:12px}
+ html[data-layout-refinement=session] .layout-recovery-actions{flex-wrap:wrap;flex-basis:100%;padding-top:0}
+ html[data-layout-refinement=session] .layout-stopped-reading[data-verified-window=true]{grid-template-columns:minmax(0,1fr);gap:18px}
+ html[data-layout-refinement=session] .layout-stopped-reading>.rw-preview-column{justify-self:start}
+ html[data-layout-refinement=session] #main-content .layout-last-sentence{padding:17px 16px 12px}
+}
+
+/* A translation status is secondary to the saved source sentence. */
+html[data-layout-refinement=session] .layout-last-sentence:not([data-translation-state=complete]) .translation{font-size:12px;line-height:1.8;color:var(--material-text-secondary);font-weight:400}
+/* C1 intentionally excludes auxiliary windows. This proposal gives the original
+   auxiliary prototype a separate visible canvas while retaining the Main DOM.
+   It is not a simulation of Native focus, drag or process behavior. */
+html[data-layout-refinement][data-layout-aux=learning] #learning-window:not([hidden]){display:flex!important;flex-direction:column!important;position:fixed!important;inset:0!important;transform:none!important;width:100%!important;height:100%!important;min-height:0;max-width:none;margin:0;z-index:1100!important}
+html[data-layout-refinement][data-layout-aux=learning] #main-window{visibility:hidden}
+html[data-layout-refinement][data-layout-aux=hud] #hud-window:not([hidden]){display:flex!important;flex-direction:column!important;position:fixed!important;left:auto!important;right:12px!important;top:12px!important;bottom:auto!important;transform:none!important;width:560px!important;max-width:calc(100% - 24px);max-height:calc(100% - 24px);margin:0;z-index:900!important}
+html[data-layout-refinement][data-layout-aux=hud] #hud-window .hud-header{height:38px;min-height:38px;box-sizing:border-box;padding:6px 7px}
+
+html[data-layout-refinement=session] .layout-translation-recovery{display:flex;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px solid var(--material-line);padding-top:10px;font-size:11px;color:var(--material-text-secondary)}
+html[data-layout-refinement=session] .layout-translation-recovery button{background:transparent;border:0;box-shadow:none;padding:2px 0;min-height:24px;font-size:11px;color:var(--material-text);text-decoration:underline;text-underline-offset:3px}

@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "id": "repair-native-single-window-evidence",
+  "kind": "tooling",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/repair-native-single-window-evidence/**",
+    "scripts/quality/runtime_observer.swift",
+    "scripts/quality/test_runtime_stability.py",
+    "docs/development/lifecycle-impact-contract.json",
+    "scripts/quality/lifecycle_impact.py",
+    "scripts/quality/test_lifecycle_impact.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R61.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/repair-native-single-window-evidence/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "CAP-001",
+      "spec": "specs/native-single-window-evidence/spec.md",
+      "scenario": "single-window-request-excludes-attached-family-and-shadow",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "CAP-002",
+      "spec": "specs/native-single-window-evidence/spec.md",
+      "scenario": "actual-image-canvas-rejected-before-ocr-when-inconsistent",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "CAP-003",
+      "spec": "specs/native-single-window-evidence/spec.md",
+      "scenario": "original-native-cases-and-oracle-remain-unchanged",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests"
+      ]
+    },
+    {
+      "id": "CAP-004",
+      "spec": "specs/native-single-window-evidence/spec.md",
+      "scenario": "new-source-requires-fresh-runtime-cohort",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C35"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "runtime-stability-guard-tests",
+        "technology-contract-tests",
+        "package-identity-tests",
+        "product-execution-guard-tests"
+      ]
+    },
+    {
+      "id": "FIN-001",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "registered-final-id-retains-the-full-original-cohort",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    },
+    {
+      "id": "FIN-002",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "invalid-or-unapproved-final-registration-is-rejected",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    },
+    {
+      "id": "FIN-003",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "unregistered-runtime-cohort-cannot-be-lightly-validated",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    },
+    {
+      "id": "FIN-004",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "original-contract-and-guard-obligations-are-preserved",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "runtime-stability-guard-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "scope_note": "Only two QA tooling sources. Existing oracle, original guards/native cases, budgets, PRD/design and approved PNG/token/thresholds unchanged. Dimension agreement is not ownership/origin proof; conservative fractional-point refusal remains explicit. Fresh same-package live capture and games required; R59 failure stays immutable. Root explicitly added exactly lifecycle contract/checker/original guard test paths before any Main source integration; schema2 appends an independently pinned ID registry while retaining original primary/phase/all-nine semantics. No metadata pass switch; unknown declared runtime IDs fail closed in development. R59 final WI remains unchanged."
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "independent-current-reference-review/v1",
+  "status": "approved",
+  "catalogue": {
+    "path": "docs/development/current-reference-catalogue.json",
+    "sha256": "bbe6391da9e6d464c52b940e489c3e7bd6b0495eeee0f76bdac2c26007e44906"
+  },
+  "target_id": "guided-service-reading-20261030",
+  "composition_id": "complete-guided-history-20261031",
+  "design_closure_sha256": "72e788d89b489eded79caafd836177b67fa04b463861bf96b110da05e0257ffd",
+  "reviewer_id": "/root/visual_final_review",
+  "author_ids": [
+    "/root",
+    "/root/current_visual_tests"
+  ],
+  "reviewed_at": "2026-11-04T04:28:46.693897+00:00",
+  "independent_non_author_review": true,
+  "reviewed_entries": {
+    "all-page-settings-general-normal": "91310932fa9ddab5d560a58f3a820d91c4cb8b92982473773f7a490fc29fa681",
+    "all-page-main-session-normal": "f9f0d693512f40d4ac2fc45e5775a0363ec508da4e9e532cce599e6ef1942b12",
+    "all-page-subpage-readingpanel-dataset-body-retired-surface-absent": "99f00eb71f83aa6dae7f9c3c4162f31707a762deb3290d3d843e62c0bab37682",
+    "all-page-subpage-modelconfigscreen-tab-connections-retired-surface-absent": "aae5a4b7bd0d460f16a39534578f815275db6c754a6b06431fb67ac0321114bd"
+  },
+  "source_approval_extended": false,
+  "product_alignment_approved": false,
+  "native_verified": false
+}

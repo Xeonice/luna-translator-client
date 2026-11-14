@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "status": "independently_reviewed_history_design_candidate_delta_pending_packet_adoption",
+  "change_id": "design-history-session-pagination",
+  "parent_baseline_sha256": "8c461c9fd548ca204956349c9c1a62402003db7186840e03205ba1824358ef43",
+  "source_delta": [
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before": "9c561843accdfd9855ff713c02dd5c0f75d87fc2beca88c27dbcbfa862000bea",
+      "after": "f7dbe46acb34cbb02f3daebba626c125ca636b22a1e4ef846837804e6e2d84eb"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before": "f357e9fa624abf67bd1eeb526ac055eed8e18747efedc2d73b66de326f9deb30",
+      "after": "532d9a28ed14a55b912c795849388d860627b7f0378ff612cd01278ccd64eb8d"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "c6cd9ca68a966b00e52b6e94f7956eba26da2f8419364f50296ba398f6dc3909",
+      "after": "7bfa62720698f0194f0f989fca0318e08e63d0fcf95a420e5103264f26d77069"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/history-session-paging-20261031/history.css",
+      "before": null,
+      "after": "5f67cfea0e87c609c6038a164ae76208f801ebee868ab0816ba38d4bf6f99160"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/history-session-paging-20261031/history.js",
+      "before": null,
+      "after": "928bf2981914a4953fc05fe5f5557c4ccc8246586120039a0c26084a2ca81dce"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html",
+      "before": null,
+      "after": "6c2cdfa3478822d8be6fed973b126cee82805b8a4a484af29e0df80155eab236"
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/history-session-paging-20261031/manifest.json",
+      "before": null,
+      "after": "9db399ccc8aa380693bf8ac401289c01c683fb67abb545d4043efd2cb6e110fa"
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "before": "fcd0d797fad354377dc242a07e31a38d17baa871ebabeb02657eba5801a0fd9c",
+      "after": "f22f7290fac2e2b26f1a9802e30b83a89c61c7e370d887d23e5939463c513954"
+    },
+    {
+      "path": "docs/development/history-session-paging-plan.json",
+      "before": null,
+      "after": "51d58fcf998507ef9e7f909cdf2f1e582a752520933b3f683a3c06f4ab82ddfc"
+    },
+    {
+      "path": "docs/development/history-session-paging-tests.md",
+      "before": null,
+      "after": "01c96d5e7e70e56ee4bf13eab233f4cbb77156f08a5542bbb12482d0f4543927"
+    },
+    {
+      "path": "docs/product/README.md",
+      "before": "2748b5ed5c92e9d1f64b028c645170f554012eece3b0dc2c71f8938b0305c0fd",
+      "after": "630d23d698e538357eef938509fd819f2c658bd2adb964dea4c93cb25cbcaf24"
+    },
+    {
+      "path": "docs/product/history-session-paging-prd.md",
+      "before": null,
+      "after": "a8546d2024d609ec48fe5002176ac26e0f04c2e633ca27d4d57afce88fcc578e"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/design.md",
+      "before": null,
+      "after": "ea93e344390e7389c988aced51ec05d6865793c6b67fd38d47642fd5a12a8c4f"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/iteration-card.md",
+      "before": null,
+      "after": "8a1d4de154e5d3822cf3e6316c4ec8c684dfd963cd0293499e296940f47ae116"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/proposal.md",
+      "before": null,
+      "after": "2e404be868f225d2e0eb517bc82500d95e7b72f95c5466eef5b88e47917553a6"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/source-snapshot.json",
+      "before": null,
+      "after": "257c47b8705266c7b4af61e8c78604c01aaf003291bf4bb29642d2ac2e978c05"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/specs/history-session-pagination-design/spec.md",
+      "before": null,
+      "after": "1f4fc893395fe9373e39d23b104589b44146b9009913f072ddeabcd4b2aee851"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/tasks.md",
+      "before": null,
+      "after": "e91e73879635e4a3a220b7fdbb04f5e82226a9e1b3681f3ff5765b9652c2a542"
+    },
+    {
+      "path": "openspec/changes/design-history-session-pagination/verification.json",
+      "before": null,
+      "after": "f42ad24c634c8d24ec7d1f500db92635bbf7e79877d6a3b3a5e605cdc9690224"
+    },
+    {
+      "path": "scripts/quality/history_design.py",
+      "before": null,
+      "after": "24d5e8ad277d8353711db75a378aad64199c67e5b92714516cd0967c29772472"
+    },
+    {
+      "path": "scripts/quality/test_history_design.py",
+      "before": null,
+      "after": "e5a181582987cb7e0f147d436c4c04419bf3497521a06aa27d54e9cd102edb91"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "563946c317603f3f90945da847713c4cde00f8ebe0e97584a892628b3ce112e7",
+      "after": "762852c677c99648fe16e4f16a31c709815f43b08e7f0a52e7f8b556b3ebac9b"
+    },
+    {
+      "path": "scripts/report/verify_history_design.cjs",
+      "before": null,
+      "after": "91ca8760ec5c760c3baa420d0eab9c60a72a56ae089810dacc3f0219039e8491"
+    }
+  ],
+  "product_delta": [],
+  "design_review": {
+    "path": ".build/history-design-20261031/review/design-review.json",
+    "bytes": 3702,
+    "sha256": "d117556ffcb97febfca1c1749b8997e67748848fe18ed7aa0c8411e3144ed259"
+  },
+  "documentation_review": {
+    "path": ".build/history-design-20261031/work/review/docs-review.json",
+    "bytes": 5304,
+    "sha256": "f503078748c205fc713d7e2952b63746537f4d38a0912f583a6851a7cd32fd19"
+  },
+  "code_review": {
+    "path": ".build/history-design-20261031/review/tooling-review.json",
+    "bytes": 3713,
+    "sha256": "c6de3c720f49446f13882f6144a238181b6aa6471ae86060cbe9eed637d5157a"
+  },
+  "governance_review": {
+    "path": ".build/history-design-20261031/review/governance-review.json",
+    "bytes": 3262,
+    "sha256": "211566bc7cd28cc93f455f177ca717281c5a014c25b38b749cc9eae2ecf67a8f"
+  },
+  "closed_owner_source_paths": [
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/index.html",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/history.js",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/history.css",
+    "docs/design/first-product-v1/candidates/history-session-paging-20261031/manifest.json",
+    "docs/product/history-session-paging-prd.md",
+    "docs/development/history-session-paging-tests.md",
+    "docs/development/history-session-paging-plan.json",
+    "docs/design/first-product-v1/README.md",
+    "docs/product/README.md",
+    "docs/development/current-client-alignment-plan.md",
+    "scripts/quality/history_design.py",
+    "scripts/quality/test_history_design.py",
+    "scripts/report/verify_history_design.cjs",
+    "scripts/quality/verify.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "openspec/changes/design-history-session-pagination/proposal.md",
+    "openspec/changes/design-history-session-pagination/design.md",
+    "openspec/changes/design-history-session-pagination/tasks.md",
+    "openspec/changes/design-history-session-pagination/iteration-card.md",
+    "openspec/changes/design-history-session-pagination/source-snapshot.json",
+    "openspec/changes/design-history-session-pagination/specs/history-session-pagination-design/spec.md",
+    "openspec/changes/design-history-session-pagination/verification.json"
+  ],
+  "candidate_id": "history-session-paging-20261031",
+  "candidate_status": "pending_review",
+  "approval_metadata_modified": false,
+  "historical_approval_records_preserved": true,
+  "source_evidence_remaps": {
+    "scope": "M15 only verify.py evidence hash rebinding and exact derived module CSV; no implementation or validation status changed"
+  },
+  "scope": "History HTML design candidate and contract/execution tooling only. All R77 approvals and original57-source guided closure, prior PNG/token/zero-threshold/source-version, existing fullpage known_missing, machine plans/CSVs, product/package/DDL/technology, phase/active-change and historical executions remain unchanged. Candidate remains pending_review. No independent reference, product or release acceptance is promoted."
+}

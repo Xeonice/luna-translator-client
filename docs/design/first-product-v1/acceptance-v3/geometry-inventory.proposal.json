@@ -1,0 +1,567 @@
+{
+  "status": "proposal_not_frozen_pending_state_data_completion",
+  "states": [
+    {
+      "id": "empty-library",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "empty-library.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "add-game",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "selector": "[data-ui-surface=\"sheet\"]",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "add-game.top.png",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "scrollTop": 0,
+              "clientHeight": 489,
+              "scrollHeight": 828
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "file": "add-game.bottom.png",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "scrollTop": 339,
+              "clientHeight": 489,
+              "scrollHeight": 828
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "target-review",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "selector": "[data-ui-surface=\"sheet\"]",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "target-review.top.png",
+          "expectedBounds": {
+            "x": 140,
+            "y": 73.1953125,
+            "width": 760,
+            "height": 573.609375
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "scrollTop": 0,
+              "clientHeight": 414,
+              "scrollHeight": 414
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "file": "target-review.bottom.png",
+          "expectedBounds": {
+            "x": 140,
+            "y": 73.1953125,
+            "width": 760,
+            "height": 573.609375
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "scrollTop": 0,
+              "clientHeight": 414,
+              "scrollHeight": 414
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "settings-connections",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "settings-connections.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "scrollTop": 0,
+              "clientHeight": 609,
+              "scrollHeight": 1057
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reading-hud",
+      "viewport": {
+        "width": 560,
+        "height": 147
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "reading-hud.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 147
+          },
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "learning-fixed",
+      "viewport": {
+        "width": 600,
+        "height": 670
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "learning-fixed.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 600,
+            "height": 670
+          },
+          "scrollTop": [
+            {
+              "className": "lp-scroll",
+              "scrollTop": 0,
+              "clientHeight": 503,
+              "scrollHeight": 503
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "library-batch",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "selector": "[data-ui-surface=\"sheet\"]",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "library-batch.top.png",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "scrollTop": 0,
+              "clientHeight": 489,
+              "scrollHeight": 872
+            }
+          ]
+        },
+        {
+          "variantId": "bottom",
+          "file": "library-batch.bottom.png",
+          "expectedBounds": {
+            "x": 140,
+            "y": 36,
+            "width": 760,
+            "height": 648
+          },
+          "scrollTop": [
+            {
+              "className": "dialog-body",
+              "scrollTop": 383,
+              "clientHeight": 489,
+              "scrollHeight": 872
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "display-preferences",
+      "viewport": {
+        "width": 560,
+        "height": 344
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "display-preferences.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 344
+          },
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "model-scheduling",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "model-scheduling.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "scrollTop": 0,
+              "clientHeight": 609,
+              "scrollHeight": 853
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "connection-proxy",
+      "viewport": {
+        "width": 1000,
+        "height": 720
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "connection-proxy.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1000,
+            "height": 720
+          },
+          "scrollTop": [
+            {
+              "className": "ls-scroll",
+              "scrollTop": 0,
+              "clientHeight": 609,
+              "scrollHeight": 904
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "history-earlier",
+      "viewport": {
+        "width": 1040,
+        "height": 720
+      },
+      "selector": "#root",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "history-earlier.top.png",
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 720
+          },
+          "scrollTop": []
+        }
+      ]
+    },
+    {
+      "id": "wordcard-native-size",
+      "variants": [
+        {
+          "variantId": "constrained-workarea",
+          "file": "hand-authored/wordcard-native-size.constrained-workarea.png",
+          "viewport": {
+            "width": 560,
+            "height": 290
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 290
+          },
+          "scrollTop": {
+            "top": 0,
+            "height": 224,
+            "viewport": 159
+          }
+        },
+        {
+          "variantId": "resource-footer",
+          "file": "hand-authored/wordcard-native-size.resource-footer.png",
+          "viewport": {
+            "width": 560,
+            "height": 290
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 560,
+            "height": 290
+          },
+          "scrollTop": {
+            "top": 65,
+            "height": 224,
+            "viewport": 159
+          }
+        },
+        {
+          "variantId": "native-window-context",
+          "file": "hand-authored/wordcard-native-size.native-window-context.png",
+          "viewport": {
+            "width": 1600,
+            "height": 925
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1600,
+            "height": 925
+          },
+          "scrollTop": {
+            "top": 0,
+            "height": 345,
+            "viewport": 345
+          }
+        }
+      ]
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "variants": [
+        {
+          "variantId": "top",
+          "file": "hand-authored/dictionary-distinct-headwords.top.png",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "scrollTop": {
+            "top": 0,
+            "height": 685,
+            "viewport": 149
+          }
+        },
+        {
+          "variantId": "source-a-attribution",
+          "file": "hand-authored/dictionary-distinct-headwords.source-a-attribution.png",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "scrollTop": {
+            "top": 130,
+            "height": 685,
+            "viewport": 149
+          }
+        },
+        {
+          "variantId": "second-headword-source",
+          "file": "hand-authored/dictionary-distinct-headwords.second-headword-source.png",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "scrollTop": {
+            "top": 438,
+            "height": 685,
+            "viewport": 149
+          }
+        },
+        {
+          "variantId": "source-b-attribution-footer",
+          "file": "hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.png",
+          "viewport": {
+            "width": 660,
+            "height": 280
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 660,
+            "height": 280
+          },
+          "scrollTop": {
+            "top": 583,
+            "height": 732,
+            "viewport": 149
+          }
+        }
+      ]
+    },
+    {
+      "id": "glossary-editing",
+      "variants": [
+        {
+          "variantId": "saved-global",
+          "file": "hand-authored/glossary-editing.saved-global.png",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": null
+        },
+        {
+          "variantId": "terms-and-footer",
+          "file": "hand-authored/glossary-editing.terms-and-footer.png",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": null
+        },
+        {
+          "variantId": "save-failure-draft-retained",
+          "file": "hand-authored/glossary-editing.save-failure-draft-retained.png",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": null
+        }
+      ]
+    },
+    {
+      "id": "learning-japanese-linebreak",
+      "variants": [
+        {
+          "variantId": "wide18",
+          "file": "hand-authored/learning-japanese-linebreak.wide18.png",
+          "viewport": {
+            "width": 1040,
+            "height": 760
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 1040,
+            "height": 760
+          },
+          "scrollTop": null
+        },
+        {
+          "variantId": "narrow200percent",
+          "file": "hand-authored/learning-japanese-linebreak.narrow200percent.png",
+          "viewport": {
+            "width": 390,
+            "height": 900
+          },
+          "expectedBounds": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 900
+          },
+          "scrollTop": null
+        }
+      ]
+    }
+  ]
+}

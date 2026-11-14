@@ -1,0 +1,129 @@
+id,title,layer,gate,owner,variants,status
+CR-01-INSTALL,独立安装与非仓库冷启动,L8,B5,PL,DISTRIBUTION,not_run
+CR-01-REPRODUCE,构建与分发资源可追溯,L8,B5,QA,NATIVE,not_run
+CR-02-ABI32,32 位 Rust broker 的新 Core ABI 真回调,L2,B1,HK,CORE32,not_run
+CR-02-ABI64,64 位 Rust broker 的新 Core ABI 真回调,L2,B1,HK,CORE64,not_run
+CR-02-MANAGED,用户操作自动选择并管理 broker,L6,B1,AP,NATIVE,not_run
+CR-02-PHASES,连接阶段与真实成功条件,L6,B1,AP,NATIVE,not_run
+CR-02-IDENTITY,目标身份重验与 PID 复用隔离,L6,B1,AP,NATIVE,not_run
+CR-03-SR,SR.exe 中文版 正式包实时原文,L7,B1,AP,GAME-SR,not_run
+CR-03-MO,MO 正式包实时原文,L7,B1,AP,GAME-MO,not_run
+CR-03-N7,Never7 / GameN7_Steam.exe 正式包实时原文,L7,B1,AP,GAME-N7,not_run
+CR-03-SAKURA,サクラノ詩 10th Anniversary edition 正式包实时原文,L7,B1,AP,GAME-SAKURA,not_run
+CR-05-SR,SR 中文版 真实译文产品复验,L7,B3,AP,GAME-SR,not_run
+CR-05-MO,MO 真实译文产品复验,L7,B3,AP,GAME-MO,not_run
+CR-05-N7,Never7 真实译文产品复验,L7,B3,AP,GAME-N7,not_run
+CR-05-SAKURA,サクラノ詩 10th 真实译文产品复验,L7,B3,AP,GAME-SAKURA,not_run
+CR-04-IDENTITY,完整流身份与明确选流,L6,B1,AP,NATIVE,not_run
+CR-04-SAVE,临时选流与保存快照分离,L6,B2,AP,NATIVE,not_run
+CR-04-RAW,原始增量事件身份与可追溯性,L2,B1,AP,CORE32;CORE64,not_run
+CR-04-SEGMENT,增量文本与阅读单元,L4,B2,AP,INFRA,not_run
+CR-04-UNICODE,编码与完整文字边界,L2,B1,AP,PROTOCOL,not_run
+CR-05-LIVE,无游戏和游戏中的真实翻译,L6,B3,AI,TRADITIONAL;REMOTE-COMPAT;ANTHROPIC;LOCAL-COMPAT,not_run
+CR-05-LATE,迟到译文与旧会话隔离,L4,B3,AP,INFRA,not_run
+CR-05-ERROR,网络和服务故障及恢复,L6,B3,AI,NATIVE,not_run
+CR-06-SEMANTICS,隐藏、暂停、翻译关闭、断开语义,L6,B2,AP,NATIVE,not_run
+CR-06-BACKGROUND,主窗口关闭和 HUD 恢复,L6,B2,PL,NATIVE,not_run
+CR-07-LIFECYCLE,取消、断开、目标退出与重连,L6,B1,AP,NATIVE,not_run
+CR-07-CRASH,broker 故障与安全 DLL 生命周期,L6,B1,HK,NATIVE,not_run
+CR-07-BACKPRESSURE,全链路背压与控制优先,L8,B5,AP,NATIVE,not_run
+CR-07-SOAK,四款真实游戏连续运行样本,L7,B5,AP,GAME-SR;GAME-MO;GAME-N7;GAME-SAKURA,not_run
+CR-07-INTEGRITY,溢出、有损和未知状态不可伪装通过,L6,B1,AP,NATIVE,not_run
+CR-08-CONFIG,持久配置与保存失败恢复,L6,B2,AP,NATIVE,not_run
+CR-08-HISTORY,历史和当前句的一致性,L6,B2,AP,NATIVE,not_run
+CR-08-DIAGNOSTICS,凭据和私人游戏证据的边界,L8,B5,QA,NATIVE,not_run
+CR-09-RESOURCE,缺件、hash、ABI、架构和混装拒绝,L6,B1,HK,NATIVE,not_run
+CR-09-UPGRADE,整套更新与会话所有权冲突,L8,B5,HK,DISTRIBUTION,not_run
+CR-10-VISUAL,原设计稿截图对照,L5,B5,UI,UI;NATIVE,not_run
+CR-10-NATIVE,原生窗口、键盘、焦点和多屏,L6,B5,PL,DISPLAYS,not_run
+CR-12-RESOURCE,内置资源打包与无网络首启,L6,B4,JA,NATIVE,not_run
+CR-12-TOKEN,token词面原型读音及Unicode对齐,L3,B4,JA,INFRA,not_run
+CR-12-RUBY,假名词性色彩和长句布局,L5,B4,JA,UI;NATIVE,not_run
+CR-12-WORDCARD,点击词卡查词和触发边界,L6,B4,JA,NATIVE,not_run
+CR-12-PERSIST,游戏阅读偏好与历史版本隔离,L6,B4,AP,NATIVE,not_run
+CR-12-REVISION,连续增量和迟到词法不覆盖新句,L4,B4,AP,INFRA,not_run
+CR-12-NATIVE,阅读交互与HUD焦点穿透多屏,L6,B4,PL,DISPLAYS,not_run
+CR-12-OFFLINE,离线及词法worker故障不拖住原链路,L6,B4,JA,NATIVE,not_run
+CR-13-PROVIDERS,翻译解释服务独立配置及协议能力,L6,B3,AP,REMOTE-COMPAT;ANTHROPIC;TRADITIONAL;LOCAL-COMPAT,not_run
+CR-13-CONTEXT,当前句上下文术语和模型模板可追溯,L4,B4,AI,INFRA,not_run
+CR-13-STREAM-REVISION,流式中断拒绝取消及迟到结果隔离,L4,B4,AI,INFRA,not_run
+CR-13-GRAMMAR,文法证据引用和不确定语义,L6,B4,JA,REMOTE-COMPAT;ANTHROPIC;LOCAL-COMPAT,not_run
+CR-13-PRIVACY-BUDGET,按需成本隐私缓存和提示注入边界,L6,B4,AI,NATIVE,not_run
+CR-13-EXPLAIN-UI,按需解释固定历史句及失败恢复,L6,B4,AI,NATIVE,not_run
+CR-13-FINAL-SR,SR中文版最终包日语阅读及翻译解释回归,L7,B5,AP,GAME-SR,not_run
+CR-13-FINAL-MO,MO最终包日语阅读及翻译解释回归,L7,B5,AP,GAME-MO,not_run
+CR-13-FINAL-N7,Never7最终包日语阅读及翻译解释回归,L7,B5,AP,GAME-N7,not_run
+CR-13-FINAL-SAKURA,サクラノ詩10th最终包日语阅读及翻译解释回归,L7,B5,AP,GAME-SAKURA,not_run
+MC-01,离线保存与恢复草稿,L6,B3,AP,NATIVE,not_run
+MC-02,模型发现失败与手填,L6,B3,AP,NATIVE,not_run
+MC-03,分层测试与用途状态,L6,B3,AP,NATIVE,not_run
+MC-04,凭据池版本状态与有限调度,L6,B3,AP,NATIVE,not_run
+MC-05,用途分配与独立启用,L6,B3,AP,NATIVE,not_run
+MC-06,从未配置的文法或词卡入口往返,L6,B3,AP,NATIVE,not_run
+MC-07,同连接多模型多用途及多翻译器,L6,B3,AP,NATIVE,not_run
+MC-08,继承覆盖复制与共享影响,L6,B3,AP,NATIVE,not_run
+MC-09,模板变量与发送材料,L6,B3,AP,NATIVE,not_run
+MC-10,上下文预算与会话隔离,L6,B3,AP,NATIVE,not_run
+MC-11,参数能力继承与省略,L6,B3,AP,NATIVE,not_run
+MC-12,保存应用与在途结果归属,L6,B3,AP,NATIVE,not_run
+MC-13,停用删除及引用恢复,L6,B3,AP,NATIVE,not_run
+MC-14,本机服务与路由声明,L6,B3,AP,LOCAL-COMPAT;REMOTE-COMPAT,not_run
+MC-15,调度重试回退与用量,L6,B3,AP,NATIVE,not_run
+MC-16,迁移导出与失败恢复,L6,B3,AP,NATIVE,not_run
+MC-17,文法输出契约和明确降级,L6,B3,AP,REMOTE-COMPAT;ANTHROPIC;LOCAL-COMPAT,not_run
+MC-18,最终客户端的实际服务闭环,L6,B3,AP,TRADITIONAL;REMOTE-COMPAT;ANTHROPIC;LOCAL-COMPAT,not_run
+MC-19,共享连接停用与恢复,L6,B3,AP,NATIVE,not_run
+MC-20,缓存人工修正和重新翻译,L6,B3,AP,NATIVE,not_run
+MC-21,配置档切换与多实例隔离,L6,B3,AP,NATIVE,not_run
+MC-22,专用模型模板格式与语言方向,L6,B3,AP,NATIVE,not_run
+GL-01,首次启动,L6,B2,AP,NATIVE,not_run
+GL-02,本地选择文件,L6,B2,AP,NATIVE,not_run
+GL-03,拖入程序,L6,B2,AP,NATIVE,not_run
+GL-04,目录或多个候选,L6,B2,AP,NATIVE,not_run
+GL-05,快捷方式未解析,L6,B2,AP,NATIVE,not_run
+GL-06,保存入库,L6,B2,AP,NATIVE,not_run
+GL-07,重复目标,L6,B2,AP,NATIVE,not_run
+GL-08,不同Bottle同路径,L6,B2,AP,NATIVE,not_run
+GL-09,编辑目标,L6,B2,AP,NATIVE,not_run
+GL-10,移出游戏库,L6,B2,AP,NATIVE,not_run
+GL-11,选择运行窗口或进程,L6,B1,AP,NATIVE,not_run
+GL-12,窗口跨环境映射,L6,B1,AP,NATIVE,not_run
+GL-13,映射不唯一或无映射,L6,B1,AP,NATIVE,not_run
+GL-14,确认关联并接入,L6,B1,AP,NATIVE,not_run
+GL-15,重新关联与切换目标,L6,B1,AP,NATIVE,not_run
+GL-16,解除窗口关联,L6,B1,AP,NATIVE,not_run
+GL-17,自身保护与显式解除,L6,B1,AP,NATIVE,not_run
+GL-18,窗口退出或重启,L6,B1,AP,NATIVE,not_run
+GL-19,取消或返回,L6,B1,AP,NATIVE,not_run
+GL-20,未知游戏或无文本,L6,B1,AP,NATIVE,not_run
+TP-01,真实SQLite事务在提交边界崩溃仍保持业务原子性,L3,B2,AP,INFRA,not_run
+TP-02,有WAL写入时备份恢复与失败迁移,L3,B2,AP,INFRA,not_run
+TP-03,数据库busy/只读/磁盘满与写队列压力隔离,L3,B2,AP,INFRA,not_run
+TP-04,秘密新增跨Keychain与DB的pending崩溃回收,L3,B2,AP,INFRA,not_run
+TP-05,撤销持久化成功但秘密删除失败后不能恢复授权,L3,B2,AP,INFRA,not_run
+TP-06,订阅建立与snapshot读取无缝衔接,L4,B3,AP,INFRA,not_run
+TP-07,投影丢帧乱序慢窗与服务重启代次恢复,L4,B3,AP,INFRA,not_run
+TP-08,命令幂等与跨窗乐观并发冲突,L4,B3,AP,INFRA,not_run
+TP-09,实际跨进程配置档锁与完整目标租约,L3,B2,AP,INFRA,not_run
+TP-10,配置记录revision与请求语义指纹分离,L1,B3,AP,UNIT,not_run
+TP-11,三态参数继承代数到HTTP字段逐项一致,L1,B3,AP,UNIT,not_run
+TP-12,Rust生成DTO与JavaScript数字/位置边界互通,L2,B4,AP,PROTOCOL,not_run
+TP-13,两LLM流协议任意分片及终止信号归一,L3,B2,AI,INFRA,not_run
+TP-14,超时取消与结果落盘竞争没有幽灵完成,L4,B3,AI,INFRA,not_run
+TP-15,用途请求计划与实际协议body/headers一致,L3,B2,AP,INFRA,not_run
+TP-16,缓存键语义变形与人工修正不可覆盖,L1,B3,AP,UNIT,not_run
+TP-17,UTF8字节span到UTF16投影和选词复制可逆,L2,B4,AP,PROTOCOL,not_run
+TP-18,语言worker输出损坏必须在跨进程边界拒绝,L2,B4,JA,PROTOCOL,not_run
+TP-19,随包中文辞书与真实MeCab的离线质量语料审校,L8,B5,JA,NATIVE,not_run
+TP-20,真实模型翻译与文法的独立语言学质量复核,L8,B5,AI,REMOTE-COMPAT;ANTHROPIC;TRADITIONAL;LOCAL-COMPAT,not_run
+TP-21,每窗口自定义IPC命令在Rust运行时复核作用域,L6,B5,PL,NATIVE,not_run
+TP-22,模型/词典不可信内容只作为文本渲染,L5,B4,JA,UI;NATIVE,not_run
+TP-23,最终包无设计样例/fixture隐式fallback,L8,B5,UI,DISTRIBUTION,not_run
+TP-24,签名身份与应用升级后的Keychain访问,L8,B5,PL,DISTRIBUTION,not_run
+TP-25,历史分页与保留清理不破坏当前/固定对象,L3,B2,AP,INFRA,not_run
+TP-26,真实词法worker挂起必须被终止并有限恢复,L3,B4,JA,INFRA,not_run
+TP-27,身份与阅读状态机的组合不变量,L1,B1,AP,UNIT,not_run
+TP-28,完整组件状态目录与可访问交互,L5,B5,UI,UI;DISPLAYS,not_run
+TP-29,预冻结性能政策下的可响应与资源回收,L8,B5,AP,NATIVE,not_run
+TP-30,干净安装、版本预检与可恢复回退,L8,B5,AP,DISTRIBUTION,not_run
+TP-31,范围、契约、资源许可及质量政策冻结,L0,B0,QA,BASELINE,not_run

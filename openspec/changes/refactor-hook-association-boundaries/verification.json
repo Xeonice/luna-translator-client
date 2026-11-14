@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "id": "refactor-hook-association-boundaries",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/refactor-hook-association-boundaries/**",
+    "crates/app-infra/src/hook_backend.rs",
+    "crates/app-infra/src/hook_backend/window_association.rs",
+    "crates/app-infra/src/hook_backend/preview_identity.rs",
+    "crates/app-infra/src/hook_backend/journal.rs",
+    "native/README.md",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R52.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/refactor-hook-association-boundaries/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-03",
+      "spec": "specs/hook-association-boundaries/spec.md",
+      "scenario": "private-association-proof-extraction-preserves-no-window-and-stale-target-refusal",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    },
+    {
+      "id": "FP-12",
+      "spec": "specs/hook-association-boundaries/spec.md",
+      "scenario": "old-session-drain-and-late-events-cannot-clear-new-session",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview"
+      ],
+      "module_ids": [
+        "M02",
+        "M15"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run"
+}

@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "id": "align-compact-preview-visuals",
+  "kind": "product",
+  "allowed_paths": [
+    "apps/desktop/src/features/capture/WindowPreview.tsx",
+    "apps/desktop/src/features/capture/PreviewDetails.tsx",
+    "apps/desktop/src/features/capture/styles.module.css",
+    "apps/desktop/src/ui/primitives/Controls.tsx",
+    "apps/desktop/src/ui/primitives/controls.module.css",
+    "apps/desktop/src/features/library/LibraryScreen.tsx",
+    "apps/desktop/src/features/reading/styles.module.css",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+    "apps/desktop/tests/visual/verify-ui.mjs",
+    "scripts/report/verify_preview_visuals.mjs",
+    "scripts/quality/preview_visual_evidence.py",
+    "scripts/quality/test_preview_visual_evidence.py",
+    "scripts/quality/product_execution.py",
+    "scripts/quality/verify.py",
+    "scripts/quality/all_page_design_coverage.py",
+    "scripts/quality/test_all_page_design_coverage.py",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "docs/development/current-design-alignment.json",
+    "docs/development/current-phase.json",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261104-R83.json",
+    "openspec/changes/align-compact-preview-visuals/proposal.md",
+    "openspec/changes/align-compact-preview-visuals/design.md",
+    "openspec/changes/align-compact-preview-visuals/tasks.md",
+    "openspec/changes/align-compact-preview-visuals/iteration-card.md",
+    "openspec/changes/align-compact-preview-visuals/source-snapshot.json",
+    "openspec/changes/align-compact-preview-visuals/verification.json",
+    "openspec/changes/align-compact-preview-visuals/specs/current-visuals/spec.md",
+    "apps/desktop/src/features/capture/CaptureSheet.tsx",
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/tests/support/ReviewedSurfaceProbe.tsx",
+    "scripts/report/verify_cp01_reading.mjs",
+    "scripts/quality/cp01_component_evidence.py",
+    "scripts/quality/test_cp01_component_evidence.py",
+    "scripts/quality/test_current_design_alignment.py",
+    "docs/development/lifecycle-impact-contract.json",
+    "scripts/quality/test_lifecycle_impact.py"
+  ],
+  "source_snapshot": "openspec/changes/align-compact-preview-visuals/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "VCP-001",
+      "spec": "specs/current-visuals/spec.md",
+      "scenario": "compact-preview-matches-the-current-reviewed-source",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "all-page-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "product-reading-component-tests",
+        "product-cp01-reading-tests",
+        "product-preview-visual-tests",
+        "preview-visual-evidence-tests",
+        "product-ui-capture-v4",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/game-library-window-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C12",
+        "C14",
+        "C16",
+        "C17",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=window-preview"
+    },
+    {
+      "id": "VCP-002",
+      "spec": "specs/current-visuals/spec.md",
+      "scenario": "details-are-readable-and-preserve-capture-ownership",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "all-page-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "product-reading-component-tests",
+        "product-cp01-reading-tests",
+        "product-preview-visual-tests",
+        "preview-visual-evidence-tests",
+        "product-ui-capture-v4",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/game-library-window-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C12",
+        "C14",
+        "C16",
+        "C17",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=window-preview"
+    },
+    {
+      "id": "VCP-003",
+      "spec": "specs/current-visuals/spec.md",
+      "scenario": "current-reading-and-program-labels-follow-the-final-design-cascade",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "all-page-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "product-reading-component-tests",
+        "product-cp01-reading-tests",
+        "product-preview-visual-tests",
+        "preview-visual-evidence-tests",
+        "product-ui-capture-v4",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/game-library-window-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C12",
+        "C14",
+        "C16",
+        "C17",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=window-preview"
+    },
+    {
+      "id": "VCP-004",
+      "spec": "specs/current-visuals/spec.md",
+      "scenario": "independent-current-state-captures-preserve-real-failures",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "current-design-alignment-contract",
+        "current-design-product-alignment",
+        "current-design-readiness-assessment",
+        "current-product-readiness-assessment",
+        "all-page-design-readiness-assessment",
+        "all-page-design-coverage-tests",
+        "product-reading-component-tests",
+        "product-cp01-reading-tests",
+        "product-preview-visual-tests",
+        "preview-visual-evidence-tests",
+        "product-ui-capture-v4",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-native-ipc-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md",
+        "docs/product/game-library-window-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#main-window"
+      ],
+      "module_ids": [
+        "M03",
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C12",
+        "C14",
+        "C16",
+        "C17",
+        "C35",
+        "C36"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=window-preview"
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_runtime_checks": [],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "review_evidence": {
+    "path": ".build/visual-correction-20261104/review/final-change-review.json",
+    "authors": [
+      "/root",
+      "/root/compact_preview_implementation",
+      "/root/current_visual_tests",
+      "/root/visual_surface_contracts"
+    ]
+  },
+  "authorization": "用户要求进行视觉问题处理，整理后修正；按当前已批准61源实现真实客户端视觉，不修改批准设计/原PNG/阈值或恢复退役交互。",
+  "acceptance_boundary": "Scoped current-design references and actual React checks do not grant all-state or packaged-native approval. Historical37/failures and original794 current obligations remain; new real details surface is added rather than hiding it."
+}

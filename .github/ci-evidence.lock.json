@@ -1,0 +1,61 @@
+{
+  "files": {
+    ".build/quality/github-activation-20261115/hooks-live-03/actual-hook-events.jsonl": {
+      "sha256": "f075dde92bbaadb2e029db4d31a9456e7d7cc56a2ef9202a0c74eb8b5947ac9d",
+      "size": 7798
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/disabled-independent-assessment.json": {
+      "sha256": "23c6a1d2a12c91afb348a9b6c03923651eba8a0ae894d738fee23762030265a6",
+      "size": 5996
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/external-file-observations.json": {
+      "sha256": "31280612d9601a479a38d7c2af25003ff871e3ca7fbb9b676bd038bd794e67f9",
+      "size": 331
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/filesystem-after/positive.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/filesystem-after/post-only.txt": {
+      "sha256": "6893cce8b4147018a732f81927f6f50e46469b14b758fe8786ea57dec395d06b",
+      "size": 20
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/hooks-disabled.stderr.log": {
+      "sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "size": 39
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/hooks-disabled.stdout.jsonl": {
+      "sha256": "ae808bd0b94ea48290c4ca6bd826a1f1706fdf33408ba3b1bd4586d80a9819b3",
+      "size": 1419
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/isolated-hook-definition.json": {
+      "sha256": "11acde4115b6e8ff333dfabcbbf5e2ff3bd08733af228c3a609d092496a1110f",
+      "size": 2155
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/readonly.stderr.log": {
+      "sha256": "1aa26269eb1cc57f86b235a03cda53c004edb5b1e9fc99d4da4f00843293d721",
+      "size": 39
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/readonly.stdout.jsonl": {
+      "sha256": "da19bcf5aa3045a2dac9c268b7c183b83e2afb65a89bd9f8561772762a81dcc8",
+      "size": 721
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/result.json": {
+      "sha256": "91ffcc090406ffe46cb05883faef3ba40809f6cf58e059d01a542e21f49894e0",
+      "size": 54360
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/write-probes.stderr.log": {
+      "sha256": "b0183276f8c2863ba25c73b5eaa2d5c03072f61c73be98bcc759d26d584a494d",
+      "size": 394
+    },
+    ".build/quality/github-activation-20261115/hooks-live-03/write-probes.stdout.jsonl": {
+      "sha256": "61ed337287348ac7182130da35fba95304d32af8a2e98c2f7b784cd23a737ce9",
+      "size": 13803
+    }
+  },
+  "kind": "pinned-actual-codex-L3-transport/v1",
+  "proof_path": ".build/quality/github-activation-20261115/hooks-live-03/result.json",
+  "sha256": "8849ce1bbd5d2c06db61ca84c08942e42de1bdda006d132866dc5892a7128b23",
+  "size": 13708,
+  "url": "https://github.com/Xeonice/luna-translator-client/releases/download/ci-dependencies-20261115/hooks-evidence-03.zip"
+}

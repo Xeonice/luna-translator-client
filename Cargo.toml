@@ -1,0 +1,21 @@
+[workspace]
+members = ["crates/app-core", "crates/app-infra", "crates/language-worker", "crates/offline-translation-worker", "crates/hook-contracts", "crates/lunahook-host", "crates/hook-client", "apps/desktop/src-tauri"]
+resolver = "3"
+
+[workspace.package]
+version = "0.2.0"
+edition = "2024"
+rust-version = "1.89"
+license = "GPL-3.0-or-later"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["raw_value"] }
+sha2 = "0.10"
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[workspace.lints.clippy]
+undocumented_unsafe_blocks = "deny"
+

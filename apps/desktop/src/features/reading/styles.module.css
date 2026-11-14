@@ -1,0 +1,156 @@
+.body{padding:26px 28px;overflow:auto}.reading{background:var(--material-inset-fill);border:1px solid var(--material-line);border-radius:13px;padding:20px 22px}.reading>header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.reading>header>span{font-size:10px;color:var(--material-text-tertiary)}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.translations{margin-top:12px}.translation{margin:0;padding:12px 0}.translation+.translation{border-top:1px solid var(--material-line)}.translation p{line-height:1.7;letter-spacing:.01em;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.translation small{display:block;color:var(--material-text-tertiary);font-size:10px;margin-top:12px}.unavailable{color:var(--material-text-tertiary);font-size:11px;line-height:1.8;margin:8px 0}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:38px;padding:0 8px;border-top:1px solid var(--material-line)}.toolbar>span{font-size:10px;color:var(--material-text-tertiary)}
+.task{padding:11px 0;border-top:1px solid var(--material-line);margin-top:10px}.task>p{margin:0 0 8px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.8}.task>div{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--material-text-secondary);font-size:10px}
+
+/* HUD uses the approved reading hierarchy; provenance remains in full reading/history views. */
+.compact{margin-top:10px}.compact .translation{padding:0}.compact .translation p{line-height:1.5;letter-spacing:.005em}.compact .translation+.translation{padding-top:10px;margin-top:10px}.sessionPanel{padding:20px 24px;min-width:0}.recordIntro{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.recordIntro h2{font-size:16px;margin:0}.recordIntro p{font-size:11px;color:var(--material-text-secondary);margin:5px 0 0;line-height:1.7}.recordIntro>span{font-size:10px;white-space:nowrap;border-radius:5px;padding:3px 7px;background:var(--material-control-fill)}.recordToolbar{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-bottom:14px}.recordToolbar>div:first-child{flex:1;min-width:160px}.recordToolbar>button{font-size:11px;flex:none}.recordToolbar>div{max-width:210px}.records{border:1px solid var(--material-line);border-radius:var(--material-panel-radius);background:var(--material-inset-fill);max-height:480px;overflow:auto;overscroll-behavior:contain;overflow-anchor:auto}.textEntry,.logEntry{padding:15px 14px;display:grid;grid-template-columns:36px minmax(0,1fr);gap:8px;border-bottom:1px solid var(--material-line)}.textEntry:last-child,.logEntry:last-child{border-bottom:0}.sequence{font:10px/1.8 ui-monospace,SFMono-Regular,monospace;color:var(--material-text-secondary);overflow-wrap:anywhere}.recordMeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:10px;color:var(--material-text-secondary);margin-bottom:7px}.recordMeta strong{font-weight:500;color:var(--material-text)}.recordMeta time{margin-left:auto}.recordMeta>span{font-size:9px;border-radius:5px;background:var(--material-control-fill);padding:3px 7px}.textEntry p{font-size:14px;line-height:1.9;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}.logEntry p{font-size:12px;line-height:1.85;overflow-wrap:anywhere;margin:0}.textEntry .historyTranslation{font-size:12px;color:var(--material-text-secondary);margin-top:7px;line-height:1.8}.textEntry details,.logEntry details{margin-top:10px;padding-top:8px;border-top:1px solid var(--material-line)}.textEntry summary,.logEntry summary{font-size:10px;color:var(--material-text-secondary);cursor:default}.recordDetails{font-size:10px;line-height:1.8;margin-bottom:0}.recordDetails>div{display:grid;grid-template-columns:75px minmax(0,1fr);gap:10px}.recordDetails dt{color:var(--material-text-secondary)}.recordDetails dd{margin:0;overflow-wrap:anywhere}.recordFooter{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:var(--material-text-secondary)}.recordFooter button{font-size:11px}.exportFields{display:grid;gap:16px;font-size:12px;line-height:1.8}.exportFields>label{display:flex;align-items:flex-start;gap:7px}@media(max-width:750px){.sessionPanel{padding:16px 13px}.recordToolbar>div{max-width:100%}.textEntry,.logEntry{padding:12px 9px;grid-template-columns:28px minmax(0,1fr);gap:4px}.recordMeta{gap:5px}.recordMeta time{margin-left:0}}
+
+.sessionContent{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;container:reading-session / inline-size}
+
+/* Session filters use the reviewed compact control row; the search remains a
+   full-dataset Rust query rather than a filter over the visible page. */
+.recordToolbar{align-items:center}
+.recordToolbar [data-field-label]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.recordSearch{min-width:180px;display:flex;align-items:center;gap:7px;flex:1;border:1px solid var(--material-line);border-radius:var(--material-control-radius);background:var(--material-field-fill);padding:0 8px}
+.recordSearch>svg{flex:none;color:var(--material-text-secondary)}
+.recordSearch>input{width:100%;min-width:0;max-width:100%;padding:5px 8px;border:0;box-shadow:none;background:transparent;color:var(--material-text);font:inherit;font-size:12px;outline-offset:2px}
+.recordToolbar>[data-select-field]{min-width:160px;max-width:210px}
+.recordToolbar>button{display:flex;align-items:center;gap:5px}
+.recordToolbar>button svg{height:12px;width:12px}
+.textEntry details,.logEntry details{padding-top:8px;border-top:1px solid var(--material-line)}
+@media(max-width:750px){.recordSearch{flex-basis:100%}.recordToolbar>[data-select-field]{max-width:100%;flex:1}.recordIntro{align-items:flex-start}.recordIntro h2{font-size:15px}.recordIntro>span{flex-shrink:0}}
+
+.recordIntro h2{font-weight:600;line-height:1.4;letter-spacing:-.3px}
+.recordRange{font-size:11px;line-height:1.8;color:var(--material-text-secondary);margin:-3px 0 12px}
+.recordRange>div{display:flex;gap:10px;flex-wrap:wrap}
+.recordRange details{margin-top:4px;border-top:1px solid var(--material-line);padding-top:12px}
+.recordRange summary{font-size:12px;cursor:pointer}
+.recordRange dl{margin:6px 0}
+.recordRange dl>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:3px 12px}
+.recordRange dd{margin:0;overflow-wrap:anywhere}
+.records{scrollbar-gutter:stable}
+.recordFooter{align-items:flex-start}
+.recordFooter>span{max-width:65%;line-height:1.8}
+.recordLoadError{color:var(--material-error)}
+.recordLoadError details{margin-top:4px;font-size:10px}
+.recordLoadError summary{font-size:10px}
+.recordMeta>span.association{background:transparent;padding:0;font-size:10px}
+.recordMeta>span.warningPill{background:var(--material-warning-fill);color:var(--material-warning)}
+.retainedNotice{color:var(--material-text-secondary)}
+.historyTranslation+.historyTranslation{margin-top:4px}
+.historyTranslation small{font-size:11px}
+.bodyHistory{padding:0 20px 20px}
+
+/* Current reading stays independent from the three retained historical views. */
+
+.sessionState{margin:0}
+.sessionState>header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+.sessionState h2{font-size:13px;font-weight:600;margin:0}
+.sessionState>header>span{display:inline-flex;align-items:center;gap:4px;padding:3px 7px;border-radius:5px;background:var(--material-control-fill);font-size:10px;line-height:1.4;white-space:nowrap;color:var(--material-good)}
+.statusRows{border:1px solid var(--material-line);border-radius:var(--material-panel-radius);padding:0 13px;background:var(--material-inset-fill);backdrop-filter:blur(var(--material-inset-blur)) saturate(var(--material-inset-saturation));box-shadow:inset 0 1px 0 rgba(255,255,255,.035),0 1px 2px rgba(0,0,0,.05)}
+.statusRows>[data-form-row]{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:11px 0;min-height:48px;font-size:13px}
+.statusRows>[data-form-row] strong{font-weight:400}
+.statusRows>[data-form-row] small{display:block;margin-top:3px;font-size:10px;line-height:1.65;color:var(--material-text-secondary)}
+.statusRows>[data-form-row]>div:last-child{text-align:right;font-size:12px;max-width:58%;overflow-wrap:anywhere}
+
+@media(max-width:750px){.statusRows>[data-form-row]{gap:12px;font-size:12px}.statusRows>[data-form-row]>div:last-child{max-width:61%;font-size:11px}}
+
+.unboundPreview{border:1px solid var(--material-line);border-radius:var(--material-panel-radius);background:var(--material-inset-fill);padding:22px 18px;display:flex;flex-direction:column;align-items:center;text-align:center;color:var(--material-text-secondary);font-size:11px;gap:8px}
+.unboundPreview>strong{font-size:12px;color:var(--material-text)}
+.unboundPreview>p{margin:0;max-width:280px;line-height:1.7}
+.unboundPreview>button{font-size:11px;margin-top:3px}
+
+.sessionState>header>span{color:var(--material-text-secondary)}
+.sessionState>header>span[data-connected=true]{color:var(--material-good)}
+.recordRange dl{display:grid;grid-template-columns:110px minmax(0,1fr);gap:3px 12px}
+.recordRange dl>div{display:contents}
+
+/* Match the approved native main-window control rhythm. */
+.sessionContent>header button{font-size:12px;min-height:29px;padding:5px 11px}
+
+.recordToolbar>[data-select-field]{min-width:140px}
+.recordToolbar>button{min-height:29px;padding:5px 11px;border-color:var(--material-line);box-shadow:inset 0 1px 0 var(--material-glint),0 1px 2px rgba(0,0,0,.08)}
+.recordToolbar>div:has(input){font-size:13px}
+.recordToolbar>div input{font:inherit;min-height:0;padding:5px 8px;border-radius:var(--material-control-radius)}
+.recordMeta>span{line-height:1.4}
+.logEntry details{font-size:10px;margin-top:9px;padding-top:7px}
+/* C36 uses the platform scroll affordance from the reviewed design. Revert
+   the application's custom scrollbar skin without hiding overflow or controls. */
+.recordToolbar input::placeholder{color:var(--material-text-secondary);opacity:1}
+.recordMeta>span.association{line-height:1.5}
+
+.recordToolbar>div input{background:var(--material-inset-fill);border:1px solid var(--material-line);box-shadow:inset 0 1px 2px rgba(0,0,0,.09),0 1px 0 rgba(255,255,255,.025)}
+
+.recordIntro>span{line-height:1.4;display:inline-flex;align-items:center;gap:4px}
+
+
+/* CP-01: primary reading uses shared annotated content. Historical sections
+   keep their own DOM, query state and scroll container when collapsed. */
+.recordSections{margin:14px 26px 26px;border-top:1px solid var(--material-line);min-width:0}
+.recordDisclosure{margin:0;padding:0;border:0;border-bottom:1px solid var(--material-line);min-width:0}
+.recordDisclosure>summary{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:11px 2px;min-width:0}
+.recordDisclosure>summary::-webkit-details-marker{display:none}
+.recordDisclosure>summary:focus-visible,.connectionManagement>summary:focus-visible{outline:1px solid var(--material-accent);outline-offset:3px;border-radius:3px}
+.disclosureDescription{display:flex;align-items:center;gap:16px;min-width:0;flex:1}
+.disclosureDescription strong{font-size:12px;font-weight:550;white-space:nowrap}
+.disclosureDescription small{font-size:10px;line-height:1.5;color:var(--material-text-secondary)}
+.disclosureCount{font-size:10px;color:var(--material-text-secondary);text-align:right;max-width:40%;overflow-wrap:anywhere}
+.disclosureCount small{display:block;font-size:10px;line-height:1.5;color:var(--material-warning)}
+.disclosureAction{display:inline-flex;align-items:center;gap:6px;font-size:10px;white-space:nowrap;color:var(--material-text-secondary);flex:none}
+.recordDisclosure[open]>summary .disclosureAction svg{transform:rotate(180deg)}
+.recordDisclosure .sessionPanel{padding:4px 0 18px}
+.recordDisclosure .recordIntro{display:none}
+.recordDisclosure .records{max-height:340px}
+.connectionManagement{padding:12px 2px;font-size:11px;color:var(--material-text-secondary)}
+.connectionManagement>summary{cursor:pointer}
+.connectionManagement>div{display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding-top:10px}
+.connectionManagement p{flex-basis:100%;margin:0;line-height:1.7;overflow-wrap:anywhere}
+.connectionManagement button{font-size:11px;max-width:100%}
+@container main-client (max-width:899px){.disclosureDescription{display:block}.disclosureDescription small{display:block;margin-top:4px}}
+@media(max-width:750px){.recordSections{margin:14px}.recordDisclosure>summary{gap:8px;align-items:flex-start}.disclosureCount{max-width:35%}}
+/* Current session: approved reading-first regions and common action order.
+   Main typography derives from shared preferences in reading-typography.ts. */
+.readingGrid{display:grid;grid-template-columns:minmax(0,1fr) 282px;gap:22px;margin:16px 26px 12px;align-items:start}
+.currentReading{min-width:0;max-width:100%}
+.liveStatus{display:flex;gap:7px;align-items:center;font-size:11px;color:var(--material-text-secondary);margin:8px 0 18px;min-width:0}
+.liveDot{height:5px;width:5px;border-radius:50%;background:var(--material-text-secondary);flex:none}
+.liveStatus small{margin-left:auto;max-width:55%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}
+.overview{padding:20px;border:0;border-radius:var(--material-panel-radius);margin:14px 0;background:none;backdrop-filter:blur(var(--material-inset-blur)) saturate(var(--material-inset-saturation));box-shadow:none;min-width:0}
+.overview [data-testid=source-text]{line-height:1.95;letter-spacing:normal;white-space:pre-wrap;overflow-wrap:anywhere}
+.overview .translations{margin-top:18px}
+.overview .translation{padding:0}
+.overview .translation+.translation{margin-top:12px;padding-top:12px}
+.overview .translation p{line-height:1.8;letter-spacing:normal;overflow-wrap:anywhere}
+.overview>footer{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;color:var(--material-text-secondary);font-size:10px;line-height:1.5;padding:8px 0;margin-top:18px;overflow-wrap:anywhere}
+.overview>footer>span:last-child{flex:none}
+.currentActions{display:flex;align-items:center;flex-wrap:wrap;gap:7px;margin:18px 0}
+.currentActions>button{font-size:11px;min-height:29px;padding:6px 9px;max-width:100%;white-space:normal}
+.previewColumn{width:282px;max-width:100%;min-width:0;margin-inline-start:auto;align-self:start;position:sticky;top:14px;padding:0}
+.previewColumn>section{margin-top:0}
+@container main-client (max-width:899px){.readingGrid{grid-template-columns:minmax(0,1fr);margin:16px 18px 12px}.recordSections{margin-left:18px;margin-right:18px}.previewColumn{position:static;justify-self:start;margin-inline-start:0}}
+/* Browser zoom reduces available content without changing viewport media
+   queries. Reflow based on the actual session region before text can collapse. */
+@container reading-session (max-width:660px){.readingGrid{grid-template-columns:minmax(0,1fr)}.previewColumn{position:static;justify-self:start;margin-inline-start:0}}
+@media(max-width:750px){.readingGrid{margin:14px}.overview{padding:15px}.overview>footer{flex-wrap:wrap}.liveStatus small{max-width:45%}}
+
+/* Approved stopped-session layout. Binding remains independently authoritative;
+   the same WindowPreview stays mounted while Hook capture changes state. */
+.sessionContent[data-session-layout=stopped]>header{align-items:flex-start;gap:18px}
+.sessionContent[data-session-layout=stopped]>header>div:first-child{min-width:0;flex:1}
+.sessionContent[data-session-layout=stopped]>header p{max-width:560px;line-height:1.65}
+.stoppedGrid{grid-template-columns:minmax(0,1fr);gap:0;margin-top:20px}
+.stoppedGrid[data-verified-window=true]{grid-template-columns:minmax(0,1fr) 282px;gap:22px}
+.savedStatus{margin:0 0 10px}
+.savedStatus small{font-size:10px;color:var(--material-text-tertiary)}
+.savedOverview{margin:0;padding:20px 20px 14px;background:var(--material-inset-fill);border:1px solid var(--material-line);box-shadow:inset 0 1px var(--material-glint)}
+.savedOverview .task>div{font-size:12px;line-height:1.8}
+.savedOverview .unavailable{font-size:12px;line-height:1.8}
+.savedOverview+.currentActions{margin:12px 0 0}
+.stoppedGrid+.recordSections{margin-top:26px}
+.translationRecovery{font-size:11px;color:var(--material-text-secondary);margin-top:8px}
+.translationRecovery button{border:0;background:transparent;box-shadow:none;padding:2px 0;min-height:24px;font-size:11px;text-decoration:underline;text-underline-offset:3px}
+@container main-client (max-width:899px){
+ .sessionContent[data-session-layout=stopped]>header{gap:12px}
+ .stoppedGrid[data-verified-window=true]{grid-template-columns:minmax(0,1fr);gap:18px}
+ .savedOverview{padding:17px 16px 12px}
+}
+@container reading-session (max-width:660px){.stoppedGrid[data-verified-window=true]{grid-template-columns:minmax(0,1fr);gap:18px}}

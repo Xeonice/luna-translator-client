@@ -1,0 +1,1029 @@
+{
+  "schema_version": 1,
+  "kind": "independent_r16_storage_gate_repair_review",
+  "reviewed_at_utc": "2026-10-19T12:04:49.549511+00:00",
+  "reviewer": "/root/r16_storage_review",
+  "status": "passed",
+  "scope": "Independent read-only exact before/after code review of R16 rejection-seam and assertion-marker repairs; not product acceptance",
+  "repository_git": "git diff attempted; directory has no .git; exact git diff --no-index against preserved r16-before used",
+  "source_modified_by_reviewer": false,
+  "tests_run_by_reviewer": false,
+  "blocking_findings": [],
+  "critical_findings": [],
+  "high_priority_findings": [],
+  "reviewed_files": [
+    {
+      "path": "scripts/quality/storage_schema.py",
+      "before_sha256": "4d4a91163031ab0ef8a32fff46b5731a6a39616ccd3d1ceb6e7c088c2d577183",
+      "after_sha256": "aba76adf898f071def88e2ff758b3aad3c1f192138a14430a61e78a1afc1edcd",
+      "before_bytes": 11136,
+      "after_bytes": 12626
+    },
+    {
+      "path": "scripts/quality/test_storage_schema.py",
+      "before_sha256": "cd5c5965228669f156d37be43903010f9bcc1163a4210ffd1f5e40b668213d17",
+      "after_sha256": "626247fc9a5cde3bd8ea5de9610c32da8be88ed29908e38684e3034d27f9b39a",
+      "before_bytes": 10857,
+      "after_bytes": 18688
+    },
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "before_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891",
+      "after_sha256": "938e3dd08a4eee4d44c391be99897c5e005504f19e44c6d37aa3027c9df18f48",
+      "before_bytes": 55316,
+      "after_bytes": 55994
+    },
+    {
+      "path": "scripts/quality/test_storage_acceptance.py",
+      "before_sha256": "fcfe3a3155c1bad6c0b129cabfc34efecfbe0ef8938e088d3ca3a4af0747b6d7",
+      "after_sha256": "c5819b6f383e640b8590e0fa85ae304dc3d89698bf45da3a361cd308a1ce84af",
+      "before_bytes": 43683,
+      "after_bytes": 46940
+    },
+    {
+      "path": "crates/app-infra/tests/storage_acceptance_support/receipt.rs",
+      "before_sha256": "09c636693efdb3005df9ff0b72e55f4eb6b2f6fcace5dac5f70df05140194747",
+      "after_sha256": "6bb2c5aadcc888dfb941fa37e02f0c64defb60bb0654897258a37208aec83079",
+      "before_bytes": 13336,
+      "after_bytes": 15558
+    },
+    {
+      "path": "openspec/changes/implement-first-product/verification.json",
+      "before_sha256": "2c8ea4ceab622c6a9ec821f02afe227de214a3a2fb65c77ada3e76d3cbc76123",
+      "after_sha256": "a264ddc3ec4b61c7b7a79ec24a3e0ce9ec76361457896e864dd01c52194cb38a",
+      "before_bytes": 13667,
+      "after_bytes": 13723
+    }
+  ],
+  "invariants": [
+    {
+      "id": "R16-01",
+      "status": "passed_static_review",
+      "title": "Healthy database validation remains strict",
+      "evidence": [
+        "scripts/quality/storage_schema.py:152-194",
+        "scripts/quality/storage_acceptance.py:684-692",
+        "scripts/quality/test_storage_schema.py:175-197"
+      ],
+      "finding": "Ordinary compare_schema/compare_schema_file still reject every foreign_key_check violation and require the same sealed/read-only/integrity/full-schema checks. The dedicated negative-fixture entry point is not exposed as the ordinary CLI candidate mode."
+    },
+    {
+      "id": "R16-02",
+      "status": "passed_static_review",
+      "title": "Explicit negative fixture requires complete healthy structure and genuine bad relationship",
+      "evidence": [
+        "scripts/quality/storage_schema.py:138-173",
+        "scripts/quality/storage_schema.py:197-219"
+      ],
+      "finding": "Only profile identity is accepted; escaped mode=ro&immutable=1, query_only, foreign_keys, integrity_check==ok, complete frozen shape and at least one real FK violation are all mandatory. WAL/SHM and symlink rules are unchanged."
+    },
+    {
+      "id": "R16-03",
+      "status": "passed_static_review",
+      "title": "Frozen rejection route and migration chain remain authoritative",
+      "evidence": [
+        "scripts/quality/storage_acceptance.py:345-354",
+        "scripts/quality/storage_acceptance.py:375-403",
+        "scripts/quality/storage_acceptance.py:454-459",
+        "scripts/quality/storage_acceptance.py:642-705"
+      ],
+      "finding": "Dedicated comparison is selected only for source-position rejected relationship_corrupt with frozen database_relationship_corrupt error. Actual outcome/error and schema contract SHA still match the registry. Both before/after validate the exact valid version/previous-version/content-hash ledger; rejected before/after hashes remain equal."
+    },
+    {
+      "id": "R16-04",
+      "status": "passed_static_review",
+      "title": "Production rejection and original bytes are still actually asserted by Rust",
+      "evidence": [
+        "crates/app-infra/tests/storage_acceptance_routes.rs:151-170",
+        "crates/app-infra/tests/storage_acceptance_routes.rs:387-396"
+      ],
+      "finding": "Unchanged Rust producer constructs a real orphan in a production-created profile, invokes actual SqliteStore::open, asserts database_relationship_corrupt and raw original byte equality before recording the route. Source review alone does not establish that current full adapter ran."
+    },
+    {
+      "id": "R16-05",
+      "status": "passed_static_review",
+      "title": "Assertion formatter fixes line boundary without inventing evidence",
+      "evidence": [
+        "crates/app-infra/tests/storage_acceptance_support/receipt.rs:352-422",
+        "scripts/quality/storage_acceptance.py:601-626"
+      ],
+      "finding": "Only the already-assembled real checks are emitted; one initial newline separates a libtest prefix, then unchanged ID/count/PASS format with propagated Write errors and flush. Existing exact inventory, positive count, no skip, per-ID unique marker and actual nonzero Rust-run summary consumer remain unchanged. Synthetic formatter inputs exist only inside cfg(test)."
+    },
+    {
+      "id": "R16-06",
+      "status": "passed_static_review",
+      "title": "Frozen scope and numeric configuration unchanged",
+      "evidence": [
+        "openspec/changes/implement-first-product/verification.json:88-92",
+        "docs/development/iteration-baseline.json",
+        "docs/development/storage-acceptance.json"
+      ],
+      "finding": "Verification change only authorizes preservation of the R15 baseline journal. No production pool/timeout/cache/memory/thread limits, matrix expectations, DDL, original/approved PNGs, material tokens, legacy debt or tolerance were changed by the reviewed delta. All selected protected content hashes still equal R15."
+    }
+  ],
+  "existing_execution_logs_read": [
+    {
+      "path": ".build/acceptance-closure-20261019/review/r16-schema-tests.log",
+      "sha256": "5c19214eabff4aab4583147f41a2bb53b2337e9ea985006a6040bdcb506a2145",
+      "observed_result": "34 schema-comparator guard tests passed",
+      "reviewer_executed": false
+    },
+    {
+      "path": ".build/acceptance-closure-20261019/review/r16-rejection-seam-tests.log",
+      "sha256": "495e8b4f50a210fedb5c91170c6d6ea568983f59adc6417e323d65059453a53b",
+      "observed_result": "2 isolated rejection-seam guard tests passed",
+      "reviewer_executed": false
+    },
+    {
+      "path": ".build/acceptance-closure-20261019/review/r16-marker-focused.log",
+      "sha256": "5570fda77d811c7b875ef6c70cacb29f6214f5cdf282b3767300668483a03f83",
+      "observed_result": "1 exact Rust formatter unit test passed; 118 filtered, not full acceptance",
+      "reviewer_executed": false
+    },
+    {
+      "path": ".build/acceptance-closure-20261019/review/r16-marker-cargo-check.log",
+      "sha256": "070163fac48f89ea0cf12cd596b73f8d4eae87ee698cefda28d1c9ce84d1df91",
+      "observed_result": "actual app-infra integration target cargo check passed",
+      "reviewer_executed": false
+    },
+    {
+      "path": ".build/acceptance-closure-20261019/review/r16-all-focused-guards.log",
+      "sha256": "47115f8f8ce31b899f2ebf10227e6d95fd57e773b7679d784db65a8be47d1287",
+      "observed_result": "153 focused guard tests passed: 53 product-execution guards + 66 storage-acceptance guards + 34 schema guards; distinct from 153 product plan execution combinations",
+      "observed_test_class_counts": {
+        "test_product_execution": 53,
+        "test_storage_acceptance": 66,
+        "test_storage_schema": 34
+      },
+      "reviewer_executed": false
+    }
+  ],
+  "baseline_identity": {
+    "id": "FP1-20261019-R15",
+    "path": "docs/development/iteration-baseline.json",
+    "sha256": "3762b0aee50341cfc0a73673730f02637e338f9630811d7dbe2dd3ac09afcbc2",
+    "content_hash_drift": [
+      {
+        "path": "scripts/quality/storage_acceptance.py",
+        "before_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891",
+        "after_sha256": "938e3dd08a4eee4d44c391be99897c5e005504f19e44c6d37aa3027c9df18f48"
+      },
+      {
+        "path": "scripts/quality/test_storage_acceptance.py",
+        "before_sha256": "fcfe3a3155c1bad6c0b129cabfc34efecfbe0ef8938e088d3ca3a4af0747b6d7",
+        "after_sha256": "c5819b6f383e640b8590e0fa85ae304dc3d89698bf45da3a361cd308a1ce84af"
+      }
+    ],
+    "pending_r16_registration_required": true,
+    "r15_protected_entries": 355,
+    "reviewed_existing_protected_updates": 2,
+    "other_protected_entries_with_unchanged_sha256": 353,
+    "newly_protected_comparator_files_planned_in_r16": [
+      "scripts/quality/storage_schema.py",
+      "scripts/quality/test_storage_schema.py"
+    ],
+    "registration_interpretation": "R16 must preserve exact R15 journal then explicitly review/update two existing protected hashes and add the previously unpinned comparator implementation/tests. It must not describe four existing protected updates or silently rewrite R15."
+  },
+  "unchanged_protected_content": {
+    "count": 166,
+    "all_match": true,
+    "entries": [
+      {
+        "path": "docs/architecture/database/config.sql",
+        "sha256": "a75ec4c30a21939da02f80028ffa62c2d86e997a8bff415e2fcf97b3b78a3363",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/architecture/database/dictionary.sql",
+        "sha256": "8b02b054752fb35661d5c5990ae2c02abf512167f43c3bf1c174a773a4933624",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/architecture/database/field-boundaries.json",
+        "sha256": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/architecture/database/profile.sql",
+        "sha256": "7b349fcf0e0f93a61f91b23f6585dde8cd2684dd70255f84f889240263c75141",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/architecture/database/schema-contract.json",
+        "sha256": "aee35d350ff080da4f595c69b8cc47f076a84dc0bea3cf811f5cb0c7a3ccdcd2",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/add-game.bottom.png",
+        "sha256": "0a54cab25a62856b121cb04bc95aef20fc13b3b2cfb5e86d539989f9c4d4d24b",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/add-game.top.png",
+        "sha256": "3a06378147ea029b0d5a5e55af9f6ea0d6e1a732ddbdda595313f42318182c6a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.bottom.png",
+        "sha256": "ddab334648dae0fe710ef1759df9a73476e51058f64fe3e290085e0c2089630c",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/connection-proxy.top.png",
+        "sha256": "0b56bdfe72cc743f8c8236563a924e9cee4a6d8ad7f58c4775d47f7d404739ef",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-01.png",
+        "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-02.png",
+        "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-03.png",
+        "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/mo-04.png",
+        "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-01.png",
+        "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-02.png",
+        "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-03.png",
+        "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-04.png",
+        "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/never7-05.png",
+        "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-approved-material.png",
+        "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-full-product-before-restyle.png",
+        "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-icons-color-before-library.png",
+        "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-icons-color-before-settings.png",
+        "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/reference-material-before.png",
+        "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-01.png",
+        "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-02.png",
+        "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-03.png",
+        "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-04.png",
+        "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sakura-05.png",
+        "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-01.png",
+        "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-02.png",
+        "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-03.png",
+        "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-04.png",
+        "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/sr-05.png",
+        "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/assets/wallpaper-frame.png",
+        "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/design-origin/material-tokens.css",
+        "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.bottom.png",
+        "sha256": "8ef816b3e35f0893892f83380426622110adc9876ddb7ccc6250fe3270266de2",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.region-1-bottom.png",
+        "sha256": "e4e7d1037d87ad808f96b9766908ec5d3f474b98e2d31789a3b43b3d75e33d92",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/display-preferences.top.png",
+        "sha256": "36f88fb3fbb55859901dba267047ece4db7dbba32dbb90d7a3f9552227ca78cd",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/empty-library.top.png",
+        "sha256": "4cf158a2259e987659cfe41956da6fb20a1c855c1d31257a9990c48183251b94",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.closed-license-bottom.png",
+        "sha256": "e1a73f421e8436f03227b2a4442c11a86e73c10ef580dc5bc06f6d112b34e916",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-0.png",
+        "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-1.png",
+        "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-2.png",
+        "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-3.png",
+        "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.coverage-4.png",
+        "sha256": "b5c4b6ecf3cdb2c759796cc980cc937055b2e97ed2e62b4fa1d882109fe4d83a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-0.png",
+        "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-1.png",
+        "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-2.png",
+        "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-3.png",
+        "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-4.png",
+        "sha256": "0e39b588f012adf302b612d875f2129a625f5d103f66ab535ad56f5fcc2e1ba1",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.expanded-coverage-bottom.png",
+        "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.second-headword-source.png",
+        "sha256": "7edd827c1446bfa491886290a245914598a28294470de24c24e47a2d2b2ab8e3",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-a-attribution.png",
+        "sha256": "507bc2eb825aa35dc20d6cf6605497a386d6b2f2e504285a2e1e81a5f624ed37",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.source-b-attribution-footer.png",
+        "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/dictionary-distinct-headwords.top.png",
+        "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained-bottom.png",
+        "sha256": "c73090b7e50e517b62d997593f2bd07d02c1acdcf463d2d1e03d3d8d3cd68713",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.save-failure-draft-retained.png",
+        "sha256": "c7587c41e04665ac467b9a3286afe957cb24b803e3b4b8973a9e5d3ef8221b1c",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.saved-global.png",
+        "sha256": "4ec7556b2de201750dad809dc2cc68cddc940603cb258203fe1a33134a233575",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/glossary-editing.terms-and-footer.png",
+        "sha256": "7619896312440e5dbf086755798647d90b3ceb1d7baadda5dfb6280f00abffb0",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent-bottom.png",
+        "sha256": "2d8add95da072fed0d2b19b98e9786574035c21f4eca6648e23a3f34db7c1635",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.narrow200percent.png",
+        "sha256": "d522e43c478a980d04fb647992099eed0c8899035dbf95e54ded2c835fb0b4da",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/learning-japanese-linebreak.wide18.png",
+        "sha256": "360ca8f08b06826cabca2c890fb17c830a215b2844ce1d863add4cd218d380da",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.constrained-workarea.png",
+        "sha256": "401bb5b38772aa2190a0a6d18ed976c4de3fcbd80fafbd84bfffd5c677eef09e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.native-window-context.png",
+        "sha256": "53a274a4e87141106ce433cfe50630807ecb7b47c07953e31be720a6907e9373",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/hand-authored/wordcard-native-size.resource-footer.png",
+        "sha256": "d17780d4a3d7d1192a5203aed2bc215439d1256957a2f1760ec484af8de84692",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.bottom.png",
+        "sha256": "38eca27d95d8665915ffeaba014b2b766a0642f28ebbc39dbafdb056b8a67244",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/history-earlier.top.png",
+        "sha256": "6b3141c78c12c37b97e164da571e1def3b893d2d1098299165a828c1892ca47f",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.bottom.png",
+        "sha256": "5ed4ac0aa1efda82ae9f9dfe58b1784691a213048122db59db73d1c3ecb8cc68",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/learning-fixed.top.png",
+        "sha256": "566a044599dbceb68903cae69334f770636f48673328cb34250c0c2000cb74b4",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/library-batch.bottom.png",
+        "sha256": "d11447de001dcc13da4007c507218ee3f1da3162c609a469f3aea714385a58d9",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/library-batch.top.png",
+        "sha256": "40c3a0f03aaf1d3f10b8cc7c9d60ad8236230ad82a0e74970faf36c91aae257b",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.bottom.png",
+        "sha256": "359cfd28a8a06e2ac7152d59d9bc12f9873a1ff12fc8479e19f3b931819bfb61",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/model-scheduling.top.png",
+        "sha256": "94284c82837493cc27821a9201c4c550dbe0a4d3a546a2ce95282091a548fc75",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/reading-hud.top.png",
+        "sha256": "c7220acb3f698fbf53e937b424e3167b462b53f1d31684588859f7e46aa0ff95",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.bottom.png",
+        "sha256": "2ce3d1b94548d336ccd03af9dc7cbc09b2b8cc854874327eb191295b97189a75",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/settings-connections.top.png",
+        "sha256": "92bd2ff759103e2cf4695c94c16338eb9b0f93676361496a264b7084b8072817",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/target-review.bottom.png",
+        "sha256": "4ed6e23c70ddcf4465e0692aecf22d8e440ceb0098935a88fad59337f9ae478e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/target-review.top.png",
+        "sha256": "33f87c46d71980c46b8905d9c9d586588811555e707628611d8f45c9cd05d858",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/acceptance-v3/underlay-reading.png",
+        "sha256": "d72d04d3e6ba61a37f71ea57392a6fa9977a8b8451037134ec5719032c379cf3",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/mo-01.png",
+        "sha256": "62f47ecac204421eac9acb47db0069cd039cef9d8629b3c6d9eaafcd33b6564a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/mo-02.png",
+        "sha256": "743f0b0edc34a1ffafa90074d2e697dc6a008433b4b2ed1fe8492f478424779e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/mo-03.png",
+        "sha256": "d8bacae8805d689121c3d7ec2996902985a35010734ff08411ae699e6bf00053",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/mo-04.png",
+        "sha256": "14caeeb59d3143e8ab750963ea7915f3e85c23de6a92b550ee0338c5ec2d5810",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/never7-01.png",
+        "sha256": "d16affbf86ad32b809b896322bca03e6f912fcde4ec5a8127a26b75937a701f8",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/never7-02.png",
+        "sha256": "7348514360a4ab10a3b832ac5fe18d80b667939670a30440bbf8f96e6109fcf1",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/never7-03.png",
+        "sha256": "6d84534b0e900c5af1f28473c8c5a5b996bda450253635d4b70636a435c0a64d",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/never7-04.png",
+        "sha256": "b365073b0b3ecc12004103366fd7142167f60f161446b14a21f34f62a97ef236",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/never7-05.png",
+        "sha256": "d1d54740b88b638e2785a499d6dee9205db35ccbccf14bb59f9a978fc9028d64",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/reference-approved-material.png",
+        "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/reference-full-product-before-restyle.png",
+        "sha256": "67fc492b80ad722a0612b10610279c9ca3fdb5c474892a71a247bc371e2a5b60",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/reference-icons-color-before-library.png",
+        "sha256": "24f7a21dcebea6719e3da7e9dbbf3f8372b7a0d7a2a22d550e65041208303b82",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/reference-icons-color-before-settings.png",
+        "sha256": "8cf905f5ac6f790c804bb745a054a2e0247d8745895a2ae335f249b4ffd81fce",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/reference-material-before.png",
+        "sha256": "e02226df37d33f72ac3761a5a705fbeeec242cd4541fd92be03f4328bcb24921",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sakura-01.png",
+        "sha256": "d5521c9537f2d4774d514c74a75054fc37f70d4307f6f64673eeeec3dd1a1d01",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sakura-02.png",
+        "sha256": "7736694d1a639717b022c382474e3caa5c94e6a651a7bc3192c14c6dab28eb0e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sakura-03.png",
+        "sha256": "67e5089f892dfadc78470503af53083c8bb2df4ba140751ef99d6e9b3fed0274",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sakura-04.png",
+        "sha256": "dd960778bf52dfb09fa2284f1d94b718c935ff619fe077ef5281ea311d7cfd66",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sakura-05.png",
+        "sha256": "800712d20509877d692dc56c4d9004e45e30b05c414eb3efed6ab495db7cc1fc",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sr-01.png",
+        "sha256": "74fcddfca3ededa43788aae6a29b2d4201ee7c57817735bcef3bb2badfdce697",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sr-02.png",
+        "sha256": "a47c98c24ebd19979e1c911fba8cf70964f2981209cd22845b0b3c913e1ff688",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sr-03.png",
+        "sha256": "95aa53ba5d30e736805189024a1518b5ad7746a5e33867064465e0786773ff9a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sr-04.png",
+        "sha256": "8e07cccc241100ac3c17b705a8c16e919d3d07dddd5a2f8d84dc7c40e9161151",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/sr-05.png",
+        "sha256": "fed3dc9f1e77ff9bebe71e564a7c1aaa2106fb3f5de5cb768f58f11099d28246",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/assets/wallpaper-frame.png",
+        "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/material-tokens.css",
+        "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/01-first-open.png",
+        "sha256": "67e32f128ad621d7f067219159d2c1e8d08c4ee1fe108f2b2f315a29260b0bbc",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/02-configure-translation.png",
+        "sha256": "06f55765a1bc653a981843a2906ce0027fd9309d7f9edb8fd4f926e57562b0cd",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/03-connect-target.png",
+        "sha256": "5d144716a639155922f694abb8a1e490abde57f0a2aeb9f3092b1f566cea5173",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/04-connect-failure.png",
+        "sha256": "81c28639de533c536dafeb0d12de84910dc0872492b73cb6fa18f5a82e4db9f9",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/05-connect-check.png",
+        "sha256": "620f06c53c3e33413770f76d378670010d4e747095493488a9b504323f7ed2ef",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/06-stream-selection.png",
+        "sha256": "1a1935fefbb46ac70ebb56b5d8017b8eb9cbb18658adc30e4db1d1b6c5eee65b",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/07-source-before-translation.png",
+        "sha256": "c72b5f8b2245ce75ea519fe577bf135fc7628f83a46aeb49da6ca00a860599f5",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/08-live-reading.png",
+        "sha256": "4050662a69a3239a331d36b6c5e9abc56dc7ec3142559f4e9dd8e5f07ef2e1cd",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/09-hud-detail.png",
+        "sha256": "f872f2107e2cde9541db5a9e3dc4592f8fe35c0bf6910b6f292d48e5467b959d",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/10-local-word-card.png",
+        "sha256": "2937ff324d579410e3f9aac10a02514764dea71f09e959ccfa3957f0d3041dd7",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/11-learning-unconfigured.png",
+        "sha256": "ec9d8e7eb95b304f5d4ae41e76c5fd49b0b51246cd34a27eeece293b7a6f5546",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/12-settings-over-reading.png",
+        "sha256": "2b1e33a7c59b172977c3d4c5ef4c94f196471ba73cf1b1d6d5f9a5f7f0f8e724",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/13-return-fixed-sentence.png",
+        "sha256": "9b5b4c502b76c2dd66090a7e9d8429af0fc7d5121401eb5ef9bc41692f1a8dcb",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/14-learning-loading.png",
+        "sha256": "d771630e927583410da301b0c8228cb243b9e2696bd7f52fb59dabdc82f1f328",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/15-learning-result.png",
+        "sha256": "22cbbaee13a834866d7804e8cc7529d9dc291d00e37f39d9ab29f9ec62f089c1",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/16-learning-reference.png",
+        "sha256": "a23e6cc722759ad6eae3d5a7a429df7dd9d7a659c8469bd958f34f96e368bbfb",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/17-learning-failure.png",
+        "sha256": "de9c32058c4644854e6237841e4244082119a09cb96fd3f04a5ed54e5bddd196",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/18-paused-input.png",
+        "sha256": "466e068e3680c77911961fa8b7b368b77c3953913c045cf1509c117cb1a564af",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/19-hud-menu.png",
+        "sha256": "db33cd011bc954b96d0f34c9f2b297d7c450c8b3de62f0da78e24d89c203e882",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/20-history.png",
+        "sha256": "f9b64d02c80746b6556ee2ea0b54fce73973b8436632064e6b93e889d3248537",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/21-history-save-failure.png",
+        "sha256": "d0147efe5fea224ab9390979b70298c874f64192ee54aeaf581f6b5d20c23d51",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/22-model-entities.png",
+        "sha256": "b18078345df87ef953faabed1fed99b178ffa3ef92264f9a885955670278283b",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/23-connection-entities.png",
+        "sha256": "3910a607be04307b85e3c8527a9a54e5fed9700b52d266ef772c595abd3c27d5",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/24-scoped-test-results.png",
+        "sha256": "480abe589ee497eb175cedc6e575187c16fe61b6229366881edb7e4516477d18",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/25-manual-translation.png",
+        "sha256": "fa338c4447088ba979f706231fe756a12f896336f3676c9f9eba051cb8de3504",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/26-game-mo.png",
+        "sha256": "7e6c5414400bc6771ebe5ddd0da5be50ecde9a2cda7142a30f2680046d66cbad",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/26-game-never7.png",
+        "sha256": "ef937f85f866267fc4a83c46b2db20da9e6615c5f97413b681e76360903fa9f2",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/26-game-sr.png",
+        "sha256": "2b9728aab90a9aaf393bd6616a19ec4b935012d66ede02a4df75d8237b64c184",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/27-never7-increment.png",
+        "sha256": "018e1925925e0ba58533c75d39f5f23b47e2d3ec7c8bee7ce138647f3b56043c",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/28-integrity-recovery.png",
+        "sha256": "af6c5bda403645ad85b55c87ef0e75e7666e303e471f7877e5e63a58adf038cf",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/29-game-exit.png",
+        "sha256": "3911cddc07ea39e4bcc73bc5befc84d213eace213d8e4418edfb2fe5132926d4",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/30-dark-reading.png",
+        "sha256": "4050662a69a3239a331d36b6c5e9abc56dc7ec3142559f4e9dd8e5f07ef2e1cd",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/31-dark-settings.png",
+        "sha256": "95461cc01da3da5f78aedbefd100fe75dd6c56f4b0d0dbdc25c5664e892d2558",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/32-large-opaque-hud.png",
+        "sha256": "feb07f7c030e0793c349f114ba0f8b857ac494e46a7d3e2cadc8bccf7af75327",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/33-small-desktop.png",
+        "sha256": "047fbd0c13df6e974255fc16251c1034b35e2d776ed586809327b5bd524938ce",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/34-library-material-light.png",
+        "sha256": "85fcc795add79e0c8079586babe38870f4c8f446450a4b419d799a34a299dafb",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/35-library-material-dark.png",
+        "sha256": "abf8e9dd4941e3b54f964049b69c1e78cee12e8d51ad1b30dc9e3ed7c2b3bf93",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/36-library-material-reduced.png",
+        "sha256": "7a67f63be9b51aa23f90206b75a9be4daea48f34a4da89c5c4dcadb41c29d64a",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/37-settings-return-main.png",
+        "sha256": "c34a770368ad1bfdf738256c041a4623f4bafeb85758d727232a9ba8e2ee4820",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/38-library-empty.png",
+        "sha256": "3d7cf25d60565096a0dc9afbd5c7eab88f92f106d09f6eb9c3ebaddcc8fe1f09",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/39-add-game-entry.png",
+        "sha256": "cf4e8ea39293c64146d8b2006c12cde9787095e11c76ec59dc433e96ade0b4b7",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/40-add-game-review.png",
+        "sha256": "283f6b23debcebe88d177e87f6ef6be606e96773edccc8feec56f9cb7f093c32",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/41-window-picker.png",
+        "sha256": "536c162cf7ced711a11be4dbaf07a1c0c118e3a4f8facb4767479be1d06e974b",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/42-window-mapping.png",
+        "sha256": "dbc192efa78f7fc7b78d05061b5b43a9fbcc332e45ea264e6c37aac74e2e8db0",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/43-window-connected-reading.png",
+        "sha256": "7d8fd92a24c175e0a73ce4b0672be7e0b41b97cd111cc5b2ba8045b333ee0c82",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/44-window-binding.png",
+        "sha256": "5b72e329c0fe5e007fdb46ca24da57744aa91b14fb749f5655eb038d884311a6",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/45-window-unbound.png",
+        "sha256": "7790991e943e86f9f0d7191fdeb0046e489f0c52b768e14e0de268c30dc303a0",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/46-custom-batch-review.png",
+        "sha256": "a557123ebb5acb8336e79d5f90d5b1fe92907715e88ebfe774322576392cd58b",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/47-unknown-target-check.png",
+        "sha256": "663b7952461795c78c6d135bc37babd05af295e5dabe0f0202ec492b19e4f0d8",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/first-product-v1/previews/48-window-switch-confirm.png",
+        "sha256": "92e91223ef4144eac96ac7f6b521c1645eed8cf740e295175b83e15bc43dd0d1",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/assets/reference-desktop.png",
+        "sha256": "5e55a763e78e22efb8e6b83fbfb262fbc1f5b51d3d1e7090b07c8d791006af3c",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/assets/wallpaper-frame.png",
+        "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/assets/wallpaper-preview.png",
+        "sha256": "7d576f6f88035acca3d2462cbf3b0ad7cb37af2e294c1d45abfbd24de172aa5d",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/previews/blur-off-window.png",
+        "sha256": "11e046106686727073c0625535f794f1fb50c1d6b252bdea821e72e12e4dbf19",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/previews/case-desktop.png",
+        "sha256": "e0148b33bb12e7d768fd2e9621819ccd125a80ff1ffa9409b4cdc5733ef34b6e",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/previews/case-window.png",
+        "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/previews/comparison-page.png",
+        "sha256": "c40a9a13d8f8055b72c149f08645455bfa31ca564a8e4720aab8538d7ed7ccc5",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/previews/moved-window.png",
+        "sha256": "fae96031a0d91edc4459f947ad323851b49e6bc576f7bbf99637ac6c8d63d0f7",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/design/macos-material-case-v1/previews/reference-window.png",
+        "sha256": "0255e9ea8ce4e18ee5d0e573e58c6dee7c69921e4bfbadf6aa10c3cc98806141",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "docs/development/storage-acceptance.json",
+        "sha256": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+        "matches_registered_sha256": true
+      },
+      {
+        "path": "openspec/legacy-debt.json",
+        "sha256": "fb0021504423bd16c24d023f9d84e48ad511a518b353b4a3dd499ad22ab7ae07",
+        "matches_registered_sha256": true
+      }
+    ]
+  },
+  "limits": [
+    "Full storage product adapter and unified gate must rerun against newly built source/package identity; focused guards and formatter unit test do not close product acceptance.",
+    "No inherited package, old successful log or fixture result is accepted as current full storage proof.",
+    "This review checks exact reviewed-file delta and protected hash identities, not arbitrary new untracked files or complete first-product release.",
+    "No production-limit configuration changed, so production-load/pool-size evidence is not applicable to this scoped delta. Existing resource-limit settings were not requalified."
+  ]
+}

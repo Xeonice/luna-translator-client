@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "id": "prepare-current-reading-alignment",
+  "kind": "tooling",
+  "allowed_paths": [
+    "scripts/report/capture_current_reading_preflight.mjs",
+    "scripts/quality/reading_alignment_preflight.py",
+    "scripts/quality/test_reading_alignment_preflight.py",
+    "scripts/quality/verify.py",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/design-alignment-and-release.md",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/implementation-status.md",
+    "openspec/changes/prepare-current-reading-alignment/proposal.md",
+    "openspec/changes/prepare-current-reading-alignment/design.md",
+    "openspec/changes/prepare-current-reading-alignment/tasks.md",
+    "openspec/changes/prepare-current-reading-alignment/iteration-card.md",
+    "openspec/changes/prepare-current-reading-alignment/source-snapshot.json",
+    "openspec/changes/prepare-current-reading-alignment/specs/reading-alignment-preflight/spec.md",
+    "openspec/changes/prepare-current-reading-alignment/verification.json",
+    "docs/development/baselines/FP1-20261031-R80.json",
+    "docs/development/iteration-baseline.json"
+  ],
+  "source_snapshot": "openspec/changes/prepare-current-reading-alignment/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "RAP-001",
+      "spec": "specs/reading-alignment-preflight/spec.md",
+      "scenario": "capture-current-reading-from-independent-producers",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "gate-unit-tests",
+        "reading-alignment-preflight-tests",
+        "reading-alignment-preflight-execution",
+        "reading-alignment-preflight-contract",
+        "current-design-alignment-contract",
+        "current-design-alignment-tests",
+        "current-design-readiness-assessment"
+      ]
+    },
+    {
+      "id": "RAP-002",
+      "spec": "specs/reading-alignment-preflight/spec.md",
+      "scenario": "reject-invalid-reading-capture-evidence",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "gate-unit-tests",
+        "reading-alignment-preflight-tests",
+        "reading-alignment-preflight-execution",
+        "reading-alignment-preflight-contract",
+        "current-design-alignment-contract",
+        "current-design-alignment-tests",
+        "current-design-readiness-assessment"
+      ]
+    },
+    {
+      "id": "RAP-003",
+      "spec": "specs/reading-alignment-preflight/spec.md",
+      "scenario": "stop-before-unmet-product-gate",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "technology-contract-tests",
+        "gate-unit-tests",
+        "reading-alignment-preflight-tests",
+        "reading-alignment-preflight-execution",
+        "reading-alignment-preflight-contract",
+        "current-design-alignment-contract",
+        "current-design-alignment-tests",
+        "current-design-readiness-assessment"
+      ]
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/client-alignment-20261103/review/final-change-review.json",
+    "authors": [
+      "/root/reading_capture_implementation",
+      "/root"
+    ]
+  },
+  "scope": "CP00-A diagnostic tooling only; no product/source-reference/native/stability/release acceptance"
+}

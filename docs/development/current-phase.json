@@ -1,0 +1,189 @@
+{
+  "active_change": "align-approved-binding-journey",
+  "active_change_kind": "product",
+  "binding_journey": {
+    "approval_scope": "R90 prior user approval retained; current P1 plan review is a separate non-author receipt, never inferred from prior approval",
+    "capture_sheet_reference_states_missing": 22,
+    "checkpoint_review": {
+      "path": ".build/binding-journey-alignment-20261109/resumption-r3/predecessor-checkpoint-03/checkpoint-review.json",
+      "sha256": "bb0fa36767c9d1f9cad3454ad37143829ef6879e16e1bcddfb479b47203f0296"
+    },
+    "checkpoint_source_tree_sha256": "54c378f69a06a752a9382156e444c9880c67ca7fe22038f4f35f0238b52c9a4e",
+    "current_alignment": "incomplete",
+    "current_stage_at_revision": "R93_source_adopted_successor_QA_maintenance_authorized",
+    "execution_obligations_status": "local_producers_partly_executed_final_signed_Native_game_service_incomplete",
+    "execution_record": ".build/binding-journey-alignment-20261109/progress.json",
+    "old_service_package_replaced": false,
+    "old_service_source_baseline": "FP1-20261109-R92",
+    "original_P1_P2_P3_receipts_immutable": true,
+    "original_implementation_admitted_at": "2026-11-09T18:54:23.901601+00:00",
+    "plan": "docs/development/binding-journey-plan.json",
+    "plan_revision_id": "P1r3-revision-2",
+    "policy": "openspec/changes/align-approved-binding-journey/phase-policy.json",
+    "previous_plan_review": {
+      "path": ".build/binding-journey-alignment-20261109/phase-1-r3/plan-review-attempt-01.json",
+      "sha256": "7297f1105a85636c8c15700ecc8ea5e20ea9a5348d5f6b021bfea4c56940eded"
+    },
+    "resume_epoch": "r3",
+    "resumed_implementation_admitted": true,
+    "same_product_stage_repair_not_release_advance": true,
+    "sequence": [
+      "plan",
+      "gates",
+      "implementation"
+    ],
+    "stage_at_plan_capture": "plan",
+    "user_instruction": "先更新计划，然后更新门禁，最后再开始实现",
+    "current_source_baseline": "FP1-20261109-R93",
+    "source_registered_product_entries": 739,
+    "original_reference_states_retained": 22,
+    "current_new_surface_reference_states_missing": 42,
+    "r3_implementation_admission": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/admission.json",
+      "sha256": "cedb723ef35efe5d80a40099d75d97b2d9b7eed72835dfa3bde9ae4aa17febaa"
+    },
+    "current_source_review": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/r93-independent-review-01/review.json",
+      "sha256": "edffabef0a6a99f2ba446f8056c70313c505ab9022ec9fadf70e6865db53190c"
+    },
+    "source_adoption_receipt": {
+      "path": ".build/binding-journey-alignment-20261109/phase-3-r3/adoption-r93-actual-01/transaction/receipt.json",
+      "sha256": "069828574bd041477f72e9deb40a8bd497f07272975fc2a27f3194e9b85d8ab9"
+    }
+  },
+  "current_design_composition_id": "complete-guided-history-20261031",
+  "current_design_source_status": "approved_by_user",
+  "current_plan": "docs/development/current-client-alignment-plan.md",
+  "current_stage": "GITHUB-REPOSITORY-ACTIVATION",
+  "effective_date": "2026-11-15",
+  "engineering_closure": {
+    "change_id": "close-engineering-gate-drift",
+    "completion_requires_actual_root_receipt": true,
+    "product_source_modified": false,
+    "result": ".build/engineering-gate-closure-20261109/current-result.json",
+    "runtime_acceptance_promoted": false,
+    "scope": [
+      "source_audit_and_reviewed_baseline",
+      "preserved_surface_mapping",
+      "storage_test_source_closure",
+      "reviewed_verifier_increment"
+    ]
+  },
+  "gate_completion_scope": {
+    "all_current_obligations": 944,
+    "native_acceptance_promoted": false,
+    "original_802_obligations_retained": true,
+    "preview_supplement_source_only": true,
+    "product_alignment_approved": false,
+    "registered_packaged_native_states": 14,
+    "registered_real_react_states": 17,
+    "prior_901_obligations_retained": true,
+    "binding_AST_additional_obligations": 43,
+    "historical_guided_reference_states": 4,
+    "historical_general_independent_reference_states": 14,
+    "registration_is_execution_or_reference_qualification": false,
+    "general_registration_scope": "settings:general/controlled_visual_only",
+    "general_reference_current_qualification": "requires_current_native_producer_identity; historical generation main.rs differs from current R93 product main.rs; no hash refresh or acceptance inheritance",
+    "current_general_reference_drift_evidence": {
+      "path": ".build/binding-engineering-integration-20261110/independent-stable-slices-01/general-reference-producer-drift.json",
+      "sha256": "a0672db1463626d7552f885c10d0e0ea3f559d2481e75b0874cd3c1eafa8d83a"
+    }
+  },
+  "implementation_started": true,
+  "latest_prior_execution": {
+    "does_not_promote_new_document_source_acceptance": true,
+    "failed": 0,
+    "next_stage_allowed": false,
+    "passed": 123,
+    "product_gate_status": "incomplete",
+    "receipt": ".build/quality/20261109T082542.574702Z.json",
+    "source_baseline": "FP1-20261109-R91",
+    "source_tree_sha256": "a0057daa1734e8db0f279976201bbaafb2ccc0c5b7b966ef00408c0432c67b48",
+    "steps": 123
+  },
+  "maintenance_policy": "replace_current_sections_and_status_tables; no_dated_tail_patches; historical_records_retained_separately",
+  "next_change_created": true,
+  "next_proposed_product_change": "execute_approved_plan_with_affected_page_prerequisites",
+  "next_stage_allowed": false,
+  "notes": [
+    "用户要求计划→门禁→实现。原P1r2/P2r2、首次P3及r3真实审核/准入均保留，未把合法实现改写为尚未开始。",
+    "R93真实采用并完成同树旧guard与ParentSeal独审；后继canonical计划精确审核后授权QA-only维护，产品和运行S5保持冻结。",
+    "原901设计义务与43条实际AST增量分别保留；新增入口缺独立参照/执行器仍blocked，原153/RW/四游戏/真实翻译不减。",
+    "本地受控执行不等于最终包。fresh严格存储、实际Native writer、同包游戏/服务和完整视觉未闭合，product incomplete / next_stage_allowed=false。"
+  ],
+  "plan_approval": {
+    "date": "2026-11-05",
+    "reviewed_delivery": ".build/document-plan-revision-20261105/review/current-plan-r90-v3/index.html",
+    "source_tree_sha256": "ca73010b4c86311cbc2901c7e939aeb19dc137abd64a8b732989876a0fc9f7fe",
+    "user_statement": "判断计划没有问题，进行处理，直至整个任务完成再停止"
+  },
+  "plan_review_status": "canonical_successor_plan_independently_approved_QA_only",
+  "prior_plan_review_status": "approved_by_user",
+  "product_gate_status": "incomplete",
+  "product_scope_reduced": false,
+  "related_docs": [
+    "docs/product/reading-window-session-prd.md",
+    "docs/product/model-configuration-prd.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/reading-window-session-technical-design.md",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/product-acceptance-loop.md"
+  ],
+  "runtime_acceptance_promoted": false,
+  "schema_version": 1,
+  "service_management_fix": {
+    "actual_defect": "one current model rendered as ten immutable versions times three purposes",
+    "change_id": "fix-service-management-duplicates",
+    "product_alignment_approved": false,
+    "runtime_result": ".build/runtime-game-translation-20261109/run.json",
+    "scope": "current logical resource management presentation; complete raw history and exact service refs preserved",
+    "source_audit": ".build/runtime-game-translation-20261109/duplicate-service-data-audit.json"
+  },
+  "workstream": "first_product_client_design_alignment",
+  "current_maintenance": {
+    "change_id": "activate-public-github-gates",
+    "kind": "tooling",
+    "status": "actual_github_activation_in_progress",
+    "repository": "https://github.com/Xeonice/luna-translator-client",
+    "user_authorized_implementation": true,
+    "product_source_delta_allowed": false,
+    "runtime_package_modified": false,
+    "product_acceptance_promoted": false,
+    "execution_result": ".build/quality/github-activation-20261115/activation-result.json"
+  },
+  "prior_maintenance": {
+    "change_id": "register-binding-impact-surface-mappings",
+    "kind": "tooling",
+    "plan": "openspec/changes/register-binding-impact-surface-mappings/proposal.md",
+    "parent_baseline": "FP1-20261109-R93",
+    "parent_source_tree_sha256": "c6554836b1cba73ac8f1474d85ee25a5eddf7518daa1912adc91b8d781ac677b",
+    "canonical_review": {
+      "path": ".build/binding-engineering-integration-20261110/canonical-plan-review.json",
+      "sha256": "a0bc4d9d146ae32056f062c81b8cb7e65b35fcbbfe6962482d75ea05de36d1ba"
+    },
+    "explicit_QA_authorization": {
+      "path": ".build/binding-engineering-integration-20261110/qa-authorization.json",
+      "sha256": "b11c32d7c032667c61d7faf3d0c774c14623861a6a133b51cee5d72b89d03113"
+    },
+    "status": "implementation_in_progress_final_current_source_verification_pending",
+    "allowed_scope": "19 QA/doc paths; seven canonical plan files frozen; three later adoption outputs require independent exact packet review",
+    "product_source_delta_allowed": false,
+    "runtime_package_modified": false,
+    "product_acceptance_promoted": false,
+    "full_binding_qualification": "incomplete",
+    "strict_schema5_final_run": "not_run"
+  },
+  "previous_engineering_delivery": {
+    "change_id": "implement-effective-development-gates",
+    "kind": "tooling",
+    "design": "docs/development/gate-validation-design.html",
+    "status": "implementation_verified_current_identity_in_reports_gates",
+    "user_authorized_implementation": true,
+    "product_source_delta_allowed": false,
+    "runtime_package_modified": false,
+    "product_acceptance_promoted": false,
+    "gate_effectiveness_result": ".build/quality/effective-gates-implementation/final-execution.json",
+    "single_report": "reports/gates/index.html"
+  }
+}

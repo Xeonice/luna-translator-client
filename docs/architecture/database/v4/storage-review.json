@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "kind": "schema_four_independent_contract_author_record",
+  "author": "/root/google_signing_review",
+  "status": "pending_non_author_R4_Oracle_review",
+  "design_direction_and_source_freeze": {
+    "SQL_change_author": "/root/storage_gateway_independent_review",
+    "SQL_exact_adopter": "/root",
+    "source_design_sha256": "09eab3339ed56f535f72cc95d6d12cab069c73d6cd47a07197dd69f561351d55",
+    "scope": "R4 private connection-only provenance,2 directFK, unique connection alias, source/control/GC/seal constraints; never execution target",
+    "R4_SQL_independent_review": ".build/current-client-execution-20261105/review/schema4-r4-independent-1793906568361445000/review.json",
+    "R4_SQL_review_scope": "reviewed candidate DDL plus full original FK identity requirement only; no Oracle/runtime/product promotion",
+    "production_migration_acceptance": false
+  },
+  "independent_expected_sources": [
+    "docs/architecture/database/profile.sql",
+    "docs/architecture/database/config.sql",
+    "docs/architecture/database/v2/002_session_records.design.sql",
+    "docs/architecture/database/v3/003_http_service_identity.design.sql",
+    "docs/architecture/database/v4/004_service_graph.design.sql"
+  ],
+  "prior_obligation_sources": {
+    "docs/architecture/database/v3/schema-contract.json": "90d3474fb23c4522845727307ea3b47b5a2ae0a5f0b6df40006516aa22fbe335",
+    "docs/architecture/database/v3/field-dictionary.json": "b3144b3820ae1bd1c91ea06343bfa85a954eb7cdc6950f9bae21c5ae988d349a",
+    "docs/architecture/database/v3/field-dictionary.csv": "f2008ab47ac90143e99d019da3072b371d4cf65af133b2ecb64f4fde67ea7c5d",
+    "docs/architecture/database/v3/storage-acceptance.json": "808822b6b335ab6e77daebb0fd4c44f29e6b1acc0fedbbef4bc7fd67a6b16b5d",
+    "docs/architecture/database/v3/field-boundaries.json": "174d61829a681c204fb3b600354c010ccd31b0dfc50a5cfd25f91792e1d4038e",
+    "docs/architecture/database/v3/boundary-fixtures.json": "02ab9ee4c1e1f7361e6acc6eb0c768141c2f85af1ebd2dfe1d003608df96e9d1"
+  },
+  "counts": {
+    "prior_total_fields": 484,
+    "new_fields": 282,
+    "profile_fields": 734,
+    "dictionary_fields": 32,
+    "total_fields": 766,
+    "new_tables": 28,
+    "affected_tables": 35,
+    "foreign_keys_in_affected_tables": 89,
+    "new_or_changed_triggers": 69,
+    "new_view": 1,
+    "Rust_delta_obligations": 740,
+    "retained_R3_relationship_payloads": 87,
+    "R4_added_relationships": 2
+  },
+  "json_boundary_policy": "SQL object carrier/top-level keys and tuple guards are separate from exact version-selected Rust DTO/type/range/unknown-key/secret restrictions. SQL accepts never grant readiness.",
+  "implementation_evidence_status": "pending_actual_Rust_producers_migration_and_authority",
+  "production_migration_verified": false,
+  "product_tests_executed": false,
+  "next_stage_allowed": false,
+  "author_SQL_probe_status": "R4_author_contract_checks_passed_pending_non_author_Oracle_review",
+  "frozen_expected_source_is_not_production_SQL": true,
+  "original_R1_source": ".build/current-client-execution-20261105/schema4-oracle/r1-contract-snapshot/manifest.json",
+  "review_role_separation": "R4 SQL non-author review admits only its exact DDL slice; this Oracle author requires a separate Oracle reviewer and actual unfiltered740 Runtime adapter remains mandatory.",
+  "draft_and_execution_separation": {
+    "missing_choices_saved_as_draft": [
+      "azure_translator.resourceType",
+      "deepl_v2.plan"
+    ],
+    "no_implicit_default_or_first_choice": true,
+    "execution_and_saved_eligibility_require_explicit_choices": true,
+    "SQL_carrier_is_not_runtime_readiness": true
+  },
+  "author_actual_checks": {
+    "R4_status": "passed_author_contract_checks_only",
+    "R3_original_handoff": ".build/current-client-execution-20261105/schema4-oracle-r3/handoff.json",
+    "R3_not_relabelled_as_R4": true,
+    "focused_R4_guard_tests": {
+      "count": 5,
+      "exit_code": 0,
+      "log": ".build/current-client-execution-20261105/schema4-oracle-r4/new-guards-01.log"
+    },
+    "naive_ordinal_red": ".build/current-client-execution-20261105/schema4-oracle-r4/ordinal-identity-red.json",
+    "R4_synthetic_semantic_exploration": ".build/current-client-execution-20261105/schema4-oracle-r4/semantic-02.json",
+    "exploration_not_runtime_authorization": true,
+    "first_full_run_superseded": {
+      "guards": 27,
+      "SQL_groups": 2556,
+      "log": ".build/current-client-execution-20261105/schema4-oracle-r4/tests-01.log",
+      "reason": "new seal branch negative was masked by old template-purpose check; repaired and new precise mutation added"
+    },
+    "repair_record": ".build/current-client-execution-20261105/schema4-oracle-r4/failed-runs-and-repairs.json",
+    "completed_at": "2026-11-05T20:03:51.596659+00:00",
+    "final_guards": 27,
+    "final_SQL_groups": 2556,
+    "original_guard_names_retained": 22,
+    "original_SQL_IDs_retained": 2257,
+    "original_FK_ID_and_full_payloads_retained": 87,
+    "Rust_delta_obligations": 740,
+    "real_Rust_740_executed": false,
+    "source14_stable_during_final_tests": true,
+    "source_before": ".build/current-client-execution-20261105/schema4-oracle-r4/source-before-final-tests-02.json",
+    "source_after": ".build/current-client-execution-20261105/schema4-oracle-r4/source-after-final-tests-02.json",
+    "final_test_log": ".build/current-client-execution-20261105/schema4-oracle-r4/tests-02.log",
+    "final_boundaries": ".build/current-client-execution-20261105/schema4-oracle-r4/boundaries-cli-02.json",
+    "final_schema": ".build/current-client-execution-20261105/schema4-oracle-r4/schema-cli-02.json"
+  },
+  "original_R2_oracle_snapshot": ".build/current-client-execution-20261105/schema4-oracle-r3/r2-snapshot/snapshot-manifest.json",
+  "original_R3_oracle_snapshot": ".build/current-client-execution-20261105/schema4-oracle-r4/r3-snapshot/snapshot-manifest.json",
+  "relationship_identity_policy": {
+    "retained_R3_full_rows_canonical_SHA256": "70e779c09ce2a9cffcc4a4ee04a5f3d682359989e07d93ec254d8d064308ff58",
+    "retained_fields": "id/table/full foreign_key with ordered child-parent columns and every action/match/prior_relationship",
+    "new_only": [
+      "V4-FK:activation_resource_materializations:8",
+      "V4-FK:activation_resource_materializations:9"
+    ],
+    "receipt_requirement": "every actual FK check carries complete independently read actual relationship row; tag/count/subset alone rejected",
+    "runtime_adapter_status": "pending_actual_implementation_and_execution"
+  }
+}

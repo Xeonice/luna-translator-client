@@ -1,0 +1,326 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1240 4262" width="1240" height="4262">
+<title id="title">首版数据库实体与主要关系</title>
+<desc id="desc">主要外键链概览及全部实体分组目录；完整字段与外键约束见字段字典和schema-metadata.json。仅为设计，不代表产品验收。</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7" fill="#8da0b6"/></marker></defs>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif} .h{fill:#edf1f7;font-weight:650}.m{fill:#aab7c8;font-size:14px}.key{fill:#b6c6da;font-size:13px}.entity{fill:#1d2939;stroke:#506077;stroke-width:1}.group{fill:#111b2a;stroke:#34445b}.arrow{stroke:#8da0b6;stroke-width:1.5;marker-end:url(#arrow)}</style>
+<rect width="1240" height="4262" rx="16" fill="#0b1320"/>
+<text x="28" y="44" class="h" font-size="26">首版数据库 · 实体与主要关系</text>
+<text x="28" y="73" class="m">设计草案；箭头仅概览主要父表→子表外键关系。全部实体在下方，完整约束在字段字典/JSON。</text>
+<text x="28" y="112" class="m">阅读归属</text>
+<rect x="28.0" y="124" width="216.8" height="40" rx="9" class="entity"/>
+<text x="38.0" y="149" fill="#e1e9f5" font-size="12.5">sessions</text>
+<rect x="268.8" y="124" width="216.8" height="40" rx="9" class="entity"/>
+<text x="278.8" y="149" fill="#e1e9f5" font-size="12.5">reading_units</text>
+<line x1="248.8" x2="263.8" y1="144" y2="144" class="arrow"/>
+<rect x="509.6" y="124" width="216.8" height="40" rx="9" class="entity"/>
+<text x="519.6" y="149" fill="#e1e9f5" font-size="12.5">reading_unit_revisions</text>
+<line x1="489.6" x2="504.6" y1="144" y2="144" class="arrow"/>
+<rect x="750.4000000000001" y="124" width="216.8" height="40" rx="9" class="entity"/>
+<text x="760.4000000000001" y="149" fill="#e1e9f5" font-size="12.5">request_tasks</text>
+<line x1="730.4000000000001" x2="745.4000000000001" y1="144" y2="144" class="arrow"/>
+<rect x="991.2" y="124" width="216.8" height="40" rx="9" class="entity"/>
+<text x="1001.2" y="149" fill="#e1e9f5" font-size="12.5">translations</text>
+<line x1="971.2" x2="986.2" y1="144" y2="144" class="arrow"/>
+<text x="28" y="202" class="m">服务配置</text>
+<rect x="28.0" y="214" width="216.8" height="40" rx="9" class="entity"/>
+<text x="38.0" y="239" fill="#e1e9f5" font-size="12.5">config_revisions</text>
+<rect x="268.8" y="214" width="216.8" height="40" rx="9" class="entity"/>
+<text x="278.8" y="239" fill="#e1e9f5" font-size="12.5">connections</text>
+<line x1="248.8" x2="263.8" y1="234" y2="234" class="arrow"/>
+<rect x="509.6" y="214" width="216.8" height="40" rx="9" class="entity"/>
+<text x="519.6" y="239" fill="#e1e9f5" font-size="12.5">models</text>
+<line x1="489.6" x2="504.6" y1="234" y2="234" class="arrow"/>
+<rect x="750.4000000000001" y="214" width="216.8" height="40" rx="9" class="entity"/>
+<text x="760.4000000000001" y="239" fill="#e1e9f5" font-size="12.5">binding_engines</text>
+<line x1="730.4000000000001" x2="745.4000000000001" y1="234" y2="234" class="arrow"/>
+<rect x="991.2" y="214" width="216.8" height="40" rx="9" class="entity"/>
+<text x="1001.2" y="239" fill="#e1e9f5" font-size="12.5">request_tasks</text>
+<line x1="971.2" x2="986.2" y1="234" y2="234" class="arrow"/>
+<text x="28" y="292" class="m">离线词典</text>
+<rect x="28" y="304" width="218" height="40" rx="9" class="entity"/>
+<text x="38" y="329" fill="#e1e9f5" font-size="12.5">dictionary_sources</text>
+<rect x="270" y="304" width="218" height="40" rx="9" class="entity"/>
+<text x="280" y="329" fill="#e1e9f5" font-size="12.5">dictionary_entries</text>
+<line x1="250" x2="265" y1="324" y2="324" class="arrow"/>
+<rect x="512" y="304" width="218" height="40" rx="9" class="entity"/>
+<text x="522" y="329" fill="#e1e9f5" font-size="12.5">dictionary_forms</text>
+<line x1="492" x2="507" y1="324" y2="324" class="arrow"/>
+<rect x="16" y="405" width="1208" height="420" rx="14" class="group"/>
+<text x="32" y="437" class="h" font-size="19">游戏与取文会话 · 5 表</text>
+<rect id="profile-capture_sources" x="32" y="454" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="477" class="h" font-size="15">capture_sources <tspan class="m">· HK · 12 字段</tspan></text>
+<text x="46" y="501" class="m">完整候选文本流身份，不按TextOutW名字/固定行号选流</text>
+<text x="46" y="522" class="key">PK: source_id</text>
+<text x="46" y="543" class="key">FK → sessions</text>
+<rect id="profile-game_targets" x="630" y="454" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="477" class="h" font-size="15">game_targets <tspan class="m">· AP · 15 字段</tspan></text>
+<text x="644" y="501" class="m">用户已核对的可编辑启动/目标配置；会话另存当时身份</text>
+<text x="644" y="522" class="key">PK: target_id</text>
+<text x="644" y="543" class="key">FK → games</text>
+<rect id="profile-games" x="32" y="576" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="599" class="h" font-size="15">games <tspan class="m">· AP · 9 字段</tspan></text>
+<text x="46" y="623" class="m">稳定游戏库记录，移出使用归档且不删除游戏文件</text>
+<text x="46" y="644" class="key">PK: game_id</text>
+<text x="46" y="665" class="key">FK → 无</text>
+<rect id="profile-sessions" x="630" y="576" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="599" class="h" font-size="15">sessions <tspan class="m">· AP · 14 字段</tspan></text>
+<text x="644" y="623" class="m">Hook或手动来源会话，固定启动时的身份</text>
+<text x="644" y="644" class="key">PK: session_id</text>
+<text x="644" y="665" class="key">FK → games, resource_snapshots</text>
+<rect id="profile-source_selections" x="32" y="698" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="721" class="h" font-size="15">source_selections <tspan class="m">· AP · 6 字段</tspan></text>
+<text x="46" y="745" class="m">用户显式选正文的不可变版本，临时选择与保存规则分离</text>
+<text x="46" y="766" class="key">PK: session_id, selection_revision</text>
+<text x="46" y="787" class="key">FK → capture_sources, sessions</text>
+<rect x="16" y="837" width="1208" height="542" rx="14" class="group"/>
+<text x="32" y="869" class="h" font-size="19">原文与本地语言 · 7 表</text>
+<rect id="profile-lexical_snapshots" x="32" y="886" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="909" class="h" font-size="15">lexical_snapshots <tspan class="m">· JA · 9 字段</tspan></text>
+<text x="46" y="933" class="m">不可变真实词法结果，资源/schema身份独立于正文版本</text>
+<text x="46" y="954" class="key">PK: lexical_id</text>
+<text x="46" y="975" class="key">FK → reading_unit_revisions, resource_snapshots</text>
+<rect id="profile-lexical_tokens" x="630" y="886" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="909" class="h" font-size="15">lexical_tokens <tspan class="m">· JA · 11 字段</tspan></text>
+<text x="644" y="933" class="m">相对原文UTF8字节的token；UTF16为投影换算值不持久作为真值</text>
+<text x="644" y="954" class="key">PK: lexical_id, token_index</text>
+<text x="644" y="975" class="key">FK → lexical_snapshots</text>
+<rect id="profile-raw_event_payloads" x="32" y="1008" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1031" class="h" font-size="15">raw_event_payloads <tspan class="m">· AP · 3 字段</tspan></text>
+<text x="46" y="1055" class="m">可按显式限额删除的原始字节，删除不级联历史与来源身份</text>
+<text x="46" y="1076" class="key">PK: event_id</text>
+<text x="46" y="1097" class="key">FK → raw_events</text>
+<rect id="profile-raw_events" x="630" y="1008" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="1031" class="h" font-size="15">raw_events <tspan class="m">· HK · 10 字段</tspan></text>
+<text x="644" y="1055" class="m">不可变事件身份与payload摘要，原始payload独立限额清理</text>
+<text x="644" y="1076" class="key">PK: event_id</text>
+<text x="644" y="1097" class="key">FK → capture_sources, sessions</text>
+<rect id="profile-reading_unit_revisions" x="32" y="1130" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1153" class="h" font-size="15">reading_unit_revisions <tspan class="m">· AP · 11 字段</tspan></text>
+<text x="46" y="1177" class="m">不可变正文版本；译文/词法/学习固定引用此版本</text>
+<text x="46" y="1198" class="key">PK: unit_id, text_revision</text>
+<text x="46" y="1219" class="key">FK → reading_units, source_selections</text>
+<rect id="profile-reading_units" x="630" y="1130" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="1153" class="h" font-size="15">reading_units <tspan class="m">· AP · 5 字段</tspan></text>
+<text x="644" y="1177" class="m">稳定阅读单元；当前文本版本由最大revision推导</text>
+<text x="644" y="1198" class="key">PK: unit_id</text>
+<text x="644" y="1219" class="key">FK → sessions</text>
+<rect id="profile-source_refs" x="32" y="1252" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1275" class="h" font-size="15">source_refs <tspan class="m">· AP · 7 字段</tspan></text>
+<text x="46" y="1299" class="m">正文版本到原始事件的可追溯跨度，payload清理后身份仍存在</text>
+<text x="46" y="1320" class="key">PK: unit_id, text_revision, ref_ordinal</text>
+<text x="46" y="1341" class="key">FK → raw_events, reading_unit_revisions</text>
+<rect x="16" y="1391" width="1208" height="542" rx="14" class="group"/>
+<text x="32" y="1423" class="h" font-size="19">任务授权与阅读结果 · 8 表</text>
+<rect id="profile-cache_entries" x="32" y="1440" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1463" class="h" font-size="15">cache_entries <tspan class="m">· AI · 10 字段</tspan></text>
+<text x="46" y="1487" class="m">按实际请求/资源语义命中的派生缓存，人工修正不作为机器缓存写回</text>
+<text x="46" y="1508" class="key">PK: cache_key</text>
+<text x="46" y="1529" class="key">FK → 无</text>
+<rect id="profile-connection_runtime_states" x="630" y="1440" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="1463" class="h" font-size="15">connection_runtime_states <tspan class="m">· AP · 6 字段</tspan></text>
+<text x="644" y="1487" class="m">连接即时停用的独立安全闸，恢复必须明确执行，不随保存草稿自动开启</text>
+<text x="644" y="1508" class="key">PK: connection_id</text>
+<text x="644" y="1529" class="key">FK → connections</text>
+<rect id="profile-corrections" x="32" y="1562" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1585" class="h" font-size="15">corrections <tspan class="m">· AP · 6 字段</tspan></text>
+<text x="46" y="1609" class="m">人工修正独立版本，机器新结果不能覆盖</text>
+<text x="46" y="1630" class="key">PK: correction_id</text>
+<text x="46" y="1651" class="key">FK → translations</text>
+<rect id="profile-purpose_runtime_states" x="630" y="1562" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="1585" class="h" font-size="15">purpose_runtime_states <tspan class="m">· AP · 8 字段</tspan></text>
+<text x="644" y="1609" class="m">用途当前有效授权epoch；不以单纯配置显示名变更取消任务</text>
+<text x="644" y="1630" class="key">PK: scope_key, purpose</text>
+<text x="644" y="1651" class="key">FK → purpose_bindings</text>
+<rect id="profile-request_attempts" x="32" y="1684" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1707" class="h" font-size="15">request_attempts <tspan class="m">· AI · 15 字段</tspan></text>
+<text x="46" y="1731" class="m">有限重试/回退的真实尝试身份，不将多结果等同回退</text>
+<text x="46" y="1752" class="key">PK: attempt_id</text>
+<text x="46" y="1773" class="key">FK → binding_engines, credential_refs +1</text>
+<rect id="profile-request_tasks" x="630" y="1684" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="1707" class="h" font-size="15">request_tasks <tspan class="m">· AI · 18 字段</tspan></text>
+<text x="644" y="1731" class="m">运行时翻译/精读/语境查词任务，身份与授权固定，配置测试另表</text>
+<text x="644" y="1752" class="key">PK: task_id</text>
+<text x="644" y="1773" class="key">FK → binding_engines, purpose_runtime_states +1</text>
+<rect id="profile-study_results" x="32" y="1806" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="1829" class="h" font-size="15">study_results <tspan class="m">· AI · 11 字段</tspan></text>
+<text x="46" y="1853" class="m">固定句/选词的按需解释终结果，失败/取消不伪装完成</text>
+<text x="46" y="1874" class="key">PK: study_result_id</text>
+<text x="46" y="1895" class="key">FK → request_attempts, request_tasks</text>
+<rect id="profile-translations" x="630" y="1806" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="1829" class="h" font-size="15">translations <tspan class="m">· AI · 7 字段</tspan></text>
+<text x="644" y="1853" class="m">完成后的独立译文；输入和配置身份通过task不可歧义追溯</text>
+<text x="644" y="1874" class="key">PK: translation_id</text>
+<text x="644" y="1895" class="key">FK → request_attempts, request_tasks</text>
+<rect x="16" y="1945" width="1208" height="1396" rx="14" class="group"/>
+<text x="32" y="1977" class="h" font-size="19">配置快照与凭据 · 22 表</text>
+<rect id="profile-binding_engines" x="32" y="1994" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2017" class="h" font-size="15">binding_engines <tspan class="m">· AP · 8 字段</tspan></text>
+<text x="46" y="2041" class="m">用途的有序模型分配；翻译可多引擎而学习用途仅单引擎</text>
+<text x="46" y="2062" class="key">PK: revision_id, binding_id, engine_id</text>
+<text x="46" y="2083" class="key">FK → models, purpose_bindings +1</text>
+<rect id="profile-binding_parameters" x="630" y="1994" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2017" class="h" font-size="15">binding_parameters <tspan class="m">· AP · 5 字段</tspan></text>
+<text x="644" y="2041" class="m">用途层参数三态覆盖与来源追溯</text>
+<text x="644" y="2062" class="key">PK: revision_id, binding_id, parameter_key</text>
+<text x="644" y="2083" class="key">FK → purpose_bindings</text>
+<rect id="profile-config_gc_marks" x="32" y="2116" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2139" class="h" font-size="15">config_gc_marks <tspan class="m">· AP · 3 字段</tspan></text>
+<text x="46" y="2163" class="m">不再被使用版本的受控清理墓碑；保留头和封存</text>
+<text x="46" y="2184" class="key">PK: revision_id</text>
+<text x="46" y="2205" class="key">FK → config_revision_seals, operation_receipts</text>
+<rect id="profile-config_heads" x="630" y="2116" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2139" class="h" font-size="15">config_heads <tspan class="m">· AP · 4 字段</tspan></text>
+<text x="644" y="2163" class="m">草稿与已应用版本的独立可CAS更新指针</text>
+<text x="644" y="2184" class="key">PK: head_kind</text>
+<text x="644" y="2205" class="key">FK → config_revisions</text>
+<rect id="profile-config_revision_seals" x="32" y="2238" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2261" class="h" font-size="15">config_revision_seals <tspan class="m">· AP · 3 字段</tspan></text>
+<text x="46" y="2285" class="m">完整配置装配后的不可撤销封存凭证</text>
+<text x="46" y="2306" class="key">PK: revision_id</text>
+<text x="46" y="2327" class="key">FK → config_revisions</text>
+<rect id="profile-config_revisions" x="630" y="2238" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2261" class="h" font-size="15">config_revisions <tspan class="m">· AP · 6 字段</tspan></text>
+<text x="644" y="2285" class="m">配置档内不可变整体配置快照与本地校验摘要</text>
+<text x="644" y="2306" class="key">PK: revision_id</text>
+<text x="644" y="2327" class="key">FK → config_revisions</text>
+<rect id="profile-connections" x="32" y="2360" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2383" class="h" font-size="15">connections <tspan class="m">· AP · 12 字段</tspan></text>
+<text x="46" y="2407" class="m">某整体配置版本内的连接、路由和非秘密认证引用</text>
+<text x="46" y="2428" class="key">PK: revision_id, connection_id</text>
+<text x="46" y="2449" class="key">FK → config_revisions, credential_pool_revisions</text>
+<rect id="profile-credential_pool_gc_marks" x="630" y="2360" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2383" class="h" font-size="15">credential_pool_gc_marks <tspan class="m">· PL · 4 字段</tspan></text>
+<text x="644" y="2407" class="m">不再被配置或测试引用的池版本清理墓碑</text>
+<text x="644" y="2428" class="key">PK: pool_id, pool_revision</text>
+<text x="644" y="2449" class="key">FK → credential_pool_seals, operation_receipts</text>
+<rect id="profile-credential_pool_members" x="32" y="2482" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2505" class="h" font-size="15">credential_pool_members <tspan class="m">· PL · 7 字段</tspan></text>
+<text x="46" y="2529" class="m">某池版本中的精确凭据版本分配</text>
+<text x="46" y="2550" class="key">PK: pool_id, pool_revision, member_id</text>
+<text x="46" y="2571" class="key">FK → credential_pool_revisions, credential_refs</text>
+<rect id="profile-credential_pool_revisions" x="630" y="2482" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2505" class="h" font-size="15">credential_pool_revisions <tspan class="m">· PL · 6 字段</tspan></text>
+<text x="644" y="2529" class="m">显式凭据池的不可变成员策略版本</text>
+<text x="644" y="2550" class="key">PK: pool_id, pool_revision</text>
+<text x="644" y="2571" class="key">FK → 无</text>
+<rect id="profile-credential_pool_seals" x="32" y="2604" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2627" class="h" font-size="15">credential_pool_seals <tspan class="m">· PL · 4 字段</tspan></text>
+<text x="46" y="2651" class="m">凭据池成员和策略装配完成的不可撤销封存凭证</text>
+<text x="46" y="2672" class="key">PK: pool_id, pool_revision</text>
+<text x="46" y="2693" class="key">FK → credential_pool_revisions</text>
+<rect id="profile-credential_refs" x="630" y="2604" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2627" class="h" font-size="15">credential_refs <tspan class="m">· PL · 11 字段</tspan></text>
+<text x="644" y="2651" class="m">系统安全库不可变秘密身份及可恢复生命周期元数据</text>
+<text x="644" y="2672" class="key">PK: credential_id</text>
+<text x="644" y="2693" class="key">FK → 无</text>
+<rect id="profile-engine_parameters" x="32" y="2726" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2749" class="h" font-size="15">engine_parameters <tspan class="m">· AP · 6 字段</tspan></text>
+<text x="46" y="2773" class="m">有序引擎项的模型特定参数三态覆盖</text>
+<text x="46" y="2794" class="key">PK: revision_id, binding_id, engine_id, parameter_key</text>
+<text x="46" y="2815" class="key">FK → binding_engines</text>
+<rect id="profile-model_default_templates" x="630" y="2726" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2749" class="h" font-size="15">model_default_templates <tspan class="m">· AP · 4 字段</tspan></text>
+<text x="644" y="2773" class="m">模型按用途默认模板，不把翻译模板充作文法模板</text>
+<text x="644" y="2794" class="key">PK: revision_id, model_id, purpose</text>
+<text x="644" y="2815" class="key">FK → models, templates</text>
+<rect id="profile-model_parameters" x="32" y="2848" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2871" class="h" font-size="15">model_parameters <tspan class="m">· AP · 5 字段</tspan></text>
+<text x="46" y="2895" class="m">模型默认参数逐键三态，不把显式零与省略混同</text>
+<text x="46" y="2916" class="key">PK: revision_id, model_id, parameter_key</text>
+<text x="46" y="2937" class="key">FK → models</text>
+<rect id="profile-models" x="630" y="2848" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2871" class="h" font-size="15">models <tspan class="m">· AP · 7 字段</tspan></text>
+<text x="644" y="2895" class="m">某配置版本内的实际模型身份与有来源的能力声明</text>
+<text x="644" y="2916" class="key">PK: revision_id, model_id</text>
+<text x="644" y="2937" class="key">FK → config_revisions, connections</text>
+<rect id="profile-purpose_bindings" x="32" y="2970" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="2993" class="h" font-size="15">purpose_bindings <tspan class="m">· AP · 13 字段</tspan></text>
+<text x="46" y="3017" class="m">全局或游戏的用途意图、覆盖、输入范围与调度快照</text>
+<text x="46" y="3038" class="key">PK: revision_id, binding_id</text>
+<text x="46" y="3059" class="key">FK → config_revisions, games +1</text>
+<rect id="profile-templates" x="630" y="2970" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="2993" class="h" font-size="15">templates <tspan class="m">· AP · 10 字段</tspan></text>
+<text x="644" y="3017" class="m">按用途不可变模板内容、变量目录与兼容来源</text>
+<text x="644" y="3038" class="key">PK: revision_id, template_id</text>
+<text x="644" y="3059" class="key">FK → config_revisions</text>
+<rect id="profile-term_sets" x="32" y="3092" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3115" class="h" font-size="15">term_sets <tspan class="m">· AP · 8 字段</tspan></text>
+<text x="46" y="3139" class="m">全局与游戏术语集的不可变范围及匹配规则</text>
+<text x="46" y="3160" class="key">PK: revision_id, term_set_id</text>
+<text x="46" y="3181" class="key">FK → config_revisions, games</text>
+<rect id="profile-terms" x="630" y="3092" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3115" class="h" font-size="15">terms <tspan class="m">· AP · 10 字段</tspan></text>
+<text x="644" y="3139" class="m">术语项冻结词面、译法、语言与匹配语义</text>
+<text x="644" y="3160" class="key">PK: revision_id, term_set_id, term_id</text>
+<text x="644" y="3181" class="key">FK → term_sets</text>
+<rect id="profile-test_record_credentials" x="32" y="3214" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3237" class="h" font-size="15">test_record_credentials <tspan class="m">· AI · 7 字段</tspan></text>
+<text x="46" y="3261" class="m">单次测试实际触及的精确凭据与池成员范围</text>
+<text x="46" y="3282" class="key">PK: test_id, credential_id</text>
+<text x="46" y="3303" class="key">FK → credential_pool_members, credential_refs +1</text>
+<rect id="profile-test_records" x="630" y="3214" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3237" class="h" font-size="15">test_records <tspan class="m">· AI · 19 字段</tspan></text>
+<text x="644" y="3261" class="m">用户主动测试的独立完成记录与确切范围，不进入游戏正文历史</text>
+<text x="644" y="3282" class="key">PK: test_id</text>
+<text x="644" y="3303" class="key">FK → config_revisions, connections +3</text>
+<rect x="16" y="3353" width="1208" height="420" rx="14" class="group"/>
+<text x="32" y="3385" class="h" font-size="19">偏好、档身份与工程维护 · 6 表</text>
+<rect id="profile-operation_receipts" x="32" y="3402" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3425" class="h" font-size="15">operation_receipts <tspan class="m">· AP · 6 字段</tspan></text>
+<text x="46" y="3449" class="m">业务幂等回执，与业务写入同事务提交</text>
+<text x="46" y="3470" class="key">PK: operation_id</text>
+<text x="46" y="3491" class="key">FK → 无</text>
+<rect id="profile-preference_heads" x="630" y="3402" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3425" class="h" font-size="15">preference_heads <tspan class="m">· AP · 4 字段</tspan></text>
+<text x="644" y="3449" class="m">每scope当前偏好头，可CAS更新</text>
+<text x="644" y="3470" class="key">PK: scope_key</text>
+<text x="644" y="3491" class="key">FK → preference_revisions</text>
+<rect id="profile-preference_revisions" x="32" y="3524" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3547" class="h" font-size="15">preference_revisions <tspan class="m">· AP · 14 字段</tspan></text>
+<text x="46" y="3571" class="m">阅读偏好独立不可变快照，不影响无关在途请求语义</text>
+<text x="46" y="3592" class="key">PK: preference_revision_id</text>
+<text x="46" y="3613" class="key">FK → games, preference_revisions</text>
+<rect id="profile-profile_meta" x="630" y="3524" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3547" class="h" font-size="15">profile_meta <tspan class="m">· AP · 8 字段</tspan></text>
+<text x="644" y="3571" class="m">本配置档唯一身份、writer提交序号及运行代次</text>
+<text x="644" y="3592" class="key">PK: singleton</text>
+<text x="644" y="3613" class="key">FK → 无</text>
+<rect id="profile-resource_snapshots" x="32" y="3646" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3669" class="h" font-size="15">resource_snapshots <tspan class="m">· QA · 7 字段</tspan></text>
+<text x="46" y="3693" class="m">安装包实际资源manifest的不可变快照</text>
+<text x="46" y="3714" class="key">PK: resource_snapshot_id</text>
+<text x="46" y="3735" class="key">FK → 无</text>
+<rect id="profile-schema_migrations" x="630" y="3646" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3669" class="h" font-size="15">schema_migrations <tspan class="m">· AP · 5 字段</tspan></text>
+<text x="644" y="3693" class="m">模式版本与已执行迁移身份；无产品运行记录种子</text>
+<text x="644" y="3714" class="key">PK: version</text>
+<text x="644" y="3735" class="key">FK → 无</text>
+<rect x="16" y="3785" width="1208" height="420" rx="14" class="group"/>
+<text x="32" y="3817" class="h" font-size="19">随包只读辞书 · 5 表</text>
+<rect id="dictionary-dictionary_entries" x="32" y="3834" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3857" class="h" font-size="15">dictionary_entries <tspan class="m">· JA · 7 字段</tspan></text>
+<text x="46" y="3881" class="m">日语词条身份与中文基础/英语补充的明确区分</text>
+<text x="46" y="3902" class="key">PK: entry_id</text>
+<text x="46" y="3923" class="key">FK → dictionary_sources</text>
+<rect id="dictionary-dictionary_forms" x="630" y="3834" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3857" class="h" font-size="15">dictionary_forms <tspan class="m">· JA · 6 字段</tspan></text>
+<text x="644" y="3881" class="m">词面/词元/读音查询的B-tree键，未知词不伪造命中</text>
+<text x="644" y="3902" class="key">PK: form_id</text>
+<text x="644" y="3923" class="key">FK → dictionary_entries</text>
+<rect id="dictionary-dictionary_meta" x="32" y="3956" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="3979" class="h" font-size="15">dictionary_meta <tspan class="m">· JA · 6 字段</tspan></text>
+<text x="46" y="4003" class="m">单个固定辞书索引及规范化算法的发布身份</text>
+<text x="46" y="4024" class="key">PK: singleton</text>
+<text x="46" y="4045" class="key">FK → 无</text>
+<rect id="dictionary-dictionary_senses" x="630" y="3956" width="580" height="106" rx="10" class="entity"/>
+<text x="644" y="3979" class="h" font-size="15">dictionary_senses <tspan class="m">· JA · 6 字段</tspan></text>
+<text x="644" y="4003" class="m">释义正文、语言与来源定位，不把英语补充伪称中文释义</text>
+<text x="644" y="4024" class="key">PK: entry_id, sense_index</text>
+<text x="644" y="4045" class="key">FK → dictionary_entries</text>
+<rect id="dictionary-dictionary_sources" x="32" y="4078" width="580" height="106" rx="10" class="entity"/>
+<text x="46" y="4101" class="h" font-size="15">dictionary_sources <tspan class="m">· JA · 7 字段</tspan></text>
+<text x="46" y="4125" class="m">每个辞书来源、快照与必须显示的归属许可</text>
+<text x="46" y="4146" class="key">PK: source_id</text>
+<text x="46" y="4167" class="key">FK → 无</text>
+<text x="28" y="4242" class="m">完整关系、索引、触发器与逐列 CHECK 以确定性导出的 CSV / Markdown / JSON 为准。</text>
+</svg>

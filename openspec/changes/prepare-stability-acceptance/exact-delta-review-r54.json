@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "prepare-stability-acceptance",
+  "parent_baseline_sha256": "48205f4249ed5d8e6e366c8de86d47747f021908dc16ecdd932e3505d4ab6cae",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+      "before": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab",
+      "after": "71b5da67e7d6c7548a15c3c5dcee17b6fc05aaec03350ef2670afb2375f7f88a"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+      "before": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab",
+      "after": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/ipc/word_card.rs",
+      "before": "2c75b1ffbf387e9e1d837c8163898d9f45c93c30b7a4dc560d705ce478cc815f",
+      "after": "2a7daf23ad27822075293a63f9e66faec0a9f43e4ab5a9fc68172e5e64aca5f5"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/mod.rs",
+      "before": "6a27e5137c21a0e58711e7a74183b4f72aa2996fa8a7e5631384d1767d607460",
+      "after": "f41b39418ff2c96fa872bf9f401688705275391cb692de86ea4d2e5f8fe83df7"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+      "before": null,
+      "after": "a3d15a11e5d87e5802e34cae636f95ac122b8cba5aad7b16cfb07fd8c2995525"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "before": "f7557475cc81d83951fbb30e575ccd0f1205316f7136997af8d29bceecdc2cb1",
+      "after": "6b14a5bed2684356cff4aefaf3cbbc043386ace68fc8fdd65c16b95b73612dd4"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+      "before": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7",
+      "after": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+    },
+    {
+      "path": "apps/desktop/tests/support/ReviewedSurfaceProbe.tsx",
+      "before": "495983c6cca81ef7d5a2e03c12fc297456502874d429766ba82f5be68f06eb30",
+      "after": "abcc29194ff3a58b98a7eba3e90880df6150b324c4909b844e1cea1c65762033"
+    },
+    {
+      "path": "apps/desktop/tests/support/design-port.ts",
+      "before": "479084763bd0777116bb33883f86e5a67a4c877eee344c0b4e0b9952e5629e99",
+      "after": "0171aa929e9909ab795ed7cf8b4179f8e7a3d946f2acb079dcbf15fe8bb31cb3"
+    },
+    {
+      "path": "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+      "before": "d5ab88c6be90cfea33f9b5385a3ac969d2107169abbfa7ca89966542439025e9",
+      "after": "a7ee82236a8284024501ff4b1248d481d07f9875c33b5420c34c3b3f5db35c47"
+    },
+    {
+      "path": "docs/development/lifecycle-impact-contract.json",
+      "before": null,
+      "after": "340162d3183f9919f2c6fb6633e8427081fa83aca7862a2d8d076248895e9a0f"
+    },
+    {
+      "path": "docs/development/runtime-stability-evidence.md",
+      "before": null,
+      "after": "0f94ec9769510d7ddaabc868893b82db1b63969ea67486ba6447db6f564aba3f"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/design.md",
+      "before": null,
+      "after": "d2f6414ca78a2eae1a1fdf109209e93271b0c9ef1bb919f04e73e67b1794a831"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/iteration-card.md",
+      "before": null,
+      "after": "ee1e225a4459d93b7e4d44a85e23f42616b3bf4d92aba714d8ef05bb47ebbcfe"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/proposal.md",
+      "before": null,
+      "after": "8e39b351c4e334f82f8ddda1f4c0318f4af39e992fa979705a238f54004b4d06"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/source-snapshot.json",
+      "before": null,
+      "after": "0a165153d2dfb29aeeff499c52082e0b22c103ff011d866d3b55e5ed493a21d2"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/specs/stability-verification/spec.md",
+      "before": null,
+      "after": "848c517b045bf9d563bf8ab11ae049dcc23576cd54905dcbab7898f5d2641539"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/tasks.md",
+      "before": null,
+      "after": "64bf9723018dc9ec84f6ede0a59382d304034be0d9d61e5da0bc2a7ea95eed1e"
+    },
+    {
+      "path": "openspec/changes/prepare-stability-acceptance/verification.json",
+      "before": null,
+      "after": "cd4e7d0c08bdd10c4071d9327ed03c73d20c67074ae2ab4b095f02ecf68e6ea3"
+    },
+    {
+      "path": "scripts/quality/lifecycle_impact.py",
+      "before": null,
+      "after": "632b10a08ccef6411e17b9ed19ab48ea56971efdb4fd00b695391226a9eb30ca"
+    },
+    {
+      "path": "scripts/quality/product_execution.py",
+      "before": "dcde170defa2c61e89eb7d96ff12896e0c8a1efc45994cf9b1bc15ce6303a182",
+      "after": "9c41b9b781da1b68731919012000eab1b40a731855c7a0c84668ef5702efc4d6"
+    },
+    {
+      "path": "scripts/quality/runtime_observer.swift",
+      "before": null,
+      "after": "36e73cfb68de2de2f26062dc40cd1688a0089ccf535cc92c8e63e4966456cfab"
+    },
+    {
+      "path": "scripts/quality/runtime_stability.py",
+      "before": null,
+      "after": "b040ed1e8954cd37f413f58866eba0d0f9793a8a7b1052009f630a7c1051f48d"
+    },
+    {
+      "path": "scripts/quality/runtime_stability_evidence.py",
+      "before": null,
+      "after": "d56069fac7aa6e15faaec9b28a4fc48e1c0204e55f84c8e5ca1fccf3199aee0c"
+    },
+    {
+      "path": "scripts/quality/spec_contract.py",
+      "before": "740093657c2674b7295d2542d3cd15067d61ed9e71f1c3520afbbde0d5a23340",
+      "after": "3d1b13503a6036d378c282fd7210dd735aa9b935e7ebecbfb4b08a60dc96a2b3"
+    },
+    {
+      "path": "scripts/quality/test_lifecycle_impact.py",
+      "before": null,
+      "after": "970e21f61a33e16c3dc9fb7f224f4de577bf0ebca98d90c7ce5a0a8e4d66d785"
+    },
+    {
+      "path": "scripts/quality/test_product_execution.py",
+      "before": "9443f0622497a4360f6153ef1e855d76f9837b2a7d096208d9133d499a6d57bf",
+      "after": "930702069bd2bfcf6d7962e9a752b809b3c197b98397148d630efe1f3c95c3f1"
+    },
+    {
+      "path": "scripts/quality/test_runtime_stability.py",
+      "before": null,
+      "after": "d4e5d80da048975d56ac5b9f711f4a285015152ab65134fc24c5eebdb3c5294d"
+    },
+    {
+      "path": "scripts/quality/test_spec_contract.py",
+      "before": "c8593218ba4cb0047c4de7d938f82462e46964ce6bd9fdcd27bada135f053520",
+      "after": "e214e143957cc1f433b86491a5bfda8082c696c6ba9de58e1eaed081723941a6"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "682840d679a3f80f557b268967f1779e4674b506ee6a8be1fe4ab493d94ea60d",
+      "after": "fef980b1fb0c549e7c38c4b82ac6b4bab046b0742be5a4fbce6db553aa120dd7"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/ipc/word_card.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview.rs",
+    "apps/desktop/tests/support/ReviewedSurfaceProbe.tsx",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/visual/capture-reviewed-states.mjs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/acceptance-preparation/independent-integration-code-review.json",
+    "sha256": "ffd6e0633d419c611fdf7d2b6e0f97dfe40c24c1f48bd01e163188a9d850b317",
+    "bytes": 22327
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 208,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "71b5da67e7d6c7548a15c3c5dcee17b6fc05aaec03350ef2670afb2375f7f88a"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 340,
+        "sha256": "f7557475cc81d83951fbb30e575ccd0f1205316f7136997af8d29bceecdc2cb1"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 341,
+        "sha256": "6b14a5bed2684356cff4aefaf3cbbc043386ace68fc8fdd65c16b95b73612dd4"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M13",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/verify.py",
+        "line": 19,
+        "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+        "symbol": "READING_COMPONENT_CHECK",
+        "sha256": "682840d679a3f80f557b268967f1779e4674b506ee6a8be1fe4ab493d94ea60d"
+      },
+      "after": {
+        "path": "scripts/quality/verify.py",
+        "line": 19,
+        "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+        "symbol": "READING_COMPONENT_CHECK",
+        "sha256": "fef980b1fb0c549e7c38c4b82ac6b4bab046b0742be5a4fbce6db553aa120dd7"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C13",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 208,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "71b5da67e7d6c7548a15c3c5dcee17b6fc05aaec03350ef2670afb2375f7f88a"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C35",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "7bcf4da7a606031298c34ab1270d2aab5d6fc0822cf88f54d42f9239c0423bab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/ipc/reading.rs",
+        "line": 174,
+        "quote": "pub async fn application_show_associated_game(",
+        "symbol": "pub async fn application_show_associated_game",
+        "sha256": "a6ff5f3d309af128bdd57e8188f7e469b25d94e018e6c8188e0c09179a12ad8a"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 208,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "71b5da67e7d6c7548a15c3c5dcee17b6fc05aaec03350ef2670afb2375f7f88a"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-PREVIEW",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 695,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "a8afb6f6f08dfaa44b200d986696fd5bf11d25ba6d902650f083fca83a94dad7"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_preview.rs",
+        "line": 726,
+        "quote": "pub fn start(",
+        "symbol": "pub fn start(",
+        "sha256": "80f04d3eb4b55c4b7ede6fc17a9e73cec4fb56a1386c92060e21465ae49f642b"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "CAP-SHORTCUT",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 203,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "ef6f44617ab27b1852e851fd78e5d5056fbdc9716970a9de614a97fbe3d3c3ab"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/bootstrap.rs",
+        "line": 208,
+        "quote": "let mut menu_updates = watch_runtime.subscribe();",
+        "symbol": "let mut menu_updates = watch_runtime.subscribe();",
+        "sha256": "71b5da67e7d6c7548a15c3c5dcee17b6fc05aaec03350ef2670afb2375f7f88a"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

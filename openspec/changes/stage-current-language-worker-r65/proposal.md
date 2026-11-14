@@ -1,0 +1,5 @@
+# 正式同步当前派生 language-worker
+
+实际build-rc01成功重建当前worker后，prepare复制将唯一源资源从old `18b588eda5d46b5c969ee234a89857a6623819b8bef03423b0056e595af36a53` 变为new `2f2a33778edd923be29241c65d60cb47d5457e0cb2231bc45520bf31e5cae639`（618640bytes），现行冻结与catalog门禁正确拒绝且没有包/app。Root保留两版原字节并恢复Main1950/tree `2e2652808333a4075f4ccbd2bcea36da97d53a6985bd555f8e44ac4c827c941f`；本change从这个真实before正式同步当前派生资源，不把旧worker冒充current。
+
+只改一个候选资源与自有WI；worker Rust/协议/guard/期望、词典/Core/许可/manifest、旧失败不改。source+gov独审、Root集成、authority生成与packet独审/adopt逐步分开；本Owner仅准备ignored候选。

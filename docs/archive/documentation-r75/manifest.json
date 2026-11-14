@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "status": "historical_only",
+  "parent_baseline_id": "FP1-20261030-R75",
+  "parent_baseline_sha256": "c385bb1f06ae38ba83943fc4bd219768ecc71d5699f956c92b3c2eeedc0ec3bf",
+  "entries": [
+    {
+      "original": "README.md",
+      "snapshot": "docs/archive/documentation-r75/README.md",
+      "bytes": 10964,
+      "sha256": "54a1ea276aa4ca97f89b8291de20c2b13588c11a7b2b31b1f5849e13a2f4e005"
+    },
+    {
+      "original": "AGENTS.md",
+      "snapshot": "docs/archive/documentation-r75/AGENTS.md",
+      "bytes": 4007,
+      "sha256": "7b37c55a4139d044c79ab66c77b1820869e7f95762543561e221515d80896474"
+    },
+    {
+      "original": "docs/product/README.md",
+      "snapshot": "docs/archive/documentation-r75/docs/product/README.md",
+      "bytes": 12324,
+      "sha256": "84a2cfd60866fd90318cd3ec483b3176937b852fb56539bf855e079c261aa816"
+    },
+    {
+      "original": "docs/product/first-product-scope.md",
+      "snapshot": "docs/archive/documentation-r75/docs/product/first-product-scope.md",
+      "bytes": 8960,
+      "sha256": "d9416c919ce3a03f79e440e20dfdea01280c1b4f0ce6b262a0d4062807b52681"
+    },
+    {
+      "original": "docs/product/model-configuration-prd.md",
+      "snapshot": "docs/archive/documentation-r75/docs/product/model-configuration-prd.md",
+      "bytes": 63069,
+      "sha256": "7481f7a2d3a87d4fe5ad5f46478627e9bd9917dc407bc72a02e1e0792c43b205"
+    },
+    {
+      "original": "docs/product/reading-window-session-prd.md",
+      "snapshot": "docs/archive/documentation-r75/docs/product/reading-window-session-prd.md",
+      "bytes": 29547,
+      "sha256": "cf091e3343139d5a5c0ca3322ef1fde9b7529589f661de8bfa60c7ecd94cd58e"
+    },
+    {
+      "original": "docs/design/first-product-v1/README.md",
+      "snapshot": "docs/archive/documentation-r75/docs/design/first-product-v1/README.md",
+      "bytes": 21697,
+      "sha256": "184f578f9438f20f3dab9e4c4a51df8280176690a47695df4aea537549443724"
+    },
+    {
+      "original": "docs/development/current-client-alignment-plan.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/current-client-alignment-plan.md",
+      "bytes": 11154,
+      "sha256": "5b08488d1540f05d676f9ce9dfca5e25f6f94d82a9ff541a1c14b85491e7cd7b"
+    },
+    {
+      "original": "docs/development/first-product-test-plan.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/first-product-test-plan.md",
+      "bytes": 25074,
+      "sha256": "87480ac9f77c70081f00e47c140bc7ba877f8dd348dfad8c8dca3c3bbc54c3ca"
+    },
+    {
+      "original": "docs/development/client-regression.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/client-regression.md",
+      "bytes": 28768,
+      "sha256": "5db196c91cfc0f96b85ee71bbf09d104bf411c1b059e40fff2f5d8fd3677687c"
+    },
+    {
+      "original": "docs/development/release-execution-evidence.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/release-execution-evidence.md",
+      "bytes": 10908,
+      "sha256": "b0246c32cd5d201af2c327610439f18a46aa4cedd459d303e4fe2598fd1dfee5"
+    },
+    {
+      "original": "docs/development/engineering-gates.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/engineering-gates.md",
+      "bytes": 16294,
+      "sha256": "5250e6034501d65686ed8676aa0cb2b1012b5adb4e189694161154acaecd8a33"
+    },
+    {
+      "original": "docs/development/guided-service-reading-tests.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/guided-service-reading-tests.md",
+      "bytes": 14924,
+      "sha256": "1c0829196591faa919e32dfe624cdc2c1d98ae7289e975dcd413d88fad9864a9"
+    },
+    {
+      "original": "docs/development/current-product-test-coverage.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/current-product-test-coverage.md",
+      "bytes": 33117,
+      "sha256": "3e6dbb0be5c41650167a22df556490de92875402e4123f9ee321d14bb0345025"
+    },
+    {
+      "original": "docs/development/iteration-governance.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/iteration-governance.md",
+      "bytes": 13331,
+      "sha256": "a8b640a7e28bd91b10895fc94b35e6f5b41076d385bd21814a29b3a214d09d49"
+    },
+    {
+      "original": "docs/architecture/first-product-engineering-baseline.md",
+      "snapshot": "docs/archive/documentation-r75/docs/architecture/first-product-engineering-baseline.md",
+      "bytes": 68987,
+      "sha256": "ac0364b81604add670d35b0207c7e4ac516dc65623a9f797e1b83ff074cd5ddb"
+    },
+    {
+      "original": "docs/architecture/reading-window-session-technical-design.md",
+      "snapshot": "docs/archive/documentation-r75/docs/architecture/reading-window-session-technical-design.md",
+      "bytes": 91048,
+      "sha256": "d6ae7773ef35400a07a21a3dad7ce6afd96167e7961df882c6c2eaf0c44e49ac"
+    },
+    {
+      "original": "docs/architecture/client-rebuild-architecture.md",
+      "snapshot": "docs/archive/documentation-r75/docs/architecture/client-rebuild-architecture.md",
+      "bytes": 2512,
+      "sha256": "0ecdf164cf00f9b9d1440e4a8883102ad500550ce2f74484c7f25e5d6a125a73"
+    },
+    {
+      "original": "docs/architecture/japanese-study-and-llm.md",
+      "snapshot": "docs/archive/documentation-r75/docs/architecture/japanese-study-and-llm.md",
+      "bytes": 83180,
+      "sha256": "201aafe6931a857cb278551bbd50a9c50eceb3c2d074a3aae182c272ae143ba9"
+    },
+    {
+      "original": "docs/development/desktop-client.md",
+      "snapshot": "docs/archive/documentation-r75/docs/development/desktop-client.md",
+      "bytes": 13107,
+      "sha256": "ec1b7e1252a383d99b8389c622b4ae14273f5eca938636f967a5d5e4753889c6"
+    }
+  ],
+  "links": "Exact original bytes. Relative links are resolved from original locations; snapshots never satisfy current authority or product acceptance."
+}

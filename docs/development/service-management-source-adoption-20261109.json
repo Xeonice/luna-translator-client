@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "kind": "service-management-source-adoption-definition/v1",
+  "change_id": "fix-service-management-duplicates",
+  "parent_baseline_id": "FP1-20261109-R91",
+  "baseline_id": "FP1-20261109-R92",
+  "parent_raw_sha256": "260524947b7a3a2bbd688aac48d46baa58bdb8e92535af13b0794be424355010",
+  "parent_complete_source_snapshot": {
+    "path": "openspec/changes/fix-service-management-duplicates/source-snapshot.json",
+    "sha256": "2cf5c10b2a3d59a60597fa47ef46db6bb9b2e94d3852a6bd11578a63f7aafe5f",
+    "bytes": 393066
+  },
+  "parent_source_tree_sha256": "a0057daa1734e8db0f279976201bbaafb2ccc0c5b7b966ef00408c0432c67b48",
+  "pre_adoption_source_tree_sha256": "f97a78b8a2124a1127f2a565dc5938aca77ffa749abb105f692310b28c7461c9",
+  "pre_adoption_source_entries": 2775,
+  "baseline_candidate_sha256": "730f15f9d6c649c2589bea21e4b11cb94796bc18848bb5a4a426d4e100d8de7b",
+  "archive_raw_sha256": "260524947b7a3a2bbd688aac48d46baa58bdb8e92535af13b0794be424355010",
+  "reviewed_source_delta_before_adoption": [
+    {
+      "path": "apps/desktop/src/features/model-config/ModelConfigScreen.tsx",
+      "before_sha256": "b0b4cfa325be2eea2d5e465065357ffb1e8bdf50a2115dca3cf3ff2fcb21fb54",
+      "after_sha256": "ee0687183fe6362ef3b227da6992aa0160eaa7c0d758b75eb28760454230b0ec",
+      "kind": "modified"
+    },
+    {
+      "path": "apps/desktop/src/features/model-config/service-management.ts",
+      "before_sha256": null,
+      "after_sha256": "958a0fbb38bb2cbcecd5dc239ec28fabb6aa7c42ddf3edc4f0ea72afccd98e59",
+      "kind": "added"
+    },
+    {
+      "path": "apps/desktop/tests/visual/service-management-projection.test.mjs",
+      "before_sha256": null,
+      "after_sha256": "6d00123618a4067fb970d8f7fadad3dcff28d2e2eb310741aff1c25f7b7f4158",
+      "kind": "added"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-guided-service-page.mjs",
+      "before_sha256": "7e6ac86845eea94d35b61d5694b0014fd62264eac841766237c4532f1d41af69",
+      "after_sha256": "d28393a87e696c03770a3f6de7530e69642b9aefbff4b3bd5b2c9fedae14ad52",
+      "kind": "modified"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-service-management-list.mjs",
+      "before_sha256": null,
+      "after_sha256": "3ea8000ea70ebd9e83f1a878c79d25771fb7891bb69f41e599ba44ff64a79c37",
+      "kind": "added"
+    },
+    {
+      "path": "docs/README.md",
+      "before_sha256": "ba529d0675ced77f6648b744c1682f76553d76e71146920cf48c18e98a038319",
+      "after_sha256": "6a1831bb338d893f9d616b314739bcbfa6eccfee49e1b39ac7ae93036c4c4b7b",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/architecture/engineering-components.csv",
+      "before_sha256": "fa4ef8fba5bd48ed38887f8a17b38c45149be996b1af81ed632dedb7708377b0",
+      "after_sha256": "bb1d5db5d5c18163283caf3230f7546b4c68b692d80c93fdc27bf17f1a2cfc54",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before_sha256": "1f0567c1e375ede04dae2a1c495273a02dcc070599d11bb6ab5b93e2682369c8",
+      "after_sha256": "d493def6bf0a44bfd7e688c8515f33ecd10bbf858b0604e01720b35bfba45a73",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before_sha256": "524cddfa455418d6fc5922f12c49180f95d5d6e9fe2bb0e3d76883de566a2188",
+      "after_sha256": "c4467147176bdecedcb6c2f6e5598f6cd597ca6ad3a74d09fdb8f7d81011b8dc",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before_sha256": "e7f7b3ffca4f6b17cefaedf86fb87af32bcd8a8b86bd1249c77557f107a24a55",
+      "after_sha256": "dfa80a023546c5113888636aed038e84ab291574a9486f87c22d6f36dbf630f3",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before_sha256": "adfe6d4eb554091b4d4040a3ab528d003bf47460882d062c2da72860c5b34799",
+      "after_sha256": "17d56f7b66bb6778a0a4b12ee7328eea7f94fec26ffad17837df2b9923a3e984",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/development/all-page-design-coverage.json",
+      "before_sha256": "ae3b051098d685dd6f0c6a984eaae90a9b907174d38c6f96cddef74ae5430610",
+      "after_sha256": "8432d5a1511226eb4e68a195252789f7b1ff71699138e45a41d0e4e69aa805a2",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "before_sha256": "2a3f2d0e25ccbb548ae239b8674fea0c65a34853b121b88ded0a703df87f236b",
+      "after_sha256": "7a43288351e8686817cea08bbfa1f11e0745da0a8b0eb056dcc04b98f9e134c1",
+      "kind": "modified"
+    },
+    {
+      "path": "docs/development/current-phase.json",
+      "before_sha256": "db992613ff928f19c2181a19c3603d0d3232b05a42dd61f620a00d4792abcf15",
+      "after_sha256": "41550108f492b9f653e885b27babb6a2a78315c72f8e4abd2936e1bdfd20a566",
+      "kind": "modified"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/design.md",
+      "before_sha256": null,
+      "after_sha256": "be976ae59df25790e8acd344868ca359e43fc7588d9e1520af33d8f52940c05c",
+      "kind": "added"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/iteration-card.md",
+      "before_sha256": null,
+      "after_sha256": "7a64da936e5183fe6f8993ba09d62ea6a4abc8eb05dd8a59001e2ddb58897f71",
+      "kind": "added"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/proposal.md",
+      "before_sha256": null,
+      "after_sha256": "d281bfdd7ddae2e078154faf5fefe2b1170fed066967d30d246a92be89cd3fd1",
+      "kind": "added"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/source-snapshot.json",
+      "before_sha256": null,
+      "after_sha256": "2cf5c10b2a3d59a60597fa47ef46db6bb9b2e94d3852a6bd11578a63f7aafe5f",
+      "kind": "added"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/specs/service-management/spec.md",
+      "before_sha256": null,
+      "after_sha256": "fe739c2e068e1676138a87df21011ad833f240e77d4217a826b6d90794f63ed2",
+      "kind": "added"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/tasks.md",
+      "before_sha256": null,
+      "after_sha256": "831a7990c29011347c07a5987f54af8531fa4da1d64cee2a21cc1f59ab7098af",
+      "kind": "added"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/verification.json",
+      "before_sha256": null,
+      "after_sha256": "ffc4dad52a5683e8e45440bdbd56f6bd84686d27557e653ee56265afdd9e22b5",
+      "kind": "added"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before_sha256": "0abf8643613dc0d5c3a690b23b65f4fdfcf2ae819ed66592a3cb29f210846e45",
+      "after_sha256": "ebaabf659261a80e8fa0f43d8b45a96e3913371f2aed9556ed2886ca7e4c8d8c",
+      "kind": "modified"
+    }
+  ],
+  "source_delta_sha256": "5b2429454a9dcc80b691b2e7b91a51dd30dabb1fd8ea5d6a4b648096ffad7c3c",
+  "pin_delta": [
+    {
+      "path": "apps/desktop/src/features/model-config/ModelConfigScreen.tsx",
+      "before_sha256": "b0b4cfa325be2eea2d5e465065357ffb1e8bdf50a2115dca3cf3ff2fcb21fb54",
+      "after_sha256": "ee0687183fe6362ef3b227da6992aa0160eaa7c0d758b75eb28760454230b0ec",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "apps/desktop/src/features/model-config/service-management.ts",
+      "before_sha256": null,
+      "after_sha256": "958a0fbb38bb2cbcecd5dc239ec28fabb6aa7c42ddf3edc4f0ea72afccd98e59",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "apps/desktop/tests/visual/service-management-projection.test.mjs",
+      "before_sha256": null,
+      "after_sha256": "6d00123618a4067fb970d8f7fadad3dcff28d2e2eb310741aff1c25f7b7f4158",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-guided-service-page.mjs",
+      "before_sha256": "7e6ac86845eea94d35b61d5694b0014fd62264eac841766237c4532f1d41af69",
+      "after_sha256": "d28393a87e696c03770a3f6de7530e69642b9aefbff4b3bd5b2c9fedae14ad52",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-service-management-list.mjs",
+      "before_sha256": null,
+      "after_sha256": "3ea8000ea70ebd9e83f1a878c79d25771fb7891bb69f41e599ba44ff64a79c37",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/README.md",
+      "before_sha256": "ba529d0675ced77f6648b744c1682f76553d76e71146920cf48c18e98a038319",
+      "after_sha256": "6a1831bb338d893f9d616b314739bcbfa6eccfee49e1b39ac7ae93036c4c4b7b",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/architecture/engineering-components.csv",
+      "before_sha256": "fa4ef8fba5bd48ed38887f8a17b38c45149be996b1af81ed632dedb7708377b0",
+      "after_sha256": "bb1d5db5d5c18163283caf3230f7546b4c68b692d80c93fdc27bf17f1a2cfc54",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/architecture/engineering-modules.csv",
+      "before_sha256": "1f0567c1e375ede04dae2a1c495273a02dcc070599d11bb6ab5b93e2682369c8",
+      "after_sha256": "d493def6bf0a44bfd7e688c8515f33ecd10bbf858b0604e01720b35bfba45a73",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/architecture/implementation-status.json",
+      "before_sha256": "524cddfa455418d6fc5922f12c49180f95d5d6e9fe2bb0e3d76883de566a2188",
+      "after_sha256": "c4467147176bdecedcb6c2f6e5598f6cd597ca6ad3a74d09fdb8f7d81011b8dc",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/architecture/implementation-status.md",
+      "before_sha256": "e7f7b3ffca4f6b17cefaedf86fb87af32bcd8a8b86bd1249c77557f107a24a55",
+      "after_sha256": "dfa80a023546c5113888636aed038e84ab291574a9486f87c22d6f36dbf630f3",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/architecture/japanese-study-and-llm.md",
+      "before_sha256": "adfe6d4eb554091b4d4040a3ab528d003bf47460882d062c2da72860c5b34799",
+      "after_sha256": "17d56f7b66bb6778a0a4b12ee7328eea7f94fec26ffad17837df2b9923a3e984",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/development/all-page-design-coverage.json",
+      "before_sha256": "ae3b051098d685dd6f0c6a984eaae90a9b907174d38c6f96cddef74ae5430610",
+      "after_sha256": "8432d5a1511226eb4e68a195252789f7b1ff71699138e45a41d0e4e69aa805a2",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/development/baselines/FP1-20261109-R91.json",
+      "before_sha256": null,
+      "after_sha256": "260524947b7a3a2bbd688aac48d46baa58bdb8e92535af13b0794be424355010",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Existing exact raw parent archive"
+    },
+    {
+      "path": "docs/development/current-client-alignment-plan.md",
+      "before_sha256": "2a3f2d0e25ccbb548ae239b8674fea0c65a34853b121b88ded0a703df87f236b",
+      "after_sha256": "7a43288351e8686817cea08bbfa1f11e0745da0a8b0eb056dcc04b98f9e134c1",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "docs/development/current-phase.json",
+      "before_sha256": "db992613ff928f19c2181a19c3603d0d3232b05a42dd61f620a00d4792abcf15",
+      "after_sha256": "41550108f492b9f653e885b27babb6a2a78315c72f8e4abd2936e1bdfd20a566",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/design.md",
+      "before_sha256": null,
+      "after_sha256": "be976ae59df25790e8acd344868ca359e43fc7588d9e1520af33d8f52940c05c",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/iteration-card.md",
+      "before_sha256": null,
+      "after_sha256": "7a64da936e5183fe6f8993ba09d62ea6a4abc8eb05dd8a59001e2ddb58897f71",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/proposal.md",
+      "before_sha256": null,
+      "after_sha256": "d281bfdd7ddae2e078154faf5fefe2b1170fed066967d30d246a92be89cd3fd1",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/source-snapshot.json",
+      "before_sha256": null,
+      "after_sha256": "2cf5c10b2a3d59a60597fa47ef46db6bb9b2e94d3852a6bd11578a63f7aafe5f",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/specs/service-management/spec.md",
+      "before_sha256": null,
+      "after_sha256": "fe739c2e068e1676138a87df21011ad833f240e77d4217a826b6d90794f63ed2",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/tasks.md",
+      "before_sha256": null,
+      "after_sha256": "831a7990c29011347c07a5987f54af8531fa4da1d64cee2a21cc1f59ab7098af",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "openspec/changes/fix-service-management-duplicates/verification.json",
+      "before_sha256": null,
+      "after_sha256": "ffc4dad52a5683e8e45440bdbd56f6bd84686d27557e653ee56265afdd9e22b5",
+      "action": "add_explicit_review_candidate_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before_sha256": "0abf8643613dc0d5c3a690b23b65f4fdfcf2ae819ed66592a3cb29f210846e45",
+      "after_sha256": "ebaabf659261a80e8fa0f43d8b45a96e3913371f2aed9556ed2886ca7e4c8d8c",
+      "action": "update_reviewed_parent_pin",
+      "basis": "Member of complete parent→current source delta; requires independent packet approval"
+    }
+  ],
+  "pin_delta_sha256": "5ee1b1595614596514bae1b0fd6096e238b616cfae5e92a4357d0161f38f6033",
+  "source_review": {
+    "path": ".build/runtime-game-translation-20261109/source-audit/source-review.json",
+    "sha256": "d0eec16802d92e85b0a38799c7de19a12d5e6ca2edd1e2c8f935a99409b5868b",
+    "bytes": 9028
+  },
+  "status": "revision_definition_packet_approval_and_successful_transaction_recorded_externally",
+  "cycle_policy": "R92/active baseline do not pin themselves, this definition or final source tree. Independent packet and final after-tree review/receipts remain ignored; existing R91 archive is read/pinned, never rewritten.",
+  "original_approvals_preserved": true,
+  "frozen_design_PNG_tokens_preserved": true,
+  "legacy_debt_preserved": true,
+  "user_data_accessed_or_modified_by_this_adoption": false,
+  "product_completion": "incomplete",
+  "product_acceptance_promoted": false,
+  "runtime_acceptance_promoted": false,
+  "runtime_package_modified": false,
+  "current_release_approved": false,
+  "next_stage_allowed": false
+}

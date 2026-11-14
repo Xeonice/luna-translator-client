@@ -1,0 +1,296 @@
+import { useCallback, useEffect, useRef, useState } from 'react';
+import type { ReactNode } from 'react';
+import { Icon } from '../../ui/icons/Icon';
+import type { AppSnapshot, PreferenceField, Preferences, ResourceInfo, ScopedPreferences, WindowCapabilities } from '../../bridge/contracts.generated';
+import type { ApplicationStore } from '../../bridge/projections';
+import { useAction } from '../../bridge/projections';
+import { errorMessage } from '../../bridge/application-port';
+import { Button, Select, Switch, TextField } from '../../ui/primitives/Controls';
+import { FormRow, Group, Notice, StatusLabel } from '../../ui/patterns/Patterns';
+import styles from './styles.module.css';
+import { GeneralSettings } from './GeneralSettings';
+
+const shortcutStateLabels = { active: '已注册', draft: '尚未应用', validating: '正在校验', registering: '正在注册', failed: '应用失败，原生效组合保留', cleanup_pending: '正在清理旧绑定' } as const;
+const shortcutIntents = { toggleHud: 'toggle_hud', togglePause: 'toggle_capture_pause', cycleDisplayMode: 'cycle_reading_display_mode' } as const;
+function formattedShortcut(value: string | null | undefined) {
+  if (!value) return '未设置';
+  const names: Record<string, string> = { alt: '⌥', option: '⌥', super: '⌘', meta: '⌘', command: '⌘', cmd: '⌘', cmdorctrl: '⌘', commandorcontrol: '⌘', control: '⌃', ctrl: '⌃', shift: '⇧' };
+  return value.split('+').map(part => names[part.trim().toLowerCase()] ?? (/^[a-z]$/i.test(part.trim()) ? part.trim().toUpperCase() : part.trim())).join(' ');
+}
+const shortcutFields = [['toggleHud', '显示 / 隐藏浮窗'], ['togglePause', '暂停 / 继续取文'], ['cycleDisplayMode', '原文与译文模式']] as const;
+function GeneralPreferenceNotice({ children, pending = false, error = false, action }: { children: ReactNode; pending?: boolean; error?: boolean; action?: ReactNode }) {
+  return <div className={styles.generalNotice}><Notice error={error}>{pending ? <span className={styles.generalPendingMark} aria-hidden="true"/> : null}<span className={styles.generalNoticeMessage}>{children}</span>{action}</Notice></div>;
+}
+export function PreferencesScreen({ snapshot, store, section = 'display' }: { snapshot: AppSnapshot; store: ApplicationStore; section?: string }) {
+  const [draft, setDraft] = useState<Preferences>(() => structuredClone(snapshot.preferences));
+  const [dirty, setDirty] = useState(false);
+  const [resources, setResources] = useState<ResourceInfo[] | null>(null);
+  const [scopeView, setScopeView] = useState<ScopedPreferences | null>(null);
+  const [scopeBusy, setScopeBusy] = useState(true);
+  const [scopeError, setScopeError] = useState<string | null>(null);
+  const scopeRequest = useRef(0);
+  const initialScope = useRef(snapshot.preferences.scopeKey);
+  const appliedSignature = JSON.stringify(snapshot.preferences);
+  const previousApplied = useRef(appliedSignature);
+  const latestSection = useRef(section);
+  latestSection.current = section;
+  const [generalRefreshSignal, notifyGeneralRefresh] = useState(0);
+  const generalAppliedRefresh = useRef({ section, pending: null as string | null, inFlight: false, foregroundEpoch: 0, acknowledgedForegroundEpoch: 0, contextGeneration: 0 });
+  const [capabilities, setCapabilities] = useState<WindowCapabilities | null>(null);
+  const recordingQueue = useRef<Promise<unknown>>(Promise.resolve());
+  const mounted = useRef(false);
+  const capabilityGeneration = useRef(0);
+  const draftGeneration = useRef(0);
+  const draftOverrides = useRef<Record<string, boolean>>({});
+  const [capabilityError, setCapabilityError] = useState<string | null>(null);
+  const [capabilityPending, setCapabilityPending] = useState(false);
+  const capabilityRead = useRef<Promise<WindowCapabilities> | null>(null);
+  const action = useAction();
+  const refreshCapabilities = useCallback(async () => {
+    const generation = ++capabilityGeneration.current;
+    if (mounted.current) setCapabilityPending(true);
+    if (capabilityRead.current) {
+      await capabilityRead.current.catch(() => undefined);
+      if (!mounted.current || generation !== capabilityGeneration.current) return;
+    }
+    const read = store.port.windowCapabilities();
+    capabilityRead.current = read;
+    try {
+      const value = await read;
+      if (mounted.current && generation === capabilityGeneration.current) { setCapabilities(value); setCapabilityError(null); }
+    } catch (cause) {
+      if (mounted.current && generation === capabilityGeneration.current) setCapabilityError(errorMessage(cause));
+    } finally {
+      if (capabilityRead.current === read) capabilityRead.current = null;
+      if (mounted.current && generation === capabilityGeneration.current) setCapabilityPending(false);
+    }
+  }, [store]);
+  const loadScope = useCallback(async (scopeKey: string, replaceDraft = true, expectedGeneralRead?: { draftGeneration: number; contextGeneration: number }) => {
+    const generalReadIsCurrent = () => expectedGeneralRead === undefined || (
+      latestSection.current === 'general' &&
+      generalAppliedRefresh.current.contextGeneration === expectedGeneralRead.contextGeneration &&
+      draftGeneration.current === expectedGeneralRead.draftGeneration &&
+      document.visibilityState === 'visible' && document.hasFocus()
+    );
+    const request = ++scopeRequest.current;
+    setScopeBusy(true); setScopeError(null);
+    try {
+      const view = await store.port.preferencesScope(scopeKey);
+      if (!mounted.current || request !== scopeRequest.current) return;
+      // Background General refreshes must not rebase an editor that became
+      // dirty, or update another preference page while the read was in flight.
+      if (!generalReadIsCurrent()) return;
+      setScopeView(view);
+      if (replaceDraft) { draftGeneration.current += 1; draftOverrides.current = structuredClone(view.saved?.overrides ?? (view.scopeKey === 'global' ? view.global.overrides : {})); setDraft({ ...structuredClone(view.effective), scopeKey: view.scopeKey }); setDirty(false); }
+      return view;
+    } catch (cause) { if (mounted.current && request === scopeRequest.current && generalReadIsCurrent()) setScopeError(errorMessage(cause)); }
+    finally { if (mounted.current && request === scopeRequest.current) setScopeBusy(false); }
+  }, [store]);
+  useEffect(() => {
+    mounted.current = true; void loadScope(initialScope.current);
+    return () => { mounted.current = false; capabilityGeneration.current += 1; scopeRequest.current += 1; recordingQueue.current = recordingQueue.current.then(() => store.port.setShortcutRecording(false)).catch(() => {}); };
+  }, [store, loadScope]);
+  useEffect(() => { void refreshCapabilities(); }, [snapshot.session?.sessionId, snapshot.preferences.scopeKey, appliedSignature, refreshCapabilities]);
+  useEffect(() => {
+    if (section !== 'general') return;
+    const refresh = generalAppliedRefresh.current;
+    const contextGeneration = ++refresh.contextGeneration;
+    const invalidateForeground = () => {
+      if (!mounted.current || latestSection.current !== 'general' || refresh.contextGeneration !== contextGeneration || document.visibilityState !== 'visible') return;
+      // Effective preferences can stay identical when another active game's
+      // overrides hide a changed global value. Returning to this editor is an
+      // independent invalidation, not a fabricated preference change.
+      refresh.foregroundEpoch += 1;
+      notifyGeneralRefresh(value => value + 1);
+    };
+    window.addEventListener('focus', invalidateForeground);
+    document.addEventListener('visibilitychange', invalidateForeground);
+    return () => {
+      window.removeEventListener('focus', invalidateForeground);
+      document.removeEventListener('visibilitychange', invalidateForeground);
+      refresh.contextGeneration += 1;
+      refresh.pending = null;
+    };
+  }, [section]);
+  useEffect(() => {
+    const refresh = generalAppliedRefresh.current;
+    const enteringGeneral = section === 'general' && refresh.section !== 'general';
+    refresh.section = section;
+    if (section === 'general') {
+      // The selected editor can be an inactive game while the applied
+      // projection is global or another game. Keep the newest invalidation
+      // until that selected editor is clean and its current query is idle.
+      if (enteringGeneral || refresh.pending !== null || previousApplied.current !== appliedSignature || refresh.foregroundEpoch !== refresh.acknowledgedForegroundEpoch) refresh.pending = appliedSignature;
+      if (refresh.pending === null || refresh.inFlight || dirty || scopeBusy || scopeError || action.pending || !scopeView || document.visibilityState !== 'visible' || !document.hasFocus()) return;
+      const signature = refresh.pending;
+      const readContext = { draftGeneration: draftGeneration.current, contextGeneration: refresh.contextGeneration };
+      const foregroundEpoch = refresh.foregroundEpoch;
+      refresh.inFlight = true;
+      void loadScope(scopeView.scopeKey, true, readContext).then(view => {
+        if (!view || !mounted.current || latestSection.current !== 'general' || refresh.contextGeneration !== readContext.contextGeneration) return;
+        previousApplied.current = signature;
+        refresh.acknowledgedForegroundEpoch = foregroundEpoch;
+        // A second focus during the same-signature query must survive its ack.
+        if (refresh.pending === signature && refresh.foregroundEpoch === foregroundEpoch) refresh.pending = null;
+      }).finally(() => {
+        refresh.inFlight = false;
+        if (mounted.current && latestSection.current === 'general' && refresh.pending !== null) notifyGeneralRefresh(value => value + 1);
+      });
+      return;
+    }
+    refresh.pending = null;
+    // Other preference pages retain their original applied-scope policy.
+    if (previousApplied.current === appliedSignature) return;
+    previousApplied.current = appliedSignature;
+    if (!dirty && !scopeBusy && scopeView?.scopeKey === snapshot.preferences.scopeKey) void loadScope(scopeView.scopeKey);
+  }, [section, appliedSignature, generalRefreshSignal, dirty, scopeBusy, scopeError, action.pending, scopeView?.scopeKey, snapshot.preferences.scopeKey, loadScope]);
+  const patch = (value: Partial<Preferences>) => {
+    draftGeneration.current += 1;
+    const localOverrides = { ...draftOverrides.current };
+    if (draft.scopeKey !== 'global') {
+      for (const field of Object.keys(value) as (keyof Preferences)[]) if (field !== 'scopeKey' && field !== 'overrides') localOverrides[field] = true;
+      if (value.overrides?.['hud.compact'] !== undefined && value.overrides['hud.compact'] !== draft.overrides['hud.compact']) localOverrides['hud.compact'] = value.overrides['hud.compact'];
+      if (value.overrides?.['hud.alwaysOnTop'] !== undefined && value.overrides['hud.alwaysOnTop'] !== draft.overrides['hud.alwaysOnTop']) localOverrides['hud.alwaysOnTop'] = value.overrides['hud.alwaysOnTop'];
+    } else if (value.overrides) Object.assign(localOverrides, value.overrides);
+    if (value.segmentationEnabled !== undefined) delete localOverrides['reading.segmentationEnabled'];
+    draftOverrides.current = localOverrides;
+    setDraft(current => {
+      const overrides = { ...current.overrides, ...value.overrides };
+      if (value.segmentationEnabled !== undefined) delete overrides['reading.segmentationEnabled'];
+      return { ...current, ...value, overrides };
+    });
+    setDirty(true);
+  };
+  const numeric = (field: 'sourceFontPt' | 'translationFontPt' | 'hudWidthPt', value: string) => { const number = Number(value); if (Number.isFinite(number)) patch({ [field]: number }); };
+  const recording = (value: boolean) => {
+    recordingQueue.current = recordingQueue.current.then(() => store.port.setShortcutRecording(value)).then(() => refreshCapabilities()).catch(cause => { if (mounted.current) setCapabilityError(errorMessage(cause)); });
+  };
+  const save = () => void action.run(async () => {
+    if (!scopeView || scopeBusy || scopeError) throw new Error('请先核对当前作用范围的已保存偏好。');
+    const generation = draftGeneration.current;
+    const preferences = { ...structuredClone(draft), scopeKey: scopeView.scopeKey, overrides: structuredClone(draftOverrides.current) };
+    await store.command({ kind: 'save_scoped_preferences', payload: { preferences, expectedHeadRevision: scopeView.headRevision } });
+    if (mounted.current && generation === draftGeneration.current) setDirty(false);
+    const saved = await loadScope(scopeView.scopeKey, false);
+    if (saved && mounted.current && generation === draftGeneration.current) { draftOverrides.current = structuredClone(saved.saved?.overrides ?? (saved.scopeKey === 'global' ? saved.global.overrides : {})); setDraft({ ...structuredClone(saved.effective), scopeKey: saved.scopeKey }); }
+    await refreshCapabilities();
+  });
+  const discard = () => void action.run(async () => {
+    if (!scopeView) return;
+    await loadScope(scopeView.scopeKey);
+  });
+  const restoreInheritance = () => {
+    if (!scopeView?.inheritedDraft) return;
+    draftGeneration.current += 1;
+    draftOverrides.current = structuredClone(scopeView.inheritedDraft.overrides);
+    // The same Rust scope query supplies the inherited scalar payload and the
+    // global HUD presentation values. Those HUD values are never saved as masks.
+    setDraft({ ...structuredClone(scopeView.inheritedDraft), overrides: structuredClone(scopeView.global.overrides) }); setDirty(true); action.clearError();
+  };
+  const sourceLabel = draft.scopeKey === 'global' ? '全局默认' : scopeView?.saved && scopeView.overriddenFields.length ? '此游戏的已保存偏好' : '此游戏继承全局默认';
+  const fieldLabels: Record<PreferenceField, string> = { theme: '外观', transparencyMode: '材质', showRuby: '日语注音', showPos: '词性标记', sourceFontPt: '原文字号', translationFontPt: '译文字号', hudWidthPt: '浮窗宽度', shortcuts: '快捷键', segmentationEnabled: '日语分词', readingDisplayMode: '原译显示模式', hudBackgroundOpacity: '背景不透明度', hudCompact: '阅读密度', hudAlwaysOnTop: '置顶' };
+  // Stored override keys retain the presentation aliases supported by Rust.
+  const overrideFieldLabels: Record<string, string> = { ...fieldLabels, 'hud.compact': fieldLabels.hudCompact, 'hud.alwaysOnTop': fieldLabels.hudAlwaysOnTop, 'reading.segmentationEnabled': fieldLabels.segmentationEnabled };
+  const scopeGame = snapshot.games.find(game => `game:${game.gameId}` === draft.scopeKey);
+  const scopeLabel = draft.scopeKey === 'global' ? '全局默认' : `仅此游戏 · ${scopeGame?.displayName ?? draft.scopeKey}`;
+  const shortcutSource = (id: keyof typeof shortcutIntents) => {
+    const binding = capabilities?.shortcuts.bindings.find(item => item.intent === shortcutIntents[id]);
+    return <><div className={styles.shortcutSource}>{capabilityError || capabilityPending ? '上次回执' : '当前生效'}：{binding?.effective ? <span className={styles.shortcutKey}><kbd>{formattedShortcut(binding.effective)}</kbd></span> : <span>未设置</span>} · {binding?.scopeKey === 'global' ? '全局默认' : binding ? binding.scopeKey === draft.scopeKey ? '此游戏覆盖' : `当前接入游戏 · ${snapshot.games.find(game => `game:${game.gameId}` === binding.scopeKey)?.displayName ?? binding.scopeKey}` : '来源待确认'}</div>{binding?.errorMessage ? <p className={`${styles.help} ${styles.shortcutError}`} role="alert">{binding.errorMessage}</p> : null}</>;
+  };
+  const scopeNotice = scopeError ? <Notice error>阅读偏好来源读取失败：{scopeError}。已显示的编辑与已保存配置保留。<Button pending={scopeBusy} onPress={() => void loadScope(scopeView?.scopeKey ?? initialScope.current, !dirty)}>重新读取偏好来源</Button></Notice> : null;
+  const scopeControls = <Group title="阅读偏好与来源"><FormRow label="作用范围"><Select label="阅读偏好作用范围" value={scopeView?.scopeKey ?? initialScope.current} disabled={dirty || scopeBusy || action.pending} onChange={scopeKey => { if (!dirty) void loadScope(scopeKey); }}><option value="global">全局默认</option>{snapshot.games.map(game => <option key={game.gameId} value={`game:${game.gameId}`}>仅此游戏 · {game.displayName}</option>)}</Select><p className={styles.help}>{dirty ? '先保存或放弃当前修改，再切换作用范围。' : '查看当前来源；修改此范围不会更换游戏或重新接入。'}</p></FormRow>{draft.scopeKey !== 'global' ? <FormRow label="当前来源"><span className={styles.materialEffective}>{sourceLabel}</span><Button disabled={!scopeView?.inheritedDraft || scopeBusy || action.pending} onPress={restoreInheritance}>恢复继承全局</Button><p className={styles.help}>恢复继承会替换本范围的编辑草稿，保存后使用全局已保存偏好。</p>{scopeView?.overriddenFields.length ? <details className={styles.fieldSources}><summary>查看已保存的覆盖字段</summary>{scopeView.overriddenFields.map(field => fieldLabels[field]).join('、')}</details> : null}</FormRow> : null}</Group>;
+  const capabilityNotice = capabilityError ? <Notice error>平台状态读取失败：{capabilityError}。{capabilities ? '下方保留上一次回执，当前状态待确认。' : '尚未取得原生能力回执。'}<Button onPress={() => void refreshCapabilities()}>重试平台状态</Button></Notice> : null;
+  if (section === 'general') {
+    const gameScope = draft.scopeKey !== 'global';
+    const restoringInheritance = gameScope && dirty && Boolean(scopeView?.inheritedDraft) && Object.keys(draftOverrides.current).length === 0;
+    const feedback = scopeBusy ? <GeneralPreferenceNotice pending>正在读取已保存的阅读偏好来源…</GeneralPreferenceNotice>
+      : scopeError ? <GeneralPreferenceNotice error action={<Button onPress={() => void loadScope(scopeView?.scopeKey ?? initialScope.current, !dirty)}>重新读取偏好来源</Button>}>阅读偏好来源读取失败：{scopeError}。已显示的编辑与已保存配置保留。</GeneralPreferenceNotice>
+        : action.pending ? <GeneralPreferenceNotice pending>正在保存阅读偏好…</GeneralPreferenceNotice>
+          : action.error ? <GeneralPreferenceNotice error>{action.error}编辑内容已保留。</GeneralPreferenceNotice> : null;
+    return <div className={`${styles.host} ${styles.display} ${styles.general}`} data-ui-page="general-settings"><div className={styles.scroll} data-ui-scroll="preferences" aria-busy={scopeBusy || action.pending}>
+      <header className={`${styles.heading} ${styles.generalHeading}`}>
+        <div><h1>通用</h1><p>阅读显示与本机偏好。</p></div>
+        <div className={styles.generalScope}>
+          <span>阅读偏好</span>
+          <Select label="阅读偏好作用范围" hideLabel appearance="general-settings" value={scopeView?.scopeKey ?? initialScope.current} disabled={!scopeView || dirty || scopeBusy || Boolean(scopeError) || action.pending} onChange={scopeKey => { if (!dirty) void loadScope(scopeKey); }}><option value="global">全局默认</option>{snapshot.games.map(game => <option key={game.gameId} value={`game:${game.gameId}`}>仅此游戏 · {game.displayName}</option>)}</Select>
+          <small>{!scopeView ? '阅读偏好来源待确认' : dirty ? '先保存或放弃修改，再切换范围' : gameScope ? '修改只作用于此游戏' : '作为游戏的默认阅读偏好'}</small>
+          {gameScope && scopeView ? <div className={styles.generalSource}>
+            <span>{scopeError ? '上次保存来源' : '当前来源'}：{scopeView.overriddenFields.length ? `游戏覆盖 · ${scopeView.overriddenFields.length}项` : '继承全局'}</span>
+            <Button intent="quiet" disabled={!scopeView.inheritedDraft || scopeBusy || Boolean(scopeError) || action.pending || Object.keys(draftOverrides.current).length === 0} onPress={restoreInheritance}>恢复继承全局</Button>
+            {dirty ? <small>{restoringInheritance ? '草稿：恢复继承全局，保存后生效' : `草稿：覆盖${Object.keys(draftOverrides.current).map(field => overrideFieldLabels[field] ?? field).join('、')}，保存后生效`}</small> : null}
+            {scopeView.overriddenFields.length ? <details className={styles.fieldSources}><summary>查看已保存的覆盖项</summary>{scopeView.overriddenFields.map(field => fieldLabels[field]).join('、')}</details> : null}
+          </div> : null}
+        </div>
+      </header>
+      {feedback}
+      {scopeView ? <fieldset className={styles.fields} disabled={scopeBusy || Boolean(scopeError)}><Group title="分词与词典">
+        <div className={styles.toggleRow}><Switch label="可点击日语分词" selected={draft.segmentationEnabled} onChange={segmentationEnabled => patch({ segmentationEnabled })} description="点击原文中的词语，查看本地释义。"/></div>
+        <div className={styles.toggleRow}><Switch label="显示日语注音" selected={draft.showRuby} onChange={showRuby => patch({ showRuby })} description="可独立开启；复制原文时不包含注音。"/></div>
+        <div className={styles.toggleRow}><Switch label="显示词性标记" selected={draft.showPos} disabled={!draft.segmentationEnabled} onChange={showPos => patch({ showPos })} description={draft.segmentationEnabled ? '在可点击分词开启时显示。' : '先开启可点击分词；当前词性偏好保持不变。'}/></div>
+        <div className={`${styles.generalUtilityRow} ${styles.generalDictionary}`}><div><span>基础词典</span><p>随客户端内置，无需配置或下载。</p></div><span className={styles.generalPlainStatus}>已内置</span></div>
+      </Group></fieldset> : null}
+      <GeneralSettings snapshot={snapshot} store={store}/>
+    </div><footer className={styles.footer}><span>{scopeBusy ? '正在核对阅读偏好' : !scopeView || scopeError ? '阅读偏好来源待确认' : action.pending ? '正在保存阅读偏好' : dirty ? '阅读偏好有未保存修改' : '阅读偏好已保存'}<span className={styles.generalStatusScope}>{scopeLabel}</span></span><div className={styles.footerActions}><Button disabled={!dirty || scopeBusy || action.pending} onPress={discard}>放弃修改</Button><Button intent="primary" disabled={!scopeView || !dirty || scopeBusy || Boolean(scopeError)} pending={action.pending} onPress={save}>保存阅读偏好</Button></div></footer></div>;
+  }
+  if (section !== 'resources' && !scopeView) return <div className={styles.host}><div className={styles.scroll} aria-busy={scopeBusy}>{scopeNotice ?? <Notice>正在读取已保存的阅读偏好来源…</Notice>}</div></div>;
+  if (section === 'display') {
+    const baseSource = 18;
+    const scale = draft.sourceFontPt / baseSource;
+    return <div className={`${styles.host} ${styles.display}`}><div className={styles.scroll} data-ui-scroll="preferences">
+      {capabilityNotice}{scopeNotice}
+      <header className={styles.heading}><Icon name="type" size={24}/><div><h1>显示与快捷键</h1><p>首个可用产品版 · 当前配置</p></div></header>
+      <fieldset className={styles.fields} disabled={scopeBusy || Boolean(scopeError)}>{scopeControls}
+      <Group title="阅读布局">
+        <FormRow label="阅读密度"><Select label="阅读密度" value={draft.overrides['hud.compact'] ? 'compact' : 'comfortable'} onChange={value => patch({ hudWidthPt: value === 'compact' ? 500 : 560, overrides: { ...draft.overrides, 'hud.compact': value === 'compact' } })}><option value="comfortable">舒适 · 560 / 18 / 24</option><option value="compact">紧凑 · 500 / 16 / 22</option></Select><p className={styles.help}>预设为有效宽度 / 原文字号 / 译文字号。下方字号为舒适基数，紧凑按比例显示。</p></FormRow>
+        <FormRow label="文字缩放"><Select label="文字缩放" value={String(scale)} onChange={value => { const scale=Number(value);patch({ sourceFontPt: baseSource*scale, translationFontPt: 24*scale }); }} options={[...new Set([1, 1.25, 1.5, 2, scale])].sort((a,b)=>a-b).map(value=>({value:String(value),label:`${Math.round(value*100)}%`}))}/></FormRow>
+        <FormRow label="材质"><Select label="材质模式" value={draft.transparencyMode} onChange={transparencyMode => patch({ transparencyMode })}><option value="material">标准阅读材质</option><option value="reduced">减少透明度 · 实色</option><option value="system">跟随系统</option></Select></FormRow>
+      </Group>
+      <Group title="当前材质状态"><FormRow label="实际生效"><span className={styles.materialEffective}>{!capabilities ? '正在读取平台状态…' : capabilities.material.effective === 'native_material' ? '原生磨砂材质' : capabilities.material.effective === 'opaque_fallback' ? '实色回退' : '当前平台不支持'}</span>{capabilities?.material.systemReduceTransparency ? <span className={styles.materialBadge}>系统减少透明度</span> : null}<p className={styles.help}>{capabilities?.material.effectiveReduceTransparency ? '背景采用实色，文字保持原有对比与清晰度。' : '背景不透明度只改变底板，文字保持原有清晰度。'}{capabilityError ? ' 当前状态待重新确认。' : capabilityPending ? ' 正在核对当前平台状态。' : ''}</p></FormRow>{capabilities?.material.errorCode ? <FormRow label="应用说明"><span className={styles.shortcutError}>{capabilities.material.errorCode}</span></FormRow> : null}</Group>
+      <Group title="阅读浮窗">
+        <FormRow label="译文字号"><div className={styles.inlineNumber}><TextField label="译文字号（pt）" type="number" value={String(draft.translationFontPt)} onChange={value => numeric('translationFontPt', value)}/></div><span className={styles.unit}>pt</span></FormRow>
+        <FormRow label="原文字号"><div className={styles.inlineNumber}><TextField label="原文字号（pt）" type="number" value={String(draft.sourceFontPt)} onChange={value => numeric('sourceFontPt', value)}/></div><span className={styles.unit}>pt</span></FormRow>
+        <FormRow label="背景不透明度"><label className={styles.opacityControl}><input aria-label="浮窗背景不透明度" type="range" min="50" max="100" value={Math.round(draft.hudBackgroundOpacity * 100)} onChange={event => patch({ hudBackgroundOpacity: Number(event.target.value) / 100 })}/><span>{Math.round(draft.hudBackgroundOpacity * 100)}%</span></label></FormRow>
+        <FormRow label="置顶"><label className={styles.check}><input type="checkbox" checked={draft.overrides['hud.alwaysOnTop'] ?? true} onChange={event => patch({ overrides: { ...draft.overrides, 'hud.alwaysOnTop': event.target.checked } })}/><span>游戏在前台时保持浮窗可见</span></label></FormRow>
+      </Group>
+      <Group title="快捷键" note="显示 / 隐藏不暂停取文；原译模式只改变显示，不改变取文与翻译状态。">
+        <div onFocusCapture={event => { if (event.target instanceof HTMLInputElement) recording(true); }} onBlurCapture={event => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) recording(false); }}>
+          {shortcutFields.map(([id,label])=><FormRow label={label} key={id}><TextField label={`${label}快捷键`} value={draft.shortcuts[id] ?? ''} onChange={value=>patch({shortcuts:{...draft.shortcuts,[id]:value}})} placeholder="未设置"/>{shortcutSource(id)}</FormRow>)}
+        </div>
+        <FormRow label="快捷键应用"><div className={styles.shortcutActions}><Button onPress={()=>patch({shortcuts:{...draft.shortcuts,toggleHud:'',togglePause:'',cycleDisplayMode:''}})}>清除</Button><Button onPress={()=>patch({shortcuts:{...draft.shortcuts,toggleHud:'Alt+Super+H',togglePause:'Alt+Super+P',cycleDisplayMode:''}})}>恢复默认</Button><Button disabled={!dirty || scopeBusy || Boolean(scopeError)} pending={action.pending} onPress={save}>应用快捷键</Button></div><p className={styles.help}>编辑与当前生效绑定分开，失败保留原组合。</p></FormRow>
+        <FormRow label="位置恢复"><div className={styles.shortcutActions}><Button pending={action.pending} onPress={()=>void action.run(async()=>{await store.port.resetHudPosition();await refreshCapabilities();})}>恢复浮窗位置</Button></div><p className={styles.help}>拖动顶部手柄或底部空白区域，隐藏再打开保留位置。</p></FormRow>
+      </Group>
+      {action.error?<p className={styles.boundary} role="alert">{action.error} 编辑内容已保留，已生效的快捷键以平台回执为准。</p>:null}
+      </fieldset><div className={styles.shortcutStatus} role="status"><strong>{capabilityError ? '平台状态待确认' : capabilityPending ? '正在核对平台回执' : capabilities ? shortcutStateLabels[capabilities.shortcuts.state] : '正在读取平台回执…'}</strong>{capabilities ? capabilities.shortcuts.dispatchSuppressed ? ' · 正在录制快捷键，产品快捷动作暂不响应' : ' · 快捷动作按当前生效组合响应' : null}</div>
+    </div><footer className={styles.footer}><span>{dirty?'阅读偏好有未保存修改':'阅读偏好已保存'}<br/>{scopeLabel} · 模型用途配置保持不变</span><div className={styles.footerActions}><Button disabled={!dirty || action.pending} onPress={discard}>放弃修改</Button><Button intent="primary" disabled={!dirty || scopeBusy || Boolean(scopeError)} pending={action.pending} onPress={save}>保存阅读偏好</Button></div></footer></div>;
+  }
+  return <div className={styles.host}><div className={styles.scroll}>
+    {capabilityNotice}{scopeNotice}
+    {action.error ? <Notice error>{action.error} 编辑内容已保留，已生效的快捷键以平台回执为准。</Notice> : null}
+    {section !== 'resources' ? scopeControls : null}
+    {section === 'resources' ? <><Group title="内置资源"><FormRow label="资源检查"><Button pending={action.pending} onPress={() => void action.run(async () => { setResources(await store.port.resources()); })}>检查包内资源</Button></FormRow>{resources?.map(resource => <FormRow label={resource.kind} key={resource.kind} note={resource.detail}><div className={styles.resource}><StatusLabel>{resource.available ? '可用' : '不可用'}</StatusLabel><span>{resource.version}</span><code>{resource.manifestSha256}</code></div></FormRow>)}</Group><Notice>词典与分词资源应随正式包内置；未验证或缺失时明确报告，不能靠首次联网下载或样例数据补齐。</Notice></> : <>
+      <Group title="阅读与注音" note={`当前配置来源：${draft.scopeKey === 'global' ? '全局默认' : draft.scopeKey}。显示开关独立保存，本机分析不会调用模型。`}>
+        <Switch label="可点击日语分词" selected={draft.segmentationEnabled} onChange={segmentationEnabled => patch({ segmentationEnabled })} description="关闭分词仍可独立显示真实注音。"/>
+        <Switch label="显示日语注音" selected={draft.showRuby} onChange={showRuby => patch({ showRuby })} description="使用本机分词资源；复制原文不包含注音。"/>
+        <Switch label="显示词性标记" selected={draft.showPos} onChange={showPos => patch({ showPos })} description="在可点击分词开启时呈现；关闭分词不会丢失词性偏好。"/>
+        <FormRow label="阅读密度"><Select label="阅读密度" value={draft.overrides['hud.compact'] ? 'compact' : 'comfortable'} onChange={value => patch({ hudWidthPt: value === 'compact' ? 500 : 560, overrides: { ...draft.overrides, 'hud.compact': value === 'compact' } })}><option value="comfortable">舒适 · 560 / 18 / 24</option><option value="compact">紧凑 · 500 / 16 / 22</option></Select></FormRow>
+        <FormRow label="原文字号"><TextField label="原文字号（pt）" type="number" value={String(draft.sourceFontPt)} onChange={value => numeric('sourceFontPt', value)}/></FormRow>
+        <FormRow label="译文字号"><TextField label="译文字号（pt）" type="number" value={String(draft.translationFontPt)} onChange={value => numeric('translationFontPt', value)}/></FormRow>
+      </Group>
+      <Group title="窗口材质与显示">
+        <FormRow label="外观"><Select label="应用外观" value={draft.theme} onChange={theme => patch({ theme })}><option value="system">跟随系统</option><option value="dark">深色</option><option value="light">浅色</option></Select></FormRow>
+        <FormRow label="透明度"><Select label="材质模式" value={draft.transparencyMode} onChange={transparencyMode => patch({ transparencyMode })}><option value="material">磨砂材质</option><option value="reduced">减少透明度</option><option value="system">跟随系统</option></Select></FormRow>
+        <FormRow label="背景不透明度"><label className={styles.opacityControl}><input aria-label="浮窗背景不透明度" type="range" min="50" max="100" value={Math.round(draft.hudBackgroundOpacity * 100)} onChange={event => patch({ hudBackgroundOpacity: Number(event.target.value) / 100 })}/><span>{Math.round(draft.hudBackgroundOpacity * 100)}%</span></label></FormRow>
+        <FormRow label="浮窗宽度"><TextField label="浮窗宽度（pt）" type="number" value={String(draft.hudWidthPt)} onChange={value => numeric('hudWidthPt', value)}/></FormRow>
+        <FormRow label="实际材质"><span className={styles.capability}>{!capabilities ? '正在读取平台状态…' : capabilities.material.effective === 'native_material' ? '原生窗口材质' : capabilities.material.effective === 'opaque_fallback' ? '实色回退' : '当前平台不支持'}{capabilities?.material.systemReduceTransparency ? ' · 系统减少透明度' : ''}{capabilities?.material.errorCode ? ` · ${capabilities.material.errorCode}` : ''}</span></FormRow>
+      </Group>
+      <Group title="快捷键" note="编辑草稿与当前生效项分开。应用失败保留编辑和旧组合；未注册成功时不会显示为已生效。">
+        <div onFocusCapture={event => { if (event.target instanceof HTMLInputElement) recording(true); }} onBlurCapture={event => { if (!(event.relatedTarget instanceof Node) || !event.currentTarget.contains(event.relatedTarget)) recording(false); }}>
+          {shortcutFields.map(([id, label]) => <FormRow label={label} key={id}><TextField label={`${label}快捷键`} value={draft.shortcuts[id] ?? ''} onChange={value => patch({ shortcuts: { ...draft.shortcuts, [id]: value } })} placeholder={id === 'cycleDisplayMode' ? '未设置' : '例如 CmdOrCtrl+Alt+H'}/></FormRow>)}
+        </div>
+        <FormRow label="快捷键应用"><div className={styles.shortcutActions}><Button onPress={() => patch({ shortcuts: { ...draft.shortcuts, toggleHud: '', togglePause: '', cycleDisplayMode: '' } })}>清除</Button><Button onPress={() => patch({ shortcuts: { ...draft.shortcuts, toggleHud: 'Alt+Super+H', togglePause: 'Alt+Super+P', cycleDisplayMode: '' } })}>恢复默认</Button><Button disabled={!dirty || scopeBusy || Boolean(scopeError)} pending={action.pending} onPress={save}>应用快捷键</Button></div></FormRow>
+        <div className={styles.effectiveShortcuts} role="status"><strong>当前生效</strong>{capabilities ? <><span>{capabilities.shortcuts.state === 'active' ? '已注册' : capabilities.shortcuts.state === 'cleanup_pending' ? '旧组合清理待完成' : capabilities.shortcuts.state === 'failed' ? '应用失败，原组合保留' : '尚未生效'}</span>{capabilities.shortcuts.bindings.map(binding => <p key={binding.intent}>{binding.intent === 'toggle_hud' ? '显隐' : binding.intent === 'toggle_capture_pause' ? '暂停' : '原译'}：{binding.effective ?? '未设置'}{binding.errorMessage ? ` · ${binding.errorMessage}` : ''}</p>)}{capabilities.shortcuts.dispatchSuppressed ? <p>正在编辑快捷键，动作暂不派发。</p> : null}</> : <p>正在读取平台回执…</p>}</div>
+        <FormRow label="位置恢复" note="按实际显示器工作区恢复，隐藏再显示保留位置。"><Button icon="history" pending={action.pending} onPress={() => void action.run(async () => { await store.port.resetHudPosition(); await refreshCapabilities(); })}>恢复浮窗位置</Button></FormRow>
+      </Group>
+    </>}
+  </div>{section !== 'resources' ? <footer className={styles.footer}><span>{dirty ? '未保存更改' : '阅读偏好已保存'}</span><Button intent="primary" disabled={!dirty || scopeBusy || Boolean(scopeError)} pending={action.pending} onPress={save}>保存偏好</Button></footer> : null}</div>;
+}

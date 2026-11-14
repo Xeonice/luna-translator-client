@@ -1,0 +1,115 @@
+{
+  "kind": "R35_wordcard_fit_exact_authority_candidate",
+  "status": "independently_reviewed_sources_awaiting_Root_exact_authority_review",
+  "parent_baseline_sha256": "53ad264157d9b2fbd53478a848505f8add9cadbbac6c904bfbfdab98a4a6941b",
+  "source_freeze": {
+    "status": "root_authorized_final_source_and_architecture",
+    "at": "2026-10-23T09:43:58.598010+00:00",
+    "map": ".build/wordcard-lifecycle-governance/r35-final/root-final-pre-authority-source-map.json",
+    "map_sha256": "dd004368fad74cb8ccd65f7bc3f5d2700df1559ad397c1cd904cf7af24298619",
+    "source_tree_sha256": "08135e8980013e3389c180d8e02339a56f920ab30a477e92e67cc0b415ab1d6d",
+    "reviewed_implementation_source": {
+      "apps/desktop/src-tauri/src/platform/window_manager.rs": "98687ae0acadfef7bb57936b474483ef9193445dc827f7e460dc282c2069596c",
+      "apps/desktop/src-tauri/src/platform/word_card.rs": "50db576eeaab8fd7027f98118687222eb288d0cc8f80e4da410838b24b353123",
+      "apps/desktop/src-tauri/src/ipc/word_card.rs": "2c75b1ffbf387e9e1d837c8163898d9f45c93c30b7a4dc560d705ce478cc815f",
+      "apps/desktop/src-tauri/src/main.rs": "fc8b0ba5c1fc040732f601386fd39fb4ab131cdf213cd371952736f68e03a39d",
+      "apps/desktop/src-tauri/src/platform/macos/mod.rs": "0353f67cad3c48754a9d8978e499ce54192d7d6aacedbf6402e04811f677690c",
+      "apps/desktop/src-tauri/src/platform/macos/bridge.m": "d374548b4743d94ecfdd6c37db5d5441eb193b6154961f7da137c879f45e8ba3",
+      "apps/desktop/src/features/language/WordCard.tsx": "1891885c6d6646795ea1c13e9434ead3d8e259bd5ed03709c414e3e3aae6312e",
+      "apps/desktop/src-tauri/src/ipc/reading.rs": "f0dfc13e43739110f6d608d2f5c483d4b13472bb8e9fc535fb167eae995db881",
+      "apps/desktop/tests/visual/verify-reviewed-reading.mjs": "99540306e70e5c396832c06cbd53abad842da714c6c8b379f38b2c8e10c10cde",
+      "scripts/quality/reading_components.py": "45a7feacd377ffce09c7c9c922905821e6aaf415c5f50a8f5b64c0e338e264e6",
+      "scripts/quality/test_reading_components.py": "1fef0654b04a09111e9f2a487c02953c46d67d79e9c66ac4797851ff2b9cec08"
+    },
+    "independent_evidence": [
+      {
+        "path": ".build/wordcard-content-fit-fix/handoff.json",
+        "sha256": "a0784f4de992beeff6c86142f5fae291b0651ff624b5e518756d8a1514e866a0"
+      },
+      {
+        "path": ".build/wordcard-fit-independent-review/architecture-final/final-review.json",
+        "sha256": "10be51f4784e86dc2cb25e26917b5a737831b63a373f202881084861fe5999d9"
+      },
+      {
+        "path": ".build/wordcard-fit-independent-review/architecture-final/independent-unit-execution.json",
+        "sha256": "677e1b5d52d1a0bb21c0584d483b5c819fad98f26922fd01b3c602ea5bce9f74"
+      },
+      {
+        "path": ".build/wordcard-fit-independent-review/QA/handoff.json",
+        "sha256": "64338989278f634153f3eff78f7e6e6f4fede4b8929b6ba87ff393222e2b6909"
+      },
+      {
+        "path": ".build/wordcard-fit-independent-review/root-qa-registration/review-final.json",
+        "sha256": "bfa76ce7496e92e5f19478bd8784edcbb5a785e5d47ed3b422962ce7621b9308"
+      },
+      {
+        "path": ".build/wordcard-fit-independent-review/architecture-final/qa-architecture-review.json",
+        "sha256": "0491f87eceff472b902aae9013a93d396f0d3dd068055a3229d61a2cb756d2cd"
+      }
+    ],
+    "root_review": "8 source architecture acceptable with 6 resolved findings,69 producer/34 independent units and 66 controlled component cases. Root read final report and audited QA validator semantics and decoded actual PNG/nonce/Rust fixtures. Authorize exact candidate preparation only; adoption requires independent packet diff/identity check. No native/game/release promotion."
+  },
+  "independent_evidence": [
+    {
+      "path": ".build/wordcard-content-fit-fix/handoff.json",
+      "sha256": "a0784f4de992beeff6c86142f5fae291b0651ff624b5e518756d8a1514e866a0",
+      "bytes": 9639
+    },
+    {
+      "path": ".build/wordcard-fit-independent-review/architecture-final/final-review.json",
+      "sha256": "10be51f4784e86dc2cb25e26917b5a737831b63a373f202881084861fe5999d9",
+      "bytes": 13050
+    },
+    {
+      "path": ".build/wordcard-fit-independent-review/architecture-final/independent-unit-execution.json",
+      "sha256": "677e1b5d52d1a0bb21c0584d483b5c819fad98f26922fd01b3c602ea5bce9f74",
+      "bytes": 4446
+    },
+    {
+      "path": ".build/wordcard-fit-independent-review/QA/handoff.json",
+      "sha256": "64338989278f634153f3eff78f7e6e6f4fede4b8929b6ba87ff393222e2b6909",
+      "bytes": 11246
+    },
+    {
+      "path": ".build/wordcard-fit-independent-review/root-qa-registration/review-final.json",
+      "sha256": "bfa76ce7496e92e5f19478bd8784edcbb5a785e5d47ed3b422962ce7621b9308",
+      "bytes": 1769
+    },
+    {
+      "path": ".build/wordcard-fit-independent-review/architecture-final/qa-architecture-review.json",
+      "sha256": "0491f87eceff472b902aae9013a93d396f0d3dd068055a3229d61a2cb756d2cd",
+      "bytes": 2442
+    }
+  ],
+  "source_evidence_updates": 40,
+  "source_quote_replacements": 0,
+  "semantic_record_ids": [
+    "M12",
+    "M13",
+    "M15",
+    "C19",
+    "C34",
+    "FP-04",
+    "FP-05",
+    "FP-07",
+    "CAP-HUD-DRAG"
+  ],
+  "new_controlled_entries": [
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/design.md",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/iteration-card.md",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/proposal.md",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/source-snapshot.json",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/source-snapshot.original-r34.json",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/specs/wordcard-content-fit-lifecycle/spec.md",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/tasks.md",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/verification.json",
+    "docs/development/baselines/FP1-20261022-R34.json",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/exact-delta-review-r35.json",
+    "openspec/changes/repair-wordcard-content-fit-lifecycle/baseline-review-r35.json"
+  ],
+  "snapshot_original_bytes_preserved": true,
+  "snapshot_wrapper_files_identical_to_original_R34": true,
+  "DB_technology_reference_tokens_debt_unchanged": true,
+  "history_approval_artifact_runtime_release_promoted": false,
+  "canonical_authority_written": false
+}

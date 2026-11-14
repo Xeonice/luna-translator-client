@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "design-history-session-pagination",
+  "parent_baseline_sha256": "8c461c9fd548ca204956349c9c1a62402003db7186840e03205ba1824358ef43",
+  "exact_delta_sha256": "f3db87cd02694789a8c1d3e4020c287e564438a2eb589b1e02b79657a05374a0",
+  "design_review": {
+    "path": ".build/history-design-20261031/review/design-review.json",
+    "bytes": 3702,
+    "sha256": "d117556ffcb97febfca1c1749b8997e67748848fe18ed7aa0c8411e3144ed259"
+  },
+  "documentation_review": {
+    "path": ".build/history-design-20261031/work/review/docs-review.json",
+    "bytes": 5304,
+    "sha256": "f503078748c205fc713d7e2952b63746537f4d38a0912f583a6851a7cd32fd19"
+  },
+  "code_review": {
+    "path": ".build/history-design-20261031/review/tooling-review.json",
+    "bytes": 3713,
+    "sha256": "c6de3c720f49446f13882f6144a238181b6aa6471ae86060cbe9eed637d5157a"
+  },
+  "governance_review": {
+    "path": ".build/history-design-20261031/review/governance-review.json",
+    "bytes": 3262,
+    "sha256": "211566bc7cd28cc93f455f177ca717281c5a014c25b38b749cc9eae2ecf67a8f"
+  },
+  "candidate_id": "history-session-paging-20261031",
+  "candidate_status": "pending_review",
+  "approval_metadata_modified": false,
+  "historical_approval_records_preserved": true,
+  "independent_reference_acceptance_promoted": false,
+  "product_acceptance_promoted": false
+}

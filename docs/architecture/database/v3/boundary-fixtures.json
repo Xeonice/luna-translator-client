@@ -1,0 +1,68 @@
+{
+  "kind": "synthetic_http_v3_boundary_fixtures",
+  "not_product_data": true,
+  "schema_version": 1,
+  "tables": {
+    "config_revisions": {
+      "codec_version": 2,
+      "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "created_at_ms": 1,
+      "local_validation_json": "{}",
+      "parent_revision_id": null,
+      "revision_id": "revision",
+      "save_reason": "create"
+    },
+    "connections": {
+      "adapter_binding_schema": 1,
+      "adapter_contract_revision": 1,
+      "auth_mode": "api_key",
+      "availability_intent": 0,
+      "compatibility_profile_id": "profile",
+      "compatibility_profile_revision": 1,
+      "connection_id": "connection",
+      "credential_pool_id": null,
+      "credential_pool_revision": null,
+      "deployment": "local",
+      "display_name": "テスト",
+      "endpoint": null,
+      "network_metadata_json": "{}",
+      "protocol": "openai_compatible",
+      "provider_preset_id": "user.fixture",
+      "provider_preset_revision": 1,
+      "proxy_mode": "disabled",
+      "revision_id": "revision"
+    },
+    "credential_refs": {
+      "activated_at_ms": null,
+      "auth_kind": "api_key",
+      "cleaned_at_ms": null,
+      "cleanup_requested_at_ms": null,
+      "created_at_ms": 1,
+      "credential_id": "credential",
+      "envelope_schema": 1,
+      "lifecycle_revision": 0,
+      "masked_label": "masked",
+      "revoked_at_ms": null,
+      "state": "pending",
+      "vault_ref": "opaque-vault-reference"
+    },
+    "provider_preset_versions": {
+      "adapter_contract_revision": 1,
+      "auth_kind": "api_key",
+      "compatibility_profile_id": "profile",
+      "compatibility_profile_revision": 1,
+      "content_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "created_at_ms": 1,
+      "display_name": "テスト",
+      "endpoint": "https://example.invalid/v1",
+      "namespace": "user",
+      "options_json": "{}",
+      "preset_id": "user.fixture",
+      "preset_revision": 1,
+      "protocol_id": "openai_compatible",
+      "provider_id": "provider",
+      "provider_label": "サービス",
+      "source_json": "[]"
+    }
+  }
+}

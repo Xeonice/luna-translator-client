@@ -1,0 +1,3518 @@
+{
+  "schema_version": 1,
+  "revision": "RW-20261019-design-reviewed-test-contract",
+  "acceptance_source": "docs/product/reading-window-session-acceptance.csv",
+  "design_script": "scripts/report/verify_interaction_gap_design.cjs",
+  "evidence_layers": [
+    "design",
+    "product_component",
+    "real_pipeline",
+    "real_language",
+    "native",
+    "game"
+  ],
+  "required_dimensions": [
+    "hud-toolbar-500-560",
+    "lexical-000",
+    "lexical-001",
+    "lexical-010",
+    "lexical-011",
+    "lexical-100",
+    "lexical-101",
+    "lexical-110",
+    "lexical-111",
+    "preview-cancel-stale-frame",
+    "select-all-entrypoints",
+    "select-empty-loading-error",
+    "select-internal-long-scroll",
+    "select-pointer-keyboard-single-highlight",
+    "session-full-paging",
+    "session-paused-visible-sequence"
+  ],
+  "planning_status": "mapped; only design adapter implemented; runtime not_run",
+  "maintenance": {
+    "registry_owner": "QA",
+    "design_assertions": "scripts/report/verify_interaction_gap_design.cjs",
+    "guard_and_protocol": "scripts/quality/interaction_coverage.py",
+    "adversarial_tests": "scripts/quality/test_interaction_coverage.py",
+    "evidence_root": ".build/quality/interaction-design/",
+    "runtime_adapters": "not_implemented; adding a filename/check name is insufficient; reviewed closed adapter plus actual execution required"
+  },
+  "cases": [
+    {
+      "id": "RW-01",
+      "source_requirements": [
+        "FP-03",
+        "FP-05"
+      ],
+      "design_expectation": "同面板选有效目标且权限具备即自动预览；正式关联后会话三页签常驻且选择本身不注入",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=window-preview#window-preview"
+      ],
+      "design_states": [
+        "target-list",
+        "target-review",
+        "current-session",
+        "same-title-distinct-window"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "preview_identity_and_source_label",
+        "preview_switch_cancel_and_stale_frame_identity"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "preview-cancel-stale-frame"
+      ]
+    },
+    {
+      "id": "RW-02",
+      "source_requirements": [
+        "FP-03",
+        "FP-05"
+      ],
+      "design_expectation": "无额外开启即至少两次真实变化帧且时间只随新帧更新；暂停不冒充实时",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=window-preview#window-preview"
+      ],
+      "design_states": [
+        "replay-identity",
+        "new-frame-time",
+        "paused-frame-time",
+        "resume-new-frame"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "preview_pause_freezes_frame_then_resume",
+        "preview_switch_cancel_and_stale_frame_identity"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "preview-cancel-stale-frame"
+      ]
+    },
+    {
+      "id": "RW-03",
+      "source_requirements": [
+        "FP-03",
+        "FP-12"
+      ],
+      "design_expectation": "明确选有效目标后按需申请；已有权限自动预览，授权后恢复；拒绝不阻断Hook；正式关联无封面时仅存首张有效帧，候选不存且已有图不覆盖",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=window-preview#window-preview"
+      ],
+      "design_states": [
+        "explicit-enable",
+        "permission-denied",
+        "retry",
+        "close-stops-capture"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "preview_explicit_enable",
+        "preview_permission_unavailable_exit"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-04",
+      "source_requirements": [
+        "FP-03",
+        "FP-12"
+      ],
+      "design_expectation": "各状态与恢复动作区分，旧帧标时间不显示实时且不做封面有效帧",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=window-preview#window-preview"
+      ],
+      "design_states": [
+        "minimized",
+        "exited",
+        "permission-revoked",
+        "old-frame",
+        "never-captured"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "preview_pause_freezes_frame_then_resume",
+        "preview_permission_unavailable_exit"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-05",
+      "source_requirements": [
+        "FP-03",
+        "FP-05"
+      ],
+      "design_expectation": "候选取消只释放候选不停止原会话常驻；切换后迟到旧帧不覆盖新目标或写错封面",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=window-preview#window-preview"
+      ],
+      "design_states": [
+        "candidate-preview",
+        "cancel-preserves-current",
+        "switch-invalidates-old-frame",
+        "late-frame-rejected"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "preview_switch_cancel_and_stale_frame_identity"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "preview-cancel-stale-frame"
+      ]
+    },
+    {
+      "id": "RW-06",
+      "source_requirements": [
+        "FP-03",
+        "FP-12"
+      ],
+      "design_expectation": "同最终包无需开启即可核对真实窗口与预览变化；跨三页签不断帧并覆盖授权恢复及同名目标",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=window-preview#window-preview"
+      ],
+      "design_states": [
+        "final-package-window-frame-pair",
+        "same-title-targets",
+        "permission-denied"
+      ],
+      "module_ids": [
+        "M02",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C08",
+        "C13",
+        "C14",
+        "C35"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "preview_identity_and_source_label"
+      ],
+      "layers": {
+        "design": {
+          "applicable": false,
+          "reason": "RW-06/12要求真实正式包证明；原型只展示说明，不能替代该条实机验收。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "product_component": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-07",
+      "source_requirements": [
+        "FP-04",
+        "FP-05"
+      ],
+      "design_expectation": "可拖动换位且不吞按钮菜单选词文本选择与正文滚动",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#hud-controls"
+      ],
+      "design_states": [
+        "drag-handle",
+        "button-not-drag",
+        "text-selection",
+        "menu-pointer-release",
+        "reading-scroll"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "hud_pointer_drag_and_control_exclusion",
+        "hud_more_menu_persists_after_pointer_release"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-08",
+      "source_requirements": [
+        "FP-05",
+        "FP-11"
+      ],
+      "design_expectation": "重启恢复有效位置且拔屏缩放后仍可见并可重置",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#hud-controls"
+      ],
+      "design_states": [
+        "reset-position",
+        "bounds-clamp",
+        "restart-restore",
+        "display-removed",
+        "scale-changed"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "hud_reset_position_and_desktop_bounds",
+        "hud_shortcuts_match_configuration_and_restore_position"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-09",
+      "source_requirements": [
+        "FP-05",
+        "FP-11"
+      ],
+      "design_expectation": "显隐暂停翻译启停和显示模式独立且常用动作无需更多菜单和无译文保留原文",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#hud-controls"
+      ],
+      "design_states": [
+        "shown-hidden",
+        "paused-resumed",
+        "translation-on-off",
+        "source-translation-cycle",
+        "translation-missing-fallback"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "hud_shortcuts_match_configuration_and_restore_position",
+        "hud_toolbar_reachable_at_560_and_500_without_menu_duplicates",
+        "hud_direct_actions_operate_on_current_sentence"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "hud-toolbar-500-560"
+      ]
+    },
+    {
+      "id": "RW-10",
+      "source_requirements": [
+        "FP-11",
+        "FP-12"
+      ],
+      "design_expectation": "显示失败原因与实际生效绑定且不把草稿当注册成功",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#hud-controls"
+      ],
+      "design_states": [
+        "record-clear-default",
+        "draft-vs-effective",
+        "conflict",
+        "registration-failed",
+        "prior-binding-kept"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "hud_shortcut_edit_does_not_trigger",
+        "hud_shortcut_conflict_retains_effective_binding"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-11",
+      "source_requirements": [
+        "FP-05",
+        "FP-11"
+      ],
+      "design_expectation": "全局游戏来源明确且切换清理注册并避免录入时误触",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#hud-controls"
+      ],
+      "design_states": [
+        "global-game-source",
+        "one-press-one-action",
+        "input-recording-exclusion",
+        "switch-unregister",
+        "no-session"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [
+        "hud_shortcut_edit_does_not_trigger",
+        "hud_shortcut_conflict_retains_effective_binding"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-12",
+      "source_requirements": [
+        "FP-05",
+        "FP-11"
+      ],
+      "design_expectation": "真实拖动与全局注册和多屏恢复有最终包运行证据",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#hud-controls"
+      ],
+      "design_states": [
+        "final-package-native-drag",
+        "game-foreground-shortcut",
+        "display-change-recovery"
+      ],
+      "module_ids": [
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "owner": "PL/UI",
+      "design_checks": [],
+      "layers": {
+        "design": {
+          "applicable": false,
+          "reason": "RW-06/12要求真实正式包证明；原型只展示说明，不能替代该条实机验收。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "product_component": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-13",
+      "source_requirements": [
+        "FP-11"
+      ],
+      "design_expectation": "所有有限选择使用同族中性磨砂控件且无浏览器默认下拉皮肤",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#select-showcase"
+      ],
+      "design_states": [
+        "neutral-material-trigger",
+        "authored-listbox",
+        "selection-check",
+        "same-icon-family"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "owner": "UI",
+      "design_checks": [
+        "select_option_spacing_and_single_pointer_keyboard_highlight",
+        "custom_select_keyboard_cancel_commit_disabled_long",
+        "select_all_product_entrypoints_and_state_matrix"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": [
+        "select-all-entrypoints",
+        "select-pointer-keyboard-single-highlight"
+      ]
+    },
+    {
+      "id": "RW-14",
+      "source_requirements": [
+        "FP-11"
+      ],
+      "design_expectation": "展开选中焦点禁用空加载失败可辨且长文本和内部滚动可用",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#select-showcase"
+      ],
+      "design_states": [
+        "closed",
+        "expanded",
+        "hover",
+        "selected",
+        "focus",
+        "disabled",
+        "empty",
+        "loading",
+        "error",
+        "long-label",
+        "long-scroll"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "owner": "UI",
+      "design_checks": [
+        "select_option_spacing_and_single_pointer_keyboard_highlight",
+        "select_scrolling_keeps_option_height_and_spacing",
+        "custom_select_keyboard_cancel_commit_disabled_long",
+        "select_empty_loading_error_states",
+        "select_all_product_entrypoints_and_state_matrix"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": [
+        "select-all-entrypoints",
+        "select-empty-loading-error",
+        "select-internal-long-scroll",
+        "select-pointer-keyboard-single-highlight"
+      ]
+    },
+    {
+      "id": "RW-15",
+      "source_requirements": [
+        "FP-11"
+      ],
+      "design_expectation": "键盘打开移动确认Escape恢复焦点且取消不改值和禁用不可选",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#select-showcase"
+      ],
+      "design_states": [
+        "enter-space-open",
+        "arrow-navigate",
+        "enter-commit",
+        "escape-cancel-focus",
+        "outside-cancel",
+        "tab-leave",
+        "disabled-unselectable",
+        "typeahead"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "owner": "UI",
+      "design_checks": [
+        "select_option_spacing_and_single_pointer_keyboard_highlight",
+        "select_scrolling_keeps_option_height_and_spacing",
+        "custom_select_keyboard_cancel_commit_disabled_long",
+        "select_all_product_entrypoints_and_state_matrix"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": [
+        "select-all-entrypoints",
+        "select-internal-long-scroll",
+        "select-pointer-keyboard-single-highlight"
+      ]
+    },
+    {
+      "id": "RW-16",
+      "source_requirements": [
+        "FP-03",
+        "FP-11"
+      ],
+      "design_expectation": "设置选流与会话筛选逐处一致且自由模型ID仍可输入",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components#select-showcase"
+      ],
+      "design_states": [
+        "all-settings-selects",
+        "stream-picker",
+        "session-filters",
+        "scope-language-theme",
+        "free-model-input"
+      ],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "owner": "UI",
+      "design_checks": [
+        "all_product_selects_are_authored",
+        "select_all_product_entrypoints_and_state_matrix"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": [
+        "select-all-entrypoints"
+      ]
+    },
+    {
+      "id": "RW-17",
+      "source_requirements": [
+        "FP-09",
+        "FP-12"
+      ],
+      "design_expectation": "正文全部提取与Hook事件分清，含选流前未选流；默认接入故障保留有效native事实且全部事件可查",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "body-history",
+        "all-extractions",
+        "hook-events",
+        "preselection",
+        "unselected-stream"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_all_streams_search_full_source_and_follow",
+        "hook_logs_stage_search_filter_and_pagination"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-18",
+      "source_requirements": [
+        "FP-09",
+        "FP-12"
+      ],
+      "design_expectation": "保留有界脱敏native类别内容、架构DLL/ABI/commit、引擎Hook地址/错误退出码及身份时间序号，Warning1/2正确且未知不猜造",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "session-identity",
+        "sequence",
+        "time",
+        "stream",
+        "revision-relation",
+        "operation-identity",
+        "clock-change"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_all_streams_search_full_source_and_follow",
+        "hook_logs_stage_search_filter_and_pagination",
+        "hook_only_events_preserve_browsing_and_count_new",
+        "session_identity_isolation"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-19",
+      "source_requirements": [
+        "FP-09"
+      ],
+      "design_expectation": "超过首屏及缓存上限仍可完整回看搜索导出且清理显式告知",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "more-than-two-pages",
+        "total-range",
+        "search-all",
+        "export-all",
+        "active-session-no-silent-gc"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_texts_more_than_two_pages_preserve_sequence",
+        "hook_logs_stage_search_filter_and_pagination"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "session-full-paging"
+      ]
+    },
+    {
+      "id": "RW-20",
+      "source_requirements": [
+        "FP-09",
+        "FP-12"
+      ],
+      "design_expectation": "默认raw处置降噪不删原始事实；warning/error/缺口/存储失败可定位且正文合并可追溯",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "duplicate-raw-event",
+        "incremental-raw-event",
+        "paused-ingress-retained",
+        "backpressure-gap",
+        "storage-failure-gap"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_texts_more_than_two_pages_preserve_sequence"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "session-full-paging"
+      ]
+    },
+    {
+      "id": "RW-21",
+      "source_requirements": [
+        "FP-09"
+      ],
+      "design_expectation": "查看旧记录不跳底且显示新到计数和回到最新且不改变取文",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "follow-latest",
+        "browsing-freezes-visible-sequence",
+        "new-count",
+        "return-latest",
+        "search-preserves-capture"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_all_streams_search_full_source_and_follow",
+        "session_browsing_stops_follow_and_counts_new",
+        "hook_only_events_preserve_browsing_and_count_new"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "session-paused-visible-sequence"
+      ]
+    },
+    {
+      "id": "RW-22",
+      "source_requirements": [
+        "FP-09",
+        "FP-12"
+      ],
+      "design_expectation": "完整范围搜索导出沿同一脱敏投影；凭据路径控制符超长payload受限且诊断不含台词全文/预览帧",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "whole-session-search",
+        "filtered-export",
+        "all-export-scopes",
+        "privacy-warning",
+        "diagnostics-no-raw-text"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_export_scope_preview"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-23",
+      "source_requirements": [
+        "FP-09",
+        "FP-12"
+      ],
+      "design_expectation": "50条以上原生事件/1000raw夹错误逐页核序号总数和导出；重启范围与保存失败明确",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=session-texts#session-history",
+        "docs/design/first-product-v1/index.html?scenario=session-logs#hook-events"
+      ],
+      "design_states": [
+        "multi-page-multi-stream",
+        "restart-persisted-range",
+        "storage-failure-copy",
+        "unconfirmed-gap",
+        "reconcile-sequence-and-count"
+      ],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M10",
+        "M13",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C33",
+        "C36"
+      ],
+      "owner": "AP/HK/UI",
+      "design_checks": [
+        "session_texts_more_than_two_pages_preserve_sequence",
+        "session_identity_isolation"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "session-full-paging"
+      ]
+    },
+    {
+      "id": "RW-24",
+      "source_requirements": [
+        "FP-04",
+        "FP-11"
+      ],
+      "design_expectation": "游戏色透入磨砂材质且明暗彩背景可读而非固定不透明渐变",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "light-background",
+        "dark-background",
+        "colour-background",
+        "native-background-change"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "hud_translucency_and_reduced_transparency"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-25",
+      "source_requirements": [
+        "FP-04",
+        "FP-11"
+      ],
+      "design_expectation": "只改变底板且系统回退来源明确并用真实包背景采样留证",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "opacity-affects-only-surface",
+        "reduced-transparency",
+        "application-opaque",
+        "effective-source"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "hud_translucency_and_reduced_transparency"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-26",
+      "source_requirements": [
+        "FP-04",
+        "FP-07"
+      ],
+      "design_expectation": "分词单元可见可点且span表面逐字重构原文不以颜色冒充成功",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "real-worker-tokens",
+        "clickable-span",
+        "unicode-mixed",
+        "surface-reconstructs-original"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "ruby_independent_of_segmentation_and_original_reconstruction",
+        "lexical_preferences_all_eight_combinations"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": true,
+          "reason": "同包真实worker及内置资源产生token/readings，核对Unicode重构、迟到身份和即时偏好。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_worker",
+            "packaged_resource_identity",
+            "source_identity",
+            "span_reconstruction"
+          ],
+          "status": "not_run"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "lexical-000",
+        "lexical-001",
+        "lexical-010",
+        "lexical-011",
+        "lexical-100",
+        "lexical-101",
+        "lexical-110",
+        "lexical-111"
+      ]
+    },
+    {
+      "id": "RW-27",
+      "source_requirements": [
+        "FP-04",
+        "FP-07"
+      ],
+      "design_expectation": "真实读音对齐汉字且开启当前句可见关闭即时消失和缺读音不编造",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "same-current-sentence-ruby-on",
+        "ruby-off",
+        "han-reading-aligned",
+        "kana-punctuation-unknown-reading"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "ruby_independent_of_segmentation_and_original_reconstruction",
+        "ruby_unknown_and_lexical_failure_keep_original",
+        "lexical_preferences_all_eight_combinations"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": true,
+          "reason": "同包真实worker及内置资源产生token/readings，核对Unicode重构、迟到身份和即时偏好。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_worker",
+            "packaged_resource_identity",
+            "source_identity",
+            "span_reconstruction"
+          ],
+          "status": "not_run"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "lexical-000",
+        "lexical-001",
+        "lexical-010",
+        "lexical-011",
+        "lexical-100",
+        "lexical-101",
+        "lexical-110",
+        "lexical-111"
+      ]
+    },
+    {
+      "id": "RW-28",
+      "source_requirements": [
+        "FP-04",
+        "FP-07",
+        "FP-11"
+      ],
+      "design_expectation": "同一句包含仅注音在内的组合可区分且边界关闭不偷开边界或词性颜色",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "lexical-000",
+        "lexical-001",
+        "lexical-010",
+        "lexical-011",
+        "lexical-100",
+        "lexical-101",
+        "lexical-110",
+        "lexical-111"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "ruby_independent_of_segmentation_and_original_reconstruction",
+        "lexical_preferences_all_eight_combinations"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": true,
+          "reason": "同包真实worker及内置资源产生token/readings，核对Unicode重构、迟到身份和即时偏好。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_worker",
+            "packaged_resource_identity",
+            "source_identity",
+            "span_reconstruction"
+          ],
+          "status": "not_run"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "lexical-000",
+        "lexical-001",
+        "lexical-010",
+        "lexical-011",
+        "lexical-100",
+        "lexical-101",
+        "lexical-110",
+        "lexical-111"
+      ]
+    },
+    {
+      "id": "RW-29",
+      "source_requirements": [
+        "FP-04",
+        "FP-07",
+        "FP-12"
+      ],
+      "design_expectation": "失败保留原文并可恢复且旧词法不贴新句和离线资源可用",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "analysing-original-visible",
+        "worker-failure",
+        "missing-resource",
+        "invalid-span",
+        "late-result-rejected",
+        "offline-first-run"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "ruby_unknown_and_lexical_failure_keep_original",
+        "lexical_preferences_all_eight_combinations"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": true,
+          "reason": "同包真实worker及内置资源产生token/readings，核对Unicode重构、迟到身份和即时偏好。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_worker",
+            "packaged_resource_identity",
+            "source_identity",
+            "span_reconstruction"
+          ],
+          "status": "not_run"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": [
+        "lexical-000",
+        "lexical-001",
+        "lexical-010",
+        "lexical-011",
+        "lexical-100",
+        "lexical-101",
+        "lexical-110",
+        "lexical-111"
+      ]
+    },
+    {
+      "id": "RW-30",
+      "source_requirements": [
+        "FP-04",
+        "FP-07"
+      ],
+      "design_expectation": "200百分比字号不裁剪且工具栏固定和词卡锚点正确并验证真实worker",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=hud-ruby#hud-source",
+        "docs/design/first-product-v1/index.html?scenario=hud-reduced",
+        "docs/design/first-product-v1/index.html?scenario=hud-lexical-error"
+      ],
+      "design_states": [
+        "long-ruby-multiline",
+        "200-percent-type",
+        "token-anchor",
+        "body-only-scroll",
+        "fixed-toolbar"
+      ],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M11",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C16",
+        "C18"
+      ],
+      "owner": "JA/PL/UI",
+      "design_checks": [
+        "hud_only_reading_region_scrolls"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": true,
+          "reason": "同包真实worker及内置资源产生token/readings，核对Unicode重构、迟到身份和即时偏好。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_worker",
+            "packaged_resource_identity",
+            "source_identity",
+            "span_reconstruction"
+          ],
+          "status": "not_run"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-31",
+      "source_requirements": [
+        "FP-01",
+        "FP-04",
+        "FP-11"
+      ],
+      "design_expectation": "图标颜色层级尺寸间距状态按已确认稿逐项核对且不由补充稿豁免",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components"
+      ],
+      "design_states": [
+        "normal",
+        "hover",
+        "pressed",
+        "focus",
+        "disabled",
+        "danger",
+        "icons-spacing-hierarchy"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C01",
+        "C02",
+        "C04",
+        "C06",
+        "C10",
+        "C18"
+      ],
+      "owner": "UI/QA",
+      "design_checks": [
+        "select_option_spacing_and_single_pointer_keyboard_highlight",
+        "component_buttons_icons_and_visible_state_list",
+        "select_all_product_entrypoints_and_state_matrix"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": [
+        "select-all-entrypoints",
+        "select-pointer-keyboard-single-highlight"
+      ]
+    },
+    {
+      "id": "RW-32",
+      "source_requirements": [
+        "FP-01",
+        "FP-04",
+        "FP-11"
+      ],
+      "design_expectation": "560和500宽度常用分组及顶部动作均可达且更多无重复并点击释放后保持展开",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components"
+      ],
+      "design_states": [
+        "560-comfortable",
+        "500-compact",
+        "toolbar-direct-actions",
+        "menu-no-duplicates",
+        "release-keeps-menu-open"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C01",
+        "C02",
+        "C04",
+        "C06",
+        "C10",
+        "C18"
+      ],
+      "owner": "UI/QA",
+      "design_checks": [
+        "hud_more_menu_persists_after_pointer_release",
+        "component_buttons_icons_and_visible_state_list",
+        "hud_toolbar_reachable_at_560_and_500_without_menu_duplicates",
+        "hud_direct_actions_operate_on_current_sentence"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": [
+        "hud-toolbar-500-560"
+      ]
+    },
+    {
+      "id": "RW-33",
+      "source_requirements": [
+        "FP-04",
+        "FP-11",
+        "FP-12"
+      ],
+      "design_expectation": "独立设计真实React与正式包按适用性留证且不以原型自比替代",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components"
+      ],
+      "design_states": [
+        "design-proof",
+        "real-component-proof",
+        "real-pipeline-proof",
+        "real-worker-proof",
+        "native-proof",
+        "real-game-proof"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C01",
+        "C02",
+        "C04",
+        "C06",
+        "C10",
+        "C18"
+      ],
+      "owner": "UI/QA",
+      "design_checks": [
+        "no_console_errors_or_network"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": true,
+          "reason": "真实Core事件入口到实际Repository持久化、全量查询与分页重构；包含暂停期间raw事件、活动会话GC和重启范围。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_ingress",
+            "pagination_reconstruction",
+            "persisted_sequence",
+            "repository_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_language": {
+          "applicable": true,
+          "reason": "同包真实worker及内置资源产生token/readings，核对Unicode重构、迟到身份和即时偏好。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "actual_worker",
+            "packaged_resource_identity",
+            "source_identity",
+            "span_reconstruction"
+          ],
+          "status": "not_run"
+        },
+        "native": {
+          "applicable": true,
+          "reason": "同一最终包的实际OS窗口、权限、全局键、bounds、材质/多屏及可观察结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "final_package_identity",
+            "native_window_identity",
+            "os_action_and_result",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "game": {
+          "applicable": true,
+          "reason": "同一最终包与真实CrossOver游戏/Core回调身份核对，不能用设计回放或旧包结果。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "core_resource_identity",
+            "final_package_identity",
+            "game_identity",
+            "real_callback_identity",
+            "source_identity"
+          ],
+          "status": "not_run"
+        }
+      },
+      "design_dimensions": []
+    },
+    {
+      "id": "RW-34",
+      "source_requirements": [
+        "FP-01",
+        "FP-12"
+      ],
+      "design_expectation": "每项可追溯且未映射未执行或受阻不继承旧通过和不覆盖批准图",
+      "design_refs": [
+        "docs/design/first-product-v1/index.html?scenario=components"
+      ],
+      "design_states": [
+        "unmapped-case-reject",
+        "unexecuted-layer-block",
+        "old-source-reject",
+        "old-nonce-reject",
+        "approved-images-unchanged"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C01",
+        "C02",
+        "C04",
+        "C06",
+        "C10",
+        "C18"
+      ],
+      "owner": "UI/QA",
+      "design_checks": [
+        "source_stable_during_run"
+      ],
+      "layers": {
+        "design": {
+          "applicable": true,
+          "reason": "独立HTML交互与离线样例，只证明设计层状态，不证明真实组件、词法、系统或游戏。",
+          "adapter_checks": [
+            "reading-window-design-coverage"
+          ],
+          "required_evidence": [
+            "asserted_observations",
+            "capture_integrity",
+            "fresh_process",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "product_component": {
+          "applicable": true,
+          "reason": "实际React组件经公开ApplicationPort断言动作与结果；须按新设计逐项接入，不继承旧57项结论。",
+          "adapter_checks": [],
+          "required_evidence": [
+            "action_and_observable_result",
+            "real_product_component",
+            "source_identity"
+          ],
+          "status": "not_run"
+        },
+        "real_pipeline": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "real_language": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "native": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        },
+        "game": {
+          "applicable": false,
+          "reason": "本条验收的直接证明不依赖此层；其他适用层仍独立必需。",
+          "adapter_checks": [],
+          "required_evidence": [],
+          "status": "not_applicable"
+        }
+      },
+      "design_dimensions": []
+    }
+  ],
+  "state_tags_role": "planning_only; actual coverage is code-bound design_dimensions"
+}

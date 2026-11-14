@@ -1,0 +1,24 @@
+{
+  "previous_baseline": "FP1-20261019-R8",
+  "previous_sha256": "4ec4e6f7aaf6851ed37ab4a96620c0adf0dcf1cec1edb74123cac0a70faa8cd2",
+  "current_baseline": "FP1-20261019-R9",
+  "independent_reviewers": [
+    "architecture_context",
+    "product_ui_impl"
+  ],
+  "reviewed_changes": {
+    "scripts/quality/product_execution.py": "Require UI29..35 actual behavior receipts; retain UI01..11 and all existing capture/hash/nonce/source/zero-diff constraints.",
+    "scripts/quality/test_product_execution.py": "Delete each required new behavior receipt and prove validation rejects it.",
+    "scripts/quality/storage_schema.py": "Shared sealed snapshot validation rejects WAL/SHM symlinks and nonempty files before all immutable readers.",
+    "scripts/quality/test_storage_schema.py": "Preserve and extend strict symlink/sidecar negative coverage."
+  },
+  "scope_additions": [
+    "scripts/quality/storage_schema.py",
+    "scripts/quality/test_storage_schema.py",
+    "docs/development/baselines/FP1-20261019-R8.json"
+  ],
+  "independent_review_artifact": ".build/final-wave-independent-review.json",
+  "approvals_unchanged": true,
+  "pre14_authority_adopted": false,
+  "product_acceptance_promoted": false
+}

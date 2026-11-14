@@ -1,0 +1,15 @@
+{
+  "kind": "R39_A_baseline_candidate_review",
+  "status": "candidate_only_awaiting_Root_exact_authority_review",
+  "phase_scope": "A_PoC_not_B_product_integration",
+  "parent_baseline_sha256": "5a7ddf4c2202ed0a27d021b5f14d57b9080d0c3ab8e8da8891a2b5d02d2c22f7",
+  "exact_delta_record": {
+    "path": "openspec/changes/isolate-window-preview-collector/exact-delta-review-r39-a.json",
+    "sha256": "c73920cfea4f5d9578506239abde12c6fee71f6cf09d42748d2bdb9417744037"
+  },
+  "root_adoption": "not_performed",
+  "original_R38_archived_exact": true,
+  "original494_references_preserved": true,
+  "new_collector_references_count": 3,
+  "runtime_visual_release_promoted": false
+}

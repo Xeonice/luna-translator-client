@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "stage-current-language-worker-r65",
+  "parent_baseline_sha256": "5e29853a84589b0a51a331fd40aad009b80bdd592567b9fbb33187196b1e2cbb",
+  "exact_delta_sha256": "90cbe93ed9088ffb87da6cc8c3c0372caea798a9daf8a995454f53ac51217b2a",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/language-worker-staging-r65/independent-review/review.json",
+    "sha256": "e29174e7d5baad71bb732d9556057ff59636cdcc064c44e3a03b786a9ecfa23e",
+    "bytes": 19173
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

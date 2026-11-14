@@ -1,0 +1,79 @@
+{
+  "kind": "R32_fresh_independent_storage_carrier_source_review",
+  "status": "independently_reviewed_sources_candidate_not_adopted",
+  "at": "2026-10-20T20:04:59.171911+00:00",
+  "reviewer": "/root/repair_change_governance",
+  "pre_authority_source_map": {
+    "path": ".build/hook-lexical-retest-20261021-010406/source-freeze-r32/root-pre-authority-source-map-v3.json",
+    "sha256": "1b4e2f05bab07bb51dbce746cea1e4cabfb331a2d8a4ba07554e4e2529cd8e60",
+    "source_tree_sha256": "ede375f747e5e2d52d2a56ff43567b9c5bbceb4dc4f596ff1c72ee50ed23543e",
+    "entries": 1629
+  },
+  "production_carrier": {
+    "path": "crates/app-infra/src/storage/database.rs",
+    "original_immutable_review_sha256": "a0336d50c36c169c5d3c35807a327ce76d66057c2f5c6eb315c9a1c46b317ae3",
+    "R31_before_RF03_sha256": "5de0a632ff18c5c1e04f2dcaa77ab728d25be09797e8a58c4472e06833bb761d",
+    "final_reviewed_sha256": "1a25214f3fcc86d12fff886de55fd338aa79f8d3115012214d691e095aab3395"
+  },
+  "independent_source_reviews": [
+    {
+      "path": ".build/storage-contract-followup/rf03-independent-review/review.json",
+      "sha256": "197ca23183959970db8677d57985ca5ab37fc383a2426045ab3d4e4312cb9bd1"
+    },
+    {
+      "path": ".build/storage-contract-followup/rf03-implementation/root-independent-review.json",
+      "sha256": "c4393052eb765f2df203fe6c356d7f074ea5211dfdc814e640a68a30e68559d4"
+    },
+    {
+      "path": ".build/runtime-followup-independent-review/launcher-final/review.json",
+      "sha256": "1c5a2692e1630798fb0c652b7062461203dbb475e33792046a5768e142d22176"
+    },
+    {
+      "path": ".build/runtime-followup-independent-review/launcher-final/technical-design-review.json",
+      "sha256": "45d34cc39626ab154e9f948ccea22cba512b41fadc4c2f6275f4e0b515d9d4c0"
+    }
+  ],
+  "reviewed_sources_sha256": {
+    "apps/desktop/src/features/library/LibraryScreen.tsx": "64c8cb2be00408b7054275bf44e1f1554c10b6cc2647a4ef3eee4152b310a9bd",
+    "apps/desktop/src/features/capture/CaptureSheet.tsx": "c238b37626395a48280aaeab34324ac83451fb86bb97feaeba07f63aab9a56f1",
+    "apps/desktop/src/features/capture/styles.module.css": "c9cfe0baa88667d935ebbe054958a5bff1b13cd787f4c6f5f79e4fd9df0ad69f",
+    "apps/desktop/src/bridge/tauri-port.ts": "3780491b4f49850b648e01c90654a0f44c72619e7cff99f4cb4b69000cd8f48c",
+    "crates/app-core/src/ports/runtime.rs": "cbf2a723f7b2bf315380325d7cc5ff1f224d75eb2a014e35d50ac7a5a2c0b18b",
+    "crates/app-core/src/application/runtime.rs": "6361353f287141a1a0b8fe476d11691ac948f55c9c1dc75d09ee8b5396d8a5ef",
+    "crates/app-infra/src/hook_backend.rs": "34a31eb25b41044c2992d13627aa8f90fc6b660f8a2f027af3820871633dafbd",
+    "crates/app-infra/src/storage/queries/capture.rs": "72ee070ab03884eef4182db99abda60be505b55faedaef01d88f19f51f5c0743",
+    "crates/app-infra/tests/application_runtime.rs": "aa18dc1dca2839cfdaad4ab0d3cd90fd501674f6fd59e6bce7c2e3f8107f873e",
+    "crates/app-infra/tests/game_assets.rs": "8637bc3a26ec3892f2a90c05c2dec2559f79e7ad33f8c65c11256c16e84b0495",
+    "crates/app-infra/src/storage/queries/game_assets.rs": "43f616a055f87102a734f04c22b8dc8fb790a8597b73fa92dc58560b07cf4b12",
+    "crates/app-infra/tests/storage_product.rs": "c60fe411f0b577e155db8bc7a56a0d7eb7207b1dca42e1b1784c52d1058f1193",
+    "crates/app-infra/src/storage/database.rs": "1a25214f3fcc86d12fff886de55fd338aa79f8d3115012214d691e095aab3395",
+    "crates/app-infra/tests/session_records_batch.rs": "c7e14ed753717c042ec6cad738076d6e9ef679b15473daedeaa0729322c637a7"
+  },
+  "actual_delta": [
+    "Original reviewed carrier acquired 8-line cover forwarder in R31, preserved as explicit historical increment.",
+    "RF03 private owner-PID lease RAII, close-SQLite-before-unlock and child no-unlock; deterministic same actual Store red101/green0 and original assertions retained.",
+    "capture.rs actual runtime SQL adds complete native/session/game identity checks and atomic NULL attribution supplement; dynamic session JOIN changes ownership projection, immutable reading revision/text/language/processing snapshot unchanged.",
+    "Unknown actual EXE launch PE architecture is only hint; known canonical actual path and its architecture remain strict in application preflight and SQL.",
+    "game_assets StoredCoverTarget is type-only, complete SQL string list and behavior unchanged; capture StoredHookSession accompanies explicitly reviewed expanded runtime SELECT."
+  ],
+  "migration_SQL_DDL_ledger_v1_and_fields_exact_unchanged": {
+    "crates/app-infra/src/storage/migrations/001_profile.sql": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5",
+    "crates/app-infra/src/storage/migrations/001_config.sql": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293",
+    "crates/app-infra/src/storage/migrations/002_session_records.sql": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+    "docs/development/storage-acceptance.json": "2c677f6eb691f767c6f36ebbdfc8521df64495fd1b7f3bfce350edd1b5618fa0",
+    "docs/architecture/database/v2/schema-contract.json": "eb3b0e78869119f98eac6d08954f5b91f1131a3edf2af85fcd16af85d6154713",
+    "docs/architecture/database/schema-contract.json": "aee35d350ff080da4f595c69b8cc47f076a84dc0bea3cf811f5cb0c7a3ccdcd2",
+    "docs/architecture/database/field-boundaries.json": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504",
+    "docs/architecture/database/v2/field-dictionary.json": "fae0561b8cd9113dfeaf9b34a4d9557ed523737b1217d9998a8ce68c5a143f20",
+    "docs/architecture/database/v2/002_session_records.design.sql": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+  },
+  "current_pin_changes_only": [
+    "docs/architecture/database/v2/storage-acceptance.json#/supported_upgrade_matrix/migration_chain/0/source_sha256",
+    "docs/architecture/database/v2/storage-acceptance.json#/supported_upgrade_matrix/migration_chain/1/source_sha256",
+    "docs/architecture/database/v2/storage-review.json#/production_migration_source_sha256"
+  ],
+  "nested_historical_review_and_original_v1_unchanged": true,
+  "old_failed_runs_and_candidate10_not_relabelled": true,
+  "final_fullgate_storage_runtime_package_and_games": "not_promoted_by_this_review",
+  "release_approved": false
+}

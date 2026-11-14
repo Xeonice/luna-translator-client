@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-preview-target-drive-resolution",
+  "parent_baseline_sha256": "80c9f58150fc886371f3af5465f5c67f935cf2a93237d5471bc99fd136eceac7",
+  "exact_delta_sha256": "943fa1e0dba451745809863d11b4b67134d408a39d9c591b85ec8b6348c2839f",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/preview-drive-contract-review/code-adoption-review.json",
+    "sha256": "926fc982aa0d73e0d74208464f6b5bbae988cd6ac82b5f70b8c6323778bb5257",
+    "bytes": 4203
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

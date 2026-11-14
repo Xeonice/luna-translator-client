@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "design_id": "GV-DESIGN-01",
+  "design_revision": "1.1",
+  "cases": [
+    {
+      "id": "GV-01",
+      "category": "rule",
+      "title": "产品范围与入口双向映射",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-02",
+      "category": "rule",
+      "title": "ID 正确，业务语义也必须正确",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-03",
+      "category": "visual",
+      "title": "真实实现与设计的统一对照",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-04",
+      "category": "rule",
+      "title": "前后端模块边界",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-05",
+      "category": "rule",
+      "title": "修改范围与真实路径",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-06",
+      "category": "rule",
+      "title": "依赖与技术栈",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-07",
+      "category": "rule",
+      "title": "Core、架构与语言资源",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-08",
+      "category": "rule",
+      "title": "真实生产编译",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-09",
+      "category": "rule",
+      "title": "测试代码同样必须编译",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-10",
+      "category": "rule",
+      "title": "功能实际发生且只发生一次",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-11",
+      "category": "rule",
+      "title": "取消、切换与迟到结果隔离",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-12",
+      "category": "rule",
+      "title": "字段类型、空值与值边界",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-13",
+      "category": "rule",
+      "title": "关系、唯一性与删除策略",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-14",
+      "category": "rule",
+      "title": "迁移与回滚",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-15",
+      "category": "rule",
+      "title": "写入、备份与恢复故障",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-16",
+      "category": "rule",
+      "title": "包身份与回归记录的汇总判定",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-17",
+      "category": "hook",
+      "title": "SessionStart 加载当前上下文",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-18",
+      "category": "hook",
+      "title": "PreToolUse 的拒绝真能阻止写入",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-19",
+      "category": "hook",
+      "title": "PostToolUse 发现实际违规",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-20",
+      "category": "hook",
+      "title": "正常问答不被 Stop 误拦",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-21",
+      "category": "hook",
+      "title": "修改交付前不能漏验",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-22",
+      "category": "hook",
+      "title": "Stop 有界续跑与外部阻塞",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-23",
+      "category": "fault",
+      "title": "Hook 信任、异常与全局共存",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-24",
+      "category": "fault",
+      "title": "旧结果必须按依赖失效",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-25",
+      "category": "fault",
+      "title": "结果完整性与真实断言",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-26",
+      "category": "fault",
+      "title": "并发工作项互不污染",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-27",
+      "category": "fault",
+      "title": "影响派发不漏也不滥",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-28",
+      "category": "mutation",
+      "title": "拒绝与时效条件变异",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-29",
+      "category": "mutation",
+      "title": "必选派发与测试流程变异",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-30",
+      "category": "hook",
+      "title": "真实事件与脚本模拟严格区分",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-31",
+      "category": "visual",
+      "title": "手工视觉确认必须真正影响放行",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    },
+    {
+      "id": "GV-32",
+      "category": "visual",
+      "title": "视觉确认按实际范围失效",
+      "required": true,
+      "plan_status": "planned",
+      "execution_status": "not_run"
+    }
+  ],
+  "minimum_branches_per_case": 2,
+  "plan_is_execution": false
+}

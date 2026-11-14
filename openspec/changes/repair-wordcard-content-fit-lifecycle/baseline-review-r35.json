@@ -1,0 +1,12 @@
+{
+  "kind": "R35_baseline_candidate_review",
+  "status": "independent_source_reviews_complete_Root_exact_authority_review_pending",
+  "parent_baseline_sha256": "53ad264157d9b2fbd53478a848505f8add9cadbbac6c904bfbfdab98a4a6941b",
+  "exact_delta_record": {
+    "path": "openspec/changes/repair-wordcard-content-fit-lifecycle/exact-delta-review-r35.json",
+    "sha256": "16e89b25c10df98c54dec7e8e457b2e983e5ba55a6a35d0c8618fd38c89f0f76"
+  },
+  "root_adoption": "not_performed",
+  "runtime_visual_release_promoted": false,
+  "snapshot_format_only_original_R34_identity_preserved": true
+}

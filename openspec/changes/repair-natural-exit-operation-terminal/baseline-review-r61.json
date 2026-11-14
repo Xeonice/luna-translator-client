@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-natural-exit-operation-terminal",
+  "parent_baseline_sha256": "d1b1d55f80e7254220c2c1e5109ff53db8045824d88c44588509d83d418c509b",
+  "exact_delta_sha256": "f930a715de66e9f677abebf1ee654e0756a84ec9348e7d488c5527dc8b0a9a26",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/durable-operation-stop-storage-carrier-review-r61/storage-carrier-review-r61.json",
+    "sha256": "c5ecfbae52644dd3628d77c0af357f6cf76a82c330c5df3a35aa2279c442cebb",
+    "bytes": 12304
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

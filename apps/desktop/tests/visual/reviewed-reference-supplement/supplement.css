@@ -1,0 +1,21 @@
+/* Independent, unapproved semantic supplement. All colors, panels, controls and
+   type continue to come from the reviewed design sources, never product CSS. */
+.rw-supplement-range{font-size:11px;line-height:1.8;color:var(--muted);margin:-3px 0 12px}
+.rw-supplement-range>div{display:flex;gap:10px;flex-wrap:wrap}
+.rw-supplement-range details{margin-top:4px}
+.rw-supplement-range dl{margin:6px 0;display:grid;grid-template-columns:110px minmax(0,1fr);gap:3px 12px}
+.rw-supplement-range dd{margin:0;overflow-wrap:anywhere}
+.rw-supplement-list .rw-records{max-height:480px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+.rw-supplement-list .rw-list-footer{align-items:flex-start}
+.rw-supplement-list .rw-list-footer>span{max-width:65%;line-height:1.8}
+.rw-supplement-list .rw-list-toolbar>.luna-select{min-width:140px}
+.rw-supplement-list .rw-history-translation+.rw-history-translation{margin-top:4px}
+.rw-supplement-shortcut-status{font-size:12px;line-height:1.8;margin:7px 2px 17px;color:var(--muted)}
+.rw-supplement-shortcut-status strong{font-weight:500;color:var(--ink)}
+.rw-supplement-source{font-size:11px;line-height:1.7;color:var(--muted);margin:6px 0 0}
+.rw-supplement-inherit{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:7px}
+.rw-supplement-key{display:inline-flex;gap:4px;align-items:center}
+.rw-supplement-key kbd{font:12px/1.6 -apple-system,BlinkMacSystemFont,sans-serif;background:var(--material-control-fill);border:1px solid var(--line);border-radius:4px;padding:0 5px}
+
+/* RW11 failure remains visibly an error when the boundary rule follows it. */
+.ls-boundary.ls-error-text{color:var(--material-error)}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "format_correction_pending_exact_review_and_Root_adoption",
+  "change_id": "specify-full-provider-registry-design",
+  "reason": "Actual unified R69 OpenSpec strict rejected missing ADDED Requirements and Scenario depth; corrected only headings and mandatory normative wording, preserving requirement IDs, scenarios and semantics. Original strict failure and complete R69 run remain unchanged.",
+  "parent_baseline_id": "FP1-20261029-R69",
+  "parent_sha256": "4208c534401a908d3da60cd28b4ee9cbc8a0489ce0038991c8fab5027cc58a19",
+  "source_delta": [
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/specs/model-service-design/spec.md",
+      "before": "eb7b4d3337fa98b407ad86b43c5aaac74f79349750c2f6e9a4527864a7ff0d76",
+      "after": "a09aec2124054853c854fbac4623a7422db97d91f7f1d11cf1b2ae37b1eb6f17"
+    },
+    {
+      "path": "openspec/changes/specify-full-provider-registry-design/verification.json",
+      "before": "33cd7348628073836dcd6e5f9cde7fb1d1a7f726f37355cbcb7c5ff864794bdd",
+      "after": "23b8831aa1bbd4c333244379c71bb1d963e580c1dc5020dc1b45c316616d5a85"
+    }
+  ],
+  "strict_failure": {
+    "path": ".build/quality/20261029T185424.159336Z-openspec-strict.log",
+    "bytes": 1951,
+    "sha256": "30b0e2e43e3f1d2b47ab8f1a7c4783244204ecb0b5156010fffc6596d161eae7"
+  },
+  "corrected_candidate_strict": {
+    "path": ".build/provider-docs-update-20261030/openspec-corrected-candidate02.json",
+    "bytes": 400,
+    "sha256": "b9d3daa077d9a7897bcbc9d6b08679b1c1b846911d25d4dbe6182dcdbac8229f"
+  },
+  "full_R70_verify": "not_run",
+  "product_acceptance_promoted": false
+}

@@ -1,0 +1,1196 @@
+{
+  "boundary_contract": "docs/architecture/database/v3/field-boundaries.json",
+  "checks": [
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "实际app-infra测试目标编译日志",
+        "逐字段Rust映射断言",
+        "非损失类型与UTF8/u64边界"
+      ],
+      "id": "STORAGE-01",
+      "owner": "AP",
+      "title": "Rust输入类型与数据库字段映射编译"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "CR-08-CONFIG@NATIVE",
+        "CR-12-RESOURCE@NATIVE"
+      ],
+      "expected_evidence": [
+        "由真实迁移创建并关闭的profile与dictionary候选库",
+        "双库完整结构比较",
+        "迁移版本账本"
+      ],
+      "id": "STORAGE-02",
+      "owner": "AP",
+      "title": "全新配置档与内置词典的生产建库"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION",
+        "TP-30@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "PRE14冻结升级矩阵逐路线回执",
+        "升级前后一致备份与内容身份",
+        "故障后原件及恢复校验"
+      ],
+      "id": "STORAGE-03",
+      "owner": "AP",
+      "title": "受支持版本升级和失败迁移恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-30@DISTRIBUTION",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "冻结的兼容拒绝与恢复路线",
+        "拒绝前后原件hash",
+        "受支持配对恢复结果"
+      ],
+      "id": "STORAGE-04",
+      "owner": "AP",
+      "title": "不兼容降级预检和包备份配对回退"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA"
+      ],
+      "expected_evidence": [
+        "真实写进程及WAL状态",
+        "在线备份和恢复完整性",
+        "恢复后业务快照比较"
+      ],
+      "id": "STORAGE-05",
+      "owner": "AP",
+      "title": "活跃WAL写入的一致备份恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "实际锁竞争进程",
+        "busy超时及队列界限断言",
+        "锁释放后可恢复写入"
+      ],
+      "id": "STORAGE-06",
+      "owner": "AP",
+      "title": "busy超时和单writer有界背压"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA",
+        "CR-08-CONFIG@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实只读连接或权限故障",
+        "失败后保留草稿与已提交数据",
+        "恢复权限后重试"
+      ],
+      "id": "STORAGE-07",
+      "owner": "AP",
+      "title": "只读数据库失败恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "隔离容量受限卷及真实SQLITE_FULL",
+        "失败前后原件与事务状态",
+        "释放容量后的恢复；安全构造不可用时blocked"
+      ],
+      "id": "STORAGE-08",
+      "owner": "PL",
+      "title": "真实磁盘满故障"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA"
+      ],
+      "expected_evidence": [
+        "实际子进程终止与提交barrier",
+        "重启后全有或全无",
+        "外键及业务revision一致性"
+      ],
+      "id": "STORAGE-09",
+      "owner": "AP",
+      "title": "提交边界崩溃和多表事务原子性"
+    },
+    {
+      "execution_ids": [
+        "TP-04@INFRA"
+      ],
+      "expected_evidence": [
+        "真实隔离Keychain命名空间",
+        "跨存储每个崩溃点",
+        "悬挂秘密回收且DB不存明文"
+      ],
+      "id": "STORAGE-10",
+      "owner": "PL",
+      "title": "Keychain新增pending与数据库提交崩溃回收"
+    },
+    {
+      "execution_ids": [
+        "TP-05@INFRA",
+        "TP-24@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "实际撤销持久化及vault拒绝",
+        "请求socket计数",
+        "重启后仍不可授权"
+      ],
+      "id": "STORAGE-11",
+      "owner": "PL",
+      "title": "凭据撤销与删除失败后禁止重新授权"
+    },
+    {
+      "execution_ids": [
+        "TP-14@INFRA",
+        "MC-12@NATIVE",
+        "MC-13@NATIVE"
+      ],
+      "expected_evidence": [
+        "所有竞争交错和单一终态",
+        "真实任务/尝试/结果提交记录",
+        "取消后无正文历史和缓存追加"
+      ],
+      "id": "STORAGE-12",
+      "owner": "AI",
+      "title": "取消停用切档与完成事务竞争"
+    },
+    {
+      "execution_ids": [
+        "TP-16@UNIT",
+        "CR-12-PERSIST@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "语义字段变形矩阵",
+        "真实缓存查询结果",
+        "独立人工修正前后hash"
+      ],
+      "id": "STORAGE-13",
+      "owner": "AP",
+      "title": "缓存语义身份和人工修正保留"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "CR-08-HISTORY@NATIVE"
+      ],
+      "expected_evidence": [
+        "并发分页ID和snapshot revision",
+        "清理前后来源链及固定对象hash",
+        "容量和foreign_key_check"
+      ],
+      "id": "STORAGE-14",
+      "owner": "AP",
+      "title": "历史游标分页保留清理及来源关系"
+    },
+    {
+      "execution_ids": [
+        "TP-09@INFRA",
+        "MC-21@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实双进程和隔离档路径",
+        "文件锁与跨档身份断言",
+        "关闭切档后的实例代次"
+      ],
+      "id": "STORAGE-15",
+      "owner": "AP",
+      "title": "配置档数据库锁与数据隔离"
+    },
+    {
+      "execution_ids": [
+        "CR-12-RESOURCE@NATIVE",
+        "TP-19@NATIVE"
+      ],
+      "expected_evidence": [
+        "实际随包辞书manifest及许可",
+        "只读查询与写入拒绝",
+        "辞书版本不匹配时引用处理"
+      ],
+      "id": "STORAGE-16",
+      "owner": "JA",
+      "title": "包内只读词典版本和跨库引用"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-03@INFRA",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "由field-boundaries唯一展开的每个probe结果",
+        "合法对照与非法边界拒绝",
+        "实际SQLite版本和无skip断言"
+      ],
+      "id": "STORAGE-17",
+      "owner": "AP",
+      "title": "每字段SQL边界和全部声明CHECK"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "跨会话/跨配置版本外键拒绝",
+        "唯一及NULL边界",
+        "RESTRICT/CASCADE/SET NULL实际行为"
+      ],
+      "id": "STORAGE-18",
+      "owner": "AP",
+      "title": "复合关系与唯一删除约束"
+    },
+    {
+      "execution_ids": [
+        "TP-10@UNIT",
+        "TP-11@UNIT",
+        "MC-01@NATIVE",
+        "MC-08@NATIVE",
+        "MC-11@NATIVE",
+        "MC-12@NATIVE"
+      ],
+      "expected_evidence": [
+        "草稿与applied版本分离",
+        "封存后INSERT/UPDATE/DELETE拒绝与CAS",
+        "inherit/set/omit及显式0落库恢复"
+      ],
+      "id": "STORAGE-19",
+      "owner": "AP",
+      "title": "配置封存头指针和三态参数"
+    },
+    {
+      "execution_ids": [
+        "TP-08@INFRA",
+        "TP-06@INFRA",
+        "TP-07@INFRA"
+      ],
+      "expected_evidence": [
+        "同operation_id重复及冲突结果",
+        "原子receipt与revision投影",
+        "重启后无重复提交"
+      ],
+      "id": "STORAGE-20",
+      "owner": "AP",
+      "title": "命令幂等和业务revision提交"
+    },
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "u64十进制/FILETIME roundtrip",
+        "原文UTF8字节与span恢复",
+        "来源复合键不串会话"
+      ],
+      "id": "STORAGE-21",
+      "owner": "AP",
+      "title": "完整来源身份与Unicode无损存取"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "MC-13@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "仍被引用对象不可清理",
+        "回收墓碑与原子操作回执",
+        "回收后禁止重新引用及恢复授权"
+      ],
+      "id": "STORAGE-22",
+      "owner": "AP",
+      "title": "已封存配置及凭据池的受控GC"
+    }
+  ],
+  "delta_check_ids": [
+    "RUST-MAP:profile.config_revisions.codec_version",
+    "RUST-MAP:profile.connections.adapter_binding_schema",
+    "RUST-MAP:profile.connections.adapter_contract_revision",
+    "RUST-MAP:profile.connections.compatibility_profile_id",
+    "RUST-MAP:profile.connections.compatibility_profile_revision",
+    "RUST-MAP:profile.connections.provider_preset_id",
+    "RUST-MAP:profile.connections.provider_preset_revision",
+    "RUST-MAP:profile.credential_refs.envelope_schema",
+    "RUST-MAP:profile.provider_preset_versions.adapter_contract_revision",
+    "RUST-MAP:profile.provider_preset_versions.auth_kind",
+    "RUST-MAP:profile.provider_preset_versions.compatibility_profile_id",
+    "RUST-MAP:profile.provider_preset_versions.compatibility_profile_revision",
+    "RUST-MAP:profile.provider_preset_versions.content_hash",
+    "RUST-MAP:profile.provider_preset_versions.created_at_ms",
+    "RUST-MAP:profile.provider_preset_versions.display_name",
+    "RUST-MAP:profile.provider_preset_versions.endpoint",
+    "RUST-MAP:profile.provider_preset_versions.namespace",
+    "RUST-MAP:profile.provider_preset_versions.options_json",
+    "RUST-MAP:profile.provider_preset_versions.preset_id",
+    "RUST-MAP:profile.provider_preset_versions.preset_revision",
+    "RUST-MAP:profile.provider_preset_versions.protocol_id",
+    "RUST-MAP:profile.provider_preset_versions.provider_id",
+    "RUST-MAP:profile.provider_preset_versions.provider_label",
+    "RUST-MAP:profile.provider_preset_versions.source_json",
+    "V3-AUTHORITY",
+    "V3-CODEC",
+    "V3-CREDENTIALS",
+    "V3-FIELD:profile.config_revisions.codec_version",
+    "V3-FIELD:profile.connections.adapter_binding_schema",
+    "V3-FIELD:profile.connections.adapter_contract_revision",
+    "V3-FIELD:profile.connections.compatibility_profile_id",
+    "V3-FIELD:profile.connections.compatibility_profile_revision",
+    "V3-FIELD:profile.connections.provider_preset_id",
+    "V3-FIELD:profile.connections.provider_preset_revision",
+    "V3-FIELD:profile.credential_refs.envelope_schema",
+    "V3-FIELD:profile.provider_preset_versions.adapter_contract_revision",
+    "V3-FIELD:profile.provider_preset_versions.auth_kind",
+    "V3-FIELD:profile.provider_preset_versions.compatibility_profile_id",
+    "V3-FIELD:profile.provider_preset_versions.compatibility_profile_revision",
+    "V3-FIELD:profile.provider_preset_versions.content_hash",
+    "V3-FIELD:profile.provider_preset_versions.created_at_ms",
+    "V3-FIELD:profile.provider_preset_versions.display_name",
+    "V3-FIELD:profile.provider_preset_versions.endpoint",
+    "V3-FIELD:profile.provider_preset_versions.namespace",
+    "V3-FIELD:profile.provider_preset_versions.options_json",
+    "V3-FIELD:profile.provider_preset_versions.preset_id",
+    "V3-FIELD:profile.provider_preset_versions.preset_revision",
+    "V3-FIELD:profile.provider_preset_versions.protocol_id",
+    "V3-FIELD:profile.provider_preset_versions.provider_id",
+    "V3-FIELD:profile.provider_preset_versions.provider_label",
+    "V3-FIELD:profile.provider_preset_versions.source_json",
+    "V3-LEGACY-ENUM:profile.connections.auth_mode",
+    "V3-LEGACY-ENUM:profile.connections.protocol",
+    "V3-LEGACY-ENUM:profile.credential_refs.auth_kind",
+    "V3-LEGACY-PRESERVATION",
+    "V3-MIGRATION",
+    "V3-PRESETS",
+    "V3-PRODUCERS",
+    "V3-RELATIONSHIPS"
+  ],
+  "enablement_ids": [
+    "TE-04",
+    "TE-06",
+    "TE-08",
+    "TE-10",
+    "TE-12"
+  ],
+  "expanded_old_enum_obligations": [
+    {
+      "field_id": "profile.connections.protocol",
+      "new_semantics": "SQL supports reviewed typed drafts; execute requires exact registered binding and auth/material agreement",
+      "original_probe_ids": [
+        "profile.connections.field.protocol.positive",
+        "profile.connections.field.protocol.wrong_type",
+        "profile.connections.field.protocol.null",
+        "profile.connections.field.protocol.nonnull",
+        "profile.connections.field.protocol.coercion",
+        "profile.connections.field.protocol.value.0",
+        "profile.connections.field.protocol.value.1",
+        "profile.connections.field.protocol.value.2",
+        "profile.connections.field.protocol.value.3",
+        "profile.connections.field.protocol.value.4",
+        "profile.connections.field.protocol.value.5",
+        "profile.connections.field.protocol.value.6",
+        "profile.connections.field.protocol.value.7",
+        "profile.connections.field.protocol.value.8",
+        "profile.connections.field.protocol.value.9",
+        "profile.connections.field.protocol.value.10",
+        "profile.connections.field.protocol.value.11",
+        "profile.connections.field.protocol.value.12",
+        "profile.connections.field.protocol.value.13",
+        "profile.connections.field.protocol.value.14",
+        "profile.connections.field.protocol.value.15",
+        "profile.connections.field.protocol.value.16",
+        "profile.connections.field.protocol.value.17",
+        "profile.connections.field.protocol.value.18",
+        "profile.connections.field.protocol.value.19",
+        "profile.connections.field.protocol.value.20",
+        "profile.connections.field.protocol.value.21",
+        "profile.connections.field.protocol.value.22",
+        "profile.connections.field.protocol.value.23",
+        "profile.connections.field.protocol.value.24",
+        "profile.connections.field.protocol.value.25",
+        "profile.connections.field.protocol.value.26"
+      ],
+      "original_probe_scope": "execute unchanged against exact v1/v2 fixtures",
+      "runtime_proof_id": "V3-LEGACY-ENUM:profile.connections.protocol"
+    },
+    {
+      "field_id": "profile.connections.auth_mode",
+      "new_semantics": "SQL supports reviewed typed drafts; execute requires exact registered binding and auth/material agreement",
+      "original_probe_ids": [
+        "profile.connections.field.auth_mode.positive",
+        "profile.connections.field.auth_mode.wrong_type",
+        "profile.connections.field.auth_mode.null",
+        "profile.connections.field.auth_mode.nonnull",
+        "profile.connections.field.auth_mode.coercion",
+        "profile.connections.field.auth_mode.value.0",
+        "profile.connections.field.auth_mode.value.1",
+        "profile.connections.field.auth_mode.value.2",
+        "profile.connections.field.auth_mode.value.3",
+        "profile.connections.field.auth_mode.value.4",
+        "profile.connections.field.auth_mode.value.5",
+        "profile.connections.field.auth_mode.value.6",
+        "profile.connections.field.auth_mode.value.7",
+        "profile.connections.field.auth_mode.value.8",
+        "profile.connections.field.auth_mode.value.9",
+        "profile.connections.field.auth_mode.value.10",
+        "profile.connections.field.auth_mode.value.11",
+        "profile.connections.field.auth_mode.value.12",
+        "profile.connections.field.auth_mode.value.13",
+        "profile.connections.field.auth_mode.value.14",
+        "profile.connections.field.auth_mode.value.15",
+        "profile.connections.field.auth_mode.value.16",
+        "profile.connections.field.auth_mode.value.17",
+        "profile.connections.field.auth_mode.value.18",
+        "profile.connections.field.auth_mode.value.19",
+        "profile.connections.field.auth_mode.value.20",
+        "profile.connections.field.auth_mode.value.21",
+        "profile.connections.field.auth_mode.value.22",
+        "profile.connections.field.auth_mode.value.23",
+        "profile.connections.field.auth_mode.value.24"
+      ],
+      "original_probe_scope": "execute unchanged against exact v1/v2 fixtures",
+      "runtime_proof_id": "V3-LEGACY-ENUM:profile.connections.auth_mode"
+    },
+    {
+      "field_id": "profile.credential_refs.auth_kind",
+      "new_semantics": "SQL supports reviewed typed drafts; execute requires exact registered binding and auth/material agreement",
+      "original_probe_ids": [
+        "profile.credential_refs.field.auth_kind.positive",
+        "profile.credential_refs.field.auth_kind.wrong_type",
+        "profile.credential_refs.field.auth_kind.null",
+        "profile.credential_refs.field.auth_kind.nonnull",
+        "profile.credential_refs.field.auth_kind.coercion",
+        "profile.credential_refs.field.auth_kind.value.0",
+        "profile.credential_refs.field.auth_kind.value.1",
+        "profile.credential_refs.field.auth_kind.value.2",
+        "profile.credential_refs.field.auth_kind.value.3",
+        "profile.credential_refs.field.auth_kind.value.4",
+        "profile.credential_refs.field.auth_kind.value.5",
+        "profile.credential_refs.field.auth_kind.value.6",
+        "profile.credential_refs.field.auth_kind.value.7",
+        "profile.credential_refs.field.auth_kind.value.8",
+        "profile.credential_refs.field.auth_kind.value.9",
+        "profile.credential_refs.field.auth_kind.value.10",
+        "profile.credential_refs.field.auth_kind.value.11",
+        "profile.credential_refs.field.auth_kind.value.12",
+        "profile.credential_refs.field.auth_kind.value.13",
+        "profile.credential_refs.field.auth_kind.value.14",
+        "profile.credential_refs.field.auth_kind.value.15",
+        "profile.credential_refs.field.auth_kind.value.16",
+        "profile.credential_refs.field.auth_kind.value.17",
+        "profile.credential_refs.field.auth_kind.value.18",
+        "profile.credential_refs.field.auth_kind.value.19",
+        "profile.credential_refs.field.auth_kind.value.20",
+        "profile.credential_refs.field.auth_kind.value.21",
+        "profile.credential_refs.field.auth_kind.value.22",
+        "profile.credential_refs.field.auth_kind.value.23"
+      ],
+      "original_probe_scope": "execute unchanged against exact v1/v2 fixtures",
+      "runtime_proof_id": "V3-LEGACY-ENUM:profile.credential_refs.auth_kind"
+    }
+  ],
+  "field_subassertions": [
+    "valid",
+    "type",
+    "null"
+  ],
+  "id": "FP1-STORAGE-20261105-SCHEMA3-HTTP",
+  "kind": "schema_three_http_storage_acceptance",
+  "maintenance_ids": [
+    "MA-02",
+    "MA-05",
+    "MA-10",
+    "MA-16"
+  ],
+  "original_checks": [
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "实际app-infra测试目标编译日志",
+        "逐字段Rust映射断言",
+        "非损失类型与UTF8/u64边界"
+      ],
+      "id": "STORAGE-01",
+      "owner": "AP",
+      "title": "Rust输入类型与数据库字段映射编译"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "CR-08-CONFIG@NATIVE",
+        "CR-12-RESOURCE@NATIVE"
+      ],
+      "expected_evidence": [
+        "由真实迁移创建并关闭的profile与dictionary候选库",
+        "双库完整结构比较",
+        "迁移版本账本"
+      ],
+      "id": "STORAGE-02",
+      "owner": "AP",
+      "title": "全新配置档与内置词典的生产建库"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION",
+        "TP-30@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "PRE14冻结升级矩阵逐路线回执",
+        "升级前后一致备份与内容身份",
+        "故障后原件及恢复校验"
+      ],
+      "id": "STORAGE-03",
+      "owner": "AP",
+      "title": "受支持版本升级和失败迁移恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-30@DISTRIBUTION",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "冻结的兼容拒绝与恢复路线",
+        "拒绝前后原件hash",
+        "受支持配对恢复结果"
+      ],
+      "id": "STORAGE-04",
+      "owner": "AP",
+      "title": "不兼容降级预检和包备份配对回退"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA"
+      ],
+      "expected_evidence": [
+        "真实写进程及WAL状态",
+        "在线备份和恢复完整性",
+        "恢复后业务快照比较"
+      ],
+      "id": "STORAGE-05",
+      "owner": "AP",
+      "title": "活跃WAL写入的一致备份恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "实际锁竞争进程",
+        "busy超时及队列界限断言",
+        "锁释放后可恢复写入"
+      ],
+      "id": "STORAGE-06",
+      "owner": "AP",
+      "title": "busy超时和单writer有界背压"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA",
+        "CR-08-CONFIG@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实只读连接或权限故障",
+        "失败后保留草稿与已提交数据",
+        "恢复权限后重试"
+      ],
+      "id": "STORAGE-07",
+      "owner": "AP",
+      "title": "只读数据库失败恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "隔离容量受限卷及真实SQLITE_FULL",
+        "失败前后原件与事务状态",
+        "释放容量后的恢复；安全构造不可用时blocked"
+      ],
+      "id": "STORAGE-08",
+      "owner": "PL",
+      "title": "真实磁盘满故障"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA"
+      ],
+      "expected_evidence": [
+        "实际子进程终止与提交barrier",
+        "重启后全有或全无",
+        "外键及业务revision一致性"
+      ],
+      "id": "STORAGE-09",
+      "owner": "AP",
+      "title": "提交边界崩溃和多表事务原子性"
+    },
+    {
+      "execution_ids": [
+        "TP-04@INFRA"
+      ],
+      "expected_evidence": [
+        "真实隔离Keychain命名空间",
+        "跨存储每个崩溃点",
+        "悬挂秘密回收且DB不存明文"
+      ],
+      "id": "STORAGE-10",
+      "owner": "PL",
+      "title": "Keychain新增pending与数据库提交崩溃回收"
+    },
+    {
+      "execution_ids": [
+        "TP-05@INFRA",
+        "TP-24@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "实际撤销持久化及vault拒绝",
+        "请求socket计数",
+        "重启后仍不可授权"
+      ],
+      "id": "STORAGE-11",
+      "owner": "PL",
+      "title": "凭据撤销与删除失败后禁止重新授权"
+    },
+    {
+      "execution_ids": [
+        "TP-14@INFRA",
+        "MC-12@NATIVE",
+        "MC-13@NATIVE"
+      ],
+      "expected_evidence": [
+        "所有竞争交错和单一终态",
+        "真实任务/尝试/结果提交记录",
+        "取消后无正文历史和缓存追加"
+      ],
+      "id": "STORAGE-12",
+      "owner": "AI",
+      "title": "取消停用切档与完成事务竞争"
+    },
+    {
+      "execution_ids": [
+        "TP-16@UNIT",
+        "CR-12-PERSIST@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "语义字段变形矩阵",
+        "真实缓存查询结果",
+        "独立人工修正前后hash"
+      ],
+      "id": "STORAGE-13",
+      "owner": "AP",
+      "title": "缓存语义身份和人工修正保留"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "CR-08-HISTORY@NATIVE"
+      ],
+      "expected_evidence": [
+        "并发分页ID和snapshot revision",
+        "清理前后来源链及固定对象hash",
+        "容量和foreign_key_check"
+      ],
+      "id": "STORAGE-14",
+      "owner": "AP",
+      "title": "历史游标分页保留清理及来源关系"
+    },
+    {
+      "execution_ids": [
+        "TP-09@INFRA",
+        "MC-21@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实双进程和隔离档路径",
+        "文件锁与跨档身份断言",
+        "关闭切档后的实例代次"
+      ],
+      "id": "STORAGE-15",
+      "owner": "AP",
+      "title": "配置档数据库锁与数据隔离"
+    },
+    {
+      "execution_ids": [
+        "CR-12-RESOURCE@NATIVE",
+        "TP-19@NATIVE"
+      ],
+      "expected_evidence": [
+        "实际随包辞书manifest及许可",
+        "只读查询与写入拒绝",
+        "辞书版本不匹配时引用处理"
+      ],
+      "id": "STORAGE-16",
+      "owner": "JA",
+      "title": "包内只读词典版本和跨库引用"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-03@INFRA",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "由field-boundaries唯一展开的每个probe结果",
+        "合法对照与非法边界拒绝",
+        "实际SQLite版本和无skip断言"
+      ],
+      "id": "STORAGE-17",
+      "owner": "AP",
+      "title": "每字段SQL边界和全部声明CHECK"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "跨会话/跨配置版本外键拒绝",
+        "唯一及NULL边界",
+        "RESTRICT/CASCADE/SET NULL实际行为"
+      ],
+      "id": "STORAGE-18",
+      "owner": "AP",
+      "title": "复合关系与唯一删除约束"
+    },
+    {
+      "execution_ids": [
+        "TP-10@UNIT",
+        "TP-11@UNIT",
+        "MC-01@NATIVE",
+        "MC-08@NATIVE",
+        "MC-11@NATIVE",
+        "MC-12@NATIVE"
+      ],
+      "expected_evidence": [
+        "草稿与applied版本分离",
+        "封存后INSERT/UPDATE/DELETE拒绝与CAS",
+        "inherit/set/omit及显式0落库恢复"
+      ],
+      "id": "STORAGE-19",
+      "owner": "AP",
+      "title": "配置封存头指针和三态参数"
+    },
+    {
+      "execution_ids": [
+        "TP-08@INFRA",
+        "TP-06@INFRA",
+        "TP-07@INFRA"
+      ],
+      "expected_evidence": [
+        "同operation_id重复及冲突结果",
+        "原子receipt与revision投影",
+        "重启后无重复提交"
+      ],
+      "id": "STORAGE-20",
+      "owner": "AP",
+      "title": "命令幂等和业务revision提交"
+    },
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "u64十进制/FILETIME roundtrip",
+        "原文UTF8字节与span恢复",
+        "来源复合键不串会话"
+      ],
+      "id": "STORAGE-21",
+      "owner": "AP",
+      "title": "完整来源身份与Unicode无损存取"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "MC-13@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "仍被引用对象不可清理",
+        "回收墓碑与原子操作回执",
+        "回收后禁止重新引用及恢复授权"
+      ],
+      "id": "STORAGE-22",
+      "owner": "AP",
+      "title": "已封存配置及凭据池的受控GC"
+    }
+  ],
+  "original_obligations_policy": "execute original applicable obligations; old v1/v2 enum negatives stay on exact old fixtures; never inherit old green receipts",
+  "original_upgrade_matrix": {
+    "approval_ref": "docs/architecture/database/v2/storage-review.json",
+    "dictionary_versions": {
+      "1": {
+        "manifest_path": "resources/language/dictionary-provenance.json",
+        "manifest_sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b",
+        "resource_version": "wiktionary-zh-ja-20261018+jmdict-20261012-v1"
+      }
+    },
+    "fresh_versions": {
+      "dictionary": 1,
+      "profile": 2
+    },
+    "migration_chain": [
+      {
+        "migration_sha256": "1f26620f1b22307ae07851c1e09c7ed44f888f6b9f88e9d9c34b6f7f1f3302c7",
+        "previous_version": 0,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "source_sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_profile.sql",
+            "sha256": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5"
+          },
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_config.sql",
+            "sha256": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293"
+          }
+        ],
+        "version": 1
+      },
+      {
+        "migration_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+        "previous_version": 1,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "source_sha256": "e3ba3fd95edeeeabdaaf7b8d99588aac949219716ec080df5de876144a11a848",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/002_session_records.sql",
+            "sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+          }
+        ],
+        "version": 2
+      }
+    ],
+    "routes": [
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 2,
+        "id": "reopen_profile_v1",
+        "kind": "reopen",
+        "source_schema": "docs/architecture/database/v2/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 2,
+        "id": "same_version_backup_recovery",
+        "kind": "paired_recovery",
+        "source_schema": "docs/architecture/database/v2/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": 99,
+        "id": "reject_unknown_version",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unknown_version",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_unversioned",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unversioned",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "corrupt",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "migration_mismatch",
+        "from_version": 2,
+        "id": "reject_migration_hash",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v2/schema-contract.json",
+        "source_state": "migration_mismatch",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "schema_contract_mismatch",
+        "from_version": 2,
+        "id": "reject_schema_drift",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "schema_mismatch",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "database_relationship_corrupt",
+        "from_version": 2,
+        "id": "reject_relationship_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v2/schema-contract.json",
+        "source_state": "relationship_corrupt",
+        "target_schema": "docs/architecture/database/v2/schema-contract.json",
+        "to_version": 2
+      }
+    ],
+    "status": "frozen"
+  },
+  "phase": "planning",
+  "plan": "docs/development/first-product-test-plan.json",
+  "prerequisite_ids": [
+    "PRE-13",
+    "PRE-14"
+  ],
+  "prior_obligation_sources": {
+    "docs/architecture/database/field-boundaries.json": "8e646019b98b4ca3af2ba805328c404c9a00795b12a5d0e31d4487ccf4c41504",
+    "docs/architecture/database/v2/field-dictionary.json": "fae0561b8cd9113dfeaf9b34a4d9557ed523737b1217d9998a8ce68c5a143f20",
+    "docs/architecture/database/v2/schema-contract.json": "eb3b0e78869119f98eac6d08954f5b91f1131a3edf2af85fcd16af85d6154713",
+    "docs/architecture/database/v2/storage-acceptance.json": "1ca95fec54ecb1af2f4f2a0791010605604bc5662a354e9ad1f2036bacc7de70"
+  },
+  "product_tests_executed": false,
+  "required_fresh_routes": [
+    "fresh_profile",
+    "fresh_dictionary"
+  ],
+  "required_routes": [
+    "fresh_0_to_3",
+    "upgrade_1_to_3_with_backup",
+    "upgrade_2_to_3_with_backup",
+    "reopen_3",
+    "old_client_rejects_3",
+    "rollback_failed_3",
+    "crash_atomic_2_or_3",
+    "backup_restore",
+    "reject_unknown_version",
+    "reject_corrupt_hash_schema_fk_profile",
+    "readonly_busy_disk_full"
+  ],
+  "required_runtime_provenance": [
+    "real_rust_compile",
+    "unfiltered_registered_test_target",
+    "run_id_and_nonce",
+    "current_source_and_artifact_identity",
+    "actual_database_snapshots",
+    "old_rows_seals_heads_preserved",
+    "backup_identity",
+    "typed_vault_authority"
+  ],
+  "runtime_policy": {
+    "adapter_status": "pending_backend_registration_and_real_execution",
+    "forbidden_substitutes": [
+      "design_ddl_clone",
+      "guard_fixture",
+      "hash_only_receipt",
+      "old_run_receipt",
+      "unit_tests_only"
+    ],
+    "product_status_source": "separate_runtime_receipts_only"
+  },
+  "schema_contract": "docs/architecture/database/v3/schema-contract.json",
+  "schema_version": 1,
+  "supported_upgrade_matrix": {
+    "approval_ref": "docs/architecture/database/v3/storage-review.json",
+    "dictionary_versions": {
+      "1": {
+        "manifest_path": "resources/language/dictionary-provenance.json",
+        "manifest_sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b",
+        "resource_version": "wiktionary-zh-ja-20261018+jmdict-20261012-v1"
+      }
+    },
+    "fresh_versions": {
+      "dictionary": 1,
+      "profile": 3
+    },
+    "implementation_identity_policy": "outer current-source closure and actual compile/run; historical implementation hash is not current identity",
+    "migration_chain": [
+      {
+        "migration_sha256": "1f26620f1b22307ae07851c1e09c7ed44f888f6b9f88e9d9c34b6f7f1f3302c7",
+        "previous_version": 0,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_profile.sql",
+            "sha256": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5"
+          },
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_config.sql",
+            "sha256": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293"
+          }
+        ],
+        "version": 1
+      },
+      {
+        "migration_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+        "previous_version": 1,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/002_session_records.sql",
+            "sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+          }
+        ],
+        "version": 2
+      },
+      {
+        "migration_sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2",
+        "previous_version": 2,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/003_http_service_identity.sql",
+            "sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2"
+          }
+        ],
+        "version": 3
+      }
+    ],
+    "routes": [
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 3,
+        "id": "reopen_profile_v1",
+        "kind": "reopen",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 3,
+        "id": "same_version_backup_recovery",
+        "kind": "paired_recovery",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": 99,
+        "id": "reject_unknown_version",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unknown_version",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_unversioned",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unversioned",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "corrupt",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "migration_mismatch",
+        "from_version": 3,
+        "id": "reject_migration_hash",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "migration_mismatch",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "schema_contract_mismatch",
+        "from_version": 3,
+        "id": "reject_schema_drift",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "schema_mismatch",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "database_relationship_corrupt",
+        "from_version": 3,
+        "id": "reject_relationship_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "relationship_corrupt",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      }
+    ],
+    "status": "design_frozen_runtime_not_run"
+  }
+}

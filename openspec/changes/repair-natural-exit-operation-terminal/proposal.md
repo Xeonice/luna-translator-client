@@ -1,0 +1,7 @@
+# 修复自然退出后的持久操作终态
+
+R59实机SR、MO、Never7正常退出后，Host已完成EOF/exit0/ACK，所属session也持久stopped，但本次关联产生的capture_operations仍active且ended_at_ms为空。它们属于本次SID且legacy_unknown_start=0，不是旧迁移行或采集器投影错误。
+
+本片在既有record_hook_diagnostic的Immediate事务内，当前SID的session确实转为terminal时，同步结束该SID仍active的operations，再递增同一次revision并提交。operation写失败必须回滚session/正文封口/operation/revision，让FIFO barrier返回错误而非成功ACK。
+
+不改DB schema、公开端口、Core ABI1/JSONL2、collector私有v3、UI、已确认设计和游戏配置。不自动回填已终态历史session的旧active operation；legacy无SID record_diagnostic和open_hook_session替换路径不在本片范围。旧R59失败和缺失实机步骤保留。

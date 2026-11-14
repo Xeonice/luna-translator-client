@@ -1,0 +1,17 @@
+[package]
+name = "app-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+ts-rs = { version = "=12.0.1", features = ["serde-json-impl"] }
+
+tokio = { version = "=1.53.3", features = ["rt", "sync", "time", "macros"] }
+
+[lints]
+workspace = true

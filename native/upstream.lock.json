@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "abi_profile": "lunahost-cdecl-v12.1.2.3",
+  "repository": "https://github.com/HIllya51/LunaTranslator",
+  "tag": "v12.1.2.3",
+  "commit": "c8701872a5de83f8d3272f3967457d0b8f2983c4",
+  "archive_sha256": "b0fc381daed3ea95dab7fc4b37f165d11b7596bbccec0ef90d928a18e3a6ee95",
+  "files": [
+    {
+      "archive_path": "LunaTranslator_x64/files/LunaHook/LunaHost64.dll",
+      "runtime_path": "LunaHost64.dll",
+      "sha256": "1a2bb0e91bd8e2a147aae25f9fbec496bfb44427d8f364e741861bc14cab5a2d",
+      "size": 259896
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/LunaHook/LunaHook32.dll",
+      "runtime_path": "LunaHook32.dll",
+      "sha256": "7975dcdfb2e1cbcc0a3641fa80cb30319eef976835c43d75fee07c0ef2b6df93",
+      "size": 2138424
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/LunaHook/LunaHook64.dll",
+      "runtime_path": "LunaHook64.dll",
+      "sha256": "aa838886d7c8cfd2ee64ad4f92eb90e497f3dc36c41415191abf64ca275cf2da",
+      "size": 2695992
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/LunaSubprocess32.exe",
+      "runtime_path": "LunaSubprocess32.exe",
+      "sha256": "d60b9e009052edf82796654376e38d15bb5040b10e2e86703449b0ee3f2674c5",
+      "size": 434496
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/LunaSubprocess64.exe",
+      "runtime_path": "LunaSubprocess64.exe",
+      "sha256": "da58e286013286530168df8cc6c859b7e24b1434e3cad2d9f1c8729c4214b6eb",
+      "size": 398144
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/runtime3.13-64/msvcp140.dll",
+      "runtime_path": "msvcp140.dll",
+      "sha256": "7c26614e1d733892c2deac7e245ce115504b1d80592dd0a01b08e3e5a55f89ca",
+      "size": 643512
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/runtime3.13-64/msvcp140_1.dll",
+      "runtime_path": "msvcp140_1.dll",
+      "sha256": "206c931bf90fdad8816de3b5e2ef80b2bcaa9406c89ecc05fe6fddffe251e982",
+      "size": 35768
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/runtime3.13-64/msvcp140_2.dll",
+      "runtime_path": "msvcp140_2.dll",
+      "sha256": "d50d7883f20d1dc6191768d3746f52dd9cac89c346ffaed5be1f110c2f34a838",
+      "size": 274872
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/runtime3.13-64/vcruntime140.dll",
+      "runtime_path": "vcruntime140.dll",
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7",
+      "size": 178616
+    },
+    {
+      "archive_path": "LunaTranslator_x64/files/runtime3.13-64/vcruntime140_1.dll",
+      "runtime_path": "vcruntime140_1.dll",
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e",
+      "size": 50112
+    }
+  ]
+}

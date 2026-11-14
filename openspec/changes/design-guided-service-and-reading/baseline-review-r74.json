@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "design-guided-service-and-reading",
+  "parent_baseline_sha256": "4bac316bd1da9da25e2e3657856b142ed6fddd9e96dc9cf3f34dadcfc8e5dc92",
+  "exact_delta_sha256": "683e95029fce41e70d60201ebfdcd71f7d257d48cf2ed01b5f18175812e947e3",
+  "documentation_review": {
+    "path": ".build/guided-design-20261030/review/docs-review.json",
+    "bytes": 8660,
+    "sha256": "84022f3508abaa028f3ab657c7f806a31c79d213870d3ed1447164d091d71ba1"
+  },
+  "code_review": {
+    "path": ".build/guided-design-20261030/review/tooling-review.json",
+    "bytes": 4932,
+    "sha256": "03e8301bfa51265c81be51eaceaa0bdc459d71bc5ca2c47438e77a2c34096cc9"
+  },
+  "ui_review": {
+    "path": ".build/guided-design-20261030/review/ui-review.json",
+    "bytes": 12014,
+    "sha256": "c162e574f96d4a1c4fbd7149c15ac294328b2f2d9a37f251486988ed41684f2a"
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

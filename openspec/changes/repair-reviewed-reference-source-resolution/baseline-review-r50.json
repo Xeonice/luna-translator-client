@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-reviewed-reference-source-resolution",
+  "parent_baseline_sha256": "88c85fc0a3479ea82b91f4605fff137844b8c52ca52d31be36b9c2dd05970d62",
+  "exact_delta_sha256": "5adf150241b99cd15dc10e3aa1494a43b742fcbafb539f34c24b9f09227af2b8",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/visual-resolution/independent-code-review.json",
+    "sha256": "f6a0f3b451332aaae3dbb38fd3f1efc69fadde01a68528e2bfc74b66e90ad7d4",
+    "bytes": 12291
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

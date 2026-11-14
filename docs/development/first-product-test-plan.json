@@ -1,0 +1,7418 @@
+{
+  "schema_version": 1,
+  "plan_id": "FP1-TEST-20261018-R1",
+  "phase": "planning",
+  "product_execution": "NOT_RUN",
+  "scope": "macOS arm64 + CrossOver Windows游戏；Rust PE32/64 broker均必需；不含Ever17",
+  "layers": [
+    {
+      "id": "L0",
+      "title": "规范、资源与工程前置",
+      "depends_on": [],
+      "entry": [
+        "B0冻结范围、目标设备、资源许可和测试政策",
+        "OpenSpec/架构/目录/技术栈守卫可运行"
+      ],
+      "exit": [
+        "计划与来源校验通过",
+        "完整设计评审、资源与指标冻结单独完成，不以工具绿灯代替"
+      ]
+    },
+    {
+      "id": "L1",
+      "title": "领域规则与状态机",
+      "depends_on": [
+        "L0"
+      ],
+      "entry": [
+        "领域契约和不变量已确定"
+      ],
+      "exit": [
+        "正常/边界/负例无跳过；取消、身份、revision与配置代数均可证伪"
+      ]
+    },
+    {
+      "id": "L2",
+      "title": "ABI、IPC与跨进程契约",
+      "depends_on": [
+        "L0"
+      ],
+      "entry": [
+        "锁定Core ABI1及DTO/JSONL/worker契约",
+        "受控x86/x64目标与对应Rust PE构建可用"
+      ],
+      "exit": [
+        "实际双架构七回调及字符串所有权验证",
+        "边界/乱序/损坏/Unicode传递有独立证据"
+      ]
+    },
+    {
+      "id": "L3",
+      "title": "真实基础设施集成",
+      "depends_on": [
+        "L1"
+      ],
+      "entry": [
+        "对应端口通过规则测试",
+        "隔离临时DB/Keychain命名空间、真实worker与受控HTTP服务可用"
+      ],
+      "exit": [
+        "真实I/O的提交/中断/恢复与保密可证",
+        "fixture协议成功不冒充真实provider或语言质量"
+      ]
+    },
+    {
+      "id": "L4",
+      "title": "应用用例与多窗状态编排",
+      "depends_on": [
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "entry": [
+        "该垂直切片涉及的前置分支通过"
+      ],
+      "exit": [
+        "关联自动接入、复用/切换/取消、投影恢复、保存应用与迟到隔离一致"
+      ]
+    },
+    {
+      "id": "L5",
+      "title": "组件、视觉与可访问交互",
+      "depends_on": [
+        "L0"
+      ],
+      "entry": [
+        "冻结对应DTO和待比较设计状态",
+        "实际产品组件可运行；设计最终批准仍独立检查"
+      ],
+      "exit": [
+        "Playwright基准/候选/差异图及人工核对齐全",
+        "键盘、200%、长文、两主题与降低透明度无阻断"
+      ]
+    },
+    {
+      "id": "L6",
+      "title": "正式包与原生系统旅程",
+      "depends_on": [
+        "L4",
+        "L5"
+      ],
+      "entry": [
+        "适用分支L1～L5通过",
+        "完成签名/公证等分发处理后冻结RC与实际bundle清单"
+      ],
+      "exit": [
+        "非仓库冷启，四窗口、配置、真实服务与离线内置资源闭环",
+        "实际原生焦点/菜单/置顶/穿透/多屏/权限有证据"
+      ]
+    },
+    {
+      "id": "L7",
+      "title": "四游戏端到端回归",
+      "depends_on": [
+        "L6"
+      ],
+      "entry": [
+        "同一RC的L6通过；游戏与登录环境可用",
+        "不得影响另一台Steam会话"
+      ],
+      "exit": [
+        "SR/MO/Never7/サクラノ詩逐款完整旅程与连续样本通过",
+        "字幕画面/客户端/事件/阅读对象相互对应；不含Ever17"
+      ]
+    },
+    {
+      "id": "L8",
+      "title": "质量、稳定性与分发准入",
+      "depends_on": [
+        "L6"
+      ],
+      "entry": [
+        "B0性能/语言质量/分发策略已先冻结",
+        "同RC及隔离恢复样本可用，可与L7并行"
+      ],
+      "exit": [
+        "压力、内容质量、隐私、安装迁移恢复全部达标",
+        "与L7共同收齐B5；所有必需组合通过且无发布阻断缺陷"
+      ]
+    }
+  ],
+  "environments": [
+    {
+      "id": "ENV-BASELINE",
+      "kind": "governance",
+      "description": "当前PRD/设计/架构/资源许可/测试政策与实际批准记录；不等同产品实测"
+    },
+    {
+      "id": "ENV-RUST",
+      "kind": "controlled",
+      "description": "Rust纯领域、受控时钟和故障端口；不证明真实I/O"
+    },
+    {
+      "id": "ENV-PROTOCOL",
+      "kind": "controlled",
+      "description": "真实本地进程/管道/socket，固定协议故障；不证明远程服务"
+    },
+    {
+      "id": "ENV-CORE32",
+      "kind": "real_core",
+      "description": "同CrossOver Bottle的x86受控Windows目标、Rust PE32、新Core32 ABI1"
+    },
+    {
+      "id": "ENV-CORE64",
+      "kind": "real_core",
+      "description": "同CrossOver Bottle的x64受控Windows目标、Rust PE64、新Core64 ABI1"
+    },
+    {
+      "id": "ENV-INFRA",
+      "kind": "real_io",
+      "description": "隔离真实SQLite/WAL/Keychain/文件锁与随包语言worker；HTTP故障服务可控"
+    },
+    {
+      "id": "ENV-WEBVIEW",
+      "kind": "component",
+      "description": "Playwright运行实际产品组件，冻结字体、视口、scale、数据与时钟"
+    },
+    {
+      "id": "ENV-MAC",
+      "kind": "real_native",
+      "description": "声明支持的macOS arm64；实际RC安装包及真实原生窗口，记录OS/显示/权限"
+    },
+    {
+      "id": "ENV-DISPLAYS",
+      "kind": "real_native",
+      "description": "真实1x/2x、双屏/负坐标/全屏、深浅/减少透明度；设备不足记blocked"
+    },
+    {
+      "id": "ENV-REMOTE-COMPAT",
+      "kind": "real_provider",
+      "description": "用户授权的真实远程OpenAI兼容服务；实际模型ID/用途/能力逐项记录"
+    },
+    {
+      "id": "ENV-ANTHROPIC",
+      "kind": "real_provider",
+      "description": "用户授权的真实Anthropic协议服务；不借兼容协议结果"
+    },
+    {
+      "id": "ENV-AZURE",
+      "kind": "real_provider",
+      "description": "真实Azure传统翻译端点；只测翻译，不授予文法能力"
+    },
+    {
+      "id": "ENV-LOCAL",
+      "kind": "real_provider",
+      "description": "本机真实兼容服务；核对路由，客户端不负责托管模型"
+    },
+    {
+      "id": "ENV-SR",
+      "kind": "real_game",
+      "description": "SR.exe，现有中文版x86；正文为中文，日语能力测非日语降级"
+    },
+    {
+      "id": "ENV-MO",
+      "kind": "real_game",
+      "description": "Memories Off 日文x86；记录既有渲染/内存基线"
+    },
+    {
+      "id": "ENV-N7",
+      "kind": "real_game",
+      "description": "Never7 GameN7_Steam.exe 日文x64；Steam会话条件单独记录"
+    },
+    {
+      "id": "ENV-SAKURA",
+      "kind": "real_game",
+      "description": "サクラノ詩 10th Anniversary edition 日文x64；按完整身份选正文流"
+    },
+    {
+      "id": "ENV-CLEAN-MAC",
+      "kind": "distribution",
+      "description": "声明支持的干净macOS用户/设备，保留下载隔离属性；使用可恢复测试数据"
+    }
+  ],
+  "variants": [
+    {
+      "id": "BASELINE",
+      "environment_ids": [
+        "ENV-BASELINE"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "UNIT",
+      "environment_ids": [
+        "ENV-RUST"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "PROTOCOL",
+      "environment_ids": [
+        "ENV-PROTOCOL"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "CORE32",
+      "environment_ids": [
+        "ENV-CORE32"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "CORE64",
+      "environment_ids": [
+        "ENV-CORE64"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "INFRA",
+      "environment_ids": [
+        "ENV-INFRA",
+        "ENV-PROTOCOL"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "UI",
+      "environment_ids": [
+        "ENV-WEBVIEW"
+      ],
+      "evidence_scope": "source_build"
+    },
+    {
+      "id": "NATIVE",
+      "environment_ids": [
+        "ENV-MAC"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "DISPLAYS",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-DISPLAYS"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "REMOTE-COMPAT",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-REMOTE-COMPAT"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "ANTHROPIC",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-ANTHROPIC"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "TRADITIONAL",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-AZURE"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "LOCAL-COMPAT",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-LOCAL"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "GAME-SR",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-SR"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "GAME-MO",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-MO"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "GAME-N7",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-N7"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "GAME-SAKURA",
+      "environment_ids": [
+        "ENV-MAC",
+        "ENV-SAKURA"
+      ],
+      "evidence_scope": "final_package"
+    },
+    {
+      "id": "DISTRIBUTION",
+      "environment_ids": [
+        "ENV-CLEAN-MAC"
+      ],
+      "evidence_scope": "final_package"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/development/client-regression.csv",
+      "sha256": "106a55d73caf36dc3ca59f57f8d008477372e934ec227d128a3f5447943981ee",
+      "case_ids": [
+        "CR-01-INSTALL",
+        "CR-01-REPRODUCE",
+        "CR-02-ABI32",
+        "CR-02-ABI64",
+        "CR-02-MANAGED",
+        "CR-02-PHASES",
+        "CR-02-IDENTITY",
+        "CR-03-SR",
+        "CR-03-MO",
+        "CR-03-N7",
+        "CR-03-SAKURA",
+        "CR-05-SR",
+        "CR-05-MO",
+        "CR-05-N7",
+        "CR-05-SAKURA",
+        "CR-04-IDENTITY",
+        "CR-04-SAVE",
+        "CR-04-RAW",
+        "CR-04-SEGMENT",
+        "CR-04-UNICODE",
+        "CR-05-LIVE",
+        "CR-05-LATE",
+        "CR-05-ERROR",
+        "CR-06-SEMANTICS",
+        "CR-06-BACKGROUND",
+        "CR-07-LIFECYCLE",
+        "CR-07-CRASH",
+        "CR-07-BACKPRESSURE",
+        "CR-07-SOAK",
+        "CR-07-INTEGRITY",
+        "CR-08-CONFIG",
+        "CR-08-HISTORY",
+        "CR-08-DIAGNOSTICS",
+        "CR-09-RESOURCE",
+        "CR-09-UPGRADE",
+        "CR-10-VISUAL",
+        "CR-10-NATIVE",
+        "CR-12-RESOURCE",
+        "CR-12-TOKEN",
+        "CR-12-RUBY",
+        "CR-12-WORDCARD",
+        "CR-12-PERSIST",
+        "CR-12-REVISION",
+        "CR-12-NATIVE",
+        "CR-12-OFFLINE",
+        "CR-13-PROVIDERS",
+        "CR-13-CONTEXT",
+        "CR-13-STREAM-REVISION",
+        "CR-13-GRAMMAR",
+        "CR-13-PRIVACY-BUDGET",
+        "CR-13-EXPLAIN-UI",
+        "CR-13-FINAL-SR",
+        "CR-13-FINAL-MO",
+        "CR-13-FINAL-N7",
+        "CR-13-FINAL-SAKURA"
+      ]
+    },
+    {
+      "path": "docs/product/model-configuration-acceptance.csv",
+      "sha256": "d76dd831ebf99ca0f0c5cd9c95eb648ca2eedf4123cb65ed9c052fc8cd34270a",
+      "case_ids": [
+        "MC-01",
+        "MC-02",
+        "MC-03",
+        "MC-04",
+        "MC-05",
+        "MC-06",
+        "MC-07",
+        "MC-08",
+        "MC-09",
+        "MC-10",
+        "MC-11",
+        "MC-12",
+        "MC-13",
+        "MC-14",
+        "MC-15",
+        "MC-16",
+        "MC-17",
+        "MC-18",
+        "MC-19",
+        "MC-20",
+        "MC-21",
+        "MC-22"
+      ]
+    },
+    {
+      "path": "docs/product/game-library-window-acceptance.csv",
+      "sha256": "31249acea52dfb3c96c89bd731298ce36997f0d6b006f25e4fee30114c215bc5",
+      "case_ids": [
+        "GL-01",
+        "GL-02",
+        "GL-03",
+        "GL-04",
+        "GL-05",
+        "GL-06",
+        "GL-07",
+        "GL-08",
+        "GL-09",
+        "GL-10",
+        "GL-11",
+        "GL-12",
+        "GL-13",
+        "GL-14",
+        "GL-15",
+        "GL-16",
+        "GL-17",
+        "GL-18",
+        "GL-19",
+        "GL-20"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "CR-01-INSTALL",
+      "title": "独立安装与非仓库冷启动",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "PL",
+      "feature_ids": [
+        "FP-01",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C08",
+        "C33",
+        "C34"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-01-INSTALL"
+      },
+      "variant_ids": [
+        "DISTRIBUTION"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "最终 release .app 与分发 zip；源码/.build 不在启动路径",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "将最终包解压至非仓库目录并从 Finder 双击；不预开原版 Luna；检查首屏、版本与许可"
+      ],
+      "expected": [
+        "可见等待输入界面；运行不依赖源码目录或旧 Luna；Core commit/ABI/arch/文件哈希与许可证可查"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-01-REPRODUCE",
+      "title": "构建与分发资源可追溯",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "QA",
+      "feature_ids": [
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-01-REPRODUCE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "固定源码版本、锁文件与构建工具链",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "从干净暂存构建；检查 zip/.app、Core 三件套与第三方许可；记录每个产物 SHA-256"
+      ],
+      "expected": [
+        "manifest 绑定客户端源码/dirty 状态、Core commit、ABI、两架构及全部运行文件哈希；无旧 LunaSubprocess/Host runtime 混入"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-02-ABI32",
+      "title": "32 位 Rust broker 的新 Core ABI 真回调",
+      "layer": "L2",
+      "gate": "B1",
+      "owner": "HK",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-02-ABI32"
+      },
+      "variant_ids": [
+        "CORE32"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "实际 x86 Rust PE broker 与同位数 ABI 1 Core；受控会变化 GDI 目标",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "验证 size/align/offset 与 cdecl；通过实际动态加载注册 7 callbacks；让目标输出变化文字并记录 JSONL"
+      ],
+      "expected": [
+        "实际 x86 Rust 回调获得可核对文本和全身份；借用字符串在回调内复制；stdout 只有合法协议帧；非旧十回调 ABI"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-02-ABI64",
+      "title": "64 位 Rust broker 的新 Core ABI 真回调",
+      "layer": "L2",
+      "gate": "B1",
+      "owner": "HK",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-02-ABI64"
+      },
+      "variant_ids": [
+        "CORE64"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "实际 x64 Rust PE broker 与同位数 ABI 1 Core；受控会变化 GDI 目标",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "按 x64 执行 ABI 布局校验和七回调动态加载；推进受控文字并记录 JSONL"
+      ],
+      "expected": [
+        "实际 x64 Rust 回调和新 Core 连通；字段无截断；64 位标识通过 JSON 十进制字符串往返；没有跨 ABI 猜布局"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-02-MANAGED",
+      "title": "用户操作自动选择并管理 broker",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-02-MANAGED"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "至少一个 x86 和一个 x64 已运行目标；指定正确 bottle",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "用户在 UI 选择游戏/bottle 后连接；记录资源选择与同 bottle 子进程；分别连接两架构"
+      ],
+      "expected": [
+        "客户端自动选择配套 broker/Host/Inject/Hook；正常流程无需用户手工开 helper 或选 DLL；不在启动时扫描并注入全部游戏"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-02-PHASES",
+      "title": "连接阶段与真实成功条件",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C08",
+        "C15",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-02-PHASES"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "可延迟/失败的资源检查、注入、连接与文本事件",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "逐阶段暂停或注入失败；另测试注入 exit 0 后尚无连接/尚无文本"
+      ],
+      "expected": [
+        "资源就绪、正在注入、Host 已连接、候选出现、正在接收原文分别显示；exit 0/窗口已启动不显示取文成功；每个失败有具体恢复入口"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-02-IDENTITY",
+      "title": "目标身份重验与 PID 复用隔离",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C13",
+        "C15",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-02-IDENTITY"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "目标发现快照与可重启测试目标",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "发现后重启目标或替换同名进程；尝试连接旧选择；改变 bottle/path/创建时间/架构"
+      ],
+      "expected": [
+        "连接前重新核对 PID、完整映像路径、创建 FILETIME、架构与 bottle；失配拒绝旧准入；不能注入同名错误目标；重新发现可恢复"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-03-SR",
+      "title": "SR.exe 中文版 正式包实时原文",
+      "layer": "L7",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-03-SR"
+      },
+      "variant_ids": [
+        "GAME-SR"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "最终 .app 包哈希已记录；该游戏已进入对白；无人为关闭游戏或 bottle",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "从正式包选目标连接；手动选择正文流；逐段推进并至少记录 5 个不同屏幕字幕状态；每状态保留游戏/客户端对应画面及事件；停住后核对当前句；断开后继续操作游戏"
+      ],
+      "expected": [
+        "真实文字连续进入候选、原文阅读区与历史；每状态文字与游戏画面对应，增量/换行按声明规则处理且无无声丢字；游戏和 UI 持续可操作；断开不退出游戏"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-03-MO",
+      "title": "MO 正式包实时原文",
+      "layer": "L7",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-03-MO"
+      },
+      "variant_ids": [
+        "GAME-MO"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "最终 .app 包哈希已记录；该游戏已进入对白；无人为关闭游戏或 bottle",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "从正式包选目标连接；手动选择正文流；逐段推进并至少记录 5 个不同屏幕字幕状态；每状态保留游戏/客户端对应画面及事件；停住后核对当前句；断开后继续操作游戏"
+      ],
+      "expected": [
+        "真实文字连续进入候选、原文阅读区与历史；每状态文字与游戏画面对应，增量/换行按声明规则处理且无无声丢字；游戏和 UI 持续可操作；断开不退出游戏"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-03-N7",
+      "title": "Never7 / GameN7_Steam.exe 正式包实时原文",
+      "layer": "L7",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-03-N7"
+      },
+      "variant_ids": [
+        "GAME-N7"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "最终 .app 包哈希已记录；该游戏已进入对白；无人为关闭游戏或 bottle",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "从正式包选目标连接；手动选择正文流；逐段推进并至少记录 5 个不同屏幕字幕状态；每状态保留游戏/客户端对应画面及事件；停住后核对当前句；断开后继续操作游戏"
+      ],
+      "expected": [
+        "真实文字连续进入候选、原文阅读区与历史；每状态文字与游戏画面对应，增量/换行按声明规则处理且无无声丢字；游戏和 UI 持续可操作；断开不退出游戏"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-03-SAKURA",
+      "title": "サクラノ詩 10th Anniversary edition 正式包实时原文",
+      "layer": "L7",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-03-SAKURA"
+      },
+      "variant_ids": [
+        "GAME-SAKURA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "最终 .app 包哈希已记录；该游戏已进入对白；无人为关闭游戏或 bottle",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "从正式包选目标连接；手动选择正文流；逐段推进并至少记录 5 个不同屏幕字幕状态；每状态保留游戏/客户端对应画面及事件；停住后核对当前句；断开后继续操作游戏"
+      ],
+      "expected": [
+        "真实文字连续进入候选、原文阅读区与历史；每状态文字与游戏画面对应，增量/换行按声明规则处理且无无声丢字；游戏和 UI 持续可操作；断开不退出游戏"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-05-SR",
+      "title": "SR 中文版 真实译文产品复验",
+      "layer": "L7",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-SR"
+      },
+      "variant_ids": [
+        "GAME-SR"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "该游戏 M1 有本包有效证据；已配置至少一个真实可用翻译服务",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "推进至少 5 个不同字幕状态；逐句核对当前原文、请求关联、HUD 译文与历史；包括停住后一条完整译文"
+      ],
+      "expected": [
+        "从本游戏变化到真实服务返回再到 HUD/历史均有关联证据；译文未返回时原文仍可读；其他款或其他包不能代替本款"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-05-MO",
+      "title": "MO 真实译文产品复验",
+      "layer": "L7",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-MO"
+      },
+      "variant_ids": [
+        "GAME-MO"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "该游戏 M1 有本包有效证据；已配置至少一个真实可用翻译服务",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "推进至少 5 个不同字幕状态；逐句核对当前原文、请求关联、HUD 译文与历史；包括停住后一条完整译文"
+      ],
+      "expected": [
+        "从本游戏变化到真实服务返回再到 HUD/历史均有关联证据；译文未返回时原文仍可读；其他款或其他包不能代替本款"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-05-N7",
+      "title": "Never7 真实译文产品复验",
+      "layer": "L7",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-N7"
+      },
+      "variant_ids": [
+        "GAME-N7"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "该游戏 M1 有本包有效证据；已配置至少一个真实可用翻译服务",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "推进至少 5 个不同字幕状态；逐句核对当前原文、请求关联、HUD 译文与历史；包括停住后一条完整译文"
+      ],
+      "expected": [
+        "从本游戏变化到真实服务返回再到 HUD/历史均有关联证据；译文未返回时原文仍可读；其他款或其他包不能代替本款"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-05-SAKURA",
+      "title": "サクラノ詩 10th 真实译文产品复验",
+      "layer": "L7",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-SAKURA"
+      },
+      "variant_ids": [
+        "GAME-SAKURA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "该游戏 M1 有本包有效证据；已配置至少一个真实可用翻译服务",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "推进至少 5 个不同字幕状态；逐句核对当前原文、请求关联、HUD 译文与历史；包括停住后一条完整译文"
+      ],
+      "expected": [
+        "从本游戏变化到真实服务返回再到 HUD/历史均有关联证据；译文未返回时原文仍可读；其他款或其他包不能代替本款"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-04-IDENTITY",
+      "title": "完整流身份与明确选流",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C15"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-04-IDENTITY"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "有同名 hook、同址不同上下文和噪声候选的输入",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "分别选择各候选；改变表排序；新增流；断开重连；核对原文和历史归属"
+      ],
+      "expected": [
+        "流以 PID/address/context/context2 全身份区分；同名不合并；新流不抢选择；排序不改变独立合并顺序；无固定 PID/地址/游戏名硬编码"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-04-SAVE",
+      "title": "临时选流与保存快照分离",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-09"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M10"
+      ],
+      "component_ids": [
+        "C15",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-04-SAVE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "已有游戏保存的流描述符；可生成失效描述符",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "临时改选后取消/保存；无候选时打开；重启游戏使地址变化后恢复"
+      ],
+      "expected": [
+        "临时选择不隐式覆盖持久快照；空态不可保存新空选择；恢复先验身份/条件，失效保留标记供重选；未保存离开有明确处理"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-04-RAW",
+      "title": "原始增量事件身份与可追溯性",
+      "layer": "L2",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M14"
+      ],
+      "component_ids": [
+        "C16",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-04-RAW"
+      },
+      "variant_ids": [
+        "CORE32",
+        "CORE64"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "有逐字增长、同页多次变化、跨页、合法重复句和多流交错的序列；最终包四款游戏可分别推进",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "按会话实例+event_seq记录回调及其完整流身份；对照候选、当前原文和原文事件记录；重启会话检查序号命名空间；四游戏仍各采至少五个不同屏幕字幕状态"
+      ],
+      "expected": [
+        "会话实例+event_seq可唯一追溯事件；PID/address/context/context2完整；原始增量和合法重复事件保留；不把一次事件当对白页、不猜页界或全局去重；当前原文与画面对应且未知/有损可见"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-04-SEGMENT",
+      "title": "增量文本与阅读单元",
+      "layer": "L4",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-09"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M10"
+      ],
+      "component_ids": [
+        "C16",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-04-SEGMENT"
+      },
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "包含逐字增长、撤回修正、同页多段、跨页、相邻重复句与多流交错的序列",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "逐事件记录 raw_event_id、text_revision、display_unit_id、page_id（可知时）与规则版本；重放并对照 N7/MO 真画面"
+      ],
+      "expected": [
+        "原始事件完整留证；阅读单元有可解释边界；不把 event 当页，不全局去重合法重复句，不用通用前缀裁剪猜跨页；未知页界明确 unknown，不能标文字完整通过"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-04-UNICODE",
+      "title": "编码与完整文字边界",
+      "layer": "L2",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-07"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M07",
+        "M14"
+      ],
+      "component_ids": [
+        "C16"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-04-UNICODE"
+      },
+      "variant_ids": [
+        "PROTOCOL"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "跨字节编码、UTF-16 代理对、组合字符、日文标点与中日混排样本",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "经过实际 callback 复制、协议、处理、UI 与复制操作；注入编码错误与超长帧"
+      ],
+      "expected": [
+        "正常样本无截断乱码；错误和截断显式诊断；帧过长不吞下一帧；不能用替代字符掩盖解码失败"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-05-LIVE",
+      "title": "无游戏和游戏中的真实翻译",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-10"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M05",
+        "M06"
+      ],
+      "component_ids": [
+        "C17",
+        "C25"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-LIVE"
+      },
+      "variant_ids": [
+        "TRADITIONAL",
+        "REMOTE-COMPAT",
+        "ANTHROPIC",
+        "LOCAL-COMPAT"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "合法可用服务与操作系统凭据存储；不要求先连游戏",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "无游戏输入一句并测试服务；随后在游戏中推进；核对请求/响应与可见译文"
+      ],
+      "expected": [
+        "手动与 Hook 输入共用翻译用例层；真实服务返回可见，不能用 fixture/mock 作为产品成功；请求状态与输入来源可解释"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "variant_policy": "TRADITIONAL仅翻译及能力拒绝/降级；不要求或伪装具备文法精读。其他provider按已声明实际能力分别记录翻译与精读。"
+    },
+    {
+      "id": "CR-05-LATE",
+      "title": "迟到译文与旧会话隔离",
+      "layer": "L4",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10"
+      ],
+      "component_ids": [
+        "C17",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-LATE"
+      },
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "可控制响应顺序的测试服务；真实服务用例独立",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "A 后输入 B；先回 B 后回 A；再切 provider/配置/text_revision/会话后返回旧结果"
+      ],
+      "expected": [
+        "按 session/generation、display_unit、文本 revision、provider 与配置 revision 关联；旧结果不覆盖当前句；历史保留正确归属和结果版本；取消不冒充完成"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-05-ERROR",
+      "title": "网络和服务故障及恢复",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M05",
+        "M06"
+      ],
+      "component_ids": [
+        "C17",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-05-ERROR"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "可模拟超时、离线、401、429、5xx 与格式错误",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "分别触发并重试；关闭翻译后继续游戏；恢复服务并重译当前句"
+      ],
+      "expected": [
+        "原文始终可读/复制；错误显示所属服务与重试条件；有限超时/退避，不积压无限任务；关闭翻译不等于断开采集或清原文；不泄漏凭据"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-06-SEMANTICS",
+      "title": "隐藏、暂停、翻译关闭、断开语义",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M05",
+        "M12"
+      ],
+      "component_ids": [
+        "C18",
+        "C34"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-06-SEMANTICS"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "游戏持续变化，HUD 可见且已连接",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "依次隐藏/显示、暂停/继续自动输入、关闭/开启翻译、断开；每次推进游戏"
+      ],
+      "expected": [
+        "隐藏不停止采集和翻译；暂停不等于断开且保留当前内容，继续读当前而非回放过时积压；翻译关闭仍显示新原文；断开停止本会话；各状态独立可解释"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-06-BACKGROUND",
+      "title": "主窗口关闭和 HUD 恢复",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "PL",
+      "feature_ids": [
+        "FP-01",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C09",
+        "C34"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-06-BACKGROUND"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "已接入真实游戏；配置菜单栏/全局热键",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "关闭主窗口；将游戏置前台；切换 pin、全局显隐和穿透；由菜单栏恢复交互"
+      ],
+      "expected": [
+        "主窗口关闭后后台和 HUD 按设计运行；热键不激活主窗口或夺游戏焦点；隐藏/穿透均有可达恢复入口；注册失败不标成功"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-07-LIFECYCLE",
+      "title": "取消、断开、目标退出与重连",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-07-LIFECYCLE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "可退出并重启的目标；每个操作前快照",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "各连接阶段取消；有文字后断开；游戏退出；新 PID 重启；客户端退出；记录回执和自有进程树"
+      ],
+      "expected": [
+        "只清理本次自有 broker/agent；不杀游戏、不执行 wineserver kill、不关 bottle；新会话重验身份；旧事件隔离；无清理回执为 unknown，进程消失不能单独算清理完成"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-07-CRASH",
+      "title": "broker 故障与安全 DLL 生命周期",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "HK",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C15",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-07-CRASH"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "测试目标与可强制结束的自有 broker",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "模拟 helper 崩溃、无响应、管道断开与 shutdown 超时；恢复后重连"
+      ],
+      "expected": [
+        "有限超时后具体报告故障；不在存活 Host 上 FreeLibrary 伪装安全停止；以 broker 生命周期回收；不误杀游戏或其他会话；原文丢失/Hook 状态不确定明确标记"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-07-BACKPRESSURE",
+      "title": "全链路背压与控制优先",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M14"
+      ],
+      "component_ids": [
+        "C16",
+        "C18",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-07-BACKPRESSURE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "高频输入/高流基数 fixture；慢 UI、慢 pipe 消费端、stderr 洪流",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "持续至少 10 分钟；分别阻塞消费者；期间取消/停止/切源/shutdown；测 UI 反馈、队列、流数、缓存、内存"
+      ],
+      "expected": [
+        "回调不做阻塞 I/O/翻译/GUI/反调 Host；各队列、单帧、流基数、Core 缓存和 UI/history 有限额；控制通道有保留容量/优先级；关键本地操作反馈不超过 200ms；stderr 持续排空；内存不随已处理事件无界增长"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-07-SOAK",
+      "title": "四款真实游戏连续运行样本",
+      "layer": "L7",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C18",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-07-SOAK"
+      },
+      "variant_ids": [
+        "GAME-SR",
+        "GAME-MO",
+        "GAME-N7",
+        "GAME-SAKURA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "最终包与每款可操作真实游戏；已完成该款至少五个状态的画面对照",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "对 SR/MO/N7/SAKURA 分别预先选定至少 30 分钟或至少 100 次不同字幕变化的采样目标；记录实际时长/变化数、内存、游戏与 UI 可操作性；停止/断开后核对"
+      ],
+      "expected": [
+        "每款达到预定目标且持续取文；不把重复回调算变化；资源和延迟无异常增长；游戏可继续且退出清理明确；四款结果独立保存"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-07-INTEGRITY",
+      "title": "溢出、有损和未知状态不可伪装通过",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M14"
+      ],
+      "component_ids": [
+        "C08",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-07-INTEGRITY"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "可制造 callback/output/framing/consumer 丢失",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "触发各层溢出后恢复正常输入；重连前后检查提示与诊断"
+      ],
+      "expected": [
+        "丢失层级与数量可追；integrity_lost 在会话内持续可见，不被下一条正常文本清掉；丢失/截断/未知不得标无损或完整通过；恢复需独立新证据"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-08-CONFIG",
+      "title": "持久配置与保存失败恢复",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-02",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M04",
+        "M10",
+        "M11",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-08-CONFIG"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "可写配置与只读/磁盘满故障目录；游戏流快照",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "保存游戏/bottle/选流/HUD/服务引用后重启；保存中故障；恢复目录并重试"
+      ],
+      "expected": [
+        "已提交配置可恢复；原子/可恢复写入；失败保留草稿并明确未保存；凭据只存 OS keychain 引用；不因某服务不可用阻止其他配置保存"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-08-HISTORY",
+      "title": "历史和当前句的一致性",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-09"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M10"
+      ],
+      "component_ids": [
+        "C23",
+        "C24"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-08-HISTORY"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "包含增量、重译、重复合法句和迟到结果的输入",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "连续推进并重译；检查原文/译文/来源/规则配置版本；重启读取；达到保留上限"
+      ],
+      "expected": [
+        "候选缓存、raw 事件、阅读历史职责分离；每项归属正确；保留/截断策略明确且不清错当前句；人工修正与服务版本不互相冒充"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-08-DIAGNOSTICS",
+      "title": "凭据和私人游戏证据的边界",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "QA",
+      "feature_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M15",
+        "M16"
+      ],
+      "component_ids": [
+        "C30",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-08-DIAGNOSTICS"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "含测试密钥、个人路径与游戏正文的会话",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "导出默认诊断和显式选择的完整本地证据；检查日志、错误、配置与 zip；查看授权范围"
+      ],
+      "expected": [
+        "默认诊断无密钥/个人完整路径/游戏正文/截图；完整证据只在本地按用户选择保存；keychain 错误可恢复；发布 CSV 只放脱敏统计及证据清单 hash"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-09-RESOURCE",
+      "title": "缺件、hash、ABI、架构和混装拒绝",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "HK",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C08",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-09-RESOURCE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "隔离的坏资源包；可校验三件套及 manifest",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "分别移除文件、修改内容、混入旧十回调 Host、错误 ABI/架构/commit、symlink/reparse；尝试连接"
+      ],
+      "expected": [
+        "在注入前拒绝不一致组合并给修复入口；核对 Core commit+ABI+arch+每文件 hash，不仅 GUID；不降级到旧完整客户端；修复组件不直接显示已取文"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-09-UPGRADE",
+      "title": "整套更新与会话所有权冲突",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "HK",
+      "feature_ids": [
+        "FP-03",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C31",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-09-UPGRADE"
+      },
+      "variant_ids": [
+        "DISTRIBUTION"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "一个活跃会话；另一个客户端或 broker；新旧完整 runtime",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "对同 bottle 同目标并发连接；活跃 DLL 时尝试更新；终止本次会话后升级整套并重验"
+      ],
+      "expected": [
+        "同目标单 owner，冲突明确；不覆盖加载中的 DLL；采用新目录完整版本切换；失败可回退配套资源；不驱逐他人会话或清全 bottle"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-10-VISUAL",
+      "title": "原设计稿截图对照",
+      "layer": "L5",
+      "gate": "B5",
+      "owner": "UI",
+      "feature_ids": [
+        "FP-01",
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M13"
+      ],
+      "component_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C34"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-10-VISUAL"
+      },
+      "variant_ids": [
+        "UI",
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "原始设计快照与已确认版本 hash；可复现状态 fixture",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "逐页捕获已实现默认/暗色/长文/空/错误/受限状态；按设计尺寸截图并与原稿对照；另验键盘和辅助标签"
+      ],
+      "expected": [
+        "本首版使用 docs/design/first-product-v1 当前最终批准版本；替代旧CSV的aligned-v1/ocr-selection-v2与固定500×132断言。舒适默认560/18/24，紧凑500/16/22，控制行32，按长文自适应高度；设计未最终批准不能放行。",
+        "当前稿所有适用状态、主题、长文/200%、最小窗与真实原生材质按预定mask/阈值比较；候选、基准、diff与人工结论齐全。"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_override": "本首版使用 docs/design/first-product-v1 当前最终批准版本；替代旧CSV的aligned-v1/ocr-selection-v2与固定500×132断言。舒适默认560/18/24，紧凑500/16/22，控制行32，按长文自适应高度；设计未最终批准不能放行。"
+    },
+    {
+      "id": "CR-10-NATIVE",
+      "title": "原生窗口、键盘、焦点和多屏",
+      "layer": "L6",
+      "gate": "B5",
+      "owner": "PL",
+      "feature_ids": [
+        "FP-01",
+        "FP-04",
+        "FP-05",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C18",
+        "C32",
+        "C34"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-10-NATIVE"
+      },
+      "variant_ids": [
+        "DISPLAYS"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "真实 macOS 发布包、游戏前台、多屏/Spaces/全屏条件；长文200%字号",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "测试 pin/穿透/显隐/热键冲突/主窗关闭、窗口绑定、跨屏缩放、休眠唤醒和辅助访问"
+      ],
+      "expected": [
+        "游戏前台时不夺焦点；恢复命令可达；实际窗口状态匹配菜单；长文本和200%字号时暂停/关闭仍可用；不支持组合给具体状态和替代入口"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-RESOURCE",
+      "title": "内置资源打包与无网络首启",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-07",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C32",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-RESOURCE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "固定最终安装包并清空测试配置；阻断网络后从非源码目录首次启动；直接打开日文并点击基础查词；核对内置MeCab/基础UniDic及独立基础释义来源/版本/hash/平台/许可；执行整包升级并核对完整辞书版本；确认主流程无辞书下载/路径选择/安装步骤"
+      ],
+      "expected": [
+        "首次离线即可真实分词/ruby/POS和基础释义；形态与释义辞书分别可追溯且满足再分发条件；内置资源完整性不达标是包的发布阻塞，不增加正常缺词典/修复下载UI；整套随应用升级，无源码/已有用户辞书目录依赖"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-TOKEN",
+      "title": "token词面原型读音及Unicode对齐",
+      "layer": "L3",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-04",
+        "FP-07"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M08"
+      ],
+      "component_ids": [
+        "C16",
+        "C19"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-TOKEN"
+      },
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "用授权/自制日文、活用/专名/未知词/空白标点/混排/组合字符/emoji运行实际分词；检查UTF8span到UTF16映射；核对不可变source_text不来自ruby DOM；token加gaps逐字还原原文并人工核词元与读音"
+      ],
+      "expected": [
+        "词面精确回指原文；空白标点不丢；lemma/reading/POS分别保存；未知词不造释义；grapheme不截断；不能把schema/span通过当语言准确率"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-RUBY",
+      "title": "假名词性色彩和长句布局",
+      "layer": "L5",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M13"
+      ],
+      "component_ids": [
+        "C16",
+        "C32"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-RUBY"
+      },
+      "variant_ids": [
+        "UI",
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "实际词法驱动原文；切关闭/仅假名/POS颜色；测试长句多行/窄宽/200%字号/深浅主题；键盘与屏幕阅读标签；检查lemma与活用读音"
+      ],
+      "expected": [
+        "ruby不遮正文；换行命中仍对应同词；词性图例不只靠颜色；非可靠逐字读音按词显示；切换不丢原文或选流；颜色仅表示词性"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-WORDCARD",
+      "title": "点击词卡查词和触发边界",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-07",
+        "FP-08"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M08",
+        "M09"
+      ],
+      "component_ids": [
+        "C19",
+        "C20"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-WORDCARD"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "干净配置无网络点击/键盘选词；切可选悬停/修饰键；核对基础释义和原型/未知词；完整词典窗口与复制；若配置可选扩展则测试其慢源失败；云服务关闭时悬停"
+      ],
+      "expected": [
+        "内置本地词法与基础释义无需安装即显示且来源可查；未知词如实说明收录范围；可选扩展失败不影响基础查词；悬停不自动请求LLM；外部HTML不执行受信任命令；键盘可达"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-PERSIST",
+      "title": "游戏阅读偏好与历史版本隔离",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-09",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M10",
+        "M11"
+      ],
+      "component_ids": [
+        "C23",
+        "C32"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-PERSIST"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "保存全局/游戏阅读开关后重启；临时变更不保存；模拟保存失败；读取旧历史后升级整套应用及内置辞书；检查UI归属与可选扩展的独立性"
+      ],
+      "expected": [
+        "保存与临时状态明确；失败留草稿；基础词法/释义随包可用不要求用户安装；历史原文不变；旧token标版本或重新分析；缓存不跨辞书版本复用；SCR12显示阅读开关/内置版本和可选扩展，SCR17仍为语音且无第23导航"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-REVISION",
+      "title": "连续增量和迟到词法不覆盖新句",
+      "layer": "L4",
+      "gate": "B4",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-07"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M07"
+      ],
+      "component_ids": [
+        "C16"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-REVISION"
+      },
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "连续同句增量/快进/重复合法台词/换流/换游戏；延迟旧词法结果；停住再推进；退出后新PID重新连接"
+      ],
+      "expected": [
+        "结果绑定session/stream/unit/textrevision/词典版本；旧结果丢弃；合法重复不去掉；点击命中不串句；取文与翻译不被词法队列阻塞"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-NATIVE",
+      "title": "阅读交互与HUD焦点穿透多屏",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "PL",
+      "feature_ids": [
+        "FP-04",
+        "FP-07"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C16",
+        "C19",
+        "C34"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-NATIVE"
+      },
+      "variant_ids": [
+        "DISPLAYS"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "游戏前台开分词HUD；通过恢复入口暂时交互点词；切回穿透；主窗关闭/菜单栏恢复；多屏/DPI/Spaces/全屏和200%字号"
+      ],
+      "expected": [
+        "阅读层不意外夺游戏焦点；词卡和恢复入口可用；隐藏/暂停/穿透语义不混；ruby命中和弹卡边界正确；浏览器截图不能代替原生系统结果"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-12-OFFLINE",
+      "title": "离线及词法worker故障不拖住原链路",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C19",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-12-OFFLINE"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "无网络首次运行内置分词与基础查词；中断worker/构造超长输入与大量合法输入；记录限额/资源曲线/停止反馈；恢复词法；同时接收原文翻译状态"
+      ],
+      "expected": [
+        "内置基础能力首启离线可用；worker故障/容量超限明确隔离并恢复；取消/恢复有界且不拖住Hook/UI；不静默改云服务；无需追加辞书安装；资源完整性已由发布门禁核对，不将缺辞书包装成正常用户流程"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-PROVIDERS",
+      "title": "翻译解释服务独立配置及协议能力",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M04",
+        "M06",
+        "M09"
+      ],
+      "component_ids": [
+        "C26",
+        "C27"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-PROVIDERS"
+      },
+      "variant_ids": [
+        "REMOTE-COMPAT",
+        "ANTHROPIC",
+        "TRADITIONAL",
+        "LOCAL-COMPAT"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审；两个不同协议适配器和一本地运行器可用；密钥由用户配置",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "分别测试传统翻译/LLM翻译/本地服务；翻译与文法设同端点不同模型后再分端点；测试缺失model-list/schema/usage/stream及不支持参数"
+      ],
+      "expected": [
+        "能力按具体endpoint+模型记录；实际请求与可见结果对应；传统接口不承担文法；兼容不代表全参数；不支持schema明确降级；服务配置和秘密引用互不串用"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "variant_policy": "TRADITIONAL仅翻译及能力拒绝/降级；不要求或伪装具备文法精读。其他provider按已声明实际能力分别记录翻译与精读。"
+    },
+    {
+      "id": "CR-13-CONTEXT",
+      "title": "当前句上下文术语和模型模板可追溯",
+      "layer": "L4",
+      "gate": "B4",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M05",
+        "M09"
+      ],
+      "component_ids": [
+        "C22",
+        "C29"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-CONTEXT"
+      },
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "分别仅当前句/限条数与token历史；空术语/全局+游戏继承/人名词条；切游戏与模型模板；检查脱敏请求范围和授权本地capture"
+      ],
+      "expected": [
+        "当前原文不被改写；历史不跨游戏或新会话；术语匹配与模板版本明确；空词典不留破坏性引导；范围可查看且秘密不出诊断；译文错误不自动当事实写回词典"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-STREAM-REVISION",
+      "title": "流式中断拒绝取消及迟到结果隔离",
+      "layer": "L4",
+      "gate": "B4",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M05",
+        "M09"
+      ],
+      "component_ids": [
+        "C17",
+        "C21"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-STREAM-REVISION"
+      },
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "真实流式翻译；可控服务重现流中错误/HTTP200拒绝/输出截断/超时/429；快速换句换流换模型后延迟返回；取消后重试；切上下文/词典/prompt缓存版本"
+      ],
+      "expected": [
+        "部分译文明确未完成；拒绝/截断独立状态；解释不发布未校验JSON；旧任务不能盖新句；取消无免计费保证；缓存不跨文本/上下文/版本错误复用；原文及本地词法不受网络阻塞；主动取消不写正文/解释历史；未取消且仅因换句迟到的有效结果只写对应旧历史"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-GRAMMAR",
+      "title": "文法证据引用和不确定语义",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-08"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M09"
+      ],
+      "component_ids": [
+        "C21",
+        "C22"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-GRAMMAR"
+      },
+      "variant_ids": [
+        "REMOTE-COMPAT",
+        "ANTHROPIC",
+        "LOCAL-COMPAT"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审；实际支持结构化输出的解释服务可用",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "用跨token句式/活用/省略主语/多义授权样本请求解释；输入非法tokenID/错revision/越界span/schema合法但语义错误/不支持schema响应；人工核解释"
+      ],
+      "expected": [
+        "仅有效引用可高亮；省略成分和歧义明确为推测/备选；词法与文法标识分开；格式合法不当正确率；错误结果不伪造证据；纯文本降级不画已验证高亮"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-PRIVACY-BUDGET",
+      "title": "按需成本隐私缓存和提示注入边界",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M05",
+        "M09",
+        "M15"
+      ],
+      "component_ids": [
+        "C20",
+        "C29",
+        "C33"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-PRIVACY-BUDGET"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "云解释关闭后悬停/点击本地词卡；显式发起解释；切endpoint；触发并发/重试/token预算上限；台词和词典放入指令样式文本；导出诊断；清理缓存"
+      ],
+      "expected": [
+        "本地词法无上传；翻译解释分别启用且无静默云fallback；预算超限清楚且未知usage不伪造费用；正文是数据而无执行工具；密钥/正文默认不出日志；缓存可清并遵守版本隔离"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-EXPLAIN-UI",
+      "title": "按需解释固定历史句及失败恢复",
+      "layer": "L6",
+      "gate": "B4",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-08",
+        "FP-09",
+        "FP-10"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M09",
+        "M10",
+        "M12"
+      ],
+      "component_ids": [
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C25"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-EXPLAIN-UI"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "先本地词卡再点本词/本句解释；游戏推进后继续查看已选句；在历史重开；断网/拒绝/重试；切回当前句；检查模型来源和词性色彩/文法下划线"
+      ],
+      "expected": [
+        "解释目标句显式固定而不误配新字幕；加载/错误/不确定可辨；历史与当前阅读分开；解释可关且翻译词法继续；AI内容可识别；静态示例/模型输出证据分开"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-FINAL-SR",
+      "title": "SR中文版最终包日语阅读及翻译解释回归",
+      "layer": "L7",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-09",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-FINAL-SR"
+      },
+      "variant_ids": [
+        "GAME-SR"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审；该款真实游戏可操作；真实翻译/解释服务可用；未预开完整Luna客户端",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "最终包从非源码目录无网络首启验证内置分词与基础释义后启用已配置服务，并固定hash/内置辞书/服务版本；该款至少5个不同屏幕字幕状态配对候选→原文→译文→历史；日文至少一处词卡及本句AI解释核对；停住/再推进/断开后游戏继续；实际字幕为中文：验证无伪日语分词/词卡；另用独立手动日文样本验证学习功能并标清输入来源，不算SR日文证据"
+      ],
+      "expected": [
+        "同一正式包实际链路可见并绑定文本revision；日文ruby/POS/词卡/AI解释来源可辨且经人工核对；中文如实展示；迟到不串句且断开可继续；完整记录样本/局限，任何缺前置记blocked不拿探针或设计稿补通过"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-FINAL-MO",
+      "title": "MO最终包日语阅读及翻译解释回归",
+      "layer": "L7",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-09",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-FINAL-MO"
+      },
+      "variant_ids": [
+        "GAME-MO"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审；该款真实游戏可操作；真实翻译/解释服务可用；未预开完整Luna客户端",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "最终包从非源码目录无网络首启验证内置分词与基础释义后启用已配置服务，并固定hash/内置辞书/服务版本；该款至少5个不同屏幕字幕状态配对候选→原文→译文→历史；日文至少一处词卡及本句AI解释核对；停住/再推进/断开后游戏继续；覆盖跨页与停住后词语命中；记录既往图形/内存异常基线，不能因学习可用就宣称该异常修复"
+      ],
+      "expected": [
+        "同一正式包实际链路可见并绑定文本revision；日文ruby/POS/词卡/AI解释来源可辨且经人工核对；中文如实展示；迟到不串句且断开可继续；完整记录样本/局限，任何缺前置记blocked不拿探针或设计稿补通过"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-FINAL-N7",
+      "title": "Never7最终包日语阅读及翻译解释回归",
+      "layer": "L7",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-09",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-FINAL-N7"
+      },
+      "variant_ids": [
+        "GAME-N7"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审；该款真实游戏可操作；真实翻译/解释服务可用；未预开完整Luna客户端",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "最终包从非源码目录无网络首启验证内置分词与基础释义后启用已配置服务，并固定hash/内置辞书/服务版本；该款至少5个不同屏幕字幕状态配对候选→原文→译文→历史；日文至少一处词卡及本句AI解释核对；停住/再推进/断开后游戏继续；五个不同字幕变化状态覆盖至少三个实际对白页；逐字增量不算五页；Steam环境阻塞独立记录"
+      ],
+      "expected": [
+        "同一正式包实际链路可见并绑定文本revision；日文ruby/POS/词卡/AI解释来源可辨且经人工核对；中文如实展示；迟到不串句且断开可继续；完整记录样本/局限，任何缺前置记blocked不拿探针或设计稿补通过"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "CR-13-FINAL-SAKURA",
+      "title": "サクラノ詩10th最终包日语阅读及翻译解释回归",
+      "layer": "L7",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-09",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M05",
+        "M07",
+        "M09",
+        "M10",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": {
+        "path": "docs/development/client-regression.csv",
+        "id": "CR-13-FINAL-SAKURA"
+      },
+      "variant_ids": [
+        "GAME-SAKURA"
+      ],
+      "method": "沿用源验收步骤，并按该variant采集真实依赖证据；不能用fixture替代正式包",
+      "preconditions": [
+        "M2正式包基线已过；M2-L实现已完成；固定最终包hash和内置MeCab/基础UniDic及基础释义版本；新稿经过设计评审；该款真实游戏可操作；真实翻译/解释服务可用；未预开完整Luna客户端",
+        "只在声明的隔离环境执行；正式包组合必须核对实际安装路径与最终RC hash"
+      ],
+      "steps": [
+        "最终包从非源码目录无网络首启验证内置分词与基础释义后启用已配置服务，并固定hash/内置辞书/服务版本；该款至少5个不同屏幕字幕状态配对候选→原文→译文→历史；日文至少一处词卡及本句AI解释核对；停住/再推进/断开后游戏继续；先预览并明确选择实际正文流；相似候选不合并、不以固定index/地址优先；多流重复事件不增加状态数"
+      ],
+      "expected": [
+        "同一正式包实际链路可见并绑定文本revision；日文ruby/POS/词卡/AI解释来源可辨且经人工核对；中文如实展示；迟到不串句且断开可继续；完整记录样本/局限，任何缺前置记blocked不拿探针或设计稿补通过"
+      ],
+      "evidence_types": [
+        "实际步骤录像/截图",
+        "对应对象、阶段与版本日志",
+        "断言结果及原始证据索引"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-01",
+      "title": "离线保存与恢复草稿",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-04",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-01"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "断网创建缺少模型或凭据的连接草稿并保存；重启查看；观察请求记录"
+      ],
+      "expected": [
+        "草稿与问题位置保留；保存没有外发；未完成配置不显示可运行或通过"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-02",
+      "title": "模型发现失败与手填",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-05"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-02"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "使模型列表请求失败；保留原选择并手填另一个模型ID；分别测试存在与不存在的模型；修改显示名"
+      ],
+      "expected": [
+        "列表失败不改模型；手填可测试；模型不存在或无权限与连接错误可区分；显示名不改实际ID"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-03",
+      "title": "分层测试与用途状态",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-03",
+        "AI-CFG-05"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-03"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "在实际服务测试连接与模型；令翻译成功而文法输出不合格；修改地址或模型后查看旧结果"
+      ],
+      "expected": [
+        "仅对应层级及用途标通过；记录实际测试配置与时间；修改后旧结果过时且不代表其他用途可用"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-04",
+      "title": "凭据池版本状态与有限调度",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-11",
+        "AI-CFG-12",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-04"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "配置两项脱敏Key并只测试一项；显式启用轮询或错误权重；制造认证失败和限流；替换Key或池成员后先保存再应用；最后撤销凭据"
+      ],
+      "expected": [
+        "未测Key不被提升；区分认证与限流且次数有界；保存不换已应用凭据版本；应用切版本并令旧测试过时；撤销立即停止依赖请求；不换服务或泄漏Key"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-05",
+      "title": "用途分配与独立启用",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-05"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "创建并测试模型但不绑定；只启用翻译后推进字幕；启用精读再关闭它；观察请求和原文"
+      ],
+      "expected": [
+        "保存和测试不启用用途；未配精读不借用翻译模型；停用精读不影响翻译和本地阅读"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-06",
+      "title": "从未配置的文法或词卡入口往返",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-16"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-06"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "选定词句进入未配置用途；推进游戏；保存和测试配置后返回并主动开始；另一次取消配置"
+      ],
+      "expected": [
+        "始终保留原选词句及快照；测试不进入游戏历史；返回后不自动调用；取消不丢对象或草稿"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-07",
+      "title": "同连接多模型多用途及多翻译器",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-02",
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "AI-CFG-12"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-07"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "同一连接配置两个模型；分别绑定翻译与精读并设不同模板参数；显式共用模型执行两用途；再启用多个翻译器并令其中一个失败"
+      ],
+      "expected": [
+        "实际模型参数按用途生效；共用不混合上下文结果；多翻译器按限额调度并独立显示状态来源和顺序；一个失败不取消其他结果"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-08",
+      "title": "继承覆盖复制与共享影响",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-10",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-08"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "设置全局及两个游戏用途；分别覆盖关闭清空和恢复继承；复制模型及完整服务；编辑共享连接"
+      ],
+      "expected": [
+        "有效值与来源可查；游戏覆盖互不串用；副本独立字段不改原件；共享影响列出且运行变更须应用"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-09",
+      "title": "模板变量与发送材料",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-07",
+        "AI-CFG-09"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-09"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "设置零上下文及无匹配术语；开启注音；预览并测试合法模板；尝试缺必填或未知变量及不支持prefill"
+      ],
+      "expected": [
+        "请求原文不含注音；无空词典占位或越权历史；非法变量可保存但应用前定位；预览脱敏且与实际范围一致"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-10",
+      "title": "上下文预算与会话隔离",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-09",
+        "AI-CFG-14"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-10"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "设置小预算并积累记录；切游戏和重置上下文；用超过限制的当前句测试；查看有效请求"
+      ],
+      "expected": [
+        "按规则删最旧历史而不静默截当前对象；超限有恢复选择；不串游戏；重置不删阅读历史；估算有标记"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-11",
+      "title": "参数能力继承与省略",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-06",
+        "AI-CFG-08",
+        "AI-CFG-10"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-11"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "模型温度设0.2全局用途设0.7；游戏分别继承省略和显式0；提交非法类型互斥项及保留字段；换成不支持该参数的模型尝试应用"
+      ],
+      "expected": [
+        "继承发送0.7省略不发送显式0发送0且有效值来源可查；非法或不兼容项应用前定位；不静默丢弃；保留字段不能覆写"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-12",
+      "title": "保存应用与在途结果归属",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-13",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-12"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "运行流式请求时保存新模型草稿；重启检查版本；再次请求并明确应用模型或模板变更；另测只换句的迟到结果"
+      ],
+      "expected": [
+        "保存不改在用版本；草稿与已应用版本重启保留；应用使旧队列失效并取消旧在途；取消后不追加或入正文历史；未取消的换句迟到只归原历史"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-13",
+      "title": "停用删除及引用恢复",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-11",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-13"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "在有排队与在途任务时停用；删除被多用途引用的连接或模型并分别取消改绑停用；移除共享凭据"
+      ],
+      "expected": [
+        "停用立即阻止新请求并取消在途；列引用且无悬空启用状态；不默认删历史或其他连接凭据；字幕词典继续"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-14",
+      "title": "本机服务与路由声明",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-05",
+        "AI-CFG-14"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-14"
+      },
+      "variant_ids": [
+        "LOCAL-COMPAT",
+        "REMOTE-COMPAT"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "连接用户已运行的本机服务；停止后重试；改为远程地址；检查部署标签测试状态及外发记录"
+      ],
+      "expected": [
+        "停止有明确恢复入口；无自动云端回退或安装权重；按实际地址与路由说明去向；地址变更后旧测试过时"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-15",
+      "title": "调度重试回退与用量",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-03",
+        "AI-CFG-12",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-15"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "持续产生字幕并并行手动精读；制造超时限流中断；分别关闭和显式配置回退；服务不提供用量；取消请求"
+      ],
+      "expected": [
+        "遵守用途并发与有限队列退避；精读不阻塞原文翻译；不偷偷回退；替代服务及发送范围有明确授权；实际来源可查；用量未知不伪造余额或免计费"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-16",
+      "title": "迁移导出与失败恢复",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-10",
+        "AI-CFG-11",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-16"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "导出含共享连接用途草稿的配置；跨设备导入并制造冲突或保存失败；重新关联凭据；检查升级和历史"
+      ],
+      "expected": [
+        "包中无明文密钥；预检后备份应用且失败可回退；不自动启用或发台词；保留版本和历史来源；不因预设更新换模型"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-17",
+      "title": "文法输出契约和明确降级",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-07"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-17"
+      },
+      "variant_ids": [
+        "REMOTE-COMPAT",
+        "ANTHROPIC",
+        "LOCAL-COMPAT"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "分别测试无效JSON合法JSON但错误原文引用拒绝截断及流中断；另选文字解释模式"
+      ],
+      "expected": [
+        "连接或JSON成功不让文法通过；错误分类且保留原句；文字模式由用户选择并不展示伪精确高亮；语言学质量仍须独立审校"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-18",
+      "title": "最终客户端的实际服务闭环",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-03",
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-14",
+        "AI-CFG-16"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-18"
+      },
+      "variant_ids": [
+        "TRADITIONAL",
+        "REMOTE-COMPAT",
+        "ANTHROPIC",
+        "LOCAL-COMPAT"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "按声明支持的适配器及平台逐项使用真实服务完成配置测试应用；验证翻译精读和语境查词可见结果；记录包与服务模型用途版本"
+      ],
+      "expected": [
+        "有最终包到实际服务再到显示结果的证据；无账号服务或未执行的平台明确标记；设计样例和模拟服务不替代实测"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "variant_policy": "TRADITIONAL仅翻译及能力拒绝/降级；不要求或伪装具备文法精读。其他provider按已声明实际能力分别记录翻译与精读。"
+    },
+    {
+      "id": "MC-19",
+      "title": "共享连接停用与恢复",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-19"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "同一连接供翻译精读使用且有在途任务；停用连接；保存或测试它；最后显式恢复并查看用途"
+      ],
+      "expected": [
+        "停用立即停止两用途新请求并取消在途；保留绑定及启用意图但显示被连接阻断；保存测试不恢复；明确恢复后使用原已应用版本；模型无混淆的独立启用开关"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-20",
+      "title": "缓存人工修正和重新翻译",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-09",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-20"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "同句形成缓存与人工修正；分别改变模板语言术语处理规则和有效配置；查看结果来源；显式绕过缓存重译；另测词句解释缓存"
+      ],
+      "expected": [
+        "版本或范围变化不冒用旧缓存；实时缓存人工来源可识别；人工优先级按配置且后台不覆盖；重译使用当前已应用版本；解释缓存匹配用途和词句资料身份"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-21",
+      "title": "配置档切换与多实例隔离",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-10",
+        "AI-CFG-11",
+        "AI-CFG-13",
+        "AI-CFG-15",
+        "AI-CFG-16"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-21"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "两个配置档设置同名连接但不同模型与凭据；运行中切档并保留待分析句；两实例并行修改；检查测试和凭据关联"
+      ],
+      "expected": [
+        "旧档任务取消且待分析句不自动发送新档；配置测试和已应用版本按档隔离；实例不互覆；跨档共享凭据需明确选择"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "MC-22",
+      "title": "专用模型模板格式与语言方向",
+      "layer": "L6",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-02",
+        "AI-CFG-06",
+        "AI-CFG-07",
+        "AI-CFG-14"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31"
+      ],
+      "source": {
+        "path": "docs/product/model-configuration-acceptance.csv",
+        "id": "MC-22"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包用户验收；可控错误服务补充错误分支，MC-18实际服务不可替身",
+      "preconditions": [
+        "实际RC与隔离配置档；按步骤准备对应连接/模型/用途/游戏覆盖",
+        "真实凭据和模型需用户授权；测试不得产生不可控重试或外部副作用"
+      ],
+      "steps": [
+        "查看专用适配档来源版本；选择不匹配模板或语言方向后尝试应用；再手填未知模型并自定义模板测试"
+      ],
+      "expected": [
+        "已知错配应用前定位；未完成专用适配不标支持；换模型不静默沿用不兼容模板；未知模型可保存并显式测试而不因名字相似自动通过"
+      ],
+      "evidence_types": [
+        "操作录像/截图",
+        "脱敏有效配置/测试对象与版本",
+        "实际请求回执与持久化恢复证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-01",
+      "title": "首次启动",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-01"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“首次启动”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "空库页头可发现添加与运行目标连接；首版无任何游戏启动入口"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-02",
+      "title": "本地选择文件",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-02"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“本地选择文件”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "确认元数据前不保存不启动不注入"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-03",
+      "title": "拖入程序",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-03"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“拖入程序”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "进入同一目标核对并可取消"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-04",
+      "title": "目录或多个候选",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-04"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“目录或多个候选”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "明确选择实际EXE而非默认第一个"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-05",
+      "title": "快捷方式未解析",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-05"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“快捷方式未解析”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "要求核对实际目标不伪造路径"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-06",
+      "title": "保存入库",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-06"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“保存入库”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "记录名称环境Bottle与目标路径；本机封面安全发现/持久引用可实际显示，失败占位；保存不启动"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-07",
+      "title": "重复目标",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-07"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“重复目标”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "同环境Bottle规范化路径匹配已有记录"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-08",
+      "title": "不同Bottle同路径",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-08"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“不同Bottle同路径”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "保存为独立记录不合并专用身份"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-09",
+      "title": "编辑目标",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-09"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“编辑目标”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "新身份不继承旧目标已验证状态"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-10",
+      "title": "移出游戏库",
+      "layer": "L6",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-02"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-10"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“移出游戏库”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "保留历史且不删除游戏文件"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-11",
+      "title": "选择运行窗口或进程",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-11"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“选择运行窗口或进程”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "同一选择面板核对有效目标，已有权限自动预览；仅一次确认关联即Hook，不另点核对或连接"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-12",
+      "title": "窗口跨环境映射",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-12"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“窗口跨环境映射”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "分清Mac宿主与Bottle内Windows目标"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-13",
+      "title": "映射不唯一或无映射",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-13"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“映射不唯一或无映射”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "要求重选或进程选择不能冒称成功"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-14",
+      "title": "确认关联并接入",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-14"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“确认关联并接入”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "一次确认自动启动Hook；正式关联无封面目标且录屏授权时保存首张有效帧，不保存候选/不覆盖；阶段区分且失败可重试"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-15",
+      "title": "重新关联与切换目标",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-15"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“重新关联与切换目标”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "同完整运行身份复用且不重复注入，session预览跨页签常驻；不同目标一次确认切换，取消保留原会话/预览"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-16",
+      "title": "解除窗口关联",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-16"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“解除窗口关联”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "保留Hook会话原句及历史"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-17",
+      "title": "自身保护与显式解除",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-17"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“自身保护与显式解除”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "选中自身不接入；显式解除只清运行关联不清库记录"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-18",
+      "title": "窗口退出或重启",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-18"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“窗口退出或重启”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "清旧关联并重新核对运行身份"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-19",
+      "title": "取消或返回",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-19"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“取消或返回”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "取消返回不改原库或会话，也不保存候选帧；全局连接始终可达，详情三重复按钮和所有启动入口移除"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "GL-20",
+      "title": "未知游戏或无文本",
+      "layer": "L6",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M12"
+      ],
+      "component_ids": [
+        "C05",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15"
+      ],
+      "source": {
+        "path": "docs/product/game-library-window-acceptance.csv",
+        "id": "GL-20"
+      },
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "正式包真实文件选择/窗口映射与接入，需受控目标时使用双架构受控程序",
+      "preconditions": [
+        "实际RC与隔离游戏库；按场景准备程序、运行目标和不同Bottle",
+        "确认前记录当前会话和库revision，取消/移出不能删除用户文件"
+      ],
+      "steps": [
+        "从真实添加/拖入/关联入口进入“未知游戏或无文本”场景",
+        "按游戏库窗口PRD核对目标与影响，执行确认及取消/返回分支",
+        "检查库、会话、窗口、Hook阶段和持久状态"
+      ],
+      "expected": [
+        "未知或无文本不借用台词/封面；窗口关联不等取文成功，未运行游戏不由客户端启动"
+      ],
+      "evidence_types": [
+        "目标身份与Bottle/位数",
+        "确认前后界面及库/会话revision",
+        "实际Hook阶段与取消不变证据"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "TP-01",
+      "title": "真实SQLite事务在提交边界崩溃仍保持业务原子性",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-09",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M10"
+      ],
+      "component_ids": [
+        "C23",
+        "C24",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实SQLite+真实子进程故障注入；领域测试可另用假端口",
+      "preconditions": [
+        "真实bundled SQLite独立临时配置档；可在事务写入/提交前/提交后停止测试子进程；不接触用户DB"
+      ],
+      "steps": [
+        "提交同一业务动作涉及的阅读对象、结果和来源引用，在每个持久化故障点终止子进程",
+        "重开DB并检查外键/完整性及用户可见投影",
+        "重放相同operation_id后查看重复记录"
+      ],
+      "expected": [
+        "提交前整体不可见、提交后整体可见；无半条历史或悬空引用",
+        "内存可见与已保存状态分别反馈；重启不虚构未提交结果",
+        "同幂等操作不生成重复历史"
+      ],
+      "evidence_types": [
+        "每个故障点退出原因",
+        "SQL完整性/外键检查",
+        "重启前后对象与revision摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-08-CONFIG",
+        "CR-08-HISTORY"
+      ],
+      "gap_vs_existing": "将CR-08的原子/可恢复承诺展开为真实DB提交边界；不是再测一遍UI保存按钮",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-02",
+      "title": "有WAL写入时备份恢复与失败迁移",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-09",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-11",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M10",
+        "M15"
+      ],
+      "component_ids": [
+        "C23",
+        "C31",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实SQLite在线备份/迁移适配器及子进程",
+      "preconditions": [
+        "可迁移的旧schema合成DB、含未checkpoint WAL的真实DB；独立临时档"
+      ],
+      "steps": [
+        "持续写入时调用实际备份入口，恢复备份并核对snapshot边界",
+        "在迁移每一关键阶段注入失败/终止后重开",
+        "用高于当前支持schema版本的副本启动"
+      ],
+      "expected": [
+        "备份是自洽snapshot，读取不丢已确认在快照内的记录；不只复制主.sqlite文件漏WAL",
+        "迁移失败保留可恢复旧数据/备份，schema与业务数据不出现半迁移活动状态",
+        "未知新schema拒绝写入，不以自动降级破坏数据"
+      ],
+      "evidence_types": [
+        "备份/恢复schema与数据摘要",
+        "故障点及恢复日志",
+        "原副本hash"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-08-CONFIG",
+        "CR-11-REQ-050",
+        "MC-16"
+      ],
+      "gap_vs_existing": "补WAL与具体迁移崩溃点；现有导入/升级UI成功不足以证明备份一致",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-03",
+      "title": "数据库busy/只读/磁盘满与写队列压力隔离",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M10",
+        "M15"
+      ],
+      "component_ids": [
+        "C17",
+        "C24",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实SQLite与实际文件权限/容量约束；若平台无法安全构造磁盘满，该子项blocked不得用mock补产品通过",
+      "preconditions": [
+        "临时真实DB，第二连接可持有写锁；可控文件系统错误或限额卷；预先冻结busy timeout及队列限额"
+      ],
+      "steps": [
+        "持有写锁超过busy timeout并持续输入正文/执行取消",
+        "分别引发只读、写入I/O失败及容量不足",
+        "故障恢复后重试保留的人工修正并检查写队列"
+      ],
+      "expected": [
+        "写入请求在声明期限内报稳定错误而不阻塞Hook/UI线程",
+        "当前原文可读，保存失败明确，人工草稿保留；无无限重试/无界队列",
+        "故障解除后通过显式重试保存，既有历史完整；不回放已作废业务任务"
+      ],
+      "evidence_types": [
+        "错误分类/busy时长",
+        "写队列峰值",
+        "当前句与草稿/已保存对照"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-07-BACKPRESSURE",
+        "CR-08-CONFIG",
+        "CR-08-HISTORY"
+      ],
+      "gap_vs_existing": "补数据库适配器实际错误和线程隔离，并将全链路背压定位到writer",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-04",
+      "title": "秘密新增跨Keychain与DB的pending崩溃回收",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-13",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M04",
+        "M10",
+        "M16"
+      ],
+      "component_ids": [
+        "C30",
+        "C31",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated_with_os_permission；真实macOS Keychain+真实SQLite+真实进程；Windows凭据另lane不推断",
+      "preconditions": [
+        "测试专用Keychain命名空间与临时DB；可记录pending引用且可在每个跨存储阶段终止测试实例"
+      ],
+      "steps": [
+        "分别在秘密创建前/后、DB引用提交前/后终止",
+        "重启并执行pending协调，再读取已应用配置",
+        "模拟Keychain写入拒绝和DB提交失败"
+      ],
+      "expected": [
+        "活动配置只引用已存在且可用的秘密版本；旧已应用版本不被半次新建覆盖",
+        "未引用pending秘密按识别记录可回收，已引用秘密不会被误清理",
+        "失败不把明文Key写入配置/日志/argv；用户编辑保留且状态可恢复"
+      ],
+      "evidence_types": [
+        "只含脱敏引用的阶段日志",
+        "Keychain条目数/生命周期",
+        "配置revision与恢复结果"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-04",
+        "MC-16",
+        "CR-08-CONFIG"
+      ],
+      "gap_vs_existing": "MC-04/16没有细分跨存储崩溃窗口，本案专门验证无全局事务时的协调策略",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-05",
+      "title": "撤销持久化成功但秘密删除失败后不能恢复授权",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-11",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M10",
+        "M16"
+      ],
+      "component_ids": [
+        "C27",
+        "C30",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated_with_os_permission；真实Keychain/SQLite，实际本地HTTP socket记录是否有请求；删除拒绝由测试专用可控适配故障点构造",
+      "preconditions": [
+        "已应用秘密被两用途引用；可拒绝OS秘密删除；可观察请求发送边界"
+      ],
+      "steps": [
+        "在有在途/排队任务时撤销秘密，让安全库删除失败",
+        "重启应用并尝试用途调用/保存/测试",
+        "恢复删除能力后执行待清理"
+      ],
+      "expected": [
+        "先持久化revoked并禁止新请求、取消依赖任务，再尝试删除",
+        "删除失败只留下待清理状态，重启后仍不可授权；保存/测试不复活被撤销秘密",
+        "只清本测试引用，不删共享但未撤销的其他秘密；无Key泄漏"
+      ],
+      "evidence_types": [
+        "撤销/删除顺序",
+        "重启后0次未授权发送",
+        "待清理与成功清理回执"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-04",
+        "MC-13",
+        "MC-19"
+      ],
+      "gap_vs_existing": "补撤销落盘和秘密删除非原子故障，不只是验证禁用开关",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-06",
+      "title": "订阅建立与snapshot读取无缝衔接",
+      "layer": "L4",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-04",
+        "FP-08",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C20",
+        "C34"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实投影服务+受控调度的应用端口；最后以Tauri多窗另行复验",
+      "preconditions": [
+        "受控调度器可在订阅建立/snapshot读取/首delta发送之间提交业务变更"
+      ],
+      "steps": [
+        "对所有竞争位置交错建立主窗/HUD/设置/学习订阅",
+        "用相同事件日志重建最终Rust状态与每窗投影",
+        "关闭主窗后继续业务并重开"
+      ],
+      "expected": [
+        "snapshot含revision且与订阅在同一服务边界，snapshot前后无静默缺事件",
+        "窗体最终投影等于Rust权威状态，revision不倒退且无需主窗广播",
+        "关闭主窗不停止Hook/翻译/历史任务"
+      ],
+      "evidence_types": [
+        "每个交错的snapshot/delta序列",
+        "最终投影摘要",
+        "订阅释放计数"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-06-BACKGROUND",
+        "CR-13-EXPLAIN-UI"
+      ],
+      "gap_vs_existing": "新增架构snapshot+订阅原子机制，不重复主窗能否关闭的高层验收",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-07",
+      "title": "投影丢帧乱序慢窗与服务重启代次恢复",
+      "layer": "L4",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C17",
+        "C20",
+        "C26",
+        "C33",
+        "C34"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实projection/reducer/Channel适配；Playwright多页验证可见恢复",
+      "preconditions": [
+        "可丢弃/重排delta和改变server_instance_id、profile_generation；窗口队列限额已冻结"
+      ],
+      "steps": [
+        "分别交付重复、旧base_revision、缺口和倒序delta",
+        "堵塞一个窗口，继续向其他窗口推进事件",
+        "服务重启但revision数字重置，再重连旧窗口"
+      ],
+      "expected": [
+        "缺口/旧代次触发snapshot重同步，不把不相接的delta直接拼接",
+        "慢窗有界合并后恢复，其他窗和正文不阻塞；状态合并不删除业务历史",
+        "server_instance_id变化使旧订阅失效，重启后不接受旧任务结果/旧草稿覆盖"
+      ],
+      "evidence_types": [
+        "重同步原因/次数",
+        "队列峰值",
+        "多窗最终状态/截图"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-07-BACKPRESSURE",
+        "MC-21"
+      ],
+      "gap_vs_existing": "补架构新提出的projection/server实例契约，原CR没有相应故障序列",
+      "supporting_layer_ids": [
+        "L5"
+      ]
+    },
+    {
+      "id": "TP-08",
+      "title": "命令幂等与跨窗乐观并发冲突",
+      "layer": "L4",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-02",
+        "FP-03",
+        "FP-06",
+        "FP-09"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-10",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M01",
+        "M02",
+        "M04",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C12",
+        "C14",
+        "C24",
+        "C26",
+        "C31"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实用例服务/事务，受控Hook假端口计数；UI冲突用Playwright验证",
+      "preconditions": [
+        "相同operation_id和expected_revision可从两个独立客户端/窗口同时提交；真实事务实现"
+      ],
+      "steps": [
+        "并发重复添加/关联/应用同一操作ID并丢一次回执后重试",
+        "两个设置窗以同一base revision各提交不同编辑",
+        "冲突窗重取快照后手动解决并提交"
+      ],
+      "expected": [
+        "一次业务副作用且返回可关联CommandReceipt，不能重复注入/重复建记录",
+        "一个成功另一个revision_conflict，冲突保留本地编辑并给重新核对入口",
+        "解决后以新revision提交，不静默最后写入覆盖"
+      ],
+      "evidence_types": [
+        "并发命令/回执",
+        "副作用计数",
+        "冲突前后草稿与revision"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "GL-14",
+        "MC-08",
+        "MC-12",
+        "CR-08-CONFIG"
+      ],
+      "gap_vs_existing": "新增幂等operation_id和expected_revision机制级覆盖",
+      "supporting_layer_ids": [
+        "L5"
+      ]
+    },
+    {
+      "id": "TP-09",
+      "title": "实际跨进程配置档锁与完整目标租约",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-05",
+        "FP-06",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-10",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M02",
+        "M10",
+        "M12",
+        "M14"
+      ],
+      "component_ids": [
+        "C14",
+        "C15",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；实际OS文件锁与独立进程；受控目标不需游戏，但不能用内存锁mock替代",
+      "preconditions": [
+        "两个测试应用进程/两个配置档/临时target-locks目录；可控制进程退出和目标身份"
+      ],
+      "steps": [
+        "并发打开同配置档；再以不同档争用同TargetIdentity",
+        "结束租约owner后尝试恢复；模拟进程PID重用",
+        "改变Bottle/路径/创建时间或架构，比较复用与租约结果"
+      ],
+      "expected": [
+        "同档只有一个写owner，第二实例转交或明确拒绝；不同档DB可独立",
+        "同目标跨档仍只一个接入owner；陈旧owner按完整身份识别，不仅看PID",
+        "租约竞争不驱逐其他程序/游戏，不调用wineserver kill；不同真实目标不误合并"
+      ],
+      "evidence_types": [
+        "锁owner/创建时间/释放回执",
+        "竞争进程退出码",
+        "0次重复attach摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-21",
+        "CR-09-UPGRADE",
+        "GL-15"
+      ],
+      "gap_vs_existing": "MC-21已有多档行为，缺实际文件锁及跨档TargetIdentity租约机制",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-10",
+      "title": "配置记录revision与请求语义指纹分离",
+      "layer": "L1",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M09"
+      ],
+      "component_ids": [
+        "C26",
+        "C27",
+        "C29"
+      ],
+      "source": null,
+      "variant_ids": [
+        "UNIT"
+      ],
+      "method": "automated；纯Rust领域/计划器，假时钟与任务端口",
+      "preconditions": [
+        "请求计划生成器可序列化规范化语义；枚举语义/展示字段清单在规范固定"
+      ],
+      "steps": [
+        "只改连接显示名/窗口偏好并保留在途请求",
+        "逐一改变模型真实ID、地址、参数、模板、上下文、凭据版本和输出契约",
+        "对等价字段顺序和显式默认值执行变形测试"
+      ],
+      "expected": [
+        "展示字段修改只改记录revision，不改变request_semantics_hash、不取消语义相同任务",
+        "任何实际发送/授权/解释契约变化改变指纹并使对应任务失效",
+        "规范化等价请求指纹稳定；来源revision仍可追溯，不能只靠记录revision判请求等价"
+      ],
+      "evidence_types": [
+        "语义字段变形矩阵",
+        "指纹与失效判定",
+        "保留/取消调用计数"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-02",
+        "MC-12",
+        "MC-20"
+      ],
+      "gap_vs_existing": "原MC-12偏向版本变更取消，本架构明确显示名不得取消；需独立防误取消测试",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-11",
+      "title": "三态参数继承代数到HTTP字段逐项一致",
+      "layer": "L1",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-06",
+        "AI-CFG-08",
+        "AI-CFG-10"
+      ],
+      "module_ids": [
+        "M04",
+        "M06"
+      ],
+      "component_ids": [
+        "C28",
+        "C29"
+      ],
+      "source": null,
+      "variant_ids": [
+        "UNIT"
+      ],
+      "method": "automated；生成组合性质测试+真实provider序列化器到本地socket",
+      "preconditions": [
+        "参数schema、能力矩阵和三层解析器已实现；可截获实际序列化请求"
+      ],
+      "steps": [
+        "模型默认/全局用途/游戏覆盖组合继承、设置和省略",
+        "对0、false、空字符串、空数组及适配器允许的null分别执行有效性与发送测试",
+        "加入未知参数、互斥字段、保留字段覆盖及不支持参数"
+      ],
+      "expected": [
+        "每字段有效值、来源与HTTP是否发送一致；省略不等于null或0",
+        "非法/不支持项在应用前定位，不静默丢弃或通过扩展参数覆盖model/messages/auth",
+        "同一解析实现被设置预览与真实请求使用，UI不另算有效值"
+      ],
+      "evidence_types": [
+        "组合输入/期望有效状态",
+        "脱敏wire JSON",
+        "非法项错误路径"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-08",
+        "MC-11"
+      ],
+      "gap_vs_existing": "不是重复MC-11的三个手工温度样例，补全类型/三层组合与wire oracle",
+      "supporting_layer_ids": [
+        "L2"
+      ]
+    },
+    {
+      "id": "TP-12",
+      "title": "Rust生成DTO与JavaScript数字/位置边界互通",
+      "layer": "L2",
+      "gate": "B4",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M07",
+        "M12",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C21",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "PROTOCOL"
+      ],
+      "method": "automated；实际Rust+TS JSON编解码与生成器，不需要游戏",
+      "preconditions": [
+        "Serde/ts-rs生成物、JSON schema/协议版本固定；TS运行时边界校验器"
+      ],
+      "steps": [
+        "Rust→JSON→JS→JSON→Rust往返0、2^53边缘、u64最大值和FILETIME/地址/序号",
+        "传入负数、小数、非规范十进制字符串、溢出、未知版本与缺字段",
+        "再生成DTO并检查工作树无漂移"
+      ],
+      "expected": [
+        "不安全整数全部保持规范十进制字符串且逐位无损",
+        "损坏/未知版本拒绝并分类，不强转Number或猜兼容布局",
+        "生成物与Rust源一致；业务/broker/language版本不能互相冒用"
+      ],
+      "evidence_types": [
+        "边界向量及往返结果",
+        "schema拒绝分类",
+        "生成差异检查"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-02-ABI64",
+        "CR-04-UNICODE",
+        "CR-12-TOKEN"
+      ],
+      "gap_vs_existing": "补跨语言DTO自动生成和规范数字表示的端到端契约，不把本机布局测试当wire通过",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-13",
+      "title": "两LLM流协议任意分片及终止信号归一",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-12"
+      ],
+      "module_ids": [
+        "M05",
+        "M06",
+        "M09"
+      ],
+      "component_ids": [
+        "C17",
+        "C22",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实TCP/HTTP、reqwest+流解码器；服务内容合成，不替代真实模型MC-18",
+      "preconditions": [
+        "本地实际HTTP测试服务分别发OpenAI兼容及Anthropic事件；固定合法/错误协议向量"
+      ],
+      "steps": [
+        "在UTF8多字节、SSE行、JSON对象和事件边界任意切socket写入；再把多事件合并一包",
+        "交付心跳/空行/未知事件/拒绝/截断/完整终止及终止前EOF",
+        "在已给部分文本后断开socket，再合法结束另一独立任务"
+      ],
+      "expected": [
+        "同一逻辑事件在所有分片方式下得到相同文本/状态；不乱码不重复",
+        "协议error/拒绝/截断/异常EOF不标完成、不发布未校验文法JSON",
+        "一个失败不污染另一个引擎/用途；只完整有效结果可入相应历史/缓存"
+      ],
+      "evidence_types": [
+        "协议向量/分片seed",
+        "归一事件序列",
+        "终态及历史写入摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-13-STREAM-REVISION",
+        "MC-17"
+      ],
+      "gap_vs_existing": "原CR覆盖流式异常语义，本案补transport任意分片与双协议解码正确性",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-14",
+      "title": "超时取消与结果落盘竞争没有幽灵完成",
+      "layer": "L4",
+      "gate": "B3",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-12",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M05",
+        "M06",
+        "M09",
+        "M10"
+      ],
+      "component_ids": [
+        "C17",
+        "C22",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；领域假时钟验证边界+真实HTTP socket/SQLite验证终止与提交；外部服务器是否停止计费不作断言",
+      "preconditions": [
+        "可控时钟；服务可挂起连接/响应头/首字节/流尾；提交前可暂停；默认60秒并发1重试关"
+      ],
+      "steps": [
+        "分别在排队、连接、等首字节、流中、校验后提交前触发取消/超时/停用/切档",
+        "在取消与最后结果完成相同tick的所有调度顺序执行",
+        "等待超过所有退避/timeout后检查任务表、socket和历史"
+      ],
+      "expected": [
+        "截止时间及用户取消在声明边界生效；取消不可只关UI而后台继续追加",
+        "胜出状态有确定规则；取消/失效后不得写正文/解释历史或缓存，已完成且提交先于取消的记录可追溯",
+        "无挂起等待/孤儿请求/超限在途；默认不重试，不承诺供应商免计费"
+      ],
+      "evidence_types": [
+        "每个race交错与终态",
+        "本地请求/提交计数",
+        "任务/连接释放摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-12",
+        "MC-15",
+        "CR-13-STREAM-REVISION"
+      ],
+      "gap_vs_existing": "把高层取消承诺细化为事务竞争/计时器/资源释放，避免仅收到cancel receipt就算完成",
+      "supporting_layer_ids": [
+        "L3"
+      ]
+    },
+    {
+      "id": "TP-15",
+      "title": "用途请求计划与实际协议body/headers一致",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-10"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-03",
+        "AI-CFG-05",
+        "AI-CFG-07",
+        "AI-CFG-09",
+        "AI-CFG-14"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M06",
+        "M09"
+      ],
+      "component_ids": [
+        "C27",
+        "C28",
+        "C29"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实各适配器HTTP到本地实际服务，合成内容；MC-18另接真实外部/本机模型",
+      "preconditions": [
+        "三个适配器的本地wire recorder，合成秘密和正文；真实服务验证仍独立保留"
+      ],
+      "steps": [
+        "分别从翻译、精读、语境查词和配置测试发送请求",
+        "核对OpenAI、Anthropic、Azure各自认证/必需字段/语言方向/实际模型字段",
+        "混合本机远程地址、无模型传统接口、上下文空/零预算、无匹配术语及启用ruby"
+      ],
+      "expected": [
+        "预览与wire在脱敏后可对应；原文不夹ruby/词性DOM，不发送越权历史和空词典占位",
+        "Azure不要求虚构模型；Anthropic不套OpenAI字段；能力不支持在发送前定位",
+        "秘密只到明确连接认证字段，不进入诊断/模板/查询URL；测试结果不进入游戏历史"
+      ],
+      "evidence_types": [
+        "脱敏请求计划与wire diff",
+        "路由身份",
+        "历史0项配置测试记录"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-03",
+        "MC-07",
+        "MC-09",
+        "MC-14",
+        "MC-18"
+      ],
+      "gap_vs_existing": "补用例到真实序列化边界的可观察oracle，不能只mock ProviderPort返回成功",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-16",
+      "title": "缓存键语义变形与人工修正不可覆盖",
+      "layer": "L1",
+      "gate": "B3",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-09"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-09",
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M04",
+        "M05",
+        "M07",
+        "M08",
+        "M09",
+        "M10"
+      ],
+      "component_ids": [
+        "C17",
+        "C19",
+        "C23",
+        "C24"
+      ],
+      "source": null,
+      "variant_ids": [
+        "UNIT"
+      ],
+      "method": "automated；变形性质测试+真实SQLite，不依赖外部模型质量",
+      "preconditions": [
+        "已固定缓存键字段清单、各用途输出契约；真实临时DB缓存"
+      ],
+      "steps": [
+        "保持表面文字相同逐项改变profile、语言方向、textrevision、上下文、术语、处理规则、模板、模型语义/凭据版本、资源版本",
+        "只改显示名及非请求显示偏好，比较缓存资格",
+        "同一记录形成缓存/实时结果/人工修正后返回迟到结果并显式绕过缓存重译"
+      ],
+      "expected": [
+        "语义或输出资料身份变化不错误命中旧缓存；等价语义不因无关显示字段误判",
+        "不同用途/词句/资源缓存隔离且来源可查",
+        "人工修正独立保留，后台结果不覆盖；显式重译使用当前applied而非草稿"
+      ],
+      "evidence_types": [
+        "缓存字段变形命中矩阵",
+        "结果来源及优先级",
+        "人工修正前后内容hash"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-20",
+        "CR-12-PERSIST"
+      ],
+      "gap_vs_existing": "原MC-20是场景验收，新增完整键字段变形覆盖防漏字段",
+      "supporting_layer_ids": [
+        "L3"
+      ]
+    },
+    {
+      "id": "TP-17",
+      "title": "UTF8字节span到UTF16投影和选词复制可逆",
+      "layer": "L2",
+      "gate": "B4",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-08"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M07",
+        "M09",
+        "M13"
+      ],
+      "component_ids": [
+        "C16",
+        "C19",
+        "C21"
+      ],
+      "source": null,
+      "variant_ids": [
+        "PROTOCOL"
+      ],
+      "method": "automated；Rust性质测试+TS实际渲染/Playwright点击；不需要模型网络",
+      "preconditions": [
+        "已定义词法及文法offset契约；审校合成Unicode向量含代理对/组合字符/异体选择/全角空白/CRLF"
+      ],
+      "steps": [
+        "生成合法边界span并经Rust→投影→JS命中→Rust回指往返",
+        "组合tokens/空白/标点还原原始UTF8字节；在ruby/换行布局点词和复制",
+        "提交中间字节、越界、重叠、不匹配source_hash及拆grapheme引用"
+      ],
+      "expected": [
+        "词面/选区精确回指固定原文版本；UTF16不误用UTF8偏移",
+        "复制只返回模型原文，不含假名/标注；可还原全部空白标点，不通过NFC改写原句掩盖错位",
+        "非法span与过期hash拒绝，保留原文可读并有具体诊断；结构合法不冒称语言准确"
+      ],
+      "evidence_types": [
+        "Unicode种子/边界向量",
+        "往返byte hash",
+        "点词/复制及拒绝输出"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-04-UNICODE",
+        "CR-12-TOKEN",
+        "CR-13-GRAMMAR"
+      ],
+      "gap_vs_existing": "把Unicode高层验收细化为两种offset体系可逆性质和grapheme边界反例",
+      "supporting_layer_ids": [
+        "L5"
+      ]
+    },
+    {
+      "id": "TP-18",
+      "title": "语言worker输出损坏必须在跨进程边界拒绝",
+      "layer": "L2",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-07",
+        "FP-08",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M09"
+      ],
+      "component_ids": [
+        "C16",
+        "C19",
+        "C21",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "PROTOCOL"
+      ],
+      "method": "automated；真实子进程管道+合成坏帧，另有真实MeCab资源验证",
+      "preconditions": [
+        "可替换为测试专用输出进程；保持正常协议/资源schema作为对照"
+      ],
+      "steps": [
+        "逐项发送错误长度、半JSON、超长帧、旧请求ID/资源版本、重叠span与词面不符",
+        "在合法帧前后夹损坏帧并恢复下一请求",
+        "在worker结果引用中放不属于该unit的token_id"
+      ],
+      "expected": [
+        "损坏结果在Rust边界拒绝，不传UI做容错猜测、不发布错误注音/释义",
+        "单帧错误不吞下一帧，严重协议失同步有限重启自有worker",
+        "原文和翻译继续，错误归到词法阶段，旧/跨句对象不能高亮"
+      ],
+      "evidence_types": [
+        "坏帧向量及稳定错误码",
+        "重启次数",
+        "原文/翻译不受损摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-12-TOKEN",
+        "CR-12-OFFLINE",
+        "CR-13-GRAMMAR"
+      ],
+      "gap_vs_existing": "补语言私有协议输出验证；不只检查worker进程是否存活",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-19",
+      "title": "随包中文辞书与真实MeCab的离线质量语料审校",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-07",
+        "FP-11"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M08",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C19",
+        "C32"
+      ],
+      "source": null,
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "automated_scoring_plus_human_review；正式包真实内置语言资源、断网；人工日语审校，不是设计人工样本",
+      "preconditions": [
+        "B0锁定真实MeCab/UniDic/中文辞书字节与license；合法合成/授权golden corpus经日语审校；样本类别和上线质量阈值预先批准"
+      ],
+      "steps": [
+        "断网从最终包非仓库目录跑审校语料，覆盖活用/复合词/口语/人名/未知词/中文混排",
+        "比对lemma/读音/POS以及中文基础释义的可接受集合和来源",
+        "分别统计有词条但无中文义、完全未收录、正确回退及错误义项"
+      ],
+      "expected": [
+        "语法/schema通过与语言学准确率分开报告；中文覆盖按预先golden集合衡量，不用字符串含汉字当中文义项质量",
+        "未收录如实显示，不把JMdict英语或LLM输出冒充内置中文基础释义",
+        "达到预先质量门槛，无法达到则明确阻断；每条释义来源/版本/许可可追溯"
+      ],
+      "evidence_types": [
+        "脱敏授权语料版本",
+        "分层质量分母/混淆/缺词统计",
+        "错例及审校结论"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-12-RESOURCE",
+        "CR-12-TOKEN",
+        "CR-12-WORDCARD"
+      ],
+      "gap_vs_existing": "现有CR明确不能把span合法当质量，但缺具体语料/指标/审校门禁；本案补方法不预设虚假准确率",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-20",
+      "title": "真实模型翻译与文法的独立语言学质量复核",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "AI",
+      "feature_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-07",
+        "AI-CFG-16"
+      ],
+      "module_ids": [
+        "M05",
+        "M06",
+        "M09"
+      ],
+      "component_ids": [
+        "C17",
+        "C20",
+        "C21",
+        "C22"
+      ],
+      "source": null,
+      "variant_ids": [
+        "REMOTE-COMPAT",
+        "ANTHROPIC",
+        "TRADITIONAL",
+        "LOCAL-COMPAT"
+      ],
+      "method": "human_review_with_automated_capture；真实所选服务与模型，固定授权语料；自动测试不强断言非确定模型逐字输出",
+      "preconditions": [
+        "每个声明用途可用的协议/模型组合有真实服务；经授权审校样本覆盖省略主语/时态/敬语/歧义；评分rubric、严重错误定义和发布门槛预先冻结"
+      ],
+      "steps": [
+        "以固定源句/已声明上下文从最终包发真实翻译/精读/语境查词",
+        "按允许解释集合盲审语义、语法依据、原句引用及歧义标记",
+        "将格式/schema正确但语义错误样本单列缺陷，再验证文字模式也不伪造精确证据"
+      ],
+      "expected": [
+        "真实返回和引用校验通过不直接算理解正确；每组合/用途独立分母与质量结果",
+        "不把语境推测说成原文明示事实；关键歧义有备选/不确定标记",
+        "结果达预先质量门槛，严重错误不被平均分掩盖；不可用凭据/模型记blocked"
+      ],
+      "evidence_types": [
+        "包hash/模型ID/模板/参数/输入语境身份",
+        "保存在本地的响应及审校记录",
+        "错误严重度和复验"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "MC-17",
+        "MC-18",
+        "CR-13-GRAMMAR"
+      ],
+      "gap_vs_existing": "补实际质量评审rubric与逐组合分母，不再新增重复的服务能否返回用例",
+      "supporting_layer_ids": [],
+      "variant_policy": "TRADITIONAL仅翻译及能力拒绝/降级；不要求或伪装具备文法精读。其他provider按已声明实际能力分别记录翻译与精读。"
+    },
+    {
+      "id": "TP-21",
+      "title": "每窗口自定义IPC命令在Rust运行时复核作用域",
+      "layer": "L6",
+      "gate": "B5",
+      "owner": "PL",
+      "feature_ids": [
+        "FP-03",
+        "FP-06",
+        "FP-08",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-11"
+      ],
+      "module_ids": [
+        "M12",
+        "M13",
+        "M16"
+      ],
+      "component_ids": [
+        "C30",
+        "C33",
+        "C34"
+      ],
+      "source": null,
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "automated_native_test_build；实际Tauri/WKWebView IPC和OS窗口身份；纯浏览器fixture不足以证明",
+      "preconditions": [
+        "主/HUD/设置/学习窗口命令allowlist已固定；测试原生构建可直接调用IPC并观察副作用"
+      ],
+      "steps": [
+        "从各窗口直接调用允许及禁止的应用命令，绕过UI禁用状态",
+        "尝试伪造窗口角色/profile/目标标识、裸DLL路径/任意shell/SQL参数",
+        "将一个合法窗口销毁重建后复用旧调用身份"
+      ],
+      "expected": [
+        "Rust根据实际调用窗口身份和业务scope拒绝越权，不只依赖前端按钮或capability文件",
+        "拒绝返回稳定错误且没有网络/SQL/凭据读取/注入副作用",
+        "只暴露注册的用例，没有任意系统执行后门；旧身份不能继承新窗口授权"
+      ],
+      "evidence_types": [
+        "窗口×命令授权矩阵",
+        "拒绝回执与0副作用计数",
+        "能力与运行时检查对应"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-11-REQ-054",
+        "CR-13-PRIVACY-BUDGET"
+      ],
+      "gap_vs_existing": "当前架构明示自定义命令需Rust作用域复核，原安全CR没有具体角色矩阵",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-22",
+      "title": "模型/词典不可信内容只作为文本渲染",
+      "layer": "L5",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-07",
+        "FP-08",
+        "FP-09"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-06",
+        "AI-CFG-16"
+      ],
+      "module_ids": [
+        "M08",
+        "M09",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C19",
+        "C21",
+        "C23"
+      ],
+      "source": null,
+      "variant_ids": [
+        "UI",
+        "NATIVE"
+      ],
+      "method": "automated_plus_native_spot_check；Playwright真实组件+实际WKWebView；合成内容不是外部模型质量证据",
+      "preconditions": [
+        "合法合成HTML/script/event/URI/Markdown payload集合；网络和IPC副作用计数器"
+      ],
+      "steps": [
+        "把payload分别作为词典义项、模型解释、历史人工修正与错误详情显示",
+        "点链接/复制/打开词卡与精读；尝试command URI及脚本事件",
+        "实际原生WebView复验关键payload"
+      ],
+      "expected": [
+        "正文按受限富文本或转义文本显示，不执行脚本/客户端命令、不向外部地址静默发请求",
+        "任何显式外链遵守产品允许策略，不能把词典/模型内容变成特权IPC参数",
+        "可复制原文、关闭弹层、继续游戏；安全过滤不导致所有解释空白或崩溃"
+      ],
+      "evidence_types": [
+        "payload类别/渲染截图",
+        "0次未授权网络/IPC记录",
+        "允许内容正常对照"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-12-WORDCARD",
+        "CR-13-PRIVACY-BUDGET",
+        "CR-11-REQ-030"
+      ],
+      "gap_vs_existing": "补各不可信输入入口的统一执行型反例，不止源码查找dangerouslySetInnerHTML",
+      "supporting_layer_ids": [
+        "L6"
+      ]
+    },
+    {
+      "id": "TP-23",
+      "title": "最终包无设计样例/fixture隐式fallback",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "UI",
+      "feature_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-10",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-01",
+        "AI-CFG-05",
+        "AI-CFG-16"
+      ],
+      "module_ids": [
+        "M13",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C19",
+        "C21",
+        "C25",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "DISTRIBUTION"
+      ],
+      "method": "automated_artifact_scan_plus_native_e2e；真实release产物，真实内置辞书与真实服务另接；静态扫包不是唯一证据",
+      "preconditions": [
+        "同一最终staging包；构建依赖图/资源清单；离线环境与非固定新输入"
+      ],
+      "steps": [
+        "检查release入口依赖图和包资源是否引入设计data.js/测试adapter/演示图及样例服务",
+        "从非仓库目录启动，输入未出现在设计样本中的句子；关闭真实服务再调用",
+        "用不在设计中但在真实辞书中的词与真实服务响应分别核对"
+      ],
+      "expected": [
+        "生产包不执行测试/设计adapter，没有固定句子或游戏名映射译文/词法",
+        "无服务时如实失败/未配置；本地词典仍按真实资源查词，不伪造已完成模型结果",
+        "资源清单只含批准生产资产、license和运行资源，不含私人游戏采集或明文凭据"
+      ],
+      "evidence_types": [
+        "包hash/依赖图与资源清单",
+        "新输入对应请求/结果",
+        "离线失败及本地查词对照"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-01-INSTALL",
+        "CR-01-REPRODUCE",
+        "MC-18"
+      ],
+      "gap_vs_existing": "将架构禁止原型fixture搬入产品转为构建图+包运行检查，现有门禁自测不能代替",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-24",
+      "title": "签名身份与应用升级后的Keychain访问",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "PL",
+      "feature_ids": [
+        "FP-01",
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-04",
+        "AI-CFG-11",
+        "AI-CFG-15"
+      ],
+      "module_ids": [
+        "M12",
+        "M15",
+        "M16"
+      ],
+      "component_ids": [
+        "C26",
+        "C30",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "DISTRIBUTION"
+      ],
+      "method": "human_assisted_native；真实macOS签名/升级/Keychain授权；Windows凭据lane单独计划，不借此宣称验证",
+      "preconditions": [
+        "实际签名候选包及受支持上一版测试包；隔离用户档/测试Keychain；固定app identifier与签名政策"
+      ],
+      "steps": [
+        "旧包创建测试秘密并应用，按真实分发路径升级新包",
+        "分别允许/拒绝Keychain授权并重启；检查新旧包访问身份",
+        "在用户未重新授权时触发依赖用途"
+      ],
+      "expected": [
+        "允许情况下保留合法秘密引用与配置；拒绝/身份变化时显示具体授权恢复而不回退明文",
+        "不会因签名/路径变化把已有配置当空白，或在未授权情况下静默换云端/凭据",
+        "重新授权只恢复明确允许的用途，不隐式重发之前台词；秘密不入升级包"
+      ],
+      "evidence_types": [
+        "包签名身份及hash",
+        "授权结果/脱敏引用",
+        "升级前后配置和请求计数"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-01-INSTALL",
+        "CR-08-CONFIG",
+        "CR-11-REQ-051",
+        "MC-16"
+      ],
+      "gap_vs_existing": "补架构特别要求的签名升级访问实测，普通开发构建Keychain测试不能代替",
+      "supporting_layer_ids": [
+        "L6"
+      ]
+    },
+    {
+      "id": "TP-25",
+      "title": "历史分页与保留清理不破坏当前/固定对象",
+      "layer": "L3",
+      "gate": "B2",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-08",
+        "FP-09",
+        "FP-12"
+      ],
+      "ai_config_ids": [
+        "AI-CFG-13"
+      ],
+      "module_ids": [
+        "M03",
+        "M09",
+        "M10"
+      ],
+      "component_ids": [
+        "C20",
+        "C23",
+        "C24"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；真实SQLite查询/事务/retention，不需要真实剧情或游戏截图",
+      "preconditions": [
+        "真实临时DB含超过分页/保留上限的合成记录；明确retention与固定对象的持有策略"
+      ],
+      "steps": [
+        "分页浏览时并发写入新事件、修正旧条并执行保留清理",
+        "打开一个固定旧句学习及人工修正编辑，再清理相关raw事件",
+        "重启恢复历史并重新打开可保留的来源对象"
+      ],
+      "expected": [
+        "按稳定游标/排序契约分页，无无声重复或漏项；并发快照边界可解释",
+        "保留清理不破坏当前句、已承诺保存的历史结果/修正和固定对象的可读快照；被清理原始来源明确标记",
+        "外键与来源链自洽，不能用无限保留规避有界存储，也不能删当前对象冒称成功"
+      ],
+      "evidence_types": [
+        "分页ID序列及snapshot revision",
+        "清理前后引用与对象hash",
+        "外键完整性与容量摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-08-HISTORY",
+        "CR-13-EXPLAIN-UI",
+        "MC-20"
+      ],
+      "gap_vs_existing": "CR已有保留策略承诺，缺并发分页和固定对象清理机制的具体检查",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-26",
+      "title": "真实词法worker挂起必须被终止并有限恢复",
+      "layer": "L3",
+      "gate": "B4",
+      "owner": "JA",
+      "feature_ids": [
+        "FP-04",
+        "FP-07",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M07",
+        "M12",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C19",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "INFRA"
+      ],
+      "method": "automated；实际原生子进程/pipe/终止监督+真实MeCab离线恢复，不用mock Future替代",
+      "preconditions": [
+        "实际语言worker监督器；可控挂起测试进程和真实MeCab正常对照；超时/重启退避/次数上限预先固定"
+      ],
+      "steps": [
+        "让worker在请求处理中停止回应/卡住，连续提交文本并取消",
+        "等待超时并检查自有进程是否真正结束；模拟连续启动失败",
+        "恢复真实worker后重新分析当前句，提交旧进程迟到帧"
+      ],
+      "expected": [
+        "超时不是仅停止等待Future，挂起自有worker确实回收，无无限spawn或孤儿进程",
+        "有界队列与有限重启，旧worker结果按实例/请求版本隔离；下一当前句可显式恢复",
+        "Hook、原文、翻译继续，错误归词法；不终止游戏/broker/其他应用进程"
+      ],
+      "evidence_types": [
+        "worker实例/退出/重启回执",
+        "队列与进程峰值",
+        "原文和翻译持续性摘要"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned",
+      "acceptance_refs": [
+        "CR-12-OFFLINE",
+        "CR-07-BACKPRESSURE"
+      ],
+      "gap_vs_existing": "原CR-12-OFFLINE描述有界恢复，本案验证独立进程能真的终止，避免spawn_blocking超时仍占线程",
+      "supporting_layer_ids": []
+    },
+    {
+      "id": "TP-27",
+      "title": "身份与阅读状态机的组合不变量",
+      "layer": "L1",
+      "gate": "B1",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-09",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M02",
+        "M03",
+        "M14"
+      ],
+      "component_ids": [
+        "C15",
+        "C16",
+        "C23",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "UNIT"
+      ],
+      "method": "cargo test领域行为与生成序列；不要求引入特定属性测试库",
+      "preconditions": [
+        "冻结目标/会话/流/阅读对象契约，使用可控时钟与生成的Unicode/增量序列"
+      ],
+      "steps": [
+        "遍历目标重用PID、跨Bottle同路径、流替换、暂停/隐藏/断开和合法重复台词组合",
+        "插入取消/迟到/重复/乱序与epoch切换，再重放原始事件"
+      ],
+      "expected": [
+        "旧身份结果不能更新新会话；取消预览不改变权威状态；同目标复用与不同目标切换保持规则",
+        "合法相同台词不因简单字符串去重丢失；原始事件可追溯，阅读分段/标点和边界符合冻结规则"
+      ],
+      "evidence_types": [
+        "随机种子/反例最小化记录",
+        "状态转移及事件→阅读单元映射"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "TP-28",
+      "title": "完整组件状态目录与可访问交互",
+      "layer": "L5",
+      "gate": "B5",
+      "owner": "UI",
+      "feature_ids": [
+        "FP-01",
+        "FP-02",
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "source": null,
+      "variant_ids": [
+        "UI",
+        "DISPLAYS"
+      ],
+      "method": "Playwright实际组件+正式包人工系统检查",
+      "preconditions": [
+        "当前设计最终审阅、状态清单与viewport/font/mask/阈值预先冻结；每项实际产品组件存在"
+      ],
+      "steps": [
+        "从空库依次走添加、关联、候选、阅读、查词、未配模型往返、设置轻返回、AI等待/取消/失败/结构化和文本降级、历史修正、诊断恢复",
+        "覆盖深浅主题、减少透明度、200%、长日语/中文/emoji、最小窗、键盘Tab/Escape与屏幕阅读可访问名称",
+        "用Playwright拍实际组件及diff；在正式包核对真实材质、原生焦点与双屏"
+      ],
+      "expected": [
+        "每个承诺状态都有真实入口；无设计工具面板或旧无效入口",
+        "图标线宽/灰阶配色/tokens与批准稿一致；正文、ruby和词卡无截断；键盘和可访问名称可用",
+        "视觉与原生结果分开记录；布局待批准不得以风格确认代替"
+      ],
+      "evidence_types": [
+        "状态→设计锚点→组件→截图矩阵",
+        "基准/候选/diff及人工结论",
+        "键盘/原生双屏录像"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "TP-29",
+      "title": "预冻结性能政策下的可响应与资源回收",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-04",
+        "FP-05",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M07",
+        "M12",
+        "M14",
+        "M15"
+      ],
+      "component_ids": [
+        "C16",
+        "C17",
+        "C18",
+        "C21",
+        "C33",
+        "C34"
+      ],
+      "source": null,
+      "variant_ids": [
+        "NATIVE"
+      ],
+      "method": "真实RC+受控高频输入/实际worker，模型耗时拆分网络与本地",
+      "preconditions": [
+        "B0冻结设备、负载/语料、样本数、计时起止、p95/最大值与预算；未知值保持待批准不得运行后调线"
+      ],
+      "steps": [
+        "按冻结工作负载测冷启、事件→原文、分词/查词、模型首字/完成，统计成功/错误/超时全部样本",
+        "运行10分钟高频受控事件，慢消费者/网络/worker阻塞时执行暂停、取消、切换、断开和退出",
+        "测峰值/回落/队列上限、空闲CPU与残留进程；按预定恢复等待观察资源回收"
+      ],
+      "expected": [
+        "本地关键反馈按原PRD≤200ms的冻结测量方法判断；不套用到云端完成时间",
+        "所有其他已批准预算达标，内存/队列有界、控制操作可响应、无残留自有worker；策略未冻结为blocked",
+        "正常链路无损，故障负例诚实显示loss/unknown并可恢复，两者不混为通过"
+      ],
+      "evidence_types": [
+        "逐样本计时与p50/p95/p99/最大值/失败率",
+        "队列/进程/内存时间序列",
+        "控制操作录像与对应事件"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "TP-30",
+      "title": "干净安装、版本预检与可恢复回退",
+      "layer": "L8",
+      "gate": "B5",
+      "owner": "AP",
+      "feature_ids": [
+        "FP-01",
+        "FP-06",
+        "FP-07",
+        "FP-09",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M10",
+        "M12",
+        "M15",
+        "M16"
+      ],
+      "component_ids": [
+        "C08",
+        "C23",
+        "C31",
+        "C32",
+        "C33",
+        "C34"
+      ],
+      "source": null,
+      "variant_ids": [
+        "DISTRIBUTION"
+      ],
+      "method": "正式分发候选在干净环境人工+系统回执；真实DB/Keychain恢复",
+      "preconditions": [
+        "B0冻结分发渠道、支持OS与可迁移schema/回退组合；只用隔离备份，保留quarantine与原始用户数据"
+      ],
+      "steps": [
+        "从最终分发包解包安装并核对实际bundle清单、签名/公证状态，在干净环境冷启并断网查词",
+        "对声明支持schema迁移，在写入/提交边界中断、磁盘不足及语言资源hash错误后恢复",
+        "用不兼容旧schema/包尝试降级，验证预检拒绝及按批准包+备份配对恢复；卸载/重装时核对数据保留选择"
+      ],
+      "expected": [
+        "普通用户无需仓库/旧Luna/自行安装词典即可启动和离线查词；权限拒绝有准确恢复入口",
+        "受支持升级保留历史/配置/凭据引用，失败不破坏唯一原件；未知PoC数据不静默迁移",
+        "不兼容降级被阻止；受测恢复路径成功，不擅自增加自动更新功能"
+      ],
+      "evidence_types": [
+        "下载/安装/冷启录像与系统检查回执",
+        "bundle/资源/包hash及签名身份",
+        "迁移/备份/恢复一致性与拒绝记录"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    },
+    {
+      "id": "TP-31",
+      "title": "范围、契约、资源许可及质量政策冻结",
+      "layer": "L0",
+      "gate": "B0",
+      "owner": "QA",
+      "feature_ids": [
+        "FP-01",
+        "FP-06",
+        "FP-07",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "ai_config_ids": [],
+      "module_ids": [
+        "M15",
+        "M08"
+      ],
+      "component_ids": [
+        "C32",
+        "C33"
+      ],
+      "source": null,
+      "variant_ids": [
+        "BASELINE"
+      ],
+      "method": "静态自动检查+人工前置冻结审阅",
+      "preconditions": [
+        "当前PRD/架构与完整设计审阅记录可定位；本地资源和指标政策候选已准备"
+      ],
+      "steps": [
+        "执行计划/OpenSpec/边界/目录/技术栈/来源与编译守卫",
+        "逐项核对设计批准范围、Core与语言资源来源/hash/许可、中文词表覆盖目标、支持设备/分发渠道",
+        "冻结性能采样/预算、人工语言质量语料/分级/判据与签字版本；列出未获批准项"
+      ],
+      "expected": [
+        "来源追溯和守卫真实通过；完整设计与指标/资源批准另有可核对记录",
+        "任何待批准/未知资源或未确定政策保持blocked，不以本轮计划lint或旧守卫绿灯替代B0完成"
+      ],
+      "evidence_types": [
+        "实际命令回执",
+        "来源/资源/许可清单",
+        "明确批准范围与政策版本"
+      ],
+      "status": "not_run",
+      "release_required": true,
+      "harness_status": "planned"
+    }
+  ],
+  "metric_policies": [
+    {
+      "id": "LOCAL-FEEDBACK",
+      "source": "原PRD本地关键反馈≤200ms",
+      "status": "measurement_method_pending_B0",
+      "rule": "本地暂停/取消/切换等反馈，不含云端完成时间；负载、样本量、统计口径先冻结"
+    },
+    {
+      "id": "PERFORMANCE",
+      "status": "approval_required_before_B0_exit",
+      "rule": "冻结冷启/原文/词法/查词p95与最大值、内存/队列/CPU预算及恢复时间；禁止看结果后调线"
+    },
+    {
+      "id": "LANGUAGE-QUALITY",
+      "status": "approval_required_before_B0_exit",
+      "rule": "授权/自制分层语料，人工日语复核，严重语义/上下文串台/泄密阻断；样本量、分级与可接受比例先批准"
+    }
+  ],
+  "release_policy": {
+    "required_case_status": "passed_for_every_frozen_execution_id",
+    "current_status": "blocked_not_executed",
+    "design_approval": "full_layout_approved_required_not_granted",
+    "source_build_vs_final_package": "低层测试绑定同源构建；正式包旅程全部绑定同一最终RC及实际bundle，不混包",
+    "product_adapter_status": "not_implemented",
+    "evidence_validation": "Plan lint and evidence hashes prove inventory/identity only; real runtime/capture adapters and human review remain required"
+  },
+  "supported_lanes": [
+    "macos-arm64-crossover"
+  ]
+}

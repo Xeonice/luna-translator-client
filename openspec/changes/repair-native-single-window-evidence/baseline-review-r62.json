@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-native-single-window-evidence",
+  "parent_baseline_sha256": "ff6f48622a257136ee101ff73787d2315a1202d4d69d019f89c7d16228c2daaf",
+  "exact_delta_sha256": "1f6f936e3312963277dfc6524b0a8f03ac12fa0fcbf1d29ea5e9d7ab5d68e2b0",
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/native-evidence-r62/code-review/review.json",
+    "sha256": "9c10b10ce0158090beb7b92bd7220fb990ce49f6075c56249450f65263877709",
+    "bytes": 6803
+  },
+  "approval_status_unchanged": true,
+  "product_acceptance_promoted": false
+}

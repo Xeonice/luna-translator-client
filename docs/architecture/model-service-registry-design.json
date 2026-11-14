@@ -1,0 +1,2586 @@
+{
+  "schema_version": 1,
+  "kind": "model_service_registry_design",
+  "revision": "MSD-20261030-3-selection-design",
+  "updated_date": "2026-10-30",
+  "phase": "design_documentation_only",
+  "authority": {
+    "user_scope_date": "2026-10-30",
+    "instructions": [
+      "协议一次直接接全了，不要漏了算了",
+      "腾讯 TMT 去掉，没人用",
+      "基于我们更新后的协议和设计，给我一份设计文档，最好更新之前我们已有的文档，这样方便追踪"
+    ],
+    "scope_source_sha256": "28947cad2693714d4093dda9bb7a8fa6257410230a19c99694fd32719e880c95",
+    "protocol_ids": [
+      "openai_compatible",
+      "openai_responses",
+      "anthropic",
+      "gemini_generate_content",
+      "ollama_native",
+      "lmstudio_native_v1",
+      "azure_translator",
+      "deepl_v2",
+      "google_translate_v2",
+      "google_translate_v3",
+      "baidu_vip",
+      "youdao_v3",
+      "tencent_tokenhub_translation"
+    ],
+    "preset_ids": [
+      "builtin.deepseek",
+      "builtin.qwen",
+      "builtin.ark",
+      "builtin.gemini-compatible",
+      "builtin.openrouter",
+      "builtin.ollama",
+      "builtin.lmstudio",
+      "builtin.openai-chat",
+      "builtin.anthropic",
+      "builtin.azure-translator",
+      "builtin.deepl",
+      "builtin.google-v2",
+      "builtin.baidu",
+      "builtin.openai-responses",
+      "builtin.gemini-native",
+      "builtin.youdao",
+      "builtin.google-v3",
+      "builtin.ollama-native",
+      "builtin.lmstudio-native",
+      "builtin.tencent-tokenhub-chat",
+      "builtin.tencent-tokenhub-translation"
+    ],
+    "excluded_protocol_ids": [
+      "tencent_tmt_legacy"
+    ],
+    "excluded_direction_ids": [
+      "tencent-legacy"
+    ]
+  },
+  "counts": {
+    "protocols": 13,
+    "presets": 21,
+    "excluded_protocols": 1
+  },
+  "protocols": [
+    {
+      "id": "openai_compatible",
+      "label": "OpenAI Chat Completions",
+      "contract_revision": 1,
+      "family": "llm",
+      "auth_kind": "none_or_bearer_api_key",
+      "auth_description": "Bearer / 本机服务按配置无认证",
+      "model_identity": "required",
+      "wire_output": "JSON + SSE",
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "source_state": "existing_source_requires_registry_migration",
+      "official_source": "https://api-docs.deepseek.com/",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "openai_responses",
+      "label": "OpenAI Responses",
+      "contract_revision": 1,
+      "family": "llm",
+      "auth_kind": "bearer_api_key",
+      "auth_description": "Bearer",
+      "model_identity": "required",
+      "wire_output": "JSON + 类型化 SSE",
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://developers.openai.com/api/docs/guides/migrate-to-responses",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "anthropic",
+      "label": "Anthropic Messages",
+      "contract_revision": 1,
+      "family": "llm",
+      "auth_kind": "anthropic_api_key",
+      "auth_description": "x-api-key + 协议版本头",
+      "model_identity": "required",
+      "wire_output": "JSON + SSE",
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "source_state": "existing_source_requires_registry_migration",
+      "official_source": "https://platform.claude.com/docs/en/api/messages",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "gemini_generate_content",
+      "label": "Gemini 原生 generateContent",
+      "contract_revision": 1,
+      "family": "llm",
+      "auth_kind": "google_api_key",
+      "auth_description": "Gemini API Key",
+      "model_identity": "required",
+      "wire_output": "JSON + SSE",
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://ai.google.dev/api/generate-content",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "ollama_native",
+      "label": "Ollama 原生 /api/chat",
+      "contract_revision": 1,
+      "family": "llm",
+      "auth_kind": "none_or_bearer_api_key",
+      "auth_description": "按本机/云端实际部署声明",
+      "model_identity": "required",
+      "wire_output": "JSON + NDJSON",
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://docs.ollama.com/api/chat",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "lmstudio_native_v1",
+      "label": "LM Studio 原生 /api/v1/chat",
+      "contract_revision": 1,
+      "family": "llm",
+      "auth_kind": "none_or_bearer_api_key",
+      "auth_description": "按服务认证设置声明",
+      "model_identity": "required",
+      "wire_output": "JSON + SSE",
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://lmstudio.ai/docs/developer/rest/chat",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "azure_translator",
+      "label": "Microsoft Azure Translator",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "azure_subscription_key",
+      "auth_description": "订阅 Key + 可选 region",
+      "model_identity": "not_applicable",
+      "wire_output": "JSON",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "existing_source_requires_registry_migration",
+      "official_source": "https://learn.microsoft.com/en-us/azure/ai-services/translator/text-translation-overview",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "deepl_v2",
+      "label": "DeepL Text API",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "deepl_auth_key",
+      "auth_description": "DeepL-Auth-Key",
+      "model_identity": "not_applicable",
+      "wire_output": "JSON",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://developers.deepl.com/api-reference/translate/request-translation",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "google_translate_v2",
+      "label": "Google Cloud Translation Basic v2",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "google_api_key",
+      "auth_description": "Basic 认可的 API Key 等认证",
+      "model_identity": "not_applicable",
+      "wire_output": "JSON",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://docs.cloud.google.com/translate/docs/reference/rest/v2/translate",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "google_translate_v3",
+      "label": "Google Cloud Translation Advanced v3",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "google_oauth",
+      "auth_description": "OAuth / IAM + project/location",
+      "model_identity": "optional",
+      "wire_output": "JSON",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://docs.cloud.google.com/translate/docs/authentication",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "baidu_vip",
+      "label": "百度通用翻译",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "baidu_app_secret",
+      "auth_description": "APPID + secret + salt / MD5",
+      "model_identity": "not_applicable",
+      "wire_output": "表单 → JSON",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://fanyi-api.baidu.com/doc_bd/21",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "youdao_v3",
+      "label": "有道文本翻译",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "youdao_app_secret",
+      "auth_description": "appKey + secret + salt + curtime / SHA256",
+      "model_identity": "not_applicable",
+      "wire_output": "表单 → JSON",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://ai.youdao.com/DOCSIRMA/html/trans/api/wbfy/index.html",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    },
+    {
+      "id": "tencent_tokenhub_translation",
+      "label": "腾讯 TokenHub 专用翻译 /api/translations",
+      "contract_revision": 1,
+      "family": "translation",
+      "auth_kind": "bearer_api_key",
+      "auth_description": "Bearer",
+      "model_identity": "required",
+      "wire_output": "JSON + 流式 delta",
+      "allowed_purposes": [
+        "translation"
+      ],
+      "source_state": "not_implemented",
+      "official_source": "https://cloud.tencent.com/document/product/1823/132252",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run"
+    }
+  ],
+  "presets": [
+    {
+      "id": "builtin.deepseek",
+      "direction_id": "deepseek",
+      "provider_id": "builtin.deepseek",
+      "label": "DeepSeek",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "deepseek-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.qwen",
+      "direction_id": "qwen",
+      "provider_id": "builtin.qwen",
+      "label": "通义千问 / 阿里云百炼",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "qwen-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.ark",
+      "direction_id": "ark",
+      "provider_id": "builtin.ark",
+      "label": "豆包 / 火山方舟",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "ark-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.gemini-compatible",
+      "direction_id": "gemini-compatible",
+      "provider_id": "builtin.gemini",
+      "label": "Gemini 兼容模式",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "gemini-compatible-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.openrouter",
+      "direction_id": "openrouter",
+      "provider_id": "builtin.openrouter",
+      "label": "OpenRouter",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "openrouter-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.ollama",
+      "direction_id": "ollama",
+      "provider_id": "builtin.ollama",
+      "label": "Ollama",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "ollama-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.lmstudio",
+      "direction_id": "lmstudio",
+      "provider_id": "builtin.lmstudio",
+      "label": "LM Studio",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "lmstudio-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.openai-chat",
+      "direction_id": "openai-chat",
+      "provider_id": "builtin.openai",
+      "label": "OpenAI Chat Completions",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "openai-chat-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.anthropic",
+      "direction_id": "anthropic",
+      "provider_id": "builtin.anthropic",
+      "label": "Anthropic Messages",
+      "protocol_id": "anthropic",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "anthropic-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.azure-translator",
+      "direction_id": "azure-translator",
+      "provider_id": "builtin.microsoft-translator",
+      "label": "Microsoft Azure Translator",
+      "protocol_id": "azure_translator",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "azure-translator-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.deepl",
+      "direction_id": "deepl",
+      "provider_id": "builtin.deepl",
+      "label": "DeepL API",
+      "protocol_id": "deepl_v2",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "deepl-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.google-v2",
+      "direction_id": "google-v2",
+      "provider_id": "builtin.google-cloud-translation",
+      "label": "Google Cloud Translation Basic v2",
+      "protocol_id": "google_translate_v2",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "google-v2-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.baidu",
+      "direction_id": "baidu",
+      "provider_id": "builtin.baidu",
+      "label": "百度通用翻译",
+      "protocol_id": "baidu_vip",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "baidu-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.openai-responses",
+      "direction_id": "openai-responses",
+      "provider_id": "builtin.openai",
+      "label": "OpenAI Responses",
+      "protocol_id": "openai_responses",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "openai-responses-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.gemini-native",
+      "direction_id": "gemini-native",
+      "provider_id": "builtin.gemini",
+      "label": "Gemini 原生接口",
+      "protocol_id": "gemini_generate_content",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "gemini-native-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.youdao",
+      "direction_id": "youdao",
+      "provider_id": "builtin.youdao",
+      "label": "有道智云文本翻译",
+      "protocol_id": "youdao_v3",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "youdao-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.google-v3",
+      "direction_id": "google-v3",
+      "provider_id": "builtin.google-cloud-translation",
+      "label": "Google Cloud Translation Advanced v3",
+      "protocol_id": "google_translate_v3",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "google-v3-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.ollama-native",
+      "direction_id": "ollama-native",
+      "provider_id": "builtin.ollama",
+      "label": "Ollama 原生",
+      "protocol_id": "ollama_native",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "ollama-native-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.lmstudio-native",
+      "direction_id": "lmstudio-native",
+      "provider_id": "builtin.lmstudio",
+      "label": "LM Studio 原生",
+      "protocol_id": "lmstudio_native_v1",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "lmstudio-native-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation",
+        "grammar",
+        "context_word"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.tencent-tokenhub-chat",
+      "direction_id": "tencent-tokenhub-chat",
+      "provider_id": "builtin.tencent-tokenhub",
+      "label": "腾讯 TokenHub hy-mt2 Chat",
+      "protocol_id": "openai_compatible",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "tencent-tokenhub-chat-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "builtin.tencent-tokenhub-translation",
+      "direction_id": "tencent-tokenhub-translation",
+      "provider_id": "builtin.tencent-tokenhub",
+      "label": "腾讯 TokenHub 专用翻译",
+      "protocol_id": "tencent_tokenhub_translation",
+      "adapter_contract_revision": 1,
+      "compatibility_profile_id": "tencent-tokenhub-translation-text",
+      "profile_revision": 1,
+      "preset_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "PA-01",
+      "label": "注册完整性",
+      "assertion": "重复 ID、预设引用缺失适配器、目录/实现不一致都拒绝启动。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-02",
+      "label": "所有入口精确查找",
+      "assertion": "未知协议在应用、发送、测试、发现四处拒绝；零取密钥、零网络；禁止默认 Bearer / GET models。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-03",
+      "label": "用途与硬能力",
+      "assertion": "传统翻译用于 grammar/context_word 必须失败；用户声明不能突破 adapter 硬限制。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-04",
+      "label": "请求契约",
+      "assertion": "本地 HTTP fixture 实际检查路由、认证、签名、语言码、模型与参数白名单。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-05",
+      "label": "流与终止",
+      "assertion": "拆分 UTF-8 / SSE、缺终止、流内错误、拒绝、截断、reasoning-only / tool 输出、超大响应。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-06",
+      "label": "生命周期隔离",
+      "assertion": "取消、撤权、停用、换配置后迟到流不能写成功/缓存；future 不得脱离任务。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-07",
+      "label": "秘密和网络隔离",
+      "assertion": "Header/query/body/错误/Debug 脱敏；共用 client 不串 Key，Key 不进入默认头或普通 JSON。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-08",
+      "label": "旧配置迁移",
+      "assertion": "真实旧 profile 备份副本迁移、事务回滚、FK/seal/历史保持；旧客户端明确拒绝新 schema。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-09",
+      "label": "身份与缓存",
+      "assertion": "从已保存adapterBinding冻结protocol/contract/profile版本进入请求/测试/缓存身份；升级失效，preset更新不能重解释旧配置。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-10",
+      "label": "架构与 UI",
+      "assertion": "UI/核心不得绕层 HTTP/SQL/FFI；目录驱动表单保持草稿、测试、应用和启用分离。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-11",
+      "label": "真实服务验收",
+      "assertion": "每服务实际 ja→zh、多句连续、取消/失败恢复；学习用途单独核解释结果，模型列表成功不代替。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    },
+    {
+      "id": "PA-12",
+      "label": "同包游戏回归",
+      "assertion": "新旧候选分别固定包身份；所有新服务改动在同一新包内完成 SR/MO/Never7/樱之诗回归，不继承旧包通过。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11",
+        "FP-12"
+      ],
+      "maintenance": "后续实现切片在现有MC/AI-CFG层登记实际变体；本记录是计划，非已注册产品运行adapter。"
+    }
+  ],
+  "approval_boundaries": {
+    "scope": "用户已确定本批13协议/21路由并排除TMT",
+    "technical_contract": "本轮可审阅设计，不等于生产契约已实现",
+    "database_fields": "候选字段与迁移步骤，未修改现行DDL/注册/schema-contract",
+    "design": "沿用已批准整稿；新增目录/导入/多字段凭据状态需对应设计及产品回归",
+    "runtime": "R68产品身份/历史结果保留，新增注册实现/协议验收均not_run",
+    "offline_scope": "用户同意补本机非大模型翻译设计与PRD/候选交互/技术/测试同步",
+    "offline_details": "新UI、ExecutionBinding/EngineTarget/字段/worker协议/资源/运行栈/技术锁均为候选待审；不提升实施或实测"
+  },
+  "source_documents": [
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/product/model-configuration-prd.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/database-design.md",
+    "docs/product/README.md",
+    "docs/development/engineering-gates.md"
+  ],
+  "excluded_features": [
+    "腾讯TMT/TC3适配、专属凭据与专项验收",
+    "模型下载/管理、MCP/工具执行、语音与图像业务",
+    "运行时任意脚本/dylib/WASM协议插件"
+  ],
+  "implementation_state": {
+    "production_protocol_source": [
+      "openai_compatible",
+      "anthropic",
+      "azure_translator"
+    ],
+    "registry": "not_implemented",
+    "new_protocols": "not_implemented",
+    "typed_credential_migration": "not_implemented",
+    "product_acceptance": "not_run",
+    "offline_engines": "not_implemented",
+    "offline_product_acceptance": "not_run"
+  },
+  "offline_scope": {
+    "change_id": "design-local-offline-translation",
+    "scope": "本机非大模型翻译的PRD/独立完整候选交互/技术/测试规划；不实施或安装引擎",
+    "http_inventory_unchanged": true,
+    "candidate_design": "docs/design/first-product-v1/candidates/local-offline-20261030/index.html?scenario=settings",
+    "candidate_design_status": "pending_review",
+    "allowed_purposes": [
+      "translation"
+    ],
+    "excluded_purposes": [
+      "grammar",
+      "context_word"
+    ],
+    "excluded_claims": [
+      "已兼容",
+      "免费",
+      "可分发已证",
+      "生产Python已批准",
+      "已完成产品断网验收"
+    ],
+    "binding_design": "EngineTarget tagged union: existing model_config or independent offline_engine_config; offline never creates fake Connection.protocol/endpoint/model_id/API Key",
+    "not_authorized_by_this_design": [
+      "production_engine_implementation",
+      "automatic_download_or_install",
+      "new_production_python_or_framework",
+      "ddl_or_user_database_migration",
+      "approved_png_or_token_replacement",
+      "product_acceptance_promotion"
+    ]
+  },
+  "execution_backends": [
+    {
+      "id": "http",
+      "label": "HTTP模型与翻译服务",
+      "contract_revision": 1,
+      "catalog_source": [
+        "protocols",
+        "presets"
+      ],
+      "boundary": "既有ProtocolAdapterRegistry及受控HTTP transport，13协议/21预设不变",
+      "implementation_status": "existing_sources_require_registry_migration",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "platform_native",
+      "label": "本机系统翻译能力",
+      "contract_revision": 1,
+      "catalog_source": [
+        "offline_engines"
+      ],
+      "boundary": "Rust业务权威经注入端口调用窄系统adapter；不在UI持session/授权/缓存策略",
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    },
+    {
+      "id": "local_worker",
+      "label": "独立本机翻译worker",
+      "contract_revision": 1,
+      "catalog_source": [
+        "offline_engines"
+      ],
+      "boundary": "Rust监督独立翻译子进程；不复用language-worker/Hook host/capture worker，不把DLL装入UI/游戏",
+      "implementation_status": "planned",
+      "acceptance_status": "not_run"
+    }
+  ],
+  "offline_engines": [
+    {
+      "engine_contract_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "model_identity": "not_applicable",
+      "implementation_status": "planned",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run",
+      "distribution_status": "not_approved",
+      "probe_is_not_translation_acceptance": true,
+      "network_fallback": "none_unless_separately_explicitly_configured",
+      "default_language_route": "direct_only",
+      "language_support": "probe_actual_installation_and_language_pair; unknown_is_not_supported",
+      "required_common_fields": [
+        "engine_id",
+        "engine_contract_revision",
+        "display_name",
+        "source_language",
+        "target_language",
+        "route_policy",
+        "draft_revision",
+        "applied_revision"
+      ],
+      "test_identity": [
+        "profile_id",
+        "config_revision",
+        "engine_id",
+        "engine_contract_revision",
+        "execution_backend",
+        "language_pair",
+        "resource_snapshot_id",
+        "route",
+        "request_semantics_hash"
+      ],
+      "id": "apple_translation",
+      "label": "Apple系统翻译",
+      "execution_backend": "platform_native",
+      "engine_family": "system_traditional_translation",
+      "runtime_route": "candidate_native_bridge_pending_poc_and_techlock",
+      "supported_platforms": [
+        "macos_candidate"
+      ],
+      "minimum_api_availability": {
+        "translation_session_and_prepare_translation": "macOS 15.0+",
+        "installed_source_initializer_and_session_cancel": "macOS 26.0+",
+        "explicit_low_latency_strategy": "macOS 26.4+",
+        "availability_source": "Apple official symbol Markdown metadata checked 2026-10-30; locked SDK compilation and actual OS checks remain required"
+      },
+      "non_llm_policy": "Use explicit lowLatency where available; older OS/SDK traditional path requires version-specific PoC evidence; highFidelity/Apple Intelligence excluded; unknown route not executable as non-LLM",
+      "resource_policy": "System-managed language pair: installed/supported/unsupported are distinct; supported does not mean installed; system permission before language downloads; no export/copy of system packages",
+      "cancellation_policy": "cancel() availability-check; attempts all work in session and cancelled session is not reused; older task cancellation and local discard need PoC; no guaranteed physical stop",
+      "required_engine_fields": [
+        "system_api_status",
+        "traditional_strategy_status",
+        "language_pair_availability",
+        "resource_observation_epoch"
+      ],
+      "forbidden_required_fields": [
+        "endpoint",
+        "model_id",
+        "api_key",
+        "installation_path"
+      ],
+      "cache_identity_policy": "OS build + strategy/API + pair + observable resource state + observation epoch; unavailable package version remains unknown; do not reuse across unverifiable epochs",
+      "license_status": "system_package_and_api_terms_not_a_redistribution_grant",
+      "official_sources": [
+        "https://developer.apple.com/documentation/translation/translationsession",
+        "https://developer.apple.com/documentation/translation/languageavailability",
+        "https://developer.apple.com/documentation/translation/translationsession/preparetranslation()",
+        "https://developer.apple.com/documentation/translation/translationsession/init(installedsource:target:)",
+        "https://developer.apple.com/documentation/translation/translationsession/cancel()",
+        "https://developer.apple.com/documentation/translation/translationsession/strategy/lowlatency"
+      ]
+    },
+    {
+      "engine_contract_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "model_identity": "not_applicable",
+      "implementation_status": "planned",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run",
+      "distribution_status": "not_approved",
+      "probe_is_not_translation_acceptance": true,
+      "network_fallback": "none_unless_separately_explicitly_configured",
+      "default_language_route": "direct_only",
+      "language_support": "probe_actual_installation_and_language_pair; unknown_is_not_supported",
+      "required_common_fields": [
+        "engine_id",
+        "engine_contract_revision",
+        "display_name",
+        "source_language",
+        "target_language",
+        "route_policy",
+        "draft_revision",
+        "applied_revision"
+      ],
+      "test_identity": [
+        "profile_id",
+        "config_revision",
+        "engine_id",
+        "engine_contract_revision",
+        "execution_backend",
+        "language_pair",
+        "resource_snapshot_id",
+        "route",
+        "request_semantics_hash"
+      ],
+      "id": "argos_translate",
+      "label": "Argos专用机器翻译",
+      "execution_backend": "local_worker",
+      "engine_family": "dedicated_nmt",
+      "runtime_route": "candidate_only_upstream_python_or_native_reimplementation_not_selected",
+      "supported_platforms": [
+        "macos_candidate",
+        "windows_candidate"
+      ],
+      "production_python_approved": false,
+      "pipeline_policy": "Argos upstream includes package metadata, sentence splitting, tokenization, inference, merging and optional pivoting; CTranslate2 alone is not the full pipeline",
+      "resource_policy": "Language model packages and tokenizer/sentence-boundary assets required; record package/source/license/engine compatibility/architecture/hash; no automatic download",
+      "routing_policy": "direct_only default; explicitly selected and applied pivot path freezes each hop; never invoke upstream automatic pivot silently",
+      "required_engine_fields": [
+        "runtime_route_status",
+        "resource_location",
+        "package_versions",
+        "package_integrity",
+        "tokenizer_version",
+        "sentence_boundary_version",
+        "route_policy"
+      ],
+      "forbidden_required_fields": [
+        "endpoint",
+        "llm_model_id",
+        "api_key"
+      ],
+      "license_status": "upstream_code_and_each_language_package_and_dependency_review_separately; no_bundle_approval",
+      "official_sources": [
+        "https://github.com/argosopentech/argos-translate",
+        "https://argos-translate.readthedocs.io/en/stable/source/argostranslate.html",
+        "https://argos-translate.readthedocs.io/en/latest/source/settings.html"
+      ]
+    },
+    {
+      "engine_contract_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "model_identity": "not_applicable",
+      "implementation_status": "planned",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run",
+      "distribution_status": "not_approved",
+      "probe_is_not_translation_acceptance": true,
+      "network_fallback": "none_unless_separately_explicitly_configured",
+      "default_language_route": "direct_only",
+      "language_support": "probe_actual_installation_and_language_pair; unknown_is_not_supported",
+      "required_common_fields": [
+        "engine_id",
+        "engine_contract_revision",
+        "display_name",
+        "source_language",
+        "target_language",
+        "route_policy",
+        "draft_revision",
+        "applied_revision"
+      ],
+      "test_identity": [
+        "profile_id",
+        "config_revision",
+        "engine_id",
+        "engine_contract_revision",
+        "execution_backend",
+        "language_pair",
+        "resource_snapshot_id",
+        "route",
+        "request_semantics_hash"
+      ],
+      "id": "jbeijing",
+      "label": "J北京",
+      "execution_backend": "local_worker",
+      "engine_family": "proprietary_local_translation",
+      "runtime_route": "candidate_windows_same_bitness_worker_for_user_licensed_installation",
+      "supported_platforms": [
+        "windows_candidate",
+        "crossover_candidate_separate_verification"
+      ],
+      "resource_policy": "User-selected legal installation; freeze supported engine/data files, actual PE bitness, ABI and encoding; no DLL or commercial data bundled",
+      "required_engine_fields": [
+        "installation_path",
+        "detected_version",
+        "engine_architecture",
+        "worker_architecture",
+        "execution_environment",
+        "installation_resource_fingerprint"
+      ],
+      "forbidden_required_fields": [
+        "endpoint",
+        "model_id",
+        "api_key"
+      ],
+      "compatibility_status": "unknown_until_actual_version_platform_worker_poc",
+      "license_status": "vendor_license_and_automation_rights_unverified; upstream_GPL_code_does_not_license_vendor_binaries",
+      "upstream_reference_sources": [
+        "https://github.com/HIllya51/LunaTranslator/blob/main/src/LunaTranslator/translator/jb7.py"
+      ],
+      "upstream_source_evidence": "LunaTranslator integration reference only; not vendor compatibility or redistribution proof"
+    },
+    {
+      "engine_contract_revision": 1,
+      "allowed_purposes": [
+        "translation"
+      ],
+      "model_identity": "not_applicable",
+      "implementation_status": "planned",
+      "adapter_acceptance": "not_run",
+      "live_acceptance": "not_run",
+      "distribution_status": "not_approved",
+      "probe_is_not_translation_acceptance": true,
+      "network_fallback": "none_unless_separately_explicitly_configured",
+      "default_language_route": "direct_only",
+      "language_support": "probe_actual_installation_and_language_pair; unknown_is_not_supported",
+      "required_common_fields": [
+        "engine_id",
+        "engine_contract_revision",
+        "display_name",
+        "source_language",
+        "target_language",
+        "route_policy",
+        "draft_revision",
+        "applied_revision"
+      ],
+      "test_identity": [
+        "profile_id",
+        "config_revision",
+        "engine_id",
+        "engine_contract_revision",
+        "execution_backend",
+        "language_pair",
+        "resource_snapshot_id",
+        "route",
+        "request_semantics_hash"
+      ],
+      "id": "kingsoft_fastait",
+      "label": "金山快译",
+      "execution_backend": "local_worker",
+      "engine_family": "proprietary_local_translation",
+      "runtime_route": "candidate_windows_same_bitness_worker_for_user_licensed_installation",
+      "supported_platforms": [
+        "windows_candidate",
+        "crossover_candidate_separate_verification"
+      ],
+      "resource_policy": "User-selected legal installation; freeze supported engine/dictionary files, actual PE bitness, ABI and encoding; no DLL or commercial data bundled",
+      "required_engine_fields": [
+        "installation_path",
+        "detected_version",
+        "engine_architecture",
+        "worker_architecture",
+        "execution_environment",
+        "installation_resource_fingerprint"
+      ],
+      "forbidden_required_fields": [
+        "endpoint",
+        "model_id",
+        "api_key"
+      ],
+      "compatibility_status": "unknown_until_actual_version_platform_worker_poc",
+      "license_status": "vendor_license_and_automation_rights_unverified; upstream_GPL_code_does_not_license_vendor_binaries",
+      "upstream_reference_sources": [
+        "https://github.com/HIllya51/LunaTranslator/blob/main/src/LunaTranslator/translator/kingsoft.py"
+      ],
+      "upstream_source_evidence": "LunaTranslator integration reference only; not vendor compatibility or redistribution proof"
+    }
+  ],
+  "offline_acceptance": [
+    {
+      "id": "OT-01",
+      "label": "目录与执行方式",
+      "assertion": "HTTP13协议/21预设逐对象不变，离线目录与http/platform_native/local_worker分开。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-14"
+      ],
+      "verification_layer": "document_and_catalog",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-02",
+      "label": "离线条件字段",
+      "assertion": "四引擎按实际类型展示字段，没有假URL/模型ID/Key或虚假模型实体。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-08"
+      ],
+      "verification_layer": "design_and_product_ui",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-03",
+      "label": "用途硬限制",
+      "assertion": "离线仅translation，grammar/context_word在应用/测试/执行前拒绝，零取凭据/零外发。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-06"
+      ],
+      "verification_layer": "rust_contract_and_ui",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-04",
+      "label": "配置生命周期",
+      "assertion": "草稿/本机探测/真实样句测试/应用/启用独立；CAS冲突、测试过时与恢复可见。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-13"
+      ],
+      "verification_layer": "runtime_and_ui",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-05",
+      "label": "Apple版本与许可",
+      "assertion": "按OS/SDK符号可用性、传统策略和同策略语言对核对；系统下载授权拒绝/取消不提升就绪。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-06",
+        "AI-CFG-14"
+      ],
+      "verification_layer": "apple_native",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-06",
+      "label": "资源缺失与失效",
+      "assertion": "未安装、缺包、损坏、版本不兼容、路径移动各有真实状态和恢复，不以目录存在判成功。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-14"
+      ],
+      "verification_layer": "resource_and_runtime",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-07",
+      "label": "直达与显式中转",
+      "assertion": "默认direct_only，缺直达包不自动pivot；明确应用完整路径和逐跳资源，失败不换路由。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-09",
+        "AI-CFG-12"
+      ],
+      "verification_layer": "resource_and_routing",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-08",
+      "label": "DLL进程与平台隔离",
+      "assertion": "J北京/金山仅同位数独立worker加载；不入UI/主业务/Hook/游戏；Windows与CrossOver独立验证。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-14"
+      ],
+      "verification_layer": "windows_and_crossover_worker",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-09",
+      "label": "worker故障与预算",
+      "assertion": "卡死/崩溃/超时/超长输出及队列资源均有界；只回收自有worker，不阻塞Hook/UI/词法。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-12"
+      ],
+      "verification_layer": "private_protocol_and_process",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-10",
+      "label": "取消与迟到",
+      "assertion": "取消/停用/换配置/换资源推进终态或epoch；旧worker/旧attempt迟到不写成功/缓存，原句归属保持。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-13"
+      ],
+      "verification_layer": "runtime_and_storage",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-11",
+      "label": "断网真实翻译",
+      "assertion": "指定真实安装/语言包在断网环境产生实际译文；不隐式联网、云回退、后台下载。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-10"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-12",
+        "AI-CFG-14"
+      ],
+      "verification_layer": "real_offline_runtime",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-12",
+      "label": "资源版本与缓存",
+      "assertion": "engine/backend/worker/包/route/config进入测试与缓存身份；升级/观察代次变化不误命中。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-09",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-13"
+      ],
+      "verification_layer": "identity_cache_and_storage",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-13",
+      "label": "codec与真实迁移",
+      "assertion": "新旧codec/seal保真、EngineTarget XOR和同版本FK、未知版本拒绝、GC与真实迁移/回滚。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-15"
+      ],
+      "verification_layer": "storage_migration",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-14",
+      "label": "导入与本机重绑定",
+      "assertion": "导出不带DLL/商业资源/绝对安装路径/授权/测试通过；导入和复制重新定位并明确应用。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-10",
+        "AI-CFG-15"
+      ],
+      "verification_layer": "import_export_and_storage",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-15",
+      "label": "多引擎与历史",
+      "assertion": "有序独立结果、全局/游戏覆盖、停用、人工修正和历史来源保持，不自动HTTP回退。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-10",
+        "AI-CFG-13"
+      ],
+      "verification_layer": "runtime_ui_and_history",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    },
+    {
+      "id": "OT-16",
+      "label": "正式包与语言质量",
+      "assertion": "同一最终包逐engine/平台/合法资源核实际离线译文、多句/Unicode/简繁质量与四游戏；不继承旧结果。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-10",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-14"
+      ],
+      "verification_layer": "signed_package_and_real_quality",
+      "maintenance": "本轮仅规划；后续产品change注册真实adapter并另建run_id，设计守卫/演示不提升产品通过。"
+    }
+  ],
+  "offline_counts": {
+    "execution_backends": 3,
+    "engines": 4,
+    "acceptance_definitions": 16
+  },
+  "offline_runtime_contract_candidates": {
+    "engine_target": "tagged union with exactly one model_config or offline_engine_config target",
+    "worker_protocol": "translation-worker-v1 candidate, independent of Hook JSONL v2 and language-worker",
+    "authority": "Rust app-core owns config/permissions/epochs/task scheduling/results; narrow Tauri adapter only",
+    "resource_snapshot": "immutable engine/platform/architecture/package/tokenizer/sentence-boundary/hash/route identity; system unobservable versions stay explicitly unknown",
+    "draft_probe_test_apply_enable": "independent actions; save/import do not translate/download/enable; probe success is not translation success",
+    "cancellation": "local result submission stops immediately; actual engine stop capability is separate; late callbacks cannot write success/cache",
+    "database": "candidate separate offline_engine_configs/resources/EngineTarget relationships; current DDL/schema-contract/migrations/seals unchanged",
+    "production_runtime_status": "not_implemented",
+    "product_acceptance": "not_run"
+  },
+  "offline_excluded_features": [
+    "grammar/context_word用途升级",
+    "highFidelity/Apple Intelligence路线",
+    "自动安装引擎/后台下载语言包",
+    "隐式pivot或本机失败转云",
+    "捆绑商业DLL/词库或复制系统语言包",
+    "未经评审引入生产Python/LibreTranslate/新框架",
+    "复用language-worker/Hook host/capture进程承载翻译"
+  ],
+  "service_selection_design": {
+    "change_id": "design-translation-service-selection",
+    "version": "TSS-20261030-1",
+    "phase": "design_documentation_only",
+    "user_decision": "统一浅层选择翻译服务；配置在别处管理，没有配置好不能选",
+    "decision_scope_confirmed": true,
+    "candidate_design": "docs/design/first-product-v1/candidates/translation-service-selection-20261030/index.html?scenario=reading",
+    "candidate_design_status": "pending_review",
+    "source_documents": [
+      "docs/product/model-configuration-prd.md#translation-service-selection-prd",
+      "docs/architecture/japanese-study-and-llm.md#translation-service-selection-contract",
+      "docs/architecture/first-product-engineering-baseline.md",
+      "docs/development/translation-service-selection-tests.md"
+    ],
+    "configuration_management": [
+      "add",
+      "edit",
+      "save",
+      "check_local_conditions",
+      "test_explicit_sample"
+    ],
+    "daily_selection": {
+      "entrypoints": [
+        "current_session_shallow",
+        "hud_shared_picker"
+      ],
+      "purpose": "translation",
+      "service_families": [
+        "cloud_translation",
+        "local_non_llm_translation",
+        "llm_translation"
+      ],
+      "source": "current_profile_added_saved_immutable_resources_only",
+      "template_catalog": "add_service_only",
+      "draft_policy": "unsaved_drafts_never_selectable_or_read_as_saved",
+      "eligibility": [
+        "added",
+        "saved_revision",
+        "local_fields_and_credential_reference_valid",
+        "explicit_translation_purpose_supported",
+        "not_suspended",
+        "no_known_failure_for_selected_revision",
+        "required_local_runtime_and_resource_gates_pass"
+      ],
+      "llm_filter": "templatePurpose === translation and explicit translation capability; grammar-only excluded without name inference",
+      "http_untested": "valid saved supported HTTP configuration may be explicitly selected as unverified; untested is not unconfigured",
+      "local_unknown": "unknown required system/resource/language/runtime_route health blocks selection; offline gate unchanged",
+      "known_failure": "current resource/configuration revision known failure blocks selection with reason and recovery",
+      "no_implicit_fallback": true
+    },
+    "projection_contract_candidate": {
+      "authority": "Rust app-core derives configuration eligibility and saved service projection; UI consumes DTO/application-port through narrow Tauri only",
+      "item_fields": [
+        "id",
+        "name",
+        "family",
+        "available",
+        "status",
+        "reason",
+        "revision",
+        "configVersion"
+      ],
+      "selection_fields": [
+        "scope",
+        "source",
+        "mainId",
+        "extraIds",
+        "revision"
+      ],
+      "prototype_api": [
+        "list",
+        "selection",
+        "open",
+        "choose",
+        "setScope",
+        "inheritGame",
+        "configure",
+        "returnToPicker"
+      ],
+      "prototype_only": true,
+      "ui_direct_http_sql_ffi": false,
+      "installed_production_contract": false
+    },
+    "binding_contract_candidate": {
+      "command": "BindingCommand activate",
+      "command_status": "candidate_not_implemented",
+      "resource_reference": "saved immutable model_config or offline_engine_config revision plus frozen dependencies",
+      "save_changes_current_selection": false,
+      "test_changes_current_selection": false,
+      "select_changes_purpose_enabled": false,
+      "selection_effect": "create and activate new purpose binding; subsequent sentences only",
+      "current_sentence_retranslation": "independent explicit command; previous result retained",
+      "enable_disable": "separate explicit automatic_translation control, validate current binding before enabling",
+      "scopes": [
+        "global_default",
+        "game_override",
+        "restore_inheritance"
+      ],
+      "optimistic_concurrency": "expected binding revision and profile generation; revalidate before activate, keep old binding on rejection",
+      "main_and_comparison": "one main, ordered comparisons, deduplicate stable resource identity; moving to main removes duplicate comparison",
+      "cancellation": "cancel superseded queue/in-flight tasks; reject stale profile/binding/task/attempt/unit/resource callbacks before current result/cache/history commit",
+      "history": "preserve existing original sentence/service/version results; cancelled late results cannot write success",
+      "configure_return_context": [
+        "origin",
+        "scope",
+        "gameId",
+        "purpose",
+        "resourceId"
+      ],
+      "return_behavior": "refresh saved list and return to original picker; no automatic selection, test, send or retranslation"
+    },
+    "scope_boundaries": {
+      "http_protocols": 13,
+      "http_presets": 21,
+      "offline_engines": 4,
+      "original_PA_acceptance": 12,
+      "original_OT_acceptance": 16,
+      "original_arrays_and_matrix_unchanged": true,
+      "database": "no new DDL; existing candidate field schemes remain unapproved and unchanged",
+      "production_source_or_package_changed": false,
+      "approved_png_tokens_and_prior_candidates_changed": false,
+      "product_acceptance": "not_run"
+    }
+  },
+  "selection_acceptance": [
+    {
+      "id": "SS-01",
+      "label": "同一浅层选择器",
+      "assertion": "当前会话浅层与HUD复用同一翻译服务选择器、同一已保存列表及有效绑定投影。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-16"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "native_multiwindow"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-02",
+      "label": "仅已保存且用途支持",
+      "assertion": "只允许当前配置档已添加、已保存、字段合法且显式支持translation的资源；目录模板只在添加服务，未保存草稿不成为可选项。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-04"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_domain",
+        "configuration_projection"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-03",
+      "label": "禁选原因与恢复",
+      "assertion": "未配置、缺字段/凭据、已停用及当前版本已知失败不可选，并显示对应对象/版本的原因和修复入口。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-11"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_domain",
+        "vault_and_actual_failure"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-04",
+      "label": "HTTP未验证不等于未配置",
+      "assertion": "HTTP合法保存且用途支持但未测时可明确选用并保持未验证；新版本不挪用旧测试，未测试不导致永久禁选。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_domain",
+        "real_http"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-05",
+      "label": "本机健康门禁",
+      "assertion": "本机仍按系统能力、资源、语言对与运行route门禁判定；必要条件未知、缺包或未实现路线不可选。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-14"
+      ],
+      "verification_layers": [
+        "design",
+        "real_platform",
+        "resource_worker"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-06",
+      "label": "显式用途与能力过滤",
+      "assertion": "翻译列表按templatePurpose和translation能力筛选，精读-only不列入，不用名称/品牌推断用途，不升级离线能力。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-06",
+        "AI-CFG-07"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_catalog",
+        "purpose_authorization"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-07",
+      "label": "保存与选用分离",
+      "assertion": "新增编辑保存或指定样句测试不改变current服务；明确选择仅引用已保存不可变revision及其冻结依赖。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-10"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_configuration",
+        "real_storage"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-08",
+      "label": "选中后续句与独立启停",
+      "assertion": "选择即activate新绑定并只作用后续句，保持purpose enabled/会话开关；当前句重译独立且历史旧结果保留。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-13"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_runtime",
+        "real_service",
+        "final_package"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-09",
+      "label": "全局与游戏继承",
+      "assertion": "明确全局默认、游戏覆盖与恢复继承来源；修改不串游戏或配置档，取消不改变任何绑定。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-10"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_scope",
+        "real_storage"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-10",
+      "label": "取消与迟到隔离",
+      "assertion": "取消选择不改绑定；新绑定取消旧队列/在途，旧分片不覆盖当前句或写新成功/缓存，既有历史保留原来源。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-12",
+        "AI-CFG-13"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_race",
+        "actual_transport_cancellation",
+        "history_cache"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-11",
+      "label": "主对照有序去重",
+      "assertion": "主翻译仅一项、对照有序；同一资源不同时作为主与对照，同名不同配置按ID区分，单项失败不取消其他结果。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-12"
+      ],
+      "verification_layers": [
+        "design",
+        "rust_multi_engine",
+        "final_package"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    },
+    {
+      "id": "SS-12",
+      "label": "带上下文配置往返",
+      "assertion": "去配置携带来源/scope/game/purpose/目标并可返回原选择器；保存或取消都不自动选用、测试、发送或重译。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-16"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "native_multiwindow",
+        "final_package"
+      ],
+      "maintenance": "独立增量计划；设计guard/Playwright只验候选，后续真实产品change注册adapter并另建run_id，不改原矩阵或历史结果。"
+    }
+  ],
+  "flat_presentation_design": {
+    "change_id": "design-flat-service-and-session",
+    "version": "FLAT-20261030-1",
+    "phase": "design_documentation_only",
+    "user_decision": "翻译服务配置两层Tab与当前会话三Tab改同页平铺，审查无实际用途的呈现但保留原能力",
+    "candidate_design": "docs/design/first-product-v1/candidates/flat-service-session-20261030/index.html?scenario=reading",
+    "candidate_configuration": "docs/design/first-product-v1/candidates/flat-service-session-20261030/index.html?scenario=settings",
+    "candidate_design_status": "pending_review",
+    "source_documents": [
+      "docs/product/model-configuration-prd.md#flat-service-management-prd",
+      "docs/product/reading-window-session-prd.md#flat-current-session-prd",
+      "docs/product/first-product-scope.md",
+      "docs/architecture/japanese-study-and-llm.md#flat-service-session-contract",
+      "docs/architecture/first-product-engineering-baseline.md",
+      "docs/development/flat-service-session-tests.md"
+    ],
+    "configuration_management": {
+      "layout": "one_added_service_list_with_same_page_editor",
+      "families": "cloud/non-LLM-local/LLM type labels; never mutually exclusive family navigation",
+      "entity_navigation": "remove five connection/model/purpose/parameter/runtime tabs; preserve business entities",
+      "conditional_fields": "traditional HTTP, LLM and offline fields follow exact capabilities and conditions; no fake URL/model/Key",
+      "advanced": "applicable template/parameters/context/runtime/key-pool retained with visible summary and disclosure",
+      "learning_purposes": "independent grammar/context_word sections; no borrowed translation binding or implicit enablement",
+      "workflow": "draft/save/check/test do not select current service; shallow picker, activation/apply/enable semantics unchanged",
+      "template_catalog": "add service only; management drafts are not daily selectable resources"
+    },
+    "current_session": {
+      "layout": "same_page_independent_regions",
+      "regions": [
+        "body_history",
+        "all_extraction_events",
+        "hook_diagnostics"
+      ],
+      "summary": "all region headings/counts/ranges/status and entrypoints coexist; record details may be disclosed",
+      "independent_view_state": [
+        "query",
+        "filter",
+        "page",
+        "scroll",
+        "follow",
+        "new_count"
+      ],
+      "preserved": [
+        "preselection_and_unselected_stream_events",
+        "sequence_identity_and_incremental_relations",
+        "bounded_redacted_native_hook_facts",
+        "gap_warnings",
+        "full_pagination_search_export"
+      ],
+      "preview": "one session-owned persistent object; disclosures/scroll do not restart capture",
+      "export": "explicit dataset and full-session/filtered scope; no implicit dialogue diagnostics"
+    },
+    "functional_audit": {
+      "remove_presentation": [
+        "redundant_family_and_entity_navigation",
+        "duplicate_daily_selection_in_configuration",
+        "inapplicable_fields"
+      ],
+      "relocate": "simulation outcome and injected faults only in external review tools",
+      "retain": "all existing advanced configuration, independent learning, full extraction and Hook auditing capabilities",
+      "no_empty_actions_or_fabricated_success": true
+    },
+    "scope_boundaries": {
+      "http_protocols": 13,
+      "http_presets": 21,
+      "offline_engines": 4,
+      "original_arrays_and_matrix_unchanged": true,
+      "rust_business_authority_and_narrow_tauri_unchanged": true,
+      "production_source_or_package_changed": false,
+      "database_or_contract_changed": false,
+      "approved_png_tokens_and_prior_candidates_changed": false,
+      "product_acceptance": "not_run"
+    }
+  },
+  "flat_acceptance": [
+    {
+      "id": "FL-01",
+      "label": "统一服务管理与同页编辑",
+      "assertion": "同一已添加服务列表同时呈现云端/本机非大模型/LLM资源，类型为标签；选中后同页编辑，无family和五实体Tab导航。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-16"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "configuration_projection"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-02",
+      "label": "条件字段与真实对象",
+      "assertion": "传统HTTP、LLM和离线引擎仅展示适用字段；不虚造模型ID/URL/Key，不通过隐藏必要未知条件绕过门禁。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-06",
+        "AI-CFG-14"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_catalog",
+        "real_platform"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-03",
+      "label": "资源版本与配置选择分离",
+      "assertion": "连接/模型/用途和独立离线资源关系不变；草稿/保存/检查/样句不改当前绑定，明确选择、应用和启停保持原语义。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-10",
+        "AI-CFG-13",
+        "AI-CFG-16"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "rust_configuration",
+        "real_storage",
+        "real_service"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-04",
+      "label": "高级能力与学习用途保留",
+      "assertion": "适用模板/参数/上下文/运行策略/密钥池可按需展开并有摘要；精读和语境查词独立配置，互不借用或自动启用。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "AI-CFG-09",
+        "AI-CFG-11",
+        "AI-CFG-12"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_purpose",
+        "actual_credentials"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-05",
+      "label": "会话三独立区域同页可达",
+      "assertion": "正文历史、原始提取和Hook诊断同页保留各区标题/范围/计数/摘要/入口，详情按需展开，不互斥替换。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-17",
+        "RW-18",
+        "RW-31",
+        "RW-32"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "final_package"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-06",
+      "label": "区域视图状态互不污染",
+      "assertion": "各区查询/筛选/页/滚动独立；操作一处不重置另一处，不切流、不重注入、不暂停取文。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-19",
+        "RW-21",
+        "RW-23"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_session",
+        "real_storage"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-07",
+      "label": "全量数据搜索与导出保留",
+      "assertion": "选流前和未选流事件、顺序/身份/增量关系、脱敏Hook原生事实、缺口、全量分页/搜索及明确数据集导出完整保留。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-22",
+        "RW-23"
+      ],
+      "verification_layers": [
+        "design",
+        "real_pipeline",
+        "real_storage",
+        "final_package"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-08",
+      "label": "独立跟随与常驻预览",
+      "assertion": "各区独立跟随/暂停和新到计数；上翻某区仍收取事件，折叠/滚动不重启同一会话预览或改变采集时间身份。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-01",
+        "RW-02",
+        "RW-05",
+        "RW-21"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "native_preview",
+        "real_pipeline"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-09",
+      "label": "功能审计与演示控制归位",
+      "assertion": "清理重复导航/日常选用入口和不适用字段；演示返回/故障注入只在页外工具，不留空按钮、不伪造成功、不删除高级与审计能力。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-09",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-11",
+        "AI-CFG-12",
+        "AI-CFG-13",
+        "AI-CFG-16"
+      ],
+      "source_reading_requirement_ids": [
+        "RW-17",
+        "RW-18",
+        "RW-34"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "independent_review"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    },
+    {
+      "id": "FL-10",
+      "label": "可访问布局与证据隔离",
+      "assertion": "键盘/焦点、暗浅色、窄窗、长标签和200%下同页区域仍可达；新候选与截图独立留存，旧候选/目录/计划/批准源及产品状态不变。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-09",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-31",
+        "RW-32",
+        "RW-33",
+        "RW-34"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "native_accessibility",
+        "final_package"
+      ],
+      "maintenance": "FL独立增量；设计guard/Playwright只验候选。后续真实产品change注册adapter并另建run_id，不改旧目录/计划或历史结果。"
+    }
+  ],
+  "guided_configuration_design": {
+    "change_id": "design-guided-service-and-reading",
+    "version": "GSR-20261030-1",
+    "phase": "design_documentation_only",
+    "user_decision": "当前正文阅读首屏；历史/提取/Hook诊断后置默认折叠；配置按用途品牌引导且只填所需",
+    "candidate_design": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=reading",
+    "candidate_configuration": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=settings",
+    "candidate_design_status": "pending_review",
+    "presentation_catalog": "docs/architecture/service-configuration-presentation.json",
+    "source_documents": [
+      "docs/product/model-configuration-prd.md#guided-service-configuration-prd",
+      "docs/product/reading-window-session-prd.md#guided-current-reading-prd",
+      "docs/product/first-product-scope.md",
+      "docs/architecture/japanese-study-and-llm.md#guided-configuration-reading-contract",
+      "docs/architecture/first-product-engineering-baseline.md",
+      "docs/architecture/service-configuration-presentation.json",
+      "docs/development/guided-service-reading-tests.md"
+    ],
+    "configuration": {
+      "entry_order": [
+        "purpose",
+        "brand",
+        "explicit_interface_or_engine",
+        "necessary_fields"
+      ],
+      "preserved_underlying_resources": [
+        "Connection",
+        "Model",
+        "PurposeBinding",
+        "OfflineEngineConfig"
+      ],
+      "field_classifications": [
+        "required",
+        "conditional",
+        "default",
+        "advanced",
+        "readonly",
+        "notapplicable"
+      ],
+      "default_policy": "reviewed builtin fixed/site/plan defaults supplied by catalog; missing builtin material blocks preset/app setup rather than requiring ordinary user URL/client data; model examples never selected as account defaults",
+      "brand_default": "presentation suggestion only; multiple interfaces require explicit confirmation; no activation or fallback",
+      "secrets": "masked user input, ordinary draft/saved state holds opaque refs; no real keys in offline HTML",
+      "custom_compatible": "needed endpoint/auth/model visible when conditions require, exact protocol/profile preserved",
+      "advanced": "applicable templates/parameters/context/network/key pool/runtime remain reachable on demand",
+      "learning": "grammar/context_word independent default-collapsed optional sections; no implicit binding borrowing or enablement",
+      "eligibility": "added/saved/typed-valid/purpose-compatible/current-revision state and local health gates unchanged; save/test never selects",
+      "preset_materials": "catalog preset_material_blockers are separate from user field completeness; custom server fields appear only on explicit custom intent"
+    },
+    "reading": {
+      "primary": "independent_current_unit_original_translation_state_source_and_actions_first",
+      "secondary_regions": [
+        "body_history",
+        "all_extraction_events",
+        "hook_diagnostics"
+      ],
+      "placement": "after_primary_reading",
+      "default_collapsed": true,
+      "collapsed_summaries": [
+        "count",
+        "range_and_filters",
+        "warning_error_gap",
+        "new_count",
+        "recovery_entry"
+      ],
+      "independent_state": [
+        "query",
+        "filter",
+        "page",
+        "scroll",
+        "follow",
+        "new_count",
+        "open"
+      ],
+      "collapse_effect": "presentation only; no dataset truncation, subscription stop, stream selection or preview recreation",
+      "full_search_export_and_native_auditing_preserved": true
+    },
+    "scope_boundaries": {
+      "http_protocols": 13,
+      "http_presets": 21,
+      "offline_engines": 4,
+      "all_prior_registry_keys_unchanged": true,
+      "original_plans_and_statuses_unchanged": true,
+      "rust_authority_and_narrow_tauri_unchanged": true,
+      "production_source_or_package_changed": false,
+      "database_or_contract_changed": false,
+      "approved_png_tokens_and_prior_candidates_changed": false,
+      "product_acceptance": "not_run"
+    },
+    "known_limitations": [
+      "Presentation catalog and generated JavaScript are design-only, not an implemented production Rust descriptor/adapter.",
+      "Actual provider auth, service availability, local API/worker/resource/permission and package/game acceptance remain not_run.",
+      "200% whole-desktop zoom may clip the existing shell; entry/keyboard reachability cannot prove unclipped complete layout."
+    ]
+  },
+  "guided_acceptance": [
+    {
+      "id": "GD-01",
+      "label": "独立当前正文优先",
+      "assertion": "当前原文、译文/状态及来源是首屏独立阅读卡，常用动作可达，不以整份历史列表替代当前对象。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-13"
+      ],
+      "source_reading_requirement_ids": [
+        "RW-17",
+        "RW-31",
+        "RW-32"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_reading",
+        "final_package"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-02",
+      "label": "历史与诊断后置默认折叠",
+      "assertion": "正文历史、全部提取、Hook诊断在当前阅读后方同页各自默认折叠，数量和警告/错误/缺口摘要保持可见。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-17",
+        "RW-18",
+        "RW-20",
+        "RW-21"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "real_pipeline"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-03",
+      "label": "折叠保持全量与独立状态",
+      "assertion": "折叠/展开不重置查询/筛选/页/滚动/跟随/新到计数，不丢数据/停止订阅或重建预览，完整与过滤导出范围保持。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-01",
+        "RW-17",
+        "RW-18",
+        "RW-19",
+        "RW-20",
+        "RW-21",
+        "RW-22",
+        "RW-23"
+      ],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "real_storage",
+        "native_preview"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-04",
+      "label": "品牌与精确接口目录",
+      "assertion": "呈现目录逐项绑定原21HTTP预设/13协议/4离线引擎；品牌多接口明确确认，建议不等于自动选用或允许切协议。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-14"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "catalog_contract",
+        "rust_catalog",
+        "real_component"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-05",
+      "label": "必要字段与有来源缺省",
+      "assertion": "每字段分类/类型/标签/条件/来源可查；内置固定或明确site/plan地址由目录带入，资料缺口独立阻断，不让普通用户代填；实际必要项可见，模型不伪填。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-04",
+        "AI-CFG-08"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "catalog_contract",
+        "rust_configuration",
+        "actual_service"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-06",
+      "label": "不适用与内部字段不强填",
+      "assertion": "传统、本机、LLM各只要求适用内容；协议/schema/revision/签名/salt/安全引用内部持有，不把它们变成用户必填。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-06",
+        "AI-CFG-08",
+        "AI-CFG-11"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_catalog"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-07",
+      "label": "遮罩密钥与明确授权",
+      "assertion": "Key/应用密钥用用户语义遮罩，常规草稿仅不透明引用；多字段签名与Google授权不混成通用Key，不伪造OAuth/测试成功。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-05",
+        "AI-CFG-11",
+        "AI-CFG-15"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "actual_vault_oauth",
+        "actual_service"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-08",
+      "label": "高级及独立学习按需",
+      "assertion": "适用高级模板/参数/网络/密钥池/运行策略保留；精读/查词独立默认折叠，互不借用/串状态/自动启用。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-08",
+        "FP-11"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-07",
+        "AI-CFG-08",
+        "AI-CFG-09",
+        "AI-CFG-11",
+        "AI-CFG-12",
+        "AI-CFG-16"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_purpose",
+        "actual_study"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-09",
+      "label": "保存选用与版本启停保持",
+      "assertion": "编辑/保存/样句不切服务；选择仍限已添加已保存合法资源，当前版本失败禁选，后续句/范围/启停/重译与迟到历史规则保持。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-03",
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-10",
+        "AI-CFG-12",
+        "AI-CFG-13",
+        "AI-CFG-16"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "rust_binding_runtime",
+        "real_storage",
+        "actual_service",
+        "final_package"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-10",
+      "label": "本机条件未知仍阻断",
+      "assertion": "四本机引擎按API/传统策略/安装/资源/语言对/运行路线门禁；未知必要条件、缺资源、未实现路线不可用，不以简化表单放行。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-04",
+        "AI-CFG-05",
+        "AI-CFG-06",
+        "AI-CFG-14"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_platform",
+        "resource_worker",
+        "final_package"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-11",
+      "label": "自定义必要字段不能隐藏",
+      "assertion": "适用兼容服务的自定义地址、认证、实际模型与服务要求的项目/区域在条件成立时可见且校验；不退回默认协议/地址/模型。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [
+        "AI-CFG-01",
+        "AI-CFG-02",
+        "AI-CFG-04",
+        "AI-CFG-08",
+        "AI-CFG-11",
+        "AI-CFG-14"
+      ],
+      "source_reading_requirement_ids": [],
+      "verification_layers": [
+        "design",
+        "real_component",
+        "rust_configuration",
+        "actual_service"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    },
+    {
+      "id": "GD-12",
+      "label": "可访问样式与证据边界",
+      "assertion": "键盘/焦点/窄窗/长文/主题及200%分别留真实截图和限制；独立候选/源hash，旧计划/批准图/产品not_run不提升。",
+      "status": "not_run",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-11",
+        "FP-12"
+      ],
+      "source_configuration_requirement_ids": [],
+      "source_reading_requirement_ids": [
+        "RW-31",
+        "RW-32",
+        "RW-33",
+        "RW-34"
+      ],
+      "verification_layers": [
+        "design",
+        "independent_visual_review",
+        "real_component",
+        "native_accessibility",
+        "final_package"
+      ],
+      "maintenance": "GD独立增量；设计检查只证明本候选，后续产品change须注册真实adapter并另建run记录，不改旧目录/计划/历史通过。"
+    }
+  ]
+}

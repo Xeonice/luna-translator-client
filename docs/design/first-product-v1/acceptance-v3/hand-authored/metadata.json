@@ -1,0 +1,2218 @@
+{
+  "schema_version": 1,
+  "status": "unapproved_authored_design_supplements",
+  "not_product_acceptance": true,
+  "sourceAdaptations": [
+    {
+      "change": "client-header-style",
+      "basis": "Original styles.css143-168: learning/settings native-titlebar transparent background/bottom border, secondary text. Client title/header/frame retained; only OS controls unpainted."
+    },
+    {
+      "change": "word-card-anchor-left19",
+      "basis": "Original HUD border1 + comfortable reading horizontal padding18; preserve real lexical anchor. Constrained workarea top/bottom margin8."
+    },
+    {
+      "change": "whole-token-ruby",
+      "basis": "Declared fixture lexical unit 待ち合わせ with reading まちあわせ. No fabricated kanji sub-token identities."
+    },
+    {
+      "change": "current-hud-no-translation",
+      "basis": "Current source remains live while selected old token is frozen; no active translation result. Full HUD body/actions kept behind independent temporary surface."
+    },
+    {
+      "change": "six-configuration-segments",
+      "basis": "Original5 configuration segments plus PRD FP06 glossary. All10 original settings categories retained."
+    }
+  ],
+  "not_registered_reference": true,
+  "sourceFiles": {
+    "index.html": "d565316d9c87770e274f9578c9b343a27c4268b355d57b0b7cd8ac9b4a978f22",
+    "supplement.css": "3bb0b325a6dad5834c9ad73fa2d0a9c6394eb69796f355592bcec9d4155f592b",
+    "supplement.js": "b333b709777c5515a8e2bdab7667bf26ffcdabe2a24e1dafe78561a4ac85a5b7",
+    "capture.mjs": "db9bbf4fa647056b1d3891e8bc430d87866c4c1b4da28071eb50fd423e8da8f8"
+  },
+  "reusedOriginalSources": {
+    "docs/design/first-product-v1/material-tokens.css": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+    "docs/design/first-product-v1/styles.css": "f8d6b3ac6a744e3936f5938ab8f68b1534de7183737b901eb98d0b34b33bd7d6",
+    "docs/design/first-product-v1/settings.css": "e1dbd6df0b7a565afbbd3c0ed4d03d6b2d8f7bbb62c989e7aa8f43719fb6f4e8",
+    "docs/design/first-product-v1/learning.css": "ade9b978f3564086921b9e91ab332fbb57cd1130ef71923455e340642d6b0b74",
+    "docs/design/first-product-v1/icons.js": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+    "docs/design/first-product-v1/assets/wallpaper-frame.png": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f"
+  },
+  "product_react_or_css_imported": false,
+  "approved_png_used_as_background": false,
+  "changes_to_original_design": false,
+  "threshold_changes": false,
+  "nativeBoundary": {
+    "wordCard": "independent platform temporary surface; body scrolls, action footer fixed; constrained workarea is a separate fixture geometry from actual HUD clipping",
+    "learning": "client titlebar and frame retained; only OS traffic lights unpainted; platform controls independently require packaged native validation",
+    "glossary": "original ten-category settings navigation retained; new glossary tab appends to original configuration architecture"
+  },
+  "traces": {
+    "wordcard-native-size": {
+      "prd": [
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-11",
+        "REQ-029",
+        "REQ-030"
+      ],
+      "modules": [
+        "M07",
+        "M08",
+        "M09",
+        "M12",
+        "M13"
+      ],
+      "components": [
+        "C06",
+        "C16",
+        "C19",
+        "C34"
+      ]
+    },
+    "dictionary-distinct-headwords": {
+      "prd": [
+        "FP-07",
+        "FP-08",
+        "FP-11",
+        "REQ-030"
+      ],
+      "modules": [
+        "M08",
+        "M09",
+        "M13"
+      ],
+      "components": [
+        "C19",
+        "C20"
+      ]
+    },
+    "glossary-editing": {
+      "prd": [
+        "FP-06",
+        "AI-CFG-09",
+        "REQ-027",
+        "REQ-028"
+      ],
+      "modules": [
+        "M04",
+        "M05",
+        "M13"
+      ],
+      "components": [
+        "C07",
+        "C26",
+        "C27",
+        "C29",
+        "C31"
+      ]
+    },
+    "learning-japanese-linebreak": {
+      "prd": [
+        "FP-04",
+        "FP-07",
+        "FP-08",
+        "FP-11"
+      ],
+      "modules": [
+        "M07",
+        "M09",
+        "M13"
+      ],
+      "components": [
+        "C16",
+        "C20",
+        "C22",
+        "C34"
+      ]
+    }
+  },
+  "records": [
+    {
+      "id": "wordcard-native-size",
+      "state": "constrained-workarea",
+      "file": "wordcard-native-size.constrained-workarea.png",
+      "sourceFile": "wordcard-native-size.constrained-workarea.design.html",
+      "sourceSha256": "49c8f4748d13e3c0b51cc1f5483686b8bd62341d0a8d82bf152e99c8e0a5cd88",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "401bb5b38772aa2190a0a6d18ed976c4de3fcbd80fafbd84bfffd5c677eef09e",
+      "viewport": {
+        "width": 560,
+        "height": 290
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 290
+      },
+      "conditions": {
+        "scenario": "wordcard-native-size",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "新しい原文。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 560,
+        "viewportWidth": 560,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 0,
+            "height": 159,
+            "scrollHeight": 224
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 0,
+          "height": 224,
+          "viewport": 159
+        }
+      }
+    },
+    {
+      "id": "wordcard-native-size",
+      "state": "resource-footer",
+      "file": "wordcard-native-size.resource-footer.png",
+      "sourceFile": "wordcard-native-size.resource-footer.design.html",
+      "sourceSha256": "3d42e834096d2ad302e8195cc7ce84429ad45a9c57a3b8f9edb171e6b7ba92a5",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "d17780d4a3d7d1192a5203aed2bc215439d1256957a2f1760ec484af8de84692",
+      "viewport": {
+        "width": 560,
+        "height": 290
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 560,
+        "height": 290
+      },
+      "conditions": {
+        "scenario": "wordcard-native-size",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "新しい原文。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 560,
+        "viewportWidth": 560,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 65,
+            "height": 159,
+            "scrollHeight": 224
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 65,
+          "height": 224,
+          "viewport": 159
+        }
+      }
+    },
+    {
+      "id": "wordcard-native-size",
+      "state": "native-window-context",
+      "file": "wordcard-native-size.native-window-context.png",
+      "sourceFile": "wordcard-native-size.native-window-context.design.html",
+      "sourceSha256": "2e41aec0b9a1678728c6d9c375c0e880f741475a483e84332cf4684fb7613109",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "53a274a4e87141106ce433cfe50630807ecb7b47c07953e31be720a6907e9373",
+      "viewport": {
+        "width": 1600,
+        "height": 925
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1600,
+        "height": 925
+      },
+      "conditions": {
+        "scenario": "wordcard-native-size",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "新しい原文。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 1600,
+        "viewportWidth": 1600,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 0,
+            "height": 345,
+            "scrollHeight": 345
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 0,
+          "height": 345,
+          "viewport": 345
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "top",
+      "file": "dictionary-distinct-headwords.top.png",
+      "sourceFile": "dictionary-distinct-headwords.top.design.html",
+      "sourceSha256": "cd04185f496135c4299afc031c94c1024e4b2aa6c51fbb2d39c1debc2023fa24",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 0,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 0,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "source-a-attribution",
+      "file": "dictionary-distinct-headwords.source-a-attribution.png",
+      "sourceFile": "dictionary-distinct-headwords.source-a-attribution.design.html",
+      "sourceSha256": "1089f0cfc27427571b1e3ff650db005783e9becf4f9ca5b9df881d4439d96d4f",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "507bc2eb825aa35dc20d6cf6605497a386d6b2f2e504285a2e1e81a5f624ed37",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 130,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 130,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "second-headword-source",
+      "file": "dictionary-distinct-headwords.second-headword-source.png",
+      "sourceFile": "dictionary-distinct-headwords.second-headword-source.design.html",
+      "sourceSha256": "1387194ac881c3483438eeb33b996bcfd60dc5ac36fa2cda3a702558c30a6478",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "7edd827c1446bfa491886290a245914598a28294470de24c24e47a2d2b2ab8e3",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 438,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 438,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "coverage-0",
+      "file": "dictionary-distinct-headwords.coverage-0.png",
+      "sourceFile": "dictionary-distinct-headwords.coverage-0.design.html",
+      "sourceSha256": "cd04185f496135c4299afc031c94c1024e4b2aa6c51fbb2d39c1debc2023fa24",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 0,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 0,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "coverage-1",
+      "file": "dictionary-distinct-headwords.coverage-1.png",
+      "sourceFile": "dictionary-distinct-headwords.coverage-1.design.html",
+      "sourceSha256": "6086728e9d467f95d654a9e0d983dc15364af9ef461fca31a48e0dcf999e2b32",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 125,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 125,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "coverage-2",
+      "file": "dictionary-distinct-headwords.coverage-2.png",
+      "sourceFile": "dictionary-distinct-headwords.coverage-2.design.html",
+      "sourceSha256": "b217c7649a1b0b8308e401acc45024916150b0dda70eb7c42dcb2ed23d037230",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 250,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 250,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "coverage-3",
+      "file": "dictionary-distinct-headwords.coverage-3.png",
+      "sourceFile": "dictionary-distinct-headwords.coverage-3.design.html",
+      "sourceSha256": "59d559fd547e21033bccd02d810d0d5538a3a34dadc6cb5161568bc24e50fdfd",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 375,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 375,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "coverage-4",
+      "file": "dictionary-distinct-headwords.coverage-4.png",
+      "sourceFile": "dictionary-distinct-headwords.coverage-4.design.html",
+      "sourceSha256": "47b3fcd627f1d936e2a5c9206a3a975a96eaff7975419bffafae2455bbd15b20",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "b5c4b6ecf3cdb2c759796cc980cc937055b2e97ed2e62b4fa1d882109fe4d83a",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 500,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 500,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "closed-license-bottom",
+      "file": "dictionary-distinct-headwords.closed-license-bottom.png",
+      "sourceFile": "dictionary-distinct-headwords.closed-license-bottom.design.html",
+      "sourceSha256": "ac5ad1141c66711080c42b2c0e6bc83012317461166a29d41b84e1d8aef2b086",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "e1a73f421e8436f03227b2a4442c11a86e73c10ef580dc5bc06f6d112b34e916",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": false
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 536,
+            "height": 149,
+            "scrollHeight": 685
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 536,
+          "height": 685,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "source-b-attribution-footer",
+      "file": "dictionary-distinct-headwords.source-b-attribution-footer.png",
+      "sourceFile": "dictionary-distinct-headwords.source-b-attribution-footer.design.html",
+      "sourceSha256": "1fe912d7a5551d8a7879c7b08bfe0a273e1b1aee87c646908999c295aedbba00",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 583,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 583,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "expanded-coverage-0",
+      "file": "dictionary-distinct-headwords.expanded-coverage-0.png",
+      "sourceFile": "dictionary-distinct-headwords.expanded-coverage-0.design.html",
+      "sourceSha256": "d068fe5aa8ffac67dff583bf799b9d11c814238e455fcdf175ec77d0531fd6ce",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "ffb444039322ab667a4f54891a7c82a8765bd2bf738df57b7951b9999229d84a",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 0,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 0,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "expanded-coverage-1",
+      "file": "dictionary-distinct-headwords.expanded-coverage-1.png",
+      "sourceFile": "dictionary-distinct-headwords.expanded-coverage-1.design.html",
+      "sourceSha256": "e6b2adeb838501616597bd98f1722aa0610b922f9725b12df0b2c97b6d8f6ae0",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "44e05f8f5dddf5cede86f51ae4e42cb58c3af5045ceb6b7bde522074eb40e381",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 125,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 125,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "expanded-coverage-2",
+      "file": "dictionary-distinct-headwords.expanded-coverage-2.png",
+      "sourceFile": "dictionary-distinct-headwords.expanded-coverage-2.design.html",
+      "sourceSha256": "08c2c22980025130f94ea3862a52aa3f4d778a49c0eb6aac504e7dc81377b2b2",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "4ca22602edc2d54838028edfd5f8d46e038e336d5c1dd3ec1d717af64c06f6ed",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 250,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 250,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "expanded-coverage-3",
+      "file": "dictionary-distinct-headwords.expanded-coverage-3.png",
+      "sourceFile": "dictionary-distinct-headwords.expanded-coverage-3.design.html",
+      "sourceSha256": "8f2d1deff0cf1d7fdf98b795e771a839fc9a8c8639b373eab4d49fe31612262c",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "3f49268eab4f6bc7da13d2a14dedeff6d21e2ea7094bf8e57de9ec60b1d80b8a",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 375,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 375,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "expanded-coverage-4",
+      "file": "dictionary-distinct-headwords.expanded-coverage-4.png",
+      "sourceFile": "dictionary-distinct-headwords.expanded-coverage-4.design.html",
+      "sourceSha256": "82aeef3409a9c1ed746e27ea2f9cc71dbe6a111151cfbc3fd80ac28b13678857",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "0e39b588f012adf302b612d875f2129a625f5d103f66ab535ad56f5fcc2e1ba1",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 500,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 500,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "dictionary-distinct-headwords",
+      "state": "expanded-coverage-bottom",
+      "file": "dictionary-distinct-headwords.expanded-coverage-bottom.png",
+      "sourceFile": "dictionary-distinct-headwords.expanded-coverage-bottom.design.html",
+      "sourceSha256": "1fe912d7a5551d8a7879c7b08bfe0a273e1b1aee87c646908999c295aedbba00",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "d4c60e756029a12da0ed8d8799854848890cf788e1449c0dcaed3bbeee06719c",
+      "viewport": {
+        "width": 660,
+        "height": 280
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 660,
+        "height": 280
+      },
+      "conditions": {
+        "scenario": "dictionary-distinct-headwords",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "箸",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "箸",
+          "lemma": "箸",
+          "reading": "はし",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 660,
+        "viewportWidth": 660,
+        "details": [
+          {
+            "label": "许可与署名",
+            "open": true
+          },
+          {
+            "label": "许可与署名",
+            "open": true
+          }
+        ],
+        "scrollRegions": [
+          {
+            "selector": "dictionary",
+            "top": 583,
+            "height": 149,
+            "scrollHeight": 732
+          }
+        ],
+        "cardBodyScroll": {
+          "top": 583,
+          "height": 732,
+          "viewport": 149
+        }
+      }
+    },
+    {
+      "id": "glossary-editing",
+      "state": "saved-global",
+      "file": "glossary-editing.saved-global.png",
+      "sourceFile": "glossary-editing.saved-global.design.html",
+      "sourceSha256": "f313edb16d9079edad91a0b866f2524dd7c385e019070425695dd32720365174",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "4ec7556b2de201750dad809dc2cc68cddc940603cb258203fe1a33134a233575",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1040,
+        "height": 760
+      },
+      "conditions": {
+        "scenario": "glossary-editing",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 1040,
+        "viewportWidth": 1040,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "configuration",
+            "top": 0,
+            "height": 649,
+            "scrollHeight": 785
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    },
+    {
+      "id": "glossary-editing",
+      "state": "terms-and-footer",
+      "file": "glossary-editing.terms-and-footer.png",
+      "sourceFile": "glossary-editing.terms-and-footer.design.html",
+      "sourceSha256": "434e6bf8cbb51852a9b5a03eb0d73b901bea29bede2526ae12662ba9b527fb5d",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "7619896312440e5dbf086755798647d90b3ceb1d7baadda5dfb6280f00abffb0",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1040,
+        "height": 760
+      },
+      "conditions": {
+        "scenario": "glossary-editing",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 1040,
+        "viewportWidth": 1040,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "configuration",
+            "top": 136,
+            "height": 649,
+            "scrollHeight": 785
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    },
+    {
+      "id": "glossary-editing",
+      "state": "save-failure-draft-retained",
+      "file": "glossary-editing.save-failure-draft-retained.png",
+      "sourceFile": "glossary-editing.save-failure-draft-retained.design.html",
+      "sourceSha256": "203f3e676dff8b8376dbd5b604b1ee85cc26fd23f5bba29930733b8f6a9f9000",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "c7587c41e04665ac467b9a3286afe957cb24b803e3b4b8973a9e5d3ef8221b1c",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1040,
+        "height": 760
+      },
+      "conditions": {
+        "scenario": "glossary-editing",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": false,
+        "simulateSaveFailure": true,
+        "error": "save_failed",
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学之后",
+            "enabled": true
+          }
+        ],
+        "lastAction": "save",
+        "bodyScrollWidth": 1040,
+        "viewportWidth": 1040,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "configuration",
+            "top": 0,
+            "height": 649,
+            "scrollHeight": 785
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    },
+    {
+      "id": "glossary-editing",
+      "state": "save-failure-draft-retained-bottom",
+      "file": "glossary-editing.save-failure-draft-retained-bottom.png",
+      "sourceFile": "glossary-editing.save-failure-draft-retained-bottom.design.html",
+      "sourceSha256": "dffadd19de059d3e405957f7f0cebc5dd93dd1a3eb924245be508efd26b11cf0",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "c73090b7e50e517b62d997593f2bd07d02c1acdcf463d2d1e03d3d8d3cd68713",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1040,
+        "height": 760
+      },
+      "conditions": {
+        "scenario": "glossary-editing",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": false,
+        "simulateSaveFailure": true,
+        "error": "save_failed",
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学之后",
+            "enabled": true
+          }
+        ],
+        "lastAction": "save",
+        "bodyScrollWidth": 1040,
+        "viewportWidth": 1040,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "configuration",
+            "top": 136,
+            "height": 649,
+            "scrollHeight": 785
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    },
+    {
+      "id": "learning-japanese-linebreak",
+      "state": "wide18",
+      "file": "learning-japanese-linebreak.wide18.png",
+      "sourceFile": "learning-japanese-linebreak.wide18.design.html",
+      "sourceSha256": "8b2262b36ac7bdddfd9c744ec2beb3cb62db8fc2b31fc9d12eb4b649f1c04b21",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "360ca8f08b06826cabca2c890fb17c830a215b2844ce1d863add4cd218d380da",
+      "viewport": {
+        "width": 1040,
+        "height": 760
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 1040,
+        "height": 760
+      },
+      "conditions": {
+        "scenario": "learning-japanese-linebreak",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 1,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 1040,
+        "viewportWidth": 1040,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "learning",
+            "top": 0,
+            "height": 587,
+            "scrollHeight": 587
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    },
+    {
+      "id": "learning-japanese-linebreak",
+      "state": "narrow200percent",
+      "file": "learning-japanese-linebreak.narrow200percent.png",
+      "sourceFile": "learning-japanese-linebreak.narrow200percent.design.html",
+      "sourceSha256": "33abb617359f07bfd24526962415b4e8839ffddeea2dd990c48e02e616a211e9",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "d522e43c478a980d04fb647992099eed0c8899035dbf95e54ded2c835fb0b4da",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 900
+      },
+      "conditions": {
+        "scenario": "learning-japanese-linebreak",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 2,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 390,
+        "viewportWidth": 390,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "learning",
+            "top": 0,
+            "height": 733,
+            "scrollHeight": 769
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    },
+    {
+      "id": "learning-japanese-linebreak",
+      "state": "narrow200percent-bottom",
+      "file": "learning-japanese-linebreak.narrow200percent-bottom.png",
+      "sourceFile": "learning-japanese-linebreak.narrow200percent-bottom.design.html",
+      "sourceSha256": "38dcbd36cfb3a2d55bc707f657f9ba3c87ab2e8469245a70675fea4a1f6c368e",
+      "sourceMode": "saved independent design DOM with declared scroll restoration only; no product JS",
+      "sha256": "2d8add95da072fed0d2b19b98e9786574035c21f4eca6648e23a3f34db7c1635",
+      "viewport": {
+        "width": 390,
+        "height": 900
+      },
+      "selector": "body",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 900
+      },
+      "conditions": {
+        "scenario": "learning-japanese-linebreak",
+        "kind": "authored-design-proposal-not-approved",
+        "draftSaved": true,
+        "simulateSaveFailure": false,
+        "error": null,
+        "sourceSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "currentSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenSentence": "放課後、図書館で彼女と待ち合わせをした。",
+        "frozenToken": {
+          "surface": "放課後",
+          "lemma": "放課後",
+          "reading": "ほうかご",
+          "partOfSpeech": "名詞"
+        },
+        "fontScale": 2,
+        "appliedRevision": 0,
+        "scope": "global",
+        "termSetName": "UI scope glossary",
+        "termSetEnabled": true,
+        "terms": [
+          {
+            "source": "放課後",
+            "target": "放学后",
+            "enabled": true
+          }
+        ],
+        "lastAction": null,
+        "bodyScrollWidth": 390,
+        "viewportWidth": 390,
+        "details": [],
+        "scrollRegions": [
+          {
+            "selector": "learning",
+            "top": 36,
+            "height": 733,
+            "scrollHeight": 769
+          }
+        ],
+        "cardBodyScroll": null
+      }
+    }
+  ],
+  "designOnlyChecks": [
+    {
+      "id": "DES-SUP-01-freeze-workarea-footer-actions",
+      "status": "passed",
+      "method": "hand-authored design DOM; not production code"
+    },
+    {
+      "id": "DES-SUP-02-native-window-independent-of-hud",
+      "status": "passed",
+      "geometry": {
+        "hud": {
+          "x": 320,
+          "y": 451,
+          "width": 560,
+          "height": 147
+        },
+        "card": {
+          "x": 360,
+          "y": 170,
+          "width": 360,
+          "height": 460
+        }
+      },
+      "method": "design-only window context, never native proof"
+    },
+    {
+      "id": "DES-SUP-03-distinct-headwords-sources-licenses-footer",
+      "status": "passed",
+      "scope": "same controlled fixture semantic values; new design only"
+    },
+    {
+      "id": "DES-SUP-04-terms-scope-failure-retained-no-apply",
+      "status": "passed",
+      "scope": "design-only local state, not repository/transaction validation"
+    },
+    {
+      "id": "DES-SUP-05-wide-narrow-200percent-typography",
+      "status": "passed",
+      "variants": [
+        {
+          "width": 1040,
+          "fontScale": 1,
+          "layout": {
+            "viewport": 1040,
+            "document": 1040,
+            "source": 988,
+            "scroll": 988,
+            "closingGroupLines": [
+              {
+                "x": 335.6875,
+                "y": 162.5,
+                "width": 36,
+                "height": 40.5
+              },
+              {
+                "x": 335.6875,
+                "y": 171.5,
+                "width": 36,
+                "height": 21
+              },
+              {
+                "x": 371.6875,
+                "y": 171.5,
+                "width": 18.375,
+                "height": 21
+              }
+            ],
+            "precedingWordText": {
+              "y": 171.5,
+              "height": 21
+            },
+            "closingPunctuationText": {
+              "y": 171.5,
+              "height": 21
+            }
+          }
+        },
+        {
+          "width": 1040,
+          "fontScale": 2,
+          "layout": {
+            "viewport": 1040,
+            "document": 1040,
+            "source": 988,
+            "scroll": 988,
+            "closingGroupLines": [
+              {
+                "x": 645.359375,
+                "y": 161.5,
+                "width": 72,
+                "height": 81
+              },
+              {
+                "x": 645.359375,
+                "y": 180.5,
+                "width": 72,
+                "height": 43
+              },
+              {
+                "x": 717.359375,
+                "y": 180.5,
+                "width": 36.734375,
+                "height": 43
+              }
+            ],
+            "precedingWordText": {
+              "y": 180.5,
+              "height": 43
+            },
+            "closingPunctuationText": {
+              "y": 180.5,
+              "height": 43
+            }
+          }
+        },
+        {
+          "width": 560,
+          "fontScale": 1,
+          "layout": {
+            "viewport": 560,
+            "document": 560,
+            "source": 518,
+            "scroll": 518,
+            "closingGroupLines": [
+              {
+                "x": 330.6875,
+                "y": 157.5,
+                "width": 36,
+                "height": 40.5
+              },
+              {
+                "x": 330.6875,
+                "y": 166.5,
+                "width": 36,
+                "height": 21
+              },
+              {
+                "x": 366.6875,
+                "y": 166.5,
+                "width": 18.375,
+                "height": 21
+              }
+            ],
+            "precedingWordText": {
+              "y": 166.5,
+              "height": 21
+            },
+            "closingPunctuationText": {
+              "y": 166.5,
+              "height": 21
+            }
+          }
+        },
+        {
+          "width": 560,
+          "fontScale": 2,
+          "layout": {
+            "viewport": 560,
+            "document": 560,
+            "source": 518,
+            "scroll": 518,
+            "closingGroupLines": [
+              {
+                "x": 237,
+                "y": 237.5,
+                "width": 72,
+                "height": 81
+              },
+              {
+                "x": 237,
+                "y": 256.5,
+                "width": 72,
+                "height": 43
+              },
+              {
+                "x": 309,
+                "y": 256.5,
+                "width": 36.734375,
+                "height": 43
+              }
+            ],
+            "precedingWordText": {
+              "y": 256.5,
+              "height": 43
+            },
+            "closingPunctuationText": {
+              "y": 256.5,
+              "height": 43
+            }
+          }
+        },
+        {
+          "width": 390,
+          "fontScale": 1,
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "source": 348,
+            "scroll": 348,
+            "closingGroupLines": [
+              {
+                "x": 21,
+                "y": 198,
+                "width": 36,
+                "height": 40.5
+              },
+              {
+                "x": 21,
+                "y": 207,
+                "width": 36,
+                "height": 21
+              },
+              {
+                "x": 57,
+                "y": 207,
+                "width": 18.375,
+                "height": 21
+              }
+            ],
+            "precedingWordText": {
+              "y": 207,
+              "height": 21
+            },
+            "closingPunctuationText": {
+              "y": 207,
+              "height": 21
+            }
+          }
+        },
+        {
+          "width": 390,
+          "fontScale": 2,
+          "layout": {
+            "viewport": 390,
+            "document": 390,
+            "source": 348,
+            "scroll": 348,
+            "closingGroupLines": [
+              {
+                "x": 21,
+                "y": 318.5,
+                "width": 72,
+                "height": 81
+              },
+              {
+                "x": 21,
+                "y": 337.5,
+                "width": 72,
+                "height": 43
+              },
+              {
+                "x": 93,
+                "y": 337.5,
+                "width": 36.734375,
+                "height": 43
+              }
+            ],
+            "precedingWordText": {
+              "y": 337.5,
+              "height": 43
+            },
+            "closingPunctuationText": {
+              "y": 337.5,
+              "height": 43
+            }
+          }
+        }
+      ],
+      "scope": "hand-authored design only; retains original punctuation and ruby"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "These are independently hand-authored design source, not a reverse rendering of React screenshots.",
+    "Controlled fixture labels/definitions are taken from the regression scenario contract; no actual dictionary/model output is claimed.",
+    "Fresh design rendering has not been approved as a visual baseline; old15failures and original approved PNGs remain unchanged.",
+    "Complete dictionary source/attribution fields are retained in scrollable body and multiple scroll-state screenshots; persistent footer remains visible."
+  ]
+}

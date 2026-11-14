@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "temporary-word-card",
+  "description": "Transient dictionary content; application IPC verifies the exact active card label and frozen identity",
+  "windows": ["word-card-*"],
+  "permissions": ["core:event:allow-listen", "core:event:allow-unlisten"]
+}

@@ -1,0 +1,913 @@
+{
+  "schema_version": 1,
+  "kind": "synthetic_field_boundary_fixtures",
+  "not_product_data": true,
+  "tables": {
+    "profile.binding_engines": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "binding_id": "fixture-binding_id",
+        "engine_id": "fixture-engine_id",
+        "purpose": "translation",
+        "model_id": "fixture-model_id",
+        "position": 1,
+        "enabled": 0,
+        "template_id": null
+      },
+      "valid_contexts": []
+    },
+    "profile.binding_parameters": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "binding_id": "fixture-binding_id",
+        "parameter_key": "fixture-parameter_key",
+        "mode": "inherit",
+        "value_json": null
+      },
+      "valid_contexts": [
+        {
+          "mode": "set",
+          "value_json": "0"
+        },
+        {
+          "mode": "omit",
+          "value_json": null
+        }
+      ]
+    },
+    "profile.cache_entries": {
+      "valid_row": {
+        "cache_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "purpose": "translation",
+        "request_semantics_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "resource_semantics_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "result_json": "{}",
+        "result_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "byte_size": 1,
+        "created_at_ms": 1,
+        "expires_at_ms": 1,
+        "last_accessed_at_ms": 1
+      },
+      "valid_contexts": [
+        {
+          "created_at_ms": 0,
+          "expires_at_ms": 0
+        },
+        {
+          "created_at_ms": 9223372036854775807,
+          "expires_at_ms": 9223372036854775807
+        }
+      ]
+    },
+    "profile.capture_sources": {
+      "valid_row": {
+        "source_id": "fixture-source_id",
+        "session_id": "fixture-session_id",
+        "host_instance_id": "fixture-host_instance_id",
+        "hook_address_u64": "0",
+        "context_u64": "0",
+        "subcontext_u64": "0",
+        "hook_code": "fixture-hook_code",
+        "hook_name": "fixture-hook_name",
+        "encoding": "fixture-encoding",
+        "stream_identity_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "identity_extensions_json": "{}",
+        "discovered_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.config_gc_marks": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "operation_id": "fixture-operation_id",
+        "requested_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.config_heads": {
+      "valid_row": {
+        "head_kind": "draft",
+        "revision_id": "fixture-revision_id",
+        "head_revision": 1,
+        "updated_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.config_revision_seals": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "sealed_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.config_revisions": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "parent_revision_id": null,
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "created_at_ms": 1,
+        "save_reason": "create",
+        "local_validation_json": "{}"
+      },
+      "valid_contexts": []
+    },
+    "profile.connection_runtime_states": {
+      "valid_row": {
+        "connection_id": "fixture-connection_id",
+        "config_revision_id": "fixture-config_revision_id",
+        "is_suspended": 0,
+        "control_revision": 1,
+        "reason_code": null,
+        "updated_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.connections": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "connection_id": "fixture-connection_id",
+        "display_name": "fixture-display_name",
+        "protocol": "openai_compatible",
+        "deployment": "local",
+        "auth_mode": "none",
+        "endpoint": null,
+        "credential_pool_id": null,
+        "credential_pool_revision": null,
+        "proxy_mode": "inherit",
+        "network_metadata_json": "{}",
+        "availability_intent": 0
+      },
+      "valid_contexts": [
+        {
+          "credential_pool_id": "pool",
+          "credential_pool_revision": 1
+        }
+      ]
+    },
+    "profile.corrections": {
+      "valid_row": {
+        "correction_id": "fixture-correction_id",
+        "translation_id": "fixture-translation_id",
+        "correction_revision": 1,
+        "corrected_text": "fixture-corrected_text",
+        "base_revision": 1,
+        "created_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.credential_pool_gc_marks": {
+      "valid_row": {
+        "pool_id": "fixture-pool_id",
+        "pool_revision": 1,
+        "operation_id": "fixture-operation_id",
+        "requested_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.credential_pool_members": {
+      "valid_row": {
+        "pool_id": "fixture-pool_id",
+        "pool_revision": 1,
+        "member_id": "fixture-member_id",
+        "credential_id": "fixture-credential_id",
+        "position": 1,
+        "enabled": 0,
+        "weight": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.credential_pool_revisions": {
+      "valid_row": {
+        "pool_id": "fixture-pool_id",
+        "pool_revision": 1,
+        "policy": "selected",
+        "policy_metadata_json": "{}",
+        "created_at_ms": 1,
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "valid_contexts": []
+    },
+    "profile.credential_pool_seals": {
+      "valid_row": {
+        "pool_id": "fixture-pool_id",
+        "pool_revision": 1,
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "sealed_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.credential_refs": {
+      "valid_row": {
+        "credential_id": "fixture-credential_id",
+        "vault_ref": "fixture-vault_ref",
+        "masked_label": "fixture-masked_label",
+        "auth_kind": "api_key",
+        "state": "pending",
+        "created_at_ms": 1,
+        "activated_at_ms": null,
+        "revoked_at_ms": null,
+        "cleanup_requested_at_ms": null,
+        "cleaned_at_ms": null,
+        "lifecycle_revision": 1
+      },
+      "valid_contexts": [
+        {
+          "state": "active",
+          "activated_at_ms": 1
+        },
+        {
+          "state": "revoked",
+          "revoked_at_ms": 1
+        },
+        {
+          "state": "cleanup_pending",
+          "revoked_at_ms": 1,
+          "cleanup_requested_at_ms": 1,
+          "cleaned_at_ms": 1
+        }
+      ]
+    },
+    "profile.engine_parameters": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "binding_id": "fixture-binding_id",
+        "engine_id": "fixture-engine_id",
+        "parameter_key": "fixture-parameter_key",
+        "mode": "inherit",
+        "value_json": null
+      },
+      "valid_contexts": [
+        {
+          "mode": "set",
+          "value_json": "0"
+        },
+        {
+          "mode": "omit",
+          "value_json": null
+        }
+      ]
+    },
+    "profile.game_targets": {
+      "valid_row": {
+        "target_id": "fixture-target_id",
+        "game_id": "fixture-game_id",
+        "environment_kind": "crossover",
+        "environment_key": "fixture-environment_key",
+        "bottle_locator": null,
+        "launch_path": null,
+        "canonical_exe_path": null,
+        "target_path_key": null,
+        "working_directory": null,
+        "arguments_json": "[]",
+        "architecture": "x86",
+        "verification_state": "unresolved",
+        "row_revision": 1,
+        "updated_at_ms": 1,
+        "archived_at_ms": null
+      },
+      "valid_contexts": []
+    },
+    "profile.games": {
+      "valid_row": {
+        "game_id": "fixture-game_id",
+        "display_name": "fixture-display_name",
+        "original_title": null,
+        "source_language": null,
+        "cover_asset_ref": null,
+        "row_revision": 1,
+        "created_at_ms": 1,
+        "updated_at_ms": 1,
+        "archived_at_ms": null
+      },
+      "valid_contexts": []
+    },
+    "profile.lexical_snapshots": {
+      "valid_row": {
+        "lexical_id": "fixture-lexical_id",
+        "unit_id": "fixture-unit_id",
+        "text_revision": 1,
+        "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "language_resource_snapshot_id": "fixture-language_resource_snapshot_id",
+        "token_schema_version": "fixture-token_schema_version",
+        "analysis_revision": "fixture-analysis_revision",
+        "token_count": 1,
+        "created_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.lexical_tokens": {
+      "valid_row": {
+        "lexical_id": "fixture-lexical_id",
+        "token_index": 1,
+        "byte_start": 0,
+        "byte_end": 3,
+        "surface": "図",
+        "lemma": "fixture-lemma",
+        "reading_kana": null,
+        "pos_major": "fixture-pos_major",
+        "features_json": "{}",
+        "token_kind": "word",
+        "is_known": 0
+      },
+      "valid_contexts": [
+        {
+          "byte_start": 1,
+          "byte_end": 4,
+          "surface": "図"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 1,
+          "surface": "a"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 1,
+          "surface": "a"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 4,
+          "surface": "🌸"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 4,
+          "surface": "𠮷"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 6,
+          "surface": "が"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 9,
+          "surface": "図書館"
+        },
+        {
+          "byte_start": 0,
+          "byte_end": 1,
+          "surface": "\u0000"
+        }
+      ]
+    },
+    "profile.model_default_templates": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "model_id": "fixture-model_id",
+        "purpose": "translation",
+        "template_id": "fixture-template_id"
+      },
+      "valid_contexts": []
+    },
+    "profile.model_parameters": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "model_id": "fixture-model_id",
+        "parameter_key": "fixture-parameter_key",
+        "mode": "inherit",
+        "value_json": null
+      },
+      "valid_contexts": [
+        {
+          "mode": "set",
+          "value_json": "0"
+        },
+        {
+          "mode": "omit",
+          "value_json": null
+        }
+      ]
+    },
+    "profile.models": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "model_id": "fixture-model_id",
+        "connection_id": "fixture-connection_id",
+        "actual_model_id": null,
+        "display_name": "fixture-display_name",
+        "selection_source": "manual",
+        "capability_json": "{}"
+      },
+      "valid_contexts": []
+    },
+    "profile.operation_receipts": {
+      "valid_row": {
+        "operation_id": "fixture-operation_id",
+        "request_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "command_kind": "fixture-command_kind",
+        "commit_revision": 1,
+        "result_refs_json": "{}",
+        "committed_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.preference_heads": {
+      "valid_row": {
+        "scope_key": "global",
+        "preference_revision_id": "fixture-preference_revision_id",
+        "head_revision": 1,
+        "updated_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.preference_revisions": {
+      "valid_row": {
+        "preference_revision_id": "fixture-preference_revision_id",
+        "scope_key": "global",
+        "game_id": null,
+        "parent_revision_id": null,
+        "theme": "system",
+        "transparency_mode": "system",
+        "show_ruby": 0,
+        "show_pos": 0,
+        "source_font_pt": 12.0,
+        "translation_font_pt": 12.0,
+        "hud_width_pt": 12.0,
+        "shortcuts_json": "{}",
+        "overrides_json": "{}",
+        "created_at_ms": 1
+      },
+      "valid_contexts": [
+        {
+          "scope_key": "game:game",
+          "game_id": "game"
+        }
+      ]
+    },
+    "profile.profile_meta": {
+      "valid_row": {
+        "singleton": 1,
+        "profile_id": "fixture-profile_id",
+        "commit_revision": 1,
+        "runtime_generation": 1,
+        "server_instance_id": "fixture-server_instance_id",
+        "runtime_state": "active",
+        "created_at_ms": 1,
+        "updated_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.purpose_bindings": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "binding_id": "fixture-binding_id",
+        "scope_key": "global",
+        "game_id": null,
+        "purpose": "translation",
+        "binding_mode": "override",
+        "enabled": 0,
+        "output_mode": "text",
+        "source_language": null,
+        "target_language": null,
+        "template_id": null,
+        "context_json": "{}",
+        "schedule_json": "{}"
+      },
+      "valid_contexts": [
+        {
+          "scope_key": "game:game",
+          "game_id": "game",
+          "binding_mode": "inherit"
+        }
+      ]
+    },
+    "profile.purpose_runtime_states": {
+      "valid_row": {
+        "scope_key": "global",
+        "purpose": "translation",
+        "binding_id": "fixture-binding_id",
+        "config_revision_id": "fixture-config_revision_id",
+        "is_enabled": 0,
+        "authorization_epoch": 1,
+        "config_semantics_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "updated_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.raw_event_payloads": {
+      "valid_row": {
+        "event_id": "fixture-event_id",
+        "payload_bytes": {
+          "$bytes_hex": ""
+        },
+        "retained_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.raw_events": {
+      "valid_row": {
+        "event_id": "fixture-event_id",
+        "session_id": "fixture-session_id",
+        "source_id": null,
+        "wire_sequence_u64": "0",
+        "ingest_sequence": 1,
+        "event_kind": "control",
+        "payload_byte_length": 1,
+        "payload_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "observed_at_ms": 1,
+        "integrity_state": "intact"
+      },
+      "valid_contexts": [
+        {
+          "event_kind": "text",
+          "source_id": "source"
+        }
+      ]
+    },
+    "profile.reading_unit_revisions": {
+      "valid_row": {
+        "unit_id": "fixture-unit_id",
+        "text_revision": 1,
+        "session_id": "fixture-session_id",
+        "source_text": "図",
+        "source_byte_length": 3,
+        "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "source_language": "fixture-source_language",
+        "processing_revision": "fixture-processing_revision",
+        "processing_snapshot_json": "{}",
+        "selection_revision": null,
+        "created_at_ms": 1
+      },
+      "valid_contexts": [
+        {
+          "source_text": "",
+          "source_byte_length": 0
+        },
+        {
+          "source_text": "a",
+          "source_byte_length": 1
+        },
+        {
+          "source_text": "🌸",
+          "source_byte_length": 4
+        },
+        {
+          "source_text": "𠮷",
+          "source_byte_length": 4
+        },
+        {
+          "source_text": "が",
+          "source_byte_length": 6
+        },
+        {
+          "source_text": "図書館",
+          "source_byte_length": 9
+        },
+        {
+          "source_text": "\u0000",
+          "source_byte_length": 1
+        }
+      ]
+    },
+    "profile.reading_units": {
+      "valid_row": {
+        "unit_id": "fixture-unit_id",
+        "session_id": "fixture-session_id",
+        "unit_ordinal": 1,
+        "state": "open",
+        "created_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.request_attempts": {
+      "valid_row": {
+        "attempt_id": "fixture-attempt_id",
+        "task_id": "fixture-task_id",
+        "attempt_number": 1,
+        "config_revision_id": "fixture-config_revision_id",
+        "binding_id": "fixture-binding_id",
+        "purpose": "translation",
+        "actual_engine_id": "fixture-actual_engine_id",
+        "credential_id": null,
+        "dispatch_kind": "initial",
+        "state": "started",
+        "error_code": null,
+        "finish_reason": null,
+        "usage_json": "{}",
+        "started_at_ms": 1,
+        "finished_at_ms": null
+      },
+      "valid_contexts": []
+    },
+    "profile.request_tasks": {
+      "valid_row": {
+        "task_id": "fixture-task_id",
+        "unit_id": "fixture-unit_id",
+        "text_revision": 1,
+        "session_id": "fixture-session_id",
+        "scope_key": "global",
+        "purpose": "translation",
+        "config_revision_id": "fixture-config_revision_id",
+        "binding_id": "fixture-binding_id",
+        "engine_id": "fixture-engine_id",
+        "profile_generation": 1,
+        "server_instance_id": "fixture-server_instance_id",
+        "authorization_epoch": 1,
+        "request_semantics_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_snapshot_json": "{}",
+        "state": "queued",
+        "invalidation_code": null,
+        "created_at_ms": 1,
+        "finished_at_ms": null
+      },
+      "valid_contexts": []
+    },
+    "profile.resource_snapshots": {
+      "valid_row": {
+        "resource_snapshot_id": "fixture-resource_snapshot_id",
+        "kind": "core",
+        "version_label": "fixture-version_label",
+        "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "contract_version": "fixture-contract_version",
+        "metadata_json": "{}",
+        "recorded_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.schema_migrations": {
+      "valid_row": {
+        "version": 1,
+        "migration_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "applied_at_ms": 1,
+        "app_build": "fixture-app_build",
+        "previous_version": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.sessions": {
+      "valid_row": {
+        "session_id": "fixture-session_id",
+        "game_id": null,
+        "source_kind": "manual",
+        "state": "opening",
+        "environment_key": null,
+        "target_exe_path": null,
+        "windows_pid": null,
+        "process_created_u64": null,
+        "architecture": "x86",
+        "broker_instance_id": null,
+        "core_resource_snapshot_id": null,
+        "target_identity_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "started_at_ms": 1,
+        "ended_at_ms": null
+      },
+      "valid_contexts": [
+        {
+          "source_kind": "hook",
+          "environment_key": "bottle",
+          "target_exe_path": "C:/game.exe",
+          "windows_pid": 1,
+          "process_created_u64": "0",
+          "architecture": "x86",
+          "broker_instance_id": "broker",
+          "core_resource_snapshot_id": "core",
+          "target_identity_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    "profile.source_refs": {
+      "valid_row": {
+        "unit_id": "fixture-unit_id",
+        "text_revision": 1,
+        "session_id": "fixture-session_id",
+        "ref_ordinal": 1,
+        "event_id": "fixture-event_id",
+        "byte_start": 1,
+        "byte_end": 1
+      },
+      "valid_contexts": [
+        {
+          "byte_start": 0,
+          "byte_end": 9223372036854775807
+        }
+      ]
+    },
+    "profile.source_selections": {
+      "valid_row": {
+        "session_id": "fixture-session_id",
+        "selection_revision": 1,
+        "source_id": "fixture-source_id",
+        "persistence_kind": "temporary",
+        "match_snapshot_json": "{}",
+        "selected_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "profile.study_results": {
+      "valid_row": {
+        "study_result_id": "fixture-study_result_id",
+        "task_id": "fixture-task_id",
+        "attempt_id": "fixture-attempt_id",
+        "output_mode": "plain_text",
+        "explanation_text": "fixture-explanation_text",
+        "structured_json": "{}",
+        "output_schema_version": null,
+        "selection_byte_start": null,
+        "selection_byte_end": null,
+        "ambiguity_json": "[]",
+        "created_at_ms": 1
+      },
+      "valid_contexts": [
+        {
+          "selection_byte_start": 0,
+          "selection_byte_end": 3
+        },
+        {
+          "output_mode": "structured",
+          "output_schema_version": "schema1"
+        }
+      ]
+    },
+    "profile.templates": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "template_id": "fixture-template_id",
+        "purpose": "translation",
+        "display_name": "fixture-display_name",
+        "source_kind": "builtin",
+        "source_version": null,
+        "template_body_json": "{}",
+        "template_variables_json": "[]",
+        "compatibility_json": "{}",
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "valid_contexts": []
+    },
+    "profile.term_sets": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "term_set_id": "fixture-term_set_id",
+        "scope_key": "global",
+        "game_id": null,
+        "display_name": "fixture-display_name",
+        "enabled": 0,
+        "match_rules_json": "{}",
+        "content_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "valid_contexts": [
+        {
+          "scope_key": "game:game",
+          "game_id": "game"
+        }
+      ]
+    },
+    "profile.terms": {
+      "valid_row": {
+        "revision_id": "fixture-revision_id",
+        "term_set_id": "fixture-term_set_id",
+        "term_id": "fixture-term_id",
+        "source_text": null,
+        "target_text": null,
+        "source_language": null,
+        "target_language": null,
+        "position": 1,
+        "enabled": 0,
+        "match_metadata_json": "{}"
+      },
+      "valid_contexts": []
+    },
+    "profile.test_record_credentials": {
+      "valid_row": {
+        "test_id": "fixture-test_id",
+        "credential_id": "fixture-credential_id",
+        "pool_id": null,
+        "pool_revision": null,
+        "member_id": null,
+        "masked_identity_snapshot": "fixture-masked_identity_snapshot",
+        "outcome": "passed"
+      },
+      "valid_contexts": [
+        {
+          "pool_id": "pool",
+          "pool_revision": 1,
+          "member_id": "member"
+        }
+      ]
+    },
+    "profile.test_records": {
+      "valid_row": {
+        "test_id": "fixture-test_id",
+        "config_revision_id": "fixture-config_revision_id",
+        "connection_id": null,
+        "model_id": null,
+        "binding_id": null,
+        "purpose": null,
+        "stage": "local",
+        "request_semantics_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "input_scope": "sample",
+        "unit_id": null,
+        "text_revision": null,
+        "input_summary_json": "{}",
+        "response_summary_json": "{}",
+        "output_validation_json": "{}",
+        "state": "passed",
+        "started_at_ms": 1,
+        "completed_at_ms": 1,
+        "error_code": null,
+        "error_stage": null
+      },
+      "valid_contexts": [
+        {
+          "unit_id": "unit",
+          "text_revision": 1
+        },
+        {
+          "stage": "connection",
+          "connection_id": "connection"
+        },
+        {
+          "stage": "model",
+          "connection_id": "connection",
+          "model_id": "model"
+        },
+        {
+          "stage": "purpose",
+          "connection_id": "connection",
+          "model_id": "model",
+          "binding_id": "binding",
+          "purpose": "translation"
+        },
+        {
+          "state": "failed",
+          "error_code": "synthetic_error"
+        },
+        {
+          "started_at_ms": 9223372036854775807,
+          "completed_at_ms": 9223372036854775807
+        }
+      ]
+    },
+    "profile.translations": {
+      "valid_row": {
+        "translation_id": "fixture-translation_id",
+        "task_id": "fixture-task_id",
+        "attempt_id": "fixture-attempt_id",
+        "translated_text": "fixture-translated_text",
+        "target_language": "fixture-target_language",
+        "provider_label_snapshot": "fixture-provider_label_snapshot",
+        "created_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "dictionary.dictionary_entries": {
+      "valid_row": {
+        "entry_id": "fixture-entry_id",
+        "source_id": "fixture-source_id",
+        "source_entry_key": "fixture-source_entry_key",
+        "lemma": "fixture-lemma",
+        "reading_kana": null,
+        "pos_json": "[]",
+        "content_kind": "zh_base"
+      },
+      "valid_contexts": []
+    },
+    "dictionary.dictionary_forms": {
+      "valid_row": {
+        "form_id": "fixture-form_id",
+        "entry_id": "fixture-entry_id",
+        "form_text": "fixture-form_text",
+        "normalized_key": "fixture-normalized_key",
+        "form_kind": "surface",
+        "rank_weight": 1
+      },
+      "valid_contexts": []
+    },
+    "dictionary.dictionary_meta": {
+      "valid_row": {
+        "singleton": 1,
+        "resource_version": "fixture-resource_version",
+        "manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "index_schema_version": 1,
+        "normalization_version": "fixture-normalization_version",
+        "built_at_ms": 1
+      },
+      "valid_contexts": []
+    },
+    "dictionary.dictionary_senses": {
+      "valid_row": {
+        "entry_id": "fixture-entry_id",
+        "sense_index": 1,
+        "gloss_language": "zh",
+        "gloss_text": "fixture-gloss_text",
+        "usage_notes": null,
+        "source_locator": "fixture-source_locator"
+      },
+      "valid_contexts": []
+    },
+    "dictionary.dictionary_sources": {
+      "valid_row": {
+        "source_id": "fixture-source_id",
+        "display_name": "fixture-display_name",
+        "snapshot_version": "fixture-snapshot_version",
+        "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "source_url": "fixture-source_url",
+        "license_ref": "fixture-license_ref",
+        "attribution_text": "fixture-attribution_text"
+      },
+      "valid_contexts": []
+    }
+  }
+}

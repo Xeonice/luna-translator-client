@@ -1,0 +1,43 @@
+{
+  "kind": "R32_exact_current_authority_reconciliation",
+  "status": "candidate_waiting_independent_review",
+  "at": "2026-10-20T20:04:59.172132+00:00",
+  "parent_baseline_sha256": "a5f2213291e086c534690bb39db05e31a5cc91b249a199d6b0aa15616bf9abe8",
+  "root_pre_authority_source_map": {
+    "path": ".build/hook-lexical-retest-20261021-010406/source-freeze-r32/root-pre-authority-source-map-v3.json",
+    "sha256": "1b4e2f05bab07bb51dbce746cea1e4cabfb331a2d8a4ba07554e4e2529cd8e60",
+    "source_tree_sha256": "ede375f747e5e2d52d2a56ff43567b9c5bbceb4dc4f596ff1c72ee50ed23543e",
+    "entries": 1629
+  },
+  "root_exact_authorization": {
+    "path": ".build/hook-lexical-retest-20261021-010406/governance-reconciliation/root-r32-candidate-authorization.json",
+    "sha256": "a808187078eabbdc1cdf08bae78d25f57933fe38954b0e510d71310ccb7fa0b0"
+  },
+  "storage_carrier_review": {
+    "path": "openspec/changes/repair-library-binding-preview-diagnostics/storage-carrier-review-r32.json",
+    "sha256": "3339560da57ab18fbc6881e0a015605d4a34487352b29ce8fe8ce81bb8fd2d24"
+  },
+  "source_evidence_changes": 120,
+  "explicit_quote_replacements": 7,
+  "semantic_record_ids": [
+    "M01",
+    "M02",
+    "M10",
+    "M13",
+    "M15",
+    "C11",
+    "C12",
+    "C13",
+    "C14",
+    "C15",
+    "C35",
+    "FP-02",
+    "FP-03",
+    "FP-05",
+    "CAP-PREVIEW",
+    "CAP-STORAGE"
+  ],
+  "only_changed_source_evidence_updated": true,
+  "history_approvals_visual_thresholds_frameworks_and_runtime_unchanged": true,
+  "product_or_release_promoted": false
+}

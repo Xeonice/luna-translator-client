@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "id": "specify-first-product-database",
+  "kind": "tooling",
+  "allowed_paths": [
+    "openspec/changes/specify-first-product-database/**",
+    "openspec/active-change.json",
+    "docs/architecture/database/**",
+    "docs/architecture/database-design.md",
+    "docs/architecture/first-product-engineering-baseline.md",
+    "docs/architecture/engineering-layout.md",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261019-R4.json",
+    "scripts/quality/database_design.py",
+    "scripts/quality/test_database_design.py",
+    "scripts/quality/verify.py",
+    "scripts/report/build_engineering_baseline_report.py",
+    "scripts/report/verify_engineering_baseline_report.cjs",
+    "package.json",
+    "scripts/quality/test_engineering_report_evidence.py"
+  ],
+  "source_snapshot": "openspec/changes/specify-first-product-database/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "DBD-001",
+      "spec": "specs/database-design/spec.md",
+      "scenario": "field-export-drift",
+      "checks": [
+        "database-design-contract",
+        "database-design-export-identity",
+        "database-report-evidence-tests"
+      ]
+    },
+    {
+      "id": "DBD-002",
+      "spec": "specs/database-design/spec.md",
+      "scenario": "invalid-persistence-identity",
+      "checks": [
+        "database-design-tests"
+      ]
+    },
+    {
+      "id": "DBD-003",
+      "spec": "specs/database-design/spec.md",
+      "scenario": "mutable-applied-config",
+      "checks": [
+        "database-design-tests"
+      ]
+    },
+    {
+      "id": "DBD-004",
+      "spec": "specs/database-design/spec.md",
+      "scenario": "late-or-unauthorized-result",
+      "checks": [
+        "database-design-tests"
+      ]
+    },
+    {
+      "id": "DBD-005",
+      "spec": "specs/database-design/spec.md",
+      "scenario": "destructive-retention-or-secret",
+      "checks": [
+        "database-design-tests"
+      ]
+    },
+    {
+      "id": "DBD-006",
+      "spec": "specs/database-design/spec.md",
+      "scenario": "unauthorized-product-implementation",
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "typescript-compile",
+        "rust-compile"
+      ]
+    }
+  ]
+}

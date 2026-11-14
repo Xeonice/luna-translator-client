@@ -1,0 +1,457 @@
+{
+  "expanded_old_enums": [
+    "profile.connections.protocol",
+    "profile.connections.auth_mode",
+    "profile.credential_refs.auth_kind"
+  ],
+  "fields": [
+    {
+      "default_tokens": [
+        "1"
+      ],
+      "description": "配置字节格式：原行为1，新HTTP格式为2；schema版本与codec版本独立。",
+      "field": "codec_version",
+      "id": "profile.config_revisions.codec_version",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.config_revisions.codec_version",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "config_revisions",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "AdapterBinding结构版本；四列必须全空或完整，已知结构仅1。",
+      "field": "adapter_binding_schema",
+      "id": "profile.connections.adapter_binding_schema",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.connections.adapter_binding_schema",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "connections",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "精确协议执行合同版本，正u32；不得追随latest。",
+      "field": "adapter_contract_revision",
+      "id": "profile.connections.adapter_contract_revision",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.connections.adapter_contract_revision",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "connections",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "精确兼容规则ID；有界ASCII且无NUL。",
+      "field": "compatibility_profile_id",
+      "id": "profile.connections.compatibility_profile_id",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.connections.compatibility_profile_id",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "connections",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "精确兼容规则版本，正u32。",
+      "field": "compatibility_profile_revision",
+      "id": "profile.connections.compatibility_profile_revision",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.connections.compatibility_profile_revision",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "connections",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "不可变来源预设ID；来源存在必须与完整执行tuple一致。",
+      "field": "provider_preset_id",
+      "id": "profile.connections.provider_preset_id",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.connections.provider_preset_id",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "connections",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "来源预设的精确正u32版本；不能单独为空。",
+      "field": "provider_preset_revision",
+      "id": "profile.connections.provider_preset_revision",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/configuration.rs::save",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.connections.provider_preset_revision",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "connections",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "可信Vault编码选择器：NULL仅旧raw APIKey，1为严格typed封套；不从秘密正文猜测。",
+      "field": "envelope_schema",
+      "id": "profile.credential_refs.envelope_schema",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/credentials.rs::begin_credential_material",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.credential_refs.envelope_schema",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "credential_refs",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "预设来源ID；builtin./user.命名空间隔离且无NUL。",
+      "field": "preset_id",
+      "id": "profile.provider_preset_versions.preset_id",
+      "nullable": false,
+      "primary_key_position": 1,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.preset_id",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "不可变预设来源版本，正u32。",
+      "field": "preset_revision",
+      "id": "profile.provider_preset_versions.preset_revision",
+      "nullable": false,
+      "primary_key_position": 2,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.preset_revision",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "builtin或user；与ID前缀一致。",
+      "field": "namespace",
+      "id": "profile.provider_preset_versions.namespace",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.namespace",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "厂商稳定ID；不是模型或协议权威。",
+      "field": "provider_id",
+      "id": "profile.provider_preset_versions.provider_id",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.provider_id",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "非秘密厂商显示名；NUL/空串拒绝，完整字节/字符上限由Rust校验。",
+      "field": "provider_label",
+      "id": "profile.provider_preset_versions.provider_label",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.provider_label",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "来源预设显示名；不作为请求语义身份。",
+      "field": "display_name",
+      "id": "profile.provider_preset_versions.display_name",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.display_name",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "来源冻结的精确协议ID；合法草稿不自动取得执行资格。",
+      "field": "protocol_id",
+      "id": "profile.provider_preset_versions.protocol_id",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.protocol_id",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "精确协议执行合同版本，正u32；不得追随latest。",
+      "field": "adapter_contract_revision",
+      "id": "profile.provider_preset_versions.adapter_contract_revision",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.adapter_contract_revision",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "精确兼容规则ID；有界ASCII且无NUL。",
+      "field": "compatibility_profile_id",
+      "id": "profile.provider_preset_versions.compatibility_profile_id",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.compatibility_profile_id",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "精确兼容规则版本，正u32。",
+      "field": "compatibility_profile_revision",
+      "id": "profile.provider_preset_versions.compatibility_profile_revision",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.compatibility_profile_revision",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "INTEGER"
+    },
+    {
+      "default_tokens": null,
+      "description": "可空的非秘密地址；SQL拒绝NUL/query/fragment，HTTP(S)/userinfo等完整限制由Rust执行。",
+      "field": "endpoint",
+      "id": "profile.provider_preset_versions.endpoint",
+      "nullable": true,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.endpoint",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "来源预设的明确认证种类；表达材料不等于已实现授权。",
+      "field": "auth_kind",
+      "id": "profile.provider_preset_versions.auth_kind",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.auth_kind",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "非秘密标量选项对象；完整字段白名单由Rust，SQL再拒绝受保护键/非标量。",
+      "field": "options_json",
+      "id": "profile.provider_preset_versions.options_json",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.options_json",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "64位小写hex SHA256，显式拒绝NUL；实际内容重算由Rust，不是MD5。",
+      "field": "content_hash",
+      "id": "profile.provider_preset_versions.content_hash",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.content_hash",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "来源说明数组；固定typed来源schema由Rust导入/读回校验，不作为可执行header/script。",
+      "field": "source_json",
+      "id": "profile.provider_preset_versions.source_json",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.source_json",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "TEXT"
+    },
+    {
+      "default_tokens": null,
+      "description": "非负UTC毫秒；仅来源记录时间，不承担并发代次。",
+      "field": "created_at_ms",
+      "id": "profile.provider_preset_versions.created_at_ms",
+      "nullable": false,
+      "primary_key_position": 0,
+      "producer": "crates/app-infra/src/storage/queries/provider_presets.rs::store_provider_preset",
+      "producer_status": "pending_runtime_verification",
+      "runtime_proof_id": "RUST-MAP:profile.provider_preset_versions.created_at_ms",
+      "source": "docs/architecture/database/v3/003_http_service_identity.design.sql",
+      "table": "provider_preset_versions",
+      "type": "INTEGER"
+    }
+  ],
+  "kind": "schema_three_http_field_delta",
+  "new_fields": 24,
+  "previous_fields_retained": 460,
+  "product_tests_executed": false,
+  "relationships": {
+    "config_revisions": [
+      {
+        "columns": [
+          "parent_revision_id"
+        ],
+        "match": "NONE",
+        "on_delete": "RESTRICT",
+        "on_update": "NO ACTION",
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ]
+      }
+    ],
+    "connections": [
+      {
+        "columns": [
+          "credential_pool_id",
+          "credential_pool_revision"
+        ],
+        "match": "NONE",
+        "on_delete": "RESTRICT",
+        "on_update": "NO ACTION",
+        "parent": "credential_pool_revisions",
+        "parent_columns": [
+          "pool_id",
+          "pool_revision"
+        ]
+      },
+      {
+        "columns": [
+          "provider_preset_id",
+          "provider_preset_revision",
+          "protocol",
+          "adapter_contract_revision",
+          "compatibility_profile_id",
+          "compatibility_profile_revision"
+        ],
+        "match": "NONE",
+        "on_delete": "RESTRICT",
+        "on_update": "NO ACTION",
+        "parent": "provider_preset_versions",
+        "parent_columns": [
+          "preset_id",
+          "preset_revision",
+          "protocol_id",
+          "adapter_contract_revision",
+          "compatibility_profile_id",
+          "compatibility_profile_revision"
+        ]
+      },
+      {
+        "columns": [
+          "revision_id"
+        ],
+        "match": "NONE",
+        "on_delete": "RESTRICT",
+        "on_update": "NO ACTION",
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ]
+      }
+    ],
+    "credential_refs": [],
+    "provider_preset_versions": []
+  },
+  "runtime_field_proofs": {
+    "counts_are_design_inventory_not_execution": true,
+    "required_SQL_subassertions": [
+      "valid",
+      "type",
+      "null"
+    ],
+    "required_field_ids": [
+      "RUST-MAP:profile.config_revisions.codec_version",
+      "RUST-MAP:profile.connections.adapter_binding_schema",
+      "RUST-MAP:profile.connections.adapter_contract_revision",
+      "RUST-MAP:profile.connections.compatibility_profile_id",
+      "RUST-MAP:profile.connections.compatibility_profile_revision",
+      "RUST-MAP:profile.connections.provider_preset_id",
+      "RUST-MAP:profile.connections.provider_preset_revision",
+      "RUST-MAP:profile.credential_refs.envelope_schema",
+      "RUST-MAP:profile.provider_preset_versions.preset_id",
+      "RUST-MAP:profile.provider_preset_versions.preset_revision",
+      "RUST-MAP:profile.provider_preset_versions.namespace",
+      "RUST-MAP:profile.provider_preset_versions.provider_id",
+      "RUST-MAP:profile.provider_preset_versions.provider_label",
+      "RUST-MAP:profile.provider_preset_versions.display_name",
+      "RUST-MAP:profile.provider_preset_versions.protocol_id",
+      "RUST-MAP:profile.provider_preset_versions.adapter_contract_revision",
+      "RUST-MAP:profile.provider_preset_versions.compatibility_profile_id",
+      "RUST-MAP:profile.provider_preset_versions.compatibility_profile_revision",
+      "RUST-MAP:profile.provider_preset_versions.endpoint",
+      "RUST-MAP:profile.provider_preset_versions.auth_kind",
+      "RUST-MAP:profile.provider_preset_versions.options_json",
+      "RUST-MAP:profile.provider_preset_versions.content_hash",
+      "RUST-MAP:profile.provider_preset_versions.source_json",
+      "RUST-MAP:profile.provider_preset_versions.created_at_ms"
+    ],
+    "status": "not_run"
+  },
+  "schema_contract": "docs/architecture/database/v3/schema-contract.json",
+  "schema_version": 1,
+  "total_fields": 484
+}

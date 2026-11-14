@@ -1,0 +1,601 @@
+{
+  "schema_version": 1,
+  "kind": "frozen-general-guided-descriptor-lineage/v1",
+  "origin_catalogue": {
+    "path": "docs/development/all-page-design-coverage.json",
+    "sha256": "554ce5d641cf0ce565057fd436c7bb7afbb3d2ee6438a9a2dd25c63598e83d25"
+  },
+  "role": "Historical14 source descriptors only; cannot grant current General acceptance",
+  "descriptors": [
+    {
+      "id": "all-page-settings-general-normal",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "normal",
+      "mapping_status": "mapped_recipe",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        },
+        {
+          "action": "assert_design_predicate",
+          "expression": "window.LunaDesign.state.settings.category === \"general\""
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-empty",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "empty",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-loading",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "loading",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-error",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "error",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-disabled",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "disabled",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-long-text",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "long_text",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": {
+        "reference": "missing",
+        "same_data_fixture": "needs_mapping",
+        "geometry_clipping": "not_run"
+      }
+    },
+    {
+      "id": "all-page-settings-general-light",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "light",
+      "mapping_status": "mapped_recipe",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "light"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        },
+        {
+          "action": "assert_design_predicate",
+          "expression": "document.documentElement.dataset.theme === 'light'"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": {
+        "reference": "missing",
+        "same_data_fixture": "recorded",
+        "geometry_clipping": "not_run"
+      }
+    },
+    {
+      "id": "all-page-settings-general-narrow",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "narrow",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "set_viewport",
+          "width": 1024,
+          "height": 768
+        },
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": {
+        "reference": "missing",
+        "same_data_fixture": "recorded",
+        "geometry_clipping": "not_run"
+      }
+    },
+    {
+      "id": "all-page-settings-general-zoom-200",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "zoom_200",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": {
+        "reference": "missing",
+        "same_data_fixture": "needs_mapping",
+        "geometry_clipping": "not_run"
+      }
+    },
+    {
+      "id": "all-page-settings-general-keyboard-focus-escape",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "keyboard_focus_escape",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-scope-global",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "scope_global",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-scope-game",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "scope_game",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-restore-inheritance",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "restore_inheritance",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    },
+    {
+      "id": "all-page-settings-general-save-failed",
+      "scenario": "settings",
+      "source_case_ids": [
+        "FP-11",
+        "RW-28"
+      ],
+      "state": "save_failed",
+      "mapping_status": "needs_mapping",
+      "design_recipe": [
+        {
+          "action": "navigate",
+          "path": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html",
+          "query": {
+            "scenario": "settings",
+            "theme": "dark"
+          }
+        },
+        {
+          "action": "click",
+          "selector": "[data-settings-action=\"category\"][data-value=\"general\"]"
+        },
+        {
+          "action": "assert_visible",
+          "selector": "#settings-window"
+        }
+      ],
+      "target": {
+        "selector": "#settings-window",
+        "visibility": "required_visible",
+        "container": "settings"
+      },
+      "fixture": {
+        "kind": "page_local_design_simulation",
+        "source_catalogue": "#/design_fixture_source_sha256",
+        "source_identity_sha256": "a354db61a091e223c5aa7c01b411c16dc516a9379891d8ec02860ffd6e9752de",
+        "production_execution": "not_run"
+      },
+      "variant_measurements": null
+    }
+  ],
+  "current_product_acceptance": false
+}

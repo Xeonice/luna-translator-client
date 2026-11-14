@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261020-R29",
+  "parent": "FP1-20261020-R28",
+  "parent_sha256": "4f80cbadbf2b6aa1d4d256a6320038de92a48dd1ff08f2691e70b028f76398e5",
+  "captured_at": "2026-10-20T16:04:07.644825+00:00",
+  "status": "independently_reviewed_root_authorized_authority_only",
+  "reason": "R29修复最终打包强制ad-hoc；同resolved证书签名与实际metadata/原包身份消费者一致，旧schema1严格兼容与原失败保留；不从探针或守卫测试推断Luna/TCC/游戏通过。",
+  "review_state": {
+    "source_review": {
+      "status": "accepted",
+      "reference": {
+        "path": ".build/stable-signing-r29/independent-review/source-review-v2.json",
+        "sha256": "9dd720a15fd9277eb9ff5bb8d76151cd491d1225fca711ed9a8accfab88e5d93",
+        "bytes": 6186
+      }
+    },
+    "governance_review": {
+      "status": "accepted",
+      "reference": {
+        "path": ".build/stable-signing-r29/independent-review/metadata-review-v2.json",
+        "sha256": "9390ff3a41f9b9cf2d442169d104d4ab2a910371653e0bc2ad2e1357216b0f9b"
+      }
+    },
+    "root_adoption": {
+      "status": "authorized_authority_only",
+      "reference": {
+        "path": ".build/next-batch-20261020/stable-signing-r29/governance-v2/root-adoption-authorization.json",
+        "sha256": "a174fb196d94ac4749d157f861e28468520ffafb1e4ee2760e563beab7fe6097"
+      }
+    }
+  },
+  "exact_delta_review": {
+    "path": "openspec/changes/implement-reviewed-reading-session-batch/exact-delta-review-r29.json",
+    "sha256": "666fbcbd473238b89f84ed834e168d2a322f61c75fb926d1c0261cf43eee26bd",
+    "bytes": 10029
+  },
+  "root_scope": {
+    "authority_only": true,
+    "product_acceptance_promoted": false,
+    "original_R28_byte_exact": true,
+    "no_commit_or_push": true
+  },
+  "source_review_bound_at": "2026-10-20T16:05:39.745084+00:00",
+  "finalized_at": "2026-10-20T16:09:49.287132+00:00"
+}

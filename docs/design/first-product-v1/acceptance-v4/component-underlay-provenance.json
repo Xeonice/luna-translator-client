@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "kind": "independent-complete-css-background-input",
+  "original": {
+    "file": "docs/design/first-product-v1/acceptance-v4/underlay-reading.png",
+    "sha256": "d72d04d3e6ba61a37f71ea57392a6fa9977a8b8451037134ec5719032c379cf3",
+    "size": [
+      1600,
+      925
+    ]
+  },
+  "output": {
+    "file": "docs/design/first-product-v1/acceptance-v4/component-common-underlay.png",
+    "sha256": "45a41ec01e9fc0de0e6f4f66843c0466e9e85b23680121d9f08c1f98acd5fc08",
+    "size": [
+      1795,
+      1452
+    ]
+  },
+  "policy": {
+    "backgroundColor": "#020c31",
+    "backgroundRepeat": "no-repeat",
+    "backgroundPosition": [
+      0,
+      0
+    ],
+    "originalImageSizeUnchanged": true,
+    "deviceScaleFactor": 1,
+    "dimensionRule": "ceil(max(original extent, every fixed sampleOrigin + complete interactive host viewport))"
+  },
+  "componentHosts": [
+    {
+      "id": "hud-toolbar-560",
+      "sampleOrigin": [
+        320,
+        451
+      ],
+      "viewport": [
+        {
+          "width": 560,
+          "height": 172
+        }
+      ]
+    },
+    {
+      "id": "hud-toolbar-500",
+      "sampleOrigin": [
+        320,
+        451
+      ],
+      "viewport": [
+        {
+          "width": 500,
+          "height": 165
+        }
+      ]
+    },
+    {
+      "id": "hud-ruby-only",
+      "sampleOrigin": [
+        320,
+        451
+      ],
+      "viewport": [
+        {
+          "width": 560,
+          "height": 172
+        }
+      ]
+    },
+    {
+      "id": "hud-lexical-error",
+      "sampleOrigin": [
+        320,
+        451
+      ],
+      "viewport": [
+        {
+          "width": 560,
+          "height": 193
+        }
+      ]
+    },
+    {
+      "id": "select-normal",
+      "sampleOrigin": [
+        494,
+        324.546875
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "select-long-list",
+      "sampleOrigin": [
+        494,
+        324.546875
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "preview-off",
+      "sampleOrigin": [
+        995,
+        271.234375
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "preview-live",
+      "sampleOrigin": [
+        995,
+        271.234375
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "preview-paused",
+      "sampleOrigin": [
+        995,
+        271.234375
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "preview-permission",
+      "sampleOrigin": [
+        995,
+        271.234375
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "preview-unavailable",
+      "sampleOrigin": [
+        995,
+        271.234375
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "preview-exited",
+      "sampleOrigin": [
+        995,
+        271.234375
+      ],
+      "viewport": [
+        {
+          "width": 800,
+          "height": 900
+        }
+      ]
+    },
+    {
+      "id": "session-extraction",
+      "sampleOrigin": [
+        447,
+        251.234375
+      ],
+      "viewport": [
+        {
+          "width": 1040,
+          "height": 1200
+        }
+      ]
+    },
+    {
+      "id": "session-hook-events",
+      "sampleOrigin": [
+        447,
+        251.234375
+      ],
+      "viewport": [
+        {
+          "width": 1040,
+          "height": 1200
+        }
+      ]
+    }
+  ],
+  "extendedStateIds": [
+    "select-normal",
+    "select-long-list",
+    "preview-off",
+    "preview-live",
+    "preview-paused",
+    "preview-permission",
+    "preview-unavailable",
+    "preview-exited",
+    "session-extraction",
+    "session-hook-events"
+  ],
+  "browserVersion": "141.0.7390.37",
+  "originalPixelsAndFallbackVerified": true,
+  "expectedOrProductPixelsUsed": false,
+  "originalExpectedPngsModified": false
+}

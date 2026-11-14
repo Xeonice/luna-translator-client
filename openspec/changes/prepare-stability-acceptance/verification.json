@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "id": "prepare-stability-acceptance",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/prepare-stability-acceptance/**",
+    "apps/desktop/src-tauri/src/platform/runtime_observation.rs",
+    "apps/desktop/src-tauri/src/platform/mod.rs",
+    "apps/desktop/src-tauri/src/bootstrap.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_preview.rs",
+    "apps/desktop/src-tauri/src/ipc/reading.rs",
+    "apps/desktop/src-tauri/src/ipc/word_card.rs",
+    "apps/desktop/tests/visual/capture-reviewed-states.mjs",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/support/ReviewedSurfaceProbe.tsx",
+    "scripts/quality/lifecycle_impact.py",
+    "scripts/quality/test_lifecycle_impact.py",
+    "docs/development/lifecycle-impact-contract.json",
+    "scripts/quality/runtime_stability.py",
+    "scripts/quality/runtime_stability_evidence.py",
+    "scripts/quality/runtime_observer.swift",
+    "scripts/quality/test_runtime_stability.py",
+    "scripts/quality/product_execution.py",
+    "scripts/quality/test_product_execution.py",
+    "scripts/quality/spec_contract.py",
+    "scripts/quality/test_spec_contract.py",
+    "scripts/quality/verify.py",
+    "docs/development/runtime-stability-evidence.md",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/current-phase.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261027-R53.json",
+    "openspec/active-change.json"
+  ],
+  "source_snapshot": "openspec/changes/prepare-stability-acceptance/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "FP-12",
+      "spec": "specs/stability-verification/spec.md",
+      "scenario": "private-observation-public-test-entry-and-actual-impact-closure",
+      "source_requirement_ids": [
+        "FP-03",
+        "FP-04",
+        "FP-05",
+        "FP-07",
+        "FP-12"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/reading-window-session-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/interaction-review.html#01-window-preview",
+        "docs/design/first-product-v1/gallery.html#10-local-word-card"
+      ],
+      "module_ids": [
+        "M12"
+      ],
+      "component_ids": [
+        "C19",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-hook-client-tests",
+        "product-target-probe-tests",
+        "product-native-ipc-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "lifecycle-impact-execution"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run"
+}

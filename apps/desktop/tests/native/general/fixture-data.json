@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "gameId": "general-visual-game",
+  "gameName": "サクラノ詩",
+  "longGameName": "サクラノ詩 Re:Graphic 10th Anniversary edition — 長いゲーム名と保存された読書設定の表示確認",
+  "preferences": { "segmentationEnabled": true, "showRuby": true, "showPos": false },
+  "startup": { "status": "not_found", "canChange": false, "errorCode": "service_not_found", "detail": "系统未找到此应用的登录服务。" },
+  "readError": "暂时无法读取已保存的偏好",
+  "saveError": "阅读偏好保存失败，请重试。"
+}

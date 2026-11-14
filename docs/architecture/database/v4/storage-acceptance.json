@@ -1,0 +1,3647 @@
+{
+  "schema_version": 1,
+  "id": "FP1-STORAGE-20261106-SCHEMA4-SERVICES",
+  "kind": "schema_four_service_storage_acceptance",
+  "phase": "planning",
+  "product_tests_executed": false,
+  "schema_contract": "docs/architecture/database/v4/schema-contract.json",
+  "boundary_contract": "docs/architecture/database/v4/field-boundaries.json",
+  "prior_obligation_sources": {
+    "docs/architecture/database/v3/schema-contract.json": "90d3474fb23c4522845727307ea3b47b5a2ae0a5f0b6df40006516aa22fbe335",
+    "docs/architecture/database/v3/field-dictionary.json": "b3144b3820ae1bd1c91ea06343bfa85a954eb7cdc6950f9bae21c5ae988d349a",
+    "docs/architecture/database/v3/field-dictionary.csv": "f2008ab47ac90143e99d019da3072b371d4cf65af133b2ecb64f4fde67ea7c5d",
+    "docs/architecture/database/v3/storage-acceptance.json": "808822b6b335ab6e77daebb0fd4c44f29e6b1acc0fedbbef4bc7fd67a6b16b5d",
+    "docs/architecture/database/v3/field-boundaries.json": "174d61829a681c204fb3b600354c010ccd31b0dfc50a5cfd25f91792e1d4038e",
+    "docs/architecture/database/v3/boundary-fixtures.json": "02ab9ee4c1e1f7361e6acc6eb0c768141c2f85af1ebd2dfe1d003608df96e9d1"
+  },
+  "checks": [
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "实际app-infra测试目标编译日志",
+        "逐字段Rust映射断言",
+        "非损失类型与UTF8/u64边界"
+      ],
+      "id": "STORAGE-01",
+      "owner": "AP",
+      "title": "Rust输入类型与数据库字段映射编译"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "CR-08-CONFIG@NATIVE",
+        "CR-12-RESOURCE@NATIVE"
+      ],
+      "expected_evidence": [
+        "由真实迁移创建并关闭的profile与dictionary候选库",
+        "双库完整结构比较",
+        "迁移版本账本"
+      ],
+      "id": "STORAGE-02",
+      "owner": "AP",
+      "title": "全新配置档与内置词典的生产建库"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION",
+        "TP-30@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "PRE14冻结升级矩阵逐路线回执",
+        "升级前后一致备份与内容身份",
+        "故障后原件及恢复校验"
+      ],
+      "id": "STORAGE-03",
+      "owner": "AP",
+      "title": "受支持版本升级和失败迁移恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-30@DISTRIBUTION",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "冻结的兼容拒绝与恢复路线",
+        "拒绝前后原件hash",
+        "受支持配对恢复结果"
+      ],
+      "id": "STORAGE-04",
+      "owner": "AP",
+      "title": "不兼容降级预检和包备份配对回退"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA"
+      ],
+      "expected_evidence": [
+        "真实写进程及WAL状态",
+        "在线备份和恢复完整性",
+        "恢复后业务快照比较"
+      ],
+      "id": "STORAGE-05",
+      "owner": "AP",
+      "title": "活跃WAL写入的一致备份恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "实际锁竞争进程",
+        "busy超时及队列界限断言",
+        "锁释放后可恢复写入"
+      ],
+      "id": "STORAGE-06",
+      "owner": "AP",
+      "title": "busy超时和单writer有界背压"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA",
+        "CR-08-CONFIG@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实只读连接或权限故障",
+        "失败后保留草稿与已提交数据",
+        "恢复权限后重试"
+      ],
+      "id": "STORAGE-07",
+      "owner": "AP",
+      "title": "只读数据库失败恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "隔离容量受限卷及真实SQLITE_FULL",
+        "失败前后原件与事务状态",
+        "释放容量后的恢复；安全构造不可用时blocked"
+      ],
+      "id": "STORAGE-08",
+      "owner": "PL",
+      "title": "真实磁盘满故障"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA"
+      ],
+      "expected_evidence": [
+        "实际子进程终止与提交barrier",
+        "重启后全有或全无",
+        "外键及业务revision一致性"
+      ],
+      "id": "STORAGE-09",
+      "owner": "AP",
+      "title": "提交边界崩溃和多表事务原子性"
+    },
+    {
+      "execution_ids": [
+        "TP-04@INFRA"
+      ],
+      "expected_evidence": [
+        "真实隔离Keychain命名空间",
+        "跨存储每个崩溃点",
+        "悬挂秘密回收且DB不存明文"
+      ],
+      "id": "STORAGE-10",
+      "owner": "PL",
+      "title": "Keychain新增pending与数据库提交崩溃回收"
+    },
+    {
+      "execution_ids": [
+        "TP-05@INFRA",
+        "TP-24@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "实际撤销持久化及vault拒绝",
+        "请求socket计数",
+        "重启后仍不可授权"
+      ],
+      "id": "STORAGE-11",
+      "owner": "PL",
+      "title": "凭据撤销与删除失败后禁止重新授权"
+    },
+    {
+      "execution_ids": [
+        "TP-14@INFRA",
+        "MC-12@NATIVE",
+        "MC-13@NATIVE"
+      ],
+      "expected_evidence": [
+        "所有竞争交错和单一终态",
+        "真实任务/尝试/结果提交记录",
+        "取消后无正文历史和缓存追加"
+      ],
+      "id": "STORAGE-12",
+      "owner": "AI",
+      "title": "取消停用切档与完成事务竞争"
+    },
+    {
+      "execution_ids": [
+        "TP-16@UNIT",
+        "CR-12-PERSIST@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "语义字段变形矩阵",
+        "真实缓存查询结果",
+        "独立人工修正前后hash"
+      ],
+      "id": "STORAGE-13",
+      "owner": "AP",
+      "title": "缓存语义身份和人工修正保留"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "CR-08-HISTORY@NATIVE"
+      ],
+      "expected_evidence": [
+        "并发分页ID和snapshot revision",
+        "清理前后来源链及固定对象hash",
+        "容量和foreign_key_check"
+      ],
+      "id": "STORAGE-14",
+      "owner": "AP",
+      "title": "历史游标分页保留清理及来源关系"
+    },
+    {
+      "execution_ids": [
+        "TP-09@INFRA",
+        "MC-21@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实双进程和隔离档路径",
+        "文件锁与跨档身份断言",
+        "关闭切档后的实例代次"
+      ],
+      "id": "STORAGE-15",
+      "owner": "AP",
+      "title": "配置档数据库锁与数据隔离"
+    },
+    {
+      "execution_ids": [
+        "CR-12-RESOURCE@NATIVE",
+        "TP-19@NATIVE"
+      ],
+      "expected_evidence": [
+        "实际随包辞书manifest及许可",
+        "只读查询与写入拒绝",
+        "辞书版本不匹配时引用处理"
+      ],
+      "id": "STORAGE-16",
+      "owner": "JA",
+      "title": "包内只读词典版本和跨库引用"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-03@INFRA",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "由field-boundaries唯一展开的每个probe结果",
+        "合法对照与非法边界拒绝",
+        "实际SQLite版本和无skip断言"
+      ],
+      "id": "STORAGE-17",
+      "owner": "AP",
+      "title": "每字段SQL边界和全部声明CHECK"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "跨会话/跨配置版本外键拒绝",
+        "唯一及NULL边界",
+        "RESTRICT/CASCADE/SET NULL实际行为"
+      ],
+      "id": "STORAGE-18",
+      "owner": "AP",
+      "title": "复合关系与唯一删除约束"
+    },
+    {
+      "execution_ids": [
+        "TP-10@UNIT",
+        "TP-11@UNIT",
+        "MC-01@NATIVE",
+        "MC-08@NATIVE",
+        "MC-11@NATIVE",
+        "MC-12@NATIVE"
+      ],
+      "expected_evidence": [
+        "草稿与applied版本分离",
+        "封存后INSERT/UPDATE/DELETE拒绝与CAS",
+        "inherit/set/omit及显式0落库恢复"
+      ],
+      "id": "STORAGE-19",
+      "owner": "AP",
+      "title": "配置封存头指针和三态参数"
+    },
+    {
+      "execution_ids": [
+        "TP-08@INFRA",
+        "TP-06@INFRA",
+        "TP-07@INFRA"
+      ],
+      "expected_evidence": [
+        "同operation_id重复及冲突结果",
+        "原子receipt与revision投影",
+        "重启后无重复提交"
+      ],
+      "id": "STORAGE-20",
+      "owner": "AP",
+      "title": "命令幂等和业务revision提交"
+    },
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "u64十进制/FILETIME roundtrip",
+        "原文UTF8字节与span恢复",
+        "来源复合键不串会话"
+      ],
+      "id": "STORAGE-21",
+      "owner": "AP",
+      "title": "完整来源身份与Unicode无损存取"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "MC-13@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "仍被引用对象不可清理",
+        "回收墓碑与原子操作回执",
+        "回收后禁止重新引用及恢复授权"
+      ],
+      "id": "STORAGE-22",
+      "owner": "AP",
+      "title": "已封存配置及凭据池的受控GC"
+    }
+  ],
+  "plan": "docs/development/first-product-test-plan.json",
+  "prerequisite_ids": [
+    "PRE-13",
+    "PRE-14"
+  ],
+  "maintenance_ids": [
+    "MA-02",
+    "MA-05",
+    "MA-10",
+    "MA-16"
+  ],
+  "enablement_ids": [
+    "TE-04",
+    "TE-06",
+    "TE-08",
+    "TE-10",
+    "TE-12"
+  ],
+  "required_fresh_routes": [
+    "fresh_profile",
+    "fresh_dictionary"
+  ],
+  "supported_upgrade_matrix": {
+    "approval_ref": "docs/architecture/database/v4/storage-review.json",
+    "dictionary_versions": {
+      "1": {
+        "manifest_path": "resources/language/dictionary-provenance.json",
+        "manifest_sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b",
+        "resource_version": "wiktionary-zh-ja-20261018+jmdict-20261012-v1"
+      }
+    },
+    "fresh_versions": {
+      "profile": 4,
+      "dictionary": 1
+    },
+    "implementation_identity_policy": "outer current-source closure and actual compile/run; historical implementation hash is not current identity",
+    "migration_chain": [
+      {
+        "migration_sha256": "1f26620f1b22307ae07851c1e09c7ed44f888f6b9f88e9d9c34b6f7f1f3302c7",
+        "previous_version": 0,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_profile.sql",
+            "sha256": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5"
+          },
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_config.sql",
+            "sha256": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293"
+          }
+        ],
+        "version": 1
+      },
+      {
+        "migration_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+        "previous_version": 1,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/002_session_records.sql",
+            "sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+          }
+        ],
+        "version": 2
+      },
+      {
+        "migration_sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2",
+        "previous_version": 2,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/003_http_service_identity.sql",
+            "sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2"
+          }
+        ],
+        "version": 3
+      },
+      {
+        "version": 4,
+        "previous_version": 3,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/004_service_graph.sql",
+            "sha256": "09eab3339ed56f535f72cc95d6d12cab069c73d6cd47a07197dd69f561351d55"
+          }
+        ],
+        "migration_sha256": "09eab3339ed56f535f72cc95d6d12cab069c73d6cd47a07197dd69f561351d55"
+      }
+    ],
+    "routes": [
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 4,
+        "id": "reopen_profile_v1",
+        "kind": "reopen",
+        "source_schema": "docs/architecture/database/v4/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 4,
+        "id": "same_version_backup_recovery",
+        "kind": "paired_recovery",
+        "source_schema": "docs/architecture/database/v4/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": 99,
+        "id": "reject_unknown_version",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unknown_version",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_unversioned",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unversioned",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "corrupt",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "migration_mismatch",
+        "from_version": 4,
+        "id": "reject_migration_hash",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v4/schema-contract.json",
+        "source_state": "migration_mismatch",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "schema_contract_mismatch",
+        "from_version": 4,
+        "id": "reject_schema_drift",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "schema_mismatch",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "database_relationship_corrupt",
+        "from_version": 4,
+        "id": "reject_relationship_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v4/schema-contract.json",
+        "source_state": "relationship_corrupt",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "to_version": 4
+      },
+      {
+        "id": "upgrade_profile_v1_to_v4",
+        "kind": "upgrade",
+        "database": "profile",
+        "from_version": 1,
+        "to_version": 4,
+        "source_state": "supported",
+        "source_schema": "docs/architecture/database/schema-contract.json",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "expected": "accepted",
+        "expected_error": null
+      },
+      {
+        "id": "upgrade_profile_v2_to_v4",
+        "kind": "upgrade",
+        "database": "profile",
+        "from_version": 2,
+        "to_version": 4,
+        "source_state": "supported",
+        "source_schema": "docs/architecture/database/v2/schema-contract.json",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "expected": "accepted",
+        "expected_error": null
+      },
+      {
+        "id": "upgrade_profile_v3_to_v4",
+        "kind": "upgrade",
+        "database": "profile",
+        "from_version": 3,
+        "to_version": 4,
+        "source_state": "supported",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "target_schema": "docs/architecture/database/v4/schema-contract.json",
+        "expected": "accepted",
+        "expected_error": null
+      }
+    ],
+    "status": "design_frozen_runtime_not_run"
+  },
+  "original_checks": [
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "实际app-infra测试目标编译日志",
+        "逐字段Rust映射断言",
+        "非损失类型与UTF8/u64边界"
+      ],
+      "id": "STORAGE-01",
+      "owner": "AP",
+      "title": "Rust输入类型与数据库字段映射编译"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "CR-08-CONFIG@NATIVE",
+        "CR-12-RESOURCE@NATIVE"
+      ],
+      "expected_evidence": [
+        "由真实迁移创建并关闭的profile与dictionary候选库",
+        "双库完整结构比较",
+        "迁移版本账本"
+      ],
+      "id": "STORAGE-02",
+      "owner": "AP",
+      "title": "全新配置档与内置词典的生产建库"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION",
+        "TP-30@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "PRE14冻结升级矩阵逐路线回执",
+        "升级前后一致备份与内容身份",
+        "故障后原件及恢复校验"
+      ],
+      "id": "STORAGE-03",
+      "owner": "AP",
+      "title": "受支持版本升级和失败迁移恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-30@DISTRIBUTION",
+        "MC-16@NATIVE",
+        "CR-09-UPGRADE@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "冻结的兼容拒绝与恢复路线",
+        "拒绝前后原件hash",
+        "受支持配对恢复结果"
+      ],
+      "id": "STORAGE-04",
+      "owner": "AP",
+      "title": "不兼容降级预检和包备份配对回退"
+    },
+    {
+      "execution_ids": [
+        "TP-02@INFRA"
+      ],
+      "expected_evidence": [
+        "真实写进程及WAL状态",
+        "在线备份和恢复完整性",
+        "恢复后业务快照比较"
+      ],
+      "id": "STORAGE-05",
+      "owner": "AP",
+      "title": "活跃WAL写入的一致备份恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "实际锁竞争进程",
+        "busy超时及队列界限断言",
+        "锁释放后可恢复写入"
+      ],
+      "id": "STORAGE-06",
+      "owner": "AP",
+      "title": "busy超时和单writer有界背压"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA",
+        "CR-08-CONFIG@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实只读连接或权限故障",
+        "失败后保留草稿与已提交数据",
+        "恢复权限后重试"
+      ],
+      "id": "STORAGE-07",
+      "owner": "AP",
+      "title": "只读数据库失败恢复"
+    },
+    {
+      "execution_ids": [
+        "TP-03@INFRA"
+      ],
+      "expected_evidence": [
+        "隔离容量受限卷及真实SQLITE_FULL",
+        "失败前后原件与事务状态",
+        "释放容量后的恢复；安全构造不可用时blocked"
+      ],
+      "id": "STORAGE-08",
+      "owner": "PL",
+      "title": "真实磁盘满故障"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA"
+      ],
+      "expected_evidence": [
+        "实际子进程终止与提交barrier",
+        "重启后全有或全无",
+        "外键及业务revision一致性"
+      ],
+      "id": "STORAGE-09",
+      "owner": "AP",
+      "title": "提交边界崩溃和多表事务原子性"
+    },
+    {
+      "execution_ids": [
+        "TP-04@INFRA"
+      ],
+      "expected_evidence": [
+        "真实隔离Keychain命名空间",
+        "跨存储每个崩溃点",
+        "悬挂秘密回收且DB不存明文"
+      ],
+      "id": "STORAGE-10",
+      "owner": "PL",
+      "title": "Keychain新增pending与数据库提交崩溃回收"
+    },
+    {
+      "execution_ids": [
+        "TP-05@INFRA",
+        "TP-24@DISTRIBUTION"
+      ],
+      "expected_evidence": [
+        "实际撤销持久化及vault拒绝",
+        "请求socket计数",
+        "重启后仍不可授权"
+      ],
+      "id": "STORAGE-11",
+      "owner": "PL",
+      "title": "凭据撤销与删除失败后禁止重新授权"
+    },
+    {
+      "execution_ids": [
+        "TP-14@INFRA",
+        "MC-12@NATIVE",
+        "MC-13@NATIVE"
+      ],
+      "expected_evidence": [
+        "所有竞争交错和单一终态",
+        "真实任务/尝试/结果提交记录",
+        "取消后无正文历史和缓存追加"
+      ],
+      "id": "STORAGE-12",
+      "owner": "AI",
+      "title": "取消停用切档与完成事务竞争"
+    },
+    {
+      "execution_ids": [
+        "TP-16@UNIT",
+        "CR-12-PERSIST@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "语义字段变形矩阵",
+        "真实缓存查询结果",
+        "独立人工修正前后hash"
+      ],
+      "id": "STORAGE-13",
+      "owner": "AP",
+      "title": "缓存语义身份和人工修正保留"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "CR-08-HISTORY@NATIVE"
+      ],
+      "expected_evidence": [
+        "并发分页ID和snapshot revision",
+        "清理前后来源链及固定对象hash",
+        "容量和foreign_key_check"
+      ],
+      "id": "STORAGE-14",
+      "owner": "AP",
+      "title": "历史游标分页保留清理及来源关系"
+    },
+    {
+      "execution_ids": [
+        "TP-09@INFRA",
+        "MC-21@NATIVE"
+      ],
+      "expected_evidence": [
+        "真实双进程和隔离档路径",
+        "文件锁与跨档身份断言",
+        "关闭切档后的实例代次"
+      ],
+      "id": "STORAGE-15",
+      "owner": "AP",
+      "title": "配置档数据库锁与数据隔离"
+    },
+    {
+      "execution_ids": [
+        "CR-12-RESOURCE@NATIVE",
+        "TP-19@NATIVE"
+      ],
+      "expected_evidence": [
+        "实际随包辞书manifest及许可",
+        "只读查询与写入拒绝",
+        "辞书版本不匹配时引用处理"
+      ],
+      "id": "STORAGE-16",
+      "owner": "JA",
+      "title": "包内只读词典版本和跨库引用"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-03@INFRA",
+        "TP-27@UNIT"
+      ],
+      "expected_evidence": [
+        "由field-boundaries唯一展开的每个probe结果",
+        "合法对照与非法边界拒绝",
+        "实际SQLite版本和无skip断言"
+      ],
+      "id": "STORAGE-17",
+      "owner": "AP",
+      "title": "每字段SQL边界和全部声明CHECK"
+    },
+    {
+      "execution_ids": [
+        "TP-01@INFRA",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "跨会话/跨配置版本外键拒绝",
+        "唯一及NULL边界",
+        "RESTRICT/CASCADE/SET NULL实际行为"
+      ],
+      "id": "STORAGE-18",
+      "owner": "AP",
+      "title": "复合关系与唯一删除约束"
+    },
+    {
+      "execution_ids": [
+        "TP-10@UNIT",
+        "TP-11@UNIT",
+        "MC-01@NATIVE",
+        "MC-08@NATIVE",
+        "MC-11@NATIVE",
+        "MC-12@NATIVE"
+      ],
+      "expected_evidence": [
+        "草稿与applied版本分离",
+        "封存后INSERT/UPDATE/DELETE拒绝与CAS",
+        "inherit/set/omit及显式0落库恢复"
+      ],
+      "id": "STORAGE-19",
+      "owner": "AP",
+      "title": "配置封存头指针和三态参数"
+    },
+    {
+      "execution_ids": [
+        "TP-08@INFRA",
+        "TP-06@INFRA",
+        "TP-07@INFRA"
+      ],
+      "expected_evidence": [
+        "同operation_id重复及冲突结果",
+        "原子receipt与revision投影",
+        "重启后无重复提交"
+      ],
+      "id": "STORAGE-20",
+      "owner": "AP",
+      "title": "命令幂等和业务revision提交"
+    },
+    {
+      "execution_ids": [
+        "TP-12@PROTOCOL",
+        "TP-17@PROTOCOL",
+        "TP-25@INFRA"
+      ],
+      "expected_evidence": [
+        "u64十进制/FILETIME roundtrip",
+        "原文UTF8字节与span恢复",
+        "来源复合键不串会话"
+      ],
+      "id": "STORAGE-21",
+      "owner": "AP",
+      "title": "完整来源身份与Unicode无损存取"
+    },
+    {
+      "execution_ids": [
+        "TP-25@INFRA",
+        "MC-13@NATIVE",
+        "MC-20@NATIVE"
+      ],
+      "expected_evidence": [
+        "仍被引用对象不可清理",
+        "回收墓碑与原子操作回执",
+        "回收后禁止重新引用及恢复授权"
+      ],
+      "id": "STORAGE-22",
+      "owner": "AP",
+      "title": "已封存配置及凭据池的受控GC"
+    }
+  ],
+  "original_upgrade_matrix": {
+    "approval_ref": "docs/architecture/database/v3/storage-review.json",
+    "dictionary_versions": {
+      "1": {
+        "manifest_path": "resources/language/dictionary-provenance.json",
+        "manifest_sha256": "b167ef1f55d62c990caef577f29900715f06c7108c4e36ea5c84518617e03d7b",
+        "resource_version": "wiktionary-zh-ja-20261018+jmdict-20261012-v1"
+      }
+    },
+    "fresh_versions": {
+      "dictionary": 1,
+      "profile": 3
+    },
+    "implementation_identity_policy": "outer current-source closure and actual compile/run; historical implementation hash is not current identity",
+    "migration_chain": [
+      {
+        "migration_sha256": "1f26620f1b22307ae07851c1e09c7ed44f888f6b9f88e9d9c34b6f7f1f3302c7",
+        "previous_version": 0,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_profile.sql",
+            "sha256": "cd70b9e815842c5eb5c2f8410cf88b31d0097eb65200fa94f85a7b92fb19bca5"
+          },
+          {
+            "path": "crates/app-infra/src/storage/migrations/001_config.sql",
+            "sha256": "7199346c9b4329d7580d24f2edbaee0000fb40f4103ddccd14ce8fdd6c169293"
+          }
+        ],
+        "version": 1
+      },
+      {
+        "migration_sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e",
+        "previous_version": 1,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/002_session_records.sql",
+            "sha256": "ec4d1470721b9d81e20a3c5e1bb12aa6f59a2b3c32f6310691f332394781ca2e"
+          }
+        ],
+        "version": 2
+      },
+      {
+        "migration_sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2",
+        "previous_version": 2,
+        "source_path": "crates/app-infra/src/storage/database.rs",
+        "sql_sources": [
+          {
+            "path": "crates/app-infra/src/storage/migrations/003_http_service_identity.sql",
+            "sha256": "813145f4923f28860ad2035abf5df8f5b9dbf68753b45510a2b794f80d3c43c2"
+          }
+        ],
+        "version": 3
+      }
+    ],
+    "routes": [
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 3,
+        "id": "reopen_profile_v1",
+        "kind": "reopen",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "accepted",
+        "expected_error": null,
+        "from_version": 3,
+        "id": "same_version_backup_recovery",
+        "kind": "paired_recovery",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "supported",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": 99,
+        "id": "reject_unknown_version",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unknown_version",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_unversioned",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "unversioned",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "unsupported_schema",
+        "from_version": null,
+        "id": "reject_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "corrupt",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "migration_mismatch",
+        "from_version": 3,
+        "id": "reject_migration_hash",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "migration_mismatch",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "schema_contract_mismatch",
+        "from_version": 3,
+        "id": "reject_schema_drift",
+        "kind": "compatibility_rejection",
+        "source_schema": null,
+        "source_state": "schema_mismatch",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      },
+      {
+        "database": "profile",
+        "expected": "rejected",
+        "expected_error": "database_relationship_corrupt",
+        "from_version": 3,
+        "id": "reject_relationship_corrupt",
+        "kind": "compatibility_rejection",
+        "source_schema": "docs/architecture/database/v3/schema-contract.json",
+        "source_state": "relationship_corrupt",
+        "target_schema": "docs/architecture/database/v3/schema-contract.json",
+        "to_version": 3
+      }
+    ],
+    "status": "design_frozen_runtime_not_run"
+  },
+  "prior_delta_check_ids": [
+    "RUST-MAP:profile.config_revisions.codec_version",
+    "RUST-MAP:profile.connections.adapter_binding_schema",
+    "RUST-MAP:profile.connections.adapter_contract_revision",
+    "RUST-MAP:profile.connections.compatibility_profile_id",
+    "RUST-MAP:profile.connections.compatibility_profile_revision",
+    "RUST-MAP:profile.connections.provider_preset_id",
+    "RUST-MAP:profile.connections.provider_preset_revision",
+    "RUST-MAP:profile.credential_refs.envelope_schema",
+    "RUST-MAP:profile.provider_preset_versions.adapter_contract_revision",
+    "RUST-MAP:profile.provider_preset_versions.auth_kind",
+    "RUST-MAP:profile.provider_preset_versions.compatibility_profile_id",
+    "RUST-MAP:profile.provider_preset_versions.compatibility_profile_revision",
+    "RUST-MAP:profile.provider_preset_versions.content_hash",
+    "RUST-MAP:profile.provider_preset_versions.created_at_ms",
+    "RUST-MAP:profile.provider_preset_versions.display_name",
+    "RUST-MAP:profile.provider_preset_versions.endpoint",
+    "RUST-MAP:profile.provider_preset_versions.namespace",
+    "RUST-MAP:profile.provider_preset_versions.options_json",
+    "RUST-MAP:profile.provider_preset_versions.preset_id",
+    "RUST-MAP:profile.provider_preset_versions.preset_revision",
+    "RUST-MAP:profile.provider_preset_versions.protocol_id",
+    "RUST-MAP:profile.provider_preset_versions.provider_id",
+    "RUST-MAP:profile.provider_preset_versions.provider_label",
+    "RUST-MAP:profile.provider_preset_versions.source_json",
+    "V3-AUTHORITY",
+    "V3-CODEC",
+    "V3-CREDENTIALS",
+    "V3-FIELD:profile.config_revisions.codec_version",
+    "V3-FIELD:profile.connections.adapter_binding_schema",
+    "V3-FIELD:profile.connections.adapter_contract_revision",
+    "V3-FIELD:profile.connections.compatibility_profile_id",
+    "V3-FIELD:profile.connections.compatibility_profile_revision",
+    "V3-FIELD:profile.connections.provider_preset_id",
+    "V3-FIELD:profile.connections.provider_preset_revision",
+    "V3-FIELD:profile.credential_refs.envelope_schema",
+    "V3-FIELD:profile.provider_preset_versions.adapter_contract_revision",
+    "V3-FIELD:profile.provider_preset_versions.auth_kind",
+    "V3-FIELD:profile.provider_preset_versions.compatibility_profile_id",
+    "V3-FIELD:profile.provider_preset_versions.compatibility_profile_revision",
+    "V3-FIELD:profile.provider_preset_versions.content_hash",
+    "V3-FIELD:profile.provider_preset_versions.created_at_ms",
+    "V3-FIELD:profile.provider_preset_versions.display_name",
+    "V3-FIELD:profile.provider_preset_versions.endpoint",
+    "V3-FIELD:profile.provider_preset_versions.namespace",
+    "V3-FIELD:profile.provider_preset_versions.options_json",
+    "V3-FIELD:profile.provider_preset_versions.preset_id",
+    "V3-FIELD:profile.provider_preset_versions.preset_revision",
+    "V3-FIELD:profile.provider_preset_versions.protocol_id",
+    "V3-FIELD:profile.provider_preset_versions.provider_id",
+    "V3-FIELD:profile.provider_preset_versions.provider_label",
+    "V3-FIELD:profile.provider_preset_versions.source_json",
+    "V3-LEGACY-ENUM:profile.connections.auth_mode",
+    "V3-LEGACY-ENUM:profile.connections.protocol",
+    "V3-LEGACY-ENUM:profile.credential_refs.auth_kind",
+    "V3-LEGACY-PRESERVATION",
+    "V3-MIGRATION",
+    "V3-PRESETS",
+    "V3-PRODUCERS",
+    "V3-RELATIONSHIPS"
+  ],
+  "delta_check_ids": [
+    "RUST-MAP:profile.activation_resource_materializations.control_config_id",
+    "RUST-MAP:profile.activation_resource_materializations.control_connection_id",
+    "RUST-MAP:profile.activation_resource_materializations.effective_connection_id",
+    "RUST-MAP:profile.activation_resource_materializations.effective_model_id",
+    "RUST-MAP:profile.activation_resource_materializations.effective_offline_config_id",
+    "RUST-MAP:profile.activation_resource_materializations.effective_revision_id",
+    "RUST-MAP:profile.activation_resource_materializations.materialization_id",
+    "RUST-MAP:profile.activation_resource_materializations.reason",
+    "RUST-MAP:profile.activation_resource_materializations.source_connection_id",
+    "RUST-MAP:profile.activation_resource_materializations.source_model_id",
+    "RUST-MAP:profile.activation_resource_materializations.source_offline_config_id",
+    "RUST-MAP:profile.activation_resource_materializations.source_revision_id",
+    "RUST-MAP:profile.activation_resource_materializations.target_kind",
+    "RUST-MAP:profile.attempt_execution_targets.attempt_id",
+    "RUST-MAP:profile.attempt_execution_targets.binding_id",
+    "RUST-MAP:profile.attempt_execution_targets.config_revision_id",
+    "RUST-MAP:profile.attempt_execution_targets.engine_id",
+    "RUST-MAP:profile.attempt_execution_targets.http_connection_id",
+    "RUST-MAP:profile.attempt_execution_targets.http_model_id",
+    "RUST-MAP:profile.attempt_execution_targets.observation_epoch",
+    "RUST-MAP:profile.attempt_execution_targets.observation_id",
+    "RUST-MAP:profile.attempt_execution_targets.offline_engine_config_id",
+    "RUST-MAP:profile.attempt_execution_targets.provenance_sha256",
+    "RUST-MAP:profile.attempt_execution_targets.route_id",
+    "RUST-MAP:profile.attempt_execution_targets.runtime_build_sha256",
+    "RUST-MAP:profile.attempt_execution_targets.snapshot_id",
+    "RUST-MAP:profile.attempt_execution_targets.target_kind",
+    "RUST-MAP:profile.attempt_execution_targets.task_id",
+    "RUST-MAP:profile.attempt_execution_targets.worker_instance_id",
+    "RUST-MAP:profile.attempt_execution_targets.worker_protocol_revision",
+    "RUST-MAP:profile.binding_engines.offline_engine_config_id",
+    "RUST-MAP:profile.binding_engines.policy_overrides_json",
+    "RUST-MAP:profile.binding_engines.target_kind",
+    "RUST-MAP:profile.cache_entries.origin_attempt_id",
+    "RUST-MAP:profile.config_revisions.revision_role",
+    "RUST-MAP:profile.connections.http_options_json",
+    "RUST-MAP:profile.connections.http_options_schema",
+    "RUST-MAP:profile.connections.oauth_authorization_epoch",
+    "RUST-MAP:profile.connections.oauth_grant_id",
+    "RUST-MAP:profile.connections.origin_json",
+    "RUST-MAP:profile.connections.origin_schema",
+    "RUST-MAP:profile.execution_authorization_leases.attempt_id",
+    "RUST-MAP:profile.execution_authorization_leases.auth_kind",
+    "RUST-MAP:profile.execution_authorization_leases.authorization_epoch",
+    "RUST-MAP:profile.execution_authorization_leases.client_policy_sha256",
+    "RUST-MAP:profile.execution_authorization_leases.credential_id",
+    "RUST-MAP:profile.execution_authorization_leases.expires_at_ms",
+    "RUST-MAP:profile.execution_authorization_leases.grant_id",
+    "RUST-MAP:profile.execution_authorization_leases.lease_id",
+    "RUST-MAP:profile.execution_authorization_leases.lifecycle_revision",
+    "RUST-MAP:profile.execution_authorization_leases.material_revision",
+    "RUST-MAP:profile.execution_authorization_leases.member_id",
+    "RUST-MAP:profile.execution_authorization_leases.minted_at_ms",
+    "RUST-MAP:profile.execution_authorization_leases.origin_kind",
+    "RUST-MAP:profile.execution_authorization_leases.pool_id",
+    "RUST-MAP:profile.execution_authorization_leases.pool_revision",
+    "RUST-MAP:profile.execution_authorization_leases.scopes_sha256",
+    "RUST-MAP:profile.execution_authorization_leases.target_policy_sha256",
+    "RUST-MAP:profile.execution_authorization_leases.task_id",
+    "RUST-MAP:profile.execution_authorization_leases.test_id",
+    "RUST-MAP:profile.models.template_purpose",
+    "RUST-MAP:profile.oauth_authorization_snapshots.authorization_epoch",
+    "RUST-MAP:profile.oauth_authorization_snapshots.created_at_ms",
+    "RUST-MAP:profile.oauth_authorization_snapshots.grant_id",
+    "RUST-MAP:profile.oauth_authorization_snapshots.previous_epoch",
+    "RUST-MAP:profile.oauth_authorization_snapshots.scope",
+    "RUST-MAP:profile.oauth_authorization_snapshots.scopes_sha256",
+    "RUST-MAP:profile.oauth_authorization_snapshots.state",
+    "RUST-MAP:profile.oauth_client_profiles.client_mode",
+    "RUST-MAP:profile.oauth_client_profiles.client_profile_id",
+    "RUST-MAP:profile.oauth_client_profiles.client_profile_revision",
+    "RUST-MAP:profile.oauth_client_profiles.created_at_ms",
+    "RUST-MAP:profile.oauth_client_profiles.issuer",
+    "RUST-MAP:profile.oauth_client_profiles.policy_sha256",
+    "RUST-MAP:profile.oauth_client_profiles.public_client_id",
+    "RUST-MAP:profile.oauth_client_profiles.redirect_policy",
+    "RUST-MAP:profile.oauth_client_profiles.setup_state",
+    "RUST-MAP:profile.oauth_grants.authorization_epoch",
+    "RUST-MAP:profile.oauth_grants.client_profile_id",
+    "RUST-MAP:profile.oauth_grants.client_profile_revision",
+    "RUST-MAP:profile.oauth_grants.control_revision",
+    "RUST-MAP:profile.oauth_grants.created_at_ms",
+    "RUST-MAP:profile.oauth_grants.grant_id",
+    "RUST-MAP:profile.oauth_grants.material_revision",
+    "RUST-MAP:profile.oauth_grants.principal_state",
+    "RUST-MAP:profile.oauth_grants.principal_subject",
+    "RUST-MAP:profile.oauth_token_material_revisions.auth_kind",
+    "RUST-MAP:profile.oauth_token_material_revisions.created_at_ms",
+    "RUST-MAP:profile.oauth_token_material_revisions.credential_id",
+    "RUST-MAP:profile.oauth_token_material_revisions.grant_id",
+    "RUST-MAP:profile.oauth_token_material_revisions.material_revision",
+    "RUST-MAP:profile.oauth_token_material_revisions.parent_material_revision",
+    "RUST-MAP:profile.offline_config_runtime_states.control_revision",
+    "RUST-MAP:profile.offline_config_runtime_states.engine_config_id",
+    "RUST-MAP:profile.offline_config_runtime_states.is_suspended",
+    "RUST-MAP:profile.offline_config_runtime_states.reason_code",
+    "RUST-MAP:profile.offline_config_runtime_states.updated_at_ms",
+    "RUST-MAP:profile.offline_engine_configs.backend",
+    "RUST-MAP:profile.offline_engine_configs.consent_revision",
+    "RUST-MAP:profile.offline_engine_configs.display_name",
+    "RUST-MAP:profile.offline_engine_configs.engine_config_id",
+    "RUST-MAP:profile.offline_engine_configs.engine_contract_revision",
+    "RUST-MAP:profile.offline_engine_configs.engine_id",
+    "RUST-MAP:profile.offline_engine_configs.installation_id",
+    "RUST-MAP:profile.offline_engine_configs.installation_revision",
+    "RUST-MAP:profile.offline_engine_configs.resolution",
+    "RUST-MAP:profile.offline_engine_configs.revision_id",
+    "RUST-MAP:profile.offline_engine_configs.route_id",
+    "RUST-MAP:profile.offline_engine_configs.route_policy",
+    "RUST-MAP:profile.offline_engine_configs.snapshot_id",
+    "RUST-MAP:profile.offline_engine_configs.source_language",
+    "RUST-MAP:profile.offline_engine_configs.target_language",
+    "RUST-MAP:profile.offline_execution_environments.architecture",
+    "RUST-MAP:profile.offline_execution_environments.bottle_identity",
+    "RUST-MAP:profile.offline_execution_environments.created_at_ms",
+    "RUST-MAP:profile.offline_execution_environments.environment_id",
+    "RUST-MAP:profile.offline_execution_environments.environment_revision",
+    "RUST-MAP:profile.offline_execution_environments.local_prefix_path",
+    "RUST-MAP:profile.offline_execution_environments.machine_fingerprint",
+    "RUST-MAP:profile.offline_execution_environments.os_build",
+    "RUST-MAP:profile.offline_execution_environments.platform",
+    "RUST-MAP:profile.offline_execution_environments.wine_build",
+    "RUST-MAP:profile.offline_installation_heads.enabled",
+    "RUST-MAP:profile.offline_installation_heads.installation_id",
+    "RUST-MAP:profile.offline_installation_heads.installation_revision",
+    "RUST-MAP:profile.offline_installation_heads.row_revision",
+    "RUST-MAP:profile.offline_installation_versions.created_at_ms",
+    "RUST-MAP:profile.offline_installation_versions.engine_contract_revision",
+    "RUST-MAP:profile.offline_installation_versions.engine_id",
+    "RUST-MAP:profile.offline_installation_versions.environment_id",
+    "RUST-MAP:profile.offline_installation_versions.environment_revision",
+    "RUST-MAP:profile.offline_installation_versions.installation_id",
+    "RUST-MAP:profile.offline_installation_versions.installation_revision",
+    "RUST-MAP:profile.offline_installation_versions.local_grant_id",
+    "RUST-MAP:profile.offline_installation_versions.local_native_path",
+    "RUST-MAP:profile.offline_installation_versions.runtime_profile_id",
+    "RUST-MAP:profile.offline_installation_versions.runtime_profile_revision",
+    "RUST-MAP:profile.offline_local_grants.authorization_epoch",
+    "RUST-MAP:profile.offline_local_grants.created_at_ms",
+    "RUST-MAP:profile.offline_local_grants.grant_id",
+    "RUST-MAP:profile.offline_local_grants.machine_fingerprint",
+    "RUST-MAP:profile.offline_local_grants.opaque_locator",
+    "RUST-MAP:profile.offline_local_grants.state",
+    "RUST-MAP:profile.offline_observation_heads.observation_epoch",
+    "RUST-MAP:profile.offline_observation_heads.observation_id",
+    "RUST-MAP:profile.offline_observation_heads.row_revision",
+    "RUST-MAP:profile.offline_observation_heads.subject_key",
+    "RUST-MAP:profile.offline_resource_observations.installation_id",
+    "RUST-MAP:profile.offline_resource_observations.installation_revision",
+    "RUST-MAP:profile.offline_resource_observations.local_grant_epoch",
+    "RUST-MAP:profile.offline_resource_observations.local_grant_id",
+    "RUST-MAP:profile.offline_resource_observations.observation_epoch",
+    "RUST-MAP:profile.offline_resource_observations.observation_id",
+    "RUST-MAP:profile.offline_resource_observations.observed_at_ms",
+    "RUST-MAP:profile.offline_resource_observations.reason_code",
+    "RUST-MAP:profile.offline_resource_observations.snapshot_id",
+    "RUST-MAP:profile.offline_resource_observations.state",
+    "RUST-MAP:profile.offline_resource_observations.subject_key",
+    "RUST-MAP:profile.offline_resource_pairs.pipeline_profile_id",
+    "RUST-MAP:profile.offline_resource_pairs.snapshot_id",
+    "RUST-MAP:profile.offline_resource_pairs.source_language",
+    "RUST-MAP:profile.offline_resource_pairs.target_language",
+    "RUST-MAP:profile.offline_resource_seals.content_hash",
+    "RUST-MAP:profile.offline_resource_seals.sealed_at_ms",
+    "RUST-MAP:profile.offline_resource_seals.snapshot_id",
+    "RUST-MAP:profile.offline_resource_snapshot_files.byte_length",
+    "RUST-MAP:profile.offline_resource_snapshot_files.relative_key",
+    "RUST-MAP:profile.offline_resource_snapshot_files.role",
+    "RUST-MAP:profile.offline_resource_snapshot_files.sha256",
+    "RUST-MAP:profile.offline_resource_snapshot_files.snapshot_id",
+    "RUST-MAP:profile.offline_resource_snapshots.api_profile",
+    "RUST-MAP:profile.offline_resource_snapshots.backend",
+    "RUST-MAP:profile.offline_resource_snapshots.bridge_build_sha256",
+    "RUST-MAP:profile.offline_resource_snapshots.content_hash",
+    "RUST-MAP:profile.offline_resource_snapshots.created_at_ms",
+    "RUST-MAP:profile.offline_resource_snapshots.engine_contract_revision",
+    "RUST-MAP:profile.offline_resource_snapshots.engine_id",
+    "RUST-MAP:profile.offline_resource_snapshots.identity_kind",
+    "RUST-MAP:profile.offline_resource_snapshots.manifest_sha256",
+    "RUST-MAP:profile.offline_resource_snapshots.observation_epoch",
+    "RUST-MAP:profile.offline_resource_snapshots.os_build",
+    "RUST-MAP:profile.offline_resource_snapshots.runtime_profile_id",
+    "RUST-MAP:profile.offline_resource_snapshots.runtime_profile_revision",
+    "RUST-MAP:profile.offline_resource_snapshots.snapshot_id",
+    "RUST-MAP:profile.offline_resource_snapshots.source_language",
+    "RUST-MAP:profile.offline_resource_snapshots.strategy",
+    "RUST-MAP:profile.offline_resource_snapshots.target_language",
+    "RUST-MAP:profile.offline_route_seals.content_hash",
+    "RUST-MAP:profile.offline_route_seals.route_id",
+    "RUST-MAP:profile.offline_route_seals.sealed_at_ms",
+    "RUST-MAP:profile.offline_runtime_profiles.abi_profile_id",
+    "RUST-MAP:profile.offline_runtime_profiles.architecture",
+    "RUST-MAP:profile.offline_runtime_profiles.backend",
+    "RUST-MAP:profile.offline_runtime_profiles.created_at_ms",
+    "RUST-MAP:profile.offline_runtime_profiles.engine_contract_revision",
+    "RUST-MAP:profile.offline_runtime_profiles.engine_id",
+    "RUST-MAP:profile.offline_runtime_profiles.platform",
+    "RUST-MAP:profile.offline_runtime_profiles.policy_sha256",
+    "RUST-MAP:profile.offline_runtime_profiles.private_protocol_revision",
+    "RUST-MAP:profile.offline_runtime_profiles.runtime_profile_id",
+    "RUST-MAP:profile.offline_runtime_profiles.runtime_profile_revision",
+    "RUST-MAP:profile.offline_runtime_profiles.verification_state",
+    "RUST-MAP:profile.offline_test_targets.config_revision_id",
+    "RUST-MAP:profile.offline_test_targets.engine_config_id",
+    "RUST-MAP:profile.offline_test_targets.observation_epoch",
+    "RUST-MAP:profile.offline_test_targets.observation_id",
+    "RUST-MAP:profile.offline_test_targets.phase",
+    "RUST-MAP:profile.offline_test_targets.route_id",
+    "RUST-MAP:profile.offline_test_targets.runtime_build_sha256",
+    "RUST-MAP:profile.offline_test_targets.snapshot_id",
+    "RUST-MAP:profile.offline_test_targets.test_id",
+    "RUST-MAP:profile.offline_translation_route_hops.backend",
+    "RUST-MAP:profile.offline_translation_route_hops.engine_contract_revision",
+    "RUST-MAP:profile.offline_translation_route_hops.engine_id",
+    "RUST-MAP:profile.offline_translation_route_hops.hop_ordinal",
+    "RUST-MAP:profile.offline_translation_route_hops.pipeline_profile_id",
+    "RUST-MAP:profile.offline_translation_route_hops.route_id",
+    "RUST-MAP:profile.offline_translation_route_hops.snapshot_id",
+    "RUST-MAP:profile.offline_translation_route_hops.source_language",
+    "RUST-MAP:profile.offline_translation_route_hops.target_language",
+    "RUST-MAP:profile.offline_translation_routes.backend",
+    "RUST-MAP:profile.offline_translation_routes.consent_revision",
+    "RUST-MAP:profile.offline_translation_routes.content_hash",
+    "RUST-MAP:profile.offline_translation_routes.created_at_ms",
+    "RUST-MAP:profile.offline_translation_routes.engine_contract_revision",
+    "RUST-MAP:profile.offline_translation_routes.engine_id",
+    "RUST-MAP:profile.offline_translation_routes.route_id",
+    "RUST-MAP:profile.offline_translation_routes.route_kind",
+    "RUST-MAP:profile.offline_translation_routes.source_language",
+    "RUST-MAP:profile.offline_translation_routes.target_language",
+    "RUST-MAP:profile.purpose_bindings.policy_overrides_json",
+    "RUST-MAP:profile.purpose_bindings.selection_revision",
+    "RUST-MAP:profile.purpose_bindings.semantics_version",
+    "RUST-MAP:profile.service_default_fallbacks.defaults_id",
+    "RUST-MAP:profile.service_default_fallbacks.position",
+    "RUST-MAP:profile.service_default_fallbacks.revision_id",
+    "RUST-MAP:profile.service_default_fallbacks.source_model_id",
+    "RUST-MAP:profile.service_default_fallbacks.source_offline_config_id",
+    "RUST-MAP:profile.service_default_fallbacks.source_revision_id",
+    "RUST-MAP:profile.service_default_fallbacks.target_kind",
+    "RUST-MAP:profile.service_request_defaults.cache_enabled",
+    "RUST-MAP:profile.service_request_defaults.concurrency",
+    "RUST-MAP:profile.service_request_defaults.context_enabled",
+    "RUST-MAP:profile.service_request_defaults.context_mode",
+    "RUST-MAP:profile.service_request_defaults.context_sentences",
+    "RUST-MAP:profile.service_request_defaults.defaults_id",
+    "RUST-MAP:profile.service_request_defaults.model_id",
+    "RUST-MAP:profile.service_request_defaults.offline_engine_config_id",
+    "RUST-MAP:profile.service_request_defaults.purpose",
+    "RUST-MAP:profile.service_request_defaults.retries",
+    "RUST-MAP:profile.service_request_defaults.revision_id",
+    "RUST-MAP:profile.service_request_defaults.source_language",
+    "RUST-MAP:profile.service_request_defaults.source_mode",
+    "RUST-MAP:profile.service_request_defaults.target_kind",
+    "RUST-MAP:profile.service_request_defaults.target_language",
+    "RUST-MAP:profile.service_request_defaults.target_mode",
+    "RUST-MAP:profile.service_request_defaults.timeout_ms",
+    "RUST-MAP:profile.task_allowed_fallback_targets.binding_id",
+    "RUST-MAP:profile.task_allowed_fallback_targets.config_revision_id",
+    "RUST-MAP:profile.task_allowed_fallback_targets.engine_id",
+    "RUST-MAP:profile.task_allowed_fallback_targets.fallback_ordinal",
+    "RUST-MAP:profile.task_allowed_fallback_targets.target_kind",
+    "RUST-MAP:profile.task_allowed_fallback_targets.task_id",
+    "RUST-MAP:profile.task_execution_targets.binding_id",
+    "RUST-MAP:profile.task_execution_targets.config_revision_id",
+    "RUST-MAP:profile.task_execution_targets.effective_scope",
+    "RUST-MAP:profile.task_execution_targets.effective_selection_revision",
+    "RUST-MAP:profile.task_execution_targets.engine_id",
+    "RUST-MAP:profile.task_execution_targets.http_connection_id",
+    "RUST-MAP:profile.task_execution_targets.http_model_id",
+    "RUST-MAP:profile.task_execution_targets.observation_epoch",
+    "RUST-MAP:profile.task_execution_targets.observation_id",
+    "RUST-MAP:profile.task_execution_targets.offline_engine_config_id",
+    "RUST-MAP:profile.task_execution_targets.purpose",
+    "RUST-MAP:profile.task_execution_targets.route_id",
+    "RUST-MAP:profile.task_execution_targets.selection_revision",
+    "RUST-MAP:profile.task_execution_targets.selection_scope",
+    "RUST-MAP:profile.task_execution_targets.snapshot_id",
+    "RUST-MAP:profile.task_execution_targets.target_kind",
+    "RUST-MAP:profile.task_execution_targets.target_sha256",
+    "RUST-MAP:profile.task_execution_targets.task_id",
+    "RUST-MAP:profile.test_records.target_kind",
+    "V4-AUTHORITY",
+    "V4-BACKUP-RECOVERY",
+    "V4-CAS-GC",
+    "V4-CODEC",
+    "V4-CREDENTIALS",
+    "V4-FIELD:profile.activation_resource_materializations.control_config_id",
+    "V4-FIELD:profile.activation_resource_materializations.control_connection_id",
+    "V4-FIELD:profile.activation_resource_materializations.effective_connection_id",
+    "V4-FIELD:profile.activation_resource_materializations.effective_model_id",
+    "V4-FIELD:profile.activation_resource_materializations.effective_offline_config_id",
+    "V4-FIELD:profile.activation_resource_materializations.effective_revision_id",
+    "V4-FIELD:profile.activation_resource_materializations.materialization_id",
+    "V4-FIELD:profile.activation_resource_materializations.reason",
+    "V4-FIELD:profile.activation_resource_materializations.source_connection_id",
+    "V4-FIELD:profile.activation_resource_materializations.source_model_id",
+    "V4-FIELD:profile.activation_resource_materializations.source_offline_config_id",
+    "V4-FIELD:profile.activation_resource_materializations.source_revision_id",
+    "V4-FIELD:profile.activation_resource_materializations.target_kind",
+    "V4-FIELD:profile.attempt_execution_targets.attempt_id",
+    "V4-FIELD:profile.attempt_execution_targets.binding_id",
+    "V4-FIELD:profile.attempt_execution_targets.config_revision_id",
+    "V4-FIELD:profile.attempt_execution_targets.engine_id",
+    "V4-FIELD:profile.attempt_execution_targets.http_connection_id",
+    "V4-FIELD:profile.attempt_execution_targets.http_model_id",
+    "V4-FIELD:profile.attempt_execution_targets.observation_epoch",
+    "V4-FIELD:profile.attempt_execution_targets.observation_id",
+    "V4-FIELD:profile.attempt_execution_targets.offline_engine_config_id",
+    "V4-FIELD:profile.attempt_execution_targets.provenance_sha256",
+    "V4-FIELD:profile.attempt_execution_targets.route_id",
+    "V4-FIELD:profile.attempt_execution_targets.runtime_build_sha256",
+    "V4-FIELD:profile.attempt_execution_targets.snapshot_id",
+    "V4-FIELD:profile.attempt_execution_targets.target_kind",
+    "V4-FIELD:profile.attempt_execution_targets.task_id",
+    "V4-FIELD:profile.attempt_execution_targets.worker_instance_id",
+    "V4-FIELD:profile.attempt_execution_targets.worker_protocol_revision",
+    "V4-FIELD:profile.binding_engines.offline_engine_config_id",
+    "V4-FIELD:profile.binding_engines.policy_overrides_json",
+    "V4-FIELD:profile.binding_engines.target_kind",
+    "V4-FIELD:profile.cache_entries.origin_attempt_id",
+    "V4-FIELD:profile.config_revisions.revision_role",
+    "V4-FIELD:profile.connections.http_options_json",
+    "V4-FIELD:profile.connections.http_options_schema",
+    "V4-FIELD:profile.connections.oauth_authorization_epoch",
+    "V4-FIELD:profile.connections.oauth_grant_id",
+    "V4-FIELD:profile.connections.origin_json",
+    "V4-FIELD:profile.connections.origin_schema",
+    "V4-FIELD:profile.execution_authorization_leases.attempt_id",
+    "V4-FIELD:profile.execution_authorization_leases.auth_kind",
+    "V4-FIELD:profile.execution_authorization_leases.authorization_epoch",
+    "V4-FIELD:profile.execution_authorization_leases.client_policy_sha256",
+    "V4-FIELD:profile.execution_authorization_leases.credential_id",
+    "V4-FIELD:profile.execution_authorization_leases.expires_at_ms",
+    "V4-FIELD:profile.execution_authorization_leases.grant_id",
+    "V4-FIELD:profile.execution_authorization_leases.lease_id",
+    "V4-FIELD:profile.execution_authorization_leases.lifecycle_revision",
+    "V4-FIELD:profile.execution_authorization_leases.material_revision",
+    "V4-FIELD:profile.execution_authorization_leases.member_id",
+    "V4-FIELD:profile.execution_authorization_leases.minted_at_ms",
+    "V4-FIELD:profile.execution_authorization_leases.origin_kind",
+    "V4-FIELD:profile.execution_authorization_leases.pool_id",
+    "V4-FIELD:profile.execution_authorization_leases.pool_revision",
+    "V4-FIELD:profile.execution_authorization_leases.scopes_sha256",
+    "V4-FIELD:profile.execution_authorization_leases.target_policy_sha256",
+    "V4-FIELD:profile.execution_authorization_leases.task_id",
+    "V4-FIELD:profile.execution_authorization_leases.test_id",
+    "V4-FIELD:profile.models.template_purpose",
+    "V4-FIELD:profile.oauth_authorization_snapshots.authorization_epoch",
+    "V4-FIELD:profile.oauth_authorization_snapshots.created_at_ms",
+    "V4-FIELD:profile.oauth_authorization_snapshots.grant_id",
+    "V4-FIELD:profile.oauth_authorization_snapshots.previous_epoch",
+    "V4-FIELD:profile.oauth_authorization_snapshots.scope",
+    "V4-FIELD:profile.oauth_authorization_snapshots.scopes_sha256",
+    "V4-FIELD:profile.oauth_authorization_snapshots.state",
+    "V4-FIELD:profile.oauth_client_profiles.client_mode",
+    "V4-FIELD:profile.oauth_client_profiles.client_profile_id",
+    "V4-FIELD:profile.oauth_client_profiles.client_profile_revision",
+    "V4-FIELD:profile.oauth_client_profiles.created_at_ms",
+    "V4-FIELD:profile.oauth_client_profiles.issuer",
+    "V4-FIELD:profile.oauth_client_profiles.policy_sha256",
+    "V4-FIELD:profile.oauth_client_profiles.public_client_id",
+    "V4-FIELD:profile.oauth_client_profiles.redirect_policy",
+    "V4-FIELD:profile.oauth_client_profiles.setup_state",
+    "V4-FIELD:profile.oauth_grants.authorization_epoch",
+    "V4-FIELD:profile.oauth_grants.client_profile_id",
+    "V4-FIELD:profile.oauth_grants.client_profile_revision",
+    "V4-FIELD:profile.oauth_grants.control_revision",
+    "V4-FIELD:profile.oauth_grants.created_at_ms",
+    "V4-FIELD:profile.oauth_grants.grant_id",
+    "V4-FIELD:profile.oauth_grants.material_revision",
+    "V4-FIELD:profile.oauth_grants.principal_state",
+    "V4-FIELD:profile.oauth_grants.principal_subject",
+    "V4-FIELD:profile.oauth_token_material_revisions.auth_kind",
+    "V4-FIELD:profile.oauth_token_material_revisions.created_at_ms",
+    "V4-FIELD:profile.oauth_token_material_revisions.credential_id",
+    "V4-FIELD:profile.oauth_token_material_revisions.grant_id",
+    "V4-FIELD:profile.oauth_token_material_revisions.material_revision",
+    "V4-FIELD:profile.oauth_token_material_revisions.parent_material_revision",
+    "V4-FIELD:profile.offline_config_runtime_states.control_revision",
+    "V4-FIELD:profile.offline_config_runtime_states.engine_config_id",
+    "V4-FIELD:profile.offline_config_runtime_states.is_suspended",
+    "V4-FIELD:profile.offline_config_runtime_states.reason_code",
+    "V4-FIELD:profile.offline_config_runtime_states.updated_at_ms",
+    "V4-FIELD:profile.offline_engine_configs.backend",
+    "V4-FIELD:profile.offline_engine_configs.consent_revision",
+    "V4-FIELD:profile.offline_engine_configs.display_name",
+    "V4-FIELD:profile.offline_engine_configs.engine_config_id",
+    "V4-FIELD:profile.offline_engine_configs.engine_contract_revision",
+    "V4-FIELD:profile.offline_engine_configs.engine_id",
+    "V4-FIELD:profile.offline_engine_configs.installation_id",
+    "V4-FIELD:profile.offline_engine_configs.installation_revision",
+    "V4-FIELD:profile.offline_engine_configs.resolution",
+    "V4-FIELD:profile.offline_engine_configs.revision_id",
+    "V4-FIELD:profile.offline_engine_configs.route_id",
+    "V4-FIELD:profile.offline_engine_configs.route_policy",
+    "V4-FIELD:profile.offline_engine_configs.snapshot_id",
+    "V4-FIELD:profile.offline_engine_configs.source_language",
+    "V4-FIELD:profile.offline_engine_configs.target_language",
+    "V4-FIELD:profile.offline_execution_environments.architecture",
+    "V4-FIELD:profile.offline_execution_environments.bottle_identity",
+    "V4-FIELD:profile.offline_execution_environments.created_at_ms",
+    "V4-FIELD:profile.offline_execution_environments.environment_id",
+    "V4-FIELD:profile.offline_execution_environments.environment_revision",
+    "V4-FIELD:profile.offline_execution_environments.local_prefix_path",
+    "V4-FIELD:profile.offline_execution_environments.machine_fingerprint",
+    "V4-FIELD:profile.offline_execution_environments.os_build",
+    "V4-FIELD:profile.offline_execution_environments.platform",
+    "V4-FIELD:profile.offline_execution_environments.wine_build",
+    "V4-FIELD:profile.offline_installation_heads.enabled",
+    "V4-FIELD:profile.offline_installation_heads.installation_id",
+    "V4-FIELD:profile.offline_installation_heads.installation_revision",
+    "V4-FIELD:profile.offline_installation_heads.row_revision",
+    "V4-FIELD:profile.offline_installation_versions.created_at_ms",
+    "V4-FIELD:profile.offline_installation_versions.engine_contract_revision",
+    "V4-FIELD:profile.offline_installation_versions.engine_id",
+    "V4-FIELD:profile.offline_installation_versions.environment_id",
+    "V4-FIELD:profile.offline_installation_versions.environment_revision",
+    "V4-FIELD:profile.offline_installation_versions.installation_id",
+    "V4-FIELD:profile.offline_installation_versions.installation_revision",
+    "V4-FIELD:profile.offline_installation_versions.local_grant_id",
+    "V4-FIELD:profile.offline_installation_versions.local_native_path",
+    "V4-FIELD:profile.offline_installation_versions.runtime_profile_id",
+    "V4-FIELD:profile.offline_installation_versions.runtime_profile_revision",
+    "V4-FIELD:profile.offline_local_grants.authorization_epoch",
+    "V4-FIELD:profile.offline_local_grants.created_at_ms",
+    "V4-FIELD:profile.offline_local_grants.grant_id",
+    "V4-FIELD:profile.offline_local_grants.machine_fingerprint",
+    "V4-FIELD:profile.offline_local_grants.opaque_locator",
+    "V4-FIELD:profile.offline_local_grants.state",
+    "V4-FIELD:profile.offline_observation_heads.observation_epoch",
+    "V4-FIELD:profile.offline_observation_heads.observation_id",
+    "V4-FIELD:profile.offline_observation_heads.row_revision",
+    "V4-FIELD:profile.offline_observation_heads.subject_key",
+    "V4-FIELD:profile.offline_resource_observations.installation_id",
+    "V4-FIELD:profile.offline_resource_observations.installation_revision",
+    "V4-FIELD:profile.offline_resource_observations.local_grant_epoch",
+    "V4-FIELD:profile.offline_resource_observations.local_grant_id",
+    "V4-FIELD:profile.offline_resource_observations.observation_epoch",
+    "V4-FIELD:profile.offline_resource_observations.observation_id",
+    "V4-FIELD:profile.offline_resource_observations.observed_at_ms",
+    "V4-FIELD:profile.offline_resource_observations.reason_code",
+    "V4-FIELD:profile.offline_resource_observations.snapshot_id",
+    "V4-FIELD:profile.offline_resource_observations.state",
+    "V4-FIELD:profile.offline_resource_observations.subject_key",
+    "V4-FIELD:profile.offline_resource_pairs.pipeline_profile_id",
+    "V4-FIELD:profile.offline_resource_pairs.snapshot_id",
+    "V4-FIELD:profile.offline_resource_pairs.source_language",
+    "V4-FIELD:profile.offline_resource_pairs.target_language",
+    "V4-FIELD:profile.offline_resource_seals.content_hash",
+    "V4-FIELD:profile.offline_resource_seals.sealed_at_ms",
+    "V4-FIELD:profile.offline_resource_seals.snapshot_id",
+    "V4-FIELD:profile.offline_resource_snapshot_files.byte_length",
+    "V4-FIELD:profile.offline_resource_snapshot_files.relative_key",
+    "V4-FIELD:profile.offline_resource_snapshot_files.role",
+    "V4-FIELD:profile.offline_resource_snapshot_files.sha256",
+    "V4-FIELD:profile.offline_resource_snapshot_files.snapshot_id",
+    "V4-FIELD:profile.offline_resource_snapshots.api_profile",
+    "V4-FIELD:profile.offline_resource_snapshots.backend",
+    "V4-FIELD:profile.offline_resource_snapshots.bridge_build_sha256",
+    "V4-FIELD:profile.offline_resource_snapshots.content_hash",
+    "V4-FIELD:profile.offline_resource_snapshots.created_at_ms",
+    "V4-FIELD:profile.offline_resource_snapshots.engine_contract_revision",
+    "V4-FIELD:profile.offline_resource_snapshots.engine_id",
+    "V4-FIELD:profile.offline_resource_snapshots.identity_kind",
+    "V4-FIELD:profile.offline_resource_snapshots.manifest_sha256",
+    "V4-FIELD:profile.offline_resource_snapshots.observation_epoch",
+    "V4-FIELD:profile.offline_resource_snapshots.os_build",
+    "V4-FIELD:profile.offline_resource_snapshots.runtime_profile_id",
+    "V4-FIELD:profile.offline_resource_snapshots.runtime_profile_revision",
+    "V4-FIELD:profile.offline_resource_snapshots.snapshot_id",
+    "V4-FIELD:profile.offline_resource_snapshots.source_language",
+    "V4-FIELD:profile.offline_resource_snapshots.strategy",
+    "V4-FIELD:profile.offline_resource_snapshots.target_language",
+    "V4-FIELD:profile.offline_route_seals.content_hash",
+    "V4-FIELD:profile.offline_route_seals.route_id",
+    "V4-FIELD:profile.offline_route_seals.sealed_at_ms",
+    "V4-FIELD:profile.offline_runtime_profiles.abi_profile_id",
+    "V4-FIELD:profile.offline_runtime_profiles.architecture",
+    "V4-FIELD:profile.offline_runtime_profiles.backend",
+    "V4-FIELD:profile.offline_runtime_profiles.created_at_ms",
+    "V4-FIELD:profile.offline_runtime_profiles.engine_contract_revision",
+    "V4-FIELD:profile.offline_runtime_profiles.engine_id",
+    "V4-FIELD:profile.offline_runtime_profiles.platform",
+    "V4-FIELD:profile.offline_runtime_profiles.policy_sha256",
+    "V4-FIELD:profile.offline_runtime_profiles.private_protocol_revision",
+    "V4-FIELD:profile.offline_runtime_profiles.runtime_profile_id",
+    "V4-FIELD:profile.offline_runtime_profiles.runtime_profile_revision",
+    "V4-FIELD:profile.offline_runtime_profiles.verification_state",
+    "V4-FIELD:profile.offline_test_targets.config_revision_id",
+    "V4-FIELD:profile.offline_test_targets.engine_config_id",
+    "V4-FIELD:profile.offline_test_targets.observation_epoch",
+    "V4-FIELD:profile.offline_test_targets.observation_id",
+    "V4-FIELD:profile.offline_test_targets.phase",
+    "V4-FIELD:profile.offline_test_targets.route_id",
+    "V4-FIELD:profile.offline_test_targets.runtime_build_sha256",
+    "V4-FIELD:profile.offline_test_targets.snapshot_id",
+    "V4-FIELD:profile.offline_test_targets.test_id",
+    "V4-FIELD:profile.offline_translation_route_hops.backend",
+    "V4-FIELD:profile.offline_translation_route_hops.engine_contract_revision",
+    "V4-FIELD:profile.offline_translation_route_hops.engine_id",
+    "V4-FIELD:profile.offline_translation_route_hops.hop_ordinal",
+    "V4-FIELD:profile.offline_translation_route_hops.pipeline_profile_id",
+    "V4-FIELD:profile.offline_translation_route_hops.route_id",
+    "V4-FIELD:profile.offline_translation_route_hops.snapshot_id",
+    "V4-FIELD:profile.offline_translation_route_hops.source_language",
+    "V4-FIELD:profile.offline_translation_route_hops.target_language",
+    "V4-FIELD:profile.offline_translation_routes.backend",
+    "V4-FIELD:profile.offline_translation_routes.consent_revision",
+    "V4-FIELD:profile.offline_translation_routes.content_hash",
+    "V4-FIELD:profile.offline_translation_routes.created_at_ms",
+    "V4-FIELD:profile.offline_translation_routes.engine_contract_revision",
+    "V4-FIELD:profile.offline_translation_routes.engine_id",
+    "V4-FIELD:profile.offline_translation_routes.route_id",
+    "V4-FIELD:profile.offline_translation_routes.route_kind",
+    "V4-FIELD:profile.offline_translation_routes.source_language",
+    "V4-FIELD:profile.offline_translation_routes.target_language",
+    "V4-FIELD:profile.purpose_bindings.policy_overrides_json",
+    "V4-FIELD:profile.purpose_bindings.selection_revision",
+    "V4-FIELD:profile.purpose_bindings.semantics_version",
+    "V4-FIELD:profile.service_default_fallbacks.defaults_id",
+    "V4-FIELD:profile.service_default_fallbacks.position",
+    "V4-FIELD:profile.service_default_fallbacks.revision_id",
+    "V4-FIELD:profile.service_default_fallbacks.source_model_id",
+    "V4-FIELD:profile.service_default_fallbacks.source_offline_config_id",
+    "V4-FIELD:profile.service_default_fallbacks.source_revision_id",
+    "V4-FIELD:profile.service_default_fallbacks.target_kind",
+    "V4-FIELD:profile.service_request_defaults.cache_enabled",
+    "V4-FIELD:profile.service_request_defaults.concurrency",
+    "V4-FIELD:profile.service_request_defaults.context_enabled",
+    "V4-FIELD:profile.service_request_defaults.context_mode",
+    "V4-FIELD:profile.service_request_defaults.context_sentences",
+    "V4-FIELD:profile.service_request_defaults.defaults_id",
+    "V4-FIELD:profile.service_request_defaults.model_id",
+    "V4-FIELD:profile.service_request_defaults.offline_engine_config_id",
+    "V4-FIELD:profile.service_request_defaults.purpose",
+    "V4-FIELD:profile.service_request_defaults.retries",
+    "V4-FIELD:profile.service_request_defaults.revision_id",
+    "V4-FIELD:profile.service_request_defaults.source_language",
+    "V4-FIELD:profile.service_request_defaults.source_mode",
+    "V4-FIELD:profile.service_request_defaults.target_kind",
+    "V4-FIELD:profile.service_request_defaults.target_language",
+    "V4-FIELD:profile.service_request_defaults.target_mode",
+    "V4-FIELD:profile.service_request_defaults.timeout_ms",
+    "V4-FIELD:profile.task_allowed_fallback_targets.binding_id",
+    "V4-FIELD:profile.task_allowed_fallback_targets.config_revision_id",
+    "V4-FIELD:profile.task_allowed_fallback_targets.engine_id",
+    "V4-FIELD:profile.task_allowed_fallback_targets.fallback_ordinal",
+    "V4-FIELD:profile.task_allowed_fallback_targets.target_kind",
+    "V4-FIELD:profile.task_allowed_fallback_targets.task_id",
+    "V4-FIELD:profile.task_execution_targets.binding_id",
+    "V4-FIELD:profile.task_execution_targets.config_revision_id",
+    "V4-FIELD:profile.task_execution_targets.effective_scope",
+    "V4-FIELD:profile.task_execution_targets.effective_selection_revision",
+    "V4-FIELD:profile.task_execution_targets.engine_id",
+    "V4-FIELD:profile.task_execution_targets.http_connection_id",
+    "V4-FIELD:profile.task_execution_targets.http_model_id",
+    "V4-FIELD:profile.task_execution_targets.observation_epoch",
+    "V4-FIELD:profile.task_execution_targets.observation_id",
+    "V4-FIELD:profile.task_execution_targets.offline_engine_config_id",
+    "V4-FIELD:profile.task_execution_targets.purpose",
+    "V4-FIELD:profile.task_execution_targets.route_id",
+    "V4-FIELD:profile.task_execution_targets.selection_revision",
+    "V4-FIELD:profile.task_execution_targets.selection_scope",
+    "V4-FIELD:profile.task_execution_targets.snapshot_id",
+    "V4-FIELD:profile.task_execution_targets.target_kind",
+    "V4-FIELD:profile.task_execution_targets.target_sha256",
+    "V4-FIELD:profile.task_execution_targets.task_id",
+    "V4-FIELD:profile.test_records.target_kind",
+    "V4-FK:activation_resource_materializations:0",
+    "V4-FK:activation_resource_materializations:1",
+    "V4-FK:activation_resource_materializations:2",
+    "V4-FK:activation_resource_materializations:3",
+    "V4-FK:activation_resource_materializations:4",
+    "V4-FK:activation_resource_materializations:5",
+    "V4-FK:activation_resource_materializations:6",
+    "V4-FK:activation_resource_materializations:7",
+    "V4-FK:activation_resource_materializations:8",
+    "V4-FK:activation_resource_materializations:9",
+    "V4-FK:attempt_execution_targets:0",
+    "V4-FK:attempt_execution_targets:1",
+    "V4-FK:attempt_execution_targets:2",
+    "V4-FK:attempt_execution_targets:3",
+    "V4-FK:attempt_execution_targets:4",
+    "V4-FK:attempt_execution_targets:5",
+    "V4-FK:binding_engines:0",
+    "V4-FK:binding_engines:1",
+    "V4-FK:binding_engines:2",
+    "V4-FK:binding_engines:3",
+    "V4-FK:cache_entries:0",
+    "V4-FK:config_revisions:0",
+    "V4-FK:connections:0",
+    "V4-FK:connections:1",
+    "V4-FK:connections:2",
+    "V4-FK:connections:3",
+    "V4-FK:execution_authorization_leases:0",
+    "V4-FK:execution_authorization_leases:1",
+    "V4-FK:execution_authorization_leases:2",
+    "V4-FK:execution_authorization_leases:3",
+    "V4-FK:execution_authorization_leases:4",
+    "V4-FK:execution_authorization_leases:5",
+    "V4-FK:models:0",
+    "V4-FK:models:1",
+    "V4-FK:oauth_authorization_snapshots:0",
+    "V4-FK:oauth_authorization_snapshots:1",
+    "V4-FK:oauth_grants:0",
+    "V4-FK:oauth_grants:1",
+    "V4-FK:oauth_grants:2",
+    "V4-FK:oauth_token_material_revisions:0",
+    "V4-FK:oauth_token_material_revisions:1",
+    "V4-FK:oauth_token_material_revisions:2",
+    "V4-FK:offline_engine_configs:0",
+    "V4-FK:offline_engine_configs:1",
+    "V4-FK:offline_engine_configs:2",
+    "V4-FK:offline_engine_configs:3",
+    "V4-FK:offline_installation_heads:0",
+    "V4-FK:offline_installation_versions:0",
+    "V4-FK:offline_installation_versions:1",
+    "V4-FK:offline_installation_versions:2",
+    "V4-FK:offline_observation_heads:0",
+    "V4-FK:offline_resource_observations:0",
+    "V4-FK:offline_resource_observations:1",
+    "V4-FK:offline_resource_observations:2",
+    "V4-FK:offline_resource_pairs:0",
+    "V4-FK:offline_resource_seals:0",
+    "V4-FK:offline_resource_snapshot_files:0",
+    "V4-FK:offline_resource_snapshots:0",
+    "V4-FK:offline_route_seals:0",
+    "V4-FK:offline_test_targets:0",
+    "V4-FK:offline_test_targets:1",
+    "V4-FK:offline_test_targets:2",
+    "V4-FK:offline_test_targets:3",
+    "V4-FK:offline_test_targets:4",
+    "V4-FK:offline_translation_route_hops:0",
+    "V4-FK:offline_translation_route_hops:1",
+    "V4-FK:offline_translation_route_hops:2",
+    "V4-FK:purpose_bindings:0",
+    "V4-FK:purpose_bindings:1",
+    "V4-FK:purpose_bindings:2",
+    "V4-FK:service_default_fallbacks:0",
+    "V4-FK:service_default_fallbacks:1",
+    "V4-FK:service_default_fallbacks:2",
+    "V4-FK:service_request_defaults:0",
+    "V4-FK:service_request_defaults:1",
+    "V4-FK:task_allowed_fallback_targets:0",
+    "V4-FK:task_allowed_fallback_targets:1",
+    "V4-FK:task_execution_targets:0",
+    "V4-FK:task_execution_targets:1",
+    "V4-FK:task_execution_targets:2",
+    "V4-FK:task_execution_targets:3",
+    "V4-FK:task_execution_targets:4",
+    "V4-FK:task_execution_targets:5",
+    "V4-FK:task_execution_targets:6",
+    "V4-FK:test_records:0",
+    "V4-FK:test_records:1",
+    "V4-FK:test_records:2",
+    "V4-FK:test_records:3",
+    "V4-FK:test_records:4",
+    "V4-GOOGLE",
+    "V4-LEGACY-FIELD:profile.binding_engines.model_id",
+    "V4-LEGACY-FIELD:profile.config_revisions.codec_version",
+    "V4-LEGACY-FIELD:profile.connections.auth_mode",
+    "V4-LEGACY-FIELD:profile.credential_refs.auth_kind",
+    "V4-LEGACY-FIELD:profile.provider_preset_versions.auth_kind",
+    "V4-LEGACY-PRESERVATION",
+    "V4-MIGRATION",
+    "V4-OFFLINE",
+    "V4-PRODUCERS",
+    "V4-RELATIONSHIPS",
+    "V4-SELECTION",
+    "V4-TRIGGER:activation_resource_materializations.v4_activation_resource_materializations_no_update",
+    "V4-TRIGGER:activation_resource_materializations.v4_activation_resource_materializations_sealed_delete",
+    "V4-TRIGGER:activation_resource_materializations.v4_activation_resource_materializations_sealed_insert",
+    "V4-TRIGGER:activation_resource_materializations.v4_materialized_control",
+    "V4-TRIGGER:attempt_execution_targets.v4_attempt_exact_target",
+    "V4-TRIGGER:attempt_execution_targets.v4_attempt_execution_targets_no_update",
+    "V4-TRIGGER:binding_engines.v4_engine_policy_fields",
+    "V4-TRIGGER:config_gc_marks.config_gc_unreferenced",
+    "V4-TRIGGER:config_revision_seals.v4_config_no_duplicate_logical_service",
+    "V4-TRIGGER:config_revision_seals.v4_config_selection_shape",
+    "V4-TRIGGER:config_revision_seals.v4_config_typed_graph_seal",
+    "V4-TRIGGER:connections.v4_http_options_unknown_keys",
+    "V4-TRIGGER:connections.v4_http_origin_shape",
+    "V4-TRIGGER:connections.v4_oauth_protocol",
+    "V4-TRIGGER:execution_authorization_leases.v4_execution_authorization_immutable",
+    "V4-TRIGGER:execution_authorization_leases.v4_lease_actual_connection",
+    "V4-TRIGGER:oauth_authorization_snapshots.v4_oauth_authorization_snapshots_no_update",
+    "V4-TRIGGER:oauth_client_profiles.v4_oauth_client_profiles_no_update",
+    "V4-TRIGGER:oauth_grants.v4_oauth_grant_initial_control",
+    "V4-TRIGGER:oauth_grants.v4_oauth_grant_ready",
+    "V4-TRIGGER:oauth_grants.v4_oauth_grants_control",
+    "V4-TRIGGER:oauth_token_material_revisions.v4_oauth_token_material_revisions_no_update",
+    "V4-TRIGGER:offline_engine_configs.v4_config_installation_runtime",
+    "V4-TRIGGER:offline_engine_configs.v4_offline_engine_configs_no_update",
+    "V4-TRIGGER:offline_engine_configs.v4_offline_engine_configs_sealed_delete",
+    "V4-TRIGGER:offline_engine_configs.v4_offline_engine_configs_sealed_insert",
+    "V4-TRIGGER:offline_execution_environments.v4_offline_execution_environments_no_update",
+    "V4-TRIGGER:offline_installation_heads.v4_offline_installation_heads_cas",
+    "V4-TRIGGER:offline_installation_versions.v4_installation_environment_runtime",
+    "V4-TRIGGER:offline_installation_versions.v4_offline_installation_versions_no_update",
+    "V4-TRIGGER:offline_local_grants.v4_local_grant_cas",
+    "V4-TRIGGER:offline_observation_heads.v4_offline_observation_heads_cas",
+    "V4-TRIGGER:offline_resource_observations.v4_offline_resource_observations_no_update",
+    "V4-TRIGGER:offline_resource_pairs.v4_offline_resource_pairs_no_update",
+    "V4-TRIGGER:offline_resource_pairs.v4_offline_resource_pairs_sealed_delete",
+    "V4-TRIGGER:offline_resource_pairs.v4_offline_resource_pairs_sealed_insert",
+    "V4-TRIGGER:offline_resource_seals.v4_offline_resource_seals_no_update",
+    "V4-TRIGGER:offline_resource_seals.v4_resource_gc_references",
+    "V4-TRIGGER:offline_resource_seals.v4_resource_seal_shape",
+    "V4-TRIGGER:offline_resource_snapshot_files.v4_offline_resource_snapshot_files_no_update",
+    "V4-TRIGGER:offline_resource_snapshot_files.v4_offline_resource_snapshot_files_sealed_delete",
+    "V4-TRIGGER:offline_resource_snapshot_files.v4_offline_resource_snapshot_files_sealed_insert",
+    "V4-TRIGGER:offline_resource_snapshots.v4_offline_resource_snapshots_no_update",
+    "V4-TRIGGER:offline_resource_snapshots.v4_offline_resource_snapshots_sealed_delete",
+    "V4-TRIGGER:offline_route_seals.v4_offline_route_seals_no_update",
+    "V4-TRIGGER:offline_route_seals.v4_route_gc_references",
+    "V4-TRIGGER:offline_route_seals.v4_route_seal_shape",
+    "V4-TRIGGER:offline_route_seals.v4_runtime_route_closure",
+    "V4-TRIGGER:offline_runtime_profiles.v4_offline_runtime_profiles_no_update",
+    "V4-TRIGGER:offline_test_targets.v4_offline_test_targets_no_update",
+    "V4-TRIGGER:offline_translation_route_hops.v4_offline_translation_route_hops_no_update",
+    "V4-TRIGGER:offline_translation_route_hops.v4_offline_translation_route_hops_sealed_delete",
+    "V4-TRIGGER:offline_translation_route_hops.v4_offline_translation_route_hops_sealed_insert",
+    "V4-TRIGGER:offline_translation_routes.v4_offline_translation_routes_no_update",
+    "V4-TRIGGER:offline_translation_routes.v4_offline_translation_routes_sealed_delete",
+    "V4-TRIGGER:purpose_bindings.v4_scope_policy_fields",
+    "V4-TRIGGER:purpose_bindings.v4_typed_no_legacy_policy_shadow",
+    "V4-TRIGGER:service_default_fallbacks.v4_service_default_fallbacks_no_update",
+    "V4-TRIGGER:service_default_fallbacks.v4_service_default_fallbacks_sealed_delete",
+    "V4-TRIGGER:service_default_fallbacks.v4_service_default_fallbacks_sealed_insert",
+    "V4-TRIGGER:service_request_defaults.v4_service_request_defaults_no_update",
+    "V4-TRIGGER:service_request_defaults.v4_service_request_defaults_sealed_delete",
+    "V4-TRIGGER:service_request_defaults.v4_service_request_defaults_sealed_insert",
+    "V4-TRIGGER:study_results.study_results_connection_authority",
+    "V4-TRIGGER:study_results.v4_study_results_target_authority",
+    "V4-TRIGGER:task_allowed_fallback_targets.v4_task_allowed_fallback_targets_no_update",
+    "V4-TRIGGER:task_execution_targets.v4_task_execution_targets_no_update",
+    "V4-TRIGGER:translations.translations_connection_authority",
+    "V4-TRIGGER:translations.v4_translations_target_authority",
+    "V4-VIEW:v4_attempt_target_authority"
+  ],
+  "field_subassertions": [
+    "valid",
+    "type",
+    "null"
+  ],
+  "relationship_inventory": [
+    {
+      "id": "V4-FK:activation_resource_materializations:0",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "control_config_id"
+        ],
+        "parent": "offline_config_runtime_states",
+        "parent_columns": [
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:1",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "control_connection_id"
+        ],
+        "parent": "connection_runtime_states",
+        "parent_columns": [
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:2",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "effective_revision_id",
+          "effective_model_id",
+          "effective_connection_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:3",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "effective_revision_id",
+          "effective_model_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:4",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "effective_revision_id",
+          "effective_offline_config_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:5",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "source_revision_id",
+          "source_model_id",
+          "source_connection_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:6",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "source_revision_id",
+          "source_model_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:7",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "source_revision_id",
+          "source_offline_config_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:attempt_execution_targets:0",
+      "table": "attempt_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "attempt_id",
+          "task_id"
+        ],
+        "parent": "request_attempts",
+        "parent_columns": [
+          "attempt_id",
+          "task_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:attempt_execution_targets:1",
+      "table": "attempt_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "binding_id",
+          "engine_id",
+          "target_kind"
+        ],
+        "parent": "binding_engines",
+        "parent_columns": [
+          "revision_id",
+          "binding_id",
+          "engine_id",
+          "target_kind"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:attempt_execution_targets:2",
+      "table": "attempt_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "http_model_id",
+          "http_connection_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:attempt_execution_targets:3",
+      "table": "attempt_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "offline_engine_config_id",
+          "snapshot_id",
+          "route_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id",
+          "snapshot_id",
+          "route_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:attempt_execution_targets:4",
+      "table": "attempt_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "observation_id",
+          "snapshot_id",
+          "observation_epoch"
+        ],
+        "parent": "offline_resource_observations",
+        "parent_columns": [
+          "observation_id",
+          "snapshot_id",
+          "observation_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:attempt_execution_targets:5",
+      "table": "attempt_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "task_id",
+          "config_revision_id"
+        ],
+        "parent": "task_execution_targets",
+        "parent_columns": [
+          "task_id",
+          "config_revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:binding_engines:0",
+      "table": "binding_engines",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "binding_id",
+          "purpose"
+        ],
+        "parent": "purpose_bindings",
+        "parent_columns": [
+          "revision_id",
+          "binding_id",
+          "purpose"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:binding_engines:1",
+      "table": "binding_engines",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:binding_engines:2",
+      "table": "binding_engines",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "offline_engine_config_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:binding_engines:3",
+      "table": "binding_engines",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "template_id",
+          "purpose"
+        ],
+        "parent": "templates",
+        "parent_columns": [
+          "revision_id",
+          "template_id",
+          "purpose"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:cache_entries:0",
+      "table": "cache_entries",
+      "foreign_key": {
+        "columns": [
+          "origin_attempt_id"
+        ],
+        "parent": "request_attempts",
+        "parent_columns": [
+          "attempt_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:config_revisions:0",
+      "table": "config_revisions",
+      "foreign_key": {
+        "columns": [
+          "parent_revision_id"
+        ],
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:connections:0",
+      "table": "connections",
+      "foreign_key": {
+        "columns": [
+          "credential_pool_id",
+          "credential_pool_revision"
+        ],
+        "parent": "credential_pool_revisions",
+        "parent_columns": [
+          "pool_id",
+          "pool_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:connections:1",
+      "table": "connections",
+      "foreign_key": {
+        "columns": [
+          "oauth_grant_id",
+          "oauth_authorization_epoch"
+        ],
+        "parent": "oauth_authorization_snapshots",
+        "parent_columns": [
+          "grant_id",
+          "authorization_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:connections:2",
+      "table": "connections",
+      "foreign_key": {
+        "columns": [
+          "provider_preset_id",
+          "provider_preset_revision",
+          "protocol",
+          "adapter_contract_revision",
+          "compatibility_profile_id",
+          "compatibility_profile_revision"
+        ],
+        "parent": "provider_preset_versions",
+        "parent_columns": [
+          "preset_id",
+          "preset_revision",
+          "protocol_id",
+          "adapter_contract_revision",
+          "compatibility_profile_id",
+          "compatibility_profile_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:connections:3",
+      "table": "connections",
+      "foreign_key": {
+        "columns": [
+          "revision_id"
+        ],
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:execution_authorization_leases:0",
+      "table": "execution_authorization_leases",
+      "foreign_key": {
+        "columns": [
+          "attempt_id",
+          "task_id"
+        ],
+        "parent": "request_attempts",
+        "parent_columns": [
+          "attempt_id",
+          "task_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:execution_authorization_leases:1",
+      "table": "execution_authorization_leases",
+      "foreign_key": {
+        "columns": [
+          "credential_id",
+          "auth_kind"
+        ],
+        "parent": "credential_refs",
+        "parent_columns": [
+          "credential_id",
+          "auth_kind"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:execution_authorization_leases:2",
+      "table": "execution_authorization_leases",
+      "foreign_key": {
+        "columns": [
+          "grant_id",
+          "authorization_epoch"
+        ],
+        "parent": "oauth_authorization_snapshots",
+        "parent_columns": [
+          "grant_id",
+          "authorization_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:execution_authorization_leases:3",
+      "table": "execution_authorization_leases",
+      "foreign_key": {
+        "columns": [
+          "grant_id",
+          "material_revision",
+          "credential_id"
+        ],
+        "parent": "oauth_token_material_revisions",
+        "parent_columns": [
+          "grant_id",
+          "material_revision",
+          "credential_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:execution_authorization_leases:4",
+      "table": "execution_authorization_leases",
+      "foreign_key": {
+        "columns": [
+          "pool_id",
+          "pool_revision",
+          "member_id",
+          "credential_id"
+        ],
+        "parent": "credential_pool_members",
+        "parent_columns": [
+          "pool_id",
+          "pool_revision",
+          "member_id",
+          "credential_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:execution_authorization_leases:5",
+      "table": "execution_authorization_leases",
+      "foreign_key": {
+        "columns": [
+          "test_id"
+        ],
+        "parent": "test_records",
+        "parent_columns": [
+          "test_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:models:0",
+      "table": "models",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "connection_id"
+        ],
+        "parent": "connections",
+        "parent_columns": [
+          "revision_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:models:1",
+      "table": "models",
+      "foreign_key": {
+        "columns": [
+          "revision_id"
+        ],
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:oauth_authorization_snapshots:0",
+      "table": "oauth_authorization_snapshots",
+      "foreign_key": {
+        "columns": [
+          "grant_id",
+          "previous_epoch"
+        ],
+        "parent": "oauth_authorization_snapshots",
+        "parent_columns": [
+          "grant_id",
+          "authorization_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_authorization_snapshots:1",
+      "table": "oauth_authorization_snapshots",
+      "foreign_key": {
+        "columns": [
+          "grant_id"
+        ],
+        "parent": "oauth_grants",
+        "parent_columns": [
+          "grant_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_grants:0",
+      "table": "oauth_grants",
+      "foreign_key": {
+        "columns": [
+          "client_profile_id",
+          "client_profile_revision"
+        ],
+        "parent": "oauth_client_profiles",
+        "parent_columns": [
+          "client_profile_id",
+          "client_profile_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_grants:1",
+      "table": "oauth_grants",
+      "foreign_key": {
+        "columns": [
+          "grant_id",
+          "authorization_epoch"
+        ],
+        "parent": "oauth_authorization_snapshots",
+        "parent_columns": [
+          "grant_id",
+          "authorization_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "NO ACTION",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_grants:2",
+      "table": "oauth_grants",
+      "foreign_key": {
+        "columns": [
+          "grant_id",
+          "material_revision"
+        ],
+        "parent": "oauth_token_material_revisions",
+        "parent_columns": [
+          "grant_id",
+          "material_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "NO ACTION",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_token_material_revisions:0",
+      "table": "oauth_token_material_revisions",
+      "foreign_key": {
+        "columns": [
+          "credential_id",
+          "auth_kind"
+        ],
+        "parent": "credential_refs",
+        "parent_columns": [
+          "credential_id",
+          "auth_kind"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_token_material_revisions:1",
+      "table": "oauth_token_material_revisions",
+      "foreign_key": {
+        "columns": [
+          "grant_id",
+          "parent_material_revision"
+        ],
+        "parent": "oauth_token_material_revisions",
+        "parent_columns": [
+          "grant_id",
+          "material_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:oauth_token_material_revisions:2",
+      "table": "oauth_token_material_revisions",
+      "foreign_key": {
+        "columns": [
+          "grant_id"
+        ],
+        "parent": "oauth_grants",
+        "parent_columns": [
+          "grant_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_engine_configs:0",
+      "table": "offline_engine_configs",
+      "foreign_key": {
+        "columns": [
+          "installation_id",
+          "installation_revision",
+          "engine_id",
+          "engine_contract_revision"
+        ],
+        "parent": "offline_installation_versions",
+        "parent_columns": [
+          "installation_id",
+          "installation_revision",
+          "engine_id",
+          "engine_contract_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_engine_configs:1",
+      "table": "offline_engine_configs",
+      "foreign_key": {
+        "columns": [
+          "revision_id"
+        ],
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_engine_configs:2",
+      "table": "offline_engine_configs",
+      "foreign_key": {
+        "columns": [
+          "route_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "parent": "offline_translation_routes",
+        "parent_columns": [
+          "route_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_engine_configs:3",
+      "table": "offline_engine_configs",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_installation_heads:0",
+      "table": "offline_installation_heads",
+      "foreign_key": {
+        "columns": [
+          "installation_id",
+          "installation_revision"
+        ],
+        "parent": "offline_installation_versions",
+        "parent_columns": [
+          "installation_id",
+          "installation_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_installation_versions:0",
+      "table": "offline_installation_versions",
+      "foreign_key": {
+        "columns": [
+          "environment_id",
+          "environment_revision"
+        ],
+        "parent": "offline_execution_environments",
+        "parent_columns": [
+          "environment_id",
+          "environment_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_installation_versions:1",
+      "table": "offline_installation_versions",
+      "foreign_key": {
+        "columns": [
+          "local_grant_id"
+        ],
+        "parent": "offline_local_grants",
+        "parent_columns": [
+          "grant_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_installation_versions:2",
+      "table": "offline_installation_versions",
+      "foreign_key": {
+        "columns": [
+          "runtime_profile_id",
+          "runtime_profile_revision",
+          "engine_id",
+          "engine_contract_revision"
+        ],
+        "parent": "offline_runtime_profiles",
+        "parent_columns": [
+          "runtime_profile_id",
+          "runtime_profile_revision",
+          "engine_id",
+          "engine_contract_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_observation_heads:0",
+      "table": "offline_observation_heads",
+      "foreign_key": {
+        "columns": [
+          "subject_key",
+          "observation_epoch",
+          "observation_id"
+        ],
+        "parent": "offline_resource_observations",
+        "parent_columns": [
+          "subject_key",
+          "observation_epoch",
+          "observation_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_observations:0",
+      "table": "offline_resource_observations",
+      "foreign_key": {
+        "columns": [
+          "installation_id",
+          "installation_revision"
+        ],
+        "parent": "offline_installation_versions",
+        "parent_columns": [
+          "installation_id",
+          "installation_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_observations:1",
+      "table": "offline_resource_observations",
+      "foreign_key": {
+        "columns": [
+          "local_grant_id"
+        ],
+        "parent": "offline_local_grants",
+        "parent_columns": [
+          "grant_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_observations:2",
+      "table": "offline_resource_observations",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_pairs:0",
+      "table": "offline_resource_pairs",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_seals:0",
+      "table": "offline_resource_seals",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_snapshot_files:0",
+      "table": "offline_resource_snapshot_files",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_resource_snapshots:0",
+      "table": "offline_resource_snapshots",
+      "foreign_key": {
+        "columns": [
+          "runtime_profile_id",
+          "runtime_profile_revision",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "parent": "offline_runtime_profiles",
+        "parent_columns": [
+          "runtime_profile_id",
+          "runtime_profile_revision",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_route_seals:0",
+      "table": "offline_route_seals",
+      "foreign_key": {
+        "columns": [
+          "route_id"
+        ],
+        "parent": "offline_translation_routes",
+        "parent_columns": [
+          "route_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_test_targets:0",
+      "table": "offline_test_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "engine_config_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_test_targets:1",
+      "table": "offline_test_targets",
+      "foreign_key": {
+        "columns": [
+          "observation_id",
+          "snapshot_id",
+          "observation_epoch"
+        ],
+        "parent": "offline_resource_observations",
+        "parent_columns": [
+          "observation_id",
+          "snapshot_id",
+          "observation_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_test_targets:2",
+      "table": "offline_test_targets",
+      "foreign_key": {
+        "columns": [
+          "route_id"
+        ],
+        "parent": "offline_translation_routes",
+        "parent_columns": [
+          "route_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_test_targets:3",
+      "table": "offline_test_targets",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_test_targets:4",
+      "table": "offline_test_targets",
+      "foreign_key": {
+        "columns": [
+          "test_id"
+        ],
+        "parent": "test_records",
+        "parent_columns": [
+          "test_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_translation_route_hops:0",
+      "table": "offline_translation_route_hops",
+      "foreign_key": {
+        "columns": [
+          "route_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "parent": "offline_translation_routes",
+        "parent_columns": [
+          "route_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_translation_route_hops:1",
+      "table": "offline_translation_route_hops",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "parent": "offline_resource_snapshots",
+        "parent_columns": [
+          "snapshot_id",
+          "engine_id",
+          "engine_contract_revision",
+          "backend"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:offline_translation_route_hops:2",
+      "table": "offline_translation_route_hops",
+      "foreign_key": {
+        "columns": [
+          "snapshot_id",
+          "source_language",
+          "target_language",
+          "pipeline_profile_id"
+        ],
+        "parent": "offline_resource_pairs",
+        "parent_columns": [
+          "snapshot_id",
+          "source_language",
+          "target_language",
+          "pipeline_profile_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:purpose_bindings:0",
+      "table": "purpose_bindings",
+      "foreign_key": {
+        "columns": [
+          "game_id"
+        ],
+        "parent": "games",
+        "parent_columns": [
+          "game_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:purpose_bindings:1",
+      "table": "purpose_bindings",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "template_id",
+          "purpose"
+        ],
+        "parent": "templates",
+        "parent_columns": [
+          "revision_id",
+          "template_id",
+          "purpose"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:purpose_bindings:2",
+      "table": "purpose_bindings",
+      "foreign_key": {
+        "columns": [
+          "revision_id"
+        ],
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:service_default_fallbacks:0",
+      "table": "service_default_fallbacks",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "defaults_id"
+        ],
+        "parent": "service_request_defaults",
+        "parent_columns": [
+          "revision_id",
+          "defaults_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:service_default_fallbacks:1",
+      "table": "service_default_fallbacks",
+      "foreign_key": {
+        "columns": [
+          "source_revision_id",
+          "source_model_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:service_default_fallbacks:2",
+      "table": "service_default_fallbacks",
+      "foreign_key": {
+        "columns": [
+          "source_revision_id",
+          "source_offline_config_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:service_request_defaults:0",
+      "table": "service_request_defaults",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:service_request_defaults:1",
+      "table": "service_request_defaults",
+      "foreign_key": {
+        "columns": [
+          "revision_id",
+          "offline_engine_config_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_allowed_fallback_targets:0",
+      "table": "task_allowed_fallback_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "binding_id",
+          "engine_id",
+          "target_kind"
+        ],
+        "parent": "binding_engines",
+        "parent_columns": [
+          "revision_id",
+          "binding_id",
+          "engine_id",
+          "target_kind"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_allowed_fallback_targets:1",
+      "table": "task_allowed_fallback_targets",
+      "foreign_key": {
+        "columns": [
+          "task_id",
+          "config_revision_id"
+        ],
+        "parent": "task_execution_targets",
+        "parent_columns": [
+          "task_id",
+          "config_revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:0",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "binding_id",
+          "engine_id",
+          "target_kind"
+        ],
+        "parent": "binding_engines",
+        "parent_columns": [
+          "revision_id",
+          "binding_id",
+          "engine_id",
+          "target_kind"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:1",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "effective_scope",
+          "purpose",
+          "effective_selection_revision"
+        ],
+        "parent": "purpose_bindings",
+        "parent_columns": [
+          "revision_id",
+          "scope_key",
+          "purpose",
+          "selection_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:2",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "http_model_id",
+          "http_connection_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:3",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "offline_engine_config_id",
+          "snapshot_id",
+          "route_id"
+        ],
+        "parent": "offline_engine_configs",
+        "parent_columns": [
+          "revision_id",
+          "engine_config_id",
+          "snapshot_id",
+          "route_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:4",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "selection_scope",
+          "purpose",
+          "selection_revision"
+        ],
+        "parent": "purpose_bindings",
+        "parent_columns": [
+          "revision_id",
+          "scope_key",
+          "purpose",
+          "selection_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:5",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "observation_id",
+          "snapshot_id",
+          "observation_epoch"
+        ],
+        "parent": "offline_resource_observations",
+        "parent_columns": [
+          "observation_id",
+          "snapshot_id",
+          "observation_epoch"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:task_execution_targets:6",
+      "table": "task_execution_targets",
+      "foreign_key": {
+        "columns": [
+          "task_id",
+          "config_revision_id",
+          "binding_id",
+          "purpose"
+        ],
+        "parent": "request_tasks",
+        "parent_columns": [
+          "task_id",
+          "config_revision_id",
+          "binding_id",
+          "purpose"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "CASCADE",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:test_records:0",
+      "table": "test_records",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "binding_id",
+          "purpose"
+        ],
+        "parent": "purpose_bindings",
+        "parent_columns": [
+          "revision_id",
+          "binding_id",
+          "purpose"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:test_records:1",
+      "table": "test_records",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "connection_id"
+        ],
+        "parent": "connections",
+        "parent_columns": [
+          "revision_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:test_records:2",
+      "table": "test_records",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id",
+          "model_id",
+          "connection_id"
+        ],
+        "parent": "models",
+        "parent_columns": [
+          "revision_id",
+          "model_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:test_records:3",
+      "table": "test_records",
+      "foreign_key": {
+        "columns": [
+          "config_revision_id"
+        ],
+        "parent": "config_revisions",
+        "parent_columns": [
+          "revision_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:test_records:4",
+      "table": "test_records",
+      "foreign_key": {
+        "columns": [
+          "unit_id",
+          "text_revision"
+        ],
+        "parent": "reading_unit_revisions",
+        "parent_columns": [
+          "unit_id",
+          "text_revision"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL",
+        "match": "NONE"
+      },
+      "prior_relationship": true
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:8",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "effective_revision_id",
+          "effective_connection_id"
+        ],
+        "parent": "connections",
+        "parent_columns": [
+          "revision_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    },
+    {
+      "id": "V4-FK:activation_resource_materializations:9",
+      "table": "activation_resource_materializations",
+      "foreign_key": {
+        "columns": [
+          "source_revision_id",
+          "source_connection_id"
+        ],
+        "parent": "connections",
+        "parent_columns": [
+          "revision_id",
+          "connection_id"
+        ],
+        "on_update": "NO ACTION",
+        "on_delete": "RESTRICT",
+        "match": "NONE"
+      },
+      "prior_relationship": false
+    }
+  ],
+  "retained_R3_relationships_sha256": "70e779c09ce2a9cffcc4a4ee04a5f3d682359989e07d93ec254d8d064308ff58",
+  "FK_receipt_payload": "each actual FK check carries relationship complete row read independently from actual candidate; ID or assertion count alone is insufficient",
+  "expanded_old_fields": [
+    "profile.config_revisions.codec_version",
+    "profile.connections.auth_mode",
+    "profile.credential_refs.auth_kind",
+    "profile.provider_preset_versions.auth_kind",
+    "profile.binding_engines.model_id"
+  ],
+  "required_routes": [
+    "fresh_0_to_4",
+    "upgrade_1_to_4_with_backup",
+    "upgrade_2_to_4_with_backup",
+    "upgrade_3_to_4_with_backup",
+    "reopen_4",
+    "real_store3_rejects_4",
+    "old_store2_rejects_4",
+    "rollback_failed_4",
+    "crash_atomic_3_or_4",
+    "backup_restore",
+    "reject_unknown_version",
+    "reject_corrupt_hash_schema_fk_profile",
+    "readonly_busy_physical_disk_full"
+  ],
+  "required_runtime_provenance": [
+    "real_rust_compile",
+    "unfiltered_registered_test_target",
+    "run_id_and_nonce",
+    "current_source_and_artifact_identity",
+    "actual_database_snapshots",
+    "old_rows_seals_heads_preserved",
+    "single_file_backup_identity",
+    "typed_vault_authority",
+    "no_draft_movement_atomic_selection",
+    "actual_dispatch_target_and_lease_provenance"
+  ],
+  "runtime_policy": {
+    "adapter_status": "pending_backend_registration_and_real_execution",
+    "forbidden_substitutes": [
+      "design_ddl_clone",
+      "guard_fixture",
+      "hash_only_receipt",
+      "old_run_receipt",
+      "unit_tests_only"
+    ],
+    "product_status_source": "separate_runtime_receipts_only"
+  }
+}

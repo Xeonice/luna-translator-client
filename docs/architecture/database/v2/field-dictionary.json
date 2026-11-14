@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "kind": "reviewed_schema_two_field_delta",
+  "previous_fields_unchanged": 431,
+  "new_fields": 29,
+  "total_fields": 460,
+  "schema_contract": "docs/architecture/database/v2/schema-contract.json",
+  "fields": [
+    {
+      "id": "profile.capture_operations.operation_id",
+      "table": "capture_operations",
+      "field": "operation_id",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 1,
+      "default_tokens": null,
+      "description": "关联操作身份；注入前建立",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.capture_operations.request_sha256",
+      "table": "capture_operations",
+      "field": "request_sha256",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "完整请求身份摘要",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.capture_operations.session_id",
+      "table": "capture_operations",
+      "field": "session_id",
+      "type": "TEXT",
+      "nullable": true,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "核验后绑定的Hook会话，可为空",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.capture_operations.state",
+      "table": "capture_operations",
+      "field": "state",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "操作阶段",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.capture_operations.started_at_ms",
+      "table": "capture_operations",
+      "field": "started_at_ms",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "本机接入起始时间，非排序依据",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.capture_operations.ended_at_ms",
+      "table": "capture_operations",
+      "field": "ended_at_ms",
+      "type": "INTEGER",
+      "nullable": true,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "结束时间；允许系统时钟回拨",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.capture_operations.legacy_unknown_start",
+      "table": "capture_operations",
+      "field": "legacy_unknown_start",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": [
+        "0"
+      ],
+      "description": "旧会话起点未知标记",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.event_sequence",
+      "table": "hook_events",
+      "field": "event_sequence",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 1,
+      "default_tokens": null,
+      "description": "本机持久单调事件序号",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.event_id",
+      "table": "hook_events",
+      "field": "event_id",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "事件唯一身份",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.operation_id",
+      "table": "hook_events",
+      "field": "operation_id",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "所属接入操作",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.session_id",
+      "table": "hook_events",
+      "field": "session_id",
+      "type": "TEXT",
+      "nullable": true,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "会话建立前可为空",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.source_id",
+      "table": "hook_events",
+      "field": "source_id",
+      "type": "TEXT",
+      "nullable": true,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "所属来源；与会话复合关联",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.wire_sequence_u64",
+      "table": "hook_events",
+      "field": "wire_sequence_u64",
+      "type": "TEXT",
+      "nullable": true,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "Core完整u64序号的规范十进制串",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.observed_at_ms",
+      "table": "hook_events",
+      "field": "observed_at_ms",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "本机观察时间",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.level",
+      "table": "hook_events",
+      "field": "level",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "信息/警告/错误",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.stage",
+      "table": "hook_events",
+      "field": "stage",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "接入阶段",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.code",
+      "table": "hook_events",
+      "field": "code",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "安全事件码",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.message",
+      "table": "hook_events",
+      "field": "message",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "不含台词全文的安全说明",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.lost_count_u64",
+      "table": "hook_events",
+      "field": "lost_count_u64",
+      "type": "TEXT",
+      "nullable": true,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "已知缺失数量的规范u64串",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.integrity",
+      "table": "hook_events",
+      "field": "integrity",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "完整性标记",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.hook_events.metadata_json",
+      "table": "hook_events",
+      "field": "metadata_json",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": [
+        "'{}'"
+      ],
+      "description": "白名单安全元数据对象",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.body_record_positions.record_sequence",
+      "table": "body_record_positions",
+      "field": "record_sequence",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 1,
+      "default_tokens": null,
+      "description": "正文持久单调序号",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.body_record_positions.session_id",
+      "table": "body_record_positions",
+      "field": "session_id",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "所属会话",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.body_record_positions.unit_id",
+      "table": "body_record_positions",
+      "field": "unit_id",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "不可变正文身份",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.body_record_positions.text_revision",
+      "table": "body_record_positions",
+      "field": "text_revision",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": null,
+      "description": "不可变文本修订",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.reading_preference_settings.preference_revision_id",
+      "table": "reading_preference_settings",
+      "field": "preference_revision_id",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 1,
+      "default_tokens": null,
+      "description": "不可变偏好修订身份",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.reading_preference_settings.segmentation_enabled",
+      "table": "reading_preference_settings",
+      "field": "segmentation_enabled",
+      "type": "INTEGER",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": [
+        "1"
+      ],
+      "description": "分词可点击开关",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.reading_preference_settings.reading_display_mode",
+      "table": "reading_preference_settings",
+      "field": "reading_display_mode",
+      "type": "TEXT",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": [
+        "'both'"
+      ],
+      "description": "原文/译文/并列显示模式",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    },
+    {
+      "id": "profile.reading_preference_settings.hud_background_opacity",
+      "table": "reading_preference_settings",
+      "field": "hud_background_opacity",
+      "type": "REAL",
+      "nullable": false,
+      "primary_key_position": 0,
+      "default_tokens": [
+        "0.70"
+      ],
+      "description": "仅影响底板的不透明度0..1",
+      "source": "docs/architecture/database/v2/002_session_records.design.sql"
+    }
+  ],
+  "relationships": [
+    {
+      "child": "capture_operations",
+      "columns": [
+        "session_id"
+      ],
+      "match": "NONE",
+      "on_delete": "RESTRICT",
+      "on_update": "NO ACTION",
+      "parent": "sessions",
+      "parent_columns": [
+        "session_id"
+      ]
+    },
+    {
+      "child": "hook_events",
+      "columns": [
+        "operation_id"
+      ],
+      "match": "NONE",
+      "on_delete": "RESTRICT",
+      "on_update": "NO ACTION",
+      "parent": "capture_operations",
+      "parent_columns": [
+        "operation_id"
+      ]
+    },
+    {
+      "child": "hook_events",
+      "columns": [
+        "session_id"
+      ],
+      "match": "NONE",
+      "on_delete": "RESTRICT",
+      "on_update": "NO ACTION",
+      "parent": "sessions",
+      "parent_columns": [
+        "session_id"
+      ]
+    },
+    {
+      "child": "hook_events",
+      "columns": [
+        "source_id",
+        "session_id"
+      ],
+      "match": "NONE",
+      "on_delete": "RESTRICT",
+      "on_update": "NO ACTION",
+      "parent": "capture_sources",
+      "parent_columns": [
+        "source_id",
+        "session_id"
+      ]
+    },
+    {
+      "child": "body_record_positions",
+      "columns": [
+        "unit_id",
+        "text_revision",
+        "session_id"
+      ],
+      "match": "NONE",
+      "on_delete": "CASCADE",
+      "on_update": "NO ACTION",
+      "parent": "reading_unit_revisions",
+      "parent_columns": [
+        "unit_id",
+        "text_revision",
+        "session_id"
+      ]
+    },
+    {
+      "child": "reading_preference_settings",
+      "columns": [
+        "preference_revision_id"
+      ],
+      "match": "NONE",
+      "on_delete": "CASCADE",
+      "on_update": "NO ACTION",
+      "parent": "preference_revisions",
+      "parent_columns": [
+        "preference_revision_id"
+      ]
+    }
+  ],
+  "runtime_field_proofs": "required_not_implied_by_this_dictionary"
+}

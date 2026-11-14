@@ -1,0 +1,121 @@
+{
+  "kind": "isolated-general-settings-structure-design-candidate",
+  "candidate_id": "general-settings-structure-v3-20261107",
+  "status": "pending_user_review",
+  "source_approval": "pending",
+  "source_approved": false,
+  "production_modified": false,
+  "runtime_modified_by_candidate": false,
+  "product_accepted": false,
+  "entry": "index.html",
+  "canvas": "settings.html",
+  "created_at": "2026-11-07T09:48:09.637988+00:00",
+  "sources": {
+    "index.html": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/index.html",
+      "sha256": "2d45b76a71cd0ab1e4b9384fdbd658b0851c64e014ed129262f79656ed028add",
+      "bytes": 4622
+    },
+    "settings.html": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/settings.html",
+      "sha256": "6734155af5a9cd9251b21f665156c67a0c97bb473c162ddb9856e3efcd674b9a",
+      "bytes": 6970
+    },
+    "settings.css": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/settings.css",
+      "sha256": "976d8dbb2695025d779f92b192a211c845dc744ac901997542fd313ce2a6dcbd",
+      "bytes": 11112
+    },
+    "settings.js": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/settings.js",
+      "sha256": "74a4d60aa2f517fa762f7b1a6765bb4f06af732509bf9b3b0c21562b9544519f",
+      "bytes": 9570
+    },
+    "README.md": {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/README.md",
+      "sha256": "f13c23c8a818489a13b4fffe2e84fa722fecd376aa13c3218c29361f76bab549",
+      "bytes": 3544
+    }
+  },
+  "parent_inputs": [
+    {
+      "path": "docs/design/first-product-v1/material-tokens.css",
+      "sha256": "3406083383b5a58d2045fdcbbb26624b04b7f49fe3184599719826a207457a03",
+      "bytes": 2770
+    },
+    {
+      "path": "docs/design/first-product-v1/icons.js",
+      "sha256": "4dab92462e14e85bbd541ebdaf81c669d8e078fe8b5461b3cf5125ad219423da",
+      "bytes": 3501
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/layout-refinements-20261107/settings.html",
+      "sha256": "709b17917a356fbf3728151e9c2669fb44c4ceacff691ffc7046ff250e1e9b57",
+      "bytes": 12073
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/layout-refinements-20261107/history-settings.css",
+      "sha256": "166c73ba929f0c32d4c7c9ec26c2b23d545b0575ef40148e7bb986f56028381b",
+      "bytes": 10156
+    },
+    {
+      "path": "docs/design/first-product-v1/candidates/layout-refinements-20261107/refinement.js",
+      "sha256": "dc26e915ec1f86baced3da2a147817741c32db30f699ec1115842ee63503bd35",
+      "bytes": 9536
+    },
+    {
+      "path": "docs/development/design-approval-layout-refinements-20261107.json",
+      "sha256": "08b61a71a685f73e2bd2f7dd8f3917ba212bb7c437509ab797b74b446e68cb54",
+      "bytes": 4811
+    },
+    {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v2/manifest.json",
+      "sha256": "b18a322c30167dd14aa10deb167324c0e57a13926ef842b797d32cf67a08fa32",
+      "bytes": 4020
+    },
+    {
+      "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v2/freeze.json",
+      "sha256": "41d7de46a509eef7616b589581158f21c9d7828296316409368c528f54802551",
+      "bytes": 3540
+    }
+  ],
+  "reported_native": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/reported-native-before.png",
+    "sha256": "5302991f2187e6a92ab15eb3a66245a1add521e1b9024d6e704c2f5aeb3d3363",
+    "bytes": 412122
+  },
+  "verification_source": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/verify.mjs",
+    "sha256": "d80b1a276330136857f51cb4aea32c5fefb56ed08ffb22804e9c700bb47005c0",
+    "bytes": 15339
+  },
+  "verification_result": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/validation/results.json",
+    "sha256": "450ca51e5909cc22a4cffac8ffb8de79d9cf32ee0d21f179cf4565971d273259",
+    "bytes": 40982
+  },
+  "default_global_visual_preservation": {
+    "path": ".build/current-client-execution-20261105/layout-refinement-implementation-20261107/settings-structure-v3/validation/default-global-visual-preservation.json",
+    "sha256": "d03dcb1cb66ddda997bc4648230fb5c181893164546f9fbe9de0f04f956a0e3b",
+    "bytes": 609
+  },
+  "dimensions": {
+    "normal": [
+      1000,
+      720
+    ],
+    "narrow": [
+      760,
+      560
+    ]
+  },
+  "themes": [
+    "dark",
+    "light"
+  ],
+  "zoom": [
+    1,
+    2
+  ],
+  "added_scope_behavior": "Field masks retain overridden values and derive unmasked fields from current saved global. Restore edits only draft; save clears masks; discard retains saved overrides."
+}

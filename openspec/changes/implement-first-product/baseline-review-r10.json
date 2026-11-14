@@ -1,0 +1,15 @@
+{
+  "previous_baseline": "FP1-20261019-R9",
+  "previous_sha256": "16c33ace987257d06f1bf6d9e830b8884320f4f64340dcf2f02355e1a265a155",
+  "current_baseline": "FP1-20261019-R10",
+  "independent_review": ".build/storage-field-ownership-independent-review.json",
+  "reviewed_fingerprints": {
+    "docs/development/storage-acceptance.json": "80267e790f3618aa5a7c20c3b39f74a3076a2f277454b95b4e8d074eb47043ad",
+    "docs/development/storage-acceptance.md": "90c9b4863adb480c1ca3f0e1e325bde5bf16e2a03999542120e28edb64020a96",
+    "scripts/quality/product_execution.py": "d2c23c2e1756e2903c86c9f54974edbdc8f5f63666c54123f1fda1ae3faa798c"
+  },
+  "engineering_pre14_policy": "openspec/changes/implement-first-product/pre14-engineering-review.json",
+  "approvals_unchanged": true,
+  "product_acceptance_promoted": false,
+  "reference_region_proposal_adopted": false
+}

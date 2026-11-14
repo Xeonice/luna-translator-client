@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "policy": "Exact finding plus complete source SHA only; no wildcard exceptions, no release allowance. Editing a file while retaining a violation fails.",
+  "findings": [
+    {
+      "path": "apps/desktop/src/App.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: App.tsx",
+      "source_sha256": "030543e1c70e75ba74ff493718fbf8e6198f6bbabc1db55b536fb06f35d34fb1",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/App.tsx",
+      "rule": "FE_TAURI_GATEWAY",
+      "evidence": "import \"@tauri-apps/api/core\"",
+      "source_sha256": "030543e1c70e75ba74ff493718fbf8e6198f6bbabc1db55b536fb06f35d34fb1",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/Icons.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: Icons.tsx",
+      "source_sha256": "26a758464787f86a75c332d12e3286cff44f9265eb36522a04f92dbde28f3012",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/intelligence-types.ts",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: intelligence-types.ts",
+      "source_sha256": "e56a7d0c4e93f471ea53812395c4a19199514b0eb4cd0dea978d689048128814",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/LibraryPage.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: LibraryPage.tsx",
+      "source_sha256": "c49e7f64a794b3096d3394302a717bcb7767cbdf6526109de21d1fcbc7e7f548",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/LibraryPage.tsx",
+      "rule": "FE_TAURI_GATEWAY",
+      "evidence": "import \"@tauri-apps/api/core\"",
+      "source_sha256": "c49e7f64a794b3096d3394302a717bcb7767cbdf6526109de21d1fcbc7e7f548",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/main.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: main.tsx",
+      "source_sha256": "240903a71d5933c9b6910e054295ec4551c18803cd024ad6ef6d52134d96202a",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/ManualPage.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: ManualPage.tsx",
+      "source_sha256": "8a8b6584170634c8f56834bd35f1ad83f1c45b85b15387d0f09552fd7f06d566",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/ManualPage.tsx",
+      "rule": "FE_TAURI_GATEWAY",
+      "evidence": "import \"@tauri-apps/api/core\"",
+      "source_sha256": "8a8b6584170634c8f56834bd35f1ad83f1c45b85b15387d0f09552fd7f06d566",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/StudyPanel.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: StudyPanel.tsx",
+      "source_sha256": "76975055b10205a4403bc4a674d76994765b520b75884fce05ed8e021bbcf6d5",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/StudyPanel.tsx",
+      "rule": "FE_TAURI_GATEWAY",
+      "evidence": "import \"@tauri-apps/api/core\"",
+      "source_sha256": "76975055b10205a4403bc4a674d76994765b520b75884fce05ed8e021bbcf6d5",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/types.ts",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: types.ts",
+      "source_sha256": "e68a3b3ad039d90ae6e7a16a3ce10923d3f3a439ae42c76b0b5da81b7987ab6e",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/useTranslation.ts",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: useTranslation.ts",
+      "source_sha256": "744d1fce1ee5030217a50690cfd9bb3f6bc166359c31978d9e47eba6b82bb40b",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/useTranslation.ts",
+      "rule": "FE_TAURI_GATEWAY",
+      "evidence": "import \"@tauri-apps/api/core\"",
+      "source_sha256": "744d1fce1ee5030217a50690cfd9bb3f6bc166359c31978d9e47eba6b82bb40b",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/WindowBindingPanel.tsx",
+      "rule": "FE_SOURCE_LAYOUT",
+      "evidence": "source layout: WindowBindingPanel.tsx",
+      "source_sha256": "2e13b50073d5e8de8a81034cc03c87be4c55b9e67ba6244c21b0dec9059464ac",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src/WindowBindingPanel.tsx",
+      "rule": "FE_TAURI_GATEWAY",
+      "evidence": "import \"@tauri-apps/api/core\"",
+      "source_sha256": "2e13b50073d5e8de8a81034cc03c87be4c55b9e67ba6244c21b0dec9059464ac",
+      "owner": "UI",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "rule": "RUST-LAYER-DEPENDENCY",
+      "evidence": "apps/desktop/src-tauri/Cargo.toml [dependencies] lindera (package=lindera); route=luna-reader -> lindera",
+      "source_sha256": "e1e6555b1a19edf0894f16ba24ca3f4047cdb8dcdfb4ebe45dd695c1f95e9c25",
+      "owner": "AP/PL",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "rule": "RUST-LAYER-DEPENDENCY",
+      "evidence": "apps/desktop/src-tauri/Cargo.toml [dependencies] reqwest (package=reqwest); route=luna-reader -> reqwest",
+      "source_sha256": "e1e6555b1a19edf0894f16ba24ca3f4047cdb8dcdfb4ebe45dd695c1f95e9c25",
+      "owner": "AP/PL",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    },
+    {
+      "path": "apps/desktop/src-tauri/Cargo.toml",
+      "rule": "RUST-LAYER-DIRECTION",
+      "evidence": "apps/desktop/src-tauri/Cargo.toml [dependencies] hook-client (package=hook-client); route=luna-reader -> hook-client",
+      "source_sha256": "e1e6555b1a19edf0894f16ba24ca3f4047cdb8dcdfb4ebe45dd695c1f95e9c25",
+      "owner": "AP/PL",
+      "remove_by": "B2/B3; before declaring product architecture conformant",
+      "reason": "Existing unshipped PoC; frozen exact bytes only, never tolerated in release."
+    }
+  ]
+}

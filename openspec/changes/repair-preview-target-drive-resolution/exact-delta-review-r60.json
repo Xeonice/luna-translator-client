@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-preview-target-drive-resolution",
+  "parent_baseline_sha256": "80c9f58150fc886371f3af5465f5c67f935cf2a93237d5471bc99fd136eceac7",
+  "source_delta": [
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+      "before": "6b14a5bed2684356cff4aefaf3cbbc043386ace68fc8fdd65c16b95b73612dd4",
+      "after": "ceb593c850e17ecc6a1d93c018ef9a831d1653a4fca264009d3e7b5d97b77520"
+    },
+    {
+      "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+      "before": "020fec673b2e51d38d7bfaa6736032f40ddce001ad206ce09cc6e5fd896f3149",
+      "after": "a884403aba56181f7efcf349a78659da91045d440161981ab7c763804ad78bcf"
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend.rs",
+      "before": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2",
+      "after": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+    },
+    {
+      "path": "crates/app-infra/src/hook_backend/preview_identity.rs",
+      "before": "b1f10037cdebee7136c9eb3e9db2911a1787769223ba3b1b54f4d8a8d3f06a83",
+      "after": "80c403f32a102c2dbe4eae15afe0fc2bf352c89419a300bd9eb7d3c332b929c5"
+    },
+    {
+      "path": "crates/app-infra/src/platform/game_launch.rs",
+      "before": "7aef9aa9640f30d89d329070f1ae901b65e745e8ae5e9ebdea860295b808877b",
+      "after": "08b004a8718e5085a7692e8a823cc5054967170d5fd837afd15644e27ecbf94b"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/design.md",
+      "before": null,
+      "after": "f17d4fa64e26ad5dc58193f442629b2bec4519a91d32fe61567d62e9682fb65c"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/iteration-card.md",
+      "before": null,
+      "after": "1997916ac4ecdd12b4e64ed0d67b985f04aa92e47fabdb6594a4aa29993323b4"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/proposal.md",
+      "before": null,
+      "after": "af03cfcba032edc538cf84a353edea633c9590882680f22fff312107682a76df"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/source-snapshot.json",
+      "before": null,
+      "after": "70fb462c89111a4a5cd72830d7fdbd943bc94079c0d660616c531125439db599"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/specs/preview-target-drive/spec.md",
+      "before": null,
+      "after": "c98f4f68e25d5ab41c127542b3d3b5a16f11ae2e16bc320ece4689755d41d6fe"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/tasks.md",
+      "before": null,
+      "after": "157dc7f79129b7d65cc001512fa76f68ee5a466cb743f62541fadcc8c52a252f"
+    },
+    {
+      "path": "openspec/changes/repair-preview-target-drive-resolution/verification.json",
+      "before": null,
+      "after": "c552302951a46db32b8f827646996c4ba0125573e7636a7ca0b5810257583fa2"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+    "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+    "crates/app-infra/src/hook_backend.rs",
+    "crates/app-infra/src/hook_backend/preview_identity.rs",
+    "crates/app-infra/src/platform/game_launch.rs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/preview-drive-contract-review/code-adoption-review.json",
+    "sha256": "926fc982aa0d73e0d74208464f6b5bbae988cd6ac82b5f70b8c6323778bb5257",
+    "bytes": 4203
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M02",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 341,
+        "sha256": "6b14a5bed2684356cff4aefaf3cbbc043386ace68fc8fdd65c16b95b73612dd4"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/mod.rs",
+        "quote": "pub(crate) struct CollectorSupervisor {",
+        "symbol": "CollectorSupervisor",
+        "line": 341,
+        "sha256": "ceb593c850e17ecc6a1d93c018ef9a831d1653a4fca264009d3e7b5d97b77520"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M12",
+      "before": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+        "quote": "pub(super) fn read_json<T: DeserializeOwned>(reader: &mut impl Read) -> io::Result<T> {",
+        "symbol": "pub(super) fn read_json",
+        "line": 28,
+        "sha256": "020fec673b2e51d38d7bfaa6736032f40ddce001ad206ce09cc6e5fd896f3149"
+      },
+      "after": {
+        "path": "apps/desktop/src-tauri/src/platform/window_collector/protocol.rs",
+        "quote": "pub(super) fn read_json<T: DeserializeOwned>(reader: &mut impl Read) -> io::Result<T> {",
+        "symbol": "pub(super) fn read_json",
+        "line": 28,
+        "sha256": "a884403aba56181f7efcf349a78659da91045d440161981ab7c763804ad78bcf"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "modules",
+      "id": "M14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 903,
+        "quote": "fn subscribe(&self) -> AppResult<mpsc::Receiver<HookUpdate>> {",
+        "symbol": "fn subscribe(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 903,
+        "quote": "fn subscribe(&self) -> AppResult<mpsc::Receiver<HookUpdate>> {",
+        "symbol": "fn subscribe(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "components",
+      "id": "C14",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-02",
+      "before": {
+        "path": "crates/app-infra/src/platform/game_launch.rs",
+        "line": 21,
+        "quote": "pub fn command(&self) -> Command {",
+        "symbol": "pub fn",
+        "sha256": "7aef9aa9640f30d89d329070f1ae901b65e745e8ae5e9ebdea860295b808877b"
+      },
+      "after": {
+        "path": "crates/app-infra/src/platform/game_launch.rs",
+        "line": 21,
+        "quote": "pub fn command(&self) -> Command {",
+        "symbol": "pub fn",
+        "sha256": "08b004a8718e5085a7692e8a823cc5054967170d5fd837afd15644e27ecbf94b"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-03",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 297,
+        "quote": "fn game_window_activation_request(&self) -> AppResult<GameWindowActivationRequest> {",
+        "symbol": "fn game_window_activation_request(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 312,
+        "quote": "fn show_associated_game(",
+        "symbol": "fn show_associated_game(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-05",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 850,
+        "quote": "fn unlink_window(",
+        "symbol": "fn unlink_window(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-12",
+      "before": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 846,
+        "quote": "fn stop_and_drain(&self, acknowledged: mpsc::SyncSender<AppResult<()>>) -> AppResult<()> {",
+        "symbol": "fn stop_and_drain(",
+        "sha256": "7aae8c27bf8d8356ebc612eb96279f41b27dc25f297b67649a09d5929fd370f2"
+      },
+      "after": {
+        "path": "crates/app-infra/src/hook_backend.rs",
+        "line": 846,
+        "quote": "fn stop_and_drain(&self, acknowledged: mpsc::SyncSender<AppResult<()>>) -> AppResult<()> {",
+        "symbol": "fn stop_and_drain(",
+        "sha256": "2965116895e34876eb454b922ae0d92a4681003557a7d7ecafc1e80e3a44ebe3"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

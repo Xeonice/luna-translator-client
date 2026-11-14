@@ -1,0 +1,744 @@
+{
+  "schema_version": 1,
+  "id": "repair-translation-current-status",
+  "kind": "product",
+  "status": "implementation_authorized",
+  "allowed_paths": [
+    "openspec/changes/repair-translation-current-status/**",
+    "apps/desktop/src-tauri/src/ipc/queries.rs",
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src/bridge/application-port.ts",
+    "apps/desktop/src/bridge/contracts.generated.ts",
+    "apps/desktop/src/bridge/tauri-port.ts",
+    "apps/desktop/src/features/history/HistoryScreen.tsx",
+    "apps/desktop/src/features/manual-input/ManualInputScreen.tsx",
+    "apps/desktop/src/features/reading/ReadingPanel.tsx",
+    "apps/desktop/src/features/reading/useReadingUnitProjection.ts",
+    "apps/desktop/src/windows/main/MainWindow.tsx",
+    "apps/desktop/tests/support/design-port.ts",
+    "apps/desktop/tests/visual/verify-reviewed-reading.mjs",
+    "crates/app-core/src/application/runtime.rs",
+    "crates/app-core/src/contracts/desktop.rs",
+    "crates/app-core/src/domain/mod.rs",
+    "crates/app-core/src/domain/translation_status.rs",
+    "crates/app-core/src/ports/mod.rs",
+    "crates/app-infra/src/storage/database.rs",
+    "crates/app-infra/src/storage/queries/mod.rs",
+    "crates/app-infra/src/storage/queries/tasks.rs",
+    "crates/app-infra/src/storage/queries/translation_status.rs",
+    "crates/app-infra/tests/application_runtime.rs",
+    "crates/app-infra/tests/configuration_lifecycle.rs",
+    "crates/app-infra/tests/storage_acceptance_support/fields.rs",
+    "crates/app-infra/tests/translation_current_status.rs",
+    "scripts/quality/reading_components.py",
+    "scripts/quality/test_reading_components.py",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/current-phase.json",
+    "openspec/active-change.json",
+    "docs/development/stability-refactor-progress.json",
+    "docs/development/stability-refactor-progress.md",
+    "docs/architecture/runtime-lifecycle-refactor.md",
+    "docs/development/baselines/FP1-20261027-R62.json",
+    "openspec/changes/repair-translation-current-status/exact-delta-review-r63.json",
+    "openspec/changes/repair-translation-current-status/baseline-review-r63.json",
+    "docs/development/iteration-baseline.json",
+    "docs/architecture/database/v2/storage-acceptance.json",
+    "docs/architecture/database/v2/storage-review.json",
+    "docs/development/lifecycle-impact-contract.json",
+    "scripts/quality/test_lifecycle_impact.py"
+  ],
+  "source_snapshot": "openspec/changes/repair-translation-current-status/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "TCS-001",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "latest-request-replaces-only-the-same-stable-engine-current-status",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M05",
+        "M10",
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-002",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "other-engines-and-reading-identities-remain-independent",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M05",
+        "M10",
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-003",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "full-database-causal-heads-determine-current-members",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M05",
+        "M10",
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-004",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "new-progress-cancellation-and-old-callbacks-remain-truthful",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M05",
+        "M10",
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-005",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "shared-reading-consumes-rust-current-status-and-keeps-history",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M05",
+        "M10",
+        "M13",
+        "M12"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-006",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "invalid-history-lane-isolated-with-typed-unavailable",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-007",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "on-demand-old-history-object-state-bypasses-bounded-tasks",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-008",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "real-failure-revision-and-attempt-scoped-partial-proof",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-009",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "active-owner-read-coalescing-and-late-reply-isolation",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M03",
+        "M05",
+        "M10",
+        "M12",
+        "M13"
+      ],
+      "component_ids": [
+        "C17",
+        "C18"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-010",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "registered-history-sidecar-is-exactly-bound-without-weakening-original-obligations",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests",
+        "product-hook-client-tests"
+      ]
+    },
+    {
+      "id": "TCS-011",
+      "spec": "specs/translation-current-status/spec.md",
+      "scenario": "object-projection-rejects-zero-revision-without-changing-legacy-reading-or-facts",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M05",
+        "M10",
+        "M12"
+      ],
+      "component_ids": [
+        "C17"
+      ],
+      "checks": [
+        "source-scope",
+        "baseline-integrity",
+        "spec-contract-tests",
+        "rust-boundary-tests",
+        "frontend-boundary-tests",
+        "technology-contract-tests",
+        "generated-contract-drift",
+        "generated-contract-tests",
+        "typescript-compile",
+        "rust-compile",
+        "product-core-tests",
+        "product-infra-tests",
+        "product-reading-component-tests",
+        "reading-component-guard-tests",
+        "product-native-ipc-tests"
+      ]
+    },
+    {
+      "id": "TCS-GOV-001",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "reviewed-non-ddl-carrier-keeps-all-hash-rejections",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M15",
+        "M10"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "storage-acceptance-contract",
+        "storage-acceptance-tests",
+        "storage-schema-contract",
+        "storage-boundaries",
+        "storage-boundary-execution",
+        "baseline-integrity",
+        "source-scope",
+        "spec-contract-tests"
+      ]
+    },
+    {
+      "id": "TCS-GOV-002",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "new-r63-final-retains-full-original-obligations",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "lifecycle-impact-contract",
+        "lifecycle-impact-guard-tests",
+        "baseline-integrity",
+        "source-scope",
+        "spec-contract-tests"
+      ]
+    },
+    {
+      "id": "TCS-GOV-003",
+      "spec": "specs/final-cohort-registration/spec.md",
+      "scenario": "actual-main-drift-and-public-rpc-delta-are-recorded",
+      "source_requirement_ids": [
+        "FP-04",
+        "FP-06",
+        "FP-08",
+        "FP-09",
+        "FP-10",
+        "FP-12",
+        "AI-CFG-03",
+        "AI-CFG-13",
+        "MC-07",
+        "MC-12",
+        "MC-20"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/index.html#hud-state"
+      ],
+      "module_ids": [
+        "M15"
+      ],
+      "component_ids": [
+        "C33"
+      ],
+      "checks": [
+        "implementation-status-contract",
+        "baseline-integrity",
+        "source-scope",
+        "spec-contract-tests",
+        "technology-contract-tests"
+      ]
+    }
+  ],
+  "product_visual_checks": [
+    "product-ui-capture-v4"
+  ],
+  "product_storage_checks": [
+    "rust-storage-complete-v2"
+  ],
+  "product_runtime_checks": [],
+  "product_acceptance_status": "not_run",
+  "scope_note": "V3.5 exact27 isolated clarification approved. New object-scoped translation projection requires positive explicit revision and rejects zero typed; legacy raw reading unit latest alias unchanged. Prior V3.4 causal/attempt/read transaction and strict sidecar contracts retain all original checks. No authority/DDL/debt/approved artwork/Main/package change. R63 governance supplement candidates add exact authority output/carrier/lifecycle/test paths only after independent review; original11 TCS requirements/checks and1918 source-snapshot retained. Public readonly RPC/DTO delta is explicit; no acceptance promotion."
+}

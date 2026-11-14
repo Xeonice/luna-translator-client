@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "adopt-compact-preview-design",
+  "parent_baseline_sha256": "564e43ce5cd4817c77e9c1cd1447fe33788393ffc327f0578d45ae950c14300e",
+  "source_delta": [
+    {
+      "path": "apps/desktop/tests/visual/design-source-versions.mjs",
+      "before": "9b27fb2d26cbb18166bd6d041af79f03de6550969905d7a3826c33c94961acb0",
+      "after": "0f4b498ccf052745c7a020280d2624a6da0a69f50b216fca2109d2756c6b84da"
+    },
+    {
+      "path": "apps/desktop/tests/visual/design-source-versions.test.mjs",
+      "before": "ede18dfd2b0fc7dc63a0baea466588d19d6067f362563a07097be05bb834126f",
+      "after": "0ac9b9190e45649f5acdd212536bc5d4aaffb49746d6a506cd1c9909a0b97d17"
+    },
+    {
+      "path": "docs/design/first-product-v1/README.md",
+      "before": "6545ab8aa113e91ea24410ac6da1c3be9baa50b7052e768096ebb8dcded7f9e1",
+      "after": "0dea9f5a2548e9acdc449f663554661dde616ddd531c85dd869e6aebbcf6e60b"
+    },
+    {
+      "path": "docs/design/first-product-v1/coverage.csv",
+      "before": "fd0343ad5230c879a36628df0d17ba5b64ef66276d55491b9807344b3a1af16c",
+      "after": "0d2b071beb50d2527396b5e85ae183487bcd1c6a10eccc8bd070173ea2565e4f"
+    },
+    {
+      "path": "docs/design/first-product-v1/data.js",
+      "before": "5ac40a226b19c93f00f1f0e6e1175ebf81518e6bf07db56062bf231e79ca228e",
+      "after": "5ebce1b36e9f6b17a14b6f232f8bd1760ce0a8765a3138592bb8f194b62b26f9"
+    },
+    {
+      "path": "docs/design/first-product-v1/index.html",
+      "before": "c4079df2a68ab7caeb96eb910aea7f379101d381dfa1ce378fa02ec0ed2a3a70",
+      "after": "49a2bbac53caec886bbd1487dab697f6037680761eca98a00c7b21248086d957"
+    },
+    {
+      "path": "docs/design/first-product-v1/integration.md",
+      "before": "505a509d97ad56cf5ea16036771c8f8f137172143f6e14dfd00bae97caec987a",
+      "after": "811a312d5afce9afe5e71db6c1c3f12f292ef35027d38e79971e68b59a520573"
+    },
+    {
+      "path": "docs/design/first-product-v1/manifest.json",
+      "before": "6e34932317f0ba35016d0d26708a95466f5da24a3ee66f27a6ba7f254ce095fc",
+      "after": "54297e6f4426a7e48458a653dc45d77b42f648c940fb028ede8f9c444bd5607a"
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.css",
+      "before": "45831c537b9f253c9165b0a0cfc64f22aede7a8ed1108c48cdaecb907954a1de",
+      "after": "5c1e3082ab2b993c3a88914dbfa6c1db61f7456aa6ecfba06f98e2b2f0dfbadd"
+    },
+    {
+      "path": "docs/design/first-product-v1/review-gaps.js",
+      "before": "889866023b32b99ca1fe588323b301b87ae4483e3bbefd616a996d435e741cdb",
+      "after": "4f1f44f3a611e0aca7d783690bb3956301085db7412ade294d036662cbb8909e"
+    },
+    {
+      "path": "docs/design/first-product-v1/style-guide.md",
+      "before": "72a3531c59b8318eb9ac5477e05e41d97de48f23342f8c7635c458222c4428cc",
+      "after": "128ae54ed8f8f87f091dfec4b2e7047320bc68fe803911e90219433656fa0b6d"
+    },
+    {
+      "path": "docs/development/design-approval-20261027-compact-preview.json",
+      "before": null,
+      "after": "6b41cb376a4c76420964ae3a26c8f1fe2a7ba9659ed025c21192b71df2d8d4c2"
+    },
+    {
+      "path": "docs/development/design-source-version-v4.json",
+      "before": "67064757eca3d792a8fa72f3db489894d4196f769438cda5419a14e0145fe60b",
+      "after": "7f87c3b4be54005ce041f4e320b76442b5d79d03efef1012e7782bc0ddc0e3cc"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/design.md",
+      "before": null,
+      "after": "0ac9fa295dcbf81f1a6644acc510039e8ef3b734693d592c908bf38c92c66eb1"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/iteration-card.md",
+      "before": null,
+      "after": "8de1f6dadacc72acec68f938ffc7f89c7eded8c253d6da2531bc2890cd5d376b"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/proposal.md",
+      "before": null,
+      "after": "bb6f841826d91121f5f3cedac3b594c4ceaab77c96a6186b4ad459d206ec8f97"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/source-snapshot.json",
+      "before": null,
+      "after": "2415e4ef8b5475c7241b706fb9afbfb21a1fce03eb1cb44cc39ba9fae57cc5b4"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/specs/compact-preview-design/spec.md",
+      "before": null,
+      "after": "40730a08e06899cd170ba2d10dae05a2c140dfdef7777d939761cb3250840e1a"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/tasks.md",
+      "before": null,
+      "after": "d66306c28e0f6a5de4638e17d073fd1f9001cf3a41edab10b7babdb88f909e30"
+    },
+    {
+      "path": "openspec/changes/adopt-compact-preview-design/verification.json",
+      "before": null,
+      "after": "f2e0237122027a67eec9598be78dd37468021f6fc1b65ec2fa0211f5ded0908c"
+    },
+    {
+      "path": "scripts/quality/design_source_versions.py",
+      "before": "24390f0aac29e0a0b1a9a3b15e298013a292b6db6bff726caa7fe03cc63dbc04",
+      "after": "06b98ca6d195a6128872c080939ba9450e30d8ecdf0038df8e493042cfc41706"
+    },
+    {
+      "path": "scripts/quality/test_product_capture_v4.py",
+      "before": "79d30dfcf42c5abfd24577a86a1201d9f4fa7167265bcc606d113c419d40e390",
+      "after": "be1713cb1cc0f87db6c94d44ad139d34bb6709c1d54c5450b86ce5ee959b51d4"
+    },
+    {
+      "path": "scripts/report/verify_interaction_gap_design.cjs",
+      "before": "cbf447137a9dcfd53ead1381e77aff040bb7b3f4102f5ca4b5c6d9a93911411b",
+      "after": "80e24194d298c6b5d894ec8fba252c373adc179be34fd5dd718d1d04089887af"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/tests/visual/design-source-versions.mjs",
+    "apps/desktop/tests/visual/design-source-versions.test.mjs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/compact-design-integration/independent-design-integration-review-02.json",
+    "sha256": "6cc363a98cbf62b6eccce878e7b708935ac0fbcbe04ab9731838314f55f496ae",
+    "bytes": 22776
+  },
+  "source_evidence_remaps": [],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

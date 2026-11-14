@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "baseline_id": "FP1-20261019-R15",
+  "parent_baseline": "FP1-20261019-R14",
+  "parent_manifest_sha256": "969881c58a2d9ef9769efa015799c769fa76b7ad88d7fa59a8bb2deebe644323",
+  "authorization": "User requested both engineering acceptances to pass and approved independent same-state visual comparison. Repair real execution failures within that scope; no commit or push.",
+  "scope": "Independently reviewed minimal producer/adapter registration repair, not a reference or tolerance change and not debt or product release approval.",
+  "failed_actual_gate": {
+    "path": ".build/quality/20261019T111716.813158Z.json",
+    "sha256": "71ee6fe68b5c32d170cba9e7cc3b89c5049ad09cbf3178545b70f0eb5686edb9",
+    "status": "failed",
+    "steps": 50,
+    "failed_steps": 3,
+    "root_causes": [
+      "UI producer missing required top-level referenceCatalogueSha256 despite correct nested reference identity.",
+      "Actual compiled library test source platform/game_launch.rs missing from reviewed adapter test_sources; actual storage adapter was correctly refused."
+    ]
+  },
+  "changed_authority": [
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "old_sha256": "f83dcb7baf864b11edd77c55c1c40947c82591544de792a7bcacd6ae1babb04f",
+      "new_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891",
+      "reason": "Register the exact newly compiled game_launch.rs library test source; closure validation, argv and assertions unchanged."
+    }
+  ],
+  "added_authority": [
+    {
+      "path": "docs/development/baselines/FP1-20261019-R14.json",
+      "bytes": 74212,
+      "sha256": "969881c58a2d9ef9769efa015799c769fa76b7ad88d7fa59a8bb2deebe644323"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/exact-delta-review-r15.json",
+      "bytes": 9941,
+      "sha256": "1f007bf7c38fe63529b1dffe6c550e029c47334e977f1e46b5735dc3c7fe12b2"
+    }
+  ],
+  "review": {
+    "path": "openspec/changes/implement-first-product/exact-delta-review-r15.json",
+    "sha256": "1f007bf7c38fe63529b1dffe6c550e029c47334e977f1e46b5735dc3c7fe12b2"
+  },
+  "actual_minimal_repairs": [
+    {
+      "path": "scripts/quality/storage_acceptance.py",
+      "before_sha256": "f83dcb7baf864b11edd77c55c1c40947c82591544de792a7bcacd6ae1babb04f",
+      "after_sha256": "4a683c821a110f2ed53f2fee9400ee65e0f2e379258cffb1922c6aa3f7431891"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-ui.mjs",
+      "before_sha256": "89d1a2a5a1d016a958e77b9d1f4b7441a69cf38500c061dd3b1252954d7b1e56",
+      "after_sha256": "a792a1c8dead96fca3550b9409f0206ef49b5d63931e6d054705481af6b66178"
+    },
+    {
+      "path": "openspec/changes/implement-first-product/verification.json",
+      "before_sha256": "dc6c4a5042fa57e641f53bd1d6e549492393ddfb0b2d159ca27c1cc318782d88",
+      "after_sha256": "2c8ea4ceab622c6a9ec821f02afe227de214a3a2fb65c77ada3e76d3cbc76123"
+    }
+  ],
+  "focused_checks": {
+    "command": "python3 -m unittest -v test_product_execution test_storage_acceptance.StorageAcceptanceTests",
+    "tests": 117,
+    "status": "passed",
+    "log": ".build/acceptance-closure-20261019/review/r15-focused-guards.log",
+    "log_sha256": "2fe5215bfb2edaaa03b905ccfbcefc23a1d23e175b0962008bbfa41bcaaea37b",
+    "limits": "Guard/source contract proof only; not actual complete storage, packaged native or full product acceptance."
+  },
+  "unchanged": [
+    "Strict catalogue consumer and zero-difference threshold",
+    "All 202 frozen reference files and registered catalogue identity",
+    "Original design and screenshots, tokens, migration DDL/schema/ledger/field/route inventories",
+    "All 351 other R14 protected contents, original approvals, legacy-debt ledger and License"
+  ],
+  "proof_limits": [
+    "New-source/new-package complete storage and unified execution remain required after this repair.",
+    "Historical failed receipts and old native observations remain unmodified; no backfill or inheritance."
+  ],
+  "product_acceptance_promoted": false
+}

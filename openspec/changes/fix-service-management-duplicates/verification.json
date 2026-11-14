@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "id": "fix-service-management-duplicates",
+  "kind": "product",
+  "allowed_paths": [
+    "apps/desktop/src/features/model-config/ModelConfigScreen.tsx",
+    "apps/desktop/src/features/model-config/service-management.ts",
+    "apps/desktop/tests/visual/service-management-projection.test.mjs",
+    "apps/desktop/tests/visual/verify-guided-service-page.mjs",
+    "apps/desktop/tests/visual/verify-service-management-list.mjs",
+    "scripts/quality/verify.py",
+    "docs/architecture/japanese-study-and-llm.md",
+    "docs/development/current-client-alignment-plan.md",
+    "docs/development/current-phase.json",
+    "docs/development/iteration-baseline.json",
+    "docs/development/baselines/FP1-20261109-R92.json",
+    "docs/development/service-management-source-adoption-20261109.json",
+    "docs/architecture/implementation-status.json",
+    "docs/architecture/implementation-status.md",
+    "docs/architecture/engineering-modules.csv",
+    "docs/architecture/engineering-components.csv",
+    "docs/development/current-design-alignment.json",
+    "docs/development/all-page-design-coverage.json",
+    "docs/development/all-page-design-coverage.md",
+    "openspec/changes/fix-service-management-duplicates/proposal.md",
+    "openspec/changes/fix-service-management-duplicates/design.md",
+    "openspec/changes/fix-service-management-duplicates/tasks.md",
+    "openspec/changes/fix-service-management-duplicates/iteration-card.md",
+    "openspec/changes/fix-service-management-duplicates/verification.json",
+    "openspec/changes/fix-service-management-duplicates/source-snapshot.json",
+    "openspec/changes/fix-service-management-duplicates/specs/service-management/spec.md",
+    "docs/README.md"
+  ],
+  "source_snapshot": "openspec/changes/fix-service-management-duplicates/source-snapshot.json",
+  "requirements": [
+    {
+      "id": "SM-001",
+      "spec": "specs/service-management/spec.md",
+      "scenario": "one-current-logical-resource-per-management-row",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "typescript-compile",
+        "service-management-projection-tests",
+        "service-management-component-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M04"
+      ],
+      "component_ids": [
+        "C26",
+        "C27"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=settings"
+    },
+    {
+      "id": "SM-002",
+      "spec": "specs/service-management/spec.md",
+      "scenario": "preserve-versioned-selection-and-exact-edit-sources",
+      "checks": [
+        "source-scope",
+        "spec-contract-tests",
+        "documentation-contract-tests",
+        "service-management-projection-tests",
+        "service-management-component-tests",
+        "current-design-alignment-tests"
+      ],
+      "source_requirement_ids": [
+        "FP-06",
+        "FP-11"
+      ],
+      "source_refs": [
+        "docs/product/first-product-scope.md",
+        "docs/product/model-configuration-prd.md"
+      ],
+      "design_refs": [
+        "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html#settings-window"
+      ],
+      "module_ids": [
+        "M13",
+        "M04"
+      ],
+      "component_ids": [
+        "C26",
+        "C27"
+      ],
+      "current_design_composition_id": "complete-guided-history-20261031",
+      "current_design_entry": "docs/design/first-product-v1/candidates/guided-service-reading-20261030/index.html?scenario=settings"
+    }
+  ],
+  "product_visual_checks": [],
+  "product_runtime_checks": [],
+  "product_storage_checks": [],
+  "review_evidence": {
+    "path": ".build/runtime-game-translation-20261109/service-fix-final-source-review.json",
+    "authors": [
+      "/root",
+      "/root/service_management_implementation",
+      "/root/service_management_browser_tests",
+      "/root/gate_source_audit"
+    ]
+  },
+  "authorization": "用户报告正式包设置列表数量异常，当前一连接/一模型被十历史版本乘三用途显示三十行；按已确认一资源一行设计修复，保留历史/精确绑定/原始失败，不改变公共协议、数据、设计源、技术栈。此变更不自动授予全产品准出。"
+}

@@ -1,0 +1,9 @@
+# 最小技术设计
+
+归属M02；C13/C14消费既有TargetCandidatesProjection。错误位于Win32查询的DPI虚拟化口径，非零进程或录屏授权本身。GetWindowRect受DPI虚拟化影响；SetThreadDpiAwarenessContext只修改当前线程并返回可恢复原context。
+
+Windows adapter从已加载user32动态解析API，既有LibraryLoader能力不引入依赖；共享scope算法保存旧context，完整包围EnumWindows callback或GetCursorPos→WindowFromPoint→GetAncestor→inspect_window。同一个线程保存/恢复，guard以Rc标记不可Send/Sync，正常/错误路径显式恢复，Drop作异常兜底。恢复失败优先拒绝，保留操作失败原因，不得先输出成功后恢复。API不可用或设置被拒绝不运行查询、不回退unaware。
+
+既有verify-bound-window、activate-window、window-title-challenge不读坐标，保持原实现，不额外要求几何/可见性；无Native映射/proof放宽，无游戏/容器/屏幕/TCC配置更改。反向或空矩形仍拒绝；合法负left/top不拒绝。公开JSON形状不变，错误走原String→JSON error出口。
+
+测试必须直接执行生产共用scope：成功、操作失败、缺API、设置失败、恢复失败/Drop兜底、嵌套与panic恢复；矩形判断共用真实函数验证负坐标及反向/空边界。host测试不冒充Windows API执行；prepare_core_runtime双架构构建及真实Wine新旧probe运行独立取证。最终资源freeze后才以原证书和固定路径制作新包。现有R45、B原R40snapshot、批准图片/token/阈值及历史状态保持。

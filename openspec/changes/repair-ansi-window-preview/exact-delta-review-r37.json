@@ -1,0 +1,89 @@
+{
+  "kind": "R37_owner_image_mapping_exact_candidate_review",
+  "status": "independent_sources_reviewed_candidate_only_awaiting_Root_exact_authority_review",
+  "parent_baseline_sha256": "782776a30b7f940a9c5a9d8479cfdb3e60010229db7df81fc92c5b923416b43e",
+  "source_freeze": {
+    "status": "root_authorized_final_source_and_architecture",
+    "at": "2026-10-23T15:39:42.008166+00:00",
+    "map": ".build/window-preview-sakura-20261023/r37-candidate/root-source-freeze-map.json",
+    "map_sha256": "a29c5d8fd6ddb0a4a909c1f2a55fc3e8d5ef8d64c9bd08e10c0e9e32e6bafacd",
+    "source_tree_sha256": "afb850632bf951e52144c05b5e228bf385602c77808c7c69440bca8de2114b92",
+    "reviewed_implementation_source": {
+      "apps/desktop/src-tauri/src/platform/macos/bridge.m": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "apps/desktop/src-tauri/src/platform/macos/mod.rs": "4f2fb211f1e0482bcaf2ea0f859fdc8a527199a19681cfcdd22116d65f39fb81"
+    },
+    "independent_evidence": [
+      {
+        "path": ".build/window-preview-sakura-20261023/independent-code-review/owner-mapping-r37/review-permanent-v2.json",
+        "sha256": "8e4b507edc94982ba3c23bf82ebcbfd65efa9678ca6939153ab076f8ef0d81e8"
+      },
+      {
+        "path": ".build/window-preview-sakura-20261023/native-fix/diagnosis-owner-map/handoff-r37.json",
+        "sha256": "0f907ff0298e36845569dd0fa5cfcce74ddf23b8595d2c6fc1dfff32671d9e00"
+      }
+    ],
+    "source_entries": 1666
+  },
+  "semantic_review_input": {
+    "path": ".build/window-preview-sakura-20261023/r37-candidate/root-semantic-review.json",
+    "sha256": "8c2a4a702a8043e3a8a28c04dd240e2d00e202e9aa1d4ae12517859597add14c"
+  },
+  "source_evidence_updates": [
+    {
+      "group": "modules",
+      "id": "M12",
+      "index": 18,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "37a5b1c4d3f4bbf9812e004ae264b914642ddbea07a80ee6e1d93d14a8024172",
+      "old_line": 26,
+      "new_sha256": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "new_line": 26
+    },
+    {
+      "group": "components",
+      "id": "C01",
+      "index": 0,
+      "path": "apps/desktop/src-tauri/src/platform/macos/mod.rs",
+      "quote": "pub fn set_hud_material(window: &tauri::WebviewWindow, reduced: bool) -> AppResult<bool> {",
+      "old_sha256": "a9f12c9c90f7ab36ab59c4bbdae19c2e3259269b5a1924a631da3473daf5f21b",
+      "old_line": 236,
+      "new_sha256": "4f2fb211f1e0482bcaf2ea0f859fdc8a527199a19681cfcdd22116d65f39fb81",
+      "new_line": 241
+    },
+    {
+      "group": "components",
+      "id": "C34",
+      "index": 9,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "37a5b1c4d3f4bbf9812e004ae264b914642ddbea07a80ee6e1d93d14a8024172",
+      "old_line": 26,
+      "new_sha256": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "new_line": 26
+    },
+    {
+      "group": "capabilities",
+      "id": "FP-01",
+      "index": 7,
+      "path": "apps/desktop/src-tauri/src/platform/macos/bridge.m",
+      "quote": "static NSApplicationTerminateReply LunaShouldTerminate(id delegate, SEL selector, NSApplication *application) {",
+      "old_sha256": "37a5b1c4d3f4bbf9812e004ae264b914642ddbea07a80ee6e1d93d14a8024172",
+      "old_line": 26,
+      "new_sha256": "fae596a4d9d7d77a906c9381e39b7ec1f12d5ba8ac90b819be9e9265d3eb8f93",
+      "new_line": 26
+    }
+  ],
+  "source_quote_replacements": 0,
+  "old_source_evidence_count": 494,
+  "semantic_record_ids": [
+    "M12",
+    "C35",
+    "CAP-PREVIEW"
+  ],
+  "original_snapshot_sha256": "830cf41d796e1145b2340f24b7d0b8838cfc9c68a0d61fbda8cda1a75e1b665e",
+  "snapshot_rewritten": false,
+  "DB_technology_reference_tokens_debt_unchanged": true,
+  "history_approval_artifact_runtime_release_promoted": false,
+  "canonical_authority_written": false
+}

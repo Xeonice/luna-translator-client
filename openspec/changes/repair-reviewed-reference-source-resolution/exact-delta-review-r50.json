@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "status": "pending_exact_independent_packet_review_and_Root_adoption",
+  "change_id": "repair-reviewed-reference-source-resolution",
+  "parent_baseline_sha256": "88c85fc0a3479ea82b91f4605fff137844b8c52ca52d31be36b9c2dd05970d62",
+  "source_delta": [
+    {
+      "path": "apps/desktop/tests/visual/capture-catalogue.mjs",
+      "before": "0d3710c6f8992357dc0c6e922e93937ce9a07cda50ba7828b54996519c30a3f2",
+      "after": "e5db0962f0c7e0bf6708b1b44c33f93eefa93a15d23086c2c0c143bc0aa0136d"
+    },
+    {
+      "path": "apps/desktop/tests/visual/design-source-versions.mjs",
+      "before": null,
+      "after": "9b27fb2d26cbb18166bd6d041af79f03de6550969905d7a3826c33c94961acb0"
+    },
+    {
+      "path": "apps/desktop/tests/visual/design-source-versions.test.mjs",
+      "before": null,
+      "after": "ede18dfd2b0fc7dc63a0baea466588d19d6067f362563a07097be05bb834126f"
+    },
+    {
+      "path": "apps/desktop/tests/visual/verify-ui.mjs",
+      "before": "eeb5dbd44d4b58ea850ebb151b0638b3693e3159a01f6952038aa65c4823aa45",
+      "after": "f1396d3dc86944bf80e9ca89bcaba3cccb3b529828dc65ea86387ffd161a2d67"
+    },
+    {
+      "path": "docs/development/design-source-version-v4.json",
+      "before": null,
+      "after": "67064757eca3d792a8fa72f3db489894d4196f769438cda5419a14e0145fe60b"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/design.md",
+      "before": null,
+      "after": "453c4981bb629da87e54d73cbde7ebe1970dd624c2507c33772fcff540cb45e9"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/iteration-card.md",
+      "before": null,
+      "after": "1054b24a31b372d7f4f03ca5f594f1ce1fc05be48469d821d22b46e15b12f89c"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/proposal.md",
+      "before": null,
+      "after": "b2406ca3c4ac18b714d08b134207b3e9bf2194f0e94d766d7261d91cfea5d284"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/source-snapshot.json",
+      "before": null,
+      "after": "0f67610022e3e53c4c238ccf203961530a302016a6e98efff0cd3efdb0100a0e"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/specs/reviewed-reference-version/spec.md",
+      "before": null,
+      "after": "751efda627e9256315d34e11d9358c700cf767a4b17bd8ff23e1c7a09a2dc82d"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/tasks.md",
+      "before": null,
+      "after": "4476d2e580994f4573df73c0aa232cea44be44cf9910c17db8d1c126a0d92c6a"
+    },
+    {
+      "path": "openspec/changes/repair-reviewed-reference-source-resolution/verification.json",
+      "before": null,
+      "after": "b2c67a55ec4bc5777098b7f4e6b57f01e9c18159cb4b837e79197b74090ce0f5"
+    },
+    {
+      "path": "scripts/quality/design_source_versions.py",
+      "before": null,
+      "after": "24390f0aac29e0a0b1a9a3b15e298013a292b6db6bff726caa7fe03cc63dbc04"
+    },
+    {
+      "path": "scripts/quality/product_execution.py",
+      "before": "47e3257db5169080f1ceaafb69f0423bad1be0f350118b7c61c939a1b5896ccc",
+      "after": "dcde170defa2c61e89eb7d96ff12896e0c8a1efc45994cf9b1bc15ce6303a182"
+    },
+    {
+      "path": "scripts/quality/test_product_capture_v4.py",
+      "before": "0a2a4dff783863ca9c0b7a301097b9eda9a331ab50b9e925b42bc20fdca773e0",
+      "after": "79d30dfcf42c5abfd24577a86a1201d9f4fa7167265bcc606d113c419d40e390"
+    },
+    {
+      "path": "scripts/quality/verify.py",
+      "before": "0ce09ccedc78063b13eb9fc5c391cb7dad7f6038510045054ff1b089ec60129b",
+      "after": "682840d679a3f80f557b268967f1779e4674b506ee6a8be1fe4ab493d94ea60d"
+    }
+  ],
+  "product_delta": [
+    "apps/desktop/tests/visual/capture-catalogue.mjs",
+    "apps/desktop/tests/visual/design-source-versions.mjs",
+    "apps/desktop/tests/visual/design-source-versions.test.mjs",
+    "apps/desktop/tests/visual/verify-ui.mjs"
+  ],
+  "code_review": {
+    "path": ".build/stability-refactor-20261027/visual-resolution/independent-code-review.json",
+    "sha256": "f6a0f3b451332aaae3dbb38fd3f1efc69fadde01a68528e2bfc74b66e90ad7d4",
+    "bytes": 12291
+  },
+  "source_evidence_remaps": [
+    {
+      "group": "modules",
+      "id": "M15",
+      "before": {
+        "path": "scripts/quality/verify.py",
+        "line": 19,
+        "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+        "symbol": "READING_COMPONENT_CHECK",
+        "sha256": "0ce09ccedc78063b13eb9fc5c391cb7dad7f6038510045054ff1b089ec60129b"
+      },
+      "after": {
+        "path": "scripts/quality/verify.py",
+        "line": 19,
+        "quote": "from reading_components import CHECK_ID as READING_COMPONENT_CHECK, run_reading_components",
+        "symbol": "READING_COMPONENT_CHECK",
+        "sha256": "682840d679a3f80f557b268967f1779e4674b506ee6a8be1fe4ab493d94ea60d"
+      }
+    }
+  ],
+  "public_contracts_unchanged": true,
+  "runtime_visual_release_promoted": false
+}

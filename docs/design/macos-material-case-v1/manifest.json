@@ -1,0 +1,102 @@
+{
+  "case": "macos-material-case-v1",
+  "user_visual_confirmation": "style_approved",
+  "full_product_design_modified": true,
+  "files": [
+    {
+      "file": "README.md",
+      "sha256": "5e70bec4a552d620d0aefc84ccf04c2f933889bdf58df531b563805c6d43f178",
+      "bytes": 3800
+    },
+    {
+      "file": "assets/material-mask.svg",
+      "sha256": "6088cbd118b5a170a9e9d9a88446bf3cc82ec283b895ceac771f055e05835903",
+      "bytes": 278
+    },
+    {
+      "file": "assets/provenance.json",
+      "sha256": "8620168776d78897d7ef82f99f89321473917ddf292334022d1f320489b9d34f",
+      "bytes": 1206
+    },
+    {
+      "file": "assets/reference-desktop.png",
+      "sha256": "5e55a763e78e22efb8e6b83fbfb262fbc1f5b51d3d1e7090b07c8d791006af3c",
+      "bytes": 3156652
+    },
+    {
+      "file": "assets/wallpaper-frame.png",
+      "sha256": "64f704c02b5172f7b18ae09e683c883f6f0913b4ea89b7399f975e9938cd6a8f",
+      "bytes": 1616086
+    },
+    {
+      "file": "assets/wallpaper-preview.png",
+      "sha256": "7d576f6f88035acca3d2462cbf3b0ad7cb37af2e294c1d45abfbd24de172aa5d",
+      "bytes": 434883
+    },
+    {
+      "file": "case.css",
+      "sha256": "48357af42e848b42b592e50504926995b31133b852615f0cb1b50f3bec425b09",
+      "bytes": 7194
+    },
+    {
+      "file": "case.js",
+      "sha256": "807175c1697231734dfd50f059ff6bbdbad67a19c8949c39d7df74778599c17a",
+      "bytes": 2815
+    },
+    {
+      "file": "compare.css",
+      "sha256": "187349f87e8f288d721562e235edee449d7e9dc289fe7860ae8c52af8dc7f575",
+      "bytes": 7998
+    },
+    {
+      "file": "compare.js",
+      "sha256": "8333b2501425138381367dbe2e7e9fa54dc9f13fca3883e6b3169cb955ed27de",
+      "bytes": 2508
+    },
+    {
+      "file": "comparison.html",
+      "sha256": "a5b923c6d700a99bd70a95d4e6a133d69f0694675c964a86fa2b46e0f1a3d25c",
+      "bytes": 8055
+    },
+    {
+      "file": "index.html",
+      "sha256": "05e14d95afc1726fa65f67f09b5b56a442270a7872eb95d1942ae1224f986c32",
+      "bytes": 2553
+    },
+    {
+      "file": "previews/blur-off-window.png",
+      "sha256": "11e046106686727073c0625535f794f1fb50c1d6b252bdea821e72e12e4dbf19",
+      "bytes": 290418
+    },
+    {
+      "file": "previews/case-desktop.png",
+      "sha256": "e0148b33bb12e7d768fd2e9621819ccd125a80ff1ffa9409b4cdc5733ef34b6e",
+      "bytes": 1125068
+    },
+    {
+      "file": "previews/case-window.png",
+      "sha256": "a877eabed872a49395f306cf067c904960ea36e9cdc26287f4a13cd00d507db4",
+      "bytes": 157449
+    },
+    {
+      "file": "previews/comparison-page.png",
+      "sha256": "c40a9a13d8f8055b72c149f08645455bfa31ca564a8e4720aab8538d7ed7ccc5",
+      "bytes": 950149
+    },
+    {
+      "file": "previews/moved-window.png",
+      "sha256": "fae96031a0d91edc4459f947ad323851b49e6bc576f7bbf99637ac6c8d63d0f7",
+      "bytes": 191461
+    },
+    {
+      "file": "previews/reference-window.png",
+      "sha256": "0255e9ea8ce4e18ee5d0e573e58c6dee7c69921e4bfbadf6aa10c3cc98806141",
+      "bytes": 169444
+    },
+    {
+      "file": "previews/verification.json",
+      "sha256": "6583b79a0782f0d4d3e6921afd5ae99f4d754f37c4cc0d26df97204750cab6b0",
+      "bytes": 1116
+    }
+  ]
+}
