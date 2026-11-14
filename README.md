@@ -4,7 +4,7 @@
 
 Rust/Tauri 游戏阅读客户端，使用独立精简 LunaHook Core 取文。首版目标包含游戏取文、翻译、内置日语分词词典、按需 AI 精读和服务配置。产品已进入研发；最新设计的功能和呈现仍有待对齐项，当前尚未准出。
 
-公开仓库：[Xeonice/luna-translator-client](https://github.com/Xeonice/luna-translator-client)。[GitHub 与冷环境验证](docs/development/github-activation.md)说明固定语言资源、独立审核、Actions 和分支保护。三个大语言文件从受锁 CI 依赖资产恢复；历史报告与生成的 Tauri staging 不进入 Git。
+公开仓库：[Xeonice/luna-translator-client](https://github.com/Xeonice/luna-translator-client)。[GitHub 与冷环境验证](docs/development/github-activation.md)说明固定语言资源、独立审核、Actions 和分支保护。三个大语言文件从[受锁 CI 依赖资产](https://github.com/Xeonice/luna-translator-client/releases/tag/ci-dependencies-20261115)恢复；历史报告与生成的 Tauri staging 不进入 Git。
 
 **现行规范入口：[文档首页](docs/README.md)**。从这里查看当前 PRD、设计、架构、实施差距、测试与准出，不再按历史报告或旧包说明实施。
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
 import hashlib
 import json
 import os
@@ -176,6 +177,23 @@ def stage_compiler_resources(root):
             'application_runtime_qualified': False, 'product_acceptance_promoted': False}
 
 
+@contextmanager
+def _plain_adapter_output():
+    """Keep real adapter service URLs free of inherited terminal decoration."""
+    keys = ('NO_COLOR', 'FORCE_COLOR')
+    previous = {key: os.environ.get(key) for key in keys}
+    os.environ['NO_COLOR'] = '1'
+    os.environ.pop('FORCE_COLOR', None)
+    try:
+        yield
+    finally:
+        for key, value in previous.items():
+            if value is None:
+                os.environ.pop(key, None)
+            else:
+                os.environ[key] = value
+
+
 def produce(root):
     from development_gates import execute
     root = Path(root).resolve()
@@ -191,11 +209,12 @@ def produce(root):
     if not proof.startswith('.build/quality/'):
         raise ValueError('real observer must be an isolated quality artifact')
     result = {'schema_version': 1, 'hooks': proof, 'items': {}}
-    for key, (check, gate) in mapping.items():
-        receipt = execute(root, context['change_id'], run, check, gate, inputs)
-        if receipt['exit_code'] or receipt['test_count'] < 1 or receipt['skipped_count']:
-            raise ValueError('actual production adapter did not pass: ' + key)
-        result['items'][key] = receipt
+    with _plain_adapter_output():
+        for key, (check, gate) in mapping.items():
+            receipt = execute(root, context['change_id'], run, check, gate, inputs)
+            if receipt['exit_code'] or receipt['test_count'] < 1 or receipt['skipped_count']:
+                raise ValueError('actual production adapter did not pass: ' + key)
+            result['items'][key] = receipt
     if snapshot_inputs(root) != inputs:
         raise ValueError('production source changed during execution')
     destination = context['effective_gate_external_evidence']
