@@ -1,0 +1,13 @@
+name: Declared negative spoof probe
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  fake:
+    name: Luna / engineering
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deliberately insufficient green result
+        run: sleep 90
