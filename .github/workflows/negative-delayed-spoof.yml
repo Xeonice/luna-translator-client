@@ -1,0 +1,18 @@
+name: Declared delayed spoof probe
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+jobs:
+  warm-up:
+    name: Delay before spoof check creation
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 60
+  fake:
+    needs: warm-up
+    name: Luna / engineering
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Declared negative probe, never merge"
