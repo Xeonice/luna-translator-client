@@ -2,11 +2,13 @@
 import copy
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import stat
 import struct
 import subprocess
+import sys
 import tempfile
 import textwrap
 import unittest
@@ -204,6 +206,112 @@ catch(e){process.stdout.write(JSON.stringify({passed:false,error:e.message,calls
         self.assertIn('ref: ${{ needs.admission.outputs.head }}', engineering)
         self.assertIn('if: always()', publisher)
         self.assertIn('pull_request_target:', workflow)
+
+
+class ProductionOutputEnvironmentTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='luna-ci-output-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        (self.root / 'source.txt').write_text('stable controlled command input')
+        context = self.root / '.codex/gate-context.json'; context.parent.mkdir()
+        context.write_text(json.dumps({'change_id': 'controlled-output'}))
+        baseline = self.root / '.build/source.json'; baseline.parent.mkdir()
+        baseline.write_text(json.dumps({'files': {'source.txt': ci.sha(self.root / 'source.txt')}}))
+        metadata = self.root / 'openspec/changes/controlled-output/verification.json'
+        metadata.parent.mkdir(parents=True)
+        metadata.write_text(json.dumps({'allowed_paths': ['scripts/quality/**'],
+                                       'source_snapshot': '.build/source.json',
+                                       'effective_gate_external_evidence': '.build/quality/external.json'}))
+        lock = self.root / '.github/ci-evidence.lock.json'; lock.parent.mkdir()
+        lock.write_text(json.dumps({'proof_path': '.build/quality/controlled-hook-proof.json'}))
+
+    def child_environment(self, *, fail=False):
+        # An actual child process observes inherited variables. This substitutes
+        # only the heavyweight adapter execution boundary in this unit test;
+        # context loading, produce dispatch, failure handling and writes are real.
+        code = ('import json,os,sys,unittest\n'
+                'print(json.dumps({"NO_COLOR":os.environ.get("NO_COLOR"),'
+                '"FORCE_COLOR":os.environ.get("FORCE_COLOR"),"CI":os.environ.get("CI")}))\n'
+                'unittest.TextTestRunner().run(unittest.TestSuite([unittest.FunctionTestCase(lambda:None)]))\n'
+                f'raise SystemExit({1 if fail else 0})\n')
+        actual = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True, check=False)
+        from development_gates import test_counts
+        count, skipped = test_counts(actual.stdout + actual.stderr)
+        return json.loads(actual.stdout), {'exit_code': actual.returncode, 'test_count': count, 'skipped_count': skipped}
+
+    def test_all_four_adapters_receive_plain_output_without_changing_outer_environment(self):
+        observed = []
+        def execute(root, change, run, check, gate, inputs):
+            environment, receipt = self.child_environment()
+            observed.append((check, environment))
+            return receipt
+        with patch.dict(os.environ, {'CI': 'true', 'FORCE_COLOR': '3'}):
+            os.environ.pop('NO_COLOR', None)
+            with patch('development_gates.execute', side_effect=execute):
+                result = ci.produce(self.root)
+            self.assertEqual(os.environ.get('FORCE_COLOR'), '3')
+            self.assertNotIn('NO_COLOR', os.environ)
+        self.assertEqual(result['adapters'], 4)
+        self.assertEqual(result['test_count'], 4)
+        self.assertEqual([check for check, _ in observed],
+                         ['functional-component', 'affected-functional-tests', 'storage-migration', 'storage-runtime'])
+        self.assertTrue(all(environment == {'NO_COLOR': '1', 'FORCE_COLOR': None, 'CI': 'true'}
+                            for _, environment in observed))
+
+    def test_failed_adapter_still_fails_and_restores_inherited_color_variables(self):
+        observed = []
+        def execute(*args):
+            environment, receipt = self.child_environment(fail=True)
+            observed.append(environment)
+            return receipt
+        with patch.dict(os.environ, {'CI': 'true', 'NO_COLOR': 'original', 'FORCE_COLOR': '2'}):
+            with patch('development_gates.execute', side_effect=execute):
+                with self.assertRaisesRegex(ValueError, 'adapter did not pass: functional-component'):
+                    ci.produce(self.root)
+            self.assertEqual(os.environ.get('NO_COLOR'), 'original')
+            self.assertEqual(os.environ.get('FORCE_COLOR'), '2')
+        self.assertEqual(observed, [{'NO_COLOR': '1', 'FORCE_COLOR': None, 'CI': 'true'}])
+        self.assertFalse((self.root / '.build/quality/external.json').exists())
+
+    def test_actual_vite_ci_color_breaks_url_parse_and_plain_output_restores_http_ready(self):
+        directory = self.root / 'vite-input'; directory.mkdir()
+        (directory / 'index.html').write_text('<!doctype html><title>Actual Vite readiness probe</title>')
+        vite = ci.ROOT / 'apps/desktop/node_modules/vite/dist/node/index.js'
+        code = r'''
+const {createServer}=await import(process.argv[1]);
+const path=await import('node:path');
+const output=process.argv[2];let raw='';
+const original=process.stdout.write.bind(process.stdout);
+let server;
+try {
+  process.stdout.write=(chunk,encoding,callback)=>{raw+=String(chunk);if(typeof encoding==='function')encoding();else callback?.();return true;};
+  server=await createServer({configFile:false,root:output,cacheDir:path.join(output,'cache'),server:{host:'127.0.0.1',port:0}});
+  await server.listen();server.printUrls();
+  process.stdout.write=original;
+  const matched=raw.match(/http:\/\/127\.0\.0\.1:\d+/)?.[0]??null;
+  const actualOrigin=server.resolvedUrls.local[0];
+  const actualHttpOk=(await fetch(actualOrigin)).ok;
+  const parsedHttpOk=matched===null?null:(await fetch(matched)).ok;
+  console.log(JSON.stringify({raw,matched,actualOrigin,actualHttpOk,parsedHttpOk}));
+} finally {process.stdout.write=original;await server?.close();}
+'''
+        def observe():
+            actual = subprocess.run(['node', '--input-type=module', '-e', code, vite.as_uri(), str(directory)],
+                                    capture_output=True, text=True, timeout=20, check=True)
+            return json.loads(actual.stdout)
+        with patch.dict(os.environ, {'CI': 'true', 'FORCE_COLOR': '3'}):
+            os.environ.pop('NO_COLOR', None)
+            colored = observe()
+            with ci._plain_adapter_output():
+                plain = observe()
+        self.assertTrue(colored['actualHttpOk'])
+        self.assertIn('\x1b[', colored['raw'])
+        self.assertIsNone(colored['matched'])
+        self.assertTrue(plain['actualHttpOk'])
+        self.assertNotIn('\x1b[', plain['raw'])
+        self.assertRegex(plain['matched'], r'^http://127\.0\.0\.1:\d+$')
+        self.assertTrue(plain['parsedHttpOk'])
 
 
 if __name__ == '__main__':

@@ -78,6 +78,8 @@ jobs:
     env:
       GATE_REVIEW_BUNDLE_URL: ${{ vars.GATE_REVIEW_BUNDLE_URL }}
       GATE_REVIEW_BUNDLE_SHA256: ${{ vars.GATE_REVIEW_BUNDLE_SHA256 }}
+      # Test launchers consume service URLs; terminal decoration is not input.
+      NO_COLOR: '1'
     steps:
       # This isolated job has no write token or secrets. Checkout is immutable.
       - uses: actions/checkout@v4
