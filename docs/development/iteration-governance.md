@@ -14,7 +14,7 @@
 | [目录职责](../architecture/engineering-layout.md)、[模块矩阵](../architecture/engineering-modules.csv)、[组件矩阵](../architecture/engineering-components.csv) | 文件组织、M01～M16、C01～C36、Owner 和复用 | 作为研发约束，不表示已有相应实现 |
 | 原始 100 文件快照、REQ/SCR/DES | 历史来源、完整需求路线与优先级 | 原字节保留；首版细化不删除后续能力，不将历史视觉当当前整稿 |
 
-初始基线ID为`FP1-20261018-R1`，当前revision见基线JSON；R1原记录保留在baselines目录。指纹用于发现内容漂移，不代表其中每一条内容均已批准。当前目录没有Git仓库；已新增CI配置但尚未远端执行。B0仍需将基线纳入正式版本管理，再以提交身份和文件hash联合追溯；不能伪称已有受保护分支或远端合并阻断。
+初始基线ID为`FP1-20261018-R1`，当前revision见基线JSON；R1原记录保留在baselines目录。指纹用于发现内容漂移，不代表其中每一条内容均已批准。当前源码已纳入独立公开Git仓库，真实冷机CI、正反PR及main保护已执行并读回，见[GitHub激活说明](github-activation.md)。后续以真实base/提交、完整源码及dirty身份联合追溯；这些工程事实不授予B0～B5产品验收或本次新候选自动通过。
 
 行为要求看 PRD，交互与视觉看当前设计，实现边界看架构。三者矛盾时登记冲突并解决，不由实现者自行选择一个来覆盖其他依据。用户后续明确指令优先，并同步记录到受影响规范与变更记录；无需重复询问已授权事项。
 
@@ -87,7 +87,7 @@ B0 除依赖/资源冻结，还要完成新增追溯映射、自动检查接线�
 
 原 `requirements.csv`、任务 CSV、回归 CSV、MC/GL 验收矩阵描述计划与验收定义。现有重建任务与回归检查器要求其快照保持 `ready/planned` 与 `not_run`；本规则将历史定义与运行分开，不能直接将这些历史计划改成结果表。
 
-每次运行按[产品回归规则](client-regression.md#每次执行的证据目录与状态规则)另建 `run_id`，记录 baseline/iteration/work-item/test ID、实际客户端源码/dirty 身份、包 SHA-256、Core commit/ABI/架构、语言资源版本、环境、步骤、实际结果、缺陷和证据相对路径/hash。多平台与不同游戏版本分开。当前尚无 Git 时如实记录来源及指纹，不填写虚构 commit。
+每次运行按[产品回归规则](client-regression.md#每次执行的证据目录与状态规则)另建 `run_id`，记录 baseline/iteration/work-item/test ID、实际客户端源码/dirty 身份、包 SHA-256、Core commit/ABI/架构、语言资源版本、环境、步骤、实际结果、缺陷和证据相对路径/hash。多平台与不同游戏版本分开。当前使用真实Git提交及dirty文件指纹；首次导入前的历史记录保留原来源身份，不补写虚构commit。
 
 `passed` 必须有实际执行和证据；`failed` 留缺陷及重跑；`blocked` 留外部阻塞；未执行为 `not_run`。修复后生成新的运行记录，不抹掉失败历史。候选包变化需要按影响重跑，发布汇总不得拼接不同包的旧结果冒充同一正式包通过。
 
@@ -102,7 +102,7 @@ B0 除依赖/资源冻结，还要完成新增追溯映射、自动检查接线�
 | TypeScript AST/Cargo依赖方向、框架技术锁及真实编译 | 已接入；旧PoC逐条冻结，新增/扩大/修改后残留违规拒绝，发布不接受旧项 |
 | DTO/token生成漂移、release fixture导入图 | 尚需具体产品实现接入，未冒称已覆盖 |
 | 图像差异与Playwright负例、证据hash/包身份 | 已有可执行守卫；真实产品候选捕获/运行adapter缺失时拒绝相应产品验收 |
-| CI必需检查、受保护分支/合并规则 | 已有workflow复用根命令；尚无Git/remote执行或分支保护，不冒称远端阻断 |
+| CI必需检查、受保护分支/合并规则 | 可信base工作流已实跑完整工程档；main必需检查及正反/恢复PR已实证，逐候选身份与准出见[GitHub激活说明](github-activation.md)，不只凭YAML或CLI绿灯 |
 
 规则或工程自测不改变产品执行状态；提交与推送仍须用户单独明确授权。
 

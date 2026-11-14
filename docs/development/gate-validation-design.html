@@ -32,28 +32,28 @@
   <div class="eyebrow">LUNA / QUALITY GATES / GV-DESIGN-01</div>
   <h1>门禁正反例与触发设计</h1>
   <p class="lead">用合法修改证明不会误拦，用故意违规证明能够拦住；再从真实 Codex 入口验证，确保检查确实发生。</p>
-  <div class="meta"><span class="badge draft">已批准实施</span><span>版本 1.1 · 实施说明已同步</span><span>范围：工程与验收机制设计</span><button class="print" type="button" id="print">打印 / 存为 PDF</button></div>
+  <div class="meta"><span class="badge draft">已批准实施</span><span>版本 1.2 · GitHub接入说明已同步</span><span>范围：工程与验收机制设计</span><button class="print" type="button" id="print">打印 / 存为 PDF</button></div>
   <div class="stats"><div class="stat"><b>9</b><span>门禁类别 · 含视觉</span><small>5 类自动，4 类含人工或实机判定</small></div><div class="stat"><b>4</b><span>Codex 主要触发点</span><small>与统一项目检查共用逻辑</small></div><div class="stat"><b>32</b><span>正反例组</span><small>至少 64 个样本，边界另参数化</small></div><div class="stat"><b>另行记录</b><span>实际执行结果</span><small>用例计划与运行回执分开</small></div></div>
 </header>
 
 <section id="scope">
   <div class="section-head"><span class="section-no">01</span><h2>先明确：这次要证明什么</h2></div>
   <div class="grid2"><div class="panel"><h3>门禁有效的四个条件</h3><ol><li>合法修改能够正常通过。</li><li>约定违规由正确规则拒绝。</li><li>实际入口确实触发检查，不能只调用模拟脚本。</li><li>漏跑、过期和检查器故障不能被算成通过。</li></ol></div><div class="panel"><h3>保留简单的审核方式</h3><ul><li>门禁执行只给一张结果表。</li><li>视觉只给一份设计稿与真实实现并排的统一报告。</li><li>原始日志由工具留存，按需查看。</li><li>不新增多轮像素评分、叠图或参照审批流程。</li></ul></div></div>
-  <div class="note"><strong>本页已获用户明确批准并授权实施。</strong>本轮实施门禁程序、Codex hooks与有效性验证；不修改客户端、不替换应用、不重启游戏、不提交代码。本页不覆盖已有设计批准或历史失败记录。后续实施须建立 OpenSpec 变更、明确修改路径，并覆盖更新受影响的现行规范。</div>
+  <div class="note"><strong>本页已获用户明确批准并授权实施。</strong>本轮已实施门禁程序、Codex hooks与有效性验证；公开GitHub接入另按用户建立公开仓库的授权和<a href="../../openspec/changes/activate-public-github-gates/proposal.md">当前OpenSpec</a>执行。不修改客户端、不替换应用、不重启游戏。本页不覆盖已有设计批准或历史失败记录。后续实施须建立 OpenSpec 变更、明确修改路径，并覆盖更新受影响的现行规范。</div>
   <p class="small">用户最近明确要求的简化视觉流程优先于旧文档中的复杂流程；旧批准源、截图和原始执行记录保持历史身份，不用于自动补成本轮通过。</p>
 </section>
 
 <section id="current">
-  <div class="section-head"><span class="section-no">02</span><h2>已有基础与本次要补的缺口</h2></div>
-  <p class="subtle">下表保留实施前核对与改进目标；当前接线、执行和限制统一见门禁结果页，不从原计划推定通过。</p>
+  <div class="section-head"><span class="section-no">02</span><h2>当前接线与验证边界</h2></div>
+  <p class="subtle">下表说明当前接线；逐候选执行和限制见<a href="github-activation.md">GitHub激活说明</a>及门禁结果页。下方32组仍是计划定义，实际运行另留原件，不回填计划为通过。</p>
   <div class="table-wrap"><table><thead><tr><th style="width:22%">对象</th><th style="width:39%">当前可确认</th><th>本设计的补充</th></tr></thead><tbody>
     <tr><td>统一检查入口</td><td><code>npm run verify -- --change &lt;id&gt;</code> 已存在，另有门禁自测、发布和存储入口。</td><td>所有入口共用规则、实际影响范围和结果判定；增加有效性场景与可读结果表。</td></tr>
-    <tr><td>五类 CLI 正反例</td><td><a href="../../scripts/quality/verify_five_scenarios.py">verify_five_scenarios.py</a> 已有临时样本和真实子进程调用，目前主要核对退出码 0 / 1。</td><td>增加预期规则、失败阶段和副作用断言，防止检查器崩溃被误当“成功拒绝”。本轮未重跑。</td></tr>
+    <tr><td>五类 CLI 正反例</td><td><a href="../../scripts/quality/verify_five_scenarios.py">verify_five_scenarios.py</a> 保留原临时样本与真实子进程入口；完整有效性执行已由32组统一覆盖。</td><td>核对预期规则、阶段和副作用；检查器崩溃不算正确拦截。当前计数及实际命令见运行原件，不以旧脚本存在宣称通过。</td></tr>
     <tr><td>“设计不一致”旧反例</td><td>现有负例改变设计源文件，验证的是冻结源漂移。</td><td><strong>源未漂移 ≠ 实现画面一致。</strong>实际排布、缺控件和漏状态，改由统一对照报告与明确审核结论验证。</td></tr>
     <tr><td>结构与存储检查</td><td>已有 TS AST、Cargo 依赖、技术锁、schema 与真实存储执行入口。</td><td>复用原检查器，补齐语义、漏检、误报、故障及真实派发测试，不复制业务逻辑。</td></tr>
-    <tr><td>Codex / 项目 hooks</td><td>本机 CLI 0.167.2，hooks 功能开启；已有用户级通用 hooks。项目 <code>.codex/</code> 当前不存在。</td><td>新增项目薄适配，验证与现有全局 hooks 共存；当前宿主实际触发能力须实测，不能由 CLI 开关推定。</td></tr>
-    <tr><td>Git / CI</td><td>当前目录无 <code>.git</code>；workflow 仅声明 PR 与手动触发，未证明远端执行或分支保护。</td><td>本机不依赖提交触发。恢复版本管理后，再验证 Git hooks 与远端必需检查，不虚构提交身份。</td></tr>
-    <tr><td>历史结果</td><td>当前 <code>.build/</code> 不存在，旧文档中的部分原件链接无法在此工作区复核；源码基线仍为 R93。</td><td>历史运行是否发生与当前原件是否可取分开记录。恢复原件或重新执行，不根据摘要生成通过结果。</td></tr>
+    <tr><td>Codex / 项目 hooks</td><td>项目四项Git根便携定义已接入，与原24项用户级hooks共存；官方信任及无bypass正常会话有实际原件。</td><td>L3核对七项源码、真实事件和副作用；正常信任与隔离实验分别留证，不能从开关或新会话推断旧长会话全部热加载。</td></tr>
+    <tr><td>Git / CI</td><td>当前目录已建立Git并公开到独立客户端仓库；可信base准入、冷机完整CI与main保护已有实际执行和读回。</td><td>提交前快检、推送本地工程检查；PR核对真实head/base，文档修改也跑完整32组和编译。正常合并、G03拒绝、同名伪绿和恢复分别实证。</td></tr>
+    <tr><td>历史结果</td><td>本轮在独占<code>.build/quality/</code>目录留存源码、命令、成功、预期拒绝与恢复原件；产品源码仍为R93。</td><td>旧历史原件是否可取与本轮实际执行分开。不能根据摘要补造历史通过；当前独审与机器回执必须绑定当前候选。</td></tr>
   </tbody></table></div>
 </section>
 
@@ -91,11 +91,11 @@
     <tr><td><code>PostToolUse</code></td><td>读取实际变更；快速边界检查；登记需重跑项。</td><td>反馈违规、标记当前修改未通过；交付检查独立拒绝。</td><td>已执行的写入不会被 hook 撤销；异步检查不能作为即时操作阻断。</td></tr>
     <tr><td><code>Stop</code></td><td>根据实际改动与工作项状态检查验证结果；必要时批量执行。</td><td>缺少可补的检查时要求继续；正式交付由项目命令再次判定。</td><td>每轮结束都会触发。只读问答直接结束，不因历史待办反复全测。</td></tr>
     <tr><td>UI 捕获完成 / 人工视觉确认</td><td>更新同一报告，将 G09 标为待审；明确确认后核对当前身份并重算门禁。</td><td>未确认、拒绝、缺项或过期时，统一交付命令拒绝页面完成和产品准出。</td><td>等待人工只报告 blocked，不无限重跑截图；允许安装待验候选供检查，但不能宣布验收通过。</td></tr>
-    <tr><td>提交 / 推送 / PR</td><td>恢复 Git 后：提交前快检，推送及 PR 跑工程与受影响测试。</td><td>Git hook 拒绝提交 / 推送；远端必需检查拒绝合并。</td><td>目前未接入远端保护；本地 hook 可被绕过，不作为唯一依据。</td></tr>
+    <tr><td>提交 / 推送 / PR</td><td>提交前快检，推送检查本地工作树；PR独立核对真实候选并强制完整工程档。</td><td>Git hook 拒绝提交 / 推送；远端必需检查拒绝合并。</td><td>main必需检查已激活并实证；本地hook不作唯一依据，CLI单个绿灯也不能替代全部检查与实际合并状态。</td></tr>
     <tr><td>打包替换 / 阶段准出</td><td>打包核对工程与包体，安装后验基本流程；阶段准出核对全部承诺。</td><td>不合格候选拒绝替换；未完成产品拒绝进入下一阶段 / 发布。</td><td>允许安装待验候选不等于产品通过；实机回归不挂在每次提交。</td></tr>
   </tbody></table></div>
-  <div class="grid2" style="margin-top:18px"><div class="panel"><h3>Stop 的有界执行规则 <span class="badge plan">拟定</span></h3><ol><li>无实际修改且未请求验收：直接结束。</li><li>有修改：读取实际影响与当前结果，不靠回答里的“完成”二字判定。</li><li>可执行但缺失的检查：要求补跑；同一失败指纹最多自动续跑两次。</li><li>源码或错误变化才重新计算；外部 blocked 或次数用尽时停止重复调度，交付状态仍 incomplete。</li><li>用户中断立即让出控制；子代理只报告自己范围，不能关闭父工作项。</li></ol></div><div class="panel"><h3>Hook 故障不等于操作被拦住</h3><p>官方机制中，未信任配置会跳过；部分错误或不支持的返回格式可能让工具继续。不能声称异常总会自动阻断。</p><p>项目 <code>verify</code>、打包包装入口与后续 CI 必须独立重算必要检查，拒绝缺结果、错误结果和过期结果。它们保障交付判定，不能倒推此前没有副作用。</p><p class="small">所有匹配的全局与项目 hooks 会共同运行，不能假设自己的 hook 能阻止其他 hook 启动。必须验证真实宿主与全局配置共存。</p></div></div>
-  <p class="small">本节平台行为依据：<a href="https://learn.chatgpt.com/docs/hooks#pretooluse">PreToolUse</a>、<a href="https://learn.chatgpt.com/docs/hooks#posttooluse">PostToolUse</a>、<a href="https://learn.chatgpt.com/docs/hooks#stop">Stop</a>、<a href="https://learn.chatgpt.com/docs/hooks#review-and-trust-hooks">信任机制</a>。项目配置加载与信任需要实施后实际核对，本页不预先授予信任。</p>
+  <div class="grid2" style="margin-top:18px"><div class="panel"><h3>Stop 的有界执行规则 <span class="badge plan">统一合同</span></h3><ol><li>无实际修改且未请求验收：直接结束。</li><li>有修改：读取实际影响与当前结果，不靠回答里的“完成”二字判定。</li><li>可执行但缺失的检查：要求补跑；同一失败指纹最多自动续跑两次。</li><li>源码或错误变化才重新计算；外部 blocked 或次数用尽时停止重复调度，交付状态仍 incomplete。</li><li>用户中断立即让出控制；子代理只报告自己范围，不能关闭父工作项。</li></ol></div><div class="panel"><h3>Hook 故障不等于操作被拦住</h3><p>官方机制中，未信任配置会跳过；部分错误或不支持的返回格式可能让工具继续。不能声称异常总会自动阻断。</p><p>项目 <code>verify</code>、打包包装入口与后续 CI 必须独立重算必要检查，拒绝缺结果、错误结果和过期结果。它们保障交付判定，不能倒推此前没有副作用。</p><p class="small">所有匹配的全局与项目 hooks 会共同运行，不能假设自己的 hook 能阻止其他 hook 启动。必须验证真实宿主与全局配置共存。</p></div></div>
+  <p class="small">本节平台行为依据：<a href="https://learn.chatgpt.com/docs/hooks#pretooluse">PreToolUse</a>、<a href="https://learn.chatgpt.com/docs/hooks#posttooluse">PostToolUse</a>、<a href="https://learn.chatgpt.com/docs/hooks#stop">Stop</a>、<a href="https://learn.chatgpt.com/docs/hooks#review-and-trust-hooks">信任机制</a>。项目正常信任、四事件与七源身份已有实际原件；每次定义变更仍须重新核对，本页本身不授予信任。</p>
 </section>
 
 <section id="cases">

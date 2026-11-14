@@ -1,6 +1,6 @@
 # 当前产品与研发文档
 
-当前工程任务为[公开 GitHub 与远端门禁激活](../openspec/changes/activate-public-github-gates/proposal.md)，仓库为 [Xeonice/luna-translator-client](https://github.com/Xeonice/luna-translator-client)。它与原版项目 fork 分开维护。九类判定器和真实 Codex hooks 的上轮本地验证已完成；本轮继续实际验证冷 checkout、固定资源/真实证据、正常及拒绝 PR 与 main 必需检查。当前进度见[GitHub 激活说明](development/github-activation.md)；实际执行结论以原件为准，不以公开仓库或 YAML 存在宣称 CI 通过。
+当前工程任务为[公开 GitHub 与远端门禁激活](../openspec/changes/activate-public-github-gates/proposal.md)，公开仓库为 [Xeonice/luna-translator-client](https://github.com/Xeonice/luna-translator-client)，与原版 Python fork 分开维护。源码、受锁语言资源和许可已公开；本地 Git hooks、正常 Codex hooks、冷机完整 CI、具体 G03 拒绝、同名伪绿阻断、同提交失败后恢复及受保护的正常合并已有实际原件。当前源文档的逐候选审核与 Actions 结论由[GitHub 激活说明](development/github-activation.md)和机器记录绑定；不从任务勾选或旧候选通过推定新源码通过。
 
 产品源仍按R93登记，当前产品验收 **incomplete**。门禁有效、工程检查、人工视觉确认、正式签名包与SR／MO／Never7／樱之诗真实回归分别判断；本轮不改应用、不替换安装包、不提升产品准出。前序绑定QA维护与原件状态在其OpenSpec和当前阶段记录中保留。
 

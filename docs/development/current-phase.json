@@ -54,7 +54,7 @@
   "current_design_composition_id": "complete-guided-history-20261031",
   "current_design_source_status": "approved_by_user",
   "current_plan": "docs/development/current-client-alignment-plan.md",
-  "current_stage": "GITHUB-REPOSITORY-ACTIVATION",
+  "current_stage": "GITHUB-REPOSITORY-ACTIVATED",
   "effective_date": "2026-11-15",
   "engineering_closure": {
     "change_id": "close-engineering-gate-drift",
@@ -144,12 +144,23 @@
   "current_maintenance": {
     "change_id": "activate-public-github-gates",
     "kind": "tooling",
-    "status": "actual_github_activation_in_progress",
+    "status": "implementation_activation_verified_each_document_candidate_CI_bound_externally",
     "repository": "https://github.com/Xeonice/luna-translator-client",
+    "repository_visibility": "public",
+    "source_published": true,
     "user_authorized_implementation": true,
     "product_source_delta_allowed": false,
     "runtime_package_modified": false,
     "product_acceptance_promoted": false,
+    "normal_hooks_status": "verified_actual_normal_session",
+    "normal_ci_run_url": "https://github.com/Xeonice/luna-translator-client/actions/runs/43652040975",
+    "scope_negative_run_url": "https://github.com/Xeonice/luna-translator-client/actions/runs/43652096905",
+    "same_head_recovery_run_url": "https://github.com/Xeonice/luna-translator-client/actions/runs/43652630674/attempts/2",
+    "delayed_spoof_pr_url": "https://github.com/Xeonice/luna-translator-client/pull/5",
+    "main_required_check": "Luna / engineering",
+    "main_required_check_app_id": 15368,
+    "protected_normal_merge": "0758a4781ce6a1b467e7c215c6f1b334843e6dd8",
+    "final_document_candidate_qualification": "current_non_author_review_and_actual_CI_required_no_inherited_pass",
     "execution_result": ".build/quality/github-activation-20261115/activation-result.json"
   },
   "prior_maintenance": {

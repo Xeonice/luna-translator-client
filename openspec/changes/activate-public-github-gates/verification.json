@@ -35,7 +35,11 @@
     ".github/ci-resource-lock.json",
     ".github/ci-evidence.lock.json",
     ".githooks/pre-commit",
-    ".githooks/pre-push"
+    ".githooks/pre-push",
+    "docs/development/gate-validation-design.html",
+    "docs/development/iteration-governance.md",
+    "docs/development/first-product-test-operations.md",
+    "docs/development/current-client-alignment-plan.md"
   ],
   "source_snapshot": "openspec/changes/activate-public-github-gates/source-snapshot.json",
   "requirements": [
