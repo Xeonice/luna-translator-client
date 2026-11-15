@@ -97,7 +97,7 @@ Owner含义：AP应用领域/数据，HK Hook/broker，PL系统平台/分发/秘
 
 ## 5. 证据与版本管理
 
-计划JSON、测试源码、授权fixtures及批准的产品截图基准进入同一版本库；当前目录尚无Git/remote，不在本轮初始化、提交或推送。生成的CSV/HTML是评审副本，不替代唯一登记和测试源码。报告QA源码在 `scripts/report/verify_test_case_report.cjs`；`.build`只放其输出和缓存。
+计划JSON、测试源码、授权fixtures及批准的产品截图基准已进入当前独立公开版本库；真实Git与远端门禁见[GitHub激活说明](github-activation.md)。历史现场、reports与构建副本按.gitignore排除，真实运行原件通过独占目录及CI artifacts留存。生成的CSV/HTML是评审副本，不替代唯一登记和测试源码；提交、推送仍须用户明确授权。报告QA源码在 `scripts/report/verify_test_case_report.cjs`；`.build`只放其输出和缓存。
 
 每次产品run生成独立run_id/attempt、包/源码/资源/环境身份及逐组合结果，原始日志/画面写临时输出后复制到受控存储并校验hash。**长期证据不能只存在可清理的 `.build`。** 访问人员、保留期限、备份和清理策略在PRE-15冻结，本规划不擅自指定付费存储、上传私人文本或数值保留期。`reports/`只发布审核后的脱敏副本；游戏资产、完整台词、个人路径和凭据不默认提交。
 
